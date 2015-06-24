@@ -1,0 +1,4 @@
+Scale=80
+Scale=100
+Scale=180
+Language=EN-US

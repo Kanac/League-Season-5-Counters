@@ -1,0 +1,7 @@
+<XamlCompilerSaveState>
+  <ReferenceAssemblyList>
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\msadvertisingxaml\8.1\references\commonconfiguration\neutral\microsoft.advertising.winrt.ui.winmd" HashGuid="e2e1868b-6ac9-03b1-ca83-3c4740a6cdfb" />
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\msadvertisingxaml\8.1\references\commonconfiguration\neutral\microsoftadvertising.winmd" HashGuid="ff7acc79-1a32-fd80-27f3-998d24e2b25e" />
+    <ReferenceAssembly PathName="c:\users\anthony\documents\visual studio 2013\projects\league of legends counterpicks\packages\mytoolkit.2.3.31.0\lib\portable-net45+wp8+win8+wpa81\mytoolkit.dll" HashGuid="f954329d-f40a-4c5f-1734-127e969f3d24" />
+  </ReferenceAssemblyList>
+</XamlCompilerSaveState>

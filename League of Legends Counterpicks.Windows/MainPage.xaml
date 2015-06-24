@@ -1,0 +1,84 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:League_of_Legends_Counterpicks"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:data="using:League_of_Legends_Counterpicks.Data"
+      xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
+      xmlns:UI1="using:Microsoft.Advertising.WinRT.UI"
+      x:Class="League_of_Legends_Counterpicks.MainPage"
+      DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+      d:DataContext="{Binding Source={d:DesignData Source=/DataModel/Data.json, Type=data:DataSource}}"
+      mc:Ignorable="d">
+
+
+    <Grid>
+        <Image Source="/Assets/LeagueofLegendsTeambuilder.png"
+               Stretch="Fill">
+        </Image>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="/Assets/League-of-Legends-Game-Logo.png"
+                           MaxHeight="120" />
+                    <TextBlock FontFamily="Chiller"
+                               FontSize="100"
+                               Foreground="#FFE0E042"
+                               Text="Counters"
+                               VerticalAlignment="Center" />
+                </StackPanel>
+            </Grid>
+
+            <!--Enter inside the dictionary's only key, groups, and then into the list holding them -->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.2*" />
+                    <RowDefinition Height="9*" />
+                </Grid.RowDefinitions>
+                <StackPanel Margin="30,0,30,0">
+                    <TextBox x:Name="FilterTextBox"
+                             LostFocus="FilterTextBox_LostFocus"
+                             GotFocus="FilterTextBox_GotFocus"
+                             KeyDown="FilterTextBox_Enter" />
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2.5*" />
+                    </Grid.ColumnDefinitions>
+                    <ListView ItemsSource="{Binding Roles}"
+                              Grid.Row="1"
+                              IsItemClickEnabled="True"
+                              ItemClick="GroupSection_ItemClick">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="0,0,0,20">
+                                    <TextBlock Text="{Binding UniqueId}"
+                                               FontSize="30" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Grid>
+
+
+            <Grid Grid.Row="2">
+                <UI1:AdControl ApplicationId="73bc3429-e045-4dc9-ba6f-3e3561a1fc9a"
+                               AdUnitId="192860"
+                           HorizontalAlignment="Center"
+                           IsAutoRefreshEnabled="True"
+                           Width="728"
+                           Height="90">
+                </UI1:AdControl>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

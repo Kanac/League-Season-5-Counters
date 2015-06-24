@@ -1,0 +1,115 @@
+﻿<head>
+    $(BASEURL)
+    <title></title>
+    <script type="text/javascript">
+            $(ORMMA)
+    </script>
+    <style type="text/css">
+        body, html {
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body id='adBody'>
+$(PAYLOAD)
+</body>
+<script type='text/javascript'>
+        var localCompartment = null;
+        var adControlId = null;
+        var adParams = null;
+        var prmParams = null;
+        var appParams = null;
+        var MSG_TYPE_ADPARAMS = "adParams:";
+        var MSG_TYPE_PRMPARAMS = "prmParams:";
+        var MSG_TYPE_APPPARAMS = "appOptionParams:";
+        var MSG_TYPE_INIT = "init:";
+        var MSG_TYPE_SETID = "setId";
+        var MSG_TYPE_ERROR = "error";
+        var MSG_TYPE_ADINITIALIZED = "adInitialized:";
+        var MSG_PRM_ADINITIALIZED_RENDERERAPIVERSION = "rendererApiVersion=";
+
+        /* receives string message from c# layer via invoke script and forwards to receiveMessage as event */
+        function receiveMessageString(data) {
+            try {
+            var msg = new Object();
+            msg.data = data;
+            msg.source = "";
+            receiveMessage(msg);
+            }
+            catch (e)
+            { }
+        }
+
+        function receiveMessage(msg) {
+            try {
+                if (localCompartment === null) {
+                    localCompartment = msg.source;
+                }
+
+                if (MSG_TYPE_ADPARAMS === msg.data.substr(0, MSG_TYPE_ADPARAMS.length)) {
+                    var toEval = msg.data.substr(MSG_TYPE_ADPARAMS.length);
+                    if (toEval !== "") {
+                        try {
+                            adParams = JSON.parse(toEval);
+                        }
+                        catch (err) {
+                            reportAdError("Ad params JSON parse error: " + err.message);
+                        }
+                    }
+                }
+                else if (MSG_TYPE_PRMPARAMS === msg.data.substr(0, MSG_TYPE_PRMPARAMS.length)) {
+                    var toEval = msg.data.substr(MSG_TYPE_PRMPARAMS.length);
+                    if (toEval !== "") {
+                        try {
+                            prmParams = JSON.parse(toEval);
+                        }
+                        catch (err) {
+                            reportAdError("Prm params JSON parse error: " + err.message);
+                        }
+                    }
+                }
+                else if (MSG_TYPE_APPPARAMS === msg.data.substr(0, MSG_TYPE_APPPARAMS.length)) {
+                    var toEval = msg.data.substr(MSG_TYPE_APPPARAMS.length);
+                    if (toEval !== "") {
+                        try {
+                            appParams = JSON.parse(toEval);
+                        }
+                        catch (err) {
+                            reportAdError("App options JSON parse error: " + err.message);
+                        }
+                    }
+                }
+                else if (MSG_TYPE_SETID === msg.data.substr(0, MSG_TYPE_SETID.length)) {
+                    adControlId = msg.data.substr(MSG_TYPE_SETID.length + 1);
+                }
+
+            }
+            catch (e)
+            { }
+        };
+
+        function reportAdError(msg) {
+            try {
+                postToLocal("$log - " + msg);
+                postToLocal(MSG_TYPE_ERROR + ":" + msg);
+            }
+            catch (e)
+            { }
+        };
+
+        function postToLocal(msg) {
+            try {
+            if (localCompartment != null) {
+                window.external.notify(msg);
+            }
+            }
+            catch (e)
+            { }
+        };
+
+        window.addEventListener("message", receiveMessage);
+
+</script>
+</html>

@@ -1,0 +1,6 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.language-fi"
+"ResourceDimensions"		"language-fi"
+
+[Files]
+"C:\Users\Anthony\Documents\Visual Studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\Release\split.language-fi.pri"			"resources.pri"

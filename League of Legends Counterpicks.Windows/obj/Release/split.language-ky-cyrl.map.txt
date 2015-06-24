@@ -1,0 +1,6 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.language-ky-cyrl"
+"ResourceDimensions"		"language-ky-kg"
+
+[Files]
+"C:\Users\Anthony\Documents\Visual Studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\Release\split.language-ky-cyrl.pri"			"resources.pri"

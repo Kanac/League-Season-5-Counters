@@ -1,0 +1,6 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.language-gd-latn"
+"ResourceDimensions"		"language-gd-gb"
+
+[Files]
+"C:\Users\Anthony\Documents\Visual Studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\Release\split.language-gd-latn.pri"			"resources.pri"

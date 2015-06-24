@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="My_Ad_Funded_Windows_XAML_App.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestAdApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Orientation="Vertical">
+        <UI:AdControl 
+            ApplicationId="73bc3429-e045-4dc9-ba6f-3e3561a1fc9a" 
+            AdUnitId="192860" 
+            Width="728"
+            Height="90" 
+            Margin="0,0,0,0" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"/>
+        <UI:AdControl 
+            ApplicationId="73bc3429-e045-4dc9-ba6f-3e3561a1fc9a" 
+            AdUnitId="192861" 
+            Width="728"
+            Height="90" 
+            Margin="0,0,0,0" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"/>
+        <UI:AdControl 
+            ApplicationId="73bc3429-e045-4dc9-ba6f-3e3561a1fc9a" 
+            AdUnitId="192862" 
+            Width="728"
+            Height="90" 
+            Margin="0,0,0,0" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"/>
+
+    </StackPanel >
+</Page>

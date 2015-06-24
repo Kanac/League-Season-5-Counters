@@ -1,0 +1,67 @@
+﻿<UserControl
+    x:Class="SOMAWP81.SomaAdViewer_300x250"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SOMAWP81"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="333"
+    d:DesignWidth="400"
+    Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <Storyboard x:Name="popupAd">
+            <DoubleAnimationUsingKeyFrames EnableDependentAnimation="True"
+                                           Storyboard.TargetProperty="(FrameworkElement.Height)"
+                                           Storyboard.TargetName="adGrid">
+                <EasingDoubleKeyFrame KeyTime="0"
+                                      Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseIn" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5"
+                                      Value="333" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="lowerAd">
+            <DoubleAnimationUsingKeyFrames EnableDependentAnimation="True"
+                                           Storyboard.TargetProperty="(FrameworkElement.Height)"
+                                           Storyboard.TargetName="adGrid">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5"
+                                      Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseIn" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="adGrid"
+          Height="333">
+        <WebView x:Name="webView"
+                 Visibility="Collapsed" />
+        <Image Name="imageAdImage"
+               Margin="0"
+               Width="480"
+               Height="333"
+               Stretch="Uniform"
+               VerticalAlignment="Center"
+               ImageFailed="imageAdImage_ImageFailed"
+               Tapped="imageAdImage_Tapped" />
+        <TextBlock x:Name="textBlockText"
+                   Margin="10"
+                   FontSize="{ThemeResource TextStyleMediumFontSize}"
+                   Visibility="Collapsed"
+                   TextWrapping="Wrap"
+                   Tapped="textBlockText_Tapped"
+                   VerticalAlignment="Center" />
+        <ProgressBar x:Name="progressSpinner"
+                     IsIndeterminate="True"
+                     Visibility="Collapsed"
+                     VerticalAlignment="Center" />
+
+    </Grid>
+</UserControl>

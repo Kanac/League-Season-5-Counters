@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>f498e992-e309-44d6-b039-225be3cc63cc</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>League_of_Legends_Counterpicks</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Aatrox_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Ahri_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Akali_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Alistar_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Amumu_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Anivia_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Annie_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Ashe_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Azir_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Bard_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Blitzcrank_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Brand_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Braum_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Caitlyn_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Cassiopeia_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Chogath_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Corki_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Darius_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Diana_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DJSona106.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DJSona1152.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DJSona120.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DJSona170.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DJSona360.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Draven_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Dr. Mundo_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Ekko_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Elise_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Evelynn_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Ezreal_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Fiddlesticks_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Fiora_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Fizz_square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Galio_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Gangplank_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Garen_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Gnar_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Gragas_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Graves_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Hecarim_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Heimerdinger_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\HubBackground.theme-dark.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\HubBackground.theme-light.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Irelia_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Janna_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Jarvan IV_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Jax_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Jayce_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Jinx_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Kalista_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Karma_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Karthus_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Kassadin_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Katarina_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Kayle_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Kennen_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Kha'Zix_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Kog'Maw_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\League of Legends Season 5 Main.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\League of Legends Teambuilder.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\League-of-Legends-Game-Logo.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\LeagueofLegendsTeambuilder.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\league_of_legends.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\LeBlanc_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Lee Sin_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Leona_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Lissandra_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Lucian_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Lulu_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Lux_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Malphite_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Malzahar_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Maokai_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Master Yi_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Miss Fortune_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Wukong_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Mordekaiser_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Morgana_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Nami_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Nasus_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Nautilus_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Nidalee_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Nocturne_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Nunu_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Olaf_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Orianna_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Pantheon_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Poppy_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Quinn_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Rammus_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Rek'Sai_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Renekton_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Rengar_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Riven_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Rumble_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Ryze_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Sejuani_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Shaco_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Shen_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Short_Fuse.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Shyvana_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Singed_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Sion_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Sivir_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Skarner_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Sona_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Soraka_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Swain_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Syndra_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Talon_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Taric_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Teemo_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Thresh_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Tristana_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Trundle_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Tryndamere_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Twisted Fate_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Twitch_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Udyr_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Urgot_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Varus_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Vayne_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Veigar_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Vel'Koz_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Viktor_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Vi_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Vladimir_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Voidgate_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Voidspawn_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Volibear_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Warwick_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Xerath_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Xin Zhao_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Yasuo_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Yorick_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Zac_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Zed_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Ziggs_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Zilean_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Zyra_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Common\ReadMe.txt" />
+    <Content Include="$(MSBuildThisFileDirectory)DataModel\Data.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\NameToImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\DataSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw" />
+  </ItemGroup>
+</Project>
