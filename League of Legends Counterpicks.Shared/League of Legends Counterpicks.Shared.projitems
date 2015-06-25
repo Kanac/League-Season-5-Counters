@@ -28,11 +28,6 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Corki_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Darius_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Diana_Square_0.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\DJSona106.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\DJSona1152.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\DJSona120.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\DJSona170.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\DJSona360.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Draven_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Dr. Mundo_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Ekko_Square_0.png" />
