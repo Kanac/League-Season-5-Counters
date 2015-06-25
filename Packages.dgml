@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="League of Legends Counterpicks\League of Legends Counterpicks.Windows" Label="League of Legends Counterpicks.Windows" Category="Project" />
+    <Node Id="MyToolkit 2.3.31.0" Label="MyToolkit 2.3.31.0" Category="Package" />
+    <Node Id="League of Legends Counterpicks\League of Legends Counterpicks" Label="League of Legends Counterpicks" Category="Project" />
+    <Node Id="NuGet.Manifest.Schema 2.0.0" Label="NuGet.Manifest.Schema 2.0.0" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="League of Legends Counterpicks\League of Legends Counterpicks.Windows" Target="MyToolkit 2.3.31.0" Category="Installed Package" />
+    <Link Source="League of Legends Counterpicks\League of Legends Counterpicks" Target="NuGet.Manifest.Schema 2.0.0" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+  </Styles>
+</DirectedGraph>

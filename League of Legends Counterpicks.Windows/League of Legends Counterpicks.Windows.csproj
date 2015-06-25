@@ -142,7 +142,6 @@
     </AppxManifest>
     <None Include="League of Legends Counterpicks.Windows_StoreKey.pfx" />
     <None Include="League of Legends Counterpicks.Windows_TemporaryKey.pfx" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -168,11 +167,6 @@
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <None Include="Package.StoreAssociation.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="MyToolkit">
-      <HintPath>..\packages\MyToolkit.2.3.31.0\lib\portable-net45+wp8+win8+wpa81\MyToolkit.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
