@@ -56,7 +56,6 @@ namespace League_of_Legends_Counterpicks.Data
         }
 
         public string UniqueId { get; private set; }
-        public string ImagePath { get; private set; }
         public ObservableCollection<Champion> Champions { get; set; }
         public List<JumpListGroup<Champion>> GroupedChampions { get; set; } 
     }
@@ -90,6 +89,7 @@ namespace League_of_Legends_Counterpicks.Data
             if (matches.Count() == 1) return matches.First();
             return null;
         }
+
         public static string GetRoleId(string champId)
         {
             foreach (var role in _DataSource.Roles)
@@ -121,7 +121,7 @@ namespace League_of_Legends_Counterpicks.Data
         }
         public static Role FilterChampions(string filter)
         {
-            var matches = new Role("Filter");
+            var matches = new Role(filter);
             foreach (var role in _DataSource.Roles)
             {
                 foreach (var champion in role.Champions)
@@ -136,15 +136,19 @@ namespace League_of_Legends_Counterpicks.Data
 
         public static Role GetAllChampions()
         {
-            var allrole = GetRole("All");
+            var allrole = GetRole("All");  // Will be the empty but existant if first time calling this function 
 
-            foreach (var role in _DataSource.Roles)      
+            if (allrole.Champions.Count == 0)  //For first time fetch of all role
             {
-                foreach (var champion in role.Champions)
-                    allrole.Champions.Add(champion);
-            }
+                foreach (var role in _DataSource.Roles)
+                {
+                    foreach (var champion in role.Champions)
+                        allrole.Champions.Add(champion);
+                }
 
-            allrole.Champions = new ObservableCollection<Champion>(allrole.Champions.OrderBy(p => p.UniqueId));
+                allrole.Champions = new ObservableCollection<Champion>(allrole.Champions.OrderBy(p => p.UniqueId));
+            }
+            
             return allrole;
         }
 
@@ -154,9 +158,7 @@ namespace League_of_Legends_Counterpicks.Data
                 return;
 
             Uri dataUri = new Uri("ms-appx:///DataModel/Data.json");      //Get location of data 
-            Debug.WriteLine("First");
             StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);       //Get the file from where the data is located
-            Debug.WriteLine("Second");
 
             string jsonText = await FileIO.ReadTextAsync(file);     //Returns the json text in which it was saved as 
             JsonObject jsonObject = JsonObject.Parse(jsonText);     //Parse the json text into object 
@@ -186,6 +188,7 @@ namespace League_of_Legends_Counterpicks.Data
                 this.Roles.Add(role);
             }
 
+            GetAllChampions(); //Fills up the all role immediately with json data serialization
         }
 
     }
