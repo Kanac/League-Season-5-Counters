@@ -85,7 +85,7 @@ namespace League_of_Legends_Counterpicks.Data
         public static Role GetRole(string uniqueId)
         {
             // Simple linear search is acceptable for small data sets
-            var matches = _DataSource.Roles.Where((role => role.UniqueId.Equals(uniqueId)));       //Cycle through the collection of roles, returning first role that matches the ID (Lambda expression)
+            var matches = _DataSource.Roles.Where(role => role.UniqueId.Equals(uniqueId));       //Cycle through the collection of roles, returning first role that matches the ID (Lambda expression)
             if (matches.Count() == 1) return matches.First();
             return null;
         }
