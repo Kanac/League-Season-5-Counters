@@ -1,0 +1,176 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:League_of_Legends_Counterpicks"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+      x:Class="League_of_Legends_Counterpicks.ChangeLog"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style TargetType="TextBlock"
+               x:Key="Notes">
+            <Setter Property="FontSize"
+                    Value="17" />
+            <Setter Property="TextWrapping"
+                    Value="Wrap" />
+        </Style>
+    </Page.Resources>
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition />
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="80" />
+            
+        </Grid.RowDefinitions>
+        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_4461F1"
+                                          HorizontalAlignment="Center"
+                                          Height="Auto"
+                                          AdSdkError="AdSdkError"
+                                          AdMediatorError="Ad_Error"
+                                          Id="AdMediator-Id-A0BC2EBD-8646-4322-9EF7-0643F0B54B94"
+                                          VerticalAlignment="Top"
+                                          Width="Auto" />
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="League Season 5 Counters Changes"
+                       Foreground="#FFF3FD29"
+                       TextAlignment="Justify"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Style="{ThemeResource TitleTextBlockStyle}"
+                       Margin="0,12,0,0" />
+            <!--<TextBlock Text="change log"
+                       Margin="0,-6.5,0,26.5"
+                       Style="{ThemeResource HeaderTextBlockStyle}"
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" />-->
+            
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="2"
+              x:Name="ContentRoot"
+              Margin="19,9.5,19,0">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="July 9 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Changed filter bar functionality"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated Ads "></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 8 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Changed Role Page organization"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated counters again"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Optimized alignment across all pages"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 5 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in toast notifications on app launch and on a background timer basis"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Auto suggest box now doesn't show all champions when empty"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated several champion counters according to user feedback"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Added tweet button to command bar"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 2 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in a command bar for sharing and changelog"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Adjusted auto suggest box to not show all with no text"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Filter page and auto suggest matches are now symmetrical"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="June 30 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Fixed alpha jump list problem with semantic zoom"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Optimized ad size for all devices"></Run>
+                         <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="June 29 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in an auto suggest box for awesome navigation"></Run>
+                         <LineBreak></LineBreak>
+                        <Run Text="-Changed ad placement and optimized scaling appropriately" />
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="June 26 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+						<Run Text="-Fixed jump list image render bug on first load" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Created hub section of all roles in the role page" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Added margins and other scaling balances" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Added a check updates button on this page" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Updated several champions counters according to feedback thus far" />
+                         <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="June 24 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+						<Run Text="-Added Ekko and updated all counters respectively" />
+                        <LineBreak></LineBreak>
+						<Run Text="-Change Log button in main page" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Role Page now has an alphabetical jump list for easy navigation" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Each champion now has an associated page for users to submit feedback on counters" />
+						 <LineBreak></LineBreak>
+                        <Run Text="-Updated champion names to be more accurate" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Optimized scaling across all pages" />
+                    </TextBlock>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        
+        
+        <Button Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="Button_Tapped">
+            Check for Updates
+        </Button>
+        
+        <WindowsPhone81:AdMediatorControl Grid.Row="4"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Bottom"
+                                          x:Name="AdMediator_D2BDBB"
+                                          Height="Auto"
+                                          Id="AdMediator-Id-18C8A9BA-F1A6-42DA-8C28-F58A3F0F2DEE"
+                                          Width="Auto" />
+    </Grid>
+</Page>

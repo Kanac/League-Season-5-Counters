@@ -1,0 +1,292 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:League_of_Legends_Counterpicks"
+      xmlns:data="using:League_of_Legends_Counterpicks.Data"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
+      xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+      xmlns:valueconverter="using:League_of_Legends_Counterpicks.Converters"
+      x:Name="pageRoot"
+      x:Class="League_of_Legends_Counterpicks.ChampionPage"
+      mc:Ignorable="d"
+      DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+      d:DataContext="{Binding Roles[1].Champions[1], Source={d:DesignData Source=/DataModel/Data.json, Type=data:DataSource}}"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Page.Resources>
+        <valueconverter:NameToImage x:Key="NameToImageConverter" />
+    </Page.Resources>
+
+
+    <Grid x:Name="LayoutRoot">
+        
+        <Hub x:Name="Hubaa"
+             x:Uid="Hubaa"
+             Grid.Row="1">
+
+            <HubSection x:Name="HubSection1"
+                        x:Uid="HubSection1">
+
+                <DataTemplate>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="80" />
+                        </Grid.RowDefinitions>
+
+                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_F91A90"
+                                                          Height="Auto"
+                                                          HorizontalAlignment="Center"
+                                                          VerticalAlignment="Top"
+                                                          Id="AdMediator-Id-1A00C840-7A8F-4214-9C83-6F0DD0CB4EE9"
+                                                          Width="Auto" />
+
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_2EF4E8"
+                                                          Height="Auto"
+                                                          VerticalAlignment="Bottom"
+                                                          HorizontalAlignment="Center"
+                                                          Id="AdMediator-Id-CB0A72EE-F012-4E13-985C-3FE34D66A5C0"
+                                                          Grid.Row="3"
+                                                          Width="Auto" />-->
+
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="228835" />
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      Grid.Row="3"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="228834" />
+
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Champion.ImagePath}" Width="80" Height="80"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1"
+                                        Orientation="Vertical"
+                                        Margin="15,0,0,0">
+                                <TextBlock Text="{Binding Champion.UniqueId}"
+                                           Style="{ThemeResource HeaderTextBlockStyle}"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           FontSize="37" />
+                                <TextBlock Style="{ThemeResource HeaderTextBlockStyle}"
+                                           FontSize="25"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           Text="{Binding Role}" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid Margin="0,10,0,0"
+                              Grid.Row="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <StackPanel x:Name="Stack1"
+                                        Orientation="Horizontal">
+                                <Image x:ConnectionId='7' x:Name="Champ1"
+                                                            
+                                       Source="{Binding Champion.Counters[0], Converter={StaticResource NameToImageConverter}}" />
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                            </StackPanel>
+                            <StackPanel x:Name="Stack2"
+                                        Orientation="Horizontal"
+                                        Grid.Row="1">
+                                <Image x:ConnectionId='6' x:Name="Champ2"
+                                                            
+                                       Source="{Binding Champion.Counters[1], Converter={StaticResource NameToImageConverter}}" />
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"
+                                       Opacity="0.2"></Image>
+                            </StackPanel>
+                            <StackPanel x:Name="Stack3"
+                                        Orientation="Horizontal"
+                                        Grid.Row="2">
+                                <Image x:ConnectionId='5' x:Name="Champ3"
+                                                            
+                                       Source="{Binding Champion.Counters[2], Converter={StaticResource NameToImageConverter}}" />
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"
+                                       Opacity="0.2"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"
+                                       Opacity="0.2"></Image>
+                            </StackPanel>
+                            <StackPanel x:Name="Stack4"
+                                        Orientation="Horizontal"
+                                        Grid.Row="3">
+                                <Image x:ConnectionId='4' x:Name="Champ4"
+                                                            
+                                       Source="{Binding Champion.Counters[3], Converter={StaticResource NameToImageConverter}}" />
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"
+                                       Opacity="0.2"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"
+                                       Opacity="0.2"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"
+                                       Opacity="0.2"></Image>
+                            </StackPanel>
+                            <StackPanel x:Name="Stack5"
+                                        Orientation="Horizontal"
+                                        Grid.Row="4">
+                                <Image x:ConnectionId='3' x:Name="Champ5"
+                                                            
+                                       Source="{Binding Champion.Counters[4], Converter={StaticResource NameToImageConverter}}" />
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"
+                                       Opacity="0.2"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"
+                                       Opacity="0.2"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"
+                                       Opacity="0.2"></Image>
+                                <Image Source="Assets/Short_Fuse.jpg"
+                                       Width="43"
+                                       Stretch="Fill"
+                                       Opacity="0.2"></Image>
+                            </StackPanel>
+                        </Grid>
+
+                    </Grid>
+
+                </DataTemplate>
+            </HubSection>
+
+
+            <HubSection>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="3.5*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="80" />
+                        </Grid.RowDefinitions>
+                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_23F5B5"
+                                                          Style="{StaticResource AdTemplate}"
+                                                          VerticalAlignment="Top"
+                                                          Id="AdMediator-Id-15146F06-49A2-48DA-8E88-1B55AD05A245" />
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_E4450A"
+                                                          Grid.Row="4"
+                                                          Id="AdMediator-Id-6801C733-9423-4584-922F-2CDB9B1E5C77"
+                                                          VerticalAlignment="Bottom"
+                                                          Style="{StaticResource AdTemplate}" />-->
+
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="228833" />
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      Grid.Row="4"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="228832" />
+
+                        <TextBlock x:Name="Feedback"
+                                   FontSize="35"
+                                   Grid.Row="1"
+                                   VerticalAlignment="Center"
+                                   TextWrapping="Wrap">Submit feedback to these counters?</TextBlock>
+                        <TextBox x:ConnectionId='1' Height="300"
+                                 Margin="0,10,0,0"
+                                 Grid.Row="2"
+                                                             ></TextBox>
+                        <Button x:ConnectionId='2' Grid.Row="3"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Center"
+                                                      >Send</Button>
+
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+       
+    </Grid>
+
+</Page>
+
