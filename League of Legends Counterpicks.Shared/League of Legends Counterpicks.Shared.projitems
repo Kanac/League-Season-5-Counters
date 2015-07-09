@@ -79,6 +79,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Maokai_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Master Yi_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Miss Fortune_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Tweet.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Wukong_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Mordekaiser_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Morgana_Square_0.png" />
@@ -139,6 +140,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Xin Zhao_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Yasuo_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Yorick_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\yourturn.mp3" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Zac_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Zed_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Ziggs_Square_0.png" />

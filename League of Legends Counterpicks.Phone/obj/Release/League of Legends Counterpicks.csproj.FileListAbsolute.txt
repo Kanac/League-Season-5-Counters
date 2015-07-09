@@ -1,0 +1,93 @@
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\App.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\ChangeLog.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\FilterPage.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\MainPage.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\ChampionPage.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\RolePage.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\League of Legends Counterpicks.xr.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\League of Legends Counterpicks.exe
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\League of Legends Counterpicks.pdb
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\resources.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\AppxManifest.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\League of Legends Counterpicks.build.appxrecipe
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.AdMediator.Core.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.AdMediator.WindowsPhone81.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\AdDuplex.Universal.Controls.WinPhone.XAML.winmd
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\AdDuplex.Universal.WinPhone.WinRT.winmd
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.AdMediator.WindowsPhone81.Smaato.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.Advertising.Mobile.Common.winmd
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.Advertising.Mobile.Display.winmd
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.Advertising.Mobile.UI.winmd
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\QKit.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\SOMAWP81.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\AdDuplex.Universal.Controls.WinPhone.XAML.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\AdDuplex.Universal.WinPhone.WinRT.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.Advertising.Mobile.Common.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.Advertising.Mobile.Common.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.Advertising.Mobile.Display.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.Advertising.Mobile.Display.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.Advertising.Mobile.UI.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Microsoft.Advertising.Mobile.UI.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\QKit.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\QKit.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\SOMAWP81.pdb
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\SOMAWP81.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\League of Legends Counterpicks.csprojResolveAssemblyReference.cache
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\App.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\App.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\ChangeLog.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\ChangeLog.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\FilterPage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\FilterPage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\MainPage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\MainPage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\ChampionPage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\ChampionPage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\RolePage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\RolePage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\XamlTypeInfo.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\App.xaml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\ChangeLog.xaml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\MainPage.xaml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\RolePage.xaml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\App.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\ChangeLog.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\MainPage.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\RolePage.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\XamlSaveStateFile.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\FilterPage.xaml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\ChampionPage.xaml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\FilterPage.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\ChampionPage.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\League of Legends Counterpicks.exe
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\League of Legends Counterpicks.pdb
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\League of Legends Counterpicks.csproj.GenerateResource.Cache
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\priconfig.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\priconfig.xml.intermediate
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\layout.resfiles
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\layout.resfiles.intermediate
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\resources.resfiles
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\resources.resfiles.intermediate
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\pri.resfiles
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\pri.resfiles.intermediate
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\qualifiers.txt
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\qualifiers.txt.intermediate
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\AdDuplex.Universal.Controls.WinPhone.XAML.pri.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\AdDuplex.Universal.WinPhone.WinRT.pri.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\Microsoft.Advertising.Mobile.Common.pri.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\Microsoft.Advertising.Mobile.Display.pri.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\Microsoft.Advertising.Mobile.UI.pri.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\QKit.pri.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\SOMAWP81.pri.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\ProjectArchitectures.txt
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Twitter.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Tasks.winmd
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Tasks.pdb
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\Tasks.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\Twitter.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\Twitter.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\Twitter.xaml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\Twitter.xbf

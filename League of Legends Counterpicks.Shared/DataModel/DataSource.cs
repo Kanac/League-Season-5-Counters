@@ -126,7 +126,7 @@ namespace League_of_Legends_Counterpicks.Data
             {
                 foreach (var champion in role.Champions)
                 {
-                    if (champion.UniqueId.ToLower().Contains(filter.ToLower()) && role.UniqueId != "All")
+                    if (champion.UniqueId.ToLower().StartsWith(filter.ToLower()) && role.UniqueId != "All")
                         matches.Champions.Add(champion);
                 }
             }
