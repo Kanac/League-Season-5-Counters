@@ -1,7 +1,0 @@
-﻿[ResourceMetadata]
-"ResourceId"			"filemap.scale-180"
-"ResourceDimensions"		"scale-180"
-
-[Files]
-"C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\filemap.scale-180.pri"			"resources.pri"
-"C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\PackageLayout\Assets\Logo.scale-180.png"			"Assets\Logo.scale-180.png"
