@@ -64,6 +64,15 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
+						<Run Text="July 9 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Changed filter bar functionality"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated Ads "></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
 						<Run Text="July 8 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">

@@ -22,22 +22,6 @@
 
     <Grid x:Name="LayoutRoot">
         
-
-        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_F91A90"
-                                          Height="Auto"
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Top"
-                                          Id="AdMediator-Id-1A00C840-7A8F-4214-9C83-6F0DD0CB4EE9"
-                                          Width="Auto" />-->
-
-        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_2EF4E8"
-                                          Height="Auto"
-                                          VerticalAlignment="Bottom"
-                                          HorizontalAlignment="Center"
-                                          Id="AdMediator-Id-CB0A72EE-F012-4E13-985C-3FE34D66A5C0"
-                                          Grid.Row="2"
-                                          Width="Auto" />-->
-
         <Hub x:Name="Hubaa"
              x:Uid="Hubaa"
              Grid.Row="1">
@@ -55,7 +39,7 @@
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
 
-                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_F91A90"
+                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_F91A90"
                                                           Height="Auto"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Top"
@@ -68,7 +52,23 @@
                                                           HorizontalAlignment="Center"
                                                           Id="AdMediator-Id-CB0A72EE-F012-4E13-985C-3FE34D66A5C0"
                                                           Grid.Row="3"
-                                                          Width="Auto" />
+                                                          Width="Auto" />-->
+
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="228835" />
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      Grid.Row="3"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="228834" />
 
 
                         <Grid Grid.Row="1">
@@ -241,15 +241,32 @@
                             <RowDefinition Height="*" />
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
-                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_23F5B5"
-                                          Style="{StaticResource AdTemplate}"
-                                          VerticalAlignment="Top"
-                                          Id="AdMediator-Id-15146F06-49A2-48DA-8E88-1B55AD05A245" />
-        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_E4450A"
-                                          Grid.Row="4"
-                                          Id="AdMediator-Id-6801C733-9423-4584-922F-2CDB9B1E5C77"
-                                          VerticalAlignment="Bottom"
-                                          Style="{StaticResource AdTemplate}" />
+                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_23F5B5"
+                                                          Style="{StaticResource AdTemplate}"
+                                                          VerticalAlignment="Top"
+                                                          Id="AdMediator-Id-15146F06-49A2-48DA-8E88-1B55AD05A245" />
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_E4450A"
+                                                          Grid.Row="4"
+                                                          Id="AdMediator-Id-6801C733-9423-4584-922F-2CDB9B1E5C77"
+                                                          VerticalAlignment="Bottom"
+                                                          Style="{StaticResource AdTemplate}" />-->
+
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="228833" />
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      Grid.Row="4"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="228832" />
+
                         <TextBlock x:Name="Feedback"
                                    FontSize="35"
                                    Grid.Row="1"

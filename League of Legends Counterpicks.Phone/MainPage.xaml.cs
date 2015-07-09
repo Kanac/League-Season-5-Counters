@@ -194,6 +194,7 @@ namespace League_of_Legends_Counterpicks
 
         private void FilterBox_GotFocus(object sender, RoutedEventArgs e)
         {
+            Frame.Navigate(typeof(RolePage), "Filter");
             FilterBox.Text = string.Empty;
         }
 

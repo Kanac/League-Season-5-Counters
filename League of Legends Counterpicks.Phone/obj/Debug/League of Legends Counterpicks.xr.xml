@@ -12,6 +12,7 @@
     <RootPropertyPathName Name="Roles" />
     <RootPropertyPathName Name="Champion" />
     <RootPropertyPathName Name="Counters" />
+    <RootPropertyPathName Name="Filter" />
     <RootPropertyPathName Name="GroupedChampions" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -30,7 +31,6 @@
       <RootProperty Name="Id" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Style" />
       <RootEvent Name="AdSdkError" />
       <RootEvent Name="AdMediatorError" />
     </RootType>
@@ -173,10 +173,22 @@
       <RootProperty Name="Style" />
       <RootProperty Name="DataContext" />
     </RootType>
+    <RootType FullName="Microsoft.Advertising.Mobile.UI.AdControl">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="ApplicationId" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="AutoRefreshIntervalInSeconds" />
+      <RootProperty Name="AdUnitId" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Text" />
       <RootEvent Name="LostFocus" />
+      <RootEvent Name="GotFocus" />
+      <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="League_of_Legends_Counterpicks.ChampionPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ContentControl">

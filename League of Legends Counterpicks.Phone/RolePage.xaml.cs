@@ -78,7 +78,16 @@ namespace League_of_Legends_Counterpicks
             var GroupedChampions = JumpListHelper.ToAlphaGroups(allRole.Champions, x => x.UniqueId);
             allRole.GroupedChampions = GroupedChampions;
             DefaultViewModel["Roles"] = roles;
-            MainHub.ScrollToSection(MainHub.FindName(roleId) as HubSection);
+            //Smoothes out the loading process to get to desired page immedaitely 
+            int sectionIndex;
+            if (roleId == "Filter")
+                sectionIndex = MainHub.Sections.Count() - 1;
+            else
+                sectionIndex = roles.IndexOf(DataSource.GetRole(roleId));
+            if (firstLoad)
+                MainHub.DefaultSectionIndex = sectionIndex;
+            else
+                MainHub.ScrollToSection(MainHub.Sections.ElementAt(sectionIndex));
         }
         
     
@@ -161,10 +170,27 @@ namespace League_of_Legends_Counterpicks
 
         private void Ad_Error(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
         {
-            var adName = (sender as AdMediatorControl).Id;
+            var ad = sender as AdMediatorControl;
+            var adName = ad.Id;
             Debug.WriteLine("AdMediatorError for " + adName + ":" + e.Error + " " + e.ErrorCode);
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            String text = (sender as TextBox).Text;
+            Role filter = DataSource.FilterChampions(text);
+            if (String.IsNullOrEmpty(text))    //Don't show every champion with no query
+                DefaultViewModel["Filter"] = null;
+            else
+                DefaultViewModel["Filter"] = filter;
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            (sender as TextBox).Text = String.Empty;
+        }
+
+    
   
     }
 }
