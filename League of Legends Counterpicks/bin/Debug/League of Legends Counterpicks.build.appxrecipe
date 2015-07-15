@@ -333,6 +333,9 @@
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Miss Fortune_Square_0.png">
       <PackagePath>Assets\Miss Fortune_Square_0.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Tahm Kench_Square_0.png">
+      <PackagePath>Assets\Tahm Kench_Square_0.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Tweet.png">
       <PackagePath>Assets\Tweet.png</PackagePath>
     </AppxPackagedFile>

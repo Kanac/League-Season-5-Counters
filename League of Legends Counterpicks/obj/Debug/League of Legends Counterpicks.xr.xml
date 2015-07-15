@@ -143,6 +143,16 @@
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="Click" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="IsReadOnly" />
+      <RootProperty Name="TextAlignment" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="Height" />
+      <RootEvent Name="GotFocus" />
+      <RootEvent Name="LostFocus" />
+      <RootEvent Name="TextChanged" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -151,13 +161,6 @@
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
       <RootEvent Name="ItemClick" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.AutoSuggestBox">
-      <RootProperty Name="Margin" />
-      <RootEvent Name="GotFocus" />
-      <RootEvent Name="TextChanged" />
-      <RootEvent Name="SuggestionChosen" />
-      <RootEvent Name="KeyDown" />
     </RootType>
     <RootType FullName="League_of_Legends_Counterpicks.MainPage" />
     <RootType FullName="League_of_Legends_Counterpicks.Converters.NameToImage" />
@@ -181,14 +184,6 @@
       <RootProperty Name="Height" />
       <RootProperty Name="AutoRefreshIntervalInSeconds" />
       <RootProperty Name="AdUnitId" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
-      <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Text" />
-      <RootEvent Name="LostFocus" />
-      <RootEvent Name="GotFocus" />
-      <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="League_of_Legends_Counterpicks.ChampionPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ContentControl">

@@ -61,6 +61,9 @@ namespace League_of_Legends_Counterpicks
             DateTime dueTime = DateTime.Now.AddHours(1);
             ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, dueTime);
             ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledToast);
+
+
+           
         }
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points

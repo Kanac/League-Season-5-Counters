@@ -42,6 +42,7 @@ namespace League_of_Legends_Counterpicks
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private readonly ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView("Resources");
         private List<String> suggestions;
+        private Boolean firstLoad = true;
 
         public MainPage()
         {
@@ -92,30 +93,34 @@ namespace League_of_Legends_Counterpicks
             suggestions = new List<String>(roles[0].Champions.Select(x => x.UniqueId)); //Get all the champion names and place it in a list
             this.DefaultViewModel["Roles"] = roles;     //Which in turn is the data context for the hub page, with only one thing as a whole in it
 
-            //Toast background task setup
-            CheckAppVersion();
-            var taskRegistered = false;
-            var toastTaskName = "ToastBackgroundTask";
-
-            foreach (var task in Windows.ApplicationModel.Background.BackgroundTaskRegistration.AllTasks)
+            //Toast background task setup 
+            if (firstLoad)
             {
-                if (task.Value.Name == toastTaskName)
+                firstLoad = false;
+                CheckAppVersion();
+                var toastTaskName = "ToastBackgroundTask";
+                var taskRegistered = false;
+
+                foreach (var task in Windows.ApplicationModel.Background.BackgroundTaskRegistration.AllTasks)
                 {
-                    taskRegistered = true;
-                    break;
+                    if (task.Value.Name == toastTaskName)
+                    {
+                        taskRegistered = true;
+                        break;
+                    }
                 }
-            }
 
-            if (!taskRegistered)
-            {
-                await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
-                var builder = new BackgroundTaskBuilder();
-                builder.Name = toastTaskName;
-                builder.TaskEntryPoint = "Tasks.ToastBackground";
-                var hourlyTrigger = new TimeTrigger(30, false);
-                builder.SetTrigger(hourlyTrigger);
+                if (!taskRegistered)
+                {
+                    await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
+                    var builder = new BackgroundTaskBuilder();
+                    builder.Name = toastTaskName;
+                    builder.TaskEntryPoint = "Tasks.ToastBackground";
+                    var hourlyTrigger = new TimeTrigger(30, false);
+                    builder.SetTrigger(hourlyTrigger);
 
-                BackgroundTaskRegistration task = builder.Register();
+                    BackgroundTaskRegistration task = builder.Register();
+                }
             }
 
         }
@@ -179,38 +184,38 @@ namespace League_of_Legends_Counterpicks
             System.Diagnostics.Debug.WriteLine("AdControl error (" + ((AdControl)sender).Name + "): " + e.Error + " ErrorCode: " + e.ErrorCode.ToString());
         }
 
-        private void KeyDown_Event(object sender, KeyRoutedEventArgs e)
-        {
-            if (e.Key == Windows.System.VirtualKey.Enter) {
+        //private void KeyDown_Event(object sender, KeyRoutedEventArgs e)
+        //{
+        //    if (e.Key == Windows.System.VirtualKey.Enter) {
 
-                string filter = FilterBox.Text;
-                var group = DataSource.FilterChampions(filter);
-                if (group.Champions.Count == 1)
-                    Frame.Navigate(typeof(ChampionPage), group.Champions[0].UniqueId);
-                else
-                    Frame.Navigate(typeof(FilterPage), group);
-            }
-        }
+        //        string filter = FilterBox.Text;
+        //        var group = DataSource.FilterChampions(filter);
+        //        if (group.Champions.Count == 1)
+        //            Frame.Navigate(typeof(ChampionPage), group.Champions[0].UniqueId);
+        //        else
+        //            Frame.Navigate(typeof(FilterPage), group);
+        //    }
+        //}
 
-        private void FilterBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(RolePage), "Filter");
-            FilterBox.Text = string.Empty;
-        }
+        //private void FilterBox_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    Frame.Navigate(typeof(RolePage), "Filter");
+        //    FilterBox.Text = string.Empty;
+        //}
 
-        private void FilterBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
-        {
-            String filter = sender.Text.ToUpper();
-            if (String.IsNullOrEmpty(filter))
-                FilterBox.ItemsSource = null;
-            else
-                FilterBox.ItemsSource = suggestions.Where(s => s.ToUpper().StartsWith(filter));
-        }
+        //private void FilterBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        //{
+        //    String filter = sender.Text.ToUpper();
+        //    if (String.IsNullOrEmpty(filter))
+        //        FilterBox.ItemsSource = null;
+        //    else
+        //        FilterBox.ItemsSource = suggestions.Where(s => s.ToUpper().StartsWith(filter));
+        //}
 
-        private void FilterBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
-        {
-            Frame.Navigate(typeof(ChampionPage), args.SelectedItem as String);
-        }
+        //private void FilterBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        //{
+        //    Frame.Navigate(typeof(ChampionPage), args.SelectedItem as String);
+        //}
 
         private async void Share_Clicked(object sender, RoutedEventArgs e)
         {
@@ -253,6 +258,11 @@ namespace League_of_Legends_Counterpicks
         private void Tweet(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Twitter));
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RolePage), "Filter");
         }
 
 

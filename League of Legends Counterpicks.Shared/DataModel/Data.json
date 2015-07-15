@@ -1053,67 +1053,86 @@
                       "Karma"
                    ]
         },
-      {
-        "UniqueId": "Janna",
-        "ImagePath": "Assets/Janna_Square_0.png",
-        "Counters": [
-                      "Sona",
-                      "Sivir",
-                      "Nami",
-                      "Thresh",
-                      "Blitzcrank"
-                   ]
-        }, {
-        "UniqueId": "Lulu",
-        "ImagePath": "Assets/Lulu_Square_0.png",
-        "Counters": [
-                      "Soraka",
-                      "Sona",
-                      "Syndra",
-                      "Brand",
-                      "Ziggs"
-                   ]
-        }, {
-        "UniqueId": "Nami",
-        "ImagePath": "Assets/Nami_Square_0.png",
-        "Counters": [
-                      "Lulu",
-                      "Leona",
-                      "Fizz",
-                      "Morgana",
-                      "Thresh"
-                   ]
-        }, {
-        "UniqueId": "Nunu",
-        "ImagePath": "Assets/Nunu_Square_0.png",
-        "Counters": [
-                      "Braum",
-                      "Sona",
-                      "Soraka",
-                      "Sivir",
-                      "Janna"
-                   ]
-        }, {
-        "UniqueId": "Sona",
-        "ImagePath": "Assets/Sona_Square_0.png",
-        "Counters": [
-                      "Blitzcrank",
-                      "Thresh",
-                      "Leona",
-                      "Draven",
-                      "Twitch"
-                   ]
-        }, {
-        "UniqueId": "Soraka",
-        "ImagePath": "Assets/Soraka_Square_0.png",
-        "Counters": [
-                      "Miss Fortune",
-                      "Tristana",
-                      "Blitzcrank",
-                      "Thresh",
-                      "Leona"
-                   ]
-        }, {
+        {
+            "UniqueId": "Janna",
+            "ImagePath": "Assets/Janna_Square_0.png",
+            "Counters": [
+                "Sona",
+                "Sivir",
+                "Nami",
+                "Thresh",
+                "Blitzcrank"
+            ]
+        },
+        {
+            "UniqueId": "Lulu",
+            "ImagePath": "Assets/Lulu_Square_0.png",
+            "Counters": [
+                "Soraka",
+                "Sona",
+                "Syndra",
+                "Brand",
+                "Ziggs"
+            ]
+        },
+        {
+            "UniqueId": "Nami",
+            "ImagePath": "Assets/Nami_Square_0.png",
+            "Counters": [
+                "Lulu",
+                "Leona",
+                "Fizz",
+                "Morgana",
+                "Thresh"
+            ]
+        },
+        {
+            "UniqueId": "Nunu",
+            "ImagePath": "Assets/Nunu_Square_0.png",
+            "Counters": [
+                "Braum",
+                "Sona",
+                "Soraka",
+                "Sivir",
+                "Janna"
+            ]
+        },
+        {
+            "UniqueId": "Sona",
+            "ImagePath": "Assets/Sona_Square_0.png",
+            "Counters": [
+                "Blitzcrank",
+                "Thresh",
+                "Leona",
+                "Draven",
+                "Twitch"
+            ]
+        },
+        {
+            "UniqueId": "Soraka",
+            "ImagePath": "Assets/Soraka_Square_0.png",
+            "Counters": [
+                "Miss Fortune",
+                "Tristana",
+                "Blitzcrank",
+                "Thresh",
+                "Leona"
+            ]
+        },
+
+        {
+            "UniqueId": "Tahm Kench",
+            "ImagePath": "Assets/Tahm Kench_Square_0.png",
+            "Counters": [
+                "Vayne",
+                "Janna",
+                "Gnar",
+                "Twitch",
+                "Brand"
+            ]
+        },
+
+        {
         "UniqueId": "Taric",
         "ImagePath": "Assets/Taric_Square_0.png",
         "Counters": [
