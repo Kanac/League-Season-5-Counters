@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EdmModel_Validator_Semantic_InvalidOperationMultipleEndsInAssociation" xml:space="preserve">
+    <value>OnDelete can be specified on only one End of an EdmAssociation.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_ConcurrencyRedefinedOnSubTypeOfEntitySetType" xml:space="preserve">
+    <value>Type '{0}' is derived from type '{1}' that is the type for EntitySet '{2}'. Type '{0}' defines new concurrency requirements that are not allowed for subtypes of base EntitySet types.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmModel_NameIsTooLong" xml:space="preserve">
+    <value>The specified name must not be longer than 480 characters: '{0}'.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_EndNameAlreadyDefinedDuplicate" xml:space="preserve">
+    <value>Each Name and PluralName in a relationship must be unique. '{0}' is already defined.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmNavigationProperty_ResultEndMustNotBeNull" xml:space="preserve">
+    <value>ResultEnd must not be null.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_KeyMissingOnEntityType" xml:space="preserve">
+    <value>EntityType '{0}' has no key defined. Define the key for this EntityType.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidMemberNameMatchesTypeName" xml:space="preserve">
+    <value>Name �{0}� cannot be used in type �{1}�. Member names cannot be the same as their enclosing type.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidComplexTypeAbstract" xml:space="preserve">
+    <value>ComplexType '{0}' is marked as abstract. Abstract ComplexTypes are only supported in version 1.1 EDM models.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmAssociationEnd_EntityTypeMustNotBeNull" xml:space="preserve">
+    <value>EntityType must not be null.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidMultiplicityToRoleUpperBoundMustBeOne" xml:space="preserve">
+    <value>Multiplicity is not valid in Role '{0}' in relationship '{1}'. Because the Dependent Role refers to the key properties, the upper bound of the multiplicity of the Dependent Role must be �1�.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_BadNavigationPropertyRolesCannotBeTheSame" xml:space="preserve">
+    <value>NavigationProperty is not valid. The FromRole and ToRole are the same.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_SameRoleReferredInReferentialConstraint" xml:space="preserve">
+    <value>In relationship '{0}', the Principal and Dependent Role of the referential constraint refer to the same Role in the relationship type.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_SimilarRelationshipEnd" xml:space="preserve">
+    <value>Role '{0}' in AssociationSets �{1}� and �{2}� refers to the same EntitySet '{3}' in EntityContainer '{4}'. Make sure that if two or more AssociationSets refer to the same AssociationType, the ends do not refer to the same EntitySet.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidPropertyType" xml:space="preserve">
+    <value>A property cannot be of type �{0}�. The property type must be a ComplexType or a PrimitiveType.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_BadNavigationPropertyUndefinedRole" xml:space="preserve">
+    <value>NavigationProperty is not valid. Role �{0}� or Role �{1}� is not defined in Relationship �{2}�.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_EntitySetTypeHasNoKeys" xml:space="preserve">
+    <value>EntitySet �{0}� is based on type �{1}� that has no keys defined.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_DuplicateEntityContainerMemberName" xml:space="preserve">
+    <value>Each member name in an EntityContainer must be unique. A member with name '{0}' is already defined.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmAssociationConstraint_DependentEndMustNotBeNull" xml:space="preserve">
+    <value>DependentEnd must not be null.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidKeyNullablePart" xml:space="preserve">
+    <value>Key part '{0}' for type �{1}� is not valid. All parts of the key must be non-nullable.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmAssociationSet_TargetSetMustNotBeNull" xml:space="preserve">
+    <value>TargetSet must not be null.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_DuplicateEndName" xml:space="preserve">
+    <value>The end name  �{0}� is already defined.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmEntitySet_ElementTypeMustNotBeNull" xml:space="preserve">
+    <value>ElementType must not be null.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_SystemNamespaceEncountered" xml:space="preserve">
+    <value>The namespace '{0}' is a system namespace and cannot be used by other schemas. Choose another namespace name.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmTypeReferenceNotValid" xml:space="preserve">
+    <value>The type is not a valid EdmTypeReference.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidMultiplicityFromRoleUpperBoundMustBeOne" xml:space="preserve">
+    <value>Multiplicity is not valid in Role '{0}' in relationship '{1}'. Valid values for multiplicity for the Principal Role are '0..1' or '1'.</value>
+  </data>
+  <data name="Serializer_OneNamespaceAndOneContainer" xml:space="preserve">
+    <value>Serializer can only serialize an EdmModel that has one EdmNamespace and one EdmEntityContainer.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidMultiplicityFromRoleToPropertyNonNullableV1" xml:space="preserve">
+    <value>Multiplicity conflicts with the referential constraint in Role '{0}' in relationship '{1}'. Because at least one  of the properties in the Dependent Role is non-nullable, multiplicity of the Principal Role must be '1'.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidMultiplicityFromRoleToPropertyNonNullableV2" xml:space="preserve">
+    <value>Multiplicity conflicts with the referential constraint in Role '{0}' in relationship '{1}'. Because all of the properties in the Dependent Role are non-nullable, multiplicity of the Principal Role must be '1'.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_EndWithManyMultiplicityCannotHaveOperationsSpecified" xml:space="preserve">
+    <value>End '{0}' on relationship '{1}' cannot have an operation specified because its multiplicity is '*'. Operations cannot be specified on ends with multiplicity '*'.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_MissingName" xml:space="preserve">
+    <value>The name is missing or not valid.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidPropertyType_V1_1" xml:space="preserve">
+    <value>A property cannot be of type �{0}�. The property type must be a ComplexType, a PrimitiveType, or a CollectionType.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_DuplicatePropertyNameSpecifiedInEntityKey" xml:space="preserve">
+    <value>The key specified in EntityType '{0}' is not valid. Property '{1}' is referenced more than once in the Key element.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidMultiplicityToRoleUpperBoundMustBeMany" xml:space="preserve">
+    <value>Multiplicity is not valid in Role '{0}' in relationship '{1}'. Because the Dependent Role properties are not the key properties, the upper bound of the multiplicity of the Dependent Role must be �*�.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmAssociationConstraint_DependentPropertiesMustNotBeEmpty" xml:space="preserve">
+    <value>DependentProperties must not be empty.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_NullableComplexType" xml:space="preserve">
+    <value>A nullable ComplexType is not supported. Property '{0}' must not allow nulls.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidKeyKeyDefinedInBaseClass" xml:space="preserve">
+    <value>Key usage is not valid. The {0} class  cannot define keys because one of its base classes (�{1}�) defines keys.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_CycleInTypeHierarchy" xml:space="preserve">
+    <value>A cycle was detected in the type hierarchy of '{0}'.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidMultiplicityFromRoleToPropertyNullableV1" xml:space="preserve">
+    <value>Multiplicity is not valid in Role '{0}' in relationship '{1}'. Because all the properties in the Dependent Role are nullable, multiplicity of the Principal Role must be '0..1'.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidComplexTypePolymorphic" xml:space="preserve">
+    <value>ComplexType '{0}' has a BaseType specified. ComplexType inheritance is only supported in version 1.1 EDM models.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_TypeMismatchRelationshipConstraint" xml:space="preserve">
+    <value>The types of all properties in the Dependent Role of a referential constraint must be the same as the corresponding property types in the Principal Role. The type of property '{0}' on entity '{1}' does not match the type of property '{2}' on entity '{3}' in the referential constraint '{4}'.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmAssociationSet_ElementTypeMustNotBeNull" xml:space="preserve">
+    <value>ElementType must not be null.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidPropertyInRelationshipConstraint" xml:space="preserve">
+    <value>There is no property with name '{0}' defined in the type referred to by Role '{1}'.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_PropertyNameAlreadyDefinedDuplicate" xml:space="preserve">
+    <value>Each property name in a type must be unique. Property name '{0}' is already defined.</value>
+  </data>
+  <data name="EdmPrimitiveType_SetPropertyNotSupported" xml:space="preserve">
+    <value>The '{0}' property of EdmPrimitiveType is fixed and cannot be set.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_MismatchNumberOfPropertiesinRelationshipConstraint" xml:space="preserve">
+    <value>The number of properties in the Dependent and Principal Roles in a relationship constraint must be identical.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidCollectionKindNotCollection" xml:space="preserve">
+    <value>Property '{0}' has a CollectionKind specified but is not a collection property.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidCollectionKindNotV1_1" xml:space="preserve">
+    <value>Property '{0}' has a CollectionKind specified. CollectionKind is only supported in version 1.1 EDM models.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidToPropertyInRelationshipConstraint" xml:space="preserve">
+    <value>Properties referred by the Dependent Role �{0}� must be a subset of the key of the EntityType �{1}� referred to by the Dependent Role in the referential constraint for relationship �{2}�.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_InvalidEntitySetNameReference" xml:space="preserve">
+    <value>The referenced EntitySet �{0}� for End �{1}� could not be found in the containing EntityContainer.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_EntityKeyMustBeScalar" xml:space="preserve">
+    <value>The property '{0}' in EntityType '{1}' is not valid. All properties that are part of the EntityKey must be of PrimitiveType.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmAssociationType_AssocationEndMustNotBeNull" xml:space="preserve">
+    <value>AssociationEnd must not be null.</value>
+  </data>
+  <data name="EdmModel_Validator_Semantic_TypeNameAlreadyDefinedDuplicate" xml:space="preserve">
+    <value>Each type name in a schema must be unique. Type name '{0}' is already defined.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmNavigationProperty_AssocationMustNotBeNull" xml:space="preserve">
+    <value>Association must not be null.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmModel_NameIsNotAllowed" xml:space="preserve">
+    <value>The specified name is not allowed: '{0}'.</value>
+  </data>
+  <data name="EdmModel_Validator_Syntactic_EdmAssociationSet_SourceSetMustNotBeNull" xml:space="preserve">
+    <value>SourceSet must not be null.</value>
+  </data>
+</root>

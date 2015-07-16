@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "League of Legends Counterpi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks", "Tasks\Tasks.csproj", "{6FE453CD-1611-4DF9-ACA9-E04B71EE0DD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueSeason5CountersService", "LeagueSeason5CountersService\LeagueSeason5CountersService.csproj", "{209FA716-A7AD-4095-BD70-C8710FC66FA7}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		League of Legends Counterpicks.Shared\League of Legends Counterpicks.Shared.projitems*{7ee27609-21ac-4764-aeee-95ec0a7a07dd}*SharedItemsImports = 4
@@ -115,6 +117,21 @@ Global
 		{6FE453CD-1611-4DF9-ACA9-E04B71EE0DD5}.test|ARM.ActiveCfg = Release|Any CPU
 		{6FE453CD-1611-4DF9-ACA9-E04B71EE0DD5}.test|x64.ActiveCfg = Release|Any CPU
 		{6FE453CD-1611-4DF9-ACA9-E04B71EE0DD5}.test|x86.ActiveCfg = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Release|ARM.ActiveCfg = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Release|x64.ActiveCfg = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Release|x86.ActiveCfg = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.test|Any CPU.Build.0 = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.test|ARM.ActiveCfg = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.test|x64.ActiveCfg = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.test|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,5 +141,6 @@ Global
 		{F498E992-E309-44D6-B039-225BE3CC63CC} = {99806ED6-1F53-4521-ACB0-E7C027B41F3A}
 		{B520D94E-7B43-42B3-B76F-BBC217F05B50} = {99806ED6-1F53-4521-ACB0-E7C027B41F3A}
 		{6FE453CD-1611-4DF9-ACA9-E04B71EE0DD5} = {99806ED6-1F53-4521-ACB0-E7C027B41F3A}
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7} = {99806ED6-1F53-4521-ACB0-E7C027B41F3A}
 	EndGlobalSection
 EndGlobal

@@ -53,20 +53,18 @@
                 <RowDefinition Height="1.2*" />
                 <RowDefinition Height="9*" />
             </Grid.RowDefinitions>
-            <StackPanel>
-                <AutoSuggestBox x:ConnectionId='5' x:Name="FilterBox"
-                                                             
-                                                                   
-                                                                             
-                                                       
-                                Margin="15,0,15,0" />
-            </StackPanel>
+               
+            <TextBox x:ConnectionId='4' Margin="15,0,15,0"
+                     IsReadOnly="True"
+                                                
+                     TextAlignment="Center"
+                     Text="Tap to Search"></TextBox>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <ListView x:ConnectionId='4' ItemsSource="{Binding Roles}"
+                <ListView x:ConnectionId='5' ItemsSource="{Binding Roles}"
                           Grid.Row="1"
                           IsItemClickEnabled="True"
                                                             >
@@ -93,7 +91,7 @@
                                    TextAlignment="Center"
                                    FontSize="19"
                                    VerticalAlignment="Center"
-                                   Foreground="#FFF3FD29"> Ekko update is here and more!</TextBlock>
+                                   Foreground="#FFF3FD29"> Tahm Kench update is here and more!</TextBlock>
                     </Grid>
                 </Grid>
             </Grid>

@@ -1,5 +1,6 @@
 ﻿using League_of_Legends_Counterpicks.Common;
 using League_of_Legends_Counterpicks.Data;
+using League_of_Legends_Counterpicks.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -35,19 +36,20 @@ namespace League_of_Legends_Counterpicks
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private readonly String APP_ID = "3366702e-67c7-48e7-bc82-d3a4534f3086";
-        private List<Image> ChampList = new List<Image>();
-        private List<StackPanel> StackList = new List<StackPanel>();
         private ObservableCollection<String> counters = new ObservableCollection<string>();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private String feedback = String.Empty;
+        private CommentDataSource commentViewModel = new CommentDataSource(App.MobileService);
+        private ChampionFeedback championFeedback;
+
 
         public ChampionPage()
         {
             this.InitializeComponent();
-
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+
 
         }
 
@@ -105,10 +107,16 @@ namespace League_of_Legends_Counterpicks
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session.  The state will be null the first time a page is visited.</param>
-        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             reviewApp();
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data
+            var champName = (string)e.NavigationParameter;
+
+            Champion champion = DataSource.GetChampion(champName);
+            this.DefaultViewModel["Champion"] = champion;
+            this.DefaultViewModel["Role"] = DataSource.GetRoleId(champion.UniqueId);
+            counters = (this.DefaultViewModel["Champion"] as Champion).Counters;
+
             //If navigating via a counterpick, on loading that page, remove the previous history so the back page will go to main or role, not champion
             var prevPage = Frame.BackStack.ElementAt(Frame.BackStackDepth - 1);
             if (prevPage.SourcePageType.Equals(typeof(ChampionPage)))
@@ -116,11 +124,35 @@ namespace League_of_Legends_Counterpicks
                 Frame.BackStack.RemoveAt(Frame.BackStackDepth - 1);
                 Debug.WriteLine("Done");
             }
-            String championId = (string)e.NavigationParameter;
-            Champion champion = DataSource.GetChampion(championId);
-            this.DefaultViewModel["Champion"] = champion;
-            this.DefaultViewModel["Role"] = DataSource.GetRoleId(champion.UniqueId);
-            counters = (this.defaultViewModel["Champion"] as Champion).Counters;
+
+
+            await commentViewModel.GetAllChampionFeedbackAsync();
+            await commentViewModel.GetAllCommentsAsync();
+            var query = commentViewModel.ChampionFeedbackCollection.Where(x => x.Name.Equals(champName));
+            var count = query.Count();
+
+            //Check if the ChampionFeedbackCollection is created on the server yet
+            if (count == 0)
+            {
+                championFeedback = new ChampionFeedback()
+                {
+                    Name = champName
+                };
+
+                await commentViewModel.AddChampionFeedbackAsync(championFeedback);
+
+            }
+            //Otherwise, use the one created already
+            else
+            {
+                championFeedback = query.ElementAt(0);
+            }
+
+            this.defaultViewModel["Comments"] = championFeedback.Comments;
+
+            // TODO: Create an appropriate data model for your problem domain to replace the sample data
+
+
         }
 
         /// <summary>
@@ -176,20 +208,21 @@ namespace League_of_Legends_Counterpicks
 
         private async void Send_Feedback(object sender, TappedRoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(feedback)) {
-                MessageDialog emptyBox = new MessageDialog("Write a message first!");
-                await emptyBox.ShowAsync();
-                return;
-            }
-            EmailRecipient sendTo = new EmailRecipient() {Address = "testgglol@outlook.com"};
-            EmailMessage mail = new EmailMessage();
+            //if (String.IsNullOrEmpty(feedback)) {
+            //    MessageDialog emptyBox = new MessageDialog("Write a message first!");
+            //    await emptyBox.ShowAsync();
+            //    return;
+            //}
+            //EmailRecipient sendTo = new EmailRecipient() {Address = "testgglol@outlook.com"};
+            //EmailMessage mail = new EmailMessage();
 
-            var champ = this.DefaultViewModel["Champion"] as Champion;
-            mail.Subject = "Feedback for " + champ.UniqueId;
-            mail.Body = feedback;
-            mail.To.Add(sendTo);
-            await EmailManager.ShowComposeNewEmailAsync(mail);
-            
+            //var champ = this.DefaultViewModel["Champion"] as Champion;
+            //mail.Subject = "Feedback for " + champ.UniqueId;
+            //mail.Body = feedback;
+            //mail.To.Add(sendTo);
+            //await EmailManager.ShowComposeNewEmailAsync(mail);
+
+            await commentViewModel.SubmitCommentAsync(championFeedback, feedback);
 
         }
 

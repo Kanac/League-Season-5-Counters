@@ -179,43 +179,6 @@ namespace League_of_Legends_Counterpicks
         #endregion
 
 
-        private void OnAddError(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
-        {
-            System.Diagnostics.Debug.WriteLine("AdControl error (" + ((AdControl)sender).Name + "): " + e.Error + " ErrorCode: " + e.ErrorCode.ToString());
-        }
-
-        //private void KeyDown_Event(object sender, KeyRoutedEventArgs e)
-        //{
-        //    if (e.Key == Windows.System.VirtualKey.Enter) {
-
-        //        string filter = FilterBox.Text;
-        //        var group = DataSource.FilterChampions(filter);
-        //        if (group.Champions.Count == 1)
-        //            Frame.Navigate(typeof(ChampionPage), group.Champions[0].UniqueId);
-        //        else
-        //            Frame.Navigate(typeof(FilterPage), group);
-        //    }
-        //}
-
-        //private void FilterBox_GotFocus(object sender, RoutedEventArgs e)
-        //{
-        //    Frame.Navigate(typeof(RolePage), "Filter");
-        //    FilterBox.Text = string.Empty;
-        //}
-
-        //private void FilterBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
-        //{
-        //    String filter = sender.Text.ToUpper();
-        //    if (String.IsNullOrEmpty(filter))
-        //        FilterBox.ItemsSource = null;
-        //    else
-        //        FilterBox.ItemsSource = suggestions.Where(s => s.ToUpper().StartsWith(filter));
-        //}
-
-        //private void FilterBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
-        //{
-        //    Frame.Navigate(typeof(ChampionPage), args.SelectedItem as String);
-        //}
 
         private async void Share_Clicked(object sender, RoutedEventArgs e)
         {

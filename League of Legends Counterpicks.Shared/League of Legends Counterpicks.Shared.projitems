@@ -157,6 +157,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\FilterFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NameToImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\CommentDataSourcecs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\DataSource.cs" />
   </ItemGroup>
   <ItemGroup>

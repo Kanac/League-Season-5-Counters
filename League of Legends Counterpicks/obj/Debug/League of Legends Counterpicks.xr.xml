@@ -10,6 +10,9 @@
     <RootPropertyPathName Name="ImagePath" />
     <RootPropertyPathName Name="UniqueId" />
     <RootPropertyPathName Name="Roles" />
+    <RootPropertyPathName Name="Comments" />
+    <RootPropertyPathName Name="Text" />
+    <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="Champion" />
     <RootPropertyPathName Name="Counters" />
     <RootPropertyPathName Name="Filter" />
@@ -24,24 +27,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
       <RootProperty Name="ImageSource" />
-    </RootType>
-    <RootType FullName="Microsoft.AdMediator.WindowsPhone81.AdMediatorControl">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Id" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
-      <RootEvent Name="AdSdkError" />
-      <RootEvent Name="AdMediatorError" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Setter">
-      <RootProperty Name="Property" />
-      <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Background" />
@@ -65,6 +50,10 @@
       <RootProperty Name="CharacterSpacing" />
       <RootProperty Name="FontFamily" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Property" />
+      <RootProperty Name="Value" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="RowDefinitions" />
@@ -81,6 +70,15 @@
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Microsoft.AdMediator.WindowsPhone81.AdMediatorControl">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Id" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootEvent Name="AdSdkError" />
+      <RootEvent Name="AdMediatorError" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Children" />

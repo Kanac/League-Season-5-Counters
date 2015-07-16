@@ -1,8 +1,10 @@
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\App.xbf
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\ChangeLog.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\FilterPage.xbf
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\MainPage.xbf
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\ChampionPage.xbf
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\RolePage.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Twitter.xbf
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\League of Legends Counterpicks.xr.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\League of Legends Counterpicks.exe
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\League of Legends Counterpicks.pdb
@@ -19,7 +21,16 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.Advertising.Mobile.Common.winmd
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.Advertising.Mobile.Display.winmd
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.Advertising.Mobile.UI.winmd
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.WindowsAzure.Mobile.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.WindowsAzure.Mobile.Ext.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\QKit.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\SOMAWP81.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Tasks.winmd
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Tasks.pdb
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Tasks.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\AdDuplex.Universal.Controls.WinPhone.XAML.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\AdDuplex.Universal.WinPhone.WinRT.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.Advertising.Mobile.Common.xml
@@ -28,36 +39,52 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.Advertising.Mobile.Display.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.Advertising.Mobile.UI.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.Advertising.Mobile.UI.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.WindowsAzure.Mobile.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Microsoft.WindowsAzure.Mobile.Ext.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\QKit.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\QKit.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\SOMAWP81.pdb
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\SOMAWP81.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\League of Legends Counterpicks.csprojResolveAssemblyReference.cache
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\App.g.i.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\App.g.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\ChangeLog.g.i.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\ChangeLog.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\FilterPage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\FilterPage.g.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\MainPage.g.i.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\MainPage.g.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\ChampionPage.g.i.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\ChampionPage.g.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\RolePage.g.i.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\RolePage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Twitter.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Twitter.g.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\XamlTypeInfo.g.cs
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\App.xaml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\ChangeLog.xaml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\FilterPage.xaml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\MainPage.xaml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\ChampionPage.xaml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\RolePage.xaml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Twitter.xaml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\App.xbf
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\ChangeLog.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\FilterPage.xbf
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\MainPage.xbf
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\ChampionPage.xbf
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\XamlSaveStateFile.xml
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\RolePage.xaml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\RolePage.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Twitter.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\XamlSaveStateFile.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\League of Legends Counterpicks.exe
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\League of Legends Counterpicks.pdb
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Microsoft.WindowsAzure.Mobile\en-US\Microsoft.WindowsAzure.MobileServices.Resources.resw
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\League of Legends Counterpicks.csproj.GenerateResource.Cache
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Microsoft.WindowsAzure.Mobile.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Microsoft.WindowsAzure.Mobile\qualifiers.txt
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\priconfig.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\priconfig.xml.intermediate
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\layout.resfiles
@@ -77,17 +104,19 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\QKit.pri.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\SOMAWP81.pri.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\ProjectArchitectures.txt
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\QKit.dll
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\FilterPage.xbf
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\FilterPage.g.i.cs
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\FilterPage.g.cs
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\FilterPage.xaml
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\FilterPage.xbf
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Tasks.winmd
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Tasks.pdb
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Tasks.pri
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\Twitter.xbf
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Twitter.g.i.cs
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Twitter.g.cs
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Twitter.xaml
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\Twitter.xbf
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\EntityFramework.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Debug\EntityFramework.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\en-US\System.ComponentModel.DataAnnotations.Resources.resw
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\en-US\System.Data.Entity.ModelConfiguration.Resources.resw
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\en-US\System.Data.Entity.Resources.resw
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\en-US\System.Data.Edm.resw
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\layout.resfiles
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\layout.resfiles.intermediate
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\Resources.resfiles
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\Resources.resfiles.intermediate
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\pri.resfiles
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\pri.resfiles.intermediate
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\priconfig.xml
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\priconfig.xml.intermediate
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework.pri
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Debug\EntityFramework\qualifiers.txt

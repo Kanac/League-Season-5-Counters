@@ -1,0 +1,17 @@
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\League of Legends Counterpicks.csprojResolveAssemblyReference.cache
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\App.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\App.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\ChangeLog.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\ChangeLog.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\FilterPage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\FilterPage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\MainPage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\MainPage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\ChampionPage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\ChampionPage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\RolePage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\RolePage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\Twitter.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\Twitter.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\XamlTypeInfo.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\x86\Release\XamlSaveStateFile.xml

@@ -6,7 +6,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
       xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
-      xmlns:valueconverter="using:League_of_Legends_Counterpicks.Converters"
+      xmlns:ValueConverter="using:League_of_Legends_Counterpicks.Converters"
       x:Name="pageRoot"
       x:Class="League_of_Legends_Counterpicks.ChampionPage"
       mc:Ignorable="d"
@@ -16,12 +16,12 @@
 
 
     <Page.Resources>
-        <valueconverter:NameToImage x:Key="NameToImageConverter" />
+        <ValueConverter:NameToImage x:Key="NameToImageConverter" />
     </Page.Resources>
 
 
     <Grid x:Name="LayoutRoot">
-        
+
         <Hub x:Name="Hubaa"
              x:Uid="Hubaa"
              Grid.Row="1">
@@ -35,7 +35,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*" />
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
 
@@ -78,7 +78,9 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="{Binding Champion.ImagePath}" Width="80" Height="80"/>
+                                <Image Source="{Binding Champion.ImagePath}"
+                                       Width="80"
+                                       Height="80" />
                             </StackPanel>
                             <StackPanel Grid.Column="1"
                                         Orientation="Vertical"
@@ -284,8 +286,28 @@
                     </Grid>
                 </DataTemplate>
             </HubSection>
+
+            <HubSection>
+                <DataTemplate>
+                    <ListView ItemsSource="{Binding Comments}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="0,0,0,15">
+                                    <TextBlock FontSize="30"
+                                               Text="{Binding User}">
+                                    </TextBlock>
+                                    <TextBlock FontSize="20"
+                                               Text="{Binding Text}">
+                                    </TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </DataTemplate>
+            </HubSection>
         </Hub>
-       
+
     </Grid>
 
 </Page>

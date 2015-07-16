@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 using Windows.ApplicationModel.Background;
+using Microsoft.WindowsAzure.MobileServices;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -31,9 +32,12 @@ namespace League_of_Legends_Counterpicks
     /// </summary>
     public sealed partial class App : Application
     {
-  
-        
-        private TransitionCollection transitions;
+        // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
+        public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient MobileService = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
+        "https://leagueseason5counters.azure-mobile.net/",
+        "iovrWRisXiqXDzBpSreDZoSWrCPskN14");
+
+          private TransitionCollection transitions;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

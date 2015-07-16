@@ -420,7 +420,7 @@
                                                       Height="Auto"
                                                       Width="Auto"
                                                       Grid.Row="3" />-->
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <!--<UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                                   VerticalAlignment="Top"
                                   Grid.Row="1"
@@ -435,7 +435,7 @@
                                   Height="80"
                                   Grid.Row="3"
                                   AutoRefreshIntervalInSeconds="60"
-                                  AdUnitId="228836  " />
+                                  AdUnitId="228836  " />-->
                     <ContentControl ContentTemplate="{StaticResource HubData}"
                                     Grid.Row="2" />
                 </Grid>

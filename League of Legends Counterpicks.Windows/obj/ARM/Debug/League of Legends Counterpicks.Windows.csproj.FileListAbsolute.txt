@@ -1,0 +1,10 @@
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\ARM\Debug\App.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\ARM\Debug\App.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\ARM\Debug\ChampionPage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\ARM\Debug\ChampionPage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\ARM\Debug\MainPage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\ARM\Debug\MainPage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\ARM\Debug\RolePage.g.i.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\ARM\Debug\RolePage.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\ARM\Debug\XamlTypeInfo.g.cs
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\ARM\Debug\XamlSaveStateFile.xml

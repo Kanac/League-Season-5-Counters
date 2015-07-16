@@ -61,6 +61,7 @@
 "C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\PackageLayout\Assets\Teemo_Square_0.png"			"Assets\Teemo_Square_0.png"
 "C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\PackageLayout\Assets\Taric_Square_0.png"			"Assets\Taric_Square_0.png"
 "C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\PackageLayout\Assets\Talon_Square_0.png"			"Assets\Talon_Square_0.png"
+"C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\PackageLayout\Assets\Tahm Kench_Square_0.png"			"Assets\Tahm Kench_Square_0.png"
 "C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\PackageLayout\Assets\Syndra_Square_0.png"			"Assets\Syndra_Square_0.png"
 "C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\PackageLayout\Assets\Swain_Square_0.png"			"Assets\Swain_Square_0.png"
 "C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\Release\PackageLayout\Assets\StoreLogo.scale-240.png"			"Assets\StoreLogo.scale-240.png"
