@@ -41,6 +41,7 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClientServer" />
+    <m3:Capability Name="contacts" />
   </Capabilities>
   <Extensions>
     <Extension Category="windows.activatableClass.inProcessServer">

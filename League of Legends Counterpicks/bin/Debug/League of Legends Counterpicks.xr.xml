@@ -10,10 +10,12 @@
     <RootPropertyPathName Name="ImagePath" />
     <RootPropertyPathName Name="UniqueId" />
     <RootPropertyPathName Name="Roles" />
-    <RootPropertyPathName Name="Comments" />
+    <RootPropertyPathName Name="PlayingComments" />
     <RootPropertyPathName Name="Text" />
     <RootPropertyPathName Name="User" />
+    <RootPropertyPathName Name="Score" />
     <RootPropertyPathName Name="Champion" />
+    <RootPropertyPathName Name="Comments" />
     <RootPropertyPathName Name="Counters" />
     <RootPropertyPathName Name="Filter" />
     <RootPropertyPathName Name="GroupedChampions" />
@@ -49,6 +51,10 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="CharacterSpacing" />
       <RootProperty Name="FontFamily" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="MaxWidth" />
+      <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
@@ -126,8 +132,10 @@
       <RootProperty Name="Source" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Name" />
       <RootProperty Name="Stretch" />
       <RootProperty Name="Opacity" />
+      <RootEvent Name="Loaded" />
       <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="League_of_Legends_Counterpicks.FilterPage" />
@@ -146,6 +154,9 @@
       <RootProperty Name="IsReadOnly" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Text" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="TextWrapping" />
       <RootProperty Name="Height" />
       <RootEvent Name="GotFocus" />
       <RootEvent Name="LostFocus" />
@@ -162,6 +173,8 @@
     </RootType>
     <RootType FullName="League_of_Legends_Counterpicks.MainPage" />
     <RootType FullName="League_of_Legends_Counterpicks.Converters.NameToImage" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterFormat" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.PlayingFormat" />
     <RootType FullName="Windows.UI.Xaml.Controls.Hub">
       <RootProperty Name="Sections" />
       <RootProperty Name="Name" />
@@ -182,6 +195,13 @@
       <RootProperty Name="Height" />
       <RootProperty Name="AutoRefreshIntervalInSeconds" />
       <RootProperty Name="AdUnitId" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
+      <RootProperty Name="GroupName" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Content" />
+      <RootEvent Name="Checked" />
     </RootType>
     <RootType FullName="League_of_Legends_Counterpicks.ChampionPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ContentControl">

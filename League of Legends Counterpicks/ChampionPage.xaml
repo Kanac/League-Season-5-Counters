@@ -17,17 +17,18 @@
 
     <Page.Resources>
         <ValueConverter:NameToImage x:Key="NameToImageConverter" />
+        <ValueConverter:CounterFormat x:Key="CounterConverter" />
+        <ValueConverter:PlayingFormat x:Key="PlayingConverter" />
     </Page.Resources>
 
 
     <Grid x:Name="LayoutRoot">
 
-        <Hub x:Name="Hubaa"
-             x:Uid="Hubaa"
+        <Hub x:Name="MainHub"
              Grid.Row="1">
 
-            <HubSection x:Name="HubSection1"
-                        x:Uid="HubSection1">
+            <HubSection x:Name="CounterSection"
+                        x:Uid="CounterSection">
 
                 <DataTemplate>
 
@@ -233,14 +234,16 @@
             </HubSection>
 
 
-            <HubSection>
+            <HubSection x:Name="SubmitFeedbackSection">
                 <DataTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="3.5*" />
-                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
                         <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_23F5B5"
@@ -265,20 +268,49 @@
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
-                                      Grid.Row="4"
+                                      Grid.Row="6"
                                       AutoRefreshIntervalInSeconds="60"
                                       AdUnitId="228832" />
+
+
 
                         <TextBlock x:Name="Feedback"
                                    FontSize="35"
                                    Grid.Row="1"
+                                   Text="Submit Comments?"
                                    VerticalAlignment="Center"
-                                   TextWrapping="Wrap">Submit feedback to these counters?</TextBlock>
-                        <TextBox Height="300"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap"></TextBlock>
+
+
+                        <RadioButton GroupName="RadioGroup"
+                                     Grid.Row="2"
+                                     HorizontalAlignment="Left"
+                                     Margin="50,0,0,0"
+                                     Checked="Counter_Checked"
+                                     Content="Counter"></RadioButton>
+                        <RadioButton GroupName="RadioGroup"
+                                     Grid.Row="2"
+                                     HorizontalAlignment="Right"
+                                     Checked="Playing_Checked"
+                                     Content="Playing As"></RadioButton>
+
+                        <TextBox Margin="30,0,30,0"
+                                 Grid.Row="3"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
+                                 Text="Your name"
+                                 TextAlignment="Center"
+                                 GotFocus="Name_Focus"
+                                 LostFocus="Name_Written"></TextBox>
+
+                        <TextBox HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
                                  Margin="0,10,0,0"
-                                 Grid.Row="2"
+                                 Grid.Row="4"
+                                 TextWrapping="Wrap"
                                  LostFocus="Feedback_Written"></TextBox>
-                        <Button Grid.Row="3"
+                        <Button Grid.Row="5"
                                 VerticalAlignment="Bottom"
                                 HorizontalAlignment="Center"
                                 Tapped="Send_Feedback">Send</Button>
@@ -287,27 +319,155 @@
                 </DataTemplate>
             </HubSection>
 
-            <HubSection>
+            <HubSection x:Name="CounterCommentSection">
                 <DataTemplate>
-                    <ListView ItemsSource="{Binding Comments}">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Margin="0,0,0,15">
-                                    <TextBlock FontSize="30"
-                                               Text="{Binding User}">
-                                    </TextBlock>
-                                    <TextBlock FontSize="20"
-                                               Text="{Binding Text}">
-                                    </TextBlock>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="80"></RowDefinition>
+                        </Grid.RowDefinitions>
 
+                        <TextBlock Grid.Row="1"
+                                   FontSize="35"
+                                   Text="{Binding Champion.UniqueId, Converter={StaticResource CounterConverter}}"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap">
+                        </TextBlock>
+
+                        <TextBlock Grid.Row="2"
+                                   Visibility="Collapsed"
+                                   Name="NoCommentMessage"
+                                   FontSize="30"
+                                   TextAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Loaded="CounterMessage_Loaded"
+                                   TextWrapping="Wrap"> Be the first to submit a comment!</TextBlock>
+
+                        <ScrollViewer Grid.Row="2">
+                            <ListView ItemsSource="{Binding Comments}"
+                                      IsItemClickEnabled="True">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal"
+                                                    Grid.Row="2">
+                                            <StackPanel Margin="0,0,10,0">
+                                                <Image Name="UpvoteImage"
+                                                       Source="Assets/upvoteblank.png"
+                                                       Height="30"
+                                                       Width="30"
+                                                       Loaded="Upvote_Loaded"
+                                                       Tapped="Upvote_Tapped">
+                                                </Image>
+                                                <TextBlock Text="{Binding Score}"
+                                                           VerticalAlignment="Center"
+                                                           HorizontalAlignment="Center"
+                                                           FontSize="20">
+                                                </TextBlock>
+                                                <Image Name="DownvoteImage"
+                                                       Source="Assets/downvoteblank.png"
+                                                       Height="30"
+                                                       Width="30"
+                                                       Loaded="Downvote_Loaded"
+                                                       Tapped="Downvote_Tapped">
+                                                </Image>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,0,0,10">
+                                                <TextBlock FontSize="30"
+                                                           Text="{Binding User}">
+                                                </TextBlock>
+                                                <TextBlock FontSize="20"
+                                                           TextWrapping="Wrap"
+                                                           MaxWidth="300"
+                                                           Text="{Binding Text}">
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollViewer>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection x:Name="PlayingCommentSection">
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="80"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="1"
+                                   FontSize="35"
+                                   Text="{Binding Champion.UniqueId, Converter={StaticResource PlayingConverter}}"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap">
+                        </TextBlock>
+
+                        <TextBlock Grid.Row="2"
+                                   Visibility="Collapsed"
+                                   Name="NoCommentMessage2"
+                                   FontSize="30"
+                                   TextAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Loaded="PlayingComments_Loaded"
+                                   TextWrapping="Wrap"> Be the first to submit a comment!</TextBlock>
+
+                        <ScrollViewer Grid.Row="2">
+                            <ListView ItemsSource="{Binding PlayingComments}"
+                                      IsItemClickEnabled="True">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal"
+                                                    Grid.Row="2">
+                                            <StackPanel Margin="0,0,10,0">
+                                                <Image Name="UpvoteImage"
+                                                       Source="Assets/upvoteblank.png"
+                                                       Height="30"
+                                                       Width="30"
+                                                       Loaded="Upvote_Loaded"
+                                                       Tapped="Upvote_Tapped">
+                                                </Image>
+                                                <TextBlock Text="{Binding Score}"
+                                                           VerticalAlignment="Center"
+                                                           HorizontalAlignment="Center"
+                                                           FontSize="20">
+                                                </TextBlock>
+                                                <Image Name="DownvoteImage"
+                                                       Source="Assets/downvoteblank.png"
+                                                       Height="30"
+                                                       Width="30"
+                                                       Loaded="Downvote_Loaded"
+                                                       Tapped="Downvote_Tapped">
+                                                </Image>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,0,0,10">
+                                                <TextBlock FontSize="30"
+                                                           Text="{Binding User}">
+                                                </TextBlock>
+                                                <TextBlock FontSize="20"
+                                                           TextWrapping="Wrap"
+                                                           MaxWidth="300"
+                                                           Text="{Binding Text}">
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollViewer>
+                    </Grid>
                 </DataTemplate>
             </HubSection>
         </Hub>
-
     </Grid>
-
 </Page>

@@ -145,3 +145,11 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.CustomEntity.resources
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.CustomEntity2.resources
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.csproj.GenerateResource.Cache
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.CustomEntity3.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.mapperChange.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.commentchange.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.test.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations._virtual.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.DtoUpdate.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.DtoUpdate2.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.AddPageAndChampName.resources

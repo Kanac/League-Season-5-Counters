@@ -1,5 +1,7 @@
 C:\Users\Anthony\Downloads\LeagueSeason5Counters_\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.csproj.App.config
 C:\Users\Anthony\Downloads\LeagueSeason5Counters_\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.csprojResolveAssemblyReference.cache
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\RazorEngine.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.resources.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\AutoMapper.Net4.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\LeagueSeason5CountersService.dll.config
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\LeagueSeason5CountersService.dll
@@ -32,7 +34,6 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\Microsoft.WindowsAzure.Mobile.Service.Tables.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\Newtonsoft.Json.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\Owin.dll
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\RazorEngine.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\System.Net.Http.Extensions.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\System.Net.Http.Formatting.dll
@@ -109,7 +110,6 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\it\Microsoft.WindowsAzure.Mobile.Service.resources.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\ja\Microsoft.WindowsAzure.Mobile.Service.resources.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\ko\Microsoft.WindowsAzure.Mobile.Service.resources.dll
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.resources.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\zh-Hans\Microsoft.WindowsAzure.Mobile.Service.resources.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\zh-Hant\Microsoft.WindowsAzure.Mobile.Service.resources.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\de\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
@@ -141,9 +141,17 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.csproj.App.config
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.csprojResolveAssemblyReference.cache
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.csproj.GenerateResource.Cache
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.dll
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.pdb
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.Initial.resources
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.CustomEntity.resources
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.CustomEntity2.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.CustomEntity3.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.csproj.GenerateResource.Cache
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.dll
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.pdb
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.mapperChange.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.commentchange.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.test.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations._virtual.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.DtoUpdate.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.DtoUpdate2.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.AddPageAndChampName.resources

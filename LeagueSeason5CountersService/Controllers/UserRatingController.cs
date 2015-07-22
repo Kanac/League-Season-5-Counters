@@ -6,40 +6,42 @@ using System.Web.Http.OData;
 using Microsoft.WindowsAzure.Mobile.Service;
 using LeagueSeason5CountersService.DataObjects;
 using LeagueSeason5CountersService.Models;
+using LeagueSeason5CountersService.MappedDomainManager;
 
 namespace LeagueSeason5CountersService.Controllers
 {
-    public class UserRatingController : TableController<UserRating>
+    public class UserRatingController : TableController<UserRatingDto>
     {
+        private LeagueSeason5CountersContext context = new LeagueSeason5CountersContext();
+
         protected override void Initialize(HttpControllerContext controllerContext)
         {
             base.Initialize(controllerContext);
-            LeagueSeason5CountersContext context = new LeagueSeason5CountersContext();
-            DomainManager = new EntityDomainManager<UserRating>(context, Request, Services);
+            DomainManager = new SimpleMappedEntityDomainManager<UserRatingDto, UserRating>(context, Request, Services, userRating => userRating.Id);
         }
 
         // GET tables/UserRating
-        public IQueryable<UserRating> GetAllUserRating()
+        public IQueryable<UserRatingDto> GetAllUserRating()
         {
             return Query(); 
         }
 
         // GET tables/UserRating/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public SingleResult<UserRating> GetUserRating(string id)
+        public SingleResult<UserRatingDto> GetUserRating(string id)
         {
             return Lookup(id);
         }
 
         // PATCH tables/UserRating/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public Task<UserRating> PatchUserRating(string id, Delta<UserRating> patch)
+        public Task<UserRatingDto> PatchUserRating(string id, Delta<UserRatingDto> patch)
         {
              return UpdateAsync(id, patch);
         }
 
         // POST tables/UserRating
-        public async Task<IHttpActionResult> PostUserRating(UserRating item)
+        public async Task<IHttpActionResult> PostUserRating(UserRatingDto item)
         {
-            UserRating current = await InsertAsync(item);
+            UserRatingDto current = await InsertAsync(item);
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 

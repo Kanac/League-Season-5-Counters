@@ -28,6 +28,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Corki_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Darius_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Diana_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\downvote.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\downvoteblank.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Draven_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Dr. Mundo_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Ekko_Square_0.png" />
@@ -81,6 +83,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Miss Fortune_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Tahm Kench_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Tweet.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\upvote.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\upvoteblank.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Wukong_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Mordekaiser_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Morgana_Square_0.png" />
@@ -157,8 +161,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\FilterFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NameToImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CounterFormat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\PlayingFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\CommentDataSourcecs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\DataSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\FindVisualChildren.cs" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw" />

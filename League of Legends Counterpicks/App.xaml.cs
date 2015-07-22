@@ -35,7 +35,13 @@ namespace League_of_Legends_Counterpicks
         // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
         public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient MobileService = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
         "https://leagueseason5counters.azure-mobile.net/",
-        "iovrWRisXiqXDzBpSreDZoSWrCPskN14");
+        "iovrWRisXiqXDzBpSreDZoSWrCPskN14")
+        {
+            SerializerSettings = new MobileServiceJsonSerializerSettings()
+              {
+                  CamelCasePropertyNames = true
+              }
+        };
 
           private TransitionCollection transitions;
 

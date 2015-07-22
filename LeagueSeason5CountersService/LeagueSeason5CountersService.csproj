@@ -262,15 +262,21 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ChampionFeedbackController.cs" />
-    <Compile Include="Controllers\CommentController.cs" />
-    <Compile Include="Controllers\UserRatingController.cs" />
+    <Compile Include="Controllers\CommentController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\UserRatingController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CustomEntityData\CustomEntityData.cs" />
     <Compile Include="DataObjects\ChampionFeedback.cs" />
     <Compile Include="DataObjects\ChampionFeedbackDto.cs" />
     <Compile Include="DataObjects\Comment.cs" />
     <Compile Include="DataObjects\CommentDto.cs" />
+    <Compile Include="DataObjects\PageEnum.cs" />
     <Compile Include="DataObjects\UserRating.cs" />
     <Compile Include="DataObjects\UserRatingDto.cs" />
+    <Compile Include="MappedDomainManager\SimpleMappedEntityDomainManager.cs" />
     <Compile Include="Migrations\201507152131120_Initial.cs" />
     <Compile Include="Migrations\201507152131120_Initial.Designer.cs">
       <DependentUpon>201507152131120_Initial.cs</DependentUpon>
@@ -282,6 +288,38 @@
     <Compile Include="Migrations\201507160127129_CustomEntity2.cs" />
     <Compile Include="Migrations\201507160127129_CustomEntity2.Designer.cs">
       <DependentUpon>201507160127129_CustomEntity2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507172157003_CustomEntity3.cs" />
+    <Compile Include="Migrations\201507172157003_CustomEntity3.Designer.cs">
+      <DependentUpon>201507172157003_CustomEntity3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507181048040_mapperChange.cs" />
+    <Compile Include="Migrations\201507181048040_mapperChange.Designer.cs">
+      <DependentUpon>201507181048040_mapperChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507190046114_commentchange.cs" />
+    <Compile Include="Migrations\201507190046114_commentchange.Designer.cs">
+      <DependentUpon>201507190046114_commentchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507190304225_test.cs" />
+    <Compile Include="Migrations\201507190304225_test.Designer.cs">
+      <DependentUpon>201507190304225_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507190815463_virtual.cs" />
+    <Compile Include="Migrations\201507190815463_virtual.Designer.cs">
+      <DependentUpon>201507190815463_virtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507191028012_DtoUpdate.cs" />
+    <Compile Include="Migrations\201507191028012_DtoUpdate.Designer.cs">
+      <DependentUpon>201507191028012_DtoUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507191138526_DtoUpdate2.cs" />
+    <Compile Include="Migrations\201507191138526_DtoUpdate2.Designer.cs">
+      <DependentUpon>201507191138526_DtoUpdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507220723429_AddPageAndChampName.cs" />
+    <Compile Include="Migrations\201507220723429_AddPageAndChampName.Designer.cs">
+      <DependentUpon>201507220723429_AddPageAndChampName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LeagueSeason5CountersContext.cs" />
@@ -319,6 +357,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507160127129_CustomEntity2.resx">
       <DependentUpon>201507160127129_CustomEntity2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507172157003_CustomEntity3.resx">
+      <DependentUpon>201507172157003_CustomEntity3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507181048040_mapperChange.resx">
+      <DependentUpon>201507181048040_mapperChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507190046114_commentchange.resx">
+      <DependentUpon>201507190046114_commentchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507190304225_test.resx">
+      <DependentUpon>201507190304225_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507190815463_virtual.resx">
+      <DependentUpon>201507190815463_virtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507191028012_DtoUpdate.resx">
+      <DependentUpon>201507191028012_DtoUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507191138526_DtoUpdate2.resx">
+      <DependentUpon>201507191138526_DtoUpdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507220723429_AddPageAndChampName.resx">
+      <DependentUpon>201507220723429_AddPageAndChampName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

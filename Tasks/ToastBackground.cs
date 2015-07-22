@@ -30,7 +30,7 @@ namespace Tasks
             toastNode.AppendChild(audio);
 
             ToastNotification toast = new ToastNotification(toastXml);
-            DateTime dueTime = DateTime.Now.AddHours(8);
+            DateTime dueTime = DateTime.Now.AddHours(72);
             ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, dueTime);
             scheduledToast.Id = "Background";
             ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledToast);
