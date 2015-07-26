@@ -25,20 +25,16 @@ namespace LeagueSeason5CountersService
             {
                 // Define a map from the database type TodoItem to 
                 // client type TodoItemDto. Used when getting data.
-                cfg.CreateMap<ChampionFeedback, ChampionFeedbackDto>()
-                    .ForMember(championFeedbackDto => championFeedbackDto.Comments, map => map.MapFrom(championFeedback => championFeedback.Comments));
-                cfg.CreateMap<Comment, CommentDto>().ForMember(commentDto => commentDto.ChampionFeedbackName, map => map.MapFrom(comment => comment.ChampionFeedback.Name))
-                    .ForMember(commentDto => commentDto.UserRatings, map => map.MapFrom(comment => comment.UserRatings))
-                    .ForMember(commentDto => commentDto.Page, map => map.MapFrom(comment => (PageEnum.Page)comment.Page));
+                cfg.CreateMap<ChampionFeedback, ChampionFeedbackDto>();
+                cfg.CreateMap<Comment, CommentDto>();
+
                 cfg.CreateMap<UserRating, UserRatingDto>();
 
                 // Define a map from the client type to the database
                 // type. Used when inserting and updating data.
-                cfg.CreateMap<ChampionFeedbackDto, ChampionFeedback>()
-                    .ForMember(championFeedback => championFeedback.Comments, map => map.MapFrom(championFeedbackDto => championFeedbackDto.Comments));
-                cfg.CreateMap<CommentDto, Comment>()
-                    .ForMember(comment => comment.UserRatings, map => map.MapFrom(commentDto => commentDto.UserRatings))
-                    .ForMember(comment => comment.Page, map => map.MapFrom(commentDto => (PageEnum.Page)commentDto.Page));
+                cfg.CreateMap<ChampionFeedbackDto, ChampionFeedback>();
+                cfg.CreateMap<CommentDto, Comment>();
+
                 cfg.CreateMap<UserRatingDto, UserRating>();
 
             });
@@ -50,9 +46,9 @@ namespace LeagueSeason5CountersService
 
 
 
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion <LeagueSeason5CountersContext, Configuration>());
-            var migrator = new DbMigrator(new Configuration());
-            migrator.Update();
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<LeagueSeason5CountersContext, Configuration>());
+            //var migrator = new DbMigrator(new Configuration());
+            //migrator.Update();
         }
     }
 

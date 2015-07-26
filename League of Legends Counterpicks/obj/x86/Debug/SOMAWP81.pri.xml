@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="SOMAWP81" version="1.0" primary="true">
+		<Qualifiers/>
+		<ResourceMapSubtree name="Files">
+			<ResourceMapSubtree name="SOMAWP81">
+				<NamedResource name="AdViewer.xbf" uri="ms-resource://SOMAWP81/Files/SOMAWP81/AdViewer.xbf">
+					<Candidate type="Path">
+						<Value>SOMAWP81\AdViewer.xbf</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SomaAdViewer-300x250.xbf" uri="ms-resource://SOMAWP81/Files/SOMAWP81/SomaAdViewer-300x250.xbf">
+					<Candidate type="Path">
+						<Value>SOMAWP81\SomaAdViewer-300x250.xbf</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SomaAdViewer.xbf" uri="ms-resource://SOMAWP81/Files/SOMAWP81/SomaAdViewer.xbf">
+					<Candidate type="Path">
+						<Value>SOMAWP81\SomaAdViewer.xbf</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SOMAWP81.xr.xml" uri="ms-resource://SOMAWP81/Files/SOMAWP81/SOMAWP81.xr.xml">
+					<Candidate type="Path">
+						<Value>SOMAWP81\SOMAWP81.xr.xml</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

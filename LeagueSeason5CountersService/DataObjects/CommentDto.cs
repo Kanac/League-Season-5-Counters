@@ -13,6 +13,7 @@ namespace LeagueSeason5CountersService.DataObjects
         public int Score { get; set; }
         public PageEnum.Page Page { get; set; }
         public string ChampionFeedbackName { get; set; }
+        public string ChampionFeedbackId { get; set; }
         public virtual ICollection<UserRatingDto> UserRatings { get; set; }
 
     }

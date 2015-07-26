@@ -64,6 +64,15 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
+						<Run Text="July 14 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added Tahm Kench and updated all counters respectively!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Optimized filter bar again "></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
 						<Run Text="July 9 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">

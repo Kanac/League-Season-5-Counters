@@ -229,6 +229,17 @@ namespace League_of_Legends_Counterpicks
         }
 
 
+        private async void Comment_Click(object sender, RoutedEventArgs e)
+        {
+            EmailRecipient sendTo = new EmailRecipient() { Address = "testgglol@outlook.com" };
+            EmailMessage mail = new EmailMessage();
+
+            mail.Subject = "Feedback for League Season 5 Counters";
+            mail.To.Add(sendTo);
+            await EmailManager.ShowComposeNewEmailAsync(mail);
+        }
+
+
   
     }
 }

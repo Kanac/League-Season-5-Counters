@@ -159,12 +159,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Converters\FilterFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NameToImage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\CounterFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\PlayingFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\CommentDataSourcecs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\DataSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\SyncHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helper\FindVisualChildren.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,7 @@ namespace LeagueSeason5CountersService.DataObjects
     {
         public string UniqueUser { get; set; }
         public int Score { get; set; }
+        public string CommentId { get; set; }
 
     }
 }

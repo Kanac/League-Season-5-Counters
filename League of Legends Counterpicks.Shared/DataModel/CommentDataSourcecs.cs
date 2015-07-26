@@ -62,6 +62,7 @@ namespace League_of_Legends_Counterpicks.DataModel
         }
         public string Text { get; set; }
         public string User { get; set; }
+        public string ChampionFeedbackName { get; set; }
         private int score { get; set; }
         public int Score { get 
         {
@@ -77,11 +78,9 @@ namespace League_of_Legends_Counterpicks.DataModel
         }
 
         public PageEnum.Page Page { get; set; }
-     
         public ICollection<UserRating> UserRatings { get; set; }
-
         public string Id { get; set; }
-
+        public string ChampionFeedbackId { get; set; }
         private void NotifyPropertyChanged(String info)
         {
             if (PropertyChanged != null)
@@ -95,8 +94,8 @@ namespace League_of_Legends_Counterpicks.DataModel
     {
         public string UniqueUser { get; set; }
         public int Score { get; set; }
-
         public string Id { get; set; }
+        public string CommentId { get; set; }
     }
 
 
@@ -109,6 +108,9 @@ namespace League_of_Legends_Counterpicks.DataModel
         public CommentDataSource(MobileServiceClient client)
         {
             _client = client;
+            champTable = _client.GetTable<ChampionFeedback>();
+            commentTable = _client.GetTable<Comment>();
+            userTable = _client.GetTable<UserRating>();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -161,14 +163,50 @@ namespace League_of_Legends_Counterpicks.DataModel
             }
         }
 
+        public IMobileServiceTable<ChampionFeedback> champTable { get; set; }
+        public IMobileServiceTable<Comment> commentTable { get; set; }
+        public IMobileServiceTable<UserRating> userTable { get; set; }
+
+        //public async Task InitLocalStoreAsync(string champName)
+        //{
+        //    if (!App.MobileService.SyncContext.IsInitialized)
+        //    {
+        //        try
+        //        {
+        //            var store = new MobileServiceSQLiteStore("localstore.db");
+        //            store.DefineTable<ChampionFeedback>();
+        //            store.DefineTable<Comment>();
+        //            store.DefineTable<UserRating>();
+        //            await App.MobileService.SyncContext.InitializeAsync(store);
+        //        }
+        //        catch (Exception error)
+        //        {
+        //            var test = error.Message;
+        //        }
+        //    }
+
+        //    await SyncAsync(champName);
+        //}
+
+        //private async Task SyncAsync(string champName)
+        //{
+        //    try
+        //    {
+        //        await App.MobileService.SyncContext.PushAsync();
+        //        await table.PullAsync(champName, table.CreateQuery());
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //    }
+        //}
 
         // Service operations
         public async Task GetChampionFeedbackAsync(string championName)
         {
             try
             {
-                IMobileServiceTable<ChampionFeedback> table = _client.GetTable<ChampionFeedback>();
-                var result = await table.Where(c => c.Name == championName).ToListAsync();
+                var result = await champTable.Where(c => c.Name == championName).ToListAsync();
                 if (result.Count != 0)
                 {   //If there was a match found for champion, 
                     ChampionFeedback = result[0];    //Get the first (and only) result
@@ -203,8 +241,7 @@ namespace League_of_Legends_Counterpicks.DataModel
 
             try
             {
-                IMobileServiceTable<ChampionFeedback> table = _client.GetTable<ChampionFeedback>();
-                await table.InsertAsync(champion);
+                await champTable.InsertAsync(champion);
                 this.ChampionFeedback = champion;
                
             }
@@ -234,6 +271,8 @@ namespace League_of_Legends_Counterpicks.DataModel
                 Text = text,
                 User = name,
                 Page = type,
+                ChampionFeedbackName = ChampionFeedback.Name,
+                ChampionFeedbackId = ChampionFeedback.Id,
                 Id = Guid.NewGuid().ToString(),
             };
 
@@ -250,9 +289,8 @@ namespace League_of_Legends_Counterpicks.DataModel
 
             try
             {
-                var table =  _client.GetTable<ChampionFeedback>();
                 this.ChampionFeedback.Comments.Add(comment);
-                await table.UpdateAsync(this.ChampionFeedback);
+                await commentTable.InsertAsync(comment);
                 ChampionFeedback.SortComments();
                 return comment;
 
@@ -284,12 +322,10 @@ namespace League_of_Legends_Counterpicks.DataModel
             comment = ChampionFeedback.Comments.Where(x => x.Id == comment.Id).FirstOrDefault();
             //If already rated, update to the new score 
             if (existingRating != null) {
-                comment.Score -= existingRating.Score;  //revert the previous score 
-
                 //Case for pressing the opposite vote button -- change rating to it
                 if (existingRating.Score != score)
                 {
-                    comment.Score += score;
+                    //comment.Score += score;
                     existingRating.Score = score;
                 }
                 //Case for pressing the same vote button -- simply a score of 0
@@ -297,38 +333,54 @@ namespace League_of_Legends_Counterpicks.DataModel
 
                     existingRating.Score = 0;
                 }
+
+                try { await userTable.UpdateAsync(existingRating); }
+                catch (Exception e) { ErrorMessage = e.Message; }
+
+
             }
             //Create a new rating otherwise
             else{
-                var userRating = new UserRating()
+                var newRating = new UserRating()
                 {
                     Score = score,
                     UniqueUser = GetDeviceId(),
-                    Id = Guid.NewGuid().ToString()
+                    Id = Guid.NewGuid().ToString(),
+                    CommentId = comment.Id,
                 };
 
                 //Update the comment 
-                comment.UserRatings.Add(userRating);
-                comment.Score += score;
+                comment.UserRatings.Add(newRating);
+                try { await userTable.InsertAsync(newRating); }
+                catch (Exception e) { ErrorMessage = e.Message; }
+
             }
             try
             {
-                var table = _client.GetTable<ChampionFeedback>();
-                await table.UpdateAsync(ChampionFeedback);
+                var updatedComment = await commentTable.LookupAsync(comment.Id);
+                comment.Score = updatedComment.Score;
+                comment.UserRatings = updatedComment.UserRatings;
                 ChampionFeedback.SortComments();
             }
-            catch (MobileServiceInvalidOperationException ex)
+            catch (MobileServicePreconditionFailedException ex)
             {
-                ErrorMessage = ex.Message;
+            }
+            //Server conflict 
+            catch (MobileServiceInvalidOperationException ex1)
+            {
+                ErrorMessage = ex1.Message;
             }
             catch (HttpRequestException ex2)
             {
                 ErrorMessage = ex2.Message;
             }
+
             finally
             {
+
                 IsPending = false;
             }
+
         }
 
         public string GetDeviceId()

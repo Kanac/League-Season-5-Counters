@@ -33,6 +33,13 @@ namespace League_of_Legends_Counterpicks
     public sealed partial class App : Application
     {
         // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
+        //const string serviceUrl = "http://localhost:58718";
+        //public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient MobileService = new MobileServiceClient(serviceUrl){
+        //    SerializerSettings = new MobileServiceJsonSerializerSettings()
+        //      {
+        //          CamelCasePropertyNames = true
+        //      }
+        //};
         public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient MobileService = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
         "https://leagueseason5counters.azure-mobile.net/",
         "iovrWRisXiqXDzBpSreDZoSWrCPskN14")

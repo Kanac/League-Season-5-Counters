@@ -130,6 +130,7 @@ namespace League_of_Legends_Counterpicks
             }
 
             //Champion Feedback code
+            //await commentViewModel.InitLocalStoreAsync(champName); 
             await commentViewModel.GetChampionFeedbackAsync(champName);
             //Create a new Champion Feedback if one was not made
             if (commentViewModel.ChampionFeedback == null)
@@ -243,15 +244,7 @@ namespace League_of_Legends_Counterpicks
                 await emptyBox.ShowAsync();
                 return;
             }
-            //EmailRecipient sendTo = new EmailRecipient() {Address = "testgglol@outlook.com"};
-            //EmailMessage mail = new EmailMessage();
-
-            //var champ = this.DefaultViewModel["Champion"] as Champion;
-            //mail.Subject = "Feedback for " + champ.UniqueId;
-            //mail.Body = feedback;
-            //mail.To.Add(sendTo);
-            //await EmailManager.ShowComposeNewEmailAsync(mail);
-
+           
             var comment = await commentViewModel.SubmitCommentAsync(feedback, name, (PageEnum.Page)pageType);
             await commentViewModel.SubmitUserRating(comment, 1);   //This will then generate Upvote_Loaded to highlight the upvote image
             if (pageType == PageEnum.Page.Counter)
@@ -399,6 +392,13 @@ namespace League_of_Legends_Counterpicks
         {
             pageType = PageEnum.Page.Playing;
         }
+
+        private void Comment_Clicked(object sender, RoutedEventArgs e)
+        {
+            MainHub.ScrollToSection(SubmitFeedbackSection);
+        }
+
+
 
     }
 

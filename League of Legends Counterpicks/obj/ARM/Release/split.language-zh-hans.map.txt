@@ -1,0 +1,7 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.language-zh-hans"
+"ResourceDimensions"		"language-zh-cn"
+"ResourceDimensions"		"language-zh-hans"
+
+[Files]
+"C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\split.language-zh-hans.pri"			"resources.pri"

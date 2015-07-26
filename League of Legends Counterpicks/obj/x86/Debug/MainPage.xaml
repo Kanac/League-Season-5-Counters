@@ -53,22 +53,7 @@
                 <RowDefinition Height="1.2*" />
                 <RowDefinition Height="9*" />
             </Grid.RowDefinitions>
-                <!--<AutoSuggestBox x:Name="FilterBox"
-                                GotFocus="FilterBox_GotFocus"
-                                TextChanged="FilterBox_TextChanged"
-                                SuggestionChosen="FilterBox_SuggestionChosen"
-                                KeyDown="KeyDown_Event"
-                                Margin="15,0,15,0" />-->
-                <!--<Button HorizontalAlignment="Stretch"
-                        VerticalAlignment="Top"
-                        Margin="15,0,15,0"
-                        Tapped="Button_Tapped"
-                        Background="{ThemeResource TextBoxBackgroundThemeBrush}"
-                        Foreground="{ThemeResource TextBoxForegroundThemeBrush}"
-                    FontFamily="{ThemeResource ContentControlThemeFontFamily}"
-                        >
-                        Tap to Search
-                </Button>-->
+               
             <TextBox x:ConnectionId='4' Margin="15,0,15,0"
                      IsReadOnly="True"
                                                 
@@ -85,11 +70,12 @@
                                                             >
                     <ListView.ItemTemplate>
                         <DataTemplate>
+                            <StackPanel Margin="15,0,0,20">
                                 <TextBlock Text="{Binding UniqueId}"
-                                           Margin="15,0,0,20"
                                            Style="{ThemeResource ListViewItemTextBlockStyle}"
                                            FontSize="28"
                                            FontFamily="Segoe WP Black" />
+                            </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

@@ -17,16 +17,7 @@
                 </ResourceDictionary>
                 
             </ResourceDictionary.ThemeDictionaries>
-               
-                <Style x:Name="AdTemplate"
-                       TargetType="WindowsPhone81:AdMediatorControl">
-                    <Setter Property="HorizontalAlignment"
-                            Value="Center"></Setter>
-                    <Setter Property="Height"
-                            Value="Auto"></Setter>
-                    <Setter Property="Width"
-                            Value="Auto"></Setter>
-                </Style>
+           
         </ResourceDictionary>
     </Application.Resources>
     

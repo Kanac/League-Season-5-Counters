@@ -10,7 +10,7 @@ namespace League_of_Legends_Counterpicks.Converters
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             String champName = value as String;
-            return "Comments for Playing as " + champName;
+            return "Playing as " + champName;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

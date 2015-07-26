@@ -30,7 +30,10 @@ namespace League_of_Legends_Counterpicks
     {
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
-        bool firstLoad;
+        private ObservableCollection<Role> roles;
+        private string roleId, savedRoleId;
+        private bool firstLoad = true;
+        private int sectionIndex;
 
         public RolePage()
         {
@@ -39,7 +42,6 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
-            firstLoad = true;
         }
 
         /// <summary>
@@ -72,14 +74,18 @@ namespace League_of_Legends_Counterpicks
         /// session.  The state will be null the first time a page is visited.</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)  //e is the unique ID
         {
-            var roleId = e.NavigationParameter as string;  
-            var roles = await DataSource.GetRolesAsync();  //Gets a reference to all the roles -- no data is seralized again (already done on bootup)
+            //Check if the navigation paramater changes to determine the roleId to use, otherwise use the roleId set by navigating to ChampionPage
+            if ((string)e.NavigationParameter != savedRoleId) {
+                roleId = e.NavigationParameter as string;
+                savedRoleId = roleId;
+            }
+
+            roles = await DataSource.GetRolesAsync();  //Gets a reference to all the roles -- no data is seralized again (already done on bootup)
             var allRole = roles[0]; //Gets the all role 
             var GroupedChampions = JumpListHelper.ToAlphaGroups(allRole.Champions, x => x.UniqueId);
             allRole.GroupedChampions = GroupedChampions;
             DefaultViewModel["Roles"] = roles;
             //Smoothes out the loading process to get to desired page immedaitely 
-            int sectionIndex;
             if (roleId == "Filter")
                 sectionIndex = MainHub.Sections.Count() - 1;
             else
@@ -116,13 +122,16 @@ namespace League_of_Legends_Counterpicks
         /// <param name="e">Event data that describes the item clicked.</param>
         private void ItemView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var championId = ((Champion)e.ClickedItem).UniqueId;
+            //Store the hub section before proceeding to champion page, so that the back button goes back to it
+            roleId = MainHub.SectionsInView[0].Name;
 
+            var championId = ((Champion)e.ClickedItem).UniqueId;
             if (!Frame.Navigate(typeof(ChampionPage), championId))
             {
                 var resourceLoader = ResourceLoader.GetForCurrentView("Resources");
                 throw new Exception(resourceLoader.GetString("NavigationFailedExceptionMessage"));
             }
+
         }
 
         #region NavigationHelper registration
@@ -168,13 +177,6 @@ namespace League_of_Legends_Counterpicks
             
         }
 
-        private void Ad_Error(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
-        {
-            var ad = sender as AdMediatorControl;
-            var adName = ad.Id;
-            Debug.WriteLine("AdMediatorError for " + adName + ":" + e.Error + " " + e.ErrorCode);
-        }
-
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             String text = (sender as TextBox).Text;
@@ -189,7 +191,6 @@ namespace League_of_Legends_Counterpicks
         {
             (sender as TextBox).Text = String.Empty;
         }
-
     
   
     }

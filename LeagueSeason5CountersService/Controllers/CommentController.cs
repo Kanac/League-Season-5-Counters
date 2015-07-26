@@ -31,85 +31,32 @@ namespace LeagueSeason5CountersService.Controllers
         }
 
         // GET tables/Comment/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        [ExpandProperty("UserRatings")]
-        public SingleResult<CommentDto> GetComment(string id)
+        public CommentDto GetComment(string id)
         {
-            return Lookup(id);
+            return Mapper.Map<Comment, CommentDto>(context.Comments.Where(c => c.Id == id).FirstOrDefault());
         }
 
         // PATCH tables/Comment/48D68C86-6EA6-4C25-AA33-223FC9A27959
         public async Task<CommentDto> PatchComment(string id, Delta<CommentDto> patch)
         {
 
-            //Look up TodoItem from database so that EntityFramework updates
-            //existing entry
-            Comment currentComment = this.context.Comments.Include("UserRatings")
-                                    .First(j => (j.Id == id));
-
-            CommentDto updatedpatchEntity = patch.GetEntity();
-            ICollection<UserRatingDto> updatedUserRatings;
-            //Check if incoming request contains Items
-            bool requestContainsRelatedEntities = patch.GetChangedPropertyNames()
-                                    .Contains("UserRatings");
-
-            if (requestContainsRelatedEntities)
-            {
-                //Remove related entities from the database. Comment following for loop if you do not
-                //want to delete related entities from the database
-                for (int i = 0; i < currentComment.UserRatings.Count
-                    && updatedpatchEntity.UserRatings != null; i++)
-                {
-                    UserRatingDto itemDTO = updatedpatchEntity.UserRatings.FirstOrDefault(j =>
-                                    (j.Id == currentComment.UserRatings.ElementAt(i).Id));
-                    if (itemDTO == null)
-                    {
-                        this.context.UserRatings.Remove(currentComment.UserRatings.ElementAt(i));
-                    }
-                }
-
-                //If request contains Items get the updated list from the patch
-                Mapper.Map<CommentDto, Comment>(updatedpatchEntity, currentComment);
-                updatedUserRatings = updatedpatchEntity.UserRatings;
-            }
-            else
-            {
-                //If request doest not have Items, then retain the original association
-                CommentDto commentDTOUpdated = Mapper.Map<Comment, CommentDto>
-                                                (currentComment);
-                patch.Patch(commentDTOUpdated);
-                Mapper.Map<CommentDto, Comment>(commentDTOUpdated, currentComment);
-                updatedUserRatings = commentDTOUpdated.UserRatings;
-            }
-
-            if (updatedUserRatings != null)
-            {
-                //Update related Items
-                currentComment.UserRatings = new List<UserRating>();
-                foreach (UserRatingDto currentUserRatingDTO in updatedUserRatings)
-                {
-                    //Look up existing entry in database
-                    UserRating existingUserRating = this.context.UserRatings
-                                .FirstOrDefault(j => (j.Id == currentUserRatingDTO.Id));
-                    //Convert client type to database type
-                    existingUserRating = Mapper.Map<UserRatingDto, UserRating>(currentUserRatingDTO,
-                            existingUserRating);
-                    existingUserRating.Comment = currentComment;
-                    currentComment.UserRatings.Add(existingUserRating);
-                }
-            }
-
-            await this.context.SaveChangesAsync();
-
-            //Convert to client type before returning the result
-            var result = Mapper.Map<Comment, CommentDto>(currentComment);
-            return result;
+            return await UpdateAsync(id, patch);
         }
 
         // POST tables/Comment
         public async Task<IHttpActionResult> PostComment(CommentDto item)
         {
-            CommentDto current = await InsertAsync(item);
-            return CreatedAtRoute("Tables", new { id = current.Id }, current);
+            //Find the corresponing champion to this comment
+            var champFeedback = this.context.ChampionFeedbacks.Where(c => c.Id == item.ChampionFeedbackId).FirstOrDefault();
+            //Map the comment DTO to the server type
+            var newComment = Mapper.Map<CommentDto, Comment>(item);
+            //Add it to the comment collection of the champion
+            champFeedback.Comments.Add(newComment);
+            await this.context.SaveChangesAsync();
+
+            //Map the new comment back to the item with new server published information
+            Mapper.Map<Comment, CommentDto>(newComment, item);
+            return CreatedAtRoute("Tables", new { id = item.Id }, item);
         }
 
         // DELETE tables/Comment/48D68C86-6EA6-4C25-AA33-223FC9A27959

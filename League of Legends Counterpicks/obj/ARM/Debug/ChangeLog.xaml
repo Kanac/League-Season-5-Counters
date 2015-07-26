@@ -4,6 +4,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+      xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
       x:Class="League_of_Legends_Counterpicks.ChangeLog"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -33,14 +34,22 @@
             <RowDefinition Height="80" />
             
         </Grid.RowDefinitions>
-        <WindowsPhone81:AdMediatorControl x:ConnectionId='1' x:Name="AdMediator_4461F1"
-                                          HorizontalAlignment="Center"
-                                          Height="Auto"
-                                                                 
-                                                                    
-                                          Id="AdMediator-Id-A0BC2EBD-8646-4322-9EF7-0643F0B54B94"
-                                          VerticalAlignment="Top"
-                                          Width="Auto" />
+        
+        <UI:AdControl HorizontalAlignment="Center"
+                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                      VerticalAlignment="Top"
+                      Width="480"
+                      Height="80"
+                      AutoRefreshIntervalInSeconds="60"
+                      AdUnitId="231539" />
+        <UI:AdControl HorizontalAlignment="Center"
+                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                      VerticalAlignment="Top"
+                      Width="480"
+                      Height="80"
+                      Grid.Row="4"
+                      AutoRefreshIntervalInSeconds="60"
+                      AdUnitId="231540" />
         <!-- Title Panel -->
         <StackPanel Grid.Row="1">
             <TextBlock Text="League Season 5 Counters Changes"
@@ -63,6 +72,31 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="July 22 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added a shit ton of changes"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Implemented an azure backend for lots of goodies"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Each Champion Page has two existing comments sections"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Dyanmic voting and commenting system to go with it"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Too many changes to talk about"></Run>
+                        <LineBreak></LineBreak>
+                            
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 14 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added Tahm Kench and updated all counters respectively!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Optimized filter bar again "></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="July 9 2015" />
                     </TextBlock>
@@ -161,17 +195,10 @@
         </Grid>
         
         
-        <Button x:ConnectionId='2' Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"                       >
+        <Button x:ConnectionId='1' Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"                       >
             Check for Updates
         </Button>
         
-        <WindowsPhone81:AdMediatorControl Grid.Row="4"
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Bottom"
-                                          x:Name="AdMediator_D2BDBB"
-                                          Height="Auto"
-                                          Id="AdMediator-Id-18C8A9BA-F1A6-42DA-8C28-F58A3F0F2DEE"
-                                          Width="Auto" />
     </Grid>
 </Page>
 

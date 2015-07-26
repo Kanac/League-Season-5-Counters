@@ -12,15 +12,16 @@
       mc:Ignorable="d">
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton x:ConnectionId='1' Icon="People"
+            <AppBarButton x:ConnectionId='1' Icon="Comment"
+                          Label="Send Feedback"
+                                                />
+            <AppBarButton x:ConnectionId='2' Icon="People"
                           Label="Share"
                                                 />
-            <AppBarButton x:ConnectionId='2' HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Icon="Like"
+            <AppBarButton x:ConnectionId='3' Icon="Like"
                           Label="Tweet"
                                        />
-            <AppBarButton x:ConnectionId='3' Icon="Document"
+            <AppBarButton x:ConnectionId='4' Icon="Document"
                           Label="Change Log"
                                                     />
         </CommandBar>
@@ -39,12 +40,13 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid>
-                <WindowsPhone81:AdMediatorControl x:Name="AdMediator_086568"
-                                                  HorizontalAlignment="Center"
-                                                  Height="Auto"
-                                                  Id="AdMediator-Id-63C8B99E-54E8-4635-A1BE-3EAD1B8DD80D"
-                                                  VerticalAlignment="Top"
-                                                  Width="Auto" />
+                <UI:AdControl HorizontalAlignment="Center"
+                              ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                              VerticalAlignment="Top"
+                              Width="480"
+                              Height="80"
+                              AutoRefreshIntervalInSeconds="60"
+                              AdUnitId="231537" />
             </Grid>
         </Grid>
         <!--Enter inside the dictionary's only key, groups, and then into the list holding them -->
@@ -53,23 +55,8 @@
                 <RowDefinition Height="1.2*" />
                 <RowDefinition Height="9*" />
             </Grid.RowDefinitions>
-                <!--<AutoSuggestBox x:Name="FilterBox"
-                                GotFocus="FilterBox_GotFocus"
-                                TextChanged="FilterBox_TextChanged"
-                                SuggestionChosen="FilterBox_SuggestionChosen"
-                                KeyDown="KeyDown_Event"
-                                Margin="15,0,15,0" />-->
-                <!--<Button HorizontalAlignment="Stretch"
-                        VerticalAlignment="Top"
-                        Margin="15,0,15,0"
-                        Tapped="Button_Tapped"
-                        Background="{ThemeResource TextBoxBackgroundThemeBrush}"
-                        Foreground="{ThemeResource TextBoxForegroundThemeBrush}"
-                    FontFamily="{ThemeResource ContentControlThemeFontFamily}"
-                        >
-                        Tap to Search
-                </Button>-->
-            <TextBox x:ConnectionId='4' Margin="15,0,15,0"
+               
+            <TextBox x:ConnectionId='5' Margin="15,0,15,0"
                      IsReadOnly="True"
                                                 
                      TextAlignment="Center"
@@ -79,17 +66,18 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <ListView x:ConnectionId='5' ItemsSource="{Binding Roles}"
+                <ListView x:ConnectionId='6' ItemsSource="{Binding Roles}"
                           Grid.Row="1"
                           IsItemClickEnabled="True"
                                                             >
                     <ListView.ItemTemplate>
                         <DataTemplate>
+                            <StackPanel Margin="15,0,0,20">
                                 <TextBlock Text="{Binding UniqueId}"
-                                           Margin="15,0,0,20"
                                            Style="{ThemeResource ListViewItemTextBlockStyle}"
                                            FontSize="28"
                                            FontFamily="Segoe WP Black" />
+                            </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
@@ -105,7 +93,7 @@
                                    TextAlignment="Center"
                                    FontSize="19"
                                    VerticalAlignment="Center"
-                                   Foreground="#FFF3FD29"> Tahm Kench update is here and more!</TextBlock>
+                                   Foreground="#FFF3FD29"> Check out the new Comment System!</TextBlock>
                     </Grid>
                 </Grid>
             </Grid>
@@ -122,13 +110,14 @@
                        Foreground="#FFCCDDF7" />
         </StackPanel>
         <Grid Grid.Row="2" />
-        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_B1A469"
-                                          HorizontalAlignment="Center"
-                                          Height="Auto"
-                                          Id="AdMediator-Id-4AEFF57A-048D-4D77-9D67-312A59EA38BC"
-                                          Grid.Row="2"
-                                          VerticalAlignment="Bottom"
-                                          Width="Auto" />
+        <UI:AdControl HorizontalAlignment="Center"
+                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                      VerticalAlignment="Top"
+                      Width="480"
+                      Height="80"
+                      Grid.Row="2"
+                      AutoRefreshIntervalInSeconds="60"
+                      AdUnitId="231538" />
 
     </Grid>
 </Page>
