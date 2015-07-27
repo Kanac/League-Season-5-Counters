@@ -39,14 +39,15 @@ namespace League_of_Legends_Counterpicks
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private readonly String APP_ID = "3366702e-67c7-48e7-bc82-d3a4534f3086";
-        private ObservableCollection<String> counters = new ObservableCollection<string>();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private String feedback = String.Empty;
         private String name = String.Empty;
         private CommentDataSource commentViewModel = new CommentDataSource(App.MobileService);
-        bool emptyComments, emptyPlayingComments;
-        PageEnum.Page? pageType;
-        TextBlock counterMessage, playingMessage;
+        private bool emptyComments, emptyPlayingComments;
+        private PageEnum.Page? pageType;
+        private TextBlock counterMessage, playingMessage;
+        private TextBox filterBox;
+        private Role champions = DataSource.GetAllChampions();
 
 
         public ChampionPage()
@@ -80,7 +81,7 @@ namespace League_of_Legends_Counterpicks
         private async void reviewApp()
         {
             if (!localSettings.Values.ContainsKey("Views"))
-                localSettings.Values.Add(new KeyValuePair<string, object>("Views", 0));
+                localSettings.Values.Add(new KeyValuePair<string, object>("Views", 3));
             else
                 localSettings.Values["Views"] = 1 + Convert.ToInt32(localSettings.Values["Views"]);
 
@@ -118,34 +119,38 @@ namespace League_of_Legends_Counterpicks
             reviewApp();
             var champName = (string)e.NavigationParameter;
             Champion champion = DataSource.GetChampion(champName);
+            champions = DataSource.GetAllChampions();
             this.DefaultViewModel["Champion"] = champion;
             this.DefaultViewModel["Role"] = DataSource.GetRoleId(champion.UniqueId);
-            counters = (this.DefaultViewModel["Champion"] as Champion).Counters;
+            this.DefaultViewModel["Filter"] = champions.Champions;
+
 
             //If navigating via a counterpick, on loading that page, remove the previous history so the back page will go to main or role, not champion
             var prevPage = Frame.BackStack.ElementAt(Frame.BackStackDepth - 1);
-            if (prevPage.SourcePageType.Equals(typeof(ChampionPage)))
-            {
+            if (prevPage.SourcePageType.Equals(typeof(ChampionPage))){
                 Frame.BackStack.RemoveAt(Frame.BackStackDepth - 1);
             }
 
-            //Champion Feedback code
-            //await commentViewModel.InitLocalStoreAsync(champName); 
+            //Champion feedback code 
+            //Grab the champion feedback from the server 
             await commentViewModel.GetChampionFeedbackAsync(champName);
+
             //Create a new Champion Feedback if one was not made
-            if (commentViewModel.ChampionFeedback == null)
-            {
-                var championFeedback = new ChampionFeedback()
-                {
+            if (commentViewModel.ChampionFeedback == null){
+                var championFeedback = new ChampionFeedback(){
                     Name = champName
                 };
 
                 await commentViewModel.AddChampionFeedbackAsync(championFeedback);
+            }
 
-
+            //Seperate conditional incase champion feedback was already made, but counters weren't implemented yet
+            if (commentViewModel.ChampionFeedback.Counters.Count == 0) {
+                await commentViewModel.SeedCounterAsync(champion);
             }
 
           
+            //Check if comments exist for counter comments. If not, show a message indicating so. 
             if (commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.Page.Counter).Count() == 0) {
                 if (counterMessage == null)
                     emptyComments = true;
@@ -154,6 +159,7 @@ namespace League_of_Legends_Counterpicks
 
             }
 
+            //Check if comments exist for playing comments. If not, show a message indicating so. 
             if (commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.Page.Playing).Count() == 0)
             {
                 if (playingMessage == null)
@@ -164,8 +170,7 @@ namespace League_of_Legends_Counterpicks
             }
 
             //Make updates to champion comments observable
-            this.DefaultViewModel["Comments"] = commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.Page.Counter);
-            this.DefaultViewModel["PlayingComments"] = commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.Page.Playing);
+            this.DefaultViewModel["ChampionFeedback"] = commentViewModel.ChampionFeedback;
         }
 
         /// <summary>
@@ -209,13 +214,11 @@ namespace League_of_Legends_Counterpicks
         #endregion
 
 
-
         private void Champ_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            String champ = (sender as Image).Name.Substring("Champ".Length);
-            int champIndex = Int32.Parse(champ) - 1;
-            var championId = counters.ElementAt(champIndex);
-            Frame.Navigate(typeof(ChampionPage), championId);
+            Image counterImage = (sender as Image);
+            var counter = counterImage.DataContext as Counter;
+            Frame.Navigate(typeof(ChampionPage), counter.Name);
 
         }
 
@@ -245,18 +248,26 @@ namespace League_of_Legends_Counterpicks
                 return;
             }
            
+            //Submit the comment and a self-user rating of 1
             var comment = await commentViewModel.SubmitCommentAsync(feedback, name, (PageEnum.Page)pageType);
             await commentViewModel.SubmitUserRating(comment, 1);   //This will then generate Upvote_Loaded to highlight the upvote image
+
+            //Update the view
+            commentViewModel.ChampionFeedback.SortComments();
+
+            //Scroll to the proper hub section according to the type of comment 
             if (pageType == PageEnum.Page.Counter)
                 MainHub.ScrollToSection(CounterCommentSection);
             else if (pageType == PageEnum.Page.Playing)
                 MainHub.ScrollToSection(PlayingCommentSection);
 
+            //Clear the feedback message box incase user double presses
+            ((sender as Button).FindName("FeedbackBox") as TextBox).Text = String.Empty;
+            feedback = String.Empty;
+
             //Update the view (remove no comment message and reference counter and playing respectively)
             counterMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             playingMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            this.DefaultViewModel["Comments"] = commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.Page.Counter);
-            this.DefaultViewModel["PlayingComments"] = commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.Page.Playing);
         }
 
         private void Feedback_Written(object sender, RoutedEventArgs e)
@@ -284,7 +295,7 @@ namespace League_of_Legends_Counterpicks
             var comment = upvote.DataContext as Comment;
 
             var existingRating = comment.UserRatings.Where(x => x.UniqueUser == commentViewModel.GetDeviceId()).FirstOrDefault();
-            //If there was a previous rating, ohange vote images respectively
+            //If there was a previous rating, change vote images respectively
             if (existingRating != null && existingRating.Score != 0)
             {
                 //Pressing upvote again? Unhighlight the button.
@@ -306,8 +317,6 @@ namespace League_of_Legends_Counterpicks
                 upvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/upvote.png", UriKind.Absolute));
             }
             await commentViewModel.SubmitUserRating(comment, 1);
-            this.DefaultViewModel["Comments"] = commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.Page.Counter);
-            this.DefaultViewModel["PlayingComments"] = commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.Page.Playing);
         }
 
 
@@ -337,8 +346,6 @@ namespace League_of_Legends_Counterpicks
             }
 
             await commentViewModel.SubmitUserRating(comment, -1);
-            this.DefaultViewModel["Comments"] = commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.Page.Counter);
-            this.DefaultViewModel["PlayingComments"] = commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.Page.Playing);
         }
 
         private void Upvote_Loaded(object sender, RoutedEventArgs e)
@@ -357,17 +364,117 @@ namespace League_of_Legends_Counterpicks
 
         private void Downvote_Loaded(object sender, RoutedEventArgs e)
         {
-            Image upvote = sender as Image;
-            var comment = upvote.DataContext as Comment;
+            Image downvote = sender as Image;
+            var comment = downvote.DataContext as Comment;
             var existingRating = comment.UserRatings.Where(x => x.UniqueUser == commentViewModel.GetDeviceId()).FirstOrDefault();
             if (existingRating != null)
             {
                 if (existingRating.Score == -1)
                 {
-                    upvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/downvote.png", UriKind.Absolute));
+                    downvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/downvote.png", UriKind.Absolute));
                 }
             }
         }
+
+
+        private async void CounterUpvote_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var upvote = (Image)sender;
+            var counter = upvote.DataContext as Counter;
+
+            //Find the exisiting counter rating, if any
+            var existingRating = counter.CounterRatings.Where(x => x.UniqueUser == commentViewModel.GetDeviceId()).FirstOrDefault();
+            //If there was a previous rating, change vote images respectively
+            if (existingRating != null && existingRating.Score != 0)
+            {
+                //Pressing upvote again? Unhighlight the button.
+                if (existingRating.Score == 1)
+                {
+                    upvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/upvoteblank.png", UriKind.Absolute));
+                }
+
+                //Going from downvote to upvote? Change to highlighted upvote 
+                else if (existingRating.Score == -1)
+                {
+                    var downvote = ((Image)sender).FindName("DownvoteImage") as Image;
+                    downvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/downvoteblank.png", UriKind.Absolute));
+                    upvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/upvote.png", UriKind.Absolute));
+                }
+            }
+            //Otherwise, highlight the upvote button
+            else
+            {
+                upvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/upvote.png", UriKind.Absolute));
+            }
+            await commentViewModel.SubmitCounterRating(counter, 1);
+
+        }
+
+        private async void CounterDownvote_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var downvote = (Image)sender;
+            var counter = downvote.DataContext as Counter;
+
+            var existingRating = counter.CounterRatings.Where(x => x.UniqueUser == commentViewModel.GetDeviceId()).FirstOrDefault();
+            if (existingRating != null && existingRating.Score != 0)
+            {
+                if (existingRating.Score == 1)
+                {
+                    var upvote = ((Image)sender).FindName("UpvoteImage") as Image;
+                    downvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/downvote.png", UriKind.Absolute));
+                    upvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/upvoteblank.png", UriKind.Absolute));
+                }
+
+                else if (existingRating.Score == -1)
+                {
+                    downvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/downvoteblank.png", UriKind.Absolute));
+                }
+            }
+            else
+            {
+                downvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/downvote.png", UriKind.Absolute));
+
+            }
+
+            await commentViewModel.SubmitCounterRating(counter, -1);
+
+        }
+
+
+
+        private void CounterUpvote_DataLoaded(FrameworkElement sender, DataContextChangedEventArgs args)
+        {
+            Image upvote = sender as Image;
+            var counter = upvote.DataContext as Counter;
+            if (counter == null)
+                return;
+            var existingRating = counter.CounterRatings.Where(x => x.UniqueUser == commentViewModel.GetDeviceId()).FirstOrDefault();
+            if (existingRating != null)
+            {
+                if (existingRating.Score == 1)
+                {
+                    upvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/upvote.png", UriKind.Absolute));
+                }
+            }
+        }
+
+        private void CounterDownvote_DataLoaded(FrameworkElement sender, DataContextChangedEventArgs args)
+        {
+            Image downvote = sender as Image;
+            var counter = downvote.DataContext as Counter;
+            if (counter == null)
+                return;
+            var existingRating = counter.CounterRatings.Where(x => x.UniqueUser == commentViewModel.GetDeviceId()).FirstOrDefault();
+            if (existingRating != null)
+            {
+                if (existingRating.Score == -1)
+                {
+                    downvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/downvote.png", UriKind.Absolute));
+                }
+            }
+        }
+
+
 
         private void CounterMessage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -398,7 +505,59 @@ namespace League_of_Legends_Counterpicks
             MainHub.ScrollToSection(SubmitFeedbackSection);
         }
 
+        private void Filter_GotFocus(object sender, RoutedEventArgs e)
+        {
+            var filterBox = sender as TextBox;
+            filterBox.Text = String.Empty;
+        }
 
+        private void Filter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox filterBox = sender as TextBox;
+            Role filter = DataSource.FilterChampions(filterBox.Text);
+            DefaultViewModel["Filter"] = filter.Champions;
+        }
+
+        private void Counter_Click(object sender, ItemClickEventArgs e)
+        {
+            Champion counter = e.ClickedItem as Champion;
+            DefaultViewModel["Filter"] = DataSource.FilterChampions(filterBox.Text).Champions;
+            filterBox.Text = counter.UniqueId;
+        }
+
+        private void FilterBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            filterBox = sender as TextBox;
+        }
+
+        private async void Submit_Counter(object sender, TappedRoutedEventArgs e)
+        {
+            var filter = ((DefaultViewModel["Filter"]) as ObservableCollection<Champion>);
+
+            //Only allow counter submision if there is exactly one selected
+            if (filter.Count() != 1){
+                MessageDialog messageBox = new MessageDialog("Select a champion first!");
+                await messageBox.ShowAsync();
+                return;
+
+            }
+
+            //Prevent duplicate counter submissions
+            else if (commentViewModel.ChampionFeedback.Counters.Where(c => c.Name == filter.FirstOrDefault().UniqueId).Count() == 1) {
+                String message = filter.FirstOrDefault().UniqueId + " is already a counter!";
+                MessageDialog messageBox = new MessageDialog(message);
+                await messageBox.ShowAsync();
+                return;
+            }
+
+            //Otherwise, finally submit the counter
+            var counter = await commentViewModel.SubmitCounter(filter.FirstOrDefault());
+            await commentViewModel.SubmitCounterRating(counter, 1);
+            commentViewModel.ChampionFeedback.SortCounters();
+            MainHub.ScrollToSection(CounterSection);
+
+
+        }
 
     }
 

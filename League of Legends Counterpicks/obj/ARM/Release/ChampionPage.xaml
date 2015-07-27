@@ -19,15 +19,17 @@
         <ValueConverter:NameToImage x:Key="NameToImageConverter" />
         <ValueConverter:CounterFormat x:Key="CounterConverter" />
         <ValueConverter:PlayingFormat x:Key="PlayingConverter" />
+        <ValueConverter:CounterVisiblity x:Key="CounterVisbilityConverter" />
+        <ValueConverter:PlayingVisbility x:Key="PlayingVisbilityConverter" />
     </Page.Resources>
     
-    <Page.BottomAppBar>
+    <!--<Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton x:ConnectionId='1' Icon="Comment"
+            <AppBarButton Icon="Comment"
                           Label="Comment" 
-                                                 />
+                          Click="Comment_Clicked"/>
         </CommandBar>
-    </Page.BottomAppBar>
+    </Page.BottomAppBar>-->
 
 
     <Grid x:Name="LayoutRoot">
@@ -77,7 +79,8 @@
                                       AutoRefreshIntervalInSeconds="60"
                                       AdUnitId="231530" />
 
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1"
+                              Margin="0,-15,0,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
@@ -89,15 +92,16 @@
 
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="{Binding Champion.ImagePath}"
-                                       Width="80"
+                                       Width="100"
                                        Height="80" />
-                                 
+
                             </StackPanel>
                             <StackPanel Grid.Column="1"
                                         Orientation="Vertical"
-                                        Margin="15,0,0,0">
+                                        Margin="10,0,0,0">
                                 <TextBlock Text="{Binding Champion.UniqueId}"
                                            Style="{ThemeResource HeaderTextBlockStyle}"
+                                           LineHeight="50"
                                            VerticalAlignment="Center"
                                            HorizontalAlignment="Left"
                                            FontSize="37" />
@@ -107,92 +111,80 @@
                                            HorizontalAlignment="Left"
                                            Text="{Binding Role}" />
                             </StackPanel>
-                            
+
                             <Grid Grid.Row="1">
                                 <TextBlock FontSize="20"
+                                           HorizontalAlignment="Right"
                                            Foreground="{StaticResource PhoneAccentBrush}"
                                            Text="Counters"></TextBlock>
                             </Grid>
-                            <Grid Grid.Row="1" Grid.Column="1">
+                            <Grid Grid.Row="1"
+                                  Grid.Column="1">
                                 <TextBlock FontSize="20"
-                                           Margin="15,0,0,0"
                                            Foreground="{StaticResource PhoneAccentBrush}"
-                                           HorizontalAlignment="Left"
+                                           HorizontalAlignment="Center"
                                            Text="Difficulty"></TextBlock>
                             </Grid>
 
                         </Grid>
-                        <Grid Margin="0,10,0,0"
-                              Grid.Row="2">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
+                        
+                        <Grid Grid.Row="2">
+                            <ListView ItemsSource="{Binding ChampionFeedback.Counters}"
+                                      IsItemClickEnabled="True">
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="HorizontalContentAlignment"
+                                                Value="Stretch" />
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="1.1*"></ColumnDefinition>
+                                                <ColumnDefinition Width="4*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
 
-                            <Image x:ConnectionId='13' x:Name="Champ1"
-                                                        
-                                   Source="{Binding Champion.Counters[0], Converter={StaticResource NameToImageConverter}}" />
-                            <ProgressBar Value="100"
-                                         Height="12"
-                                         Grid.Column="1"
-                                         Margin="25,0,25,0"
-                                         VerticalAlignment="Center">
-                            </ProgressBar>
-                            <Image x:ConnectionId='14' x:Name="Champ2"
-                                   Grid.Row="1"
-                                                        
-                                   Source="{Binding Champion.Counters[1], Converter={StaticResource NameToImageConverter}}" />
-                            <ProgressBar Value="80"
-                                         Height="12"
-                                         Grid.Row="1"
-                                         Grid.Column="1"
-                                         Margin="25,0,25,0"
-                                         VerticalAlignment="Center">
-                            </ProgressBar>
-                            <Image x:ConnectionId='15' x:Name="Champ3"
-                                   Grid.Row="2"
-                                                        
-                                   Source="{Binding Champion.Counters[2], Converter={StaticResource NameToImageConverter}}" />
-                            <ProgressBar Value="60"
-                                         Height="12"
-                                         Grid.Row="2"
-                                         Grid.Column="1"
-                                         Margin="25,0,25,0"
-                                         VerticalAlignment="Center">
-                            </ProgressBar>
-                            <Image x:ConnectionId='16' x:Name="Champ4"
-                                   Grid.Row="3"
-                                                        
-                                   Source="{Binding Champion.Counters[3], Converter={StaticResource NameToImageConverter}}" />
-                            <ProgressBar Value="40"
-                                         Height="12"
-                                         Grid.Row="3"
-                                         Grid.Column="1"
-                                         Margin="25,0,25,0"
-                                         VerticalAlignment="Center">
-                            </ProgressBar>
-                            <Image x:ConnectionId='17' x:Name="Champ5"
-                                   Grid.Row="4"
-                                                        
-                                   Source="{Binding Champion.Counters[4], Converter={StaticResource NameToImageConverter}}" />
-                            <ProgressBar Value="20"
-                                         Height="12"
-                                         Grid.Row="4"
-                                         Grid.Column="1"
-                                         Margin="25,0,25,0"
-                                         VerticalAlignment="Center">
-                            </ProgressBar>
+                                            <StackPanel Margin="0,0,10,5">
+                                                <Image x:ConnectionId='16' Source="Assets/upvoteblank.png"
+                                                       Name="UpvoteImage"
+                                                                                    
+                                                                                                    
+                                                       Height="25"
+                                                       Width="25">
+                                                </Image>
+                                                <TextBlock Text="{Binding Score}"
+                                                           VerticalAlignment="Center"
+                                                           HorizontalAlignment="Center"
+                                                           FontSize="20">
+                                                </TextBlock>
+                                                <Image x:ConnectionId='17' Source="Assets/downvoteblank.png"
+                                                       Name="DownvoteImage"
+                                                                                      
+                                                                                                      
+                                                       Height="25"
+                                                       Width="25">
+                                                </Image>
+                                            </StackPanel>
+
+                                            <Image x:ConnectionId='15' Grid.Column="1"
+                                                                        
+                                                   Source="{Binding Name, Converter={StaticResource NameToImageConverter}}">
+                                            </Image>
+
+                                            <ProgressBar Grid.Column="2"
+                                                         Height="12"
+                                                         Margin="15,0,25,0"
+                                                         Value="{Binding Value}">
+                                            </ProgressBar>
+
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </Grid>
-
                     </Grid>
-
                 </DataTemplate>
             </HubSection>
 
@@ -246,19 +238,19 @@
                         </TextBlock>
 
 
-                        <RadioButton x:ConnectionId='8' GroupName="RadioGroup"
+                        <RadioButton x:ConnectionId='10' GroupName="RadioGroup"
                                      Grid.Row="2"
                                      HorizontalAlignment="Left"
                                      Margin="40,0,0,0"
                                                               
                                      Content="Counter"></RadioButton>
-                        <RadioButton x:ConnectionId='9' GroupName="RadioGroup"
+                        <RadioButton x:ConnectionId='11' GroupName="RadioGroup"
                                      Grid.Row="2"
                                      HorizontalAlignment="Right"
                                                               
                                      Content="Playing as"></RadioButton>
 
-                        <TextBox x:ConnectionId='10' Margin="30,0,30,0"
+                        <TextBox x:ConnectionId='12' Margin="30,0,30,0"
                                  Grid.Row="3"
                                  HorizontalAlignment="Stretch"
                                  VerticalAlignment="Stretch"
@@ -267,13 +259,14 @@
                                                       
                                                          ></TextBox>
 
-                        <TextBox x:ConnectionId='11' HorizontalAlignment="Stretch"
+                        <TextBox x:ConnectionId='13' Name="FeedbackBox"
+                                 HorizontalAlignment="Stretch"
                                  VerticalAlignment="Stretch"
                                  Margin="0,10,0,0"
                                  Grid.Row="4"
                                  TextWrapping="Wrap"
                                                              ></TextBox>
-                        <Button x:ConnectionId='12' Grid.Row="5"
+                        <Button x:ConnectionId='14' Grid.Row="5"
                                 VerticalAlignment="Bottom"
                                 HorizontalAlignment="Center"
                                                       >Send</Button>
@@ -321,7 +314,7 @@
                         </StackPanel>
 
 
-                        <TextBlock x:ConnectionId='5' Grid.Row="2"
+                        <TextBlock x:ConnectionId='7' Grid.Row="2"
                                    Visibility="Collapsed"
                                    Name="NoCommentMessage"
                                    FontSize="30"
@@ -332,18 +325,18 @@
                                    TextWrapping="Wrap"> Be the first to submit a comment!</TextBlock>
 
                         <ScrollViewer Grid.Row="2">
-                            <ListView ItemsSource="{Binding Comments}"
+                            <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource CounterVisbilityConverter}}"
                                       IsItemClickEnabled="True">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
                                             
                                                 <StackPanel Margin="0,0,10,0">
-                                                    <Image x:ConnectionId='6' Name="UpvoteImage"
+                                                    <Image x:ConnectionId='8' Name="UpvoteImage"
                                                            Source="Assets/upvoteblank.png"
                                                            Height="30"
                                                            Width="30"
@@ -355,7 +348,7 @@
                                                                HorizontalAlignment="Center"
                                                                FontSize="20">
                                                     </TextBlock>
-                                                    <Image x:ConnectionId='7' Name="DownvoteImage"
+                                                    <Image x:ConnectionId='9' Name="DownvoteImage"
                                                            Source="Assets/downvoteblank.png"
                                                            Height="30"
                                                            Width="30"
@@ -367,7 +360,7 @@
                                             <Grid Margin="0,0,0,10" Grid.Column="1">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="Auto"></RowDefinition>
-                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="*"></RowDefinition>
                                                 </Grid.RowDefinitions>
                                                 <TextBlock FontSize="30"
                                                            Text="{Binding User}">
@@ -375,7 +368,6 @@
                                                 <TextBlock FontSize="20"
                                                            Grid.Row="1"
                                                            TextWrapping="Wrap"
-                                                           MaxWidth="300"
                                                            Text="{Binding Text}">
                                                 </TextBlock>
                                             </Grid>
@@ -427,7 +419,7 @@
                             </TextBlock>
                         </StackPanel>
 
-                        <TextBlock x:ConnectionId='2' Grid.Row="2"
+                        <TextBlock x:ConnectionId='4' Grid.Row="2"
                                    Visibility="Collapsed"
                                    Name="NoCommentMessage2"
                                    FontSize="30"
@@ -438,18 +430,18 @@
                                    TextWrapping="Wrap"> Be the first to submit a comment!</TextBlock>
 
                         <ScrollViewer Grid.Row="2">
-                            <ListView ItemsSource="{Binding PlayingComments}"
+                            <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource PlayingVisbilityConverter}}"
                                       IsItemClickEnabled="True">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
 
                                             <StackPanel Margin="0,0,10,0">
-                                                <Image x:ConnectionId='3' Name="UpvoteImage"
+                                                <Image x:ConnectionId='5' Name="UpvoteImage"
                                                        Source="Assets/upvoteblank.png"
                                                        Height="30"
                                                        Width="30"
@@ -461,7 +453,7 @@
                                                            HorizontalAlignment="Center"
                                                            FontSize="20">
                                                 </TextBlock>
-                                                <Image x:ConnectionId='4' Name="DownvoteImage"
+                                                <Image x:ConnectionId='6' Name="DownvoteImage"
                                                        Source="Assets/downvoteblank.png"
                                                        Height="30"
                                                        Width="30"
@@ -474,7 +466,7 @@
                                                   Grid.Column="1">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="Auto"></RowDefinition>
-                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="*"></RowDefinition>
                                                 </Grid.RowDefinitions>
                                                 <TextBlock FontSize="30"
                                                            Text="{Binding User}">
@@ -482,7 +474,6 @@
                                                 <TextBlock FontSize="20"
                                                            Grid.Row="1"
                                                            TextWrapping="Wrap"
-                                                           MaxWidth="300"
                                                            Text="{Binding Text}">
                                                 </TextBlock>
                                             </Grid>
@@ -492,6 +483,80 @@
                             </ListView>
                         </ScrollViewer>
                     </Grid>
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection x:Name="SubmitCounterSection">
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="80"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="232527" />
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      Grid.Row="5"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="232528" />
+
+                        <TextBlock x:Name="Feedback"
+                                   FontSize="35"
+                                   Grid.Row="1"
+                                   Text="Submit Counters?"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center">
+                        </TextBlock>
+
+                        <TextBox x:ConnectionId='1' Height="40"
+                                 Name="FilterBox"
+                                                          
+                                 Grid.Row="2"
+                                 Margin="0,20,0,0"
+                                                           
+                                 Text="Type to search"
+                                                                 >
+                        </TextBox >
+
+                        <GridView x:ConnectionId='2' ItemsSource="{Binding Filter}"
+                                  IsItemClickEnabled="True"
+                                  Grid.Row="3"
+                                  Margin="0,15,0,10"
+                                                           >
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Image Source="{Binding ImagePath}"
+                                               Width="50"
+                                               Height="50" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+
+                        <Button x:ConnectionId='3' Grid.Row="4"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                                       
+                                Content="Submit">
+                        </Button>
+                    </Grid>
+                    
+                    
                 </DataTemplate>
             </HubSection>
         </Hub>

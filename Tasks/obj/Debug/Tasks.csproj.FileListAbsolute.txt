@@ -26,3 +26,4 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Debug\qualifiers.txt
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Debug\qualifiers.txt.intermediate
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Debug\Tasks.csprojResolveAssemblyReference.cache

@@ -11,8 +11,10 @@ namespace LeagueSeason5CountersService.DataObjects
     {
         public ChampionFeedback(){
             Comments = new List<Comment>();
+            Counters = new List<Counter>();
         }
         public string Name { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Counter> Counters { get; set; }
     }
 }

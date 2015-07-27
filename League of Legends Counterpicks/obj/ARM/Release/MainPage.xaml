@@ -99,7 +99,7 @@
                                    TextAlignment="Center"
                                    FontSize="19"
                                    VerticalAlignment="Center"
-                                   Foreground="#FFF3FD29"> Check out the new Comment System!</TextBlock>
+                                   Foreground="#FFF3FD29"> Add your own counters now!</TextBlock>
                     </Grid>
                 </Grid>
             </Grid>

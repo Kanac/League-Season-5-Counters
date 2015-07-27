@@ -155,3 +155,5 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.csproj.GenerateResource.Cache
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.dll
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.pdb
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.AddCounters.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Debug\LeagueSeason5CountersService.Migrations.clustered.resources

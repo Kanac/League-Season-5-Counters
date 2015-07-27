@@ -27,15 +27,17 @@ namespace LeagueSeason5CountersService
                 // client type TodoItemDto. Used when getting data.
                 cfg.CreateMap<ChampionFeedback, ChampionFeedbackDto>();
                 cfg.CreateMap<Comment, CommentDto>();
-
                 cfg.CreateMap<UserRating, UserRatingDto>();
+                cfg.CreateMap<Counter, CounterDto>();
+                cfg.CreateMap<CounterRating, CounterRatingDto>();
 
                 // Define a map from the client type to the database
                 // type. Used when inserting and updating data.
                 cfg.CreateMap<ChampionFeedbackDto, ChampionFeedback>();
                 cfg.CreateMap<CommentDto, Comment>();
-
                 cfg.CreateMap<UserRatingDto, UserRating>();
+                cfg.CreateMap<CounterDto, Counter>();
+                cfg.CreateMap<CounterRatingDto, CounterRating>();
 
             });
 

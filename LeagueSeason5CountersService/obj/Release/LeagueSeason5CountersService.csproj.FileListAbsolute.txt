@@ -153,3 +153,5 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.DtoUpdate.resources
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.DtoUpdate2.resources
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.AddPageAndChampName.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.AddCounters.resources
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\LeagueSeason5CountersService\obj\Release\LeagueSeason5CountersService.Migrations.clustered.resources

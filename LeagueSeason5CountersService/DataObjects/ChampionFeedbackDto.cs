@@ -11,5 +11,7 @@ namespace LeagueSeason5CountersService.DataObjects
     {
         public string Name { get; set; }
         public virtual ICollection<CommentDto> Comments { get; set; }
+        public virtual ICollection<CounterDto> Counters { get; set; }
+
     }
 }

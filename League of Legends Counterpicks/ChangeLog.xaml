@@ -85,6 +85,17 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
+						<Run Text="July 27 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Add your own counters to each champion now!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Made everything sexier"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Pretty much the entire app is online-based now backed by user contributions and my own"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
 						<Run Text="July 26 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
