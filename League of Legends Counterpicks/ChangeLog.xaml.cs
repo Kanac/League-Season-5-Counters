@@ -1,5 +1,6 @@
 ﻿using League_of_Legends_Counterpicks.Common;
 using Microsoft.AdMediator.WindowsPhone81;
+using Microsoft.Advertising.Mobile.UI;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -117,17 +118,35 @@ namespace League_of_Legends_Counterpicks
             await Launcher.LaunchUriAsync(new Uri("ms-windows-store:navigate?appid=" + APP_ID));
         }
 
-        private void Ad_Error(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
+        private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
-            var adName = (sender as AdMediatorControl).Id;
-            Debug.WriteLine("AdMediatorError for " + adName + ":" + e.Error + " " + e.ErrorCode);
+            var ad = sender as AdControl;
+            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            {
+                // Hide the app for the purchaser
+                ad.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            }
+            else
+            {
+                // Otherwise show the ad
+                ad.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
         }
 
-  
-
-        private void AdSdkError(object sender, Microsoft.AdMediator.Core.Events.AdFailedEventArgs e)
+        private void GridAd_Loaded(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("AdSdk event {0} by {1}", e.EventName, e.Name);
+            var grid = sender as Grid;
+            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            {
+                var rowDefinitions = grid.RowDefinitions;
+                foreach (var r in rowDefinitions)
+                {
+                    if (r.Height.Value == 80)
+                    {
+                        r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
+                    }
+                }
+            }
         }
     }
 }

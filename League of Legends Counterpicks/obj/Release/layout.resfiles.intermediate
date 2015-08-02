@@ -17,6 +17,8 @@ Assets\Chogath_Square_0.png
 Assets\Corki_Square_0.png
 Assets\Darius_Square_0.png
 Assets\Diana_Square_0.png
+Assets\downvote.png
+Assets\downvoteblank.png
 Assets\Dr. Mundo_Square_0.png
 Assets\Draven_Square_0.png
 Assets\Ekko_Square_0.png
@@ -113,6 +115,8 @@ Assets\Tweet.png
 Assets\Twisted Fate_Square_0.png
 Assets\Twitch_Square_0.png
 Assets\Udyr_Square_0.png
+Assets\upvote.png
+Assets\upvoteblank.png
 Assets\Urgot_Square_0.png
 Assets\Varus_Square_0.png
 Assets\Vayne_Square_0.png
@@ -139,6 +143,7 @@ Assets\Zyra_Square_0.png
 Common\ReadMe.txt
 DataModel\Data.json
 AdMediator.config
+ApplicationInsights.config
 Assets\BadgeLogo.scale-240.png
 Assets\SplashScreen.scale-240.png
 Assets\Square150x150Logo.scale-100.png
@@ -154,10 +159,10 @@ Assets\StoreLogo.scale-100.png
 Assets\StoreLogo.scale-140.png
 Assets\StoreLogo.scale-240.png
 Assets\Wide310x150Logo.scale-240.png
+Assets\WindowsStoreProxy.xml
 App.xbf
 ChampionPage.xbf
 ChangeLog.xbf
-FilterPage.xbf
 League of Legends Counterpicks.xr.xml
 MainPage.xbf
 RolePage.xbf

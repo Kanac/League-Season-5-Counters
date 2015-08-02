@@ -335,6 +335,10 @@
     <Compile Include="Migrations\201507270726459_clustered.Designer.cs">
       <DependentUpon>201507270726459_clustered.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507280827175_UniqueName.cs" />
+    <Compile Include="Migrations\201507280827175_UniqueName.Designer.cs">
+      <DependentUpon>201507280827175_UniqueName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LeagueSeason5CountersContext.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
@@ -401,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507270726459_clustered.resx">
       <DependentUpon>201507270726459_clustered.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507280827175_UniqueName.resx">
+      <DependentUpon>201507280827175_UniqueName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

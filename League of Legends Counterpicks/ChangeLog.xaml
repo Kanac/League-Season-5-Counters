@@ -18,14 +18,7 @@
                     Value="Wrap" />
         </Style>
     </Page.Resources>
-    <Grid x:Name="LayoutRoot">
-
-        <Grid.ChildrenTransitions>
-            <TransitionCollection>
-                <EntranceThemeTransition />
-            </TransitionCollection>
-        </Grid.ChildrenTransitions>
-
+    <Grid x:Name="LayoutRoot" Loaded="GridAd_Loaded">
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
             <RowDefinition Height="Auto" />
@@ -40,6 +33,7 @@
                       VerticalAlignment="Top"
                       Width="480"
                       Height="80"
+                      Loaded="Ad_Loaded"
                       AutoRefreshIntervalInSeconds="60"
                       AdUnitId="231539" />
         <UI:AdControl HorizontalAlignment="Center"
@@ -48,6 +42,7 @@
                       Width="480"
                       Height="80"
                       Grid.Row="4"
+                      Loaded="Ad_Loaded"
                       AutoRefreshIntervalInSeconds="60"
                       AdUnitId="231540" />
 
@@ -84,6 +79,38 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="August 2 2015" />
+                    </TextBlock>
+    
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added Easy Matchups and Synergy picks for each champion!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Made the champion page UI sexier to accompany this!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Since this was a highly requested feature, you can now purchase ad-block"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated the UI across all pages to support a sleaker and sexier design with ads removed"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Seeded lots of my own picks for easy matchups and synergy picks across many champions"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Improved responsiveness in sending comments, rating champions, etc"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock FontSize="25">
+						<Run Text="July 28 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in loading progress rings"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Networking bug fixes"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-No more adding self-counters (lol at that guy who submitted shen)"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Now shows a message dialog if you lack an internet connection. App will then close."></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="July 27 2015" />
                     </TextBlock>

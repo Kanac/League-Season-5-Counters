@@ -28,6 +28,8 @@ using Windows.ApplicationModel.Background;
 using System.IO.Compression;
 using Windows.ApplicationModel.Email;
 using Windows.ApplicationModel;
+using Windows.ApplicationModel.Store;
+using League_of_Legends_Counterpicks.Advertisement;
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -237,6 +239,43 @@ namespace League_of_Legends_Counterpicks
             mail.Subject = "Feedback for League Season 5 Counters";
             mail.To.Add(sendTo);
             await EmailManager.ShowComposeNewEmailAsync(mail);
+        }
+
+        private void Ad_Loaded(object sender, RoutedEventArgs e)
+        {
+       
+            var ad = sender as AdControl;
+            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            {
+                // Hide the app for the purchaser
+                ad.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            }
+            else
+            {
+                // Otherwise show the ad
+                ad.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+        }
+
+        private void GridAd_Loaded(object sender, RoutedEventArgs e)
+        {
+            var grid = sender as Grid;
+            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            {
+                var rowDefinitions = grid.RowDefinitions;
+                foreach (var r in rowDefinitions)
+                {
+                    if (r.Height.Value == 80)
+                    {
+                        r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
+                    }
+                }
+            }
+        }
+
+        private void AdBlock_Click(object sender, RoutedEventArgs e)
+        {
+            AdRemover.Purchase();
         }
 
 

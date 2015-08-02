@@ -17,6 +17,11 @@
 					<Value>App.xbf</Value>
 				</Candidate>
 			</NamedResource>
+			<NamedResource name="ApplicationInsights.config" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/ApplicationInsights.config">
+				<Candidate type="Path">
+					<Value>ApplicationInsights.config</Value>
+				</Candidate>
+			</NamedResource>
 			<NamedResource name="ChampionPage.xbf" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/ChampionPage.xbf">
 				<Candidate type="Path">
 					<Value>ChampionPage.xbf</Value>
@@ -748,6 +753,11 @@
 				<NamedResource name="Wide310x150Logo.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Wide310x150Logo.png">
 					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
 						<Value>Assets\Wide310x150Logo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="WindowsStoreProxy.xml" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/WindowsStoreProxy.xml">
+					<Candidate type="Path">
+						<Value>Assets\WindowsStoreProxy.xml</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="Wukong_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Wukong_Square_0.png">

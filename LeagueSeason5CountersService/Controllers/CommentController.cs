@@ -24,6 +24,7 @@ namespace LeagueSeason5CountersService.Controllers
         }
 
         // GET tables/Comment
+        [EnableQuery(PageSize = 1000)]
         [ExpandProperty("UserRatings")]
         public IQueryable<CommentDto> GetAllComment()
         {

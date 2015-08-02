@@ -4,6 +4,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+      xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
       x:Class="League_of_Legends_Counterpicks.ChangeLog"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -17,30 +18,48 @@
                     Value="Wrap" />
         </Style>
     </Page.Resources>
-    <Grid x:Name="LayoutRoot">
-
-        <Grid.ChildrenTransitions>
-            <TransitionCollection>
-                <EntranceThemeTransition />
-            </TransitionCollection>
-        </Grid.ChildrenTransitions>
-
+    <Grid x:ConnectionId='1' x:Name="LayoutRoot"                       >
         <Grid.RowDefinitions>
-            <RowDefinition Height="90" />
+            <RowDefinition Height="80" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="80" />
             
         </Grid.RowDefinitions>
-        <WindowsPhone81:AdMediatorControl x:ConnectionId='1' x:Name="AdMediator_4461F1"
+        
+        <UI:AdControl x:ConnectionId='2' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Top"
+                      Width="480"
+                      Height="80"
+                                        
+                      AutoRefreshIntervalInSeconds="60"
+                      AdUnitId="231539" />
+        <UI:AdControl x:ConnectionId='3' HorizontalAlignment="Center"
+                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                      VerticalAlignment="Top"
+                      Width="480"
+                      Height="80"
+                      Grid.Row="4"
+                                        
+                      AutoRefreshIntervalInSeconds="60"
+                      AdUnitId="231540" />
+
+        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_CAC3BD"
                                           HorizontalAlignment="Center"
-                                          Height="Auto"
-                                                                 
-                                                                    
-                                          Id="AdMediator-Id-A0BC2EBD-8646-4322-9EF7-0643F0B54B94"
                                           VerticalAlignment="Top"
-                                          Width="Auto" />
+                                          Width="480"
+                                          Height="80"
+                                          Id="AdMediator-Id-3396B67C-6AC8-4255-85BD-4167E99FD95F" />
+        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_AC3F32"
+                                          Id="AdMediator-Id-08232986-F40C-4B04-942D-7C93B7C16F0C"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Bottom"
+                                          Width="480"
+                                          Grid.Row="4"
+                                          Height="80" />-->
+
         <!-- Title Panel -->
         <StackPanel Grid.Row="1">
             <TextBlock Text="League Season 5 Counters Changes"
@@ -50,10 +69,7 @@
                        HorizontalAlignment="Center"
                        Style="{ThemeResource TitleTextBlockStyle}"
                        Margin="0,12,0,0" />
-            <!--<TextBlock Text="change log"
-                       Margin="0,-6.5,0,26.5"
-                       Style="{ThemeResource HeaderTextBlockStyle}"
-                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" />-->
+
             
         </StackPanel>
 
@@ -63,6 +79,87 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="August 2 2015" />
+                    </TextBlock>
+    
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added Easy Matchups and Synergy picks for each champion!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Made the champion page UI sexier to accompany this!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Since this was a highly requested feature, you can now purchase ad-block"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated the UI across all pages to support a sleaker and sexier design with ads removed"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Seeded lots of my own picks for easy matchups and synergy picks across many champions"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Improved responsiveness in sending comments, rating champions, etc"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock FontSize="25">
+						<Run Text="July 28 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in loading progress rings"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Networking bug fixes"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-No more adding self-counters (lol at that guy who submitted shen)"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Now shows a message dialog if you lack an internet connection. App will then close."></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 27 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Add your own counters to each champion now!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Made everything sexier"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Pretty much the entire app is online-based now backed by user contributions and my own"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 26 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Optimized net code for faster online interation"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Ensures each comment page is on 2 rows now"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated all counters to patch 5.14"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 25 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-When navigating towards champion page, role page is saved when back button is pressed"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Redesigned counter hub section in Champion Page"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Fixed text wrapping and alignment of comment section"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 22 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added a shit ton of changes"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Implemented an azure backend for lots of goodies"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Each Champion Page has two existing comments sections"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Dyanmic voting and commenting system to go with it"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Too many changes to talk about"></Run>
+                        <LineBreak></LineBreak>
+                            
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="July 14 2015" />
                     </TextBlock>
@@ -170,17 +267,10 @@
         </Grid>
         
         
-        <Button x:ConnectionId='2' Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"                       >
+        <Button x:ConnectionId='4' Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"                       >
             Check for Updates
         </Button>
-        
-        <WindowsPhone81:AdMediatorControl Grid.Row="4"
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Bottom"
-                                          x:Name="AdMediator_D2BDBB"
-                                          Height="Auto"
-                                          Id="AdMediator-Id-18C8A9BA-F1A6-42DA-8C28-F58A3F0F2DEE"
-                                          Width="Auto" />
+      
     </Grid>
 </Page>
 

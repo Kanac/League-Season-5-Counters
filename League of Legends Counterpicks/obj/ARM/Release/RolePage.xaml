@@ -53,18 +53,19 @@
                         Header="All"
                         Style="{StaticResource Header}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                <Grid x:ConnectionId='24' Margin="0,-30,0,0"
+                                            >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
                      
-                    <q:AlphaJumpList x:ConnectionId='3' Name="jumpList"
+                    <q:AlphaJumpList x:ConnectionId='25' Name="jumpList"
                                          Grid.Row="1"
                                          Visibility="Collapsed"
                                                                  >
-                            <GridView x:ConnectionId='4' Name="myGridView"
+                            <GridView x:ConnectionId='28' Name="myGridView"
                                       ItemsSource="{Binding Roles[0].GroupedChampions}"
                                       IsItemClickEnabled="True"
                                                                     
@@ -82,19 +83,21 @@
                             </GridView>
 
                         </q:AlphaJumpList>
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='26' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231516"/>
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='27' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231515" />
 
@@ -121,7 +124,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[1]}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                <Grid x:ConnectionId='21' Margin="0,-30,0,0"
+                                            >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -140,19 +144,21 @@
                                                           Height="Auto"
                                                           Width="Auto" 
                                                           Grid.Row="2"/>-->
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='22' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231514" />
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='23' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231513" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"
@@ -166,7 +172,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[2]}">
                 <DataTemplate>
-                    <Grid Margin="0,-45,0,0">
+                <Grid x:ConnectionId='18' Margin="0,-30,0,0"
+                                            > 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -185,19 +192,21 @@
                                                           Height="Auto"
                                                           Width="Auto"
                                                           Grid.Row="2" />-->
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='19' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231517" />
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='20' HorizontalAlignment="Center"
                                   ApplicationId="b8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231518" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"
@@ -212,7 +221,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[3]}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                <Grid x:ConnectionId='15' Margin="0,-30,0,0"
+                                            >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -231,19 +241,21 @@
                                                           Height="Auto"
                                                           Width="Auto"
                                                           Grid.Row="2" />-->
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='16' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231519" />
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='17' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231520" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"
@@ -257,7 +269,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[4]}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                <Grid x:ConnectionId='12' Margin="0,-30,0,0"
+                                            >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -276,19 +289,21 @@
                                                           Height="Auto"
                                                           Width="Auto"
                                                           Grid.Row="2" />-->
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='13' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231521" />
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='14' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231522" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"
@@ -303,7 +318,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[5]}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                    <Grid x:ConnectionId='9' Margin="0,-30,0,0"
+                                            >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -322,19 +338,21 @@
                                                           Height="Auto"
                                                           Width="Auto"
                                                           Grid.Row="2" />-->
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='10' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231523" />
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='11' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231524" />
 
@@ -349,7 +367,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[6]}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                    <Grid x:ConnectionId='6' Margin="0,-30,0,0"
+                                            >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -368,19 +387,21 @@
                                                           Height="Auto"
                                                           Width="Auto"
                                                           Grid.Row="2" />-->
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='7' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231525" />
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='8' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231526" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"
@@ -395,14 +416,15 @@
                     Style="{StaticResource Header}"
                     DataContext="{Binding Filter}">
             <DataTemplate>
-                <Grid Margin="0,-30,0,0">
+                <Grid x:ConnectionId='2' Margin="0,-30,0,0"
+                                            >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="80" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="80" />
                     </Grid.RowDefinitions>
-                    <TextBox x:ConnectionId='2' Height="40"
+                    <TextBox x:ConnectionId='3' Height="40"
                              Margin="0,20,0,0"
                                                         
                              Text="Type to search"
@@ -422,20 +444,22 @@
                                                       Height="Auto"
                                                       Width="Auto"
                                                       Grid.Row="3" />-->
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='4' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Grid.Row="1"
                                   Width="480"
                                   Height="80"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231527" />
-                    <UI:AdControl HorizontalAlignment="Center"
+                    <UI:AdControl x:ConnectionId='5' HorizontalAlignment="Center"
                                   ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="3"
+                                                    
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231528" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"

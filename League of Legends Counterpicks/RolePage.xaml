@@ -53,7 +53,8 @@
                         Header="All"
                         Style="{StaticResource Header}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                <Grid Margin="0,-30,0,0"
+                      Loaded="GridAd_Loaded">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -87,6 +88,7 @@
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231516"/>
                     <UI:AdControl HorizontalAlignment="Center"
@@ -95,6 +97,7 @@
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231515" />
 
@@ -121,7 +124,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[1]}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                <Grid Margin="0,-30,0,0"
+                      Loaded="GridAd_Loaded">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -145,6 +149,7 @@
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231514" />
                     <UI:AdControl HorizontalAlignment="Center"
@@ -153,6 +158,7 @@
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231513" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"
@@ -166,7 +172,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[2]}">
                 <DataTemplate>
-                    <Grid Margin="0,-45,0,0">
+                <Grid Margin="0,-30,0,0"
+                      Loaded="GridAd_Loaded"> 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -190,6 +197,7 @@
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231517" />
                     <UI:AdControl HorizontalAlignment="Center"
@@ -198,6 +206,7 @@
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231518" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"
@@ -212,7 +221,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[3]}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                <Grid Margin="0,-30,0,0"
+                      Loaded="GridAd_Loaded">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -236,6 +246,7 @@
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231519" />
                     <UI:AdControl HorizontalAlignment="Center"
@@ -244,6 +255,7 @@
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231520" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"
@@ -257,7 +269,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[4]}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                <Grid Margin="0,-30,0,0"
+                      Loaded="GridAd_Loaded">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -281,6 +294,7 @@
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231521" />
                     <UI:AdControl HorizontalAlignment="Center"
@@ -289,6 +303,7 @@
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231522" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"
@@ -303,7 +318,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[5]}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                    <Grid Margin="0,-30,0,0"
+                      Loaded="GridAd_Loaded">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -327,6 +343,7 @@
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231523" />
                     <UI:AdControl HorizontalAlignment="Center"
@@ -335,6 +352,7 @@
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231524" />
 
@@ -349,7 +367,8 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[6]}">
                 <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
+                    <Grid Margin="0,-30,0,0"
+                      Loaded="GridAd_Loaded">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
@@ -373,6 +392,7 @@
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231525" />
                     <UI:AdControl HorizontalAlignment="Center"
@@ -381,6 +401,7 @@
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231526" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"
@@ -395,7 +416,8 @@
                     Style="{StaticResource Header}"
                     DataContext="{Binding Filter}">
             <DataTemplate>
-                <Grid Margin="0,-30,0,0">
+                <Grid Margin="0,-30,0,0"
+                      Loaded="GridAd_Loaded">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="80" />
@@ -428,6 +450,7 @@
                                   Grid.Row="1"
                                   Width="480"
                                   Height="80"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231527" />
                     <UI:AdControl HorizontalAlignment="Center"
@@ -436,6 +459,7 @@
                                   Width="480"
                                   Height="80"
                                   Grid.Row="3"
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="231528" />
                     <ContentControl ContentTemplate="{StaticResource HubData}"

@@ -7,10 +7,16 @@ namespace LeagueSeason5CountersService.DataObjects
 {
     public class PageEnum
     {
-        public enum Page
+        public enum CommentPage
         {
             Counter,
-            Playing
+            Playing,
+        }
+
+        public enum ChampionPage
+        {
+            Counter,
+            Synergy,
         }
     }
 }

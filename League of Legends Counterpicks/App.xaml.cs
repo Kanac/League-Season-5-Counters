@@ -21,6 +21,8 @@ using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 using Windows.ApplicationModel.Background;
 using Microsoft.WindowsAzure.MobileServices;
+using Microsoft.ApplicationInsights;
+using Windows.ApplicationModel.Store;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -32,14 +34,6 @@ namespace League_of_Legends_Counterpicks
     /// </summary>
     public sealed partial class App : Application
     {
-        // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
-        //const string serviceUrl = "http://localhost:58718";
-        //public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient MobileService = new MobileServiceClient(serviceUrl){
-        //    SerializerSettings = new MobileServiceJsonSerializerSettings()
-        //      {
-        //          CamelCasePropertyNames = true
-        //      }
-        //};
         public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient MobileService = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
         "https://leagueseason5counters.azure-mobile.net/",
         "iovrWRisXiqXDzBpSreDZoSWrCPskN14")
@@ -50,7 +44,10 @@ namespace League_of_Legends_Counterpicks
               }
         };
 
-          private TransitionCollection transitions;
+        // For in app purchases
+        public static LicenseInformation licenseInformation;
+
+        private TransitionCollection transitions;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -58,9 +55,18 @@ namespace League_of_Legends_Counterpicks
         /// </summary>
         public App()
         {
+            // Enable Azure Application Insights
+            WindowsAppInitializer.InitializeAsync();
+
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
 
+            //Only for IAP simulation purposes
+            //licenseInformation = CurrentAppSimulator.LicenseInformation;
+
+            licenseInformation = CurrentApp.LicenseInformation;
+
+            // Setup toast for 1 hour after app initializing 
             ToastTemplateType toastTemplate = ToastTemplateType.ToastImageAndText02;
             XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
 
@@ -80,7 +86,7 @@ namespace League_of_Legends_Counterpicks
             ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledToast);
 
 
-           
+
         }
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -181,5 +187,6 @@ namespace League_of_Legends_Counterpicks
             await SuspensionManager.SaveAsync();
             deferral.Complete();
         }
+
     }
 }

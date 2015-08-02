@@ -17,6 +17,7 @@ namespace LeagueSeason5CountersService.DataObjects
         public int Score { get; set; }
         public string ChampionFeedbackName { get; set; }
         public string ChampionFeedbackId { get; set; }
+        public PageEnum.ChampionPage Page { get; set; }
         [ForeignKey("ChampionFeedbackId")]
         public virtual ChampionFeedback ChampionFeedback { get; set; }
         public virtual ICollection<CounterRating> CounterRatings { get; set; }

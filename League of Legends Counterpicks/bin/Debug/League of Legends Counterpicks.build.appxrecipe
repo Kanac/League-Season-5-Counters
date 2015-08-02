@@ -34,6 +34,15 @@
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.AdMediator.WindowsPhone81.Smaato.1.0.6\lib\wpa\Microsoft.AdMediator.WindowsPhone81.Smaato.dll">
       <PackagePath>Microsoft.AdMediator.WindowsPhone81.Smaato.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.ApplicationInsights.1.1.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
+      <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.ApplicationInsights.WindowsApps.1.1.0\lib\wpa81\Microsoft.ApplicationInsights.Extensibility.Windows.dll">
+      <PackagePath>Microsoft.ApplicationInsights.Extensibility.Windows.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.ApplicationInsights.PersistenceChannel.1.1.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.PersistenceChannel.dll">
+      <PackagePath>Microsoft.ApplicationInsights.PersistenceChannel.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.Edm.dll">
       <PackagePath>Microsoft.Data.Edm.dll</PackagePath>
     </AppxPackagedFile>
@@ -174,6 +183,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\AdMediator.config">
       <PackagePath>AdMediator.config</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\ApplicationInsights.config">
+      <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\BadgeLogo.scale-240.png">
       <PackagePath>Assets\BadgeLogo.scale-240.png</PackagePath>
@@ -650,6 +662,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Zyra_Square_0.png">
       <PackagePath>Assets\Zyra_Square_0.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\WindowsStoreProxy.xml">
+      <PackagePath>Assets\WindowsStoreProxy.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\league_of_legends.jpg">
       <PackagePath>Assets\league_of_legends.jpg</PackagePath>

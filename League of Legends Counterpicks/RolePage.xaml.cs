@@ -1,6 +1,8 @@
-﻿using League_of_Legends_Counterpicks.Common;
+﻿using League_of_Legends_Counterpicks.Advertisement;
+using League_of_Legends_Counterpicks.Common;
 using League_of_Legends_Counterpicks.Data;
 using Microsoft.AdMediator.WindowsPhone81;
+using Microsoft.Advertising.Mobile.UI;
 using QKit;
 using QKit.JumpList;
 using System;
@@ -10,10 +12,15 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
 using Windows.ApplicationModel.Resources;
+using Windows.ApplicationModel.Store;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
+using Windows.Storage;
+using Windows.System;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -31,6 +38,8 @@ namespace League_of_Legends_Counterpicks
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private ObservableCollection<Role> roles;
+        private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+        private readonly String APP_ID = "3366702e-67c7-48e7-bc82-d3a4534f3086";
         private string roleId, savedRoleId;
         private bool firstLoad = true;
         private int sectionIndex;
@@ -74,6 +83,7 @@ namespace League_of_Legends_Counterpicks
         /// session.  The state will be null the first time a page is visited.</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)  //e is the unique ID
         {
+            reviewApp();
             //Check if the navigation paramater changes to determine the roleId to use, otherwise use the roleId set by navigating to ChampionPage
             if ((string)e.NavigationParameter != savedRoleId) {
                 roleId = e.NavigationParameter as string;
@@ -120,8 +130,12 @@ namespace League_of_Legends_Counterpicks
         /// </summary>
         /// <param name="sender">The GridView displaying the item clicked.</param>
         /// <param name="e">Event data that describes the item clicked.</param>
+        /// 
+
         private void ItemView_ItemClick(object sender, ItemClickEventArgs e)
         {
+            //Ask user to purchase ad removal before proceeding
+            checkAdRemoval();
             //Store the hub section before proceeding to champion page, so that the back button goes back to it
             roleId = MainHub.SectionsInView[0].Name;
 
@@ -191,7 +205,92 @@ namespace League_of_Legends_Counterpicks
         {
             (sender as TextBox).Text = String.Empty;
         }
-    
-  
+
+
+        private void Ad_Loaded(object sender, RoutedEventArgs e)
+        {
+            var ad = sender as AdControl;
+            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            {
+                // Hide the app for the purchaser
+                ad.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            }
+            else
+            {
+                // Otherwise show the ad
+                ad.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+        }
+
+        private void GridAd_Loaded(object sender, RoutedEventArgs e)
+        {
+            var grid = sender as Grid;
+            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            {
+                var rowDefinitions = grid.RowDefinitions;
+                foreach (var r in rowDefinitions)
+                {
+                    if (r.Height.Value == 80)
+                    {
+                        r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
+                    }
+                }
+            }
+        }
+
+        private async void checkAdRemoval()
+        {
+            if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            {
+                if (!localSettings.Values.ContainsKey("AdViews"))
+                    localSettings.Values.Add(new KeyValuePair<string, object>("AdViews", 3));
+                else
+                    localSettings.Values["AdViews"] = 1 + Convert.ToInt32(localSettings.Values["AdViews"]);
+
+                int viewCount = Convert.ToInt32(localSettings.Values["AdViews"]);
+
+                //Only ask for IAP purchase up to several times, once every 6 times this page is visited, and do not ask anymore once bought
+                if (viewCount % 5 == 0 && viewCount <= 100)
+                {
+                    var purchaseBox = new MessageDialog("See more counters, easy matchups and synergy picks for each champion at once! Remove ads now!");
+                    purchaseBox.Commands.Add(new UICommand { Label = "Yes! :)", Id = 0 });
+                    purchaseBox.Commands.Add(new UICommand { Label = "Maybe later :(", Id = 1 });
+
+                    var reviewResult = await purchaseBox.ShowAsync();
+
+                    if ((int)reviewResult.Id == 0)
+                    {
+                        AdRemover.Purchase();
+                    }
+                }
+            }
+        }
+
+        private async void reviewApp()
+        {
+            if (!localSettings.Values.ContainsKey("Views"))
+                localSettings.Values.Add(new KeyValuePair<string, object>("Views", 3));
+            else
+                localSettings.Values["Views"] = 1 + Convert.ToInt32(localSettings.Values["Views"]);
+
+            int viewCount = Convert.ToInt32(localSettings.Values["Views"]);
+
+            //Only ask for review up to 10 times, once every 5 times this page is visited, and do not ask anymore once reviewed
+            if (viewCount % 5 == 0 && viewCount <= 50 && Convert.ToInt32(localSettings.Values["Rate"]) != 1)
+            {
+                var reviewBox = new MessageDialog("Please rate this app 5 stars to support us!");
+                reviewBox.Commands.Add(new UICommand { Label = "Yes! :)", Id = 0 });
+                reviewBox.Commands.Add(new UICommand { Label = "Maybe later :(", Id = 1 });
+
+                var reviewResult = await reviewBox.ShowAsync();
+
+                if ((int)reviewResult.Id == 0)
+                {
+                    try { await Launcher.LaunchUriAsync(new Uri("ms-windows-store:reviewapp?appid=" + APP_ID)); }
+                    catch { Exception e; }
+                    localSettings.Values["Rate"] = 1;
+                }
+            }
+        }
     }
 }

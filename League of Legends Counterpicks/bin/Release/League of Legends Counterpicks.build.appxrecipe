@@ -34,11 +34,29 @@
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.AdMediator.WindowsPhone81.Smaato.1.0.6\lib\wpa\Microsoft.AdMediator.WindowsPhone81.Smaato.dll">
       <PackagePath>Microsoft.AdMediator.WindowsPhone81.Smaato.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.ApplicationInsights.1.1.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
+      <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.ApplicationInsights.WindowsApps.1.1.0\lib\wpa81\Microsoft.ApplicationInsights.Extensibility.Windows.dll">
+      <PackagePath>Microsoft.ApplicationInsights.Extensibility.Windows.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.ApplicationInsights.PersistenceChannel.1.1.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.PersistenceChannel.dll">
+      <PackagePath>Microsoft.ApplicationInsights.PersistenceChannel.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.Edm.dll">
+      <PackagePath>Microsoft.Data.Edm.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.OData.dll">
+      <PackagePath>Microsoft.Data.OData.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\WindowsAzure.MobileServices.1.3.2\lib\wpa81\Microsoft.WindowsAzure.Mobile.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\WindowsAzure.MobileServices.1.3.2\lib\wpa81\Microsoft.WindowsAzure.Mobile.Ext.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\WindowsAzure.Storage.4.3.0\lib\wpa\Microsoft.WindowsAzure.Storage.dll">
+      <PackagePath>Microsoft.WindowsAzure.Storage.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -54,6 +72,90 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Primitives.dll">
       <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\System.Spatial.dll">
+      <PackagePath>System.Spatial.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>de\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>es\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>fr\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>it\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>ja\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>ko\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>ru\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>zh-Hans\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>zh-Hant\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Data.OData.resources.dll">
+      <PackagePath>de\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.Data.OData.resources.dll">
+      <PackagePath>es\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.Data.OData.resources.dll">
+      <PackagePath>fr\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.Data.OData.resources.dll">
+      <PackagePath>it\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.Data.OData.resources.dll">
+      <PackagePath>ja\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.Data.OData.resources.dll">
+      <PackagePath>ko\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.Data.OData.resources.dll">
+      <PackagePath>ru\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.Data.OData.resources.dll">
+      <PackagePath>zh-Hans\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.Data.OData.resources.dll">
+      <PackagePath>zh-Hant\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\System.Spatial.resources.dll">
+      <PackagePath>de\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\System.Spatial.resources.dll">
+      <PackagePath>es\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\System.Spatial.resources.dll">
+      <PackagePath>fr\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\System.Spatial.resources.dll">
+      <PackagePath>it\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\System.Spatial.resources.dll">
+      <PackagePath>ja\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\System.Spatial.resources.dll">
+      <PackagePath>ko\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\System.Spatial.resources.dll">
+      <PackagePath>ru\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\System.Spatial.resources.dll">
+      <PackagePath>zh-Hans\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\System.Spatial.resources.dll">
+      <PackagePath>zh-Hant\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\AdDuplexWinPhone81.8.5.0.5\lib\portable-win81+wpa81\AdDuplex.Universal.Controls.WinPhone.XAML.winmd">
       <PackagePath>AdDuplex.Universal.Controls.WinPhone.XAML.winmd</PackagePath>
@@ -81,6 +183,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\AdMediator.config">
       <PackagePath>AdMediator.config</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\ApplicationInsights.config">
+      <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\BadgeLogo.scale-240.png">
       <PackagePath>Assets\BadgeLogo.scale-240.png</PackagePath>
@@ -197,6 +302,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Diana_Square_0.png">
       <PackagePath>Assets\Diana_Square_0.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\downvote.png">
+      <PackagePath>Assets\downvote.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\downvoteblank.png">
+      <PackagePath>Assets\downvoteblank.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Draven_Square_0.png">
       <PackagePath>Assets\Draven_Square_0.png</PackagePath>
@@ -353,6 +464,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Tweet.png">
       <PackagePath>Assets\Tweet.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\upvote.png">
+      <PackagePath>Assets\upvote.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\upvoteblank.png">
+      <PackagePath>Assets\upvoteblank.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Wukong_Square_0.png">
       <PackagePath>Assets\Wukong_Square_0.png</PackagePath>
@@ -546,6 +663,9 @@
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Zyra_Square_0.png">
       <PackagePath>Assets\Zyra_Square_0.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\WindowsStoreProxy.xml">
+      <PackagePath>Assets\WindowsStoreProxy.xml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\league_of_legends.jpg">
       <PackagePath>Assets\league_of_legends.jpg</PackagePath>
     </AppxPackagedFile>
@@ -566,9 +686,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\ChangeLog.xbf">
       <PackagePath>ChangeLog.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\FilterPage.xbf">
-      <PackagePath>FilterPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\Release\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>

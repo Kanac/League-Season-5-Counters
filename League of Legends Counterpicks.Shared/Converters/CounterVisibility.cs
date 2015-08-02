@@ -14,7 +14,7 @@ namespace League_of_Legends_Counterpicks.Converters
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             ObservableCollection<Comment> comments = (ObservableCollection<Comment>)value;
-            return comments.Where(c => c.Page == PageEnum.Page.Counter);
+            return comments.Where(c => c.Page == PageEnum.CommentPage.Counter);
 
         }
 

@@ -149,27 +149,27 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
         private void InitTypeTables()
         {
             _typeNameTable = new string[30];
-            _typeNameTable[0] = "Microsoft.AdMediator.WindowsPhone81.AdMediatorControl";
+            _typeNameTable[0] = "Microsoft.Advertising.Mobile.UI.AdControl";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Control";
             _typeNameTable[2] = "String";
-            _typeNameTable[3] = "Microsoft.AdMediator.Core.Models.AdSdkParameters";
-            _typeNameTable[4] = "Object";
-            _typeNameTable[5] = "System.Collections.Generic.IDictionary`2<String, TimeSpan>";
-            _typeNameTable[6] = "TimeSpan";
-            _typeNameTable[7] = "System.ValueType";
-            _typeNameTable[8] = "Int32";
-            _typeNameTable[9] = "Int64";
-            _typeNameTable[10] = "Double";
-            _typeNameTable[11] = "League_of_Legends_Counterpicks.ChangeLog";
-            _typeNameTable[12] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[13] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[14] = "League_of_Legends_Counterpicks.Common.NavigationHelper";
-            _typeNameTable[15] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[16] = "League_of_Legends_Counterpicks.Common.ObservableDictionary";
-            _typeNameTable[17] = "League_of_Legends_Counterpicks.Converters.FilterFormat";
-            _typeNameTable[18] = "League_of_Legends_Counterpicks.FilterPage";
-            _typeNameTable[19] = "League_of_Legends_Counterpicks.MainPage";
-            _typeNameTable[20] = "League_of_Legends_Counterpicks.Converters.NameToImage";
+            _typeNameTable[3] = "Int32";
+            _typeNameTable[4] = "Double";
+            _typeNameTable[5] = "Boolean";
+            _typeNameTable[6] = "League_of_Legends_Counterpicks.ChangeLog";
+            _typeNameTable[7] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[8] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[9] = "League_of_Legends_Counterpicks.Common.NavigationHelper";
+            _typeNameTable[10] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[11] = "League_of_Legends_Counterpicks.Common.ObservableDictionary";
+            _typeNameTable[12] = "Object";
+            _typeNameTable[13] = "League_of_Legends_Counterpicks.MainPage";
+            _typeNameTable[14] = "League_of_Legends_Counterpicks.Converters.NameToImage";
+            _typeNameTable[15] = "League_of_Legends_Counterpicks.Converters.CounterFormat";
+            _typeNameTable[16] = "League_of_Legends_Counterpicks.Converters.PlayingFormat";
+            _typeNameTable[17] = "League_of_Legends_Counterpicks.Converters.CounterVisiblity";
+            _typeNameTable[18] = "League_of_Legends_Counterpicks.Converters.PlayingVisibility";
+            _typeNameTable[19] = "League_of_Legends_Counterpicks.Converters.CounterChampionVisiblity";
+            _typeNameTable[20] = "League_of_Legends_Counterpicks.Converters.SynergyChampionVisiblity";
             _typeNameTable[21] = "League_of_Legends_Counterpicks.ChampionPage";
             _typeNameTable[22] = "QKit.AlphaJumpList";
             _typeNameTable[23] = "QKit.JumpListBase";
@@ -181,27 +181,27 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
             _typeNameTable[29] = "League_of_Legends_Counterpicks.Twitter";
 
             _typeTable = new global::System.Type[30];
-            _typeTable[0] = typeof(global::Microsoft.AdMediator.WindowsPhone81.AdMediatorControl);
+            _typeTable[0] = typeof(global::Microsoft.Advertising.Mobile.UI.AdControl);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Control);
             _typeTable[2] = typeof(global::System.String);
-            _typeTable[3] = typeof(global::Microsoft.AdMediator.Core.Models.AdSdkParameters);
-            _typeTable[4] = typeof(global::System.Object);
-            _typeTable[5] = typeof(global::System.Collections.Generic.IDictionary<global::System.String, global::System.TimeSpan>);
-            _typeTable[6] = typeof(global::System.TimeSpan);
-            _typeTable[7] = typeof(global::System.ValueType);
-            _typeTable[8] = typeof(global::System.Int32);
-            _typeTable[9] = typeof(global::System.Int64);
-            _typeTable[10] = typeof(global::System.Double);
-            _typeTable[11] = typeof(global::League_of_Legends_Counterpicks.ChangeLog);
-            _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[14] = typeof(global::League_of_Legends_Counterpicks.Common.NavigationHelper);
-            _typeTable[15] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[16] = typeof(global::League_of_Legends_Counterpicks.Common.ObservableDictionary);
-            _typeTable[17] = typeof(global::League_of_Legends_Counterpicks.Converters.FilterFormat);
-            _typeTable[18] = typeof(global::League_of_Legends_Counterpicks.FilterPage);
-            _typeTable[19] = typeof(global::League_of_Legends_Counterpicks.MainPage);
-            _typeTable[20] = typeof(global::League_of_Legends_Counterpicks.Converters.NameToImage);
+            _typeTable[3] = typeof(global::System.Int32);
+            _typeTable[4] = typeof(global::System.Double);
+            _typeTable[5] = typeof(global::System.Boolean);
+            _typeTable[6] = typeof(global::League_of_Legends_Counterpicks.ChangeLog);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[9] = typeof(global::League_of_Legends_Counterpicks.Common.NavigationHelper);
+            _typeTable[10] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[11] = typeof(global::League_of_Legends_Counterpicks.Common.ObservableDictionary);
+            _typeTable[12] = typeof(global::System.Object);
+            _typeTable[13] = typeof(global::League_of_Legends_Counterpicks.MainPage);
+            _typeTable[14] = typeof(global::League_of_Legends_Counterpicks.Converters.NameToImage);
+            _typeTable[15] = typeof(global::League_of_Legends_Counterpicks.Converters.CounterFormat);
+            _typeTable[16] = typeof(global::League_of_Legends_Counterpicks.Converters.PlayingFormat);
+            _typeTable[17] = typeof(global::League_of_Legends_Counterpicks.Converters.CounterVisiblity);
+            _typeTable[18] = typeof(global::League_of_Legends_Counterpicks.Converters.PlayingVisibility);
+            _typeTable[19] = typeof(global::League_of_Legends_Counterpicks.Converters.CounterChampionVisiblity);
+            _typeTable[20] = typeof(global::League_of_Legends_Counterpicks.Converters.SynergyChampionVisiblity);
             _typeTable[21] = typeof(global::League_of_Legends_Counterpicks.ChampionPage);
             _typeTable[22] = typeof(global::QKit.AlphaJumpList);
             _typeTable[23] = typeof(global::QKit.JumpListBase);
@@ -245,26 +245,22 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
             return -1;
         }
 
-        private object Activate_0_AdMediatorControl() { return new global::Microsoft.AdMediator.WindowsPhone81.AdMediatorControl(); }
-        private object Activate_3_AdSdkParameters() { return new global::Microsoft.AdMediator.Core.Models.AdSdkParameters(); }
-        private object Activate_11_ChangeLog() { return new global::League_of_Legends_Counterpicks.ChangeLog(); }
-        private object Activate_16_ObservableDictionary() { return new global::League_of_Legends_Counterpicks.Common.ObservableDictionary(); }
-        private object Activate_17_FilterFormat() { return new global::League_of_Legends_Counterpicks.Converters.FilterFormat(); }
-        private object Activate_18_FilterPage() { return new global::League_of_Legends_Counterpicks.FilterPage(); }
-        private object Activate_19_MainPage() { return new global::League_of_Legends_Counterpicks.MainPage(); }
-        private object Activate_20_NameToImage() { return new global::League_of_Legends_Counterpicks.Converters.NameToImage(); }
+        private object Activate_0_AdControl() { return new global::Microsoft.Advertising.Mobile.UI.AdControl(); }
+        private object Activate_6_ChangeLog() { return new global::League_of_Legends_Counterpicks.ChangeLog(); }
+        private object Activate_11_ObservableDictionary() { return new global::League_of_Legends_Counterpicks.Common.ObservableDictionary(); }
+        private object Activate_13_MainPage() { return new global::League_of_Legends_Counterpicks.MainPage(); }
+        private object Activate_14_NameToImage() { return new global::League_of_Legends_Counterpicks.Converters.NameToImage(); }
+        private object Activate_15_CounterFormat() { return new global::League_of_Legends_Counterpicks.Converters.CounterFormat(); }
+        private object Activate_16_PlayingFormat() { return new global::League_of_Legends_Counterpicks.Converters.PlayingFormat(); }
+        private object Activate_17_CounterVisiblity() { return new global::League_of_Legends_Counterpicks.Converters.CounterVisiblity(); }
+        private object Activate_18_PlayingVisibility() { return new global::League_of_Legends_Counterpicks.Converters.PlayingVisibility(); }
+        private object Activate_19_CounterChampionVisiblity() { return new global::League_of_Legends_Counterpicks.Converters.CounterChampionVisiblity(); }
+        private object Activate_20_SynergyChampionVisiblity() { return new global::League_of_Legends_Counterpicks.Converters.SynergyChampionVisiblity(); }
         private object Activate_21_ChampionPage() { return new global::League_of_Legends_Counterpicks.ChampionPage(); }
         private object Activate_22_AlphaJumpList() { return new global::QKit.AlphaJumpList(); }
         private object Activate_28_RolePage() { return new global::League_of_Legends_Counterpicks.RolePage(); }
         private object Activate_29_Twitter() { return new global::League_of_Legends_Counterpicks.Twitter(); }
-        private void MapAdd_5_IDictionary(object instance, object key, object item)
-        {
-            var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.TimeSpan>)instance;
-            var newKey = (global::System.String)key;
-            var newItem = (global::System.TimeSpan)item;
-            collection.Add(newKey, newItem);
-        }
-        private void MapAdd_16_ObservableDictionary(object instance, object key, object item)
+        private void MapAdd_11_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
             var newKey = (global::System.String)key;
@@ -288,12 +284,23 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
             switch (typeIndex)
             {
 
-            case 0:   //  Microsoft.AdMediator.WindowsPhone81.AdMediatorControl
+            case 0:   //  Microsoft.Advertising.Mobile.UI.AdControl
                 userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_0_AdMediatorControl;
-                userType.AddMemberName("Id");
-                userType.AddMemberName("AdSdkOptionalParameters");
-                userType.AddMemberName("AdSdkTimeouts");
+                userType.Activator = Activate_0_AdControl;
+                userType.AddMemberName("ApplicationId");
+                userType.AddMemberName("AutoRefreshIntervalInSeconds");
+                userType.AddMemberName("AdUnitId");
+                userType.AddMemberName("Keywords");
+                userType.AddMemberName("Latitude");
+                userType.AddMemberName("Longitude");
+                userType.AddMemberName("CountryOrRegion");
+                userType.AddMemberName("PostalCode");
+                userType.AddMemberName("IsAutoRefreshEnabled");
+                userType.AddMemberName("IsAutoCollapseEnabled");
+                userType.AddMemberName("IsEngaged");
+                userType.AddMemberName("IsSuspended");
+                userType.AddMemberName("HasAd");
+                userType.AddMemberName("IsBackgroundTransparent");
                 xamlType = userType;
                 break;
 
@@ -305,120 +312,112 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
                 xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Microsoft.AdMediator.Core.Models.AdSdkParameters
-                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 4:   //  Object
+            case 3:   //  Int32
                 xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  System.Collections.Generic.IDictionary`2<String, TimeSpan>
-                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.DictionaryAdd = MapAdd_5_IDictionary;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 6:   //  TimeSpan
-                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.AddMemberName("Days");
-                userType.AddMemberName("Hours");
-                userType.AddMemberName("Milliseconds");
-                userType.AddMemberName("Minutes");
-                userType.AddMemberName("Seconds");
-                userType.AddMemberName("Ticks");
-                userType.AddMemberName("TotalDays");
-                userType.AddMemberName("TotalHours");
-                userType.AddMemberName("TotalMilliseconds");
-                userType.AddMemberName("TotalMinutes");
-                userType.AddMemberName("TotalSeconds");
-                xamlType = userType;
-                break;
-
-            case 7:   //  System.ValueType
-                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                xamlType = userType;
-                break;
-
-            case 8:   //  Int32
+            case 4:   //  Double
                 xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  Int64
+            case 5:   //  Boolean
                 xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  Double
-                xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 11:   //  League_of_Legends_Counterpicks.ChangeLog
+            case 6:   //  League_of_Legends_Counterpicks.ChangeLog
                 userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_ChangeLog;
+                userType.Activator = Activate_6_ChangeLog;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  Windows.UI.Xaml.Controls.Page
+            case 7:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  Windows.UI.Xaml.Controls.UserControl
+            case 8:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 14:   //  League_of_Legends_Counterpicks.Common.NavigationHelper
+            case 9:   //  League_of_Legends_Counterpicks.Common.NavigationHelper
                 userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 15:   //  Windows.UI.Xaml.DependencyObject
+            case 10:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  League_of_Legends_Counterpicks.Common.ObservableDictionary
+            case 11:   //  League_of_Legends_Counterpicks.Common.ObservableDictionary
                 userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.DictionaryAdd = MapAdd_16_ObservableDictionary;
+                userType.DictionaryAdd = MapAdd_11_ObservableDictionary;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 17:   //  League_of_Legends_Counterpicks.Converters.FilterFormat
-                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_17_FilterFormat;
-                userType.SetIsLocalType();
-                xamlType = userType;
+            case 12:   //  Object
+                xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  League_of_Legends_Counterpicks.FilterPage
+            case 13:   //  League_of_Legends_Counterpicks.MainPage
                 userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_FilterPage;
+                userType.Activator = Activate_13_MainPage;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 19:   //  League_of_Legends_Counterpicks.MainPage
-                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_19_MainPage;
-                userType.AddMemberName("NavigationHelper");
-                userType.AddMemberName("DefaultViewModel");
+            case 14:   //  League_of_Legends_Counterpicks.Converters.NameToImage
+                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_14_NameToImage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 20:   //  League_of_Legends_Counterpicks.Converters.NameToImage
+            case 15:   //  League_of_Legends_Counterpicks.Converters.CounterFormat
                 userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_20_NameToImage;
+                userType.Activator = Activate_15_CounterFormat;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 16:   //  League_of_Legends_Counterpicks.Converters.PlayingFormat
+                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_16_PlayingFormat;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 17:   //  League_of_Legends_Counterpicks.Converters.CounterVisiblity
+                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_17_CounterVisiblity;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 18:   //  League_of_Legends_Counterpicks.Converters.PlayingVisibility
+                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_18_PlayingVisibility;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 19:   //  League_of_Legends_Counterpicks.Converters.CounterChampionVisiblity
+                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_19_CounterChampionVisiblity;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 20:   //  League_of_Legends_Counterpicks.Converters.SynergyChampionVisiblity
+                userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_20_SynergyChampionVisiblity;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -551,80 +550,130 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
             return foundXamlType;
         }
 
-        private object get_0_AdMediatorControl_Id(object instance)
+        private object get_0_AdControl_ApplicationId(object instance)
         {
-            var that = (global::Microsoft.AdMediator.WindowsPhone81.AdMediatorControl)instance;
-            return that.Id;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.ApplicationId;
         }
-        private void set_0_AdMediatorControl_Id(object instance, object Value)
+        private void set_0_AdControl_ApplicationId(object instance, object Value)
         {
-            var that = (global::Microsoft.AdMediator.WindowsPhone81.AdMediatorControl)instance;
-            that.Id = (global::System.String)Value;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.ApplicationId = (global::System.String)Value;
         }
-        private object get_1_AdMediatorControl_AdSdkOptionalParameters(object instance)
+        private object get_1_AdControl_AutoRefreshIntervalInSeconds(object instance)
         {
-            var that = (global::Microsoft.AdMediator.WindowsPhone81.AdMediatorControl)instance;
-            return that.AdSdkOptionalParameters;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.AutoRefreshIntervalInSeconds;
         }
-        private object get_2_AdMediatorControl_AdSdkTimeouts(object instance)
+        private void set_1_AdControl_AutoRefreshIntervalInSeconds(object instance, object Value)
         {
-            var that = (global::Microsoft.AdMediator.WindowsPhone81.AdMediatorControl)instance;
-            return that.AdSdkTimeouts;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.AutoRefreshIntervalInSeconds = (global::System.Int32)Value;
         }
-        private object get_3_TimeSpan_Days(object instance)
+        private object get_2_AdControl_AdUnitId(object instance)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.Days;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.AdUnitId;
         }
-        private object get_4_TimeSpan_Hours(object instance)
+        private void set_2_AdControl_AdUnitId(object instance, object Value)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.Hours;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.AdUnitId = (global::System.String)Value;
         }
-        private object get_5_TimeSpan_Milliseconds(object instance)
+        private object get_3_AdControl_Keywords(object instance)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.Milliseconds;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.Keywords;
         }
-        private object get_6_TimeSpan_Minutes(object instance)
+        private void set_3_AdControl_Keywords(object instance, object Value)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.Minutes;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.Keywords = (global::System.String)Value;
         }
-        private object get_7_TimeSpan_Seconds(object instance)
+        private object get_4_AdControl_Latitude(object instance)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.Seconds;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.Latitude;
         }
-        private object get_8_TimeSpan_Ticks(object instance)
+        private void set_4_AdControl_Latitude(object instance, object Value)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.Ticks;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.Latitude = (global::System.Double)Value;
         }
-        private object get_9_TimeSpan_TotalDays(object instance)
+        private object get_5_AdControl_Longitude(object instance)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.TotalDays;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.Longitude;
         }
-        private object get_10_TimeSpan_TotalHours(object instance)
+        private void set_5_AdControl_Longitude(object instance, object Value)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.TotalHours;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.Longitude = (global::System.Double)Value;
         }
-        private object get_11_TimeSpan_TotalMilliseconds(object instance)
+        private object get_6_AdControl_CountryOrRegion(object instance)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.TotalMilliseconds;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.CountryOrRegion;
         }
-        private object get_12_TimeSpan_TotalMinutes(object instance)
+        private void set_6_AdControl_CountryOrRegion(object instance, object Value)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.TotalMinutes;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.CountryOrRegion = (global::System.String)Value;
         }
-        private object get_13_TimeSpan_TotalSeconds(object instance)
+        private object get_7_AdControl_PostalCode(object instance)
         {
-            var that = (global::System.TimeSpan)instance;
-            return that.TotalSeconds;
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.PostalCode;
+        }
+        private void set_7_AdControl_PostalCode(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.PostalCode = (global::System.String)Value;
+        }
+        private object get_8_AdControl_IsAutoRefreshEnabled(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.IsAutoRefreshEnabled;
+        }
+        private void set_8_AdControl_IsAutoRefreshEnabled(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.IsAutoRefreshEnabled = (global::System.Boolean)Value;
+        }
+        private object get_9_AdControl_IsAutoCollapseEnabled(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.IsAutoCollapseEnabled;
+        }
+        private void set_9_AdControl_IsAutoCollapseEnabled(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.IsAutoCollapseEnabled = (global::System.Boolean)Value;
+        }
+        private object get_10_AdControl_IsEngaged(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.IsEngaged;
+        }
+        private object get_11_AdControl_IsSuspended(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.IsSuspended;
+        }
+        private object get_12_AdControl_HasAd(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.HasAd;
+        }
+        private object get_13_AdControl_IsBackgroundTransparent(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.IsBackgroundTransparent;
+        }
+        private void set_13_AdControl_IsBackgroundTransparent(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.IsBackgroundTransparent = (global::System.Boolean)Value;
         }
         private object get_14_ChangeLog_NavigationHelper(object instance)
         {
@@ -636,82 +685,72 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
             var that = (global::League_of_Legends_Counterpicks.ChangeLog)instance;
             return that.DefaultViewModel;
         }
-        private object get_16_FilterPage_NavigationHelper(object instance)
-        {
-            var that = (global::League_of_Legends_Counterpicks.FilterPage)instance;
-            return that.NavigationHelper;
-        }
-        private object get_17_FilterPage_DefaultViewModel(object instance)
-        {
-            var that = (global::League_of_Legends_Counterpicks.FilterPage)instance;
-            return that.DefaultViewModel;
-        }
-        private object get_18_MainPage_NavigationHelper(object instance)
+        private object get_16_MainPage_NavigationHelper(object instance)
         {
             var that = (global::League_of_Legends_Counterpicks.MainPage)instance;
             return that.NavigationHelper;
         }
-        private object get_19_MainPage_DefaultViewModel(object instance)
+        private object get_17_MainPage_DefaultViewModel(object instance)
         {
             var that = (global::League_of_Legends_Counterpicks.MainPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_20_ChampionPage_NavigationHelper(object instance)
+        private object get_18_ChampionPage_NavigationHelper(object instance)
         {
             var that = (global::League_of_Legends_Counterpicks.ChampionPage)instance;
             return that.NavigationHelper;
         }
-        private object get_21_ChampionPage_DefaultViewModel(object instance)
+        private object get_19_ChampionPage_DefaultViewModel(object instance)
         {
             var that = (global::League_of_Legends_Counterpicks.ChampionPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_22_JumpListBase_BaseList(object instance)
+        private object get_20_JumpListBase_BaseList(object instance)
         {
             var that = (global::QKit.JumpListBase)instance;
             return that.BaseList;
         }
-        private void set_22_JumpListBase_BaseList(object instance, object Value)
+        private void set_20_JumpListBase_BaseList(object instance, object Value)
         {
             var that = (global::QKit.JumpListBase)instance;
             that.BaseList = (global::Windows.UI.Xaml.Controls.ListViewBase)Value;
         }
-        private object get_23_JumpListBase_CollectionView(object instance)
+        private object get_21_JumpListBase_CollectionView(object instance)
         {
             var that = (global::QKit.JumpListBase)instance;
             return that.CollectionView;
         }
-        private object get_24_JumpListBase_CollectionGroups(object instance)
+        private object get_22_JumpListBase_CollectionGroups(object instance)
         {
             var that = (global::QKit.JumpListBase)instance;
             return that.CollectionGroups;
         }
-        private object get_25_JumpListBase_JumpListGroupStyle(object instance)
+        private object get_23_JumpListBase_JumpListGroupStyle(object instance)
         {
             var that = (global::QKit.JumpListBase)instance;
             return that.JumpListGroupStyle;
         }
-        private void set_25_JumpListBase_JumpListGroupStyle(object instance, object Value)
+        private void set_23_JumpListBase_JumpListGroupStyle(object instance, object Value)
         {
             var that = (global::QKit.JumpListBase)instance;
             that.JumpListGroupStyle = (global::Windows.UI.Xaml.Controls.GroupStyle)Value;
         }
-        private object get_26_RolePage_NavigationHelper(object instance)
+        private object get_24_RolePage_NavigationHelper(object instance)
         {
             var that = (global::League_of_Legends_Counterpicks.RolePage)instance;
             return that.NavigationHelper;
         }
-        private object get_27_RolePage_DefaultViewModel(object instance)
+        private object get_25_RolePage_DefaultViewModel(object instance)
         {
             var that = (global::League_of_Legends_Counterpicks.RolePage)instance;
             return that.DefaultViewModel;
         }
-        private object get_28_Twitter_NavigationHelper(object instance)
+        private object get_26_Twitter_NavigationHelper(object instance)
         {
             var that = (global::League_of_Legends_Counterpicks.Twitter)instance;
             return that.NavigationHelper;
         }
-        private object get_29_Twitter_DefaultViewModel(object instance)
+        private object get_27_Twitter_DefaultViewModel(object instance)
         {
             var that = (global::League_of_Legends_Counterpicks.Twitter)instance;
             return that.DefaultViewModel;
@@ -724,89 +763,100 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
 
             switch (longMemberName)
             {
-            case "Microsoft.AdMediator.WindowsPhone81.AdMediatorControl.Id":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.AdMediator.WindowsPhone81.AdMediatorControl");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Id", "String");
-                xamlMember.Getter = get_0_AdMediatorControl_Id;
-                xamlMember.Setter = set_0_AdMediatorControl_Id;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.ApplicationId":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "ApplicationId", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_0_AdControl_ApplicationId;
+                xamlMember.Setter = set_0_AdControl_ApplicationId;
                 break;
-            case "Microsoft.AdMediator.WindowsPhone81.AdMediatorControl.AdSdkOptionalParameters":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.AdMediator.WindowsPhone81.AdMediatorControl");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "AdSdkOptionalParameters", "Microsoft.AdMediator.Core.Models.AdSdkParameters");
-                xamlMember.Getter = get_1_AdMediatorControl_AdSdkOptionalParameters;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.AutoRefreshIntervalInSeconds":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "AutoRefreshIntervalInSeconds", "Int32");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_1_AdControl_AutoRefreshIntervalInSeconds;
+                xamlMember.Setter = set_1_AdControl_AutoRefreshIntervalInSeconds;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.AdUnitId":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "AdUnitId", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_2_AdControl_AdUnitId;
+                xamlMember.Setter = set_2_AdControl_AdUnitId;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.Keywords":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Keywords", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_3_AdControl_Keywords;
+                xamlMember.Setter = set_3_AdControl_Keywords;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.Latitude":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Latitude", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_4_AdControl_Latitude;
+                xamlMember.Setter = set_4_AdControl_Latitude;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.Longitude":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Longitude", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_AdControl_Longitude;
+                xamlMember.Setter = set_5_AdControl_Longitude;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.CountryOrRegion":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "CountryOrRegion", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_6_AdControl_CountryOrRegion;
+                xamlMember.Setter = set_6_AdControl_CountryOrRegion;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.PostalCode":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "PostalCode", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_AdControl_PostalCode;
+                xamlMember.Setter = set_7_AdControl_PostalCode;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.IsAutoRefreshEnabled":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "IsAutoRefreshEnabled", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_8_AdControl_IsAutoRefreshEnabled;
+                xamlMember.Setter = set_8_AdControl_IsAutoRefreshEnabled;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.IsAutoCollapseEnabled":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "IsAutoCollapseEnabled", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_9_AdControl_IsAutoCollapseEnabled;
+                xamlMember.Setter = set_9_AdControl_IsAutoCollapseEnabled;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.IsEngaged":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "IsEngaged", "Boolean");
+                xamlMember.Getter = get_10_AdControl_IsEngaged;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "Microsoft.AdMediator.WindowsPhone81.AdMediatorControl.AdSdkTimeouts":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.AdMediator.WindowsPhone81.AdMediatorControl");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "AdSdkTimeouts", "System.Collections.Generic.IDictionary`2<String, TimeSpan>");
-                xamlMember.Getter = get_2_AdMediatorControl_AdSdkTimeouts;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.IsSuspended":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "IsSuspended", "Boolean");
+                xamlMember.Getter = get_11_AdControl_IsSuspended;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "TimeSpan.Days":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Days", "Int32");
-                xamlMember.Getter = get_3_TimeSpan_Days;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.HasAd":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "HasAd", "Boolean");
+                xamlMember.Getter = get_12_AdControl_HasAd;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "TimeSpan.Hours":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Hours", "Int32");
-                xamlMember.Getter = get_4_TimeSpan_Hours;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TimeSpan.Milliseconds":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Milliseconds", "Int32");
-                xamlMember.Getter = get_5_TimeSpan_Milliseconds;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TimeSpan.Minutes":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Minutes", "Int32");
-                xamlMember.Getter = get_6_TimeSpan_Minutes;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TimeSpan.Seconds":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Seconds", "Int32");
-                xamlMember.Getter = get_7_TimeSpan_Seconds;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TimeSpan.Ticks":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Ticks", "Int64");
-                xamlMember.Getter = get_8_TimeSpan_Ticks;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TimeSpan.TotalDays":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "TotalDays", "Double");
-                xamlMember.Getter = get_9_TimeSpan_TotalDays;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TimeSpan.TotalHours":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "TotalHours", "Double");
-                xamlMember.Getter = get_10_TimeSpan_TotalHours;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TimeSpan.TotalMilliseconds":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "TotalMilliseconds", "Double");
-                xamlMember.Getter = get_11_TimeSpan_TotalMilliseconds;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TimeSpan.TotalMinutes":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "TotalMinutes", "Double");
-                xamlMember.Getter = get_12_TimeSpan_TotalMinutes;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TimeSpan.TotalSeconds":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TimeSpan");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "TotalSeconds", "Double");
-                xamlMember.Getter = get_13_TimeSpan_TotalSeconds;
-                xamlMember.SetIsReadOnly();
+            case "Microsoft.Advertising.Mobile.UI.AdControl.IsBackgroundTransparent":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "IsBackgroundTransparent", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_13_AdControl_IsBackgroundTransparent;
+                xamlMember.Setter = set_13_AdControl_IsBackgroundTransparent;
                 break;
             case "League_of_Legends_Counterpicks.ChangeLog.NavigationHelper":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.ChangeLog");
@@ -820,92 +870,80 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
                 xamlMember.Getter = get_15_ChangeLog_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "League_of_Legends_Counterpicks.FilterPage.NavigationHelper":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.FilterPage");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "NavigationHelper", "League_of_Legends_Counterpicks.Common.NavigationHelper");
-                xamlMember.Getter = get_16_FilterPage_NavigationHelper;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "League_of_Legends_Counterpicks.FilterPage.DefaultViewModel":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.FilterPage");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "League_of_Legends_Counterpicks.Common.ObservableDictionary");
-                xamlMember.Getter = get_17_FilterPage_DefaultViewModel;
-                xamlMember.SetIsReadOnly();
-                break;
             case "League_of_Legends_Counterpicks.MainPage.NavigationHelper":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.MainPage");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "NavigationHelper", "League_of_Legends_Counterpicks.Common.NavigationHelper");
-                xamlMember.Getter = get_18_MainPage_NavigationHelper;
+                xamlMember.Getter = get_16_MainPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "League_of_Legends_Counterpicks.MainPage.DefaultViewModel":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.MainPage");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "League_of_Legends_Counterpicks.Common.ObservableDictionary");
-                xamlMember.Getter = get_19_MainPage_DefaultViewModel;
+                xamlMember.Getter = get_17_MainPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "League_of_Legends_Counterpicks.ChampionPage.NavigationHelper":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.ChampionPage");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "NavigationHelper", "League_of_Legends_Counterpicks.Common.NavigationHelper");
-                xamlMember.Getter = get_20_ChampionPage_NavigationHelper;
+                xamlMember.Getter = get_18_ChampionPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "League_of_Legends_Counterpicks.ChampionPage.DefaultViewModel":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.ChampionPage");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "League_of_Legends_Counterpicks.Common.ObservableDictionary");
-                xamlMember.Getter = get_21_ChampionPage_DefaultViewModel;
+                xamlMember.Getter = get_19_ChampionPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "QKit.JumpListBase.BaseList":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("QKit.JumpListBase");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "BaseList", "Windows.UI.Xaml.Controls.ListViewBase");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_22_JumpListBase_BaseList;
-                xamlMember.Setter = set_22_JumpListBase_BaseList;
+                xamlMember.Getter = get_20_JumpListBase_BaseList;
+                xamlMember.Setter = set_20_JumpListBase_BaseList;
                 break;
             case "QKit.JumpListBase.CollectionView":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("QKit.JumpListBase");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "CollectionView", "Windows.UI.Xaml.Data.ICollectionView");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_23_JumpListBase_CollectionView;
+                xamlMember.Getter = get_21_JumpListBase_CollectionView;
                 xamlMember.SetIsReadOnly();
                 break;
             case "QKit.JumpListBase.CollectionGroups":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("QKit.JumpListBase");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "CollectionGroups", "Windows.Foundation.Collections.IObservableVector`1<Object>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_24_JumpListBase_CollectionGroups;
+                xamlMember.Getter = get_22_JumpListBase_CollectionGroups;
                 xamlMember.SetIsReadOnly();
                 break;
             case "QKit.JumpListBase.JumpListGroupStyle":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("QKit.JumpListBase");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "JumpListGroupStyle", "Windows.UI.Xaml.Controls.GroupStyle");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_25_JumpListBase_JumpListGroupStyle;
-                xamlMember.Setter = set_25_JumpListBase_JumpListGroupStyle;
+                xamlMember.Getter = get_23_JumpListBase_JumpListGroupStyle;
+                xamlMember.Setter = set_23_JumpListBase_JumpListGroupStyle;
                 break;
             case "League_of_Legends_Counterpicks.RolePage.NavigationHelper":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.RolePage");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "NavigationHelper", "League_of_Legends_Counterpicks.Common.NavigationHelper");
-                xamlMember.Getter = get_26_RolePage_NavigationHelper;
+                xamlMember.Getter = get_24_RolePage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "League_of_Legends_Counterpicks.RolePage.DefaultViewModel":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.RolePage");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "League_of_Legends_Counterpicks.Common.ObservableDictionary");
-                xamlMember.Getter = get_27_RolePage_DefaultViewModel;
+                xamlMember.Getter = get_25_RolePage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "League_of_Legends_Counterpicks.Twitter.NavigationHelper":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.Twitter");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "NavigationHelper", "League_of_Legends_Counterpicks.Common.NavigationHelper");
-                xamlMember.Getter = get_28_Twitter_NavigationHelper;
+                xamlMember.Getter = get_26_Twitter_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "League_of_Legends_Counterpicks.Twitter.DefaultViewModel":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("League_of_Legends_Counterpicks.Twitter");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "League_of_Legends_Counterpicks.Common.ObservableDictionary");
-                xamlMember.Getter = get_29_Twitter_DefaultViewModel;
+                xamlMember.Getter = get_27_Twitter_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             }
