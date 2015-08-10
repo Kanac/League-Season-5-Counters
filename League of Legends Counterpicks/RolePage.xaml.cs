@@ -250,18 +250,22 @@ namespace League_of_Legends_Counterpicks
                 int viewCount = Convert.ToInt32(localSettings.Values["AdViews"]);
 
                 //Only ask for IAP purchase up to several times, once every 6 times this page is visited, and do not ask anymore once bought
-                if (viewCount % 5 == 0 && viewCount <= 100)
+                if (viewCount % 4 == 0 && viewCount <= 100)
                 {
                     var purchaseBox = new MessageDialog("See more counters, easy matchups and synergy picks for each champion at once! Remove ads now!");
                     purchaseBox.Commands.Add(new UICommand { Label = "Yes! :)", Id = 0 });
                     purchaseBox.Commands.Add(new UICommand { Label = "Maybe later :(", Id = 1 });
 
-                    var reviewResult = await purchaseBox.ShowAsync();
-
-                    if ((int)reviewResult.Id == 0)
+                    try
                     {
-                        AdRemover.Purchase();
+                        var reviewResult = await purchaseBox.ShowAsync();
+
+                        if ((int)reviewResult.Id == 0)
+                        {
+                            AdRemover.Purchase();
+                        }
                     }
+                    catch (Exception) { }
                 }
             }
         }
@@ -275,21 +279,25 @@ namespace League_of_Legends_Counterpicks
 
             int viewCount = Convert.ToInt32(localSettings.Values["Views"]);
 
+
             //Only ask for review up to 10 times, once every 5 times this page is visited, and do not ask anymore once reviewed
-            if (viewCount % 5 == 0 && viewCount <= 50 && Convert.ToInt32(localSettings.Values["Rate"]) != 1)
+            if (viewCount % 4 == 0 && viewCount <= 50 && Convert.ToInt32(localSettings.Values["Rate"]) != 1)
             {
-                var reviewBox = new MessageDialog("Please rate this app 5 stars to support us!");
+                var reviewBox = new MessageDialog("Keep updates coming by rating this app 5 stars to support us!");
                 reviewBox.Commands.Add(new UICommand { Label = "Yes! :)", Id = 0 });
-                reviewBox.Commands.Add(new UICommand { Label = "Maybe later :(", Id = 1 });
+                reviewBox.Commands.Add(new UICommand { Label = "Maybe later", Id = 1 });
 
-                var reviewResult = await reviewBox.ShowAsync();
-
-                if ((int)reviewResult.Id == 0)
+                try
                 {
-                    try { await Launcher.LaunchUriAsync(new Uri("ms-windows-store:reviewapp?appid=" + APP_ID)); }
-                    catch { Exception e; }
-                    localSettings.Values["Rate"] = 1;
+                    var reviewResult = await reviewBox.ShowAsync();
+                    if ((int)reviewResult.Id == 0)
+                    {
+                        try { await Launcher.LaunchUriAsync(new Uri("ms-windows-store:reviewapp?appid=" + APP_ID)); }
+                        catch (Exception) { }
+                        localSettings.Values["Rate"] = 1;
+                    }
                 }
+                catch (Exception) { }
             }
         }
     }

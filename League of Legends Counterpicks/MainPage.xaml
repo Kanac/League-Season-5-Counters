@@ -37,13 +37,13 @@
         </Grid.RowDefinitions>
 
         <UI:AdControl HorizontalAlignment="Center"
-                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                       VerticalAlignment="Top"
                       Width="480"
                       Height="80"
                       Loaded="Ad_Loaded"
                       AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="231537" />
+                      AdUnitId="231252" />
 
         <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_B3E200"
                                                   HorizontalAlignment="Center"
@@ -116,14 +116,14 @@
         </StackPanel>
         
         <UI:AdControl HorizontalAlignment="Center"
-                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                       VerticalAlignment="Top"
                       Width="480"
                       Height="80"
                       Grid.Row="2"
                       Loaded="Ad_Loaded"
                       AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="231538" />
+                      AdUnitId="231251" />
         <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_C08057"
                                           HorizontalAlignment="Center"
                                           Height="80"

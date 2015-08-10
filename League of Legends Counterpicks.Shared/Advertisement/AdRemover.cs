@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Store;
 using Windows.Storage;
@@ -15,15 +13,16 @@ namespace League_of_Legends_Counterpicks.Advertisement
             {
                 try
                 {
-                    //StorageFolder installFolder = await Package.Current.InstalledLocation.GetFolderAsync("Assets");
-                    //StorageFile appSimulatorStorageFile = await installFolder.GetFileAsync("WindowsStoreProxy.xml");
-
-                    //await CurrentAppSimulator.ReloadSimulatorAsync(appSimulatorStorageFile);
-                    //PurchaseResults result = await CurrentAppSimulator.RequestProductPurchaseAsync("AdRemoval");
-
+#if DEBUG
+                    StorageFolder installFolder = await Package.Current.InstalledLocation.GetFolderAsync("Assets");
+                    StorageFile appSimulatorStorageFile = await installFolder.GetFileAsync("WindowsStoreProxy.xml");
+                    await CurrentAppSimulator.ReloadSimulatorAsync(appSimulatorStorageFile);
+                    PurchaseResults result = await CurrentAppSimulator.RequestProductPurchaseAsync("AdRemoval");
+#else
                     PurchaseResults result = await CurrentApp.RequestProductPurchaseAsync("AdRemoval");
+#endif
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     // handle error or do nothing
                 }

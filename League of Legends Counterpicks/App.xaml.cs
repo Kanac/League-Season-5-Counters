@@ -62,11 +62,21 @@ namespace League_of_Legends_Counterpicks
             this.Suspending += this.OnSuspending;
 
             //Only for IAP simulation purposes
-            //licenseInformation = CurrentAppSimulator.LicenseInformation;
-
+#if DEBUG
+            licenseInformation = CurrentAppSimulator.LicenseInformation;
+#else
             licenseInformation = CurrentApp.LicenseInformation;
+#endif
 
             // Setup toast for 1 hour after app initializing 
+            setupToastOnLaunch();
+
+
+
+        }
+
+        private void setupToastOnLaunch()
+        {
             ToastTemplateType toastTemplate = ToastTemplateType.ToastImageAndText02;
             XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
 
@@ -84,10 +94,8 @@ namespace League_of_Legends_Counterpicks
             DateTime dueTime = DateTime.Now.AddHours(1);
             ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, dueTime);
             ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledToast);
-
-
-
         }
+
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used when the application is launched to open a specific file, to display

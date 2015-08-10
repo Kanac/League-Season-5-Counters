@@ -26,3 +26,4 @@ C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counter
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\bin\Release\System.Net.Http.Extensions.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\bin\Release\System.Net.Http.Primitives.xml
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.csproj.App.config
+C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.csprojResolveAssemblyReference.cache

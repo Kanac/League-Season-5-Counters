@@ -217,6 +217,20 @@ namespace League_of_Legends_Counterpicks
 
         }
 
+        private void SynergyChamp_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Image synergyImage = (sender as Image);
+            var synergy = synergyImage.DataContext as Counter;
+            string championName;
+            // Choose the synergy name that is not the current champion's name for this page (We want to navigate on the other end of the relationship)
+            if (synergy.ChampionFeedbackName == commentViewModel.ChampionFeedback.Name)
+                championName = synergy.Name;
+            else
+                championName = synergy.ChampionFeedbackName;
+            Frame.Navigate(typeof(ChampionPage), championName);
+
+        }
+
         private void EasyMatchup_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image easyMatchupImage = (sender as Image);

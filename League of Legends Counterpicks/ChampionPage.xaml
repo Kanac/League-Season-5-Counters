@@ -14,7 +14,6 @@
       d:DataContext="{Binding Roles[1].Champions[1], Source={d:DesignData Source=/DataModel/Data.json, Type=data:DataSource}}"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-
     <Page.Resources>
         <ValueConverter:NameToImage x:Key="NameToImageConverter" />
         <ValueConverter:CounterFormat x:Key="CounterConverter" />
@@ -96,6 +95,7 @@
     </Page.Resources>
 
 
+
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -128,7 +128,9 @@
                        Text="{Binding Role}" />
         </Grid>
 
-        <Hub x:Name="MainHub" Grid.Row="1" Margin="0,-15,0,0">
+        <Hub x:Name="MainHub"
+             Grid.Row="1"
+             Margin="0,-15,0,0">
             <HubSection x:Name="CounterSection">
                 <DataTemplate>
                     <Grid Loaded="GridAd_Loaded">
@@ -139,7 +141,7 @@
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
 
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_F91A90"
+                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_F91A90"7b07e28d-b92c-46de-9087-42937a079714
                                                           Height="Auto"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Top"
@@ -155,22 +157,22 @@
                                                           Width="Auto" />-->
 
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="231529" />
+                                      AdUnitId="234895" />
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       Grid.Row="3"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="231530" />
+                                      AdUnitId="234896" />
 
                         <Grid Grid.Row="1">
                             <TextBlock FontSize="30"
@@ -242,22 +244,22 @@
                         </Grid.RowDefinitions>
 
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="233843" />
+                                      AdUnitId="234897" />
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       Grid.Row="3"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="233844" />
+                                      AdUnitId="234898" />
 
                         <Grid Grid.Row="1">
                             <TextBlock FontSize="30"
@@ -330,22 +332,22 @@
                         </Grid.RowDefinitions>
 
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="233845" />
+                                      AdUnitId="234899" />
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       Grid.Row="3"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="233846" />
+                                      AdUnitId="234900" />
 
                         <Grid Grid.Row="1">
                             <TextBlock FontSize="30"
@@ -398,7 +400,7 @@
                                             <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
 
                                             <Image Grid.Column="1"
-                                                   Tapped="Champ_Tapped"
+                                                   Tapped="SynergyChamp_Tapped"
                                                    DataContextChanged="Synergy_Loaded">
                                             </Image>
 
@@ -441,22 +443,22 @@
                                                           Style="{StaticResource AdTemplate}" />-->
 
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="231531" />
+                                      AdUnitId="234901" />
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       Grid.Row="6"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="231532" />
+                                      AdUnitId="234902" />
 
 
 
@@ -508,7 +510,7 @@
             </HubSection>
 
             <HubSection x:Name="CounterCommentSection">
-                <DataTemplate >
+                <DataTemplate>
                     <Grid Loaded="GridAd_Loaded">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80"></RowDefinition>
@@ -517,23 +519,23 @@
                             <RowDefinition Height="80"></RowDefinition>
                         </Grid.RowDefinitions>
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="231533" />
+                                      AdUnitId="234903" />
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       Grid.Row="3"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="231534" />
-                        
+                                      AdUnitId="234904" />
+
                         <StackPanel Grid.Row="1">
                             <TextBlock FontSize="30"
                                        Margin="0,-10,0,0"
@@ -589,22 +591,22 @@
                         </Grid.RowDefinitions>
 
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="231535" />
+                                      AdUnitId="234905" />
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       Grid.Row="3"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="231536" />
+                                      AdUnitId="234906" />
 
                         <StackPanel Grid.Row="1">
                             <TextBlock FontSize="30"
@@ -624,7 +626,7 @@
                                       Loaded="PlayingCommentsRing_Loaded"
                                       IsActive="True">
                         </ProgressRing>
-                        
+
                         <TextBlock Grid.Row="2"
                                    Visibility="Collapsed"
                                    Name="NoCommentMessage2"
@@ -664,22 +666,22 @@
                         </Grid.RowDefinitions>
 
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="232527" />
+                                      AdUnitId="234907" />
                         <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
                                       Height="80"
                                       Loaded="Ad_Loaded"
                                       Grid.Row="6"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="232528" />
+                                      AdUnitId="234908" />
 
                         <TextBlock x:Name="Feedback"
                                    FontSize="30"
@@ -691,27 +693,27 @@
                                    TextAlignment="Center">
                         </TextBlock>
 
-                            <RadioButton GroupName="Champion"
-                                         Grid.Row="2"
-                                         Margin="0,-5,0,0"
-                                         MinWidth="50"
-                                         HorizontalAlignment="Left"
-                                         Checked="CounterChampion_Checked"
-                                         Content="Counter"></RadioButton>
-                            <RadioButton GroupName="Champion"
-                                         Grid.Row="2"
-                                         Margin="0,-5,0,0"
-                                         MinWidth="50"
-                                         HorizontalAlignment="Center"
-                                         Checked="EasyMatchupChampion_Checked"
-                                         Content="Easy"></RadioButton>
-                            <RadioButton GroupName="Champion"
-                                         Grid.Row="2"
-                                         Margin="0,-5,0,0"
-                                         MinWidth="50"
-                                         HorizontalAlignment="Right"
-                                         Checked="SynergyChampion_Checked"
-                                         Content="Synergy"></RadioButton>
+                        <RadioButton GroupName="Champion"
+                                     Grid.Row="2"
+                                     Margin="0,-5,0,0"
+                                     MinWidth="50"
+                                     HorizontalAlignment="Left"
+                                     Checked="CounterChampion_Checked"
+                                     Content="Counter"></RadioButton>
+                        <RadioButton GroupName="Champion"
+                                     Grid.Row="2"
+                                     Margin="0,-5,0,0"
+                                     MinWidth="50"
+                                     HorizontalAlignment="Center"
+                                     Checked="EasyMatchupChampion_Checked"
+                                     Content="Easy"></RadioButton>
+                        <RadioButton GroupName="Champion"
+                                     Grid.Row="2"
+                                     Margin="0,-5,0,0"
+                                     MinWidth="50"
+                                     HorizontalAlignment="Right"
+                                     Checked="SynergyChampion_Checked"
+                                     Content="Synergy"></RadioButton>
 
                         <TextBox Height="40"
                                  Name="FilterBox"
@@ -746,8 +748,8 @@
                                 Content="Submit">
                         </Button>
                     </Grid>
-                    
-                    
+
+
                 </DataTemplate>
             </HubSection>
         </Hub>

@@ -27,24 +27,24 @@
             <RowDefinition Height="80" />
             
         </Grid.RowDefinitions>
-        
-        <UI:AdControl x:ConnectionId='2' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+
+        <UI:AdControl x:ConnectionId='2' ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Top"
                       Width="480"
                       Height="80"
                                         
                       AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="231539" />
+                      AdUnitId="234877" />
         <UI:AdControl x:ConnectionId='3' HorizontalAlignment="Center"
-                      ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                       VerticalAlignment="Top"
                       Width="480"
                       Height="80"
                       Grid.Row="4"
                                         
                       AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="231540" />
+                      AdUnitId="234878" />
 
         <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_CAC3BD"
                                           HorizontalAlignment="Center"
@@ -80,9 +80,26 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
+						<Run Text="August 10 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Changed review/ad popup system slightly"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Small bug fixes"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="August 4 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Fixed synergy champion select bug"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Fixed crashing on app review"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
 						<Run Text="August 2 2015" />
                     </TextBlock>
-    
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-Added Easy Matchups and Synergy picks for each champion!"></Run>
                         <LineBreak></LineBreak>
