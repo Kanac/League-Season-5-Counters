@@ -54,7 +54,7 @@
                         Header="All"
                         Style="{StaticResource Header}">
                 <DataTemplate>
-                <Grid x:ConnectionId='24' Margin="0,-30,0,0"
+                <Grid x:ConnectionId='10' Margin="0,-30,0,0"
                                             >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
@@ -62,12 +62,12 @@
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
                      
-                    <q:AlphaJumpList x:ConnectionId='25' Name="jumpList"
+                    <q:AlphaJumpList x:ConnectionId='11' Name="jumpList"
                                          Grid.Row="1"
                                          Visibility="Collapsed"
                                                                  >
-                            <GridView x:ConnectionId='28' Name="myGridView"
-                                      ItemsSource="{Binding Roles[0].GroupedChampions}"
+                            <GridView x:ConnectionId='12' Name="myGridView"
+                                      ItemsSource="{Binding Roles[0].QkitChampions}"
                                       IsItemClickEnabled="True"
                                                                     
                                       SelectionMode="None"
@@ -84,37 +84,37 @@
                             </GridView>
 
                         </q:AlphaJumpList>
-                    <UI:AdControl x:ConnectionId='26' HorizontalAlignment="Center"
+                    <!--<UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="234879"/>
-                    <UI:AdControl x:ConnectionId='27' HorizontalAlignment="Center"
+                    <UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
-                                  AdUnitId="234880" />
+                                  AdUnitId="234880" />-->
 
-                    <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_23F85D"
-                                                          HorizontalAlignment="Center"
-                                                          VerticalAlignment="Top"
-                                                          Height="80"
-                                                          Width="480"
-                                                          Id="AdMediator-Id-C93F3EEB-E3A1-4826-B52C-C42E1BB8884F"/>
+                    <WindowsPhone81:AdMediatorControl x:Name="AdMediator_23F85D"
+                                                      HorizontalAlignment="Center"
+                                                      VerticalAlignment="Top"
+                                                      Height="80"
+                                                      Width="480"
+                                                      Id="AdMediator-Id-C93F3EEB-E3A1-4826-B52C-C42E1BB8884F"/>
                     <WindowsPhone81:AdMediatorControl x:Name="AdMediator_E8F47A"
                                                       HorizontalAlignment="Center"
                                                       Height="80"
                                                       Grid.Row="2"
                                                       Id="AdMediator-Id-7291C774-6323-4E37-86DC-54D284CC11C0"
                                                       VerticalAlignment="Bottom"
-                                                      Width="480" />-->
+                                                      Width="480" />
 
                 </Grid>
                 </DataTemplate>
@@ -125,43 +125,43 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[1]}">
                 <DataTemplate>
-                <Grid x:ConnectionId='21' Margin="0,-30,0,0"
+                <Grid x:ConnectionId='9' Margin="0,-30,0,0"
                                             >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_C70524"
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_C70524"
                                                           Id="AdMediator-Id-08D6548E-D475-43AA-BD1E-D5FB80EDDBD2"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Top"
-                                                          Height="Auto"
-                                                          Width="Auto" />
+                                                          Height="80"
+                                                          Width="480" />
                         <WindowsPhone81:AdMediatorControl x:Name="AdMediator_41E3C5"
                                                           Id="AdMediator-Id-001CC048-5E1D-4664-9DAF-026584CCA6AB"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Bottom"
-                                                          Height="Auto"
-                                                          Width="Auto" 
-                                                          Grid.Row="2"/>-->
-                    <UI:AdControl x:ConnectionId='22' HorizontalAlignment="Center"
+                                                          Height="80"
+                                                          Width="480" 
+                                                          Grid.Row="2"/>
+                    <!--<UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="234881" />
-                    <UI:AdControl x:ConnectionId='23' HorizontalAlignment="Center"
+                    <UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
-                                  AdUnitId="234882" />
+                                  AdUnitId="234882" />-->
                     <ContentControl ContentTemplate="{StaticResource HubData}"
                                         Grid.Row="1" />
                     </Grid>
@@ -173,43 +173,43 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[2]}">
                 <DataTemplate>
-                <Grid x:ConnectionId='18' Margin="0,-30,0,0"
+                <Grid x:ConnectionId='8' Margin="0,-30,0,0"
                                             > 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_42C6F4"
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_42C6F4"
                                                           Id="AdMediator-Id-41E6A13A-CE7A-4560-9859-54D68FC921D4"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Top"
-                                                          Height="Auto"
-                                                          Width="Auto" />
+                                                          Height="80"
+                                                          Width="480" />
                         <WindowsPhone81:AdMediatorControl x:Name="AdMediator_5BB8F4"
                                                           Id="AdMediator-Id-C8BA2508-FD6A-43EB-82ED-7FD3BEEF5749"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Bottom"
-                                                          Height="Auto"
-                                                          Width="Auto"
-                                                          Grid.Row="2" />-->
-                    <UI:AdControl x:ConnectionId='19' HorizontalAlignment="Center"
+                                                          Height="80"
+                                                          Width="480"
+                                                          Grid.Row="2" />
+                    <!--<UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="234883" />
-                    <UI:AdControl x:ConnectionId='20' HorizontalAlignment="Center"
+                    <UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="b8be079-3202-4948-8b29-cfd54367d723"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
-                                  AdUnitId="234884" />
+                                  AdUnitId="234884" />-->
                     <ContentControl ContentTemplate="{StaticResource HubData}"
                                         Grid.Row="1" />
                     </Grid>
@@ -222,43 +222,43 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[3]}">
                 <DataTemplate>
-                <Grid x:ConnectionId='15' Margin="0,-30,0,0"
+                <Grid x:ConnectionId='7' Margin="0,-30,0,0"
                                             >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_A4DC1C"
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_A4DC1C"
                                                           Id="AdMediator-Id-8D688B85-D213-4594-9F45-F42665631408"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Top"
-                                                          Height="Auto"
-                                                          Width="Auto" />
+                                                          Height="80"
+                                                          Width="480" />
                         <WindowsPhone81:AdMediatorControl x:Name="AdMediator_436DA2"
                                                           Id="AdMediator-Id-B4B8E049-0826-4201-9A52-CAB47D11D5F1"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Bottom"
-                                                          Height="Auto"
-                                                          Width="Auto"
-                                                          Grid.Row="2" />-->
-                    <UI:AdControl x:ConnectionId='16' HorizontalAlignment="Center"
+                                                          Height="80"
+                                                          Width="480"
+                                                          Grid.Row="2" />
+                    <!--<UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="234885" />
-                    <UI:AdControl x:ConnectionId='17' HorizontalAlignment="Center"
+                    <UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
-                                  AdUnitId="234886" />
+                                  AdUnitId="234886" />-->
                     <ContentControl ContentTemplate="{StaticResource HubData}"
                                         Grid.Row="1" />
                     </Grid>
@@ -270,43 +270,43 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[4]}">
                 <DataTemplate>
-                <Grid x:ConnectionId='12' Margin="0,-30,0,0"
+                <Grid x:ConnectionId='6' Margin="0,-30,0,0"
                                             >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_CAFFB6"
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_CAFFB6"
                                                           Id="AdMediator-Id-30E0614F-927E-450D-8E6A-C625E31B355B"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Top"
-                                                          Height="Auto"
-                                                          Width="Auto" />
+                                                          Height="80"
+                                                          Width="480" />
                         <WindowsPhone81:AdMediatorControl x:Name="AdMediator_0B5AB2"
                                                           Id="AdMediator-Id-CCF88E79-348F-4D68-BC95-839A1CC130E7"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Bottom"
-                                                          Height="Auto"
-                                                          Width="Auto"
-                                                          Grid.Row="2" />-->
-                    <UI:AdControl x:ConnectionId='13' HorizontalAlignment="Center"
+                                                          Height="80"
+                                                          Width="480"
+                                                          Grid.Row="2" />
+                    <!--<UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="234887" />
-                    <UI:AdControl x:ConnectionId='14' HorizontalAlignment="Center"
+                    <UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
-                                  AdUnitId="234888" />
+                                  AdUnitId="234888" />-->
                     <ContentControl ContentTemplate="{StaticResource HubData}"
                                         Grid.Row="1" />
                     </Grid>
@@ -319,43 +319,43 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[5]}">
                 <DataTemplate>
-                    <Grid x:ConnectionId='9' Margin="0,-30,0,0"
+                    <Grid x:ConnectionId='5' Margin="0,-30,0,0"
                                             >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_AAEC30"
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_AAEC30"
                                                           Id="AdMediator-Id-7E427BD4-AEA8-42D5-8332-DE110D0DCC43"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Top"
-                                                          Height="Auto"
-                                                          Width="Auto" />
+                                                          Height="80"
+                                                          Width="480" />
                         <WindowsPhone81:AdMediatorControl x:Name="AdMediator_17EAB9"
                                                           Id="AdMediator-Id-A2CF17B1-A8CC-4B20-A228-73FD2711D224"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Bottom"
-                                                          Height="Auto"
-                                                          Width="Auto"
-                                                          Grid.Row="2" />-->
-                    <UI:AdControl x:ConnectionId='10' HorizontalAlignment="Center"
+                                                          Height="80"
+                                                          Width="480"
+                                                          Grid.Row="2" />
+                    <!--<UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="234889" />
-                    <UI:AdControl x:ConnectionId='11' HorizontalAlignment="Center"
+                    <UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
-                                  AdUnitId="234890" />
+                                  AdUnitId="234890" />-->
 
                     <ContentControl ContentTemplate="{StaticResource HubData}"
                                         Grid.Row="1" />
@@ -368,43 +368,43 @@
                         Style="{StaticResource Header}"
                         DataContext="{Binding Roles[6]}">
                 <DataTemplate>
-                    <Grid x:ConnectionId='6' Margin="0,-30,0,0"
+                    <Grid x:ConnectionId='4' Margin="0,-30,0,0"
                                             >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="80" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_F1FB74"
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_F1FB74"
                                                           Id="AdMediator-Id-0B5C3078-9158-43F5-A663-86C1B68438F4"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Top"
-                                                          Height="Auto"
-                                                          Width="Auto" />
+                                                          Height="80"
+                                                          Width="480" />
                         <WindowsPhone81:AdMediatorControl x:Name="AdMediator_BE16B4"
                                                           Id="AdMediator-Id-6BBB8985-3197-4CCB-8D1E-39EDF3F6A6BC"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Bottom"
-                                                          Height="Auto"
-                                                          Width="Auto"
-                                                          Grid.Row="2" />-->
-                    <UI:AdControl x:ConnectionId='7' HorizontalAlignment="Center"
+                                                          Height="80"
+                                                          Width="480"
+                                                          Grid.Row="2" />
+                    <!--<UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="234891" />
-                    <UI:AdControl x:ConnectionId='8' HorizontalAlignment="Center"
+                    <UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="2"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
-                                  AdUnitId="234892" />
+                                  AdUnitId="234892" />-->
                     <ContentControl ContentTemplate="{StaticResource HubData}"
                                         Grid.Row="1" />
                     </Grid>
@@ -431,38 +431,38 @@
                              Text="Type to search"
                                                               >
                     </TextBox >
-                    <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_98F745"
+                    <WindowsPhone81:AdMediatorControl x:Name="AdMediator_98F745"
                                                       Id="AdMediator-Id-A13F9363-12F0-4E68-8779-6C0DA4A7E559"
                                                       HorizontalAlignment="Center"
                                                       VerticalAlignment="Top"
                                                       Grid.Row="1"
-                                                      Height="Auto"
-                                                      Width="Auto" />
+                                                      Height="80"
+                                                      Width="480" />
                     <WindowsPhone81:AdMediatorControl x:Name="AdMediator_993D59"
                                                       Id="AdMediator-Id-00AB775D-BA2D-4F3F-9F2A-1A78FD28537B"
                                                       HorizontalAlignment="Center"
                                                       VerticalAlignment="Bottom"
-                                                      Height="Auto"
-                                                      Width="Auto"
-                                                      Grid.Row="3" />-->
-                    <UI:AdControl x:ConnectionId='4' HorizontalAlignment="Center"
+                                                      Height="80"
+                                                      Width="480"
+                                                      Grid.Row="3" />
+                    <!--<UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Grid.Row="1"
                                   Width="480"
                                   Height="80"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
                                   AdUnitId="234893" />
-                    <UI:AdControl x:ConnectionId='5' HorizontalAlignment="Center"
+                    <UI:AdControl HorizontalAlignment="Center"
                                   ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                   VerticalAlignment="Top"
                                   Width="480"
                                   Height="80"
                                   Grid.Row="3"
-                                                    
+                                  Loaded="Ad_Loaded"
                                   AutoRefreshIntervalInSeconds="60"
-                                  AdUnitId="234894" />
+                                  AdUnitId="234894" />-->
                     <ContentControl ContentTemplate="{StaticResource HubData}"
                                     Grid.Row="2" />
                 </Grid>

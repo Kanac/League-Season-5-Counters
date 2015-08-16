@@ -36,21 +36,22 @@
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
-        <UI:AdControl HorizontalAlignment="Center"
+        <!--<UI:AdControl HorizontalAlignment="Center"
                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                       VerticalAlignment="Top"
                       Width="480"
                       Height="80"
                       Loaded="Ad_Loaded"
                       AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="231252" />
+                      AdUnitId="231252" />-->
 
-        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_B3E200"
+        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_B3E200"
                                                   HorizontalAlignment="Center"
                                                   Height="80"
+                                                  Loaded="Ad_Loaded"
                                                   Id="AdMediator-Id-A9B26502-92B4-4543-8114-35155ED1598C"
                                                   VerticalAlignment="Top"
-                                                  Width="480" />-->
+                                                  Width="480" />
         <!--Enter inside the dictionary's only key, groups, and then into the list holding them -->
         <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
@@ -97,7 +98,7 @@
                                    TextAlignment="Center"
                                    FontSize="19"
                                    VerticalAlignment="Center"
-                                   Foreground="#FFF3FD29"> Add your own counters, easy matchups, and synergy picks now!</TextBlock>
+                                   Foreground="#FFF3FD29"> Download this app for Windows 10 now on your Desktop!</TextBlock>
                     </Grid>
                 </Grid>
             </Grid>
@@ -114,8 +115,15 @@
                        FontSize="15"
                        Foreground="#FFCCDDF7" />
         </StackPanel>
-        
-        <UI:AdControl HorizontalAlignment="Center"
+        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_E867C2"
+                                          HorizontalAlignment="Center"
+                                          Height="80"
+                                          Id="AdMediator-Id-80F4375E-50E9-4BF8-A9C3-47443A97AD78"
+                                          Grid.Row="2"
+                                          VerticalAlignment="Bottom"
+                                          Width="480" />
+
+        <!--<UI:AdControl HorizontalAlignment="Center"
                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                       VerticalAlignment="Top"
                       Width="480"
@@ -123,14 +131,7 @@
                       Grid.Row="2"
                       Loaded="Ad_Loaded"
                       AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="231251" />
-        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_C08057"
-                                          HorizontalAlignment="Center"
-                                          Height="80"
-                                          Id="AdMediator-Id-F6AC7015-9AAC-4E1C-9423-9B17C5577C7D"
-                                          Grid.Row="2"
-                                          VerticalAlignment="Bottom"
-                                          Width="480" />-->
+                      AdUnitId="231251" />-->
 
     </Grid>
 </Page>

@@ -1,7 +1,6 @@
 ﻿using League_of_Legends_Counterpicks.Advertisement;
 using League_of_Legends_Counterpicks.Common;
 using League_of_Legends_Counterpicks.Data;
-using Microsoft.AdMediator.WindowsPhone81;
 using Microsoft.Advertising.Mobile.UI;
 using QKit;
 using QKit.JumpList;
@@ -93,7 +92,7 @@ namespace League_of_Legends_Counterpicks
             roles = await DataSource.GetRolesAsync();  //Gets a reference to all the roles -- no data is seralized again (already done on bootup)
             var allRole = roles[0]; //Gets the all role 
             var GroupedChampions = JumpListHelper.ToAlphaGroups(allRole.Champions, x => x.UniqueId);
-            allRole.GroupedChampions = GroupedChampions;
+            allRole.QkitChampions = GroupedChampions;
             DefaultViewModel["Roles"] = roles;
             //Smoothes out the loading process to get to desired page immedaitely 
             if (roleId == "Filter")

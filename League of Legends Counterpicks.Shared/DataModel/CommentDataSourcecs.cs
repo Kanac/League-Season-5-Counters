@@ -46,6 +46,7 @@ namespace League_of_Legends_Counterpicks.DataModel
         {
             Comments = new ObservableCollection<Comment>();
             Counters = new ObservableCollection<Counter>();
+            EasyMatchups = new ObservableCollection<Counter>();
         }
         
         public string Name { get; set; }
@@ -202,7 +203,7 @@ namespace League_of_Legends_Counterpicks.DataModel
     }
 
 
-    //Comment View Model
+    // Comment View Model
     class CommentDataSource : INotifyPropertyChanged
     {
         MobileServiceClient _client;
@@ -230,8 +231,8 @@ namespace League_of_Legends_Counterpicks.DataModel
 
         // View model properties
 
-        //This value will change as user changes champions 
-        //This is to prevent excess loading of all champion data 
+        // This value will change as user changes champions 
+        // This is to prevent excess loading of all champion data 
         private ChampionFeedback _ChampionFeedback;
         public ChampionFeedback ChampionFeedback
         {

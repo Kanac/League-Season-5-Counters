@@ -844,6 +844,50 @@
 					</NamedResource>
 				</ResourceMapSubtree>
 			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Microsoft.Advertising">
+				<NamedResource name="AdControl.xml" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Microsoft.Advertising/AdControl.xml">
+					<Candidate type="Path">
+						<Value>Microsoft.Advertising\AdControl.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AdErrorEventArgs.xml" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Microsoft.Advertising/AdErrorEventArgs.xml">
+					<Candidate type="Path">
+						<Value>Microsoft.Advertising\AdErrorEventArgs.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="bootstrap.html" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Microsoft.Advertising/bootstrap.html">
+					<Candidate type="Path">
+						<Value>Microsoft.Advertising\bootstrap.html</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="bootstrap.js" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Microsoft.Advertising/bootstrap.js">
+					<Candidate type="Path">
+						<Value>Microsoft.Advertising\bootstrap.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ErrorCode.xml" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Microsoft.Advertising/ErrorCode.xml">
+					<Candidate type="Path">
+						<Value>Microsoft.Advertising\ErrorCode.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InterstitialAd.xml" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Microsoft.Advertising/InterstitialAd.xml">
+					<Candidate type="Path">
+						<Value>Microsoft.Advertising\InterstitialAd.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ormma.js" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Microsoft.Advertising/ormma.js">
+					<Candidate type="Path">
+						<Value>Microsoft.Advertising\ormma.js</Value>
+					</Candidate>
+				</NamedResource>
+				<ResourceMapSubtree name="Themes">
+					<NamedResource name="Generic.xbf" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Microsoft.Advertising/Themes/Generic.xbf">
+						<Candidate type="Path">
+							<Value>Microsoft.Advertising\Themes\Generic.xbf</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
 			<ResourceMapSubtree name="Microsoft.Advertising.Mobile.UI">
 				<NamedResource name="Microsoft.Advertising.Mobile.UI.xr.xml" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Microsoft.Advertising.Mobile.UI/Microsoft.Advertising.Mobile.UI.xr.xml">
 					<Candidate type="Path">
@@ -903,6 +947,123 @@
 				<NamedResource name="SOMAWP81.xr.xml" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/SOMAWP81/SOMAWP81.xr.xml">
 					<Candidate type="Path">
 						<Value>SOMAWP81\SOMAWP81.xr.xml</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="Microsoft.Advertising">
+			<ResourceMapSubtree name="ExceptionMessages">
+				<NamedResource name="ApplicationIdAdUnitIdServiceUrlAreRequired" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/ApplicationIdAdUnitIdServiceUrlAreRequired">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>You must specify both an ApplicationID and AdUnitID, or a ServiceURL.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AutoRefreshInternalTooLow" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/AutoRefreshInternalTooLow">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Auto refresh internal is set too low, default value will be used instead.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AutoRefreshStateAlreadySet" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/AutoRefreshStateAlreadySet">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Refresh state has already been set.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CannotRefreshWhenAdControlUninitialized" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/CannotRefreshWhenAdControlUninitialized">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Refresh may not be called when AdControl is uninitialised.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CannotRefreshWhenAdIsEngaged" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/CannotRefreshWhenAdIsEngaged">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Refresh may not be called when AdControl is engaged.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CannotRefreshWhenNotVisible" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/CannotRefreshWhenNotVisible">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Refresh may not be called when AdControl is not visible to the user.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CannotRefreshWhenSuspended" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/CannotRefreshWhenSuspended">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Refresh may not be called when AdControl is suspended.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CapabilitiesMissing" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/CapabilitiesMissing">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Required capabilities are missing from manifest (%s): %s.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CouldNotFindProperty" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/CouldNotFindProperty">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Could not find property: %s.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CountryCodeLengthInvalid" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/CountryCodeLengthInvalid">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Country/Region length must be equal to %d characters</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="DecodingEscapedCharactersFailed" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/DecodingEscapedCharactersFailed">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Decoding escaped characters failed, more output characters than expected.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="HttpRequestFailedWithStatusCode" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/HttpRequestFailedWithStatusCode">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>HTTP request failed with status code: %d.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="HttpResponseContainedNoContent" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/HttpResponseContainedNoContent">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Server response contained no content.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidRefresh" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/InvalidRefresh">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Refresh cannot be used when auto refresh is enabled.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="KeywordLengthInvalid" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/KeywordLengthInvalid">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Keywords length cannot be more than %d characters</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PostalCodeLengthInvalid" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/PostalCodeLengthInvalid">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Postal code length cannot be more than %d characters</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="RefreshCalledToSoon" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/RefreshCalledToSoon">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Refresh may not be called more than once every %d seconds.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="RefreshWhileRequestInProgress" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/RefreshWhileRequestInProgress">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Refresh was triggered but another request is already in progress.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="RequestDataHasNullDataItem" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/ExceptionMessages/RequestDataHasNullDataItem">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>httpRequestData or its URL is null.</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="UIStrings">
+				<NamedResource name="Advertisement" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/UIStrings/Advertisement">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Advertisement</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-EN-GB" isDefault="true" type="String">
+						<Value>Advertisement</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LearnMore" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Microsoft.Advertising/UIStrings/LearnMore">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Learn more</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-EN-GB" isDefault="true" type="String">
+						<Value>Learn more</Value>
 					</Candidate>
 				</NamedResource>
 			</ResourceMapSubtree>

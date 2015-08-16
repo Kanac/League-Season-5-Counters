@@ -22,7 +22,7 @@
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Role" />
     <RootPropertyPathName Name="Champions" />
-    <RootPropertyPathName Name="GroupedChampions" />
+    <RootPropertyPathName Name="QkitChampions" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -193,6 +193,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="Margin" />
       <RootProperty Name="ItemTemplate" />

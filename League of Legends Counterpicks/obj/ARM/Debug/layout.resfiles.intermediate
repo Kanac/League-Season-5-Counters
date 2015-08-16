@@ -143,6 +143,7 @@ Assets\Zyra_Square_0.png
 Common\ReadMe.txt
 DataModel\Data.json
 AdMediator.config
+ApplicationInsights.config
 Assets\BadgeLogo.scale-240.png
 Assets\SplashScreen.scale-240.png
 Assets\Square150x150Logo.scale-100.png
@@ -158,6 +159,7 @@ Assets\StoreLogo.scale-100.png
 Assets\StoreLogo.scale-140.png
 Assets\StoreLogo.scale-240.png
 Assets\Wide310x150Logo.scale-240.png
+Assets\WindowsStoreProxy.xml
 App.xbf
 ChampionPage.xbf
 ChangeLog.xbf
@@ -165,5 +167,3 @@ League of Legends Counterpicks.xr.xml
 MainPage.xbf
 RolePage.xbf
 Twitter.xbf
-SQLitePCL.Ext.dll
-SQLitePCL.Ext.pri

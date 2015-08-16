@@ -1,16 +1,14 @@
 C:\Program Files (x86)\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.AdMediator81\1.0\Redist\CommonConfiguration\Neutral\Microsoft.AdMediator.WindowsPhone81.pri
+C:\Program Files (x86)\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.AdMediator81\1.0\Redist\CommonConfiguration\Neutral\Microsoft.Advertising.pri
+C:\Program Files (x86)\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.Common.pri
+C:\Program Files (x86)\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.Display.pri
+C:\Program Files (x86)\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\AdDuplexWinPhone81.8.5.0.5\lib\portable-win81+wpa81\AdDuplex.Universal.Controls.WinPhone.XAML.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\AdDuplexWinPhone81.8.5.0.5\lib\portable-win81+wpa81\AdDuplex.Universal.WinPhone.WinRT.pri
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Advertising.WindowsPhone.Xaml81.8.1.40505.0\lib\wpa81\Microsoft.Advertising.Mobile.Common.pri
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Advertising.WindowsPhone.Xaml81.8.1.40505.0\lib\wpa81\Microsoft.Advertising.Mobile.Display.pri
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\Microsoft.Advertising.WindowsPhone.Xaml81.8.1.40505.0\lib\wpa81\Microsoft.Advertising.Mobile.UI.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\QKit.0.4.1\lib\wpa81\QKit.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\SOMAW81_Package.1.1.6\lib\wpa81\SOMAWP81.pri
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\packages\SQLitePCL.3.8.7.2\build\wpa81\SQLitePCL.Ext.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\bin\Debug\Tasks.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\Microsoft.Data.Edm.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\Microsoft.Data.OData.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile.pri
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile.SQLiteStore.pri
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\SQLitePCL.pri
 C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\System.Spatial.pri

@@ -7,18 +7,22 @@
     <RootPropertyPathName Name="DefaultViewModel" />
     <RootPropertyPathName Name="Roles" />
     <RootPropertyPathName Name="UniqueId" />
-    <RootPropertyPathName Name="PlayingComments" />
+    <RootPropertyPathName Name="Score" />
     <RootPropertyPathName Name="Text" />
     <RootPropertyPathName Name="User" />
-    <RootPropertyPathName Name="Score" />
-    <RootPropertyPathName Name="Champion" />
-    <RootPropertyPathName Name="Comments" />
-    <RootPropertyPathName Name="Counters" />
-    <RootPropertyPathName Name="Role" />
-    <RootPropertyPathName Name="ImagePath" />
-    <RootPropertyPathName Name="Champions" />
     <RootPropertyPathName Name="Filter" />
-    <RootPropertyPathName Name="GroupedChampions" />
+    <RootPropertyPathName Name="ImagePath" />
+    <RootPropertyPathName Name="ChampionFeedback" />
+    <RootPropertyPathName Name="Comments" />
+    <RootPropertyPathName Name="Champion" />
+    <RootPropertyPathName Name="Counters" />
+    <RootPropertyPathName Name="Value" />
+    <RootPropertyPathName Name="EasyMatchups" />
+    <RootPropertyPathName Name="ChampionFeedbackName" />
+    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="Role" />
+    <RootPropertyPathName Name="Champions" />
+    <RootPropertyPathName Name="QkitChampions" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -52,7 +56,7 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />
-      <RootProperty Name="MaxWidth" />
+      <RootProperty Name="FontWeight" />
       <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
@@ -60,30 +64,27 @@
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootProperty Name="ColumnDefinitions" />
+      <RootEvent Name="Loaded" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
     </RootType>
-    <RootType FullName="Microsoft.Advertising.Mobile.UI.AdControl">
+    <RootType FullName="Microsoft.AdMediator.WindowsPhone81.AdMediatorControl">
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="ApplicationId" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
-      <RootProperty Name="AutoRefreshIntervalInSeconds" />
-      <RootProperty Name="AdUnitId" />
+      <RootProperty Name="Id" />
+      <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Children" />
@@ -127,13 +128,15 @@
       <RootProperty Name="IsReadOnly" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Text" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Height" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="TextWrapping" />
-      <RootProperty Name="Height" />
       <RootEvent Name="GotFocus" />
-      <RootEvent Name="LostFocus" />
+      <RootEvent Name="Loaded" />
       <RootEvent Name="TextChanged" />
+      <RootEvent Name="LostFocus" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -142,6 +145,7 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="ItemContainerStyle" />
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
@@ -151,7 +155,21 @@
     <RootType FullName="League_of_Legends_Counterpicks.Converters.NameToImage" />
     <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterFormat" />
     <RootType FullName="League_of_Legends_Counterpicks.Converters.PlayingFormat" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterVisiblity" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.PlayingVisibility" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterChampionVisiblity" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.SynergyChampionVisiblity" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Source" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootEvent Name="Tapped" />
+      <RootEvent Name="DataContextChanged" />
+      <RootEvent Name="Loaded" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Hub">
+      <RootProperty Name="Margin" />
       <RootProperty Name="Sections" />
       <RootProperty Name="Name" />
     </RootType>
@@ -163,36 +181,47 @@
       <RootProperty Name="Style" />
       <RootProperty Name="DataContext" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Name" />
-      <RootProperty Name="Source" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Stretch" />
-      <RootProperty Name="Opacity" />
-      <RootEvent Name="Loaded" />
-      <RootEvent Name="Tapped" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
       <RootProperty Name="GroupName" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="MinWidth" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Content" />
       <RootEvent Name="Checked" />
     </RootType>
-    <RootType FullName="League_of_Legends_Counterpicks.ChampionPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="ItemTemplate" />
       <RootProperty Name="SelectionMode" />
       <RootProperty Name="IsSwipeEnabled" />
-      <RootProperty Name="ItemTemplate" />
       <RootProperty Name="Name" />
       <RootEvent Name="ItemClick" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="IsActive" />
+      <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ContentControl">
       <RootProperty Name="ContentTemplate" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Control">
+      <RootProperty Name="HorizontalContentAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Value" />
+    </RootType>
+    <RootType FullName="League_of_Legends_Counterpicks.ChampionPage" />
     <RootType FullName="QKit.AlphaJumpList">
       <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />

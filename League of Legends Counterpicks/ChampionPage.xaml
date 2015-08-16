@@ -141,22 +141,22 @@
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
 
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_F91A90"7b07e28d-b92c-46de-9087-42937a079714
-                                                          Height="Auto"
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_F91A90"
+                                                          Height="80"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Top"
                                                           Id="AdMediator-Id-1A00C840-7A8F-4214-9C83-6F0DD0CB4EE9"
-                                                          Width="Auto" />
+                                                          Width="480" />
 
                         <WindowsPhone81:AdMediatorControl x:Name="AdMediator_2EF4E8"
-                                                          Height="Auto"
+                                                          Height="80"
                                                           VerticalAlignment="Bottom"
                                                           HorizontalAlignment="Center"
                                                           Id="AdMediator-Id-CB0A72EE-F012-4E13-985C-3FE34D66A5C0"
                                                           Grid.Row="3"
-                                                          Width="Auto" />-->
+                                                          Width="480" />
 
-                        <UI:AdControl HorizontalAlignment="Center"
+                        <!--<UI:AdControl HorizontalAlignment="Center"
                                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
@@ -172,7 +172,7 @@
                                       Loaded="Ad_Loaded"
                                       Grid.Row="3"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234896" />
+                                      AdUnitId="234896" />-->
 
                         <Grid Grid.Row="1">
                             <TextBlock FontSize="30"
@@ -243,7 +243,7 @@
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
 
-                        <UI:AdControl HorizontalAlignment="Center"
+                        <!--<UI:AdControl HorizontalAlignment="Center"
                                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
@@ -259,7 +259,22 @@
                                       Loaded="Ad_Loaded"
                                       Grid.Row="3"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234898" />
+                                      AdUnitId="234898" />-->
+
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_97E2F3"
+                                                          Id="AdMediator-Id-50D9C546-458F-4B3D-8E8E-ECDA653799A8"
+                                                          VerticalAlignment="Top"
+                                                          HorizontalAlignment="Center"
+                                                          Width="480"
+                                                          Height="80" />
+
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_DF1BCC"
+                                                          Id="AdMediator-Id-53BF3BF6-5A53-4AEC-951D-B59FC7C30527"
+                                                          VerticalAlignment="Top"
+                                                          HorizontalAlignment="Center"
+                                                          Width="480"
+                                                          Height="80"
+                                                          Grid.Row="3"/>
 
                         <Grid Grid.Row="1">
                             <TextBlock FontSize="30"
@@ -331,7 +346,7 @@
                             <RowDefinition Height="80" />
                         </Grid.RowDefinitions>
 
-                        <UI:AdControl HorizontalAlignment="Center"
+                        <!--<UI:AdControl HorizontalAlignment="Center"
                                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
@@ -347,7 +362,22 @@
                                       Loaded="Ad_Loaded"
                                       Grid.Row="3"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234900" />
+                                      AdUnitId="234900" />-->
+
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_FB9CDA"
+                                                          Id="AdMediator-Id-BFEB0A42-2C7A-4567-B426-A0A17DF1ED98"
+                                                          VerticalAlignment="Top"
+                                                          HorizontalAlignment="Center"
+                                                          Width="480"
+                                                          Height="80" />
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_738AA9"
+                                                          Id="AdMediator-Id-9BA435E3-9C1D-45D5-9291-EA14C83F1F26"
+                                                          VerticalAlignment="Top"
+                                                          HorizontalAlignment="Center"
+                                                          Width="480"
+                                                          Height="80"
+                                                          Grid.Row="3" />
+
 
                         <Grid Grid.Row="1">
                             <TextBlock FontSize="30"
@@ -420,94 +450,7 @@
                 </DataTemplate>
             </HubSection>
 
-            <HubSection x:Name="SubmitFeedbackSection">
-                <DataTemplate>
-                    <Grid Loaded="GridAd_Loaded">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="80" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="3.5*" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="80" />
-                        </Grid.RowDefinitions>
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_23F5B5"
-                                                          Style="{StaticResource AdTemplate}"
-                                                          VerticalAlignment="Top"
-                                                          Id="AdMediator-Id-15146F06-49A2-48DA-8E88-1B55AD05A245" />
-                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_E4450A"
-                                                          Grid.Row="4"
-                                                          Id="AdMediator-Id-6801C733-9423-4584-922F-2CDB9B1E5C77"
-                                                          VerticalAlignment="Bottom"
-                                                          Style="{StaticResource AdTemplate}" />-->
-
-                        <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234901" />
-                        <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      Grid.Row="6"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234902" />
-
-
-
-                        <TextBlock x:Name="Feedback"
-                                   FontSize="30"
-                                   Margin="0,-10,0,0"
-                                   Grid.Row="1"
-                                   Style="{StaticResource TitleTextBlockStyle}"
-                                   Text="Submit Comments?"
-                                   VerticalAlignment="Center"
-                                   TextAlignment="Center">
-                        </TextBlock>
-
-
-                        <RadioButton GroupName="Comment"
-                                     Grid.Row="2"
-                                     HorizontalAlignment="Left"
-                                     Margin="40,0,0,0"
-                                     Checked="Counter_Checked"
-                                     Content="Counter"></RadioButton>
-                        <RadioButton GroupName="Comment"
-                                     Grid.Row="2"
-                                     HorizontalAlignment="Right"
-                                     Checked="Playing_Checked"
-                                     Content="Playing as"></RadioButton>
-
-                        <TextBox Margin="30,0,30,0"
-                                 Grid.Row="3"
-                                 HorizontalAlignment="Stretch"
-                                 VerticalAlignment="Stretch"
-                                 Text="Your name"
-                                 TextAlignment="Center"
-                                 GotFocus="Name_Focus"
-                                 LostFocus="Name_Written"></TextBox>
-
-                        <TextBox HorizontalAlignment="Stretch"
-                                 VerticalAlignment="Stretch"
-                                 Margin="0,10,0,0"
-                                 Grid.Row="4"
-                                 Loaded="FeedbackBox_Loaded"
-                                 TextWrapping="Wrap"></TextBox>
-                        <Button Grid.Row="5"
-                                VerticalAlignment="Bottom"
-                                HorizontalAlignment="Center"
-                                Tapped="Send_Feedback">Send</Button>
-
-                    </Grid>
-                </DataTemplate>
-            </HubSection>
+            
 
             <HubSection x:Name="CounterCommentSection">
                 <DataTemplate>
@@ -518,7 +461,7 @@
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="80"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <UI:AdControl HorizontalAlignment="Center"
+                        <!--<UI:AdControl HorizontalAlignment="Center"
                                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
@@ -534,7 +477,21 @@
                                       Loaded="Ad_Loaded"
                                       Grid.Row="3"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234904" />
+                                      AdUnitId="234904" />-->
+
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_ED28A9"
+                                                          Id="AdMediator-Id-0C14BF92-9585-4662-94B9-47DCCFBCD455"
+                                                          VerticalAlignment="Top"
+                                                          HorizontalAlignment="Center"
+                                                          Width="480"
+                                                          Height="80" />
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_FB2C8F"
+                                                          Id="AdMediator-Id-7A130C9A-6A08-4D50-8177-EDF1E8714ABB"
+                                                          VerticalAlignment="Bottom"
+                                                          HorizontalAlignment="Center"
+                                                          Grid.Row="3"
+                                                          Width="480"
+                                                          Height="80" />
 
                         <StackPanel Grid.Row="1">
                             <TextBlock FontSize="30"
@@ -566,16 +523,15 @@
                                    Loaded="CounterMessage_Loaded"
                                    TextWrapping="Wrap"> Be the first to submit a comment!</TextBlock>
 
-                        <ScrollViewer Grid.Row="2">
                             <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource CounterVisibilityConverter}}"
-                                      IsItemClickEnabled="True">
+                                      IsItemClickEnabled="True"
+                                      Grid.Row="2">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ContentControl ContentTemplate="{StaticResource CommentSection}" />
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                        </ScrollViewer>
                     </Grid>
                 </DataTemplate>
             </HubSection>
@@ -590,7 +546,7 @@
                             <RowDefinition Height="80"></RowDefinition>
                         </Grid.RowDefinitions>
 
-                        <UI:AdControl HorizontalAlignment="Center"
+                        <!--<UI:AdControl HorizontalAlignment="Center"
                                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
@@ -606,7 +562,22 @@
                                       Loaded="Ad_Loaded"
                                       Grid.Row="3"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234906" />
+                                      AdUnitId="234906" />-->
+
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_A7C4CE"
+                                                          Id="AdMediator-Id-94026382-4AE7-435F-B687-556E1E533C14"
+                                                          VerticalAlignment="Top"
+                                                          HorizontalAlignment="Center"
+                                                          Width="480"
+                                                          Height="80" />
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_D8A4CA"
+                                                          Id="AdMediator-Id-C91B8214-A5F1-4372-9D75-9FBF305E7424"
+                                                          Grid.Row="3"
+                                                          VerticalAlignment="Bottom"
+                                                          HorizontalAlignment="Center"
+                                                          Width="480"
+                                                          Height="80" />
+
 
                         <StackPanel Grid.Row="1">
                             <TextBlock FontSize="30"
@@ -638,20 +609,113 @@
                                    TextWrapping="Wrap"> Be the first to submit a comment!
                         </TextBlock>
 
-                        <ScrollViewer Grid.Row="2">
                             <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource PlayingVisibilityConverter}}"
-                                      IsItemClickEnabled="True">
+                                      IsItemClickEnabled="True"
+                                      Grid.Row="2">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ContentControl ContentTemplate="{StaticResource CommentSection}" />
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                        </ScrollViewer>
                     </Grid>
                 </DataTemplate>
             </HubSection>
 
+
+            <HubSection x:Name="SubmitFeedbackSection">
+                <DataTemplate>
+                    <Grid Loaded="GridAd_Loaded">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="3.5*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="80" />
+                        </Grid.RowDefinitions>
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_23F5B5"
+                                                          Width="480"
+                                                          Height="80"
+                                                          HorizontalAlignment="Center"
+                                                          VerticalAlignment="Top"
+                                                          Id="AdMediator-Id-15146F06-49A2-48DA-8E88-1B55AD05A245" />
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_E4450A"
+                                                          Grid.Row="6"
+                                                          Width="480"
+                                                          Height="80"
+                                                          HorizontalAlignment="Center"
+                                                          Id="AdMediator-Id-6801C733-9423-4584-922F-2CDB9B1E5C77"
+                                                          VerticalAlignment="Bottom" />
+
+                        <!--<UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      Loaded="Ad_Loaded"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="234901" />
+                        <UI:AdControl HorizontalAlignment="Center"
+                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
+                                      VerticalAlignment="Top"
+                                      Width="480"
+                                      Height="80"
+                                      Loaded="Ad_Loaded"
+                                      Grid.Row="6"
+                                      AutoRefreshIntervalInSeconds="60"
+                                      AdUnitId="234902" />-->
+
+                        <TextBlock x:Name="Feedback"
+                                   FontSize="30"
+                                   Margin="0,-10,0,0"
+                                   Grid.Row="1"
+                                   Style="{StaticResource TitleTextBlockStyle}"
+                                   Text="Submit Comments?"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center">
+                        </TextBlock>
+
+
+                        <RadioButton GroupName="Comment"
+                                     Grid.Row="2"
+                                     HorizontalAlignment="Left"
+                                     Margin="40,-5,0,0"
+                                     Checked="Counter_Checked"
+                                     Content="Counter"></RadioButton>
+                        <RadioButton GroupName="Comment"
+                                     Grid.Row="2"
+                                     Margin="0,-5,0,0"
+                                     HorizontalAlignment="Right"
+                                     Checked="Playing_Checked"
+                                     Content="Playing as"></RadioButton>
+
+                        <TextBox Margin="30,-10,30,0"
+                                 Grid.Row="3"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
+                                 Text="Your name"
+                                 TextAlignment="Center"
+                                 GotFocus="Name_Focus"
+                                 LostFocus="Name_Written"></TextBox>
+
+                        <TextBox HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
+                                 Margin="0,10,0,0"
+                                 Grid.Row="4"
+                                 Loaded="FeedbackBox_Loaded"
+                                 TextWrapping="Wrap"></TextBox>
+                        <Button Grid.Row="5"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Center"
+                                Tapped="Send_Feedback">Send</Button>
+
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+            
+            
             <HubSection x:Name="SubmitCounterSection">
                 <DataTemplate>
                     <Grid Loaded="GridAd_Loaded">
@@ -665,7 +729,7 @@
                             <RowDefinition Height="80"></RowDefinition>
                         </Grid.RowDefinitions>
 
-                        <UI:AdControl HorizontalAlignment="Center"
+                        <!--<UI:AdControl HorizontalAlignment="Center"
                                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                                       VerticalAlignment="Top"
                                       Width="480"
@@ -681,7 +745,21 @@
                                       Loaded="Ad_Loaded"
                                       Grid.Row="6"
                                       AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234908" />
+                                      AdUnitId="234908" />-->
+
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_D3A06B"
+                                                          Id="AdMediator-Id-D0120D03-2816-4130-B631-A8A73FE16D53"
+                                                          VerticalAlignment="Top"
+                                                          Width="480"
+                                                          Height="80"
+                                                          HorizontalAlignment="Center"/>
+                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_8D286A"
+                                                          Id="AdMediator-Id-A424CD92-0C34-47BF-A3EB-3563CC54FD5E"
+                                                          Grid.Row="6"
+                                                          VerticalAlignment="Bottom"
+                                                          Width="480"
+                                                          Height="80"
+                                                          HorizontalAlignment="Center" />
 
                         <TextBlock x:Name="Feedback"
                                    FontSize="30"
@@ -726,6 +804,7 @@
                         </TextBox >
 
                         <GridView ItemsSource="{Binding Filter}"
+                                  HorizontalAlignment="Center"
                                   IsItemClickEnabled="True"
                                   Grid.Row="4"
                                   Margin="0,15,0,10"
@@ -747,11 +826,14 @@
                                 Tapped="Submit_Counter"
                                 Content="Submit">
                         </Button>
+                     
                     </Grid>
 
 
                 </DataTemplate>
             </HubSection>
         </Hub>
+  
+
     </Grid>
 </Page>

@@ -4,3 +4,4 @@ Scale=140
 Scale=100
 Scale=240
 Language=EN-US
+Language=PT-BR

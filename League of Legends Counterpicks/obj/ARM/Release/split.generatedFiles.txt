@@ -34,6 +34,8 @@ obj\ARM\Release\split.language-ru.pri
 obj\ARM\Release\split.language-ru.map.txt
 obj\ARM\Release\split.language-sv.pri
 obj\ARM\Release\split.language-sv.map.txt
+obj\ARM\Release\split.language-tr.pri
+obj\ARM\Release\split.language-tr.map.txt
 obj\ARM\Release\split.language-zh-hans.pri
 obj\ARM\Release\split.language-zh-hans.map.txt
 obj\ARM\Release\split.language-zh-hant.pri

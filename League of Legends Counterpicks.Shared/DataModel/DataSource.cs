@@ -52,12 +52,14 @@ namespace League_of_Legends_Counterpicks.Data
         {
             this.UniqueId = uniqueId;
             this.Champions = new ObservableCollection<Champion>();
-            this.GroupedChampions = new List<JumpListGroup<Champion>>();
+            this.GroupedChampions = new CollectionViewSource();
+            this.GroupedChampions.IsSourceGrouped = true;
         }
 
         public string UniqueId { get; private set; }
         public ObservableCollection<Champion> Champions { get; set; }
-        public List<JumpListGroup<Champion>> GroupedChampions { get; set; } 
+        public List<JumpListGroup<Champion>> QkitChampions { get; set; }
+        public CollectionViewSource GroupedChampions { get; set; } 
     }
 
     /// <summary>

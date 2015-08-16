@@ -4,7 +4,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
-      xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
       x:Class="League_of_Legends_Counterpicks.ChangeLog"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -25,18 +24,17 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="80" />
-            
         </Grid.RowDefinitions>
 
-        <UI:AdControl ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
+        <!--<UI:AdControl ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Top"
                       Width="480"
                       Height="80"
                       Loaded="Ad_Loaded"
                       AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="234877" />
-        <UI:AdControl HorizontalAlignment="Center"
+                      AdUnitId="234877" />-->
+        <!--<UI:AdControl HorizontalAlignment="Center"
                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                       VerticalAlignment="Top"
                       Width="480"
@@ -44,9 +42,9 @@
                       Grid.Row="4"
                       Loaded="Ad_Loaded"
                       AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="234878" />
+                      AdUnitId="234878" />-->
 
-        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_CAC3BD"
+        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_CAC3BD"
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Top"
                                           Width="480"
@@ -58,7 +56,7 @@
                                           VerticalAlignment="Bottom"
                                           Width="480"
                                           Grid.Row="4"
-                                          Height="80" />-->
+                                          Height="80" />
 
         <!-- Title Panel -->
         <StackPanel Grid.Row="1">
@@ -79,6 +77,15 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="August 15 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Windows 10 update is here! Get it now on your desktop and mobile device! More features and significantly sexier!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Reorganized Champion Page UI and fixed bugs"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="August 10 2015" />
                     </TextBlock>

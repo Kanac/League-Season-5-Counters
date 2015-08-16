@@ -244,7 +244,7 @@ namespace League_of_Legends_Counterpicks
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
        
-            var ad = sender as AdControl;
+            var ad = sender as Microsoft.AdMediator.WindowsPhone81.AdMediatorControl;
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
                 // Hide the app for the purchaser

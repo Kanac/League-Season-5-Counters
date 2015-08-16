@@ -67,7 +67,7 @@
                                          Visibility="Collapsed"
                                                                  >
                             <GridView x:ConnectionId='28' Name="myGridView"
-                                      ItemsSource="{Binding Roles[0].GroupedChampions}"
+                                      ItemsSource="{Binding Roles[0].QkitChampions}"
                                       IsItemClickEnabled="True"
                                                                     
                                       SelectionMode="None"
