@@ -142,19 +142,19 @@
                         </Grid.RowDefinitions>
 
                         <WindowsPhone81:AdMediatorControl x:Name="AdMediator_F91A90"
-                                                          Height="Auto"
+                                                          Height="80"
                                                           HorizontalAlignment="Center"
                                                           VerticalAlignment="Top"
                                                           Id="AdMediator-Id-1A00C840-7A8F-4214-9C83-6F0DD0CB4EE9"
-                                                          Width="Auto" />
+                                                          Width="480" />
 
                         <WindowsPhone81:AdMediatorControl x:Name="AdMediator_2EF4E8"
-                                                          Height="Auto"
+                                                          Height="80"
                                                           VerticalAlignment="Bottom"
                                                           HorizontalAlignment="Center"
                                                           Id="AdMediator-Id-CB0A72EE-F012-4E13-985C-3FE34D66A5C0"
                                                           Grid.Row="3"
-                                                          Width="Auto" />
+                                                          Width="480" />
 
                         <!--<UI:AdControl HorizontalAlignment="Center"
                                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
@@ -681,16 +681,17 @@
                         <RadioButton x:ConnectionId='13' GroupName="Comment"
                                      Grid.Row="2"
                                      HorizontalAlignment="Left"
-                                     Margin="40,0,0,0"
+                                     Margin="40,-5,0,0"
                                                               
                                      Content="Counter"></RadioButton>
                         <RadioButton x:ConnectionId='14' GroupName="Comment"
                                      Grid.Row="2"
+                                     Margin="0,-5,0,0"
                                      HorizontalAlignment="Right"
                                                               
                                      Content="Playing as"></RadioButton>
 
-                        <TextBox x:ConnectionId='15' Margin="30,0,30,0"
+                        <TextBox x:ConnectionId='15' Margin="30,-10,30,0"
                                  Grid.Row="3"
                                  HorizontalAlignment="Stretch"
                                  VerticalAlignment="Stretch"

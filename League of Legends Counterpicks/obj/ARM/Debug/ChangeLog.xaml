@@ -4,6 +4,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+      xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
       x:Class="League_of_Legends_Counterpicks.ChangeLog"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -19,32 +20,32 @@
     </Page.Resources>
     <Grid x:ConnectionId='1' x:Name="LayoutRoot"                       >
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
-        <!--<UI:AdControl ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Top"
-                      Width="480"
-                      Height="80"
-                      Loaded="Ad_Loaded"
-                      AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="234877" />-->
-        <!--<UI:AdControl HorizontalAlignment="Center"
-                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                      VerticalAlignment="Top"
-                      Width="480"
-                      Height="80"
-                      Grid.Row="4"
-                      Loaded="Ad_Loaded"
-                      AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="234878" />-->
+        <Grid Grid.Row="3">
+            <UI:AdControl x:ConnectionId='3' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Top"
+                          Width="480"
+                          Height="80"
+                                            
+                          AutoRefreshIntervalInSeconds="60"
+                          AdUnitId="234877" />
+            <UI:AdControl x:ConnectionId='4' HorizontalAlignment="Center"
+                          ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          VerticalAlignment="Top"
+                          Width="480"
+                          Height="80"
+                                            
+                          AutoRefreshIntervalInSeconds="60"
+                          AdUnitId="234878" />
+        </Grid>
 
-        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_CAC3BD"
+        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_CAC3BD"
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Top"
                                           Width="480"
@@ -56,10 +57,9 @@
                                           VerticalAlignment="Bottom"
                                           Width="480"
                                           Grid.Row="4"
-                                          Height="80" />
+                                          Height="80" />-->
 
         <!-- Title Panel -->
-        <StackPanel Grid.Row="1">
             <TextBlock Text="League Season 5 Counters Changes"
                        Foreground="#FFF3FD29"
                        TextAlignment="Justify"
@@ -69,14 +69,20 @@
                        Margin="0,12,0,0" />
 
             
-        </StackPanel>
 
         <!--TODO: Content should be placed within the following grid-->
-        <Grid Grid.Row="2"
+        <Grid Grid.Row="1"
               x:Name="ContentRoot"
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="August 17 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added some of the layout changes that I made to the Windows 10 version. Download the Windows 10 version on your desktop for the full changes and experience!"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="August 15 2015" />
                     </TextBlock>
@@ -291,7 +297,7 @@
         </Grid>
         
         
-        <Button x:ConnectionId='2' Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"                       >
+        <Button x:ConnectionId='2' Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"                       >
             Check for Updates
         </Button>
       

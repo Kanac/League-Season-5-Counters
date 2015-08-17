@@ -122,6 +122,16 @@
       <RootProperty Name="Label" />
       <RootEvent Name="Click" />
     </RootType>
+    <RootType FullName="Microsoft.Advertising.Mobile.UI.AdControl">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="ApplicationId" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="AutoRefreshIntervalInSeconds" />
+      <RootProperty Name="AdUnitId" />
+      <RootEvent Name="Loaded" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Margin" />
       <RootProperty Name="IsReadOnly" />

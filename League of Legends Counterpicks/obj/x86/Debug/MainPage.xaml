@@ -45,12 +45,13 @@
                       AutoRefreshIntervalInSeconds="60"
                       AdUnitId="231252" />-->
 
-        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_B3E200"
+        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_B3E200"
                                                   HorizontalAlignment="Center"
                                                   Height="80"
+                                                  Loaded="Ad_Loaded"
                                                   Id="AdMediator-Id-A9B26502-92B4-4543-8114-35155ED1598C"
                                                   VerticalAlignment="Top"
-                                                  Width="480" />
+                                                  Width="480" />-->
         <!--Enter inside the dictionary's only key, groups, and then into the list holding them -->
         <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
@@ -58,7 +59,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
                
-            <TextBox x:ConnectionId='6' Margin="15,0,15,0"
+            <TextBox x:ConnectionId='8' Margin="15,0,15,0"
                      IsReadOnly="True"
                                                 
                      TextAlignment="Center"
@@ -70,7 +71,7 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <ListView x:ConnectionId='7' ItemsSource="{Binding Roles}"
+                <ListView x:ConnectionId='9' ItemsSource="{Binding Roles}"
                           Grid.Row="1"
                           IsItemClickEnabled="True"
                                                             >
@@ -114,23 +115,33 @@
                        FontSize="15"
                        Foreground="#FFCCDDF7" />
         </StackPanel>
-        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_E867C2"
+        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_E867C2"
                                           HorizontalAlignment="Center"
                                           Height="80"
                                           Id="AdMediator-Id-80F4375E-50E9-4BF8-A9C3-47443A97AD78"
                                           Grid.Row="2"
                                           VerticalAlignment="Bottom"
-                                          Width="480" />
+                                          Width="480" />-->
 
-        <!--<UI:AdControl HorizontalAlignment="Center"
+        <UI:AdControl x:ConnectionId='6' HorizontalAlignment="Center"
                       ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
                       VerticalAlignment="Top"
                       Width="480"
                       Height="80"
                       Grid.Row="2"
-                      Loaded="Ad_Loaded"
+                                        
                       AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="231251" />-->
+                      AdUnitId="231251" />
+
+        <UI:AdControl x:ConnectionId='7' HorizontalAlignment="Center"
+                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
+                      VerticalAlignment="Top"
+                      Width="480"
+                      Height="80"
+                      Grid.Row="2"
+                                        
+                      AutoRefreshIntervalInSeconds="60"
+                      AdUnitId="231252" />
 
     </Grid>
 </Page>

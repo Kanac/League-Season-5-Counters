@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type='text/xsl' href='C:\ProgramData\Windows App Certification Kit\wp-results.xsl'?>
-<REPORT xml:lang="en-US" OVERALL_RESULT="PASS" VERSION="10.0" LATEST_VERSION="TRUE" UPDATE_DOWNLOAD_URL="" TOOLSET_ARCHITECTURE="x64" SecureBoot="FALSE" APP_TYPE="WindowsPhone" PUBLISHER_DISPLAY_NAME="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" APP_NAME="62206AnthonyC.LeagueCounterpicks" APP_VERSION="2016.8.0.28" OSVERSION="10.0.10240.0" OS="Microsoft Windows 10 Pro" PER_USER_APPLICATION="" PARTIAL_RUN="FALSE" LCID="1033" VALIDATION_TYPE="UI" ReportGenerationTime="8/15/2015 8:05:25 AM" ID="cb2d6be3cff09de6705551269caf674b">
+<REPORT xml:lang="en-US" OVERALL_RESULT="PASS" VERSION="10.0" LATEST_VERSION="TRUE" UPDATE_DOWNLOAD_URL="" TOOLSET_ARCHITECTURE="x64" SecureBoot="FALSE" APP_TYPE="WindowsPhone" PUBLISHER_DISPLAY_NAME="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" APP_NAME="62206AnthonyC.LeagueCounterpicks" APP_VERSION="2016.8.0.30" OSVERSION="10.0.10240.0" OS="Microsoft Windows 10 Pro" PER_USER_APPLICATION="" PARTIAL_RUN="FALSE" LCID="1033" VALIDATION_TYPE="UI" ReportGenerationTime="8/17/2015 7:37:57 AM" ID="787e8bda7d9dc3cb7c5f0d4bf3e11e80">
   <REQUIREMENTS>
     <REQUIREMENT NUMBER="1" TITLE="Clean reversible install test" RATIONALE="A clean, reversible, installation allows users to successfully manage (deploy, and remove) applications on their system." />
     <REQUIREMENT NUMBER="2" TITLE="Install to the correct folders test" RATIONALE="Windows provides specific locations in the file system to store programs and software components, shared application data, and application data specific to a user." />
@@ -14,30 +14,30 @@
     <REQUIREMENT NUMBER="10" TITLE="Deployment and launch tests" RATIONALE="Application failures such as crashes and hangs are a major disruption to users and cause frustration. Eliminating such failures improves application stability and reliability, and overall, provides users with a better application experience." />
     <REQUIREMENT NUMBER="11" TITLE="Compatibility and resiliency test" RATIONALE="When Windows detects that an application has operated in an incompatible manner, it applies a compatibility fix that causes the application to behave correctly, ensuring a positive user experience. Applications should not rely on this behavior since it is only provided to allow legacy applications to work correctly on Windows." />
     <REQUIREMENT NUMBER="12" TITLE="Package compliance test" RATIONALE="The package manifest was missing one or more required attributes.">
-      <TEST INDEX="77" NAME="Application count" DESCRIPTION="One package should not define more than one app in the manifest." EXECUTIONTIME="00h:00m:03s.10ms">
+      <TEST INDEX="77" NAME="Application count" DESCRIPTION="One package should not define more than one app in the manifest." EXECUTIONTIME="00h:00m:02s.30ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="31" NAME="App manifest" DESCRIPTION="App manifest must include valid entries for all required fields." EXECUTIONTIME="00h:00m:00s.88ms">
+      <TEST INDEX="31" NAME="App manifest" DESCRIPTION="App manifest must include valid entries for all required fields." EXECUTIONTIME="00h:00m:00s.86ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="74" NAME="Bundle manifest" DESCRIPTION="Bundle manifest must include valid entries for all required fields." EXECUTIONTIME="00h:00m:01s.74ms">
+      <TEST INDEX="74" NAME="Bundle manifest" DESCRIPTION="Bundle manifest must include valid entries for all required fields." EXECUTIONTIME="00h:00m:01s.46ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="75" NAME="Package size" DESCRIPTION="Package file size should not be greater than 4 gigabytes." EXECUTIONTIME="00h:00m:00s.87ms">
+      <TEST INDEX="75" NAME="Package size" DESCRIPTION="Package file size should not be greater than 4 gigabytes." EXECUTIONTIME="00h:00m:00s.85ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="13" TITLE="Windows security best practices test" RATIONALE="An application should not change the default Windows security settings." />
     <REQUIREMENT NUMBER="14" TITLE="Windows security features test" RATIONALE="Applications must opt-into Windows security features.">
-      <TEST INDEX="33" NAME="Binary analyzer" DESCRIPTION="Analysis of security features enabled on binaries" EXECUTIONTIME="00h:00m:04s.23ms">
+      <TEST INDEX="33" NAME="Binary analyzer" DESCRIPTION="Analysis of security features enabled on binaries" EXECUTIONTIME="00h:00m:02s.56ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="70" NAME="Banned file analyzer" DESCRIPTION="Analysis of application to detect known insecure files" EXECUTIONTIME="00h:00m:00s.88ms">
+      <TEST INDEX="70" NAME="Banned file analyzer" DESCRIPTION="Analysis of application to detect known insecure files" EXECUTIONTIME="00h:00m:00s.95ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
@@ -47,76 +47,76 @@
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="15" TITLE="Supported API test" RATIONALE="The application should only refer to the APIs allowed by the Windows SDK for Windows Store Apps.">
-      <TEST INDEX="72" NAME="Supported APIs" DESCRIPTION="Windows Phone App must only use supported platform APIs." EXECUTIONTIME="00h:00m:03s.60ms">
+      <TEST INDEX="72" NAME="Supported APIs" DESCRIPTION="Windows Phone App must only use supported platform APIs." EXECUTIONTIME="00h:00m:03s.61ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="17" TITLE="Performance test" RATIONALE="The application should have a fast and responsive launch and suspend experience while consuming a reasonable amount of system resources (CPU, File IO, Memory etc.) to enable fast switching and multitasking between previously unopened applications." />
     <REQUIREMENT NUMBER="19" TITLE="App manifest resources tests" RATIONALE="The App Package Manifest should have valid resources defined in the resources.pri file, as per the App Packaging Specification and App Manifest Schema.">
-      <TEST INDEX="45" NAME="App resources" DESCRIPTION="The package should have valid resources defined in the resources.pri file." EXECUTIONTIME="00h:00m:02s.09ms">
+      <TEST INDEX="45" NAME="App resources" DESCRIPTION="The package should have valid resources defined in the resources.pri file." EXECUTIONTIME="00h:00m:01s.89ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="61" NAME="Branding" DESCRIPTION="App should not use the default images packed by windows SDK samples or Visual Studio." EXECUTIONTIME="00h:00m:01s.96ms">
+      <TEST INDEX="61" NAME="Branding" DESCRIPTION="App should not use the default images packed by windows SDK samples or Visual Studio." EXECUTIONTIME="00h:00m:01s.74ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="20" TITLE="Debug configuration test" RATIONALE="The App should not install any debug binaries.">
-      <TEST INDEX="46" NAME="Debug configuration" DESCRIPTION="The App should not install any debug binaries." EXECUTIONTIME="00h:00m:01s.34ms">
+      <TEST INDEX="46" NAME="Debug configuration" DESCRIPTION="The App should not install any debug binaries." EXECUTIONTIME="00h:00m:01s.40ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="21" TITLE="File encoding test" RATIONALE="Packages containing an HTML5 Windows Store app must have correct file encoding.">
-      <TEST INDEX="49" NAME="UTF-8 file encoding" DESCRIPTION="Packages containing an HTML5 Windows Store app must have correct file encoding." EXECUTIONTIME="00h:00m:00s.70ms">
+      <TEST INDEX="49" NAME="UTF-8 file encoding" DESCRIPTION="Packages containing an HTML5 Windows Store app must have correct file encoding." EXECUTIONTIME="00h:00m:00s.72ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="22" TITLE="Direct3D Feature Test" RATIONALE="App should use the Direct3D capability correctly." />
     <REQUIREMENT NUMBER="23" TITLE="App Capabilities test" RATIONALE="Packages declaring special-use capabilities will have to provide justifications during the onboarding process.">
-      <TEST INDEX="52" NAME="Special use capabilities" DESCRIPTION="Packages declaring special-use capabilities will have to provide justifications during the onboarding process." EXECUTIONTIME="00h:00m:00s.71ms">
+      <TEST INDEX="52" NAME="Special use capabilities" DESCRIPTION="Packages declaring special-use capabilities will have to provide justifications during the onboarding process." EXECUTIONTIME="00h:00m:00s.72ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="24" TITLE="Windows Runtime metadata validation" RATIONALE="Metadata needs to be conformant and consistent across all generation sources.">
-      <TEST INDEX="56" NAME="ExclusiveTo attribute" DESCRIPTION="A class must not implement an interface that is marked ExclusiveTo another class." EXECUTIONTIME="00h:00m:01s.84ms">
+      <TEST INDEX="56" NAME="ExclusiveTo attribute" DESCRIPTION="A class must not implement an interface that is marked ExclusiveTo another class." EXECUTIONTIME="00h:00m:01s.58ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="57" NAME="Type location" DESCRIPTION="Types must be defined in the metadata file with the longest matching namespace." EXECUTIONTIME="00h:00m:00s.78ms">
+      <TEST INDEX="57" NAME="Type location" DESCRIPTION="Types must be defined in the metadata file with the longest matching namespace." EXECUTIONTIME="00h:00m:00s.63ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="55" NAME="Type name case-sensitivity" DESCRIPTION="Namespace and type names must not vary only by casing." EXECUTIONTIME="00h:00m:00s.69ms">
+      <TEST INDEX="55" NAME="Type name case-sensitivity" DESCRIPTION="Namespace and type names must not vary only by casing." EXECUTIONTIME="00h:00m:00s.70ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="54" NAME="Type name correctness" DESCRIPTION="Only system types can be in the Windows namespace and no types can be in the global namespace." EXECUTIONTIME="00h:00m:00s.69ms">
+      <TEST INDEX="54" NAME="Type name correctness" DESCRIPTION="Only system types can be in the Windows namespace and no types can be in the global namespace." EXECUTIONTIME="00h:00m:00s.71ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="58" NAME="General metadata correctness" DESCRIPTION="Metadata files must meet various requirements in order to be valid and correct." EXECUTIONTIME="00h:00m:01s.33ms">
+      <TEST INDEX="58" NAME="General metadata correctness" DESCRIPTION="Metadata files must meet various requirements in order to be valid and correct." EXECUTIONTIME="00h:00m:01s.42ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="53" NAME="Properties" DESCRIPTION="Write-only and indexer properties may not be used. Corresponding getter and setter methods must match in type." EXECUTIONTIME="00h:00m:00s.59ms">
+      <TEST INDEX="53" NAME="Properties" DESCRIPTION="Write-only and indexer properties may not be used. Corresponding getter and setter methods must match in type." EXECUTIONTIME="00h:00m:00s.58ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="25" TITLE="Package sanity test" RATIONALE="Validation of the app package contents to ensure correctness.">
-      <TEST INDEX="63" NAME="Platform appropriate files" DESCRIPTION="App should not install files that do not match the target processor architecture." EXECUTIONTIME="00h:00m:00s.94ms">
+      <TEST INDEX="63" NAME="Platform appropriate files" DESCRIPTION="App should not install files that do not match the target processor architecture." EXECUTIONTIME="00h:00m:00s.95ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="26" TITLE="High-DPI support" RATIONALE="The application needs to set DPI-aware to make the UI look consistently good across a wide variety of high-DPI display settings." />
     <REQUIREMENT NUMBER="27" TITLE="Resource Usage Test" RATIONALE="WinJS background tasks need to call close() to free resource.">
-      <TEST INDEX="68" NAME="WinJS background task" DESCRIPTION="WinJS background tasks need to call close() to free resource." EXECUTIONTIME="00h:00m:01s.03ms">
+      <TEST INDEX="68" NAME="WinJS background task" DESCRIPTION="WinJS background tasks need to call close() to free resource." EXECUTIONTIME="00h:00m:00s.74ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
@@ -124,12 +124,12 @@
   </REQUIREMENTS>
   <APPLICATIONS>
     <Installed_Programs>
-      <Program Name="62206AnthonyC.LeagueCounterpicks" Type="Application" Source="AppxPackage" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2016.8.0.28" Language="1033" InstallDate="08/15/2015 15:04:47" RootDirPath="C:\windows\temp\appcert_0E20\62206AnthonyC.LeagueCounterpicks_2016.8.0.28_arm__f525sr33j540e" Id="0000ce4e4224ca02e796a0f41e76db95bd8100000904">
+      <Program Name="62206AnthonyC.LeagueCounterpicks" Type="Application" Source="AppxPackage" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2016.8.0.30" Language="1033" InstallDate="08/17/2015 14:37:18" RootDirPath="C:\windows\temp\appcert_166C\62206AnthonyC.LeagueCounterpicks_2016.8.0.30_arm__f525sr33j540e" Id="0000be9627b56825c2ef6a01e476540431d600000904">
         <Indicators>
           <WindowsStoreAppManifestIndicators>
-            <PackageManifest PackageFullName="62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e">
+            <PackageManifest PackageFullName="62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e">
               <Package>
-                <Identity Name="62206AnthonyC.LeagueCounterpicks" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2016.8.0.28" ProcessorArchitecture="arm" />
+                <Identity Name="62206AnthonyC.LeagueCounterpicks" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2016.8.0.30" ProcessorArchitecture="arm" />
                 <PhoneIdentity PhoneProductId="a29b2218-1da2-4e4b-87e2-a8a45d18cf71" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
                 <Properties>
                   <DisplayName>League Season 5 Counters</DisplayName>
@@ -225,26 +225,26 @@
             </PackageManifest>
             <BundleManifest PackageFamilyName="62206AnthonyC.LeagueCounterpicks_f525sr33j540e">
               <Bundle SchemaVersion="2.0">
-                <Identity Name="62206AnthonyC.LeagueCounterpicks" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2015.815.1504.0" />
+                <Identity Name="62206AnthonyC.LeagueCounterpicks" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2015.817.1436.0" />
                 <Packages>
-                  <Package Type="application" Version="2016.8.0.28" Architecture="arm" FileName="League of Legends Counterpicks_2016.8.0.28_ARM.appx" Offset="87" Size="20664848">
+                  <Package Type="application" Version="2016.8.0.30" Architecture="arm" FileName="League of Legends Counterpicks_2016.8.0.30_ARM.appx" Offset="87" Size="20665237">
                     <Resources>
                       <Resource Language="EN-US" />
                       <Resource Scale="240" />
                     </Resources>
                   </Package>
-                  <Package Type="resource" Version="2016.8.0.28" ResourceId="split.language-pt" FileName="League of Legends Counterpicks_2016.8.0.28_language-pt.appx" Offset="20665054" Size="37174">
+                  <Package Type="resource" Version="2016.8.0.30" ResourceId="split.language-pt" FileName="League of Legends Counterpicks_2016.8.0.30_language-pt.appx" Offset="20665443" Size="37176">
                     <Resources>
                       <Resource Language="pt-pt" />
                       <Resource Language="pt-br" />
                     </Resources>
                   </Package>
-                  <Package Type="resource" Version="2016.8.0.28" ResourceId="split.scale-100" FileName="League of Legends Counterpicks_2016.8.0.28_scale-100.appx" Offset="20702345" Size="115406">
+                  <Package Type="resource" Version="2016.8.0.30" ResourceId="split.scale-100" FileName="League of Legends Counterpicks_2016.8.0.30_scale-100.appx" Offset="20702736" Size="115407">
                     <Resources>
                       <Resource Scale="100" />
                     </Resources>
                   </Package>
-                  <Package Type="resource" Version="2016.8.0.28" ResourceId="split.scale-140" FileName="League of Legends Counterpicks_2016.8.0.28_scale-140.appx" Offset="20817868" Size="183014">
+                  <Package Type="resource" Version="2016.8.0.30" ResourceId="split.scale-140" FileName="League of Legends Counterpicks_2016.8.0.30_scale-140.appx" Offset="20818260" Size="183012">
                     <Resources>
                       <Resource Scale="140" />
                     </Resources>
@@ -255,41 +255,41 @@
           </WindowsStoreAppManifestIndicators>
         </Indicators>
         <StaticProperties>
-          <Files Id="00009189669da8b67b8f4e8f72323d6b9e8a6dc2139b">
-            <File Name="AdDuplex.Universal.Controls.WinPhone.XAML.winmd" Id="000052aeb07ce32cafa99cc1a10d10ca8a7b38647225" ProductName="AdDuplex.Universal.Controls.WinPhone.XAML" ProductVersion="1.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="1.0.0.0" Size="0xcc00" SizeOfImage="0x14000" PeHeaderHash="01018d253a6ca043343d537afd6a2095afa5e2f6f49f" PeChecksum="0x0" BinProductVersion="1.0.0.0" BinFileVersion="1.0.0.0" FileDescription="AdDuplex.Universal.Controls.WinPhone.XAML" InternalName="AdDuplex.Universal.Controls.WinPhone.XAML.winmdobj" LegalCopyright="Copyright ©  2014" LinkDate="08/25/2014 13:20:22" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="AdDuplex.Universal.Controls.WinPhone.XAML.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\adduplex.universal.controls.winphone.xaml.winmd" LongPathHash="000047c1ee44cbd4701396bf518016f52d1102081c43" />
-            <File Name="AdDuplex.Universal.WinPhone.WinRT.winmd" Id="000005a9f0986b0308da17eb1de8eb5c32a328e31ef7" ProductName="AdDuplex.Universal.WinPhone.WinRT" ProductVersion="1.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="1.0.0.0" Size="0xd800" SizeOfImage="0x14000" PeHeaderHash="0101b1b23f49d0d2a808d2c2cc98c3c0d143686f6362" PeChecksum="0x0" BinProductVersion="1.0.0.0" BinFileVersion="1.0.0.0" FileDescription="AdDuplex.Universal.WinPhone.WinRT" InternalName="AdDuplex.Universal.WinPhone.WinRT.winmdobj" LegalCopyright="Copyright ©  2014" LinkDate="08/21/2014 13:49:01" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="AdDuplex.Universal.WinPhone.WinRT.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\adduplex.universal.winphone.winrt.winmd" LongPathHash="0000bfcbf9ab8244fe0eee4085647eb52d169ba449f6" />
-            <File Name="League of Legends Counterpicks.exe" Id="00001ef1060706859279584984f0bbeb6963b276244f" ProductName="League of Legends Counterpicks" ProductVersion="1.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="1.0.0.0" Size="0x1de00" SizeOfImage="0x22000" PeHeaderHash="0101ab82cb2faa97e5ac9f1905213002126011c53c69" PeChecksum="0x0" BinProductVersion="1.0.0.0" BinFileVersion="1.0.0.0" FileDescription="League of Legends Counterpicks" InternalName="League of Legends Counterpicks.exe" LegalCopyright="Copyright ©  2014" LinkDate="08/15/2015 15:03:53" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="League of Legends Counterpicks.exe" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\league of legends counterpicks.exe" LongPathHash="0000bde3c208dbe99b3ea0263e2e3fbfeecc7008e2c4" />
-            <File Name="Microsoft.Advertising.Mobile.Common.winmd" Id="00009bb451f512edee6bc97080555de4b8c6546cacae" ProductName="Microsoft.Advertising.Mobile.Common" CompanyName="Microsoft" ProductVersion="8.1.40505.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="8.1.40505.0" Size="0x18cd8" SizeOfImage="0x1e000" PeHeaderHash="01018cd55f5c72edf62acd258bed931f74cd8831ee36" PeChecksum="0x26377" BinProductVersion="8.1.40505.0" BinFileVersion="8.1.40505.0" FileDescription="Microsoft.Advertising.Mobile.Common" InternalName="Microsoft.Advertising.Mobile.Common.winmdobj" LegalCopyright="Copyright © Microsoft 2010" LinkDate="05/02/2014 20:00:47" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="Microsoft.Advertising.Mobile.Common.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.advertising.mobile.common.winmd" LongPathHash="000082f0f90495fcf956ae2e879e72a32a9713b731de" />
-            <File Name="Microsoft.Advertising.Mobile.Display.winmd" Id="0000bb2aa7d3a5d1db91f45730ea55b0ed8d62bea33b" ProductName="Microsoft.Advertising.Mobile" CompanyName="Microsoft" ProductVersion="8.1.40505.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="8.1.40505.0" Size="0xbcd8" SizeOfImage="0x10000" PeHeaderHash="0101583ccc9a8dcc9e258c562c5fc8c72bfff0c9eef6" PeChecksum="0x187ca" BinProductVersion="8.1.40505.0" BinFileVersion="8.1.40505.0" FileDescription="Microsoft.Advertising.Mobile" InternalName="Microsoft.Advertising.Mobile.Display.winmdobj" LegalCopyright="Copyright © Microsoft 2010" LinkDate="05/02/2014 20:00:48" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="Microsoft.Advertising.Mobile.Display.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.advertising.mobile.display.winmd" LongPathHash="00008939a3bd0ae9319b6b11a93ebff6acbe141964ed" />
-            <File Name="Microsoft.Advertising.Mobile.UI.winmd" Id="000081abe8f840396037d7f5f725a6317be1bbb88358" ProductName="Microsoft.Advertising.Mobile.UI" ProductVersion="8.1.40505.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="8.1.40505.0" Size="0x24ad0" SizeOfImage="0x2a000" PeHeaderHash="01017ca8144b8713fd9309753615114d77167263e70f" PeChecksum="0x317e5" BinProductVersion="8.1.40505.0" BinFileVersion="8.1.40505.0" FileDescription="Microsoft.Advertising.Mobile.UI" InternalName="Microsoft.Advertising.Mobile.UI.winmdobj" LegalCopyright="Copyright ©  2013" LinkDate="05/02/2014 20:00:50" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="Microsoft.Advertising.Mobile.UI.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.advertising.mobile.ui.winmd" LongPathHash="000000f5c256ca0d3b3a5d344c19251f8dda316f9732" />
-            <File Name="Microsoft.ApplicationInsights.PersistenceChannel.dll" Id="00005624ba00f9951c739138733bdf8e13bc87698162" ProductName="Application Insights SDK Windows Persistence channel" CompanyName="Microsoft" ProductVersion="1.1.0.1903" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.1.0.1903" Size="0xe148" SizeOfImage="0x10000" PeHeaderHash="01010d80f32162e24a8a717f4c559a087f3169e101c3" PeChecksum="0x1b279" BinProductVersion="1.1.0.1903" BinFileVersion="1.1.0.1903" FileDescription="Microsoft.ApplicationInsights.Channel.PersistenceChannel" InternalName="Microsoft.ApplicationInsights.PersistenceChannel.dll" LegalCopyright="Copyright © Microsoft. All Rights Reserved." LinkDate="07/06/2015 21:38:07" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.ApplicationInsights.PersistenceChannel.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.applicationinsights.persistencechannel.dll" LongPathHash="0000de9aedf14530fea5bfad34fc294a29d2ee2217d9" />
-            <File Name="Microsoft.Data.Edm.dll" Id="0000e854a47b38c94d48f5936791902c88091cd348ec" ProductName="Microsoft® .NET Framework" CompanyName="Microsoft Corporation" ProductVersion="5.6.2.61936" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="5.6.2.61936" Size="0xa0aa8" SizeOfImage="0xa6000" PeHeaderHash="010144b9d141702806ebc32b27d9f007e30f2564a82b" PeChecksum="0xa9c6a" BinProductVersion="5.6.2.61936" BinFileVersion="5.6.2.61936" FileDescription="Microsoft.Data.Edm.dll" InternalName="Microsoft.Data.Edm.dll" LegalCopyright="© Microsoft Corporation.  All rights reserved." LinkDate="07/31/2014 04:06:31" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.Data.Edm.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.data.edm.dll" LongPathHash="0000116fb9c1ba686c67b5a7f1228b8c409fb184c4f9" />
-            <File Name="Microsoft.Data.OData.dll" Id="00005f19ffaa5955be20cb75b166b9f87d36b4c3c625" ProductName="Microsoft® .NET Framework" CompanyName="Microsoft Corporation" ProductVersion="5.6.2.61936" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="5.6.2.61936" Size="0x1718a8" SizeOfImage="0x176000" PeHeaderHash="01012d9de684d67247770627214f89a60b886ea11a27" PeChecksum="0x178644" BinProductVersion="5.6.2.61936" BinFileVersion="5.6.2.61936" FileDescription="Microsoft.Data.OData.dll" InternalName="Microsoft.Data.OData.dll" LegalCopyright="© Microsoft Corporation.  All rights reserved." LinkDate="07/31/2014 04:08:49" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.Data.OData.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.data.odata.dll" LongPathHash="0000b04c92eb075e3fb3a7ae27669061630e6383dabb" />
-            <File Name="Microsoft.WindowsAzure.Mobile.dll" Id="00002c77b7cd694c2808e5652dee37611fcad46b7fc5" ProductName="Microsoft Azure Mobile Services SDK" CompanyName="Microsoft Corporation" ProductVersion="1.3.30324.0" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="1.3.30324.0" Size="0x51a00" SizeOfImage="0x56000" PeHeaderHash="0101c895c39e46defbdd0d5af4c5194970341db81d40" PeChecksum="0x5cc7b" BinProductVersion="1.3.30324.0" BinFileVersion="1.3.30324.0" FileDescription="Microsoft.WindowsAzure.Mobile" InternalName="Microsoft.WindowsAzure.Mobile.dll" LegalCopyright="© Microsoft Corporation. All rights reserved." LinkDate="03/24/2015 18:39:04" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.WindowsAzure.Mobile.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.windowsazure.mobile.dll" LongPathHash="00003fbfc09b951f60ff331e341fb4c70ad0b03f7031" />
-            <File Name="QKit.dll" Id="00001633f541a17c9d227997d5cfcc7c6a05e8e2d75e" ProductName="QKit" ProductVersion="0.4.1.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="0.4.1.0" Size="0xce00" SizeOfImage="0x14000" PeHeaderHash="01012f8e2e844ee38cca4ff1d5242f34fedbc43284df" PeChecksum="0x0" BinProductVersion="0.4.1.0" BinFileVersion="0.4.1.0" FileDescription="QKit" InternalName="QKit.dll" LegalCopyright="Copyright ©  2014" LinkDate="09/07/2014 15:56:04" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="QKit.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\qkit.dll" LongPathHash="0000bcf4c82e6edd27cd15293f9f8e3990f3ab0c86b4" />
-            <File Name="resources.pri" Id="00006edda96208098812e65211f4db6ab6c5412297ef" Size="0x8a518" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\resources.pri" LongPathHash="00000f2f10d839d176e592b1659ded6ad67f5abfab26" />
-            <File Name="System.Net.Http.Extensions.dll" Id="00000c919adecdc63afdacdfffba825491a4c91a1156" ProductName="System.Net.Http.Extensions" CompanyName="Microsoft Corporation" ProductVersion="1.7.28.0" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="1.7.28.0" Size="0x74d8" SizeOfImage="0xa000" PeHeaderHash="010123c2411e3f31ee69e69183115d8a54296c172884" PeChecksum="0x1265b" BinProductVersion="1.7.28.0" BinFileVersion="1.7.28.0" FileDescription="System.Net.Http.Extensions" InternalName="System.Net.Http.Extensions.dll" LegalCopyright="© Microsoft Corporation.  All rights reserved." LinkDate="07/21/2014 20:50:11" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="System.Net.Http.Extensions.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\system.net.http.extensions.dll" LongPathHash="0000849a0a66f9821fb2be9bf41ab23b93b0fc450757" />
-            <File Name="System.Net.Http.Primitives.dll" Id="0000e98c9b6c59aa2a58611679a6c220b9edece9199c" ProductName="System.Net.Http.Primitives" CompanyName="Microsoft Corporation" ProductVersion="4.2.28.0" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="4.2.28.0" Size="0x54d8" SizeOfImage="0x8000" PeHeaderHash="01010b14fe20c2cb5e40942b8682cf3083deb9d8a32b" PeChecksum="0x613f" BinProductVersion="4.2.28.0" BinFileVersion="4.2.28.0" FileDescription="System.Net.Http.Primitives" InternalName="System.Net.Http.Primitives.dll" LegalCopyright="© Microsoft Corporation.  All rights reserved." LinkDate="07/21/2014 20:50:10" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="System.Net.Http.Primitives.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\system.net.http.primitives.dll" LongPathHash="000095259cdf5d5e63cf495a5b633ab9de1b590d09c2" />
-            <File Name="Microsoft.WindowsAzure.Storage.dll" Id="000054dd48d2582b30762682e32d58c61313b71b8126" ProductName="Azure Storage" CompanyName="Microsoft" ProductVersion="4.3.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="4.3.0.0" Size="0xafe88" SizeOfImage="0xb4000" PeHeaderHash="0101b5ee31b5ab43eab2bdb5d149670efd4d447d97cd" PeChecksum="0xbd745" BinProductVersion="4.3.0.0" BinFileVersion="4.3.0.0" FileDescription="Microsoft.WindowsAzure.Storage.dll" InternalName="Microsoft.WindowsAzure.Storage.dll" LegalCopyright="Copyright © 2013 Microsoft Corp." LinkDate="09/16/2014 21:35:02" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.WindowsAzure.Storage.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.windowsazure.storage.dll" LongPathHash="0000e36e3bff1d3548a88e964a352dbdfcc05ff5a232" />
-            <File Name="Tasks.winmd" Id="000041f1914e60ec3f79cf1be9aa6fc9dd670f00aa0d" ProductName="Tasks" ProductVersion="1.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="1.0.0.0" Size="0x1a00" SizeOfImage="0x8000" PeHeaderHash="0101e588bc0503cd77d620d241189d2bed9bfe0103ab" PeChecksum="0x0" BinProductVersion="1.0.0.0" BinFileVersion="1.0.0.0" FileDescription="Tasks" InternalName="Tasks.winmdobj" LegalCopyright="Copyright ©  2015" LinkDate="08/15/2015 15:03:04" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="Tasks.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\tasks.winmd" LongPathHash="000006161dc63d9e67f133e9f60a4df6abac4e615fe5" />
-            <File Name="Microsoft.WindowsAzure.Mobile.Ext.dll" Id="00007f63e1a4d6806ee2970c077de47b1249c4248245" ProductName="Microsoft Azure Mobile Services SDK" CompanyName="Microsoft Corporation" ProductVersion="1.3.30324.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.3.30324.0" Size="0x9400" SizeOfImage="0xe000" PeHeaderHash="0101196f29f557f52d4f0ab8a5002f50eac68e58fa9a" PeChecksum="0x9a5a" BinProductVersion="1.3.30324.0" BinFileVersion="1.3.30324.0" FileDescription="Microsoft.WindowsAzure.Mobile.Ext" InternalName="Microsoft.WindowsAzure.Mobile.Ext.dll" LegalCopyright="Copyright ©  2013" LinkDate="03/24/2015 18:39:08" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.WindowsAzure.Mobile.Ext.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.windowsazure.mobile.ext.dll" LongPathHash="000015de82ba785045f616d1973ee4b79b98f749e0e3" />
-            <File Name="Newtonsoft.Json.dll" Id="0000bcc5717bce097c33dd8421dad87ff6d30aa4efb7" ProductName="Json.NET" CompanyName="Newtonsoft" ProductVersion="6.0.4.17603" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="6.0.4.17603" Size="0x6ca00" SizeOfImage="0x72000" PeHeaderHash="010107f5b09558d40ee0fb0f70460de69ee7ec598e14" PeChecksum="0x700de" BinProductVersion="6.0.4.17603" BinFileVersion="6.0.4.17603" FileDescription="Json.NET Portable" InternalName="Newtonsoft.Json.dll" LegalCopyright="Copyright © James Newton-King 2008" LinkDate="08/03/2014 08:32:59" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Newtonsoft.Json.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\newtonsoft.json.dll" LongPathHash="00001f4efbcb81d0538cef27a5661050d005d2f187e0" />
-            <File Name="SOMAWP81.dll" Id="000086f97777351ab68728f66c11031496539f5f4c0c" ProductName="SOMAWP81" CompanyName="Cadorian" ProductVersion="1.1.3.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.1.3.0" Size="0x17e00" SizeOfImage="0x1e000" PeHeaderHash="0101297193c332169fad7568e7a76b3f05269cafd429" PeChecksum="0x0" BinProductVersion="1.1.3.0" BinFileVersion="1.1.3.0" FileDescription="Smaato SDK for Windows Phone 8.1" InternalName="SOMAWP81.dll" LegalCopyright="Copyright ©  2014" LinkDate="10/28/2014 22:22:58" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="SOMAWP81.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\somawp81.dll" LongPathHash="0000ba415f4766e08c198eea4c8a4313917ba36430bb" />
-            <File Name="System.Spatial.dll" Id="0000b8050c4682e61e11ee9c392161d7f7ecd0dc48e3" ProductName="Microsoft® .NET Framework" CompanyName="Microsoft Corporation" ProductVersion="5.6.2.61936" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="5.6.2.61936" Size="0x1c0a8" SizeOfImage="0x20000" PeHeaderHash="01019765839dc5c2dfdd4c4a63e46db88be3aa83e1a9" PeChecksum="0x23dc8" BinProductVersion="5.6.2.61936" BinFileVersion="5.6.2.61936" FileDescription="System.Spatial.dll" InternalName="System.Spatial.dll" LegalCopyright="© Microsoft Corporation.  All rights reserved." LinkDate="07/31/2014 04:07:36" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="System.Spatial.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\system.spatial.dll" LongPathHash="00006d3799ab53a3fb72eb86b9ea387a959db3c1341a" />
-            <File Name="Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll" Id="0000ada6dc100609bc53a82f0b26e4eae2c73c4f5f7d" ProductName="AdAdapter.WindowsPhone81.MicrosoftAdvertising" CompanyName="Microsoft" ProductVersion="2.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="2.0.0.0" Size="0x5838" SizeOfImage="0xa000" PeHeaderHash="0101469d4b08e8f6795edbae0749042541adf39d0dc8" PeChecksum="0x120d6" BinProductVersion="2.0.0.0" BinFileVersion="2.0.0.0" FileDescription="AdAdapter.WindowsPhone81.MicrosoftAdvertising" InternalName="Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll" LegalCopyright="Copyright ©  Microsoft 2014" LinkDate="08/04/2015 21:44:41" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.admediator.windowsphone81.microsoftadvertising.dll" LongPathHash="00008b63d1b4a5d019833153309f504e8018a50fd7da" />
-            <File Name="Microsoft.AdMediator.WindowsPhone81.Smaato.dll" Id="00008ea3d42cba2ac787263a1a61591b6bcdbb8fb2b5" ProductName="AdAdapter.WindowsPhone81.Smaato" CompanyName="Microsoft" ProductVersion="1.0.2.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.0.2.0" Size="0x3e90" SizeOfImage="0x8000" PeHeaderHash="01011bd86ec251f0fc170f2ecf82dee5d901a595ee11" PeChecksum="0x9895" BinProductVersion="1.0.2.0" BinFileVersion="1.0.2.0" FileDescription="AdAdapter.WindowsPhone81.Smaato" InternalName="Microsoft.AdMediator.WindowsPhone81.Smaato.dll" LegalCopyright="Copyright ©  Microsoft 2014" LinkDate="12/19/2014 00:45:23" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.AdMediator.WindowsPhone81.Smaato.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.admediator.windowsphone81.smaato.dll" LongPathHash="0000331ba8cd6bde7b44e028f87ab672bf99da418adb" />
-            <File Name="Microsoft.Advertising.winmd" Id="000062cbddc7c1cb891f63e1ea927794669343bf59c0" SwitchBackContext="0x0100000000000602" Size="0x9cb0" SizeOfImage="0x9000" PeHeaderHash="0101ded30c3bed26c525da09d419a6ebd97f9f2965c4" PeChecksum="0xac73" LinkDate="07/13/2015 20:10:12" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.advertising.winmd" LongPathHash="0000b06c1beb4c68597c6252328cab8fd1476b95115b" />
-            <File Name="Microsoft.ApplicationInsights.dll" Id="0000f410eb1426daa6e598fd3927090c06670a0c31d3" CompanyName="Microsoft" ProductVersion="1.1.0.1899" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.1.0.1899" Size="0x246f8" SizeOfImage="0x26000" PeHeaderHash="0101c52a1b3e17e3a360e6bd5eb32c8cb9123c1b09b6" PeChecksum="0x282e8" BinProductVersion="1.1.0.1899" BinFileVersion="1.1.0.1899" FileDescription=" " InternalName="Microsoft.ApplicationInsights.dll" LegalCopyright="Copyright © Microsoft. All Rights Reserved." LinkDate="07/06/2015 21:15:32" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.ApplicationInsights.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.applicationinsights.dll" LongPathHash="00003c14b10ba0140a1da14ae22877a2d241c5422912" />
-            <File Name="Microsoft.ApplicationInsights.Extensibility.Windows.dll" Id="000084da4b58ced31dd40f1de2444f2e51090fbae183" CompanyName="Microsoft" ProductVersion="1.1.0.1906" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.1.0.1906" Size="0xc358" SizeOfImage="0xe000" PeHeaderHash="01012bc5082b34b3f0b85931980c0be02c3d861f6b68" PeChecksum="0x13238" BinProductVersion="1.1.0.1906" BinFileVersion="1.1.0.1906" FileDescription=" " InternalName="Microsoft.ApplicationInsights.Extensibility.Windows.dll" LegalCopyright="Copyright © Microsoft. All Rights Reserved." LinkDate="07/06/2015 21:54:10" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.ApplicationInsights.Extensibility.Windows.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.applicationinsights.extensibility.windows.dll" LongPathHash="00007e3fedb956838962d607e05793e238ab7ab1dbfb" />
-            <File Name="Ormma.js" Id="00007145ba4c98e3c37349feda8868a5d64324e837ad" Size="0x73d8" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\msadvertisingjs\ads\ormma.js" LongPathHash="00002df0f7c2ecb443bef52e77306a38ad77600d4fe2" />
-            <File Name="Ormma.js" Id="0000bc1252b06cf252341fbabadeed07451042cf509c" Size="0x60fc" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.advertising.mobile.ui\web\ormma.js" LongPathHash="00001e433398a08ea98d25385420b9114307597cdf7d" />
-            <File Name="UniversalXamlAdControl.WindowsPhone.dll" Id="0000bc19db2f5ac5f88d20519f3cf41fa08600603933" ProductName="Xbox Live" CompanyName="Microsoft Corporation" ProductVersion="8.5.1507.13012" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="8.5.1507.13012" Size="0x3a66b0" SizeOfImage="0x3a8000" PeHeaderHash="01018c11f9ccf1140ff01bd8446a50e917db137cd0b7" PeChecksum="0x3b1d44" BinProductVersion="8.5.1507.13012" BinFileVersion="8.5.1507.13012" FileDescription="UniversalXamlAdControl.WindowsPhone.dll" InternalName="UniversalXamlAdControl.WindowsPhone" LegalCopyright="©Microsoft Corporation.  All rights reserved." LinkDate="07/13/2015 20:00:30" BinaryType="PE32_ARM" OriginalFileName="UniversalXamlAdControl.WindowsPhone.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\universalxamladcontrol.windowsphone.dll" LongPathHash="0000857ba8b4862beef7d120b7005b10e7c35af3b1c3" />
-            <File Name="bootstrap.js" Id="0000c906c3a1ea79991099667b55c9d2ad7db537dfad" Size="0x4d19" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\msadvertisingjs\ads\bootstrap.js" LongPathHash="0000a683fe0d949b56ab9456e0e4c9f7188d1238c94c" />
-            <File Name="bootstrap.html" Id="0000bc3224a28c4cd7d24f16e7db440c71bd423386ae" Size="0x699" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.advertising.mobile.ui\web\bootstrap.html" LongPathHash="0000b7f55332a0a72123860944690674d43456157b2c" />
-            <File Name="bootstrap.html" Id="0000cdefcdb693fc08356dd6ca5a9318c8dddc28e475" Size="0x637" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.advertising\bootstrap.html" LongPathHash="00006ab56e825c6312ee4b666dcbf24e7630c8535b33" />
-            <File Name="Microsoft.AdMediator.Core.dll" Id="0000526648b99ceb43b7b10021c15aa521f7382a83a1" ProductName="AdMediator.Core" CompanyName="Microsoft" ProductVersion="2.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="2.0.0.0" Size="0x26098" SizeOfImage="0x2a000" PeHeaderHash="010138e3467b0c813d850152bf0453b994744c056449" PeChecksum="0x2c45c" BinProductVersion="2.0.0.0" BinFileVersion="2.0.0.0" FileDescription="AdMediator.Core" InternalName="Microsoft.AdMediator.Core.dll" LegalCopyright="Copyright ©  Microsoft 2014" LinkDate="08/11/2015 19:39:06" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.AdMediator.Core.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.admediator.core.dll" LongPathHash="0000c5704aa5233426a321fd70b3a68ea550f4245a27" />
-            <File Name="Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll" Id="000002adafd68cb77a0235596cd33abdb3fb5950473a" ProductName="AdAdapter.WindowsPhone81.AdDuplex" CompanyName="Microsoft" ProductVersion="1.0.2.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.0.2.0" Size="0x4090" SizeOfImage="0x8000" PeHeaderHash="0101df70b858d66b6b54ed5201c3b689923a4aab0b84" PeChecksum="0x10c6b" BinProductVersion="1.0.2.0" BinFileVersion="1.0.2.0" FileDescription="AdAdapter.WindowsPhone81.AdDuplex" InternalName="Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll" LegalCopyright="Copyright ©  Microsoft 2014" LinkDate="12/19/2014 00:45:44" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.admediator.windowsphone81.adduplex.dll" LongPathHash="0000aaac9494b3edee124bea73bb743dd9ec28939661" />
-            <File Name="Microsoft.AdMediator.WindowsPhone81.dll" Id="00009006706588b101e05a8748804979ec396ce17443" ProductName="AdMediator.WindowsPhone81" CompanyName="Microsoft" ProductVersion="2.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="2.0.0.0" Size="0xf838" SizeOfImage="0x14000" PeHeaderHash="0101a4132041e5f9724e61d3a736002143219682d7bc" PeChecksum="0x16e94" BinProductVersion="2.0.0.0" BinFileVersion="2.0.0.0" FileDescription="AdMediator.WindowsPhone81" InternalName="Microsoft.AdMediator.WindowsPhone81.dll" LegalCopyright="Copyright ©  Microsoft 2014" LinkDate="08/04/2015 21:43:43" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.AdMediator.WindowsPhone81.dll" LowerCaseLongPath="c:\windows\temp\appcert_0e20\62206anthonyc.leaguecounterpicks_2016.8.0.28_arm__f525sr33j540e\microsoft.admediator.windowsphone81.dll" LongPathHash="0000eafbed45f8da5680085ff4c3d20da833927810c8" />
+          <Files Id="000059f486f748af9874bf79d8b6d97f65a0c9d3fdc9">
+            <File Name="AdDuplex.Universal.Controls.WinPhone.XAML.winmd" Id="000052aeb07ce32cafa99cc1a10d10ca8a7b38647225" ProductName="AdDuplex.Universal.Controls.WinPhone.XAML" ProductVersion="1.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="1.0.0.0" Size="0xcc00" SizeOfImage="0x14000" PeHeaderHash="01018d253a6ca043343d537afd6a2095afa5e2f6f49f" PeChecksum="0x0" BinProductVersion="1.0.0.0" BinFileVersion="1.0.0.0" FileDescription="AdDuplex.Universal.Controls.WinPhone.XAML" InternalName="AdDuplex.Universal.Controls.WinPhone.XAML.winmdobj" LegalCopyright="Copyright ©  2014" LinkDate="08/25/2014 13:20:22" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="AdDuplex.Universal.Controls.WinPhone.XAML.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\adduplex.universal.controls.winphone.xaml.winmd" LongPathHash="0000bf4f0a29704ca2abf321185c8ab98ce01c546757" />
+            <File Name="AdDuplex.Universal.WinPhone.WinRT.winmd" Id="000005a9f0986b0308da17eb1de8eb5c32a328e31ef7" ProductName="AdDuplex.Universal.WinPhone.WinRT" ProductVersion="1.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="1.0.0.0" Size="0xd800" SizeOfImage="0x14000" PeHeaderHash="0101b1b23f49d0d2a808d2c2cc98c3c0d143686f6362" PeChecksum="0x0" BinProductVersion="1.0.0.0" BinFileVersion="1.0.0.0" FileDescription="AdDuplex.Universal.WinPhone.WinRT" InternalName="AdDuplex.Universal.WinPhone.WinRT.winmdobj" LegalCopyright="Copyright ©  2014" LinkDate="08/21/2014 13:49:01" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="AdDuplex.Universal.WinPhone.WinRT.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\adduplex.universal.winphone.winrt.winmd" LongPathHash="000083bac56fb615da98735a36c68969c2aa2c080922" />
+            <File Name="League of Legends Counterpicks.exe" Id="000034a1877af99647702f357b9e02a73918eeef569b" ProductName="League of Legends Counterpicks" ProductVersion="1.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="1.0.0.0" Size="0x1fc00" SizeOfImage="0x24000" PeHeaderHash="010141ebfe2f77505b0dcbe33b056f7db90c293f8b56" PeChecksum="0x0" BinProductVersion="1.0.0.0" BinFileVersion="1.0.0.0" FileDescription="League of Legends Counterpicks" InternalName="League of Legends Counterpicks.exe" LegalCopyright="Copyright ©  2014" LinkDate="08/17/2015 14:36:17" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="League of Legends Counterpicks.exe" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\league of legends counterpicks.exe" LongPathHash="000099485826914d932b4a3fdb126933c4d4fdec54a2" />
+            <File Name="Microsoft.Advertising.Mobile.Common.winmd" Id="00009bb451f512edee6bc97080555de4b8c6546cacae" ProductName="Microsoft.Advertising.Mobile.Common" CompanyName="Microsoft" ProductVersion="8.1.40505.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="8.1.40505.0" Size="0x18cd8" SizeOfImage="0x1e000" PeHeaderHash="01018cd55f5c72edf62acd258bed931f74cd8831ee36" PeChecksum="0x26377" BinProductVersion="8.1.40505.0" BinFileVersion="8.1.40505.0" FileDescription="Microsoft.Advertising.Mobile.Common" InternalName="Microsoft.Advertising.Mobile.Common.winmdobj" LegalCopyright="Copyright © Microsoft 2010" LinkDate="05/02/2014 20:00:47" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="Microsoft.Advertising.Mobile.Common.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.advertising.mobile.common.winmd" LongPathHash="00005d0a994e1b4ef67de6fc495b7499c4aa151df024" />
+            <File Name="Microsoft.Advertising.Mobile.Display.winmd" Id="0000bb2aa7d3a5d1db91f45730ea55b0ed8d62bea33b" ProductName="Microsoft.Advertising.Mobile" CompanyName="Microsoft" ProductVersion="8.1.40505.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="8.1.40505.0" Size="0xbcd8" SizeOfImage="0x10000" PeHeaderHash="0101583ccc9a8dcc9e258c562c5fc8c72bfff0c9eef6" PeChecksum="0x187ca" BinProductVersion="8.1.40505.0" BinFileVersion="8.1.40505.0" FileDescription="Microsoft.Advertising.Mobile" InternalName="Microsoft.Advertising.Mobile.Display.winmdobj" LegalCopyright="Copyright © Microsoft 2010" LinkDate="05/02/2014 20:00:48" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="Microsoft.Advertising.Mobile.Display.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.advertising.mobile.display.winmd" LongPathHash="0000b596fa6f359ebe6a1d68db154cdce70b275972fd" />
+            <File Name="Microsoft.Advertising.Mobile.UI.winmd" Id="000081abe8f840396037d7f5f725a6317be1bbb88358" ProductName="Microsoft.Advertising.Mobile.UI" ProductVersion="8.1.40505.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="8.1.40505.0" Size="0x24ad0" SizeOfImage="0x2a000" PeHeaderHash="01017ca8144b8713fd9309753615114d77167263e70f" PeChecksum="0x317e5" BinProductVersion="8.1.40505.0" BinFileVersion="8.1.40505.0" FileDescription="Microsoft.Advertising.Mobile.UI" InternalName="Microsoft.Advertising.Mobile.UI.winmdobj" LegalCopyright="Copyright ©  2013" LinkDate="05/02/2014 20:00:50" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="Microsoft.Advertising.Mobile.UI.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.advertising.mobile.ui.winmd" LongPathHash="0000254e5e69dbaa656977ecab242086c5f10454048f" />
+            <File Name="Microsoft.ApplicationInsights.PersistenceChannel.dll" Id="00005624ba00f9951c739138733bdf8e13bc87698162" ProductName="Application Insights SDK Windows Persistence channel" CompanyName="Microsoft" ProductVersion="1.1.0.1903" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.1.0.1903" Size="0xe148" SizeOfImage="0x10000" PeHeaderHash="01010d80f32162e24a8a717f4c559a087f3169e101c3" PeChecksum="0x1b279" BinProductVersion="1.1.0.1903" BinFileVersion="1.1.0.1903" FileDescription="Microsoft.ApplicationInsights.Channel.PersistenceChannel" InternalName="Microsoft.ApplicationInsights.PersistenceChannel.dll" LegalCopyright="Copyright © Microsoft. All Rights Reserved." LinkDate="07/06/2015 21:38:07" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.ApplicationInsights.PersistenceChannel.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.applicationinsights.persistencechannel.dll" LongPathHash="000090909f235d1f6ba2eda391832ef00da8dd702a62" />
+            <File Name="Microsoft.Data.Edm.dll" Id="0000e854a47b38c94d48f5936791902c88091cd348ec" ProductName="Microsoft® .NET Framework" CompanyName="Microsoft Corporation" ProductVersion="5.6.2.61936" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="5.6.2.61936" Size="0xa0aa8" SizeOfImage="0xa6000" PeHeaderHash="010144b9d141702806ebc32b27d9f007e30f2564a82b" PeChecksum="0xa9c6a" BinProductVersion="5.6.2.61936" BinFileVersion="5.6.2.61936" FileDescription="Microsoft.Data.Edm.dll" InternalName="Microsoft.Data.Edm.dll" LegalCopyright="© Microsoft Corporation.  All rights reserved." LinkDate="07/31/2014 04:06:31" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.Data.Edm.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.data.edm.dll" LongPathHash="0000cf65449fd630fb6878ce461e3d45c272fdd17c71" />
+            <File Name="Microsoft.Data.OData.dll" Id="00005f19ffaa5955be20cb75b166b9f87d36b4c3c625" ProductName="Microsoft® .NET Framework" CompanyName="Microsoft Corporation" ProductVersion="5.6.2.61936" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="5.6.2.61936" Size="0x1718a8" SizeOfImage="0x176000" PeHeaderHash="01012d9de684d67247770627214f89a60b886ea11a27" PeChecksum="0x178644" BinProductVersion="5.6.2.61936" BinFileVersion="5.6.2.61936" FileDescription="Microsoft.Data.OData.dll" InternalName="Microsoft.Data.OData.dll" LegalCopyright="© Microsoft Corporation.  All rights reserved." LinkDate="07/31/2014 04:08:49" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.Data.OData.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.data.odata.dll" LongPathHash="00004a3a8dba2828d159ded04a6cf433890d799e55ac" />
+            <File Name="Microsoft.WindowsAzure.Storage.dll" Id="000054dd48d2582b30762682e32d58c61313b71b8126" ProductName="Azure Storage" CompanyName="Microsoft" ProductVersion="4.3.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="4.3.0.0" Size="0xafe88" SizeOfImage="0xb4000" PeHeaderHash="0101b5ee31b5ab43eab2bdb5d149670efd4d447d97cd" PeChecksum="0xbd745" BinProductVersion="4.3.0.0" BinFileVersion="4.3.0.0" FileDescription="Microsoft.WindowsAzure.Storage.dll" InternalName="Microsoft.WindowsAzure.Storage.dll" LegalCopyright="Copyright © 2013 Microsoft Corp." LinkDate="09/16/2014 21:35:02" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.WindowsAzure.Storage.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.windowsazure.storage.dll" LongPathHash="0000719798b8f3309b0e64e424bec9ce205b4f0d40f9" />
+            <File Name="QKit.dll" Id="00001633f541a17c9d227997d5cfcc7c6a05e8e2d75e" ProductName="QKit" ProductVersion="0.4.1.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="0.4.1.0" Size="0xce00" SizeOfImage="0x14000" PeHeaderHash="01012f8e2e844ee38cca4ff1d5242f34fedbc43284df" PeChecksum="0x0" BinProductVersion="0.4.1.0" BinFileVersion="0.4.1.0" FileDescription="QKit" InternalName="QKit.dll" LegalCopyright="Copyright ©  2014" LinkDate="09/07/2014 15:56:04" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="QKit.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\qkit.dll" LongPathHash="00005ecf8f52ad0ff56a5c1fe934860b7834eb4c7c62" />
+            <File Name="System.Net.Http.Extensions.dll" Id="00000c919adecdc63afdacdfffba825491a4c91a1156" ProductName="System.Net.Http.Extensions" CompanyName="Microsoft Corporation" ProductVersion="1.7.28.0" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="1.7.28.0" Size="0x74d8" SizeOfImage="0xa000" PeHeaderHash="010123c2411e3f31ee69e69183115d8a54296c172884" PeChecksum="0x1265b" BinProductVersion="1.7.28.0" BinFileVersion="1.7.28.0" FileDescription="System.Net.Http.Extensions" InternalName="System.Net.Http.Extensions.dll" LegalCopyright="© Microsoft Corporation.  All rights reserved." LinkDate="07/21/2014 20:50:11" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="System.Net.Http.Extensions.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\system.net.http.extensions.dll" LongPathHash="000020930856155006e737e6d18f6627236862aa7541" />
+            <File Name="Microsoft.WindowsAzure.Mobile.Ext.dll" Id="00007f63e1a4d6806ee2970c077de47b1249c4248245" ProductName="Microsoft Azure Mobile Services SDK" CompanyName="Microsoft Corporation" ProductVersion="1.3.30324.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.3.30324.0" Size="0x9400" SizeOfImage="0xe000" PeHeaderHash="0101196f29f557f52d4f0ab8a5002f50eac68e58fa9a" PeChecksum="0x9a5a" BinProductVersion="1.3.30324.0" BinFileVersion="1.3.30324.0" FileDescription="Microsoft.WindowsAzure.Mobile.Ext" InternalName="Microsoft.WindowsAzure.Mobile.Ext.dll" LegalCopyright="Copyright ©  2013" LinkDate="03/24/2015 18:39:08" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.WindowsAzure.Mobile.Ext.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.windowsazure.mobile.ext.dll" LongPathHash="0000400f4425242ec94db5d67e2989addfb5eeeb4466" />
+            <File Name="Newtonsoft.Json.dll" Id="0000bcc5717bce097c33dd8421dad87ff6d30aa4efb7" ProductName="Json.NET" CompanyName="Newtonsoft" ProductVersion="6.0.4.17603" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="6.0.4.17603" Size="0x6ca00" SizeOfImage="0x72000" PeHeaderHash="010107f5b09558d40ee0fb0f70460de69ee7ec598e14" PeChecksum="0x700de" BinProductVersion="6.0.4.17603" BinFileVersion="6.0.4.17603" FileDescription="Json.NET Portable" InternalName="Newtonsoft.Json.dll" LegalCopyright="Copyright © James Newton-King 2008" LinkDate="08/03/2014 08:32:59" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Newtonsoft.Json.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\newtonsoft.json.dll" LongPathHash="0000ddf40d7b9ec27b3333994f156b8d644513133331" />
+            <File Name="resources.pri" Id="00006edda96208098812e65211f4db6ab6c5412297ef" Size="0x8a518" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\resources.pri" LongPathHash="00000a9f869aa8c0d7eff4451c1ec5a9a4af21494966" />
+            <File Name="Microsoft.WindowsAzure.Mobile.dll" Id="00002c77b7cd694c2808e5652dee37611fcad46b7fc5" ProductName="Microsoft Azure Mobile Services SDK" CompanyName="Microsoft Corporation" ProductVersion="1.3.30324.0" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="1.3.30324.0" Size="0x51a00" SizeOfImage="0x56000" PeHeaderHash="0101c895c39e46defbdd0d5af4c5194970341db81d40" PeChecksum="0x5cc7b" BinProductVersion="1.3.30324.0" BinFileVersion="1.3.30324.0" FileDescription="Microsoft.WindowsAzure.Mobile" InternalName="Microsoft.WindowsAzure.Mobile.dll" LegalCopyright="© Microsoft Corporation. All rights reserved." LinkDate="03/24/2015 18:39:04" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.WindowsAzure.Mobile.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.windowsazure.mobile.dll" LongPathHash="0000035dbbe5758b20ddcce0e6677ae5cfbfc037c776" />
+            <File Name="System.Net.Http.Primitives.dll" Id="0000e98c9b6c59aa2a58611679a6c220b9edece9199c" ProductName="System.Net.Http.Primitives" CompanyName="Microsoft Corporation" ProductVersion="4.2.28.0" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="4.2.28.0" Size="0x54d8" SizeOfImage="0x8000" PeHeaderHash="01010b14fe20c2cb5e40942b8682cf3083deb9d8a32b" PeChecksum="0x613f" BinProductVersion="4.2.28.0" BinFileVersion="4.2.28.0" FileDescription="System.Net.Http.Primitives" InternalName="System.Net.Http.Primitives.dll" LegalCopyright="© Microsoft Corporation.  All rights reserved." LinkDate="07/21/2014 20:50:10" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="System.Net.Http.Primitives.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\system.net.http.primitives.dll" LongPathHash="00003a8888016b7033ecc359268b254115d536959140" />
+            <File Name="SOMAWP81.dll" Id="000086f97777351ab68728f66c11031496539f5f4c0c" ProductName="SOMAWP81" CompanyName="Cadorian" ProductVersion="1.1.3.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.1.3.0" Size="0x17e00" SizeOfImage="0x1e000" PeHeaderHash="0101297193c332169fad7568e7a76b3f05269cafd429" PeChecksum="0x0" BinProductVersion="1.1.3.0" BinFileVersion="1.1.3.0" FileDescription="Smaato SDK for Windows Phone 8.1" InternalName="SOMAWP81.dll" LegalCopyright="Copyright ©  2014" LinkDate="10/28/2014 22:22:58" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="SOMAWP81.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\somawp81.dll" LongPathHash="00000c8ef6d025f027213dec296c4d953cc2b26fee4b" />
+            <File Name="System.Spatial.dll" Id="0000b8050c4682e61e11ee9c392161d7f7ecd0dc48e3" ProductName="Microsoft® .NET Framework" CompanyName="Microsoft Corporation" ProductVersion="5.6.2.61936" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="5.6.2.61936" Size="0x1c0a8" SizeOfImage="0x20000" PeHeaderHash="01019765839dc5c2dfdd4c4a63e46db88be3aa83e1a9" PeChecksum="0x23dc8" BinProductVersion="5.6.2.61936" BinFileVersion="5.6.2.61936" FileDescription="System.Spatial.dll" InternalName="System.Spatial.dll" LegalCopyright="© Microsoft Corporation.  All rights reserved." LinkDate="07/31/2014 04:07:36" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="System.Spatial.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\system.spatial.dll" LongPathHash="00004124cb199e86b5290014aa53a743997b77551872" />
+            <File Name="Tasks.winmd" Id="000041f1914e60ec3f79cf1be9aa6fc9dd670f00aa0d" ProductName="Tasks" ProductVersion="1.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="1.0.0.0" Size="0x1a00" SizeOfImage="0x8000" PeHeaderHash="0101e588bc0503cd77d620d241189d2bed9bfe0103ab" PeChecksum="0x0" BinProductVersion="1.0.0.0" BinFileVersion="1.0.0.0" FileDescription="Tasks" InternalName="Tasks.winmdobj" LegalCopyright="Copyright ©  2015" LinkDate="08/15/2015 15:03:04" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3;CLR v4.0.30319" OriginalFileName="Tasks.winmdobj" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\tasks.winmd" LongPathHash="0000a824e4d2cf063e9e2edc65d5d1f7b0f01c72f673" />
+            <File Name="Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll" Id="0000ada6dc100609bc53a82f0b26e4eae2c73c4f5f7d" ProductName="AdAdapter.WindowsPhone81.MicrosoftAdvertising" CompanyName="Microsoft" ProductVersion="2.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="2.0.0.0" Size="0x5838" SizeOfImage="0xa000" PeHeaderHash="0101469d4b08e8f6795edbae0749042541adf39d0dc8" PeChecksum="0x120d6" BinProductVersion="2.0.0.0" BinFileVersion="2.0.0.0" FileDescription="AdAdapter.WindowsPhone81.MicrosoftAdvertising" InternalName="Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll" LegalCopyright="Copyright ©  Microsoft 2014" LinkDate="08/04/2015 21:44:41" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.admediator.windowsphone81.microsoftadvertising.dll" LongPathHash="000056e9d05ef3d1ab261e5e10540bc14272960b72fe" />
+            <File Name="Microsoft.AdMediator.WindowsPhone81.Smaato.dll" Id="00008ea3d42cba2ac787263a1a61591b6bcdbb8fb2b5" ProductName="AdAdapter.WindowsPhone81.Smaato" CompanyName="Microsoft" ProductVersion="1.0.2.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.0.2.0" Size="0x3e90" SizeOfImage="0x8000" PeHeaderHash="01011bd86ec251f0fc170f2ecf82dee5d901a595ee11" PeChecksum="0x9895" BinProductVersion="1.0.2.0" BinFileVersion="1.0.2.0" FileDescription="AdAdapter.WindowsPhone81.Smaato" InternalName="Microsoft.AdMediator.WindowsPhone81.Smaato.dll" LegalCopyright="Copyright ©  Microsoft 2014" LinkDate="12/19/2014 00:45:23" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.AdMediator.WindowsPhone81.Smaato.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.admediator.windowsphone81.smaato.dll" LongPathHash="00006235f1ee41c09d716063c15e4f743397f443fcc0" />
+            <File Name="Microsoft.Advertising.winmd" Id="000062cbddc7c1cb891f63e1ea927794669343bf59c0" SwitchBackContext="0x0100000000000602" Size="0x9cb0" SizeOfImage="0x9000" PeHeaderHash="0101ded30c3bed26c525da09d419a6ebd97f9f2965c4" PeChecksum="0xac73" LinkDate="07/13/2015 20:10:12" BinaryType="PE32_CLR_IL" ClrVersion="WindowsRuntime 1.3" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.advertising.winmd" LongPathHash="0000fa2f23b5adc1b9dc02d4114b2d12f2a49e327617" />
+            <File Name="Microsoft.ApplicationInsights.dll" Id="0000f410eb1426daa6e598fd3927090c06670a0c31d3" CompanyName="Microsoft" ProductVersion="1.1.0.1899" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.1.0.1899" Size="0x246f8" SizeOfImage="0x26000" PeHeaderHash="0101c52a1b3e17e3a360e6bd5eb32c8cb9123c1b09b6" PeChecksum="0x282e8" BinProductVersion="1.1.0.1899" BinFileVersion="1.1.0.1899" FileDescription=" " InternalName="Microsoft.ApplicationInsights.dll" LegalCopyright="Copyright © Microsoft. All Rights Reserved." LinkDate="07/06/2015 21:15:32" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.ApplicationInsights.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.applicationinsights.dll" LongPathHash="0000f227c9eb99a4a7ec7f89b378dc05f2d999fcabd8" />
+            <File Name="Microsoft.ApplicationInsights.Extensibility.Windows.dll" Id="000084da4b58ced31dd40f1de2444f2e51090fbae183" CompanyName="Microsoft" ProductVersion="1.1.0.1906" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.1.0.1906" Size="0xc358" SizeOfImage="0xe000" PeHeaderHash="01012bc5082b34b3f0b85931980c0be02c3d861f6b68" PeChecksum="0x13238" BinProductVersion="1.1.0.1906" BinFileVersion="1.1.0.1906" FileDescription=" " InternalName="Microsoft.ApplicationInsights.Extensibility.Windows.dll" LegalCopyright="Copyright © Microsoft. All Rights Reserved." LinkDate="07/06/2015 21:54:10" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.ApplicationInsights.Extensibility.Windows.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.applicationinsights.extensibility.windows.dll" LongPathHash="000090fd7978e9490d0565af6d6f9b21c733a1fffa59" />
+            <File Name="bootstrap.js" Id="0000c906c3a1ea79991099667b55c9d2ad7db537dfad" Size="0x4d19" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\msadvertisingjs\ads\bootstrap.js" LongPathHash="00002b56bdcc45700c9526bcb456e760b2fa639f8588" />
+            <File Name="bootstrap.html" Id="0000cdefcdb693fc08356dd6ca5a9318c8dddc28e475" Size="0x637" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.advertising\bootstrap.html" LongPathHash="00006a52b9d70c57a8bb5396b5c0a8b64f4b33e92a26" />
+            <File Name="UniversalXamlAdControl.WindowsPhone.dll" Id="0000bc19db2f5ac5f88d20519f3cf41fa08600603933" ProductName="Xbox Live" CompanyName="Microsoft Corporation" ProductVersion="8.5.1507.13012" VerLanguage="0" SwitchBackContext="0x0100000000000602" FileVersion="8.5.1507.13012" Size="0x3a66b0" SizeOfImage="0x3a8000" PeHeaderHash="01018c11f9ccf1140ff01bd8446a50e917db137cd0b7" PeChecksum="0x3b1d44" BinProductVersion="8.5.1507.13012" BinFileVersion="8.5.1507.13012" FileDescription="UniversalXamlAdControl.WindowsPhone.dll" InternalName="UniversalXamlAdControl.WindowsPhone" LegalCopyright="©Microsoft Corporation.  All rights reserved." LinkDate="07/13/2015 20:00:30" BinaryType="PE32_ARM" OriginalFileName="UniversalXamlAdControl.WindowsPhone.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\universalxamladcontrol.windowsphone.dll" LongPathHash="000098b4a4ff4132a393d33f57fd0a64eddffe16c93e" />
+            <File Name="Ormma.js" Id="00007145ba4c98e3c37349feda8868a5d64324e837ad" Size="0x73d8" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\msadvertisingjs\ads\ormma.js" LongPathHash="0000b15cd1d95ae95fc9d3eeab0a719bd327158c004e" />
+            <File Name="bootstrap.html" Id="0000bc3224a28c4cd7d24f16e7db440c71bd423386ae" Size="0x699" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.advertising.mobile.ui\web\bootstrap.html" LongPathHash="00004213e52e0cd2fdeccd2d04a4ba02eb59c8ee99b4" />
+            <File Name="Ormma.js" Id="0000bc1252b06cf252341fbabadeed07451042cf509c" Size="0x60fc" BinaryType="DATA_ONLY" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.advertising.mobile.ui\web\ormma.js" LongPathHash="00002afd8297e0e445b9c13d759f15ea7c74a2128f62" />
+            <File Name="Microsoft.AdMediator.Core.dll" Id="0000526648b99ceb43b7b10021c15aa521f7382a83a1" ProductName="AdMediator.Core" CompanyName="Microsoft" ProductVersion="2.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000400" FileVersion="2.0.0.0" Size="0x26098" SizeOfImage="0x2a000" PeHeaderHash="010138e3467b0c813d850152bf0453b994744c056449" PeChecksum="0x2c45c" BinProductVersion="2.0.0.0" BinFileVersion="2.0.0.0" FileDescription="AdMediator.Core" InternalName="Microsoft.AdMediator.Core.dll" LegalCopyright="Copyright ©  Microsoft 2014" LinkDate="08/11/2015 19:39:06" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.AdMediator.Core.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.admediator.core.dll" LongPathHash="00008dc49fa3b864f26f68274c04b842bb93b5cfbeee" />
+            <File Name="Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll" Id="000002adafd68cb77a0235596cd33abdb3fb5950473a" ProductName="AdAdapter.WindowsPhone81.AdDuplex" CompanyName="Microsoft" ProductVersion="1.0.2.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="1.0.2.0" Size="0x4090" SizeOfImage="0x8000" PeHeaderHash="0101df70b858d66b6b54ed5201c3b689923a4aab0b84" PeChecksum="0x10c6b" BinProductVersion="1.0.2.0" BinFileVersion="1.0.2.0" FileDescription="AdAdapter.WindowsPhone81.AdDuplex" InternalName="Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll" LegalCopyright="Copyright ©  Microsoft 2014" LinkDate="12/19/2014 00:45:44" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.admediator.windowsphone81.adduplex.dll" LongPathHash="000031bb0ddf99af34d089508ebcd8137b42df60e2c0" />
+            <File Name="Microsoft.AdMediator.WindowsPhone81.dll" Id="00009006706588b101e05a8748804979ec396ce17443" ProductName="AdMediator.WindowsPhone81" CompanyName="Microsoft" ProductVersion="2.0.0.0" VerLanguage="0" SwitchBackContext="0x0100000000000600" FileVersion="2.0.0.0" Size="0xf838" SizeOfImage="0x14000" PeHeaderHash="0101a4132041e5f9724e61d3a736002143219682d7bc" PeChecksum="0x16e94" BinProductVersion="2.0.0.0" BinFileVersion="2.0.0.0" FileDescription="AdMediator.WindowsPhone81" InternalName="Microsoft.AdMediator.WindowsPhone81.dll" LegalCopyright="Copyright ©  Microsoft 2014" LinkDate="08/04/2015 21:43:43" BinaryType="PE32_CLR_IL" ClrVersion="v4.0.30319" OriginalFileName="Microsoft.AdMediator.WindowsPhone81.dll" LowerCaseLongPath="c:\windows\temp\appcert_166c\62206anthonyc.leaguecounterpicks_2016.8.0.30_arm__f525sr33j540e\microsoft.admediator.windowsphone81.dll" LongPathHash="0000a03b38f4f39819d18c83f64b40f13bfb5d55682b" />
           </Files>
         </StaticProperties>
       </Program>
@@ -1070,556 +1070,6 @@
           <AitFeature Name="Windows.UI.Xaml.Window.get_Current" />
         </AitCategory>
       </AitFile>
-      <AitFile ErrorCode="0" Name="League of Legends Counterpicks.exe" Id="00001ef1060706859279584984f0bbeb6963b276244f">
-        <AitCategory Id="DotNet">
-          <AitFeature Name="System.Action" />
-          <AitFeature Name="System.Action..ctor" />
-          <AitFeature Name="System.Action.Invoke" />
-          <AitFeature Name="System.Action`1" />
-          <AitFeature Name="System.ArgumentException" />
-          <AitFeature Name="System.ArgumentException..ctor" />
-          <AitFeature Name="System.ArgumentNullException" />
-          <AitFeature Name="System.ArgumentNullException..ctor" />
-          <AitFeature Name="System.AsyncCallback" />
-          <AitFeature Name="System.BitConverter" />
-          <AitFeature Name="System.BitConverter.ToString" />
-          <AitFeature Name="System.Byte" />
-          <AitFeature Name="System.Char" />
-          <AitFeature Name="System.CodeDom.Compiler.GeneratedCodeAttribute" />
-          <AitFeature Name="System.CodeDom.Compiler.GeneratedCodeAttribute..ctor" />
-          <AitFeature Name="System.Collections.Generic.Dictionary`2" />
-          <AitFeature Name="System.Collections.Generic.ICollection`1" />
-          <AitFeature Name="System.Collections.Generic.IDictionary`2" />
-          <AitFeature Name="System.Collections.Generic.IEnumerable`1" />
-          <AitFeature Name="System.Collections.Generic.IEnumerator`1" />
-          <AitFeature Name="System.Collections.Generic.IList`1" />
-          <AitFeature Name="System.Collections.Generic.IReadOnlyDictionary`2" />
-          <AitFeature Name="System.Collections.Generic.IReadOnlyList`1" />
-          <AitFeature Name="System.Collections.Generic.KeyValuePair`2" />
-          <AitFeature Name="System.Collections.Generic.List`1" />
-          <AitFeature Name="System.Collections.IEnumerable" />
-          <AitFeature Name="System.Collections.IEnumerable.GetEnumerator" />
-          <AitFeature Name="System.Collections.IEnumerator" />
-          <AitFeature Name="System.Collections.IEnumerator.MoveNext" />
-          <AitFeature Name="System.Collections.ObjectModel.Collection`1" />
-          <AitFeature Name="System.Collections.ObjectModel.ObservableCollection`1" />
-          <AitFeature Name="System.ComponentModel.INotifyPropertyChanged" />
-          <AitFeature Name="System.ComponentModel.PropertyChangedEventArgs" />
-          <AitFeature Name="System.ComponentModel.PropertyChangedEventArgs..ctor" />
-          <AitFeature Name="System.ComponentModel.PropertyChangedEventHandler" />
-          <AitFeature Name="System.ComponentModel.PropertyChangedEventHandler.Invoke" />
-          <AitFeature Name="System.Convert" />
-          <AitFeature Name="System.Convert.ToInt32" />
-          <AitFeature Name="System.DateTime" />
-          <AitFeature Name="System.DateTime.AddHours" />
-          <AitFeature Name="System.DateTime.get_Now" />
-          <AitFeature Name="System.DateTimeOffset" />
-          <AitFeature Name="System.DateTimeOffset.op_Implicit" />
-          <AitFeature Name="System.Delegate" />
-          <AitFeature Name="System.Delegate.Combine" />
-          <AitFeature Name="System.Delegate.Remove" />
-          <AitFeature Name="System.Diagnostics.DebuggableAttribute" />
-          <AitFeature Name="System.Diagnostics.DebuggableAttribute..ctor" />
-          <AitFeature Name="System.Diagnostics.DebuggerHiddenAttribute" />
-          <AitFeature Name="System.Diagnostics.DebuggerHiddenAttribute..ctor" />
-          <AitFeature Name="System.Diagnostics.DebuggerNonUserCodeAttribute" />
-          <AitFeature Name="System.Diagnostics.DebuggerNonUserCodeAttribute..ctor" />
-          <AitFeature Name="System.Diagnostics.DebuggerStepThroughAttribute" />
-          <AitFeature Name="System.Diagnostics.DebuggerStepThroughAttribute..ctor" />
-          <AitFeature Name="System.Double" />
-          <AitFeature Name="System.Enum" />
-          <AitFeature Name="System.EventArgs" />
-          <AitFeature Name="System.EventArgs..ctor" />
-          <AitFeature Name="System.EventArgs.Empty" />
-          <AitFeature Name="System.EventHandler" />
-          <AitFeature Name="System.EventHandler.Invoke" />
-          <AitFeature Name="System.EventHandler`1" />
-          <AitFeature Name="System.Exception" />
-          <AitFeature Name="System.Exception..ctor" />
-          <AitFeature Name="System.Exception.get_Message" />
-          <AitFeature Name="System.FormatException" />
-          <AitFeature Name="System.Func`1" />
-          <AitFeature Name="System.Func`2" />
-          <AitFeature Name="System.Guid" />
-          <AitFeature Name="System.Guid.NewGuid" />
-          <AitFeature Name="System.IAsyncResult" />
-          <AitFeature Name="System.IDisposable" />
-          <AitFeature Name="System.IDisposable.Dispose" />
-          <AitFeature Name="System.IO.MemoryStream" />
-          <AitFeature Name="System.IO.MemoryStream..ctor" />
-          <AitFeature Name="System.IO.SeekOrigin" />
-          <AitFeature Name="System.IO.Stream" />
-          <AitFeature Name="System.IO.Stream.CopyToAsync" />
-          <AitFeature Name="System.IO.Stream.Seek" />
-          <AitFeature Name="System.IO.WindowsRuntimeStorageExtensions" />
-          <AitFeature Name="System.IO.WindowsRuntimeStorageExtensions.OpenStreamForWriteAsync" />
-          <AitFeature Name="System.IO.WindowsRuntimeStreamExtensions" />
-          <AitFeature Name="System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead" />
-          <AitFeature Name="System.Int32" />
-          <AitFeature Name="System.Int64" />
-          <AitFeature Name="System.InvalidOperationException" />
-          <AitFeature Name="System.InvalidOperationException..ctor" />
-          <AitFeature Name="System.Linq.Enumerable" />
-          <AitFeature Name="System.Linq.Enumerable.Contains" />
-          <AitFeature Name="System.Linq.Enumerable.Count" />
-          <AitFeature Name="System.Linq.Enumerable.ElementAt" />
-          <AitFeature Name="System.Linq.Enumerable.First" />
-          <AitFeature Name="System.Linq.Enumerable.FirstOrDefault" />
-          <AitFeature Name="System.Linq.Enumerable.OrderBy" />
-          <AitFeature Name="System.Linq.Enumerable.OrderByDescending" />
-          <AitFeature Name="System.Linq.Enumerable.Select" />
-          <AitFeature Name="System.Linq.Enumerable.ToArray" />
-          <AitFeature Name="System.Linq.Enumerable.ToList" />
-          <AitFeature Name="System.Linq.Enumerable.Where" />
-          <AitFeature Name="System.Linq.Expressions.BinaryExpression" />
-          <AitFeature Name="System.Linq.Expressions.ConstantExpression" />
-          <AitFeature Name="System.Linq.Expressions.Expression" />
-          <AitFeature Name="System.Linq.Expressions.Expression.AndAlso" />
-          <AitFeature Name="System.Linq.Expressions.Expression.Constant" />
-          <AitFeature Name="System.Linq.Expressions.Expression.Convert" />
-          <AitFeature Name="System.Linq.Expressions.Expression.Equal" />
-          <AitFeature Name="System.Linq.Expressions.Expression.Field" />
-          <AitFeature Name="System.Linq.Expressions.Expression.Lambda" />
-          <AitFeature Name="System.Linq.Expressions.Expression.Parameter" />
-          <AitFeature Name="System.Linq.Expressions.Expression.Property" />
-          <AitFeature Name="System.Linq.Expressions.Expression`1" />
-          <AitFeature Name="System.Linq.Expressions.MemberExpression" />
-          <AitFeature Name="System.Linq.Expressions.ParameterExpression" />
-          <AitFeature Name="System.Linq.Expressions.UnaryExpression" />
-          <AitFeature Name="System.Linq.IOrderedEnumerable`1" />
-          <AitFeature Name="System.MulticastDelegate" />
-          <AitFeature Name="System.Net.Http.HttpRequestException" />
-          <AitFeature Name="System.NotImplementedException" />
-          <AitFeature Name="System.NotImplementedException..ctor" />
-          <AitFeature Name="System.Nullable`1" />
-          <AitFeature Name="System.Object" />
-          <AitFeature Name="System.Object..ctor" />
-          <AitFeature Name="System.Object.Equals" />
-          <AitFeature Name="System.Object.ToString" />
-          <AitFeature Name="System.Predicate`1" />
-          <AitFeature Name="System.Reflection.AssemblyCompanyAttribute" />
-          <AitFeature Name="System.Reflection.AssemblyCompanyAttribute..ctor" />
-          <AitFeature Name="System.Reflection.AssemblyConfigurationAttribute" />
-          <AitFeature Name="System.Reflection.AssemblyConfigurationAttribute..ctor" />
-          <AitFeature Name="System.Reflection.AssemblyCopyrightAttribute" />
-          <AitFeature Name="System.Reflection.AssemblyCopyrightAttribute..ctor" />
-          <AitFeature Name="System.Reflection.AssemblyCultureAttribute" />
-          <AitFeature Name="System.Reflection.AssemblyCultureAttribute..ctor" />
-          <AitFeature Name="System.Reflection.AssemblyDescriptionAttribute" />
-          <AitFeature Name="System.Reflection.AssemblyDescriptionAttribute..ctor" />
-          <AitFeature Name="System.Reflection.AssemblyFileVersionAttribute" />
-          <AitFeature Name="System.Reflection.AssemblyFileVersionAttribute..ctor" />
-          <AitFeature Name="System.Reflection.AssemblyProductAttribute" />
-          <AitFeature Name="System.Reflection.AssemblyProductAttribute..ctor" />
-          <AitFeature Name="System.Reflection.AssemblyTitleAttribute" />
-          <AitFeature Name="System.Reflection.AssemblyTitleAttribute..ctor" />
-          <AitFeature Name="System.Reflection.AssemblyTrademarkAttribute" />
-          <AitFeature Name="System.Reflection.AssemblyTrademarkAttribute..ctor" />
-          <AitFeature Name="System.Reflection.AssemblyVersionAttribute" />
-          <AitFeature Name="System.Reflection.AssemblyVersionAttribute..ctor" />
-          <AitFeature Name="System.Reflection.DefaultMemberAttribute" />
-          <AitFeature Name="System.Reflection.DefaultMemberAttribute..ctor" />
-          <AitFeature Name="System.Reflection.FieldInfo" />
-          <AitFeature Name="System.Reflection.FieldInfo.GetFieldFromHandle" />
-          <AitFeature Name="System.Reflection.MethodBase" />
-          <AitFeature Name="System.Reflection.MethodBase.GetMethodFromHandle" />
-          <AitFeature Name="System.Reflection.MethodInfo" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncStateMachineAttribute" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncStateMachineAttribute..ctor" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Create" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetException" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetStateMachine" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.get_Task" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Create" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetException" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetResult" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetStateMachine" />
-          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start" />
-          <AitFeature Name="System.Runtime.CompilerServices.CompilationRelaxationsAttribute" />
-          <AitFeature Name="System.Runtime.CompilerServices.CompilationRelaxationsAttribute..ctor" />
-          <AitFeature Name="System.Runtime.CompilerServices.CompilerGeneratedAttribute" />
-          <AitFeature Name="System.Runtime.CompilerServices.CompilerGeneratedAttribute..ctor" />
-          <AitFeature Name="System.Runtime.CompilerServices.IAsyncStateMachine" />
-          <AitFeature Name="System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext" />
-          <AitFeature Name="System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine" />
-          <AitFeature Name="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute" />
-          <AitFeature Name="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute..ctor" />
-          <AitFeature Name="System.Runtime.CompilerServices.RuntimeHelpers" />
-          <AitFeature Name="System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor" />
-          <AitFeature Name="System.Runtime.CompilerServices.TaskAwaiter" />
-          <AitFeature Name="System.Runtime.CompilerServices.TaskAwaiter.GetResult" />
-          <AitFeature Name="System.Runtime.CompilerServices.TaskAwaiter.get_IsCompleted" />
-          <AitFeature Name="System.Runtime.CompilerServices.TaskAwaiter`1" />
-          <AitFeature Name="System.Runtime.InteropServices.ComVisibleAttribute" />
-          <AitFeature Name="System.Runtime.InteropServices.ComVisibleAttribute..ctor" />
-          <AitFeature Name="System.Runtime.InteropServices.OutAttribute" />
-          <AitFeature Name="System.Runtime.InteropServices.OutAttribute..ctor" />
-          <AitFeature Name="System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken" />
-          <AitFeature Name="System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1" />
-          <AitFeature Name="System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal" />
-          <AitFeature Name="System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.AddEventHandler" />
-          <AitFeature Name="System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.RemoveEventHandler" />
-          <AitFeature Name="System.Runtime.Serialization.DataContractSerializer" />
-          <AitFeature Name="System.Runtime.Serialization.DataContractSerializer..ctor" />
-          <AitFeature Name="System.Runtime.Serialization.XmlObjectSerializer" />
-          <AitFeature Name="System.Runtime.Serialization.XmlObjectSerializer.ReadObject" />
-          <AitFeature Name="System.Runtime.Serialization.XmlObjectSerializer.WriteObject" />
-          <AitFeature Name="System.Runtime.Versioning.TargetFrameworkAttribute" />
-          <AitFeature Name="System.Runtime.Versioning.TargetFrameworkAttribute..ctor" />
-          <AitFeature Name="System.RuntimeFieldHandle" />
-          <AitFeature Name="System.RuntimeMethodHandle" />
-          <AitFeature Name="System.RuntimeTypeHandle" />
-          <AitFeature Name="System.String" />
-          <AitFeature Name="System.String.Compare" />
-          <AitFeature Name="System.String.CompareOrdinal" />
-          <AitFeature Name="System.String.Concat" />
-          <AitFeature Name="System.String.Empty" />
-          <AitFeature Name="System.String.Equals" />
-          <AitFeature Name="System.String.Format" />
-          <AitFeature Name="System.String.IsNullOrEmpty" />
-          <AitFeature Name="System.String.Replace" />
-          <AitFeature Name="System.String.Split" />
-          <AitFeature Name="System.String.StartsWith" />
-          <AitFeature Name="System.String.ToLower" />
-          <AitFeature Name="System.String.Trim" />
-          <AitFeature Name="System.String.op_Equality" />
-          <AitFeature Name="System.String.op_Inequality" />
-          <AitFeature Name="System.StringComparison" />
-          <AitFeature Name="System.Threading.Interlocked" />
-          <AitFeature Name="System.Threading.Interlocked.CompareExchange" />
-          <AitFeature Name="System.Threading.Tasks.Task" />
-          <AitFeature Name="System.Threading.Tasks.Task.GetAwaiter" />
-          <AitFeature Name="System.Threading.Tasks.Task`1" />
-          <AitFeature Name="System.TimeSpan" />
-          <AitFeature Name="System.TimeSpan.get_Days" />
-          <AitFeature Name="System.TimeSpan.get_Hours" />
-          <AitFeature Name="System.TimeSpan.get_Milliseconds" />
-          <AitFeature Name="System.TimeSpan.get_Minutes" />
-          <AitFeature Name="System.TimeSpan.get_Seconds" />
-          <AitFeature Name="System.TimeSpan.get_Ticks" />
-          <AitFeature Name="System.TimeSpan.get_TotalDays" />
-          <AitFeature Name="System.TimeSpan.get_TotalHours" />
-          <AitFeature Name="System.TimeSpan.get_TotalMilliseconds" />
-          <AitFeature Name="System.TimeSpan.get_TotalMinutes" />
-          <AitFeature Name="System.TimeSpan.get_TotalSeconds" />
-          <AitFeature Name="System.Type" />
-          <AitFeature Name="System.Type.Equals" />
-          <AitFeature Name="System.Type.GetTypeFromHandle" />
-          <AitFeature Name="System.Type.get_TypeHandle" />
-          <AitFeature Name="System.UInt16" />
-          <AitFeature Name="System.Uri" />
-          <AitFeature Name="System.Uri..ctor" />
-          <AitFeature Name="System.UriKind" />
-          <AitFeature Name="System.ValueType" />
-          <AitFeature Name="System.WeakReference`1" />
-          <AitFeature Name="System.Windows.Input.ICommand" />
-          <AitFeature Name="System.WindowsRuntimeSystemExtensions" />
-          <AitFeature Name="System.WindowsRuntimeSystemExtensions.GetAwaiter" />
-        </AitCategory>
-        <AitCategory Id="DotNetWinRt">
-          <AitFeature Name="Windows.ApplicationModel.Activation.ApplicationExecutionState" />
-          <AitFeature Name="Windows.ApplicationModel.Activation.LaunchActivatedEventArgs" />
-          <AitFeature Name="Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.get_Arguments" />
-          <AitFeature Name="Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.get_PreviousExecutionState" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundAccessStatus" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundExecutionManager" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundExecutionManager.RemoveAccess" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder..ctor" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder.Register" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder.SetTrigger" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder.put_Name" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder.put_TaskEntryPoint" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskRegistration" />
-          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskRegistration.get_AllTasks" />
-          <AitFeature Name="Windows.ApplicationModel.Background.IBackgroundTaskRegistration" />
-          <AitFeature Name="Windows.ApplicationModel.Background.IBackgroundTaskRegistration.get_Name" />
-          <AitFeature Name="Windows.ApplicationModel.Background.IBackgroundTrigger" />
-          <AitFeature Name="Windows.ApplicationModel.Background.TimeTrigger" />
-          <AitFeature Name="Windows.ApplicationModel.Background.TimeTrigger..ctor" />
-          <AitFeature Name="Windows.ApplicationModel.Email.EmailManager" />
-          <AitFeature Name="Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync" />
-          <AitFeature Name="Windows.ApplicationModel.Email.EmailMessage" />
-          <AitFeature Name="Windows.ApplicationModel.Email.EmailMessage..ctor" />
-          <AitFeature Name="Windows.ApplicationModel.Email.EmailMessage.get_To" />
-          <AitFeature Name="Windows.ApplicationModel.Email.EmailMessage.put_Body" />
-          <AitFeature Name="Windows.ApplicationModel.Email.EmailMessage.put_Subject" />
-          <AitFeature Name="Windows.ApplicationModel.Email.EmailRecipient" />
-          <AitFeature Name="Windows.ApplicationModel.Email.EmailRecipient..ctor" />
-          <AitFeature Name="Windows.ApplicationModel.Email.EmailRecipient.put_Address" />
-          <AitFeature Name="Windows.ApplicationModel.Package" />
-          <AitFeature Name="Windows.ApplicationModel.Package.get_Current" />
-          <AitFeature Name="Windows.ApplicationModel.Package.get_Id" />
-          <AitFeature Name="Windows.ApplicationModel.PackageId" />
-          <AitFeature Name="Windows.ApplicationModel.PackageId.get_Version" />
-          <AitFeature Name="Windows.ApplicationModel.PackageVersion" />
-          <AitFeature Name="Windows.ApplicationModel.PackageVersion.Build" />
-          <AitFeature Name="Windows.ApplicationModel.PackageVersion.Major" />
-          <AitFeature Name="Windows.ApplicationModel.PackageVersion.Minor" />
-          <AitFeature Name="Windows.ApplicationModel.PackageVersion.Revision" />
-          <AitFeature Name="Windows.ApplicationModel.Resources.ResourceLoader" />
-          <AitFeature Name="Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView" />
-          <AitFeature Name="Windows.ApplicationModel.Resources.ResourceLoader.GetString" />
-          <AitFeature Name="Windows.ApplicationModel.Store.CurrentApp" />
-          <AitFeature Name="Windows.ApplicationModel.Store.CurrentApp.RequestProductPurchaseAsync" />
-          <AitFeature Name="Windows.ApplicationModel.Store.CurrentApp.get_LicenseInformation" />
-          <AitFeature Name="Windows.ApplicationModel.Store.LicenseInformation" />
-          <AitFeature Name="Windows.ApplicationModel.Store.LicenseInformation.get_ProductLicenses" />
-          <AitFeature Name="Windows.ApplicationModel.Store.ProductLicense" />
-          <AitFeature Name="Windows.ApplicationModel.Store.ProductLicense.get_IsActive" />
-          <AitFeature Name="Windows.ApplicationModel.Store.PurchaseResults" />
-          <AitFeature Name="Windows.ApplicationModel.SuspendingDeferral" />
-          <AitFeature Name="Windows.ApplicationModel.SuspendingDeferral.Complete" />
-          <AitFeature Name="Windows.ApplicationModel.SuspendingEventArgs" />
-          <AitFeature Name="Windows.ApplicationModel.SuspendingEventArgs.get_SuspendingOperation" />
-          <AitFeature Name="Windows.ApplicationModel.SuspendingOperation" />
-          <AitFeature Name="Windows.ApplicationModel.SuspendingOperation.GetDeferral" />
-          <AitFeature Name="Windows.Data.Json.IJsonValue" />
-          <AitFeature Name="Windows.Data.Json.IJsonValue.GetArray" />
-          <AitFeature Name="Windows.Data.Json.IJsonValue.GetString" />
-          <AitFeature Name="Windows.Data.Json.JsonArray" />
-          <AitFeature Name="Windows.Data.Json.JsonObject" />
-          <AitFeature Name="Windows.Data.Json.JsonObject.Parse" />
-          <AitFeature Name="Windows.Data.Json.JsonValue" />
-          <AitFeature Name="Windows.Data.Json.JsonValue.GetObject" />
-          <AitFeature Name="Windows.Data.Json.JsonValue.GetString" />
-          <AitFeature Name="Windows.Data.Xml.Dom.IXmlNode" />
-          <AitFeature Name="Windows.Data.Xml.Dom.IXmlNode.AppendChild" />
-          <AitFeature Name="Windows.Data.Xml.Dom.XmlDocument" />
-          <AitFeature Name="Windows.Data.Xml.Dom.XmlDocument.CreateElement" />
-          <AitFeature Name="Windows.Data.Xml.Dom.XmlDocument.CreateTextNode" />
-          <AitFeature Name="Windows.Data.Xml.Dom.XmlDocument.GetElementsByTagName" />
-          <AitFeature Name="Windows.Data.Xml.Dom.XmlDocument.SelectSingleNode" />
-          <AitFeature Name="Windows.Data.Xml.Dom.XmlElement" />
-          <AitFeature Name="Windows.Data.Xml.Dom.XmlElement.SetAttribute" />
-          <AitFeature Name="Windows.Data.Xml.Dom.XmlNodeList" />
-          <AitFeature Name="Windows.Data.Xml.Dom.XmlText" />
-          <AitFeature Name="Windows.Foundation.Collections.CollectionChange" />
-          <AitFeature Name="Windows.Foundation.Collections.IMapChangedEventArgs`1" />
-          <AitFeature Name="Windows.Foundation.Collections.IObservableMap`2" />
-          <AitFeature Name="Windows.Foundation.Collections.IObservableVector`1" />
-          <AitFeature Name="Windows.Foundation.Collections.IPropertySet" />
-          <AitFeature Name="Windows.Foundation.Collections.MapChangedEventHandler`2" />
-          <AitFeature Name="Windows.Foundation.IAsyncAction" />
-          <AitFeature Name="Windows.Foundation.IAsyncOperation`1" />
-          <AitFeature Name="Windows.Foundation.Metadata.WebHostHiddenAttribute" />
-          <AitFeature Name="Windows.Foundation.Metadata.WebHostHiddenAttribute..ctor" />
-          <AitFeature Name="Windows.Foundation.TypedEventHandler`2" />
-          <AitFeature Name="Windows.Graphics.Display.DisplayInformation" />
-          <AitFeature Name="Windows.Graphics.Display.DisplayInformation.put_AutoRotationPreferences" />
-          <AitFeature Name="Windows.Graphics.Display.DisplayOrientations" />
-          <AitFeature Name="Windows.Phone.UI.Input.BackPressedEventArgs" />
-          <AitFeature Name="Windows.Phone.UI.Input.BackPressedEventArgs.put_Handled" />
-          <AitFeature Name="Windows.Phone.UI.Input.HardwareButtons" />
-          <AitFeature Name="Windows.Phone.UI.Input.HardwareButtons.add_BackPressed" />
-          <AitFeature Name="Windows.Phone.UI.Input.HardwareButtons.remove_BackPressed" />
-          <AitFeature Name="Windows.Storage.ApplicationData" />
-          <AitFeature Name="Windows.Storage.ApplicationData.get_Current" />
-          <AitFeature Name="Windows.Storage.ApplicationData.get_LocalFolder" />
-          <AitFeature Name="Windows.Storage.ApplicationData.get_LocalSettings" />
-          <AitFeature Name="Windows.Storage.ApplicationDataContainer" />
-          <AitFeature Name="Windows.Storage.ApplicationDataContainer.get_Values" />
-          <AitFeature Name="Windows.Storage.CreationCollisionOption" />
-          <AitFeature Name="Windows.Storage.FileIO" />
-          <AitFeature Name="Windows.Storage.FileIO.ReadTextAsync" />
-          <AitFeature Name="Windows.Storage.IStorageFile" />
-          <AitFeature Name="Windows.Storage.StorageFile" />
-          <AitFeature Name="Windows.Storage.StorageFile.GetFileFromApplicationUriAsync" />
-          <AitFeature Name="Windows.Storage.StorageFile.OpenSequentialReadAsync" />
-          <AitFeature Name="Windows.Storage.StorageFolder" />
-          <AitFeature Name="Windows.Storage.StorageFolder.CreateFileAsync" />
-          <AitFeature Name="Windows.Storage.StorageFolder.GetFileAsync" />
-          <AitFeature Name="Windows.Storage.Streams.DataReader" />
-          <AitFeature Name="Windows.Storage.Streams.DataReader.FromBuffer" />
-          <AitFeature Name="Windows.Storage.Streams.DataReader.ReadBytes" />
-          <AitFeature Name="Windows.Storage.Streams.IBuffer" />
-          <AitFeature Name="Windows.Storage.Streams.IBuffer.get_Length" />
-          <AitFeature Name="Windows.Storage.Streams.IInputStream" />
-          <AitFeature Name="Windows.System.Launcher" />
-          <AitFeature Name="Windows.System.Launcher.LaunchUriAsync" />
-          <AitFeature Name="Windows.System.Profile.HardwareIdentification" />
-          <AitFeature Name="Windows.System.Profile.HardwareIdentification.GetPackageSpecificToken" />
-          <AitFeature Name="Windows.System.Profile.HardwareToken" />
-          <AitFeature Name="Windows.System.Profile.HardwareToken.get_Id" />
-          <AitFeature Name="Windows.UI.Notifications.ScheduledToastNotification" />
-          <AitFeature Name="Windows.UI.Notifications.ScheduledToastNotification..ctor" />
-          <AitFeature Name="Windows.UI.Notifications.ToastNotification" />
-          <AitFeature Name="Windows.UI.Notifications.ToastNotification..ctor" />
-          <AitFeature Name="Windows.UI.Notifications.ToastNotificationManager" />
-          <AitFeature Name="Windows.UI.Notifications.ToastNotificationManager.CreateToastNotifier" />
-          <AitFeature Name="Windows.UI.Notifications.ToastNotificationManager.GetTemplateContent" />
-          <AitFeature Name="Windows.UI.Notifications.ToastNotifier" />
-          <AitFeature Name="Windows.UI.Notifications.ToastNotifier.AddToSchedule" />
-          <AitFeature Name="Windows.UI.Notifications.ToastTemplateType" />
-          <AitFeature Name="Windows.UI.Popups.IUICommand" />
-          <AitFeature Name="Windows.UI.Popups.IUICommand.get_Id" />
-          <AitFeature Name="Windows.UI.Popups.MessageDialog" />
-          <AitFeature Name="Windows.UI.Popups.MessageDialog..ctor" />
-          <AitFeature Name="Windows.UI.Popups.MessageDialog.ShowAsync" />
-          <AitFeature Name="Windows.UI.Popups.MessageDialog.get_Commands" />
-          <AitFeature Name="Windows.UI.Popups.UICommand" />
-          <AitFeature Name="Windows.UI.Popups.UICommand..ctor" />
-          <AitFeature Name="Windows.UI.Popups.UICommand.put_Id" />
-          <AitFeature Name="Windows.UI.Popups.UICommand.put_Label" />
-          <AitFeature Name="Windows.UI.Xaml.Application" />
-          <AitFeature Name="Windows.UI.Xaml.Application..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Application.Exit" />
-          <AitFeature Name="Windows.UI.Xaml.Application.LoadComponent" />
-          <AitFeature Name="Windows.UI.Xaml.Application.Start" />
-          <AitFeature Name="Windows.UI.Xaml.Application.add_Suspending" />
-          <AitFeature Name="Windows.UI.Xaml.Application.get_Current" />
-          <AitFeature Name="Windows.UI.Xaml.Application.remove_Suspending" />
-          <AitFeature Name="Windows.UI.Xaml.ApplicationInitializationCallback" />
-          <AitFeature Name="Windows.UI.Xaml.ApplicationInitializationCallback..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.ApplicationInitializationCallbackParams" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ContentControl" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ContentControl.get_Content" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ContentControl.get_ContentTransitions" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ContentControl.put_ContentTransitions" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Control" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.GetNavigationState" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.GoBack" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.GoForward" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.Navigate" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.SetNavigationState" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.add_Navigated" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.get_BackStack" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.get_BackStackDepth" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.get_CanGoBack" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.get_CanGoForward" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.put_CacheSize" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.remove_Navigated" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Grid" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Grid.get_RowDefinitions" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.GroupStyle" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Hub" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Hub.ScrollToSection" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Hub.get_Sections" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Hub.get_SectionsInView" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Hub.put_DefaultSectionIndex" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.HubSection" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Image" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Image.put_Source" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ItemClickEventArgs" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ItemClickEventArgs.get_ClickedItem" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ItemClickEventHandler" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ItemClickEventHandler..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ListViewBase" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ListViewBase.add_ItemClick" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ListViewBase.remove_ItemClick" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Page" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Page..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Page.get_Frame" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Page.put_NavigationCacheMode" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ButtonBase" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ButtonBase.add_Click" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ButtonBase.remove_Click" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ToggleButton" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ToggleButton.add_Checked" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ToggleButton.remove_Checked" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.ProgressRing" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.RowDefinition" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.RowDefinition.get_Height" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.RowDefinition.get_HeightProperty" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.RowDefinitionCollection" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.TextBlock" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.TextBox" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.TextBox.add_TextChanged" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.TextBox.get_Text" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.TextBox.put_Text" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.TextBox.remove_TextChanged" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.TextChangedEventArgs" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.TextChangedEventHandler" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.TextChangedEventHandler..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Controls.UserControl" />
-          <AitFeature Name="Windows.UI.Xaml.Data.CollectionViewSource" />
-          <AitFeature Name="Windows.UI.Xaml.Data.CollectionViewSource..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Data.CollectionViewSource.put_IsSourceGrouped" />
-          <AitFeature Name="Windows.UI.Xaml.Data.ICollectionView" />
-          <AitFeature Name="Windows.UI.Xaml.Data.IValueConverter" />
-          <AitFeature Name="Windows.UI.Xaml.DataContextChangedEventArgs" />
-          <AitFeature Name="Windows.UI.Xaml.DependencyObject" />
-          <AitFeature Name="Windows.UI.Xaml.DependencyObject..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.DependencyObject.ClearValue" />
-          <AitFeature Name="Windows.UI.Xaml.DependencyObject.GetValue" />
-          <AitFeature Name="Windows.UI.Xaml.DependencyObject.SetValue" />
-          <AitFeature Name="Windows.UI.Xaml.DependencyProperty" />
-          <AitFeature Name="Windows.UI.Xaml.DependencyProperty.RegisterAttached" />
-          <AitFeature Name="Windows.UI.Xaml.FrameworkElement" />
-          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.FindName" />
-          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.add_DataContextChanged" />
-          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.add_Loaded" />
-          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.add_Unloaded" />
-          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.get_DataContext" />
-          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.get_Name" />
-          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.remove_DataContextChanged" />
-          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.remove_Loaded" />
-          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.remove_Unloaded" />
-          <AitFeature Name="Windows.UI.Xaml.GridLength" />
-          <AitFeature Name="Windows.UI.Xaml.GridLength..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.GridLength.get_Value" />
-          <AitFeature Name="Windows.UI.Xaml.Input.TappedEventHandler" />
-          <AitFeature Name="Windows.UI.Xaml.Input.TappedEventHandler..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Input.TappedRoutedEventArgs" />
-          <AitFeature Name="Windows.UI.Xaml.Markup.IComponentConnector" />
-          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlMember" />
-          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlMetadataProvider" />
-          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlMetadataProvider.GetXamlType" />
-          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlType" />
-          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlType.get_FullName" />
-          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlType.get_IsConstructible" />
-          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlType.get_UnderlyingType" />
-          <AitFeature Name="Windows.UI.Xaml.Markup.XmlnsDefinition" />
-          <AitFeature Name="Windows.UI.Xaml.Media.Animation.NavigationThemeTransition" />
-          <AitFeature Name="Windows.UI.Xaml.Media.Animation.NavigationThemeTransition..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Media.Animation.Transition" />
-          <AitFeature Name="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
-          <AitFeature Name="Windows.UI.Xaml.Media.Animation.TransitionCollection..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Media.ImageSource" />
-          <AitFeature Name="Windows.UI.Xaml.Media.Imaging.BitmapImage" />
-          <AitFeature Name="Windows.UI.Xaml.Media.Imaging.BitmapImage..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigatedEventHandler" />
-          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigatedEventHandler..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigationCacheMode" />
-          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigationEventArgs" />
-          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigationEventArgs.get_NavigationMode" />
-          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigationEventArgs.get_Parameter" />
-          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigationMode" />
-          <AitFeature Name="Windows.UI.Xaml.Navigation.PageStackEntry" />
-          <AitFeature Name="Windows.UI.Xaml.Navigation.PageStackEntry.get_SourcePageType" />
-          <AitFeature Name="Windows.UI.Xaml.PropertyMetadata" />
-          <AitFeature Name="Windows.UI.Xaml.RoutedEventArgs" />
-          <AitFeature Name="Windows.UI.Xaml.RoutedEventHandler" />
-          <AitFeature Name="Windows.UI.Xaml.RoutedEventHandler..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.SuspendingEventHandler" />
-          <AitFeature Name="Windows.UI.Xaml.SuspendingEventHandler..ctor" />
-          <AitFeature Name="Windows.UI.Xaml.UIElement" />
-          <AitFeature Name="Windows.UI.Xaml.UIElement.add_GotFocus" />
-          <AitFeature Name="Windows.UI.Xaml.UIElement.add_LostFocus" />
-          <AitFeature Name="Windows.UI.Xaml.UIElement.add_Tapped" />
-          <AitFeature Name="Windows.UI.Xaml.UIElement.put_Visibility" />
-          <AitFeature Name="Windows.UI.Xaml.UIElement.remove_GotFocus" />
-          <AitFeature Name="Windows.UI.Xaml.UIElement.remove_LostFocus" />
-          <AitFeature Name="Windows.UI.Xaml.UIElement.remove_Tapped" />
-          <AitFeature Name="Windows.UI.Xaml.Visibility" />
-          <AitFeature Name="Windows.UI.Xaml.Window" />
-          <AitFeature Name="Windows.UI.Xaml.Window.Activate" />
-          <AitFeature Name="Windows.UI.Xaml.Window.get_Content" />
-          <AitFeature Name="Windows.UI.Xaml.Window.get_Current" />
-          <AitFeature Name="Windows.UI.Xaml.Window.put_Content" />
-        </AitCategory>
-      </AitFile>
       <AitFile ErrorCode="0" Name="Microsoft.WindowsAzure.Mobile.dll" Id="00002c77b7cd694c2808e5652dee37611fcad46b7fc5">
         <AitCategory Id="ApiStatic">
           <AitFeature Name="mscoree.dll!_CorDllMain" />
@@ -2127,6 +1577,552 @@
           <AitFeature Name="System.UriFormat" />
           <AitFeature Name="System.UriKind" />
           <AitFeature Name="System.ValueType" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="League of Legends Counterpicks.exe" Id="000034a1877af99647702f357b9e02a73918eeef569b">
+        <AitCategory Id="DotNet">
+          <AitFeature Name="System.Action" />
+          <AitFeature Name="System.Action..ctor" />
+          <AitFeature Name="System.Action.Invoke" />
+          <AitFeature Name="System.Action`1" />
+          <AitFeature Name="System.ArgumentException" />
+          <AitFeature Name="System.ArgumentException..ctor" />
+          <AitFeature Name="System.ArgumentNullException" />
+          <AitFeature Name="System.ArgumentNullException..ctor" />
+          <AitFeature Name="System.AsyncCallback" />
+          <AitFeature Name="System.BitConverter" />
+          <AitFeature Name="System.BitConverter.ToString" />
+          <AitFeature Name="System.Boolean" />
+          <AitFeature Name="System.Byte" />
+          <AitFeature Name="System.Char" />
+          <AitFeature Name="System.CodeDom.Compiler.GeneratedCodeAttribute" />
+          <AitFeature Name="System.CodeDom.Compiler.GeneratedCodeAttribute..ctor" />
+          <AitFeature Name="System.Collections.Generic.Dictionary`2" />
+          <AitFeature Name="System.Collections.Generic.ICollection`1" />
+          <AitFeature Name="System.Collections.Generic.IDictionary`2" />
+          <AitFeature Name="System.Collections.Generic.IEnumerable`1" />
+          <AitFeature Name="System.Collections.Generic.IEnumerator`1" />
+          <AitFeature Name="System.Collections.Generic.IList`1" />
+          <AitFeature Name="System.Collections.Generic.IReadOnlyDictionary`2" />
+          <AitFeature Name="System.Collections.Generic.IReadOnlyList`1" />
+          <AitFeature Name="System.Collections.Generic.KeyValuePair`2" />
+          <AitFeature Name="System.Collections.Generic.List`1" />
+          <AitFeature Name="System.Collections.IEnumerable" />
+          <AitFeature Name="System.Collections.IEnumerable.GetEnumerator" />
+          <AitFeature Name="System.Collections.IEnumerator" />
+          <AitFeature Name="System.Collections.IEnumerator.MoveNext" />
+          <AitFeature Name="System.Collections.ObjectModel.Collection`1" />
+          <AitFeature Name="System.Collections.ObjectModel.ObservableCollection`1" />
+          <AitFeature Name="System.ComponentModel.INotifyPropertyChanged" />
+          <AitFeature Name="System.ComponentModel.PropertyChangedEventArgs" />
+          <AitFeature Name="System.ComponentModel.PropertyChangedEventArgs..ctor" />
+          <AitFeature Name="System.ComponentModel.PropertyChangedEventHandler" />
+          <AitFeature Name="System.ComponentModel.PropertyChangedEventHandler.Invoke" />
+          <AitFeature Name="System.Convert" />
+          <AitFeature Name="System.Convert.ToInt32" />
+          <AitFeature Name="System.DateTime" />
+          <AitFeature Name="System.DateTime.AddHours" />
+          <AitFeature Name="System.DateTime.get_Now" />
+          <AitFeature Name="System.DateTimeOffset" />
+          <AitFeature Name="System.DateTimeOffset.op_Implicit" />
+          <AitFeature Name="System.Delegate" />
+          <AitFeature Name="System.Delegate.Combine" />
+          <AitFeature Name="System.Delegate.Remove" />
+          <AitFeature Name="System.Diagnostics.DebuggableAttribute" />
+          <AitFeature Name="System.Diagnostics.DebuggableAttribute..ctor" />
+          <AitFeature Name="System.Diagnostics.DebuggerHiddenAttribute" />
+          <AitFeature Name="System.Diagnostics.DebuggerHiddenAttribute..ctor" />
+          <AitFeature Name="System.Diagnostics.DebuggerNonUserCodeAttribute" />
+          <AitFeature Name="System.Diagnostics.DebuggerNonUserCodeAttribute..ctor" />
+          <AitFeature Name="System.Diagnostics.DebuggerStepThroughAttribute" />
+          <AitFeature Name="System.Diagnostics.DebuggerStepThroughAttribute..ctor" />
+          <AitFeature Name="System.Double" />
+          <AitFeature Name="System.Enum" />
+          <AitFeature Name="System.EventArgs" />
+          <AitFeature Name="System.EventArgs..ctor" />
+          <AitFeature Name="System.EventArgs.Empty" />
+          <AitFeature Name="System.EventHandler" />
+          <AitFeature Name="System.EventHandler.Invoke" />
+          <AitFeature Name="System.EventHandler`1" />
+          <AitFeature Name="System.Exception" />
+          <AitFeature Name="System.Exception..ctor" />
+          <AitFeature Name="System.Exception.get_Message" />
+          <AitFeature Name="System.FormatException" />
+          <AitFeature Name="System.Func`1" />
+          <AitFeature Name="System.Func`2" />
+          <AitFeature Name="System.Guid" />
+          <AitFeature Name="System.Guid.NewGuid" />
+          <AitFeature Name="System.IAsyncResult" />
+          <AitFeature Name="System.IDisposable" />
+          <AitFeature Name="System.IDisposable.Dispose" />
+          <AitFeature Name="System.IO.MemoryStream" />
+          <AitFeature Name="System.IO.MemoryStream..ctor" />
+          <AitFeature Name="System.IO.SeekOrigin" />
+          <AitFeature Name="System.IO.Stream" />
+          <AitFeature Name="System.IO.Stream.CopyToAsync" />
+          <AitFeature Name="System.IO.Stream.Seek" />
+          <AitFeature Name="System.IO.WindowsRuntimeStorageExtensions" />
+          <AitFeature Name="System.IO.WindowsRuntimeStorageExtensions.OpenStreamForWriteAsync" />
+          <AitFeature Name="System.IO.WindowsRuntimeStreamExtensions" />
+          <AitFeature Name="System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead" />
+          <AitFeature Name="System.Int32" />
+          <AitFeature Name="System.InvalidOperationException" />
+          <AitFeature Name="System.InvalidOperationException..ctor" />
+          <AitFeature Name="System.Linq.Enumerable" />
+          <AitFeature Name="System.Linq.Enumerable.Contains" />
+          <AitFeature Name="System.Linq.Enumerable.Count" />
+          <AitFeature Name="System.Linq.Enumerable.ElementAt" />
+          <AitFeature Name="System.Linq.Enumerable.First" />
+          <AitFeature Name="System.Linq.Enumerable.FirstOrDefault" />
+          <AitFeature Name="System.Linq.Enumerable.OrderBy" />
+          <AitFeature Name="System.Linq.Enumerable.OrderByDescending" />
+          <AitFeature Name="System.Linq.Enumerable.ToArray" />
+          <AitFeature Name="System.Linq.Enumerable.ToList" />
+          <AitFeature Name="System.Linq.Enumerable.Where" />
+          <AitFeature Name="System.Linq.Expressions.BinaryExpression" />
+          <AitFeature Name="System.Linq.Expressions.ConstantExpression" />
+          <AitFeature Name="System.Linq.Expressions.Expression" />
+          <AitFeature Name="System.Linq.Expressions.Expression.AndAlso" />
+          <AitFeature Name="System.Linq.Expressions.Expression.Constant" />
+          <AitFeature Name="System.Linq.Expressions.Expression.Convert" />
+          <AitFeature Name="System.Linq.Expressions.Expression.Equal" />
+          <AitFeature Name="System.Linq.Expressions.Expression.Field" />
+          <AitFeature Name="System.Linq.Expressions.Expression.Lambda" />
+          <AitFeature Name="System.Linq.Expressions.Expression.Parameter" />
+          <AitFeature Name="System.Linq.Expressions.Expression.Property" />
+          <AitFeature Name="System.Linq.Expressions.Expression`1" />
+          <AitFeature Name="System.Linq.Expressions.MemberExpression" />
+          <AitFeature Name="System.Linq.Expressions.ParameterExpression" />
+          <AitFeature Name="System.Linq.Expressions.UnaryExpression" />
+          <AitFeature Name="System.Linq.IOrderedEnumerable`1" />
+          <AitFeature Name="System.MulticastDelegate" />
+          <AitFeature Name="System.Net.Http.HttpRequestException" />
+          <AitFeature Name="System.NotImplementedException" />
+          <AitFeature Name="System.NotImplementedException..ctor" />
+          <AitFeature Name="System.Nullable`1" />
+          <AitFeature Name="System.Object" />
+          <AitFeature Name="System.Object..ctor" />
+          <AitFeature Name="System.Object.Equals" />
+          <AitFeature Name="System.Object.ToString" />
+          <AitFeature Name="System.Predicate`1" />
+          <AitFeature Name="System.Reflection.AssemblyCompanyAttribute" />
+          <AitFeature Name="System.Reflection.AssemblyCompanyAttribute..ctor" />
+          <AitFeature Name="System.Reflection.AssemblyConfigurationAttribute" />
+          <AitFeature Name="System.Reflection.AssemblyConfigurationAttribute..ctor" />
+          <AitFeature Name="System.Reflection.AssemblyCopyrightAttribute" />
+          <AitFeature Name="System.Reflection.AssemblyCopyrightAttribute..ctor" />
+          <AitFeature Name="System.Reflection.AssemblyCultureAttribute" />
+          <AitFeature Name="System.Reflection.AssemblyCultureAttribute..ctor" />
+          <AitFeature Name="System.Reflection.AssemblyDescriptionAttribute" />
+          <AitFeature Name="System.Reflection.AssemblyDescriptionAttribute..ctor" />
+          <AitFeature Name="System.Reflection.AssemblyFileVersionAttribute" />
+          <AitFeature Name="System.Reflection.AssemblyFileVersionAttribute..ctor" />
+          <AitFeature Name="System.Reflection.AssemblyProductAttribute" />
+          <AitFeature Name="System.Reflection.AssemblyProductAttribute..ctor" />
+          <AitFeature Name="System.Reflection.AssemblyTitleAttribute" />
+          <AitFeature Name="System.Reflection.AssemblyTitleAttribute..ctor" />
+          <AitFeature Name="System.Reflection.AssemblyTrademarkAttribute" />
+          <AitFeature Name="System.Reflection.AssemblyTrademarkAttribute..ctor" />
+          <AitFeature Name="System.Reflection.AssemblyVersionAttribute" />
+          <AitFeature Name="System.Reflection.AssemblyVersionAttribute..ctor" />
+          <AitFeature Name="System.Reflection.DefaultMemberAttribute" />
+          <AitFeature Name="System.Reflection.DefaultMemberAttribute..ctor" />
+          <AitFeature Name="System.Reflection.FieldInfo" />
+          <AitFeature Name="System.Reflection.FieldInfo.GetFieldFromHandle" />
+          <AitFeature Name="System.Reflection.MethodBase" />
+          <AitFeature Name="System.Reflection.MethodBase.GetMethodFromHandle" />
+          <AitFeature Name="System.Reflection.MethodInfo" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncStateMachineAttribute" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncStateMachineAttribute..ctor" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Create" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetException" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetStateMachine" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder.get_Task" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Create" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetException" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetResult" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetStateMachine" />
+          <AitFeature Name="System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start" />
+          <AitFeature Name="System.Runtime.CompilerServices.CompilationRelaxationsAttribute" />
+          <AitFeature Name="System.Runtime.CompilerServices.CompilationRelaxationsAttribute..ctor" />
+          <AitFeature Name="System.Runtime.CompilerServices.CompilerGeneratedAttribute" />
+          <AitFeature Name="System.Runtime.CompilerServices.CompilerGeneratedAttribute..ctor" />
+          <AitFeature Name="System.Runtime.CompilerServices.IAsyncStateMachine" />
+          <AitFeature Name="System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext" />
+          <AitFeature Name="System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine" />
+          <AitFeature Name="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute" />
+          <AitFeature Name="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute..ctor" />
+          <AitFeature Name="System.Runtime.CompilerServices.RuntimeHelpers" />
+          <AitFeature Name="System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor" />
+          <AitFeature Name="System.Runtime.CompilerServices.TaskAwaiter" />
+          <AitFeature Name="System.Runtime.CompilerServices.TaskAwaiter.GetResult" />
+          <AitFeature Name="System.Runtime.CompilerServices.TaskAwaiter.get_IsCompleted" />
+          <AitFeature Name="System.Runtime.CompilerServices.TaskAwaiter`1" />
+          <AitFeature Name="System.Runtime.InteropServices.ComVisibleAttribute" />
+          <AitFeature Name="System.Runtime.InteropServices.ComVisibleAttribute..ctor" />
+          <AitFeature Name="System.Runtime.InteropServices.OutAttribute" />
+          <AitFeature Name="System.Runtime.InteropServices.OutAttribute..ctor" />
+          <AitFeature Name="System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken" />
+          <AitFeature Name="System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1" />
+          <AitFeature Name="System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal" />
+          <AitFeature Name="System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.AddEventHandler" />
+          <AitFeature Name="System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.RemoveEventHandler" />
+          <AitFeature Name="System.Runtime.Serialization.DataContractSerializer" />
+          <AitFeature Name="System.Runtime.Serialization.DataContractSerializer..ctor" />
+          <AitFeature Name="System.Runtime.Serialization.XmlObjectSerializer" />
+          <AitFeature Name="System.Runtime.Serialization.XmlObjectSerializer.ReadObject" />
+          <AitFeature Name="System.Runtime.Serialization.XmlObjectSerializer.WriteObject" />
+          <AitFeature Name="System.Runtime.Versioning.TargetFrameworkAttribute" />
+          <AitFeature Name="System.Runtime.Versioning.TargetFrameworkAttribute..ctor" />
+          <AitFeature Name="System.RuntimeFieldHandle" />
+          <AitFeature Name="System.RuntimeMethodHandle" />
+          <AitFeature Name="System.RuntimeTypeHandle" />
+          <AitFeature Name="System.String" />
+          <AitFeature Name="System.String.Compare" />
+          <AitFeature Name="System.String.CompareOrdinal" />
+          <AitFeature Name="System.String.Concat" />
+          <AitFeature Name="System.String.Empty" />
+          <AitFeature Name="System.String.Equals" />
+          <AitFeature Name="System.String.Format" />
+          <AitFeature Name="System.String.IsNullOrEmpty" />
+          <AitFeature Name="System.String.Replace" />
+          <AitFeature Name="System.String.Split" />
+          <AitFeature Name="System.String.StartsWith" />
+          <AitFeature Name="System.String.ToLower" />
+          <AitFeature Name="System.String.Trim" />
+          <AitFeature Name="System.String.op_Equality" />
+          <AitFeature Name="System.String.op_Inequality" />
+          <AitFeature Name="System.StringComparison" />
+          <AitFeature Name="System.Threading.Interlocked" />
+          <AitFeature Name="System.Threading.Interlocked.CompareExchange" />
+          <AitFeature Name="System.Threading.Tasks.Task" />
+          <AitFeature Name="System.Threading.Tasks.Task.GetAwaiter" />
+          <AitFeature Name="System.Threading.Tasks.Task`1" />
+          <AitFeature Name="System.TimeSpan" />
+          <AitFeature Name="System.TimeSpan..ctor" />
+          <AitFeature Name="System.Type" />
+          <AitFeature Name="System.Type.Equals" />
+          <AitFeature Name="System.Type.GetTypeFromHandle" />
+          <AitFeature Name="System.Type.get_TypeHandle" />
+          <AitFeature Name="System.UInt16" />
+          <AitFeature Name="System.Uri" />
+          <AitFeature Name="System.Uri..ctor" />
+          <AitFeature Name="System.UriKind" />
+          <AitFeature Name="System.ValueType" />
+          <AitFeature Name="System.WeakReference`1" />
+          <AitFeature Name="System.Windows.Input.ICommand" />
+          <AitFeature Name="System.WindowsRuntimeSystemExtensions" />
+          <AitFeature Name="System.WindowsRuntimeSystemExtensions.GetAwaiter" />
+        </AitCategory>
+        <AitCategory Id="DotNetWinRt">
+          <AitFeature Name="Windows.ApplicationModel.Activation.ApplicationExecutionState" />
+          <AitFeature Name="Windows.ApplicationModel.Activation.LaunchActivatedEventArgs" />
+          <AitFeature Name="Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.get_Arguments" />
+          <AitFeature Name="Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.get_PreviousExecutionState" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundAccessStatus" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundExecutionManager" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundExecutionManager.RemoveAccess" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder..ctor" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder.Register" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder.SetTrigger" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder.put_Name" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskBuilder.put_TaskEntryPoint" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskRegistration" />
+          <AitFeature Name="Windows.ApplicationModel.Background.BackgroundTaskRegistration.get_AllTasks" />
+          <AitFeature Name="Windows.ApplicationModel.Background.IBackgroundTaskRegistration" />
+          <AitFeature Name="Windows.ApplicationModel.Background.IBackgroundTaskRegistration.get_Name" />
+          <AitFeature Name="Windows.ApplicationModel.Background.IBackgroundTrigger" />
+          <AitFeature Name="Windows.ApplicationModel.Background.TimeTrigger" />
+          <AitFeature Name="Windows.ApplicationModel.Background.TimeTrigger..ctor" />
+          <AitFeature Name="Windows.ApplicationModel.Email.EmailManager" />
+          <AitFeature Name="Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync" />
+          <AitFeature Name="Windows.ApplicationModel.Email.EmailMessage" />
+          <AitFeature Name="Windows.ApplicationModel.Email.EmailMessage..ctor" />
+          <AitFeature Name="Windows.ApplicationModel.Email.EmailMessage.get_To" />
+          <AitFeature Name="Windows.ApplicationModel.Email.EmailMessage.put_Body" />
+          <AitFeature Name="Windows.ApplicationModel.Email.EmailMessage.put_Subject" />
+          <AitFeature Name="Windows.ApplicationModel.Email.EmailRecipient" />
+          <AitFeature Name="Windows.ApplicationModel.Email.EmailRecipient..ctor" />
+          <AitFeature Name="Windows.ApplicationModel.Email.EmailRecipient.put_Address" />
+          <AitFeature Name="Windows.ApplicationModel.Package" />
+          <AitFeature Name="Windows.ApplicationModel.Package.get_Current" />
+          <AitFeature Name="Windows.ApplicationModel.Package.get_Id" />
+          <AitFeature Name="Windows.ApplicationModel.PackageId" />
+          <AitFeature Name="Windows.ApplicationModel.PackageId.get_Version" />
+          <AitFeature Name="Windows.ApplicationModel.PackageVersion" />
+          <AitFeature Name="Windows.ApplicationModel.PackageVersion.Build" />
+          <AitFeature Name="Windows.ApplicationModel.PackageVersion.Major" />
+          <AitFeature Name="Windows.ApplicationModel.PackageVersion.Minor" />
+          <AitFeature Name="Windows.ApplicationModel.PackageVersion.Revision" />
+          <AitFeature Name="Windows.ApplicationModel.Resources.ResourceLoader" />
+          <AitFeature Name="Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView" />
+          <AitFeature Name="Windows.ApplicationModel.Resources.ResourceLoader.GetString" />
+          <AitFeature Name="Windows.ApplicationModel.Store.CurrentApp" />
+          <AitFeature Name="Windows.ApplicationModel.Store.CurrentApp.RequestProductPurchaseAsync" />
+          <AitFeature Name="Windows.ApplicationModel.Store.CurrentApp.get_LicenseInformation" />
+          <AitFeature Name="Windows.ApplicationModel.Store.LicenseInformation" />
+          <AitFeature Name="Windows.ApplicationModel.Store.LicenseInformation.get_ProductLicenses" />
+          <AitFeature Name="Windows.ApplicationModel.Store.ProductLicense" />
+          <AitFeature Name="Windows.ApplicationModel.Store.ProductLicense.get_IsActive" />
+          <AitFeature Name="Windows.ApplicationModel.Store.PurchaseResults" />
+          <AitFeature Name="Windows.ApplicationModel.SuspendingDeferral" />
+          <AitFeature Name="Windows.ApplicationModel.SuspendingDeferral.Complete" />
+          <AitFeature Name="Windows.ApplicationModel.SuspendingEventArgs" />
+          <AitFeature Name="Windows.ApplicationModel.SuspendingEventArgs.get_SuspendingOperation" />
+          <AitFeature Name="Windows.ApplicationModel.SuspendingOperation" />
+          <AitFeature Name="Windows.ApplicationModel.SuspendingOperation.GetDeferral" />
+          <AitFeature Name="Windows.Data.Json.IJsonValue" />
+          <AitFeature Name="Windows.Data.Json.IJsonValue.GetArray" />
+          <AitFeature Name="Windows.Data.Json.IJsonValue.GetString" />
+          <AitFeature Name="Windows.Data.Json.JsonArray" />
+          <AitFeature Name="Windows.Data.Json.JsonObject" />
+          <AitFeature Name="Windows.Data.Json.JsonObject.Parse" />
+          <AitFeature Name="Windows.Data.Json.JsonValue" />
+          <AitFeature Name="Windows.Data.Json.JsonValue.GetObject" />
+          <AitFeature Name="Windows.Data.Json.JsonValue.GetString" />
+          <AitFeature Name="Windows.Data.Xml.Dom.IXmlNode" />
+          <AitFeature Name="Windows.Data.Xml.Dom.IXmlNode.AppendChild" />
+          <AitFeature Name="Windows.Data.Xml.Dom.XmlDocument" />
+          <AitFeature Name="Windows.Data.Xml.Dom.XmlDocument.CreateElement" />
+          <AitFeature Name="Windows.Data.Xml.Dom.XmlDocument.CreateTextNode" />
+          <AitFeature Name="Windows.Data.Xml.Dom.XmlDocument.GetElementsByTagName" />
+          <AitFeature Name="Windows.Data.Xml.Dom.XmlDocument.SelectSingleNode" />
+          <AitFeature Name="Windows.Data.Xml.Dom.XmlElement" />
+          <AitFeature Name="Windows.Data.Xml.Dom.XmlElement.SetAttribute" />
+          <AitFeature Name="Windows.Data.Xml.Dom.XmlNodeList" />
+          <AitFeature Name="Windows.Data.Xml.Dom.XmlText" />
+          <AitFeature Name="Windows.Foundation.Collections.CollectionChange" />
+          <AitFeature Name="Windows.Foundation.Collections.IMapChangedEventArgs`1" />
+          <AitFeature Name="Windows.Foundation.Collections.IObservableMap`2" />
+          <AitFeature Name="Windows.Foundation.Collections.IObservableVector`1" />
+          <AitFeature Name="Windows.Foundation.Collections.IPropertySet" />
+          <AitFeature Name="Windows.Foundation.Collections.MapChangedEventHandler`2" />
+          <AitFeature Name="Windows.Foundation.IAsyncAction" />
+          <AitFeature Name="Windows.Foundation.IAsyncOperation`1" />
+          <AitFeature Name="Windows.Foundation.Metadata.WebHostHiddenAttribute" />
+          <AitFeature Name="Windows.Foundation.Metadata.WebHostHiddenAttribute..ctor" />
+          <AitFeature Name="Windows.Foundation.TypedEventHandler`2" />
+          <AitFeature Name="Windows.Graphics.Display.DisplayInformation" />
+          <AitFeature Name="Windows.Graphics.Display.DisplayInformation.put_AutoRotationPreferences" />
+          <AitFeature Name="Windows.Graphics.Display.DisplayOrientations" />
+          <AitFeature Name="Windows.Phone.UI.Input.BackPressedEventArgs" />
+          <AitFeature Name="Windows.Phone.UI.Input.BackPressedEventArgs.put_Handled" />
+          <AitFeature Name="Windows.Phone.UI.Input.HardwareButtons" />
+          <AitFeature Name="Windows.Phone.UI.Input.HardwareButtons.add_BackPressed" />
+          <AitFeature Name="Windows.Phone.UI.Input.HardwareButtons.remove_BackPressed" />
+          <AitFeature Name="Windows.Storage.ApplicationData" />
+          <AitFeature Name="Windows.Storage.ApplicationData.get_Current" />
+          <AitFeature Name="Windows.Storage.ApplicationData.get_LocalFolder" />
+          <AitFeature Name="Windows.Storage.ApplicationData.get_LocalSettings" />
+          <AitFeature Name="Windows.Storage.ApplicationDataContainer" />
+          <AitFeature Name="Windows.Storage.ApplicationDataContainer.get_Values" />
+          <AitFeature Name="Windows.Storage.CreationCollisionOption" />
+          <AitFeature Name="Windows.Storage.FileIO" />
+          <AitFeature Name="Windows.Storage.FileIO.ReadTextAsync" />
+          <AitFeature Name="Windows.Storage.IStorageFile" />
+          <AitFeature Name="Windows.Storage.StorageFile" />
+          <AitFeature Name="Windows.Storage.StorageFile.GetFileFromApplicationUriAsync" />
+          <AitFeature Name="Windows.Storage.StorageFile.OpenSequentialReadAsync" />
+          <AitFeature Name="Windows.Storage.StorageFolder" />
+          <AitFeature Name="Windows.Storage.StorageFolder.CreateFileAsync" />
+          <AitFeature Name="Windows.Storage.StorageFolder.GetFileAsync" />
+          <AitFeature Name="Windows.Storage.Streams.DataReader" />
+          <AitFeature Name="Windows.Storage.Streams.DataReader.FromBuffer" />
+          <AitFeature Name="Windows.Storage.Streams.DataReader.ReadBytes" />
+          <AitFeature Name="Windows.Storage.Streams.IBuffer" />
+          <AitFeature Name="Windows.Storage.Streams.IBuffer.get_Length" />
+          <AitFeature Name="Windows.Storage.Streams.IInputStream" />
+          <AitFeature Name="Windows.System.Launcher" />
+          <AitFeature Name="Windows.System.Launcher.LaunchUriAsync" />
+          <AitFeature Name="Windows.System.Profile.HardwareIdentification" />
+          <AitFeature Name="Windows.System.Profile.HardwareIdentification.GetPackageSpecificToken" />
+          <AitFeature Name="Windows.System.Profile.HardwareToken" />
+          <AitFeature Name="Windows.System.Profile.HardwareToken.get_Id" />
+          <AitFeature Name="Windows.UI.Notifications.ScheduledToastNotification" />
+          <AitFeature Name="Windows.UI.Notifications.ScheduledToastNotification..ctor" />
+          <AitFeature Name="Windows.UI.Notifications.ToastNotification" />
+          <AitFeature Name="Windows.UI.Notifications.ToastNotification..ctor" />
+          <AitFeature Name="Windows.UI.Notifications.ToastNotificationManager" />
+          <AitFeature Name="Windows.UI.Notifications.ToastNotificationManager.CreateToastNotifier" />
+          <AitFeature Name="Windows.UI.Notifications.ToastNotificationManager.GetTemplateContent" />
+          <AitFeature Name="Windows.UI.Notifications.ToastNotifier" />
+          <AitFeature Name="Windows.UI.Notifications.ToastNotifier.AddToSchedule" />
+          <AitFeature Name="Windows.UI.Notifications.ToastTemplateType" />
+          <AitFeature Name="Windows.UI.Popups.IUICommand" />
+          <AitFeature Name="Windows.UI.Popups.IUICommand.get_Id" />
+          <AitFeature Name="Windows.UI.Popups.MessageDialog" />
+          <AitFeature Name="Windows.UI.Popups.MessageDialog..ctor" />
+          <AitFeature Name="Windows.UI.Popups.MessageDialog.ShowAsync" />
+          <AitFeature Name="Windows.UI.Popups.MessageDialog.get_Commands" />
+          <AitFeature Name="Windows.UI.Popups.UICommand" />
+          <AitFeature Name="Windows.UI.Popups.UICommand..ctor" />
+          <AitFeature Name="Windows.UI.Popups.UICommand.put_Id" />
+          <AitFeature Name="Windows.UI.Popups.UICommand.put_Label" />
+          <AitFeature Name="Windows.UI.Xaml.Application" />
+          <AitFeature Name="Windows.UI.Xaml.Application..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Application.Exit" />
+          <AitFeature Name="Windows.UI.Xaml.Application.LoadComponent" />
+          <AitFeature Name="Windows.UI.Xaml.Application.Start" />
+          <AitFeature Name="Windows.UI.Xaml.Application.add_Suspending" />
+          <AitFeature Name="Windows.UI.Xaml.Application.get_Current" />
+          <AitFeature Name="Windows.UI.Xaml.Application.remove_Suspending" />
+          <AitFeature Name="Windows.UI.Xaml.ApplicationInitializationCallback" />
+          <AitFeature Name="Windows.UI.Xaml.ApplicationInitializationCallback..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.ApplicationInitializationCallbackParams" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ContentControl" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ContentControl.get_Content" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ContentControl.get_ContentTransitions" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ContentControl.put_ContentTransitions" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Control" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.GetNavigationState" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.GoBack" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.GoForward" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.Navigate" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.SetNavigationState" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.add_Navigated" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.get_BackStack" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.get_BackStackDepth" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.get_CanGoBack" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.get_CanGoForward" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.put_CacheSize" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Frame.remove_Navigated" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Grid" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Grid.get_RowDefinitions" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.GroupStyle" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Hub" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Hub.ScrollToSection" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Hub.get_Sections" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Hub.get_SectionsInView" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Hub.put_DefaultSectionIndex" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.HubSection" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Image" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Image.put_Source" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ItemClickEventArgs" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ItemClickEventArgs.get_ClickedItem" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ItemClickEventHandler" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ItemClickEventHandler..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ListViewBase" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ListViewBase.add_ItemClick" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ListViewBase.remove_ItemClick" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Page" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Page..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Page.get_Frame" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Page.put_NavigationCacheMode" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ButtonBase" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ButtonBase.add_Click" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ButtonBase.remove_Click" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ToggleButton" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ToggleButton.add_Checked" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.Primitives.ToggleButton.remove_Checked" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.ProgressRing" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.RowDefinition" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.RowDefinition.get_Height" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.RowDefinition.get_HeightProperty" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.RowDefinitionCollection" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.TextBlock" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.TextBox" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.TextBox.add_TextChanged" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.TextBox.get_Text" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.TextBox.put_Text" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.TextBox.remove_TextChanged" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.TextChangedEventArgs" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.TextChangedEventHandler" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.TextChangedEventHandler..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Controls.UserControl" />
+          <AitFeature Name="Windows.UI.Xaml.Data.CollectionViewSource" />
+          <AitFeature Name="Windows.UI.Xaml.Data.CollectionViewSource..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Data.CollectionViewSource.put_IsSourceGrouped" />
+          <AitFeature Name="Windows.UI.Xaml.Data.ICollectionView" />
+          <AitFeature Name="Windows.UI.Xaml.Data.IValueConverter" />
+          <AitFeature Name="Windows.UI.Xaml.DataContextChangedEventArgs" />
+          <AitFeature Name="Windows.UI.Xaml.DependencyObject" />
+          <AitFeature Name="Windows.UI.Xaml.DependencyObject..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.DependencyObject.ClearValue" />
+          <AitFeature Name="Windows.UI.Xaml.DependencyObject.GetValue" />
+          <AitFeature Name="Windows.UI.Xaml.DependencyObject.SetValue" />
+          <AitFeature Name="Windows.UI.Xaml.DependencyProperty" />
+          <AitFeature Name="Windows.UI.Xaml.DependencyProperty.RegisterAttached" />
+          <AitFeature Name="Windows.UI.Xaml.DispatcherTimer" />
+          <AitFeature Name="Windows.UI.Xaml.DispatcherTimer..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.DispatcherTimer.Start" />
+          <AitFeature Name="Windows.UI.Xaml.DispatcherTimer.Stop" />
+          <AitFeature Name="Windows.UI.Xaml.DispatcherTimer.add_Tick" />
+          <AitFeature Name="Windows.UI.Xaml.DispatcherTimer.put_Interval" />
+          <AitFeature Name="Windows.UI.Xaml.DispatcherTimer.remove_Tick" />
+          <AitFeature Name="Windows.UI.Xaml.FrameworkElement" />
+          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.FindName" />
+          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.add_DataContextChanged" />
+          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.add_Loaded" />
+          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.add_Unloaded" />
+          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.get_DataContext" />
+          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.get_Name" />
+          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.remove_DataContextChanged" />
+          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.remove_Loaded" />
+          <AitFeature Name="Windows.UI.Xaml.FrameworkElement.remove_Unloaded" />
+          <AitFeature Name="Windows.UI.Xaml.GridLength" />
+          <AitFeature Name="Windows.UI.Xaml.GridLength..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.GridLength.get_Value" />
+          <AitFeature Name="Windows.UI.Xaml.Input.TappedEventHandler" />
+          <AitFeature Name="Windows.UI.Xaml.Input.TappedEventHandler..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Input.TappedRoutedEventArgs" />
+          <AitFeature Name="Windows.UI.Xaml.Markup.IComponentConnector" />
+          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlMember" />
+          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlMetadataProvider" />
+          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlMetadataProvider.GetXamlType" />
+          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlType" />
+          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlType.get_FullName" />
+          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlType.get_IsConstructible" />
+          <AitFeature Name="Windows.UI.Xaml.Markup.IXamlType.get_UnderlyingType" />
+          <AitFeature Name="Windows.UI.Xaml.Markup.XmlnsDefinition" />
+          <AitFeature Name="Windows.UI.Xaml.Media.Animation.NavigationThemeTransition" />
+          <AitFeature Name="Windows.UI.Xaml.Media.Animation.NavigationThemeTransition..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Media.Animation.Transition" />
+          <AitFeature Name="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
+          <AitFeature Name="Windows.UI.Xaml.Media.Animation.TransitionCollection..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Media.ImageSource" />
+          <AitFeature Name="Windows.UI.Xaml.Media.Imaging.BitmapImage" />
+          <AitFeature Name="Windows.UI.Xaml.Media.Imaging.BitmapImage..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigatedEventHandler" />
+          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigatedEventHandler..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigationCacheMode" />
+          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigationEventArgs" />
+          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigationEventArgs.get_NavigationMode" />
+          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigationEventArgs.get_Parameter" />
+          <AitFeature Name="Windows.UI.Xaml.Navigation.NavigationMode" />
+          <AitFeature Name="Windows.UI.Xaml.Navigation.PageStackEntry" />
+          <AitFeature Name="Windows.UI.Xaml.Navigation.PageStackEntry.get_SourcePageType" />
+          <AitFeature Name="Windows.UI.Xaml.PropertyMetadata" />
+          <AitFeature Name="Windows.UI.Xaml.RoutedEventArgs" />
+          <AitFeature Name="Windows.UI.Xaml.RoutedEventHandler" />
+          <AitFeature Name="Windows.UI.Xaml.RoutedEventHandler..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.SuspendingEventHandler" />
+          <AitFeature Name="Windows.UI.Xaml.SuspendingEventHandler..ctor" />
+          <AitFeature Name="Windows.UI.Xaml.UIElement" />
+          <AitFeature Name="Windows.UI.Xaml.UIElement.add_GotFocus" />
+          <AitFeature Name="Windows.UI.Xaml.UIElement.add_LostFocus" />
+          <AitFeature Name="Windows.UI.Xaml.UIElement.add_Tapped" />
+          <AitFeature Name="Windows.UI.Xaml.UIElement.put_Visibility" />
+          <AitFeature Name="Windows.UI.Xaml.UIElement.remove_GotFocus" />
+          <AitFeature Name="Windows.UI.Xaml.UIElement.remove_LostFocus" />
+          <AitFeature Name="Windows.UI.Xaml.UIElement.remove_Tapped" />
+          <AitFeature Name="Windows.UI.Xaml.Visibility" />
+          <AitFeature Name="Windows.UI.Xaml.Window" />
+          <AitFeature Name="Windows.UI.Xaml.Window.Activate" />
+          <AitFeature Name="Windows.UI.Xaml.Window.get_Content" />
+          <AitFeature Name="Windows.UI.Xaml.Window.get_Current" />
+          <AitFeature Name="Windows.UI.Xaml.Window.put_Content" />
         </AitCategory>
       </AitFile>
       <AitFile ErrorCode="0" Name="Tasks.winmd" Id="000041f1914e60ec3f79cf1be9aa6fc9dd670f00aa0d">

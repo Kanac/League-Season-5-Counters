@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="62206AnthonyC.LeagueCounterpicks" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2016.8.0.29" ProcessorArchitecture="arm" />
+  <Identity Name="62206AnthonyC.LeagueCounterpicks" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2016.8.0.30" ProcessorArchitecture="arm" />
   <mp:PhoneIdentity PhoneProductId="a29b2218-1da2-4e4b-87e2-a8a45d18cf71" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>League Season 5 Counters</DisplayName>

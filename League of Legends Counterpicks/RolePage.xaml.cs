@@ -39,9 +39,12 @@ namespace League_of_Legends_Counterpicks
         private ObservableCollection<Role> roles;
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private readonly String APP_ID = "3366702e-67c7-48e7-bc82-d3a4534f3086";
-        private string roleId, savedRoleId;
         private bool firstLoad = true;
+        private List<AdControl> adList = new List<AdControl>();
+        private DispatcherTimer dispatcherTimer;
+        private string roleId, savedRoleId;
         private int sectionIndex;
+        private int adRetryCount;
 
         public RolePage()
         {
@@ -82,19 +85,27 @@ namespace League_of_Legends_Counterpicks
         /// session.  The state will be null the first time a page is visited.</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)  //e is the unique ID
         {
+            //Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
+            if (dispatcherTimer != null)
+                dispatcherTimer.Stop();
+
+            adRetryCount = 0;
             reviewApp();
-            //Check if the navigation paramater changes to determine the roleId to use, otherwise use the roleId set by navigating to ChampionPage
+            // Check if the navigation paramater changes to determine the roleId to use, otherwise use the roleId set by navigating to ChampionPage
             if ((string)e.NavigationParameter != savedRoleId) {
                 roleId = e.NavigationParameter as string;
                 savedRoleId = roleId;
             }
 
-            roles = await DataSource.GetRolesAsync();  //Gets a reference to all the roles -- no data is seralized again (already done on bootup)
-            var allRole = roles[0]; //Gets the all role 
+            // Gets a reference to all the roles -- no data is seralized again (already done on main page load)
+            roles = await DataSource.GetRolesAsync();  
+            // Get the 'All' role and configure the view to display the champions nicely
+            var allRole = roles[0];
             var GroupedChampions = JumpListHelper.ToAlphaGroups(allRole.Champions, x => x.UniqueId);
             allRole.QkitChampions = GroupedChampions;
             DefaultViewModel["Roles"] = roles;
-            //Smoothes out the loading process to get to desired page immedaitely 
+
+            // Smoothes out the loading process to get to desired page immedaitely 
             if (roleId == "Filter")
                 sectionIndex = MainHub.Sections.Count() - 1;
             else
@@ -103,14 +114,11 @@ namespace League_of_Legends_Counterpicks
                 MainHub.DefaultSectionIndex = sectionIndex;
             else
                 MainHub.ScrollToSection(MainHub.Sections.ElementAt(sectionIndex));
+            
+            // Set up timer refresh rate of 30 seconds for ads (or use existing one)
+            setupAdTimer();
         }
         
-    
-
-
-            //Data context set to the individual role (dictionary key to value)
-        
-
         /// <summary>
         /// Preserves state associated with this page in case the application is suspended or the
         /// page is discarded from the navigation cache.  Values must conform to the serialization
@@ -209,6 +217,10 @@ namespace League_of_Legends_Counterpicks
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
             var ad = sender as AdControl;
+            // Check if the ad list already has a reference to this ad before inserting
+            if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
+                adList.Add(ad);
+
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
                 // Hide the app for the purchaser
@@ -219,6 +231,30 @@ namespace League_of_Legends_Counterpicks
                 // Otherwise show the ad
                 ad.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
+        }
+
+        private void setupAdTimer()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += dispatcherTimer_Tick;
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 33);
+            dispatcherTimer.Start();
+        }
+
+        private void dispatcherTimer_Tick(object sender, object e)
+        {
+            foreach (var ad in adList)
+                ad.Refresh();
+        }
+
+        private void Ad_Error(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
+        {
+            //if (adRetryCount < 5)
+            //{
+            //    var ad = sender as AdControl;
+            //    ad.Refresh();
+            //    adRetryCount++;
+            //}
         }
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
@@ -299,5 +335,8 @@ namespace League_of_Legends_Counterpicks
                 catch (Exception) { }
             }
         }
+
+
+        
     }
 }

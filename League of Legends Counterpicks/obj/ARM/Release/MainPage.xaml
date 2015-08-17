@@ -29,7 +29,8 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid x:ConnectionId='5' Background="{ThemeResource HubBackgroundImageBrush}"                       >
+    <Grid x:ConnectionId='5' Background="{ThemeResource HubBackgroundImageBrush}"
+                                >
         <Grid.RowDefinitions>
             <RowDefinition Height="2.5*"/>
             <RowDefinition Height="7.5*" />
@@ -45,21 +46,21 @@
                       AutoRefreshIntervalInSeconds="60"
                       AdUnitId="231252" />-->
 
-        <WindowsPhone81:AdMediatorControl x:ConnectionId='6' x:Name="AdMediator_B3E200"
+        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_B3E200"
                                                   HorizontalAlignment="Center"
                                                   Height="80"
-                                                                    
+                                                  Loaded="Ad_Loaded"
                                                   Id="AdMediator-Id-A9B26502-92B4-4543-8114-35155ED1598C"
                                                   VerticalAlignment="Top"
-                                                  Width="480" />
-        <!--Enter inside the dictionary's only key, groups, and then into the list holding them -->
+                                                  Width="480" />-->
+        
         <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
                
-            <TextBox x:ConnectionId='7' Margin="15,0,15,0"
+            <TextBox x:ConnectionId='10' Margin="15,0,15,0"
                      IsReadOnly="True"
                                                 
                      TextAlignment="Center"
@@ -71,7 +72,7 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <ListView x:ConnectionId='8' ItemsSource="{Binding Roles}"
+                <ListView x:ConnectionId='11' ItemsSource="{Binding Roles}"
                           Grid.Row="1"
                           IsItemClickEnabled="True"
                                                             >
@@ -108,31 +109,63 @@
                     VerticalAlignment="Top"
                     HorizontalAlignment="Right">
 
-            <TextBlock Text="By a Diamond 1"
+            <TextBlock Text="By a Master Player"
                        FontSize="15"
                        Foreground="#FFCCDDF7" />
             <TextBlock Text="Raklor"
                        FontSize="15"
                        Foreground="#FFCCDDF7" />
         </StackPanel>
-        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_E867C2"
+
+        <Grid Grid.Row="2">
+            <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_E867C2"
                                           HorizontalAlignment="Center"
                                           Height="80"
                                           Id="AdMediator-Id-80F4375E-50E9-4BF8-A9C3-47443A97AD78"
                                           Grid.Row="2"
                                           VerticalAlignment="Bottom"
-                                          Width="480" />
+                                          Width="480" />-->
 
-        <!--<UI:AdControl HorizontalAlignment="Center"
-                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                      VerticalAlignment="Top"
-                      Width="480"
-                      Height="80"
-                      Grid.Row="2"
-                      Loaded="Ad_Loaded"
-                      AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="231251" />-->
+            <UI:AdControl x:ConnectionId='6' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                                            
+                                                  
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="236721" />
 
+            <UI:AdControl x:ConnectionId='7' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                                            
+                                                  
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="236720" />
+
+            <UI:AdControl x:ConnectionId='8' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                                            
+                                                  
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="236719" />
+
+            <UI:AdControl x:ConnectionId='9' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                                            
+                                                  
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="236718" />
+        </Grid>
     </Grid>
 </Page>
     

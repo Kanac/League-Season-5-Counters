@@ -30,6 +30,7 @@ using Windows.ApplicationModel.Email;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Store;
 using League_of_Legends_Counterpicks.Advertisement;
+using System.Threading.Tasks;
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -43,8 +44,10 @@ namespace League_of_Legends_Counterpicks
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private readonly ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView("Resources");
-        private List<String> suggestions;
+        private List<AdControl> adList = new List<AdControl>();
+        private DispatcherTimer dispatcherTimer;
         private Boolean firstLoad = true;
+        private int adRetryCount;
 
         public MainPage()
         {
@@ -90,41 +93,52 @@ namespace League_of_Legends_Counterpicks
         /// session.  The state will be null the first time a page is visited.</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var roles = await DataSource.GetRolesAsync() ;     //On loading the hub page, add all the groups to the default view model
-            suggestions = new List<String>(roles[0].Champions.Select(x => x.UniqueId)); //Get all the champion names and place it in a list
-            this.DefaultViewModel["Roles"] = roles;     //Which in turn is the data context for the hub page, with only one thing as a whole in it
+            //Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
+            if (dispatcherTimer != null)
+                dispatcherTimer.Stop();
 
-            //Toast background task setup 
-            if (firstLoad)
+            adRetryCount = 0;
+            // Load all the roles (which contains all the champions) from the json file 
+            var roles = await DataSource.GetRolesAsync() ;    
+            this.DefaultViewModel["Roles"] = roles;     
+
+            // Toast background task setup 
+            await setupToast();
+
+            // Set up timer refresh rate of 30 seconds for ads (or use existing one)
+            setupAdTimer();
+
+            //Set a flag to prevent excess toast background task setup
+            firstLoad = false;
+        }
+
+        private async Task setupToast()
+        {
+            firstLoad = false;
+            CheckAppVersion();
+            var toastTaskName = "ToastBackgroundTask";
+            var taskRegistered = false;
+
+            foreach (var task in Windows.ApplicationModel.Background.BackgroundTaskRegistration.AllTasks)
             {
-                firstLoad = false;
-                CheckAppVersion();
-                var toastTaskName = "ToastBackgroundTask";
-                var taskRegistered = false;
-
-                foreach (var task in Windows.ApplicationModel.Background.BackgroundTaskRegistration.AllTasks)
+                if (task.Value.Name == toastTaskName)
                 {
-                    if (task.Value.Name == toastTaskName)
-                    {
-                        taskRegistered = true;
-                        break;
-                    }
-                }
-
-                if (!taskRegistered)
-                {
-                    await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
-                    var builder = new BackgroundTaskBuilder();
-                    builder.Name = toastTaskName;
-                    builder.TaskEntryPoint = "Tasks.ToastBackground";
-                    var hourlyTrigger = new TimeTrigger(30, false);
-                    builder.SetTrigger(hourlyTrigger);
-
-                    BackgroundTaskRegistration task = builder.Register();
+                    taskRegistered = true;
+                    break;
                 }
             }
 
+            if (!taskRegistered)
+            {
+                await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
+                var builder = new BackgroundTaskBuilder();
+                builder.Name = toastTaskName;
+                builder.TaskEntryPoint = "Tasks.ToastBackground";
+                var hourlyTrigger = new TimeTrigger(30, false);
+                builder.SetTrigger(hourlyTrigger);
+
+                BackgroundTaskRegistration task = builder.Register();
+            }
         }
 
         /// <summary>
@@ -243,8 +257,12 @@ namespace League_of_Legends_Counterpicks
 
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
-       
-            var ad = sender as Microsoft.AdMediator.WindowsPhone81.AdMediatorControl;
+
+            var ad = sender as AdControl;
+            // Check if the ad list already has a reference to this ad before inserting
+            if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0 ) 
+                adList.Add(ad);
+
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
                 // Hide the app for the purchaser
@@ -256,6 +274,31 @@ namespace League_of_Legends_Counterpicks
                 ad.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
         }
+
+        private void setupAdTimer()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += dispatcherTimer_Tick;
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 33);
+            dispatcherTimer.Start();
+        }
+
+        private void dispatcherTimer_Tick(object sender, object e)
+        {
+            foreach (var ad in adList)
+                ad.Refresh();
+        }
+
+        private void Ad_Error(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
+        {
+            //if (adRetryCount < 5)
+            //{
+            //    var ad = sender as AdControl;
+            //    ad.Refresh();
+            //    adRetryCount++;
+            //}
+        }
+   
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
         {
@@ -278,7 +321,6 @@ namespace League_of_Legends_Counterpicks
             AdRemover.Purchase();
         }
 
-
-  
+       
     }
 }
