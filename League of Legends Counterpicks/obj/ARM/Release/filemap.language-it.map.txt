@@ -3,7 +3,7 @@
 "ResourceDimensions"		"language-it"
 
 [Files]
-"C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\filemap.language-it.pri"			"resources.pri"
-"C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\it\System.Spatial.resources.dll"			"it\System.Spatial.resources.dll"
-"C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\it\Microsoft.Data.OData.resources.dll"			"it\Microsoft.Data.OData.resources.dll"
-"C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\it\Microsoft.Data.Edm.resources.dll"			"it\Microsoft.Data.Edm.resources.dll"
+"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\filemap.language-it.pri"			"resources.pri"
+"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\it\System.Spatial.resources.dll"			"it\System.Spatial.resources.dll"
+"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\it\Microsoft.Data.OData.resources.dll"			"it\Microsoft.Data.OData.resources.dll"
+"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\it\Microsoft.Data.Edm.resources.dll"			"it\Microsoft.Data.Edm.resources.dll"

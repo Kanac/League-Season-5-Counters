@@ -77,6 +77,17 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
+						<Run Text="August 20 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Fixed most crashing issues and significantly improved responsiveness of app"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Lowered Toast Notification frequency and now applies for specific user situations"></Run>
+                        <LineBreak></LineBreak>
+                         <Run Text="-Lowered IAP purchase notification frequency significantly"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
 						<Run Text="August 17 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">

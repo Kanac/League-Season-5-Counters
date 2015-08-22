@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Roots >
+<Roots xmlns="clr-namespace:Microsoft.Xaml.Tools.XamlCompiler.RootLog;assembly=Microsoft.Windows.UI.Xaml.81.Build.Tasks">
   <Roots.Interfaces>
     <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
   </Roots.Interfaces>
@@ -34,6 +34,26 @@
     <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
       <RootProperty Name="ImageSource" />
     </RootType>
+    <RootType FullName="Microsoft.Advertising.Mobile.UI.AdControl">
+      <RootProperty Name="ApplicationId" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="AutoRefreshIntervalInSeconds" />
+      <RootProperty Name="AdUnitId" />
+      <RootProperty Name="IsAutoRefreshEnabled" />
+      <RootEvent Name="Loaded" />
+      <RootEvent Name="ErrorOccurred" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Property" />
+      <RootProperty Name="Value" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Background" />
       <RootProperty Name="Resources" />
@@ -58,10 +78,6 @@
       <RootProperty Name="Visibility" />
       <RootProperty Name="FontWeight" />
       <RootEvent Name="Loaded" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Setter">
-      <RootProperty Name="Property" />
-      <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="RowDefinitions" />
@@ -99,18 +115,6 @@
       <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Documents.LineBreak" />
-    <RootType FullName="Microsoft.Advertising.Mobile.UI.AdControl">
-      <RootProperty Name="ApplicationId" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="AutoRefreshIntervalInSeconds" />
-      <RootProperty Name="AdUnitId" />
-      <RootProperty Name="IsAutoRefreshEnabled" />
-      <RootEvent Name="Loaded" />
-      <RootEvent Name="ErrorOccurred" />
-    </RootType>
     <RootType FullName="League_of_Legends_Counterpicks.ChangeLog" />
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="RelativeSource" />
@@ -170,7 +174,6 @@
       <RootProperty Name="Width" />
       <RootEvent Name="Tapped" />
       <RootEvent Name="DataContextChanged" />
-      <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Hub">
       <RootProperty Name="Sections" />

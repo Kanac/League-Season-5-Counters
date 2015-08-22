@@ -186,7 +186,6 @@
   <ProductReservedInfo>
     <MainPackageIdentityName>62206AnthonyC.LeagueCounterpicks</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>League Counterpicks</ReservedName>
       <ReservedName>League Season 5 Counters</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
@@ -197,22 +196,22 @@
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Arm</PackageArchitecture>
-      <PackageMaxArchitectureVersion>2016.8.0.29</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>2016.8.0.30</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>2016.8.0.29</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>2016.8.0.30</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>2016.8.0.29</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>2016.8.0.30</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>2016.8.0.29</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>2016.8.0.30</PackageMaxArchitectureVersion>
     </PackageInfo>
   </PackageInfoList>
 </StoreAssociation>

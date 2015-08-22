@@ -9907,6 +9907,96 @@
             Path cannot be resolved in the given context.
             </summary>
         </member>
+        <member name="T:Microsoft.Data.Edm.TypeCode">
+            <summary>
+            Replacement for TypeCode enum.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.Object">
+            <summary>Indicates that no specific TypeCode exists for this type.</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.Boolean">
+            <summary>Boolean</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.Char">
+            <summary>Char</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.SByte">
+            <summary>Signed 8-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.Byte">
+            <summary>Unsigned 8-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.Int16">
+            <summary>Signed 16-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.UInt16">
+            <summary>Unsigned 16-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.Int32">
+            <summary>Signed 32-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.UInt32">
+            <summary>Unsigned 32-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.Int64">
+            <summary>Signed 64-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.UInt64">
+            <summary>Unsigned 64-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.Single">
+            <summary>IEEE 32-bit float</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.Double">
+            <summary>IEEE 64-bit double</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.Decimal">
+            <summary>Decimal</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.DateTime">
+            <summary>DateTime</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.TypeCode.String">
+            <summary>Unicode character string</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.BindingFlags.IgnoreCase">
+            <summary>Specifies that the case of the member name should not be considered when binding.</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.BindingFlags.DeclaredOnly">
+            <summary>Specifies that only members declared at the level of the supplied type's hierarchy should be
+             considered. Inherited members are not considered.</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.BindingFlags.Instance">
+            <summary>Specifies that instance members are to be included in the search.</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.BindingFlags.Static">
+            <summary>Specifies that static members are to be included in the search.</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.BindingFlags.Public">
+            <summary>Specifies that public members are to be included in the search.</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.BindingFlags.NonPublic">
+            <summary>Specifies that non-public members are to be included in the search.</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.BindingFlags.FlattenHierarchy">
+            <summary>Specifies that public and protected static members up the hierarchy should
+            be returned. Private static members in inherited classes are not returned.
+            Static members include fields, methods, events, and properties. Nested types are not returned.</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.BindingFlags.ExactBinding">
+            <summary>Specifies that types of the supplied arguments must exactly match the types
+            of the corresponding formal parameters. Reflection throws an exception if
+            the caller supplies a non-null Binder object, since that implies that the
+            caller is supplying BindToXXX implementations that will pick the appropriate method.</summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.BindingFlags.OptionalParamBinding">
+            <summary>Returns the set of members whose parameter count matches the number of supplied
+            arguments. This binding flag is used for methods with parameters that have
+            default values and methods with variable arguments (varargs). This flag should
+            only be used with System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[]).
+            </summary>
+        </member>
         <member name="T:Microsoft.Data.Edm.PlatformHelper">
             <summary>
             Helper methods that provide a common API surface on all platforms.
@@ -9925,6 +10015,11 @@
         <member name="F:Microsoft.Data.Edm.PlatformHelper.UriSchemeHttps">
             <summary>
             Replacement for Uri.UriSchemeHttps, which does not exist on.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.PlatformHelper.typeCodeMap">
+            <summary>
+            Map of TypeCodes used with GetTypeCode method. Only initialized if that method is called.
             </summary>
         </member>
         <member name="M:Microsoft.Data.Edm.PlatformHelper.GetAssembly(System.Type)">
@@ -10199,6 +10294,205 @@
             <param name="types">Array of type arguments to check against the constructor parameters.</param>
             <returns>True if the constructor takes arguments of the specified types, otherwise false.</returns>
         </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.IsAssignableFrom(System.Type,System.Type)">
+            <summary>
+            Replacement for Type.IsAssignableFrom(Type)
+            </summary>
+            <param name="thisType">Type on which to call this helper method.</param>
+            <param name="otherType">Type to test for assignability.</param>
+            <returns>See documentation for method being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.IsSubclassOf(System.Type,System.Type)">
+            <summary>
+            Replacement for Type.IsSubclassOf(Type).
+            </summary>
+            <param name="thisType">Type on which to call this helper method.</param>
+            <param name="otherType">Type to test if typeType is a subclass.</param>
+            <returns>True if thisType is a subclass of otherType, otherwise false.</returns>
+            <remarks>
+            TODO: Dev11:279438 is going to add this back to TypeInfo. This method will still be needed since it works on Type, but the 
+                  implementation should just be able to call the TypeInfo version directly instead of the full implementation here.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetMethod(System.Type,System.String)">
+            <summary>
+            Replacement for GetMethod(string).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Method to find on the specified type.</param>
+            <returns>MethodInfo if one was found for the specified type, otherwise false.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetMethod(System.Type,System.String,System.Type[])">
+            <summary>
+            Replacement for Type.GetMethod(string, Type[]).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Name of method to find on the specified type.</param>
+            <param name="types">Array of arguments to the method.</param>
+            <returns>MethodInfo if one was found for the specified type, otherwise false.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetMethodWithGenericArgs(System.Type,System.String,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Gets a MethodInfo from the specified type. Replaces uses of Type.GetMember.
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Name of the method to find.</param>
+            <param name="isPublic">True if the method is public, false otherwise.</param>
+            <param name="isStatic">True if the method is static, false otherwise.</param>
+            <param name="genericArgCount">Number of generics arguments the method has.</param>
+            <returns>MethodInfo for the method that was found.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetProperty(System.Type,System.String,System.Type)">
+            <summary>
+            Replacement for Type.GetProperty(string, Type).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Name of public property to find on the specified type.</param>
+            <param name="returnType">Return type for the property.</param>
+            <returns>PropertyInfo if a property was found on the type with the specified name and return type, otherwise null.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetProperty(System.Type,System.String)">
+            <summary>
+            Replacement for Type.GetProperty(string).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Name of public property to find on the specified type.</param>
+            <returns>PropertyInfo if a property was found on the type with the specified name and return type, otherwise null.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetGetMethod(System.Reflection.PropertyInfo)">
+            <summary>
+            Replacement for PropertyInfo.GetGetMethod().
+            </summary>
+            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
+            <returns>MethodInfo for the public get accessor of the specified PropertyInfo, or null if there is no get accessor or it is non-public.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetSetMethod(System.Reflection.PropertyInfo)">
+            <summary>
+            Replacement for PropertyInfo.GetSetMethod().
+            </summary>
+            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
+            <returns>MethodInfo for the public set accessor of the specified PropertyInfo, or null if there is no set accessor or it is non-public.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetBaseDefinition(System.Reflection.MethodInfo)">
+            <summary>
+            Replacement for MethodInfo.GetBaseDefinition().
+            </summary>
+            <param name="methodInfo">MethodInfo on which to call this helper method.</param>
+            <returns>See documentation for method being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetProperties(System.Type)">
+            <summary>
+            Replacement for Type.GetProperties().
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <returns>Enumerable of all instance and static public properties on the type.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetFields(System.Type)">
+            <summary>
+            Replacement for Type.GetFields(string).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <returns>Enumerable of all public instance fields for the specified type.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetFields(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Replacement for Type.GetFields(bindingAttr).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="isPublic">True if method should search only public fields, false if it should search only non-public fields.</param>
+            <param name="isStatic">True if method should search only static fields, false if it should search only instance fields.</param>
+            <returns>Enumerable of all public instance fields for the specified type.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetCustomAttributes(System.Type,System.Type,System.Boolean)">
+            <summary>
+            Replacement for Type.GetCustomAttributes(Type, bool).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="attributeType">Attribute type to find on the specified type.</param>
+            <param name="inherit">True if the base types should be searched, false otherwise.</param>
+            <returns>See documentation for method being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetCustomAttributes(System.Type,System.Boolean)">
+            <summary>
+            Replacement for Type.GetCustomAttributes(bool).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="inherit">True if the base types should be searched, false otherwise.</param>
+            <returns>See documentation for method being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetGenericArguments(System.Type)">
+            <summary>
+            Replacement for Type.GetGenericArguments().
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <returns>Array of Type objects that represent the type arguments of a generic type or the type parameters of a generic type definition.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetInterfaces(System.Type)">
+            <summary>
+            Replacement for Type.GetInterfaces().
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <returns>See documentation for property being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.IsInstanceOfType(System.Type,System.Object)">
+            <summary>
+            Replacement for Type.IsInstanceOfType(object).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="obj">Object to test to see if it's an instance of the specified type.</param>
+            <returns>See documentation for method being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.Close(System.IO.Stream)">
+            <summary>
+            Replacement for Stream.Close().
+            </summary>
+            <param name="stream">Stream on which to call this helper method.</param>
+            <remarks>
+            Many Close methods have been eliminated on WinRT, the recommended pattern is to just use Dispose instead.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetType(System.Reflection.Assembly,System.String,System.Boolean)">
+            <summary>
+            Replacement for Assembly.GetType(string, bool).
+            </summary>
+            <param name="assembly">Assembly on which to call this helper method.</param>
+            <param name="typeName">Name of the type to get from the assembly.</param>
+            <param name="throwOnError">True if an exception should be thrown if the type cannot be found, otherwise false.</param>
+            <returns>Type instance if the type could be found in the assembly, otherwise null.</returns>
+            <remarks>
+            TODO: Dev11:279441 will add a new method called Assembly.GetDefinedType(string) that returns a TypeInfo and will throw like Assembly.GetType(string, true) used to.
+                  This helper method will still be needed but should be updated to use the new implementation once it exists.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetTypes(System.Reflection.Assembly)">
+            <summary>
+            Replacement for Assembly.GetTypes().
+            </summary>
+            <param name="assembly">Assembly on which to call this helper method.</param>
+            <returns>Enumerable of the types in the assembly.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.GetField(System.Type,System.String)">
+            <summary>
+            Replacement for GetField(string).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Method to find on the specified type.</param>
+            <returns>FieldInfo if one was found for the specified type, otherwise false.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.IsInstance(System.Reflection.PropertyInfo)">
+            <summary>
+            Checks if the specified PropertyInfo is an instance property.
+            </summary>
+            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
+            <returns>True if either the GetMethod or SetMethod for the property is an instance method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.IsPublic(System.Reflection.PropertyInfo)">
+            <summary>
+            Checks if the specified PropertyInfo is a public property.
+            </summary>
+            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
+            <returns>True if either the GetMethod or SetMethod for the property is public.</returns>
+        </member>
         <member name="M:Microsoft.Data.Edm.PlatformHelper.CreateCompiled(System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
             Creates a Compiled Regex expression
@@ -10207,6 +10501,48 @@
             <param name="options">Options to use.</param>
             <returns>Regex expression to match supplied patter</returns>
             <remarks>Is marked as compiled option only in platforms otherwise RegexOption.None is used</remarks>
+        </member>
+        <member name="T:Microsoft.Data.Edm.PlatformHelper.TypeCodeMap">
+            <summary>
+            Manages the type code mapping used to provide the GetTypeCode functionality.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Data.Edm.PlatformHelper.TypeCodeMap.typeCodes">
+            <summary>
+            Dictionary of types and their type codes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.TypeCodeMap.#ctor">
+            <summary>
+            Constructor for the map.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Edm.PlatformHelper.TypeCodeMap.GetTypeCode(System.Type)">
+            <summary>
+            Method that does the lookup in the type map, given a type.
+            </summary>
+            <param name="type">Type for which to find the type code.</param>
+            <returns>TypeCode for the specified type if it's in the map, otherwise TypeCode.Object.</returns>
+        </member>
+        <member name="T:AssemblyRef">
+            <summary>
+            Sets public key string for friend assemblies.
+            </summary>
+        </member>
+        <member name="F:AssemblyRef.ProductPublicKey">
+            <summary>ProductPublicKey is an official MS supported public key for external releases.</summary>
+        </member>
+        <member name="F:AssemblyRef.TestPublicKey">
+            <summary>TestPublicKey is an unsupported strong key for testing and internal use only</summary>
+        </member>
+        <member name="F:AssemblyRef.ProductPublicKeyToken">
+            <summary>Dont know what this is</summary>
+        </member>
+        <member name="F:AssemblyRef.OfficialSilverLightPublicKeyToken">
+            <summary>Used for comparison with external assemblies for silverlight like Microsoft.VisualBasic.</summary>
+        </member>
+        <member name="F:AssemblyRef.OfficialDesktopPublicKeyToken">
+            <summary>Used for comparison with external assemblies for desktop like Microsoft.VisualBasic.</summary>
         </member>
         <member name="T:Microsoft.Data.Edm.EntityRes">
              <summary>

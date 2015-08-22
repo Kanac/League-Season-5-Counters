@@ -152,8 +152,8 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
             _typeNameTable[0] = "Microsoft.Advertising.Mobile.UI.AdControl";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Control";
             _typeNameTable[2] = "String";
-            _typeNameTable[3] = "Int32";
-            _typeNameTable[4] = "Double";
+            _typeNameTable[3] = "Double";
+            _typeNameTable[4] = "Int32";
             _typeNameTable[5] = "Boolean";
             _typeNameTable[6] = "League_of_Legends_Counterpicks.ChangeLog";
             _typeNameTable[7] = "Windows.UI.Xaml.Controls.Page";
@@ -184,8 +184,8 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
             _typeTable[0] = typeof(global::Microsoft.Advertising.Mobile.UI.AdControl);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Control);
             _typeTable[2] = typeof(global::System.String);
-            _typeTable[3] = typeof(global::System.Int32);
-            _typeTable[4] = typeof(global::System.Double);
+            _typeTable[3] = typeof(global::System.Double);
+            _typeTable[4] = typeof(global::System.Int32);
             _typeTable[5] = typeof(global::System.Boolean);
             _typeTable[6] = typeof(global::League_of_Legends_Counterpicks.ChangeLog);
             _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.Page);
@@ -287,14 +287,14 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
             case 0:   //  Microsoft.Advertising.Mobile.UI.AdControl
                 userType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
                 userType.Activator = Activate_0_AdControl;
-                userType.AddMemberName("ApplicationId");
-                userType.AddMemberName("AutoRefreshIntervalInSeconds");
-                userType.AddMemberName("AdUnitId");
                 userType.AddMemberName("Keywords");
                 userType.AddMemberName("Latitude");
                 userType.AddMemberName("Longitude");
                 userType.AddMemberName("CountryOrRegion");
                 userType.AddMemberName("PostalCode");
+                userType.AddMemberName("AutoRefreshIntervalInSeconds");
+                userType.AddMemberName("AdUnitId");
+                userType.AddMemberName("ApplicationId");
                 userType.AddMemberName("IsAutoRefreshEnabled");
                 userType.AddMemberName("IsAutoCollapseEnabled");
                 userType.AddMemberName("IsEngaged");
@@ -312,11 +312,11 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
                 xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Int32
+            case 3:   //  Double
                 xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  Double
+            case 4:   //  Int32
                 xamlType = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
@@ -552,85 +552,85 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
             return foundXamlType;
         }
 
-        private object get_0_AdControl_ApplicationId(object instance)
-        {
-            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
-            return that.ApplicationId;
-        }
-        private void set_0_AdControl_ApplicationId(object instance, object Value)
-        {
-            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
-            that.ApplicationId = (global::System.String)Value;
-        }
-        private object get_1_AdControl_AutoRefreshIntervalInSeconds(object instance)
-        {
-            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
-            return that.AutoRefreshIntervalInSeconds;
-        }
-        private void set_1_AdControl_AutoRefreshIntervalInSeconds(object instance, object Value)
-        {
-            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
-            that.AutoRefreshIntervalInSeconds = (global::System.Int32)Value;
-        }
-        private object get_2_AdControl_AdUnitId(object instance)
-        {
-            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
-            return that.AdUnitId;
-        }
-        private void set_2_AdControl_AdUnitId(object instance, object Value)
-        {
-            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
-            that.AdUnitId = (global::System.String)Value;
-        }
-        private object get_3_AdControl_Keywords(object instance)
+        private object get_0_AdControl_Keywords(object instance)
         {
             var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
             return that.Keywords;
         }
-        private void set_3_AdControl_Keywords(object instance, object Value)
+        private void set_0_AdControl_Keywords(object instance, object Value)
         {
             var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
             that.Keywords = (global::System.String)Value;
         }
-        private object get_4_AdControl_Latitude(object instance)
+        private object get_1_AdControl_Latitude(object instance)
         {
             var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
             return that.Latitude;
         }
-        private void set_4_AdControl_Latitude(object instance, object Value)
+        private void set_1_AdControl_Latitude(object instance, object Value)
         {
             var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
             that.Latitude = (global::System.Double)Value;
         }
-        private object get_5_AdControl_Longitude(object instance)
+        private object get_2_AdControl_Longitude(object instance)
         {
             var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
             return that.Longitude;
         }
-        private void set_5_AdControl_Longitude(object instance, object Value)
+        private void set_2_AdControl_Longitude(object instance, object Value)
         {
             var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
             that.Longitude = (global::System.Double)Value;
         }
-        private object get_6_AdControl_CountryOrRegion(object instance)
+        private object get_3_AdControl_CountryOrRegion(object instance)
         {
             var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
             return that.CountryOrRegion;
         }
-        private void set_6_AdControl_CountryOrRegion(object instance, object Value)
+        private void set_3_AdControl_CountryOrRegion(object instance, object Value)
         {
             var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
             that.CountryOrRegion = (global::System.String)Value;
         }
-        private object get_7_AdControl_PostalCode(object instance)
+        private object get_4_AdControl_PostalCode(object instance)
         {
             var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
             return that.PostalCode;
         }
-        private void set_7_AdControl_PostalCode(object instance, object Value)
+        private void set_4_AdControl_PostalCode(object instance, object Value)
         {
             var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
             that.PostalCode = (global::System.String)Value;
+        }
+        private object get_5_AdControl_AutoRefreshIntervalInSeconds(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.AutoRefreshIntervalInSeconds;
+        }
+        private void set_5_AdControl_AutoRefreshIntervalInSeconds(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.AutoRefreshIntervalInSeconds = (global::System.Int32)Value;
+        }
+        private object get_6_AdControl_AdUnitId(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.AdUnitId;
+        }
+        private void set_6_AdControl_AdUnitId(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.AdUnitId = (global::System.String)Value;
+        }
+        private object get_7_AdControl_ApplicationId(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.ApplicationId;
+        }
+        private void set_7_AdControl_ApplicationId(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.ApplicationId = (global::System.String)Value;
         }
         private object get_8_AdControl_IsAutoRefreshEnabled(object instance)
         {
@@ -765,61 +765,61 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
 
             switch (longMemberName)
             {
-            case "Microsoft.Advertising.Mobile.UI.AdControl.ApplicationId":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "ApplicationId", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_0_AdControl_ApplicationId;
-                xamlMember.Setter = set_0_AdControl_ApplicationId;
-                break;
-            case "Microsoft.Advertising.Mobile.UI.AdControl.AutoRefreshIntervalInSeconds":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "AutoRefreshIntervalInSeconds", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_1_AdControl_AutoRefreshIntervalInSeconds;
-                xamlMember.Setter = set_1_AdControl_AutoRefreshIntervalInSeconds;
-                break;
-            case "Microsoft.Advertising.Mobile.UI.AdControl.AdUnitId":
-                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
-                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "AdUnitId", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_2_AdControl_AdUnitId;
-                xamlMember.Setter = set_2_AdControl_AdUnitId;
-                break;
             case "Microsoft.Advertising.Mobile.UI.AdControl.Keywords":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Keywords", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_3_AdControl_Keywords;
-                xamlMember.Setter = set_3_AdControl_Keywords;
+                xamlMember.Getter = get_0_AdControl_Keywords;
+                xamlMember.Setter = set_0_AdControl_Keywords;
                 break;
             case "Microsoft.Advertising.Mobile.UI.AdControl.Latitude":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Latitude", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_4_AdControl_Latitude;
-                xamlMember.Setter = set_4_AdControl_Latitude;
+                xamlMember.Getter = get_1_AdControl_Latitude;
+                xamlMember.Setter = set_1_AdControl_Latitude;
                 break;
             case "Microsoft.Advertising.Mobile.UI.AdControl.Longitude":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "Longitude", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_5_AdControl_Longitude;
-                xamlMember.Setter = set_5_AdControl_Longitude;
+                xamlMember.Getter = get_2_AdControl_Longitude;
+                xamlMember.Setter = set_2_AdControl_Longitude;
                 break;
             case "Microsoft.Advertising.Mobile.UI.AdControl.CountryOrRegion":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "CountryOrRegion", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_6_AdControl_CountryOrRegion;
-                xamlMember.Setter = set_6_AdControl_CountryOrRegion;
+                xamlMember.Getter = get_3_AdControl_CountryOrRegion;
+                xamlMember.Setter = set_3_AdControl_CountryOrRegion;
                 break;
             case "Microsoft.Advertising.Mobile.UI.AdControl.PostalCode":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
                 xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "PostalCode", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_7_AdControl_PostalCode;
-                xamlMember.Setter = set_7_AdControl_PostalCode;
+                xamlMember.Getter = get_4_AdControl_PostalCode;
+                xamlMember.Setter = set_4_AdControl_PostalCode;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.AutoRefreshIntervalInSeconds":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "AutoRefreshIntervalInSeconds", "Int32");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_AdControl_AutoRefreshIntervalInSeconds;
+                xamlMember.Setter = set_5_AdControl_AutoRefreshIntervalInSeconds;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.AdUnitId":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "AdUnitId", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_6_AdControl_AdUnitId;
+                xamlMember.Setter = set_6_AdControl_AdUnitId;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.ApplicationId":
+                userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlMember(this, "ApplicationId", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_AdControl_ApplicationId;
+                xamlMember.Setter = set_7_AdControl_ApplicationId;
                 break;
             case "Microsoft.Advertising.Mobile.UI.AdControl.IsAutoRefreshEnabled":
                 userType = (global::League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");

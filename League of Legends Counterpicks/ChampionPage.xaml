@@ -34,7 +34,7 @@
                            Source="Assets/upvoteblank.png"
                            Height="30"
                            Width="30"
-                           Loaded="Upvote_Loaded"
+                           DataContextChanged="Upvote_DataLoaded"
                            Tapped="Upvote_Tapped">
                     </Image>
                     <TextBlock Text="{Binding Score}"
@@ -46,7 +46,7 @@
                            Source="Assets/downvoteblank.png"
                            Height="30"
                            Width="30"
-                           Loaded="Downvote_Loaded"
+                           DataContextChanged="Downvote_DataLoaded"
                            Tapped="Downvote_Tapped">
                     </Image>
                 </StackPanel>
@@ -130,7 +130,7 @@
                        Text="{Binding Role}" />
         </Grid>
 
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="2" Margin="0,100,0,0" x:Name="AdGrid">
             <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
                           Width="480"
                           Height="80"
@@ -266,7 +266,108 @@
                           ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
                           AdUnitId="236752" />
+            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237645" />
+            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237646" />
+            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237647" />
+            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237648" />
+            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237649" />
+            <!--<UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237650" />-->
+            <!--<UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237651" />-->
+            <!--<UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237652" />
+            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237653" />
+            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237654" />-->
 
+        </Grid>
+        <Grid Grid.Row="2">
+            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
+                          Width="480"
+                          Height="80"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Loaded="Ad_Loaded"
+                          ErrorOccurred="Ad_Error"
+                          IsAutoRefreshEnabled="False"
+                          AdUnitId="237655" />
         </Grid>
         
         <Hub x:Name="MainHub"
@@ -409,11 +510,11 @@
                                                           Height="80"
                                                           Grid.Row="3"/>-->
 
-                            <TextBlock FontSize="30"
+                        <TextBlock FontSize="30"
                                        HorizontalAlignment="Center"
                                        Style="{StaticResource TitleTextBlockStyle}"
                                        Text="Easy Matchups">
-                            </TextBlock>
+                        </TextBlock>
 
                         <Grid Grid.Row="1">
                             <ProgressRing VerticalAlignment="Center"

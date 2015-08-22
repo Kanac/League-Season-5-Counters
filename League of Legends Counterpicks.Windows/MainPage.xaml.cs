@@ -1,6 +1,5 @@
 ﻿using League_of_Legends_Counterpicks.Common;
 using League_of_Legends_Counterpicks.Data;
-using Microsoft.Advertising.WinRT.UI.XamlAdControl_XamlTypeInfo;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

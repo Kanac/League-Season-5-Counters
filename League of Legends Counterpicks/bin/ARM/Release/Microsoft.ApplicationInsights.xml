@@ -897,6 +897,20 @@
             The class that represents information about performance counters.
             </summary>
         </member>
+        <member name="M:Microsoft.ApplicationInsights.DataContracts.PerformanceCounterTelemetry.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.DataContracts.PerformanceCounterTelemetry"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.DataContracts.PerformanceCounterTelemetry.#ctor(System.String,System.String,System.String,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.DataContracts.PerformanceCounterTelemetry"/> class.
+            </summary>
+            <param name="categoryName">Category name.</param>
+            <param name="counterName">Performance counter name.</param>
+            <param name="instanceName">Instance name.</param>
+            <param name="value">Performance counter value.</param>
+        </member>
         <member name="M:Microsoft.ApplicationInsights.DataContracts.PerformanceCounterTelemetry.Microsoft#ApplicationInsights#Channel#ITelemetry#Sanitize">
             <summary>
             Sanitizes the properties based on constraints.

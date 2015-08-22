@@ -402,7 +402,7 @@
         <member name="T:Microsoft.Data.OData.Query.BindingState">
             <summary>
             Encapsulates the state of metadata binding.
-            TODO finish moving fields from MetadataBinder here and see if anything can be removed.
+            TODO : finish moving fields from MetadataBinder here and see if anything can be removed.
             </summary>
         </member>
         <member name="F:Microsoft.Data.OData.Query.BindingState.configuration">
@@ -2376,7 +2376,7 @@
         <member name="T:Microsoft.Data.OData.Query.FunctionCallParser">
             <summary>
             Implementation of IFunctionCallParser that allows functions calls and parses arguments with a provided method.
-            TODO This inmplementaiton is incomplete.
+            TODO : This implementation is incomplete.
             </summary>
         </member>
         <member name="T:Microsoft.Data.OData.Query.IFunctionCallParser">
@@ -2684,7 +2684,7 @@
         <member name="F:Microsoft.Data.OData.Query.KeyBinder.keyValueBindMethod">
             <summary>
             Method to bind the value of a key.
-            TODO Make it of return type SingleValueQueryNode.
+            TODO : Make it of return type SingleValueQueryNode.
             </summary>
         </member>
         <member name="M:Microsoft.Data.OData.Query.KeyBinder.#ctor(Microsoft.Data.OData.Query.MetadataBinder.QueryTokenVisitor)">
@@ -4569,7 +4569,7 @@
         <member name="F:Microsoft.Data.OData.Query.EndPathBinder.bind">
             <summary>
             Method to bind the value of a key.
-            TODO Make it of return type SingleValueQueryNode.
+            TODO : Make it of return type SingleValueQueryNode.
             </summary>
         </member>
         <member name="F:Microsoft.Data.OData.Query.EndPathBinder.functionCallBinder">
@@ -5918,7 +5918,7 @@
             <summary>
             Gets the <see cref="P:Microsoft.Data.OData.Query.SemanticAst.SelectExpandClause.Selection"/> object that describes what properties and functions should be selected from the associated <see cref="T:Microsoft.Data.Edm.IEdmEntityType"/>.
             
-            TODO Note that this is a legacy internal concept. 
+            TODO : Note that this is a legacy internal concept. 
             At the last minute we changed the public API but chose not to change how the implementation work to manage risk.
             We should clean this up and remove this property.
             </summary>
@@ -5927,7 +5927,7 @@
             <summary>
             Mapping that contains the set of navigation properties for the associated entity that should be expanded, and respective details about the expansions. 
             
-            TODO Note that this is a legacy internal concept. 
+            TODO : Note that this is a legacy internal concept. 
             At the last minute we changed the public API but chose not to change how the implementation work to manage risk.
             We should clean this up and remove this property.
             </summary>
@@ -10895,7 +10895,7 @@
         <member name="T:Microsoft.Data.OData.Query.MetadataBinder.QueryTokenVisitor">
             <summary>
             Delegate for a function that visits a QueryToken and translates it into a bound QueryNode.
-            TODO Eventually replace this with a real interface for a visitor.
+            TODO : Eventually replace this with a real interface for a visitor.
             </summary>
             <param name="token">QueryToken to visit.</param>
             <returns>Metadata bound QueryNode.</returns>
@@ -11502,7 +11502,7 @@
         <member name="T:Microsoft.Data.OData.Query.SemanticAst.EntitySetNode">
             <summary>
             Node representing an entity set.
-            TODO This should be deleted but it is used in many, many tests.
+            TODO : This should be deleted but it is used in many, many tests.
             </summary>
         </member>
         <member name="F:Microsoft.Data.OData.Query.SemanticAst.EntitySetNode.entitySet">
@@ -13069,6 +13069,12 @@
             Post-Condition: XmlNodeType.Element    - The element to read properties from if it is an empty element.
                             XmlNodeType.EndElement - The end element of the element to read properties from.
             </remarks>
+        </member>
+        <member name="M:Microsoft.Data.OData.Atom.ODataAtomPropertyAndValueDeserializer.ReadUndeclarePropertyOrSkip">
+            <summary>
+            Reads undeclared property in an element (primitive type value, or null value of complex type)
+            </summary>
+            <returns>The result ODataProperty.</returns>
         </member>
         <member name="M:Microsoft.Data.OData.Atom.ODataAtomPropertyAndValueDeserializer.ReadProperty(System.String,Microsoft.Data.Edm.IEdmTypeReference,Microsoft.Data.OData.Metadata.ODataNullValueBehaviorKind,System.Boolean)">
             <summary>
@@ -21007,7 +21013,7 @@
         </member>
         <member name="M:Microsoft.Data.OData.Evaluation.EdmValueUtils.ConvertPrimitiveValueWithoutTypeCode(System.Object,Microsoft.Data.Edm.IEdmPrimitiveTypeReference)">
             <summary>
-            Convert a primitive value which didn't match any of the known values of the <see cref="T:System.TypeCode"/> enumeration.
+            Convert a primitive value which didn't match any of the known values of the <see cref="T:Microsoft.Data.OData.TypeCode"/> enumeration.
             </summary>
             <param name="primitiveValue">The value to convert.</param>
             <param name="type">The expected primitive type or null.</param>
@@ -29025,23 +29031,8 @@
             <param name="count">The number of bytes to read.</param>
             <returns>The number of bytes actually read.</returns>
         </member>
-        <member name="M:Microsoft.Data.OData.MessageStreamWrapper.MessageStreamWrappingStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
-            <summary>
-            Begins a read operation from the stream.
-            </summary>
-            <param name="buffer">The buffer to read the data to.</param>
-            <param name="offset">The offset in the buffer to write to.</param>
-            <param name="count">The number of bytes to read.</param>
-            <param name="callback">The async callback.</param>
-            <param name="state">The async state.</param>
-            <returns>Async result representing the asynchornous operation.</returns>
-        </member>
-        <member name="M:Microsoft.Data.OData.MessageStreamWrapper.MessageStreamWrappingStream.EndRead(System.IAsyncResult)">
-            <summary>
-            Ends a read operation from the stream.
-            </summary>
-            <param name="asyncResult">The async result representing the read operation.</param>
-            <returns>The number of bytes actually read.</returns>
+        <member name="M:Microsoft.Data.OData.MessageStreamWrapper.MessageStreamWrappingStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
         </member>
         <member name="M:Microsoft.Data.OData.MessageStreamWrapper.MessageStreamWrappingStream.Seek(System.Int64,System.IO.SeekOrigin)">
             <summary>
@@ -29065,22 +29056,8 @@
             <param name="offset">The offset in the buffer to start from.</param>
             <param name="count">The number of bytes to write.</param>
         </member>
-        <member name="M:Microsoft.Data.OData.MessageStreamWrapper.MessageStreamWrappingStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
-            <summary>
-            Begins an asynchronous write operation to the stream.
-            </summary>
-            <param name="buffer">The buffer to get data from.</param>
-            <param name="offset">The offset in the buffer to start from.</param>
-            <param name="count">The number of bytes to write.</param>
-            <param name="callback">The async callback.</param>
-            <param name="state">The async state.</param>
-            <returns>Async result representing the write operation.</returns>
-        </member>
-        <member name="M:Microsoft.Data.OData.MessageStreamWrapper.MessageStreamWrappingStream.EndWrite(System.IAsyncResult)">
-            <summary>
-            Ends the asynchronous write operation.
-            </summary>
-            <param name="asyncResult">Async result representing the write operation.</param>
+        <member name="M:Microsoft.Data.OData.MessageStreamWrapper.MessageStreamWrappingStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
         </member>
         <member name="M:Microsoft.Data.OData.MessageStreamWrapper.MessageStreamWrappingStream.Dispose(System.Boolean)">
             <summary>
@@ -30428,23 +30405,8 @@
             <param name="count">The number of bytes to read.</param>
             <returns>The number of bytes actually read.</returns>
         </member>
-        <member name="M:Microsoft.Data.OData.NonDisposingStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
-            <summary>
-            Begins a read operation from the stream.
-            </summary>
-            <param name="buffer">The buffer to read the data to.</param>
-            <param name="offset">The offset in the buffer to write to.</param>
-            <param name="count">The number of bytes to read.</param>
-            <param name="callback">The async callback.</param>
-            <param name="state">The async state.</param>
-            <returns>Async result representing the asynchornous operation.</returns>
-        </member>
-        <member name="M:Microsoft.Data.OData.NonDisposingStream.EndRead(System.IAsyncResult)">
-            <summary>
-            Ends a read operation from the stream.
-            </summary>
-            <param name="asyncResult">The async result representing the read operation.</param>
-            <returns>The number of bytes actually read.</returns>
+        <member name="M:Microsoft.Data.OData.NonDisposingStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
         </member>
         <member name="M:Microsoft.Data.OData.NonDisposingStream.Seek(System.Int64,System.IO.SeekOrigin)">
             <summary>
@@ -30468,22 +30430,8 @@
             <param name="offset">The offset in the buffer to start from.</param>
             <param name="count">The number of bytes to write.</param>
         </member>
-        <member name="M:Microsoft.Data.OData.NonDisposingStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
-            <summary>
-            Begins an asynchronous write operation to the stream.
-            </summary>
-            <param name="buffer">The buffer to get data from.</param>
-            <param name="offset">The offset in the buffer to start from.</param>
-            <param name="count">The number of bytes to write.</param>
-            <param name="callback">The async callback.</param>
-            <param name="state">The async state.</param>
-            <returns>Async result representing the write operation.</returns>
-        </member>
-        <member name="M:Microsoft.Data.OData.NonDisposingStream.EndWrite(System.IAsyncResult)">
-            <summary>
-            Ends the asynchronous write operation.
-            </summary>
-            <param name="asyncResult">Async result representing the write operation.</param>
+        <member name="M:Microsoft.Data.OData.NonDisposingStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
         </member>
         <member name="P:Microsoft.Data.OData.NonDisposingStream.CanRead">
             <summary>
@@ -31392,22 +31340,8 @@
             <param name="offset">The offset in the buffer to start from.</param>
             <param name="count">The number of bytes to write.</param>
         </member>
-        <member name="M:Microsoft.Data.OData.ODataBatchOperationWriteStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
-            <summary>
-            Writes to the stream.
-            </summary>
-            <param name="buffer">The buffer to get data from.</param>
-            <param name="offset">The offset in the buffer to start from.</param>
-            <param name="count">The number of bytes to write.</param>
-            <param name="callback">The callback to be called when the asynchronous operation completes.</param>
-            <param name="state">A custom state object to be associated with the asynchronous operation.</param>
-            <returns>An <see cref="T:System.IAsyncResult"/> for the asynchronous writing of the buffer to the stream.</returns>
-        </member>
-        <member name="M:Microsoft.Data.OData.ODataBatchOperationWriteStream.EndWrite(System.IAsyncResult)">
-            <summary>
-            Finish the asynchronous write operation.
-            </summary>
-            <param name="asyncResult">The <see cref="T:System.IAsyncResult"/> returned from BaginWrite.</param>
+        <member name="M:Microsoft.Data.OData.ODataBatchOperationWriteStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
         </member>
         <member name="M:Microsoft.Data.OData.ODataBatchOperationWriteStream.Read(System.Byte[],System.Int32,System.Int32)">
             <summary>
@@ -40397,7 +40331,7 @@
             <param name="model">The model to use.</param>
             <param name="messageReaderSettings">The message reader settings to use.</param>
             <param name="version">The version of the payload being read.</param>
-            <param name="typeKindFromPayloadFunc">A func to compute the type kind from the payload shape if it could not be determined from the expected type or the payload type.</param>
+            <param name="typeKindPeekedFromPayloadFunc">A func to compute the type kind from the payload shape if it could not be determined from the expected type or the payload type.</param>
             <param name="targetTypeKind">The target type kind to be used to read the payload.</param>
             <param name="serializationTypeNameAnnotation">Potentially non-null instance of an annotation to put on the value reported from the reader.</param>
             <returns>
@@ -50392,6 +50326,96 @@
             Returns already completed task instance.
             </summary>
         </member>
+        <member name="T:Microsoft.Data.OData.TypeCode">
+            <summary>
+            Replacement for TypeCode enum.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.Object">
+            <summary>Indicates that no specific TypeCode exists for this type.</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.Boolean">
+            <summary>Boolean</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.Char">
+            <summary>Char</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.SByte">
+            <summary>Signed 8-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.Byte">
+            <summary>Unsigned 8-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.Int16">
+            <summary>Signed 16-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.UInt16">
+            <summary>Unsigned 16-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.Int32">
+            <summary>Signed 32-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.UInt32">
+            <summary>Unsigned 32-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.Int64">
+            <summary>Signed 64-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.UInt64">
+            <summary>Unsigned 64-bit integer</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.Single">
+            <summary>IEEE 32-bit float</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.Double">
+            <summary>IEEE 64-bit double</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.Decimal">
+            <summary>Decimal</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.DateTime">
+            <summary>DateTime</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.TypeCode.String">
+            <summary>Unicode character string</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.BindingFlags.IgnoreCase">
+            <summary>Specifies that the case of the member name should not be considered when binding.</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.BindingFlags.DeclaredOnly">
+            <summary>Specifies that only members declared at the level of the supplied type's hierarchy should be
+             considered. Inherited members are not considered.</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.BindingFlags.Instance">
+            <summary>Specifies that instance members are to be included in the search.</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.BindingFlags.Static">
+            <summary>Specifies that static members are to be included in the search.</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.BindingFlags.Public">
+            <summary>Specifies that public members are to be included in the search.</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.BindingFlags.NonPublic">
+            <summary>Specifies that non-public members are to be included in the search.</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.BindingFlags.FlattenHierarchy">
+            <summary>Specifies that public and protected static members up the hierarchy should
+            be returned. Private static members in inherited classes are not returned.
+            Static members include fields, methods, events, and properties. Nested types are not returned.</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.BindingFlags.ExactBinding">
+            <summary>Specifies that types of the supplied arguments must exactly match the types
+            of the corresponding formal parameters. Reflection throws an exception if
+            the caller supplies a non-null Binder object, since that implies that the
+            caller is supplying BindToXXX implementations that will pick the appropriate method.</summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.BindingFlags.OptionalParamBinding">
+            <summary>Returns the set of members whose parameter count matches the number of supplied
+            arguments. This binding flag is used for methods with parameters that have
+            default values and methods with variable arguments (varargs). This flag should
+            only be used with System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[]).
+            </summary>
+        </member>
         <member name="T:Microsoft.Data.OData.PlatformHelper">
             <summary>
             Helper methods that provide a common API surface on all platforms.
@@ -50410,6 +50434,11 @@
         <member name="F:Microsoft.Data.OData.PlatformHelper.UriSchemeHttps">
             <summary>
             Replacement for Uri.UriSchemeHttps, which does not exist on.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.PlatformHelper.typeCodeMap">
+            <summary>
+            Map of TypeCodes used with GetTypeCode method. Only initialized if that method is called.
             </summary>
         </member>
         <member name="M:Microsoft.Data.OData.PlatformHelper.GetAssembly(System.Type)">
@@ -50684,6 +50713,205 @@
             <param name="types">Array of type arguments to check against the constructor parameters.</param>
             <returns>True if the constructor takes arguments of the specified types, otherwise false.</returns>
         </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.IsAssignableFrom(System.Type,System.Type)">
+            <summary>
+            Replacement for Type.IsAssignableFrom(Type)
+            </summary>
+            <param name="thisType">Type on which to call this helper method.</param>
+            <param name="otherType">Type to test for assignability.</param>
+            <returns>See documentation for method being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.IsSubclassOf(System.Type,System.Type)">
+            <summary>
+            Replacement for Type.IsSubclassOf(Type).
+            </summary>
+            <param name="thisType">Type on which to call this helper method.</param>
+            <param name="otherType">Type to test if typeType is a subclass.</param>
+            <returns>True if thisType is a subclass of otherType, otherwise false.</returns>
+            <remarks>
+            TODO: Dev11:279438 is going to add this back to TypeInfo. This method will still be needed since it works on Type, but the 
+                  implementation should just be able to call the TypeInfo version directly instead of the full implementation here.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetMethod(System.Type,System.String)">
+            <summary>
+            Replacement for GetMethod(string).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Method to find on the specified type.</param>
+            <returns>MethodInfo if one was found for the specified type, otherwise false.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetMethod(System.Type,System.String,System.Type[])">
+            <summary>
+            Replacement for Type.GetMethod(string, Type[]).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Name of method to find on the specified type.</param>
+            <param name="types">Array of arguments to the method.</param>
+            <returns>MethodInfo if one was found for the specified type, otherwise false.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetMethodWithGenericArgs(System.Type,System.String,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Gets a MethodInfo from the specified type. Replaces uses of Type.GetMember.
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Name of the method to find.</param>
+            <param name="isPublic">True if the method is public, false otherwise.</param>
+            <param name="isStatic">True if the method is static, false otherwise.</param>
+            <param name="genericArgCount">Number of generics arguments the method has.</param>
+            <returns>MethodInfo for the method that was found.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetProperty(System.Type,System.String,System.Type)">
+            <summary>
+            Replacement for Type.GetProperty(string, Type).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Name of public property to find on the specified type.</param>
+            <param name="returnType">Return type for the property.</param>
+            <returns>PropertyInfo if a property was found on the type with the specified name and return type, otherwise null.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetProperty(System.Type,System.String)">
+            <summary>
+            Replacement for Type.GetProperty(string).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Name of public property to find on the specified type.</param>
+            <returns>PropertyInfo if a property was found on the type with the specified name and return type, otherwise null.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetGetMethod(System.Reflection.PropertyInfo)">
+            <summary>
+            Replacement for PropertyInfo.GetGetMethod().
+            </summary>
+            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
+            <returns>MethodInfo for the public get accessor of the specified PropertyInfo, or null if there is no get accessor or it is non-public.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetSetMethod(System.Reflection.PropertyInfo)">
+            <summary>
+            Replacement for PropertyInfo.GetSetMethod().
+            </summary>
+            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
+            <returns>MethodInfo for the public set accessor of the specified PropertyInfo, or null if there is no set accessor or it is non-public.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetBaseDefinition(System.Reflection.MethodInfo)">
+            <summary>
+            Replacement for MethodInfo.GetBaseDefinition().
+            </summary>
+            <param name="methodInfo">MethodInfo on which to call this helper method.</param>
+            <returns>See documentation for method being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetProperties(System.Type)">
+            <summary>
+            Replacement for Type.GetProperties().
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <returns>Enumerable of all instance and static public properties on the type.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetFields(System.Type)">
+            <summary>
+            Replacement for Type.GetFields(string).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <returns>Enumerable of all public instance fields for the specified type.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetFields(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Replacement for Type.GetFields(bindingAttr).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="isPublic">True if method should search only public fields, false if it should search only non-public fields.</param>
+            <param name="isStatic">True if method should search only static fields, false if it should search only instance fields.</param>
+            <returns>Enumerable of all public instance fields for the specified type.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetCustomAttributes(System.Type,System.Type,System.Boolean)">
+            <summary>
+            Replacement for Type.GetCustomAttributes(Type, bool).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="attributeType">Attribute type to find on the specified type.</param>
+            <param name="inherit">True if the base types should be searched, false otherwise.</param>
+            <returns>See documentation for method being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetCustomAttributes(System.Type,System.Boolean)">
+            <summary>
+            Replacement for Type.GetCustomAttributes(bool).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="inherit">True if the base types should be searched, false otherwise.</param>
+            <returns>See documentation for method being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetGenericArguments(System.Type)">
+            <summary>
+            Replacement for Type.GetGenericArguments().
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <returns>Array of Type objects that represent the type arguments of a generic type or the type parameters of a generic type definition.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetInterfaces(System.Type)">
+            <summary>
+            Replacement for Type.GetInterfaces().
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <returns>See documentation for property being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.IsInstanceOfType(System.Type,System.Object)">
+            <summary>
+            Replacement for Type.IsInstanceOfType(object).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="obj">Object to test to see if it's an instance of the specified type.</param>
+            <returns>See documentation for method being accessed in the body of the method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.Close(System.IO.Stream)">
+            <summary>
+            Replacement for Stream.Close().
+            </summary>
+            <param name="stream">Stream on which to call this helper method.</param>
+            <remarks>
+            Many Close methods have been eliminated on WinRT, the recommended pattern is to just use Dispose instead.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetType(System.Reflection.Assembly,System.String,System.Boolean)">
+            <summary>
+            Replacement for Assembly.GetType(string, bool).
+            </summary>
+            <param name="assembly">Assembly on which to call this helper method.</param>
+            <param name="typeName">Name of the type to get from the assembly.</param>
+            <param name="throwOnError">True if an exception should be thrown if the type cannot be found, otherwise false.</param>
+            <returns>Type instance if the type could be found in the assembly, otherwise null.</returns>
+            <remarks>
+            TODO: Dev11:279441 will add a new method called Assembly.GetDefinedType(string) that returns a TypeInfo and will throw like Assembly.GetType(string, true) used to.
+                  This helper method will still be needed but should be updated to use the new implementation once it exists.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetTypes(System.Reflection.Assembly)">
+            <summary>
+            Replacement for Assembly.GetTypes().
+            </summary>
+            <param name="assembly">Assembly on which to call this helper method.</param>
+            <returns>Enumerable of the types in the assembly.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.GetField(System.Type,System.String)">
+            <summary>
+            Replacement for GetField(string).
+            </summary>
+            <param name="type">Type on which to call this helper method.</param>
+            <param name="name">Method to find on the specified type.</param>
+            <returns>FieldInfo if one was found for the specified type, otherwise false.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.IsInstance(System.Reflection.PropertyInfo)">
+            <summary>
+            Checks if the specified PropertyInfo is an instance property.
+            </summary>
+            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
+            <returns>True if either the GetMethod or SetMethod for the property is an instance method.</returns>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.IsPublic(System.Reflection.PropertyInfo)">
+            <summary>
+            Checks if the specified PropertyInfo is a public property.
+            </summary>
+            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
+            <returns>True if either the GetMethod or SetMethod for the property is public.</returns>
+        </member>
         <member name="M:Microsoft.Data.OData.PlatformHelper.CreateCompiled(System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
             Creates a Compiled Regex expression
@@ -50692,6 +50920,48 @@
             <param name="options">Options to use.</param>
             <returns>Regex expression to match supplied patter</returns>
             <remarks>Is marked as compiled option only in platforms otherwise RegexOption.None is used</remarks>
+        </member>
+        <member name="T:Microsoft.Data.OData.PlatformHelper.TypeCodeMap">
+            <summary>
+            Manages the type code mapping used to provide the GetTypeCode functionality.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Data.OData.PlatformHelper.TypeCodeMap.typeCodes">
+            <summary>
+            Dictionary of types and their type codes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.TypeCodeMap.#ctor">
+            <summary>
+            Constructor for the map.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.OData.PlatformHelper.TypeCodeMap.GetTypeCode(System.Type)">
+            <summary>
+            Method that does the lookup in the type map, given a type.
+            </summary>
+            <param name="type">Type for which to find the type code.</param>
+            <returns>TypeCode for the specified type if it's in the map, otherwise TypeCode.Object.</returns>
+        </member>
+        <member name="T:AssemblyRef">
+            <summary>
+            Sets public key string for friend assemblies.
+            </summary>
+        </member>
+        <member name="F:AssemblyRef.ProductPublicKey">
+            <summary>ProductPublicKey is an official MS supported public key for external releases.</summary>
+        </member>
+        <member name="F:AssemblyRef.TestPublicKey">
+            <summary>TestPublicKey is an unsupported strong key for testing and internal use only</summary>
+        </member>
+        <member name="F:AssemblyRef.ProductPublicKeyToken">
+            <summary>Dont know what this is</summary>
+        </member>
+        <member name="F:AssemblyRef.OfficialSilverLightPublicKeyToken">
+            <summary>Used for comparison with external assemblies for silverlight like Microsoft.VisualBasic.</summary>
+        </member>
+        <member name="F:AssemblyRef.OfficialDesktopPublicKeyToken">
+            <summary>Used for comparison with external assemblies for desktop like Microsoft.VisualBasic.</summary>
         </member>
         <member name="T:Microsoft.Data.OData.TextRes">
              <summary>

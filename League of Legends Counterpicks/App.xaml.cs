@@ -23,6 +23,7 @@ using Windows.ApplicationModel.Background;
 using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.ApplicationInsights;
 using Windows.ApplicationModel.Store;
+using System.Diagnostics;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -67,11 +68,19 @@ namespace League_of_Legends_Counterpicks
 #else
             licenseInformation = CurrentApp.LicenseInformation;
 #endif
+            this.UnhandledException += this.Application_UnhandledException;
 
             // Setup toast for 1 hour after app initializing 
-            setupToastOnLaunch();
+            // setupToastOnLaunch();
 
 
+
+        }
+
+        private void Application_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            Debug.WriteLine(e.Message);
+            e.Handled = true;
 
         }
 

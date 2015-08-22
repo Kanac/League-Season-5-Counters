@@ -19,6 +19,7 @@ using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
 using Windows.Storage;
 using Windows.System;
+using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -42,14 +43,13 @@ namespace League_of_Legends_Counterpicks
         private bool firstLoad = true;
         private List<AdControl> adList = new List<AdControl>();
         private DispatcherTimer dispatcherTimer;
-        private string roleId, savedRoleId;
+        private string navigationRole, savedRoleId;
         private int sectionIndex;
-        private int adRetryCount;
 
         public RolePage()
         {
             this.InitializeComponent();
-            this.NavigationCacheMode = NavigationCacheMode.Required;
+            //this.NavigationCacheMode = NavigationCacheMode.Required;
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
@@ -85,17 +85,18 @@ namespace League_of_Legends_Counterpicks
         /// session.  The state will be null the first time a page is visited.</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)  //e is the unique ID
         {
-            //Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
+            // Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
 
-            adRetryCount = 0;
             reviewApp();
-            // Check if the navigation paramater changes to determine the roleId to use, otherwise use the roleId set by navigating to ChampionPage
-            if ((string)e.NavigationParameter != savedRoleId) {
-                roleId = e.NavigationParameter as string;
-                savedRoleId = roleId;
-            }
+            string roleId;
+            navigationRole = e.NavigationParameter as string;
+            // If navigating from main page, use that role selected, otherwise use the saved role prior to navigating to champion page
+            if (e.PageState == null || navigationRole != (string)e.PageState["NavigationRole"])
+                roleId = navigationRole;
+            else
+                roleId = (string)e.PageState["savedRoleId"];
 
             // Gets a reference to all the roles -- no data is seralized again (already done on main page load)
             roles = await DataSource.GetRolesAsync();  
@@ -114,7 +115,7 @@ namespace League_of_Legends_Counterpicks
                 MainHub.DefaultSectionIndex = sectionIndex;
             else
                 MainHub.ScrollToSection(MainHub.Sections.ElementAt(sectionIndex));
-            
+
             // Set up timer refresh rate of 30 seconds for ads (or use existing one)
             setupAdTimer();
         }
@@ -129,7 +130,8 @@ namespace League_of_Legends_Counterpicks
         /// serializable state.</param>
         private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
-            // TODO: Save the unique state of the page here.
+            e.PageState["savedRoleId"] = savedRoleId;
+            e.PageState["NavigationRole"] = navigationRole;
         }
 
         /// <summary>
@@ -139,20 +141,15 @@ namespace League_of_Legends_Counterpicks
         /// <param name="e">Event data that describes the item clicked.</param>
         /// 
 
-        private void ItemView_ItemClick(object sender, ItemClickEventArgs e)
+        private async void ItemView_ItemClick(object sender, ItemClickEventArgs e)
         {
             //Ask user to purchase ad removal before proceeding
             checkAdRemoval();
             //Store the hub section before proceeding to champion page, so that the back button goes back to it
-            roleId = MainHub.SectionsInView[0].Name;
+            savedRoleId = MainHub.SectionsInView[0].Name;
 
             var championId = ((Champion)e.ClickedItem).UniqueId;
-            if (!Frame.Navigate(typeof(ChampionPage), championId))
-            {
-                var resourceLoader = ResourceLoader.GetForCurrentView("Resources");
-                throw new Exception(resourceLoader.GetString("NavigationFailedExceptionMessage"));
-            }
-
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(ChampionPage), championId));
         }
 
         #region NavigationHelper registration
@@ -179,6 +176,12 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.OnNavigatedFrom(e);
         }
 
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        {
+            dispatcherTimer.Stop();
+            AdGrid.Children.Clear();
+            base.OnNavigatingFrom(e);
+        }
         #endregion
 
         //Purpose of this is to load the role page twice since there is a bug with the Qkit jumpList that doesnt render properly on first load
@@ -220,6 +223,11 @@ namespace League_of_Legends_Counterpicks
             // Check if the ad list already has a reference to this ad before inserting
             if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
                 adList.Add(ad);
+
+            if ((ad.Parent as Grid).Margin.Top != 0){
+                double margin = adList.IndexOf(ad) * 85;
+                ad.Margin = new Thickness(0, margin, 0, 0);
+            }
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
@@ -284,8 +292,8 @@ namespace League_of_Legends_Counterpicks
 
                 int viewCount = Convert.ToInt32(localSettings.Values["AdViews"]);
 
-                //Only ask for IAP purchase up to several times, once every 6 times this page is visited, and do not ask anymore once bought
-                if (viewCount % 4 == 0 && viewCount <= 100)
+                //Only ask for IAP purchase up to several times, once every 25 times this page is visited, and do not ask anymore once bought
+                if (viewCount % 25 == 0 && viewCount <= 100)
                 {
                     var purchaseBox = new MessageDialog("See more counters, easy matchups and synergy picks for each champion at once! Remove ads now!");
                     purchaseBox.Commands.Add(new UICommand { Label = "Yes! :)", Id = 0 });
@@ -315,7 +323,7 @@ namespace League_of_Legends_Counterpicks
             int viewCount = Convert.ToInt32(localSettings.Values["Views"]);
 
 
-            //Only ask for review up to 10 times, once every 5 times this page is visited, and do not ask anymore once reviewed
+            //Only ask for review up to several times, once every 4 times this page is visited, and do not ask anymore once reviewed
             if (viewCount % 4 == 0 && viewCount <= 50 && Convert.ToInt32(localSettings.Values["Rate"]) != 1)
             {
                 var reviewBox = new MessageDialog("Keep updates coming by rating this app 5 stars to support us!");

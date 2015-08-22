@@ -3,4 +3,4 @@
 "ResourceDimensions"		"language-da-dk"
 
 [Files]
-"C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\split.language-da.pri"			"resources.pri"
+"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\split.language-da.pri"			"resources.pri"

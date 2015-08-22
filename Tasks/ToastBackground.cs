@@ -12,7 +12,7 @@ namespace Tasks
     {
         public void Run(IBackgroundTaskInstance taskInstance)
         {
-            //Check if a background toast is already scheduled
+            // Check if a background toast is already scheduled
             if (ToastNotificationManager.CreateToastNotifier().GetScheduledToastNotifications().Select(x => x.Id = "Background").Count() > 0)  {
                 return;
             }
@@ -22,7 +22,7 @@ namespace Tasks
 
             XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
             toastTextElements[0].AppendChild(toastXml.CreateTextNode("League of Legends"));
-            toastTextElements[1].AppendChild(toastXml.CreateTextNode("Use this app to win!"));
+            toastTextElements[1].AppendChild(toastXml.CreateTextNode("New Champion data has arrived. Keep up with the Meta now!"));
 
             IXmlNode toastNode = toastXml.SelectSingleNode("/toast");
             XmlElement audio = toastXml.CreateElement("audio");

@@ -46,8 +46,6 @@ namespace League_of_Legends_Counterpicks
         private readonly ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView("Resources");
         private List<AdControl> adList = new List<AdControl>();
         private DispatcherTimer dispatcherTimer;
-        private Boolean firstLoad = true;
-        private int adRetryCount;
 
         public MainPage()
         {
@@ -56,7 +54,7 @@ namespace League_of_Legends_Counterpicks
             // Hub is only supported in Portrait orientation
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
 
-            this.NavigationCacheMode = NavigationCacheMode.Required;
+            //this.NavigationCacheMode = NavigationCacheMode.Required;
 
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
@@ -97,24 +95,20 @@ namespace League_of_Legends_Counterpicks
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
 
-            adRetryCount = 0;
             // Load all the roles (which contains all the champions) from the json file 
-            var roles = await DataSource.GetRolesAsync() ;    
-            this.DefaultViewModel["Roles"] = roles;     
+            var roles = await DataSource.GetRolesAsync();
+            this.DefaultViewModel["Roles"] = roles;
 
             // Toast background task setup 
-            await setupToast();
+            if (e.PageState == null || (bool)e.PageState["firstLoad"] == true)
+                await setupToast();
 
             // Set up timer refresh rate of 30 seconds for ads (or use existing one)
             setupAdTimer();
-
-            //Set a flag to prevent excess toast background task setup
-            firstLoad = false;
         }
 
         private async Task setupToast()
         {
-            firstLoad = false;
             CheckAppVersion();
             var toastTaskName = "ToastBackgroundTask";
             var taskRegistered = false;
@@ -151,20 +145,18 @@ namespace League_of_Legends_Counterpicks
         /// serializable state.</param>
         private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
-            // TODO: Save the unique state of the page here.
+            e.PageState["firstLoad"] = false;
         }
 
         /// <summary>
         /// Shows the details of a clicked group in the <see cref="RolePage"/>.
         /// </summary>
-        private void GroupSection_ItemClick(object sender, ItemClickEventArgs e)
+        private async void GroupSection_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var roleId = ((Role)e.ClickedItem).UniqueId;            //Get the ID of the group clicked in the first page that contains all the groups
+            var roleId = ((Role)e.ClickedItem).UniqueId;
 
-            if (!Frame.Navigate(typeof(RolePage), roleId))          //Navigate to the group clicked, to the page with its items
-            {
-                throw new Exception(this.resourceLoader.GetString("NavigationFailedExceptionMessage"));     //Boolean frame.navigate is return type, method is still done in navigation
-            }
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(RolePage), roleId));
+
         }
 
 
@@ -194,7 +186,12 @@ namespace League_of_Legends_Counterpicks
 
         #endregion
 
-
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        {
+            dispatcherTimer.Stop();
+            AdGrid.Children.Clear();
+            base.OnNavigatingFrom(e);
+        }
 
         private async void Share_Clicked(object sender, RoutedEventArgs e)
         {
@@ -259,9 +256,14 @@ namespace League_of_Legends_Counterpicks
         {
 
             var ad = sender as AdControl;
-            // Check if the ad list already has a reference to this ad before inserting
-            if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0 ) 
+            //Check if the ad list already has a reference to this ad before inserting
+            if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
                 adList.Add(ad);
+
+            if ((ad.Parent as Grid).Margin.Top != 0){
+                double margin = adList.IndexOf(ad) * 85;
+                ad.Margin = new Thickness(0, margin, 0, 0);
+            }
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
@@ -291,14 +293,8 @@ namespace League_of_Legends_Counterpicks
 
         private void Ad_Error(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
         {
-            //if (adRetryCount < 5)
-            //{
-            //    var ad = sender as AdControl;
-            //    ad.Refresh();
-            //    adRetryCount++;
-            //}
         }
-   
+
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
         {
@@ -321,6 +317,6 @@ namespace League_of_Legends_Counterpicks
             AdRemover.Purchase();
         }
 
-       
+
     }
 }

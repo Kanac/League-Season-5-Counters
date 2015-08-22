@@ -28,6 +28,7 @@ using Windows.Storage;
 using Windows.ApplicationModel.Store;
 using Windows.ApplicationModel;
 using Microsoft.Advertising.Mobile.UI;
+using Windows.UI.Core;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkID=391641
@@ -54,7 +55,6 @@ namespace League_of_Legends_Counterpicks
         private ProgressRing counterLoadingRing, easyMatchupLoadingRing, synergyLoadingRing, counterCommentsLoadingRing, playingCommentsLoadingRing;
         private List<AdControl> adList = new List<AdControl>();
         private DispatcherTimer dispatcherTimer;
-        private int adRetryCount;
         private CommentDataSource commentViewModel = new CommentDataSource(App.MobileService);
 
 
@@ -102,7 +102,6 @@ namespace League_of_Legends_Counterpicks
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
 
-            adRetryCount = 0;
 
             // Setup the underlying UI 
             var champName = (string)e.NavigationParameter;
@@ -217,39 +216,47 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.OnNavigatedFrom(e);
         }
 
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        {
+            dispatcherTimer.Stop();
+            AdGrid.Children.Clear();
+            base.OnNavigatingFrom(e);
+        }
+
         #endregion
 
 
         // Normal method of handling counter tapped
-        private void Champ_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void Champ_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image counterImage = (sender as Image);
             var counter = counterImage.DataContext as Counter;
-            Frame.Navigate(typeof(ChampionPage), counter.Name);
-
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(ChampionPage), counter.Name));
         }
 
         // Reverse relationship for easy matchups 
-        private void EasyMatchup_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void EasyMatchup_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image easyMatchupImage = (sender as Image);
             var easyMatchup = easyMatchupImage.DataContext as Counter;
-            Frame.Navigate(typeof(ChampionPage), easyMatchup.ChampionFeedbackName);
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(ChampionPage), easyMatchup.ChampionFeedbackName));
         }
+        
 
         // Bidirectional relationship for synergy picks
-        private void SynergyChamp_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void SynergyChamp_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image synergyImage = (sender as Image);
             var synergy = synergyImage.DataContext as Counter;
             string championName;
+
             // Choose the synergy name that is not the current champion's name for this page (We want to navigate on the other end of the relationship)
             if (synergy.ChampionFeedbackName == commentViewModel.ChampionFeedback.Name)
                 championName = synergy.Name;
             else
                 championName = synergy.ChampionFeedbackName;
-            Frame.Navigate(typeof(ChampionPage), championName);
 
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(ChampionPage), championName));
         }
 
         private void Synergy_Loaded(FrameworkElement sender, DataContextChangedEventArgs args)
@@ -648,10 +655,15 @@ namespace League_of_Legends_Counterpicks
             await commentViewModel.SubmitUserRating(comment, -1);
         }
 
-        private void Upvote_Loaded(object sender, RoutedEventArgs e)
+
+        private void Upvote_DataLoaded(FrameworkElement sender, DataContextChangedEventArgs args)
         {
             Image upvote = sender as Image;
             var comment = upvote.DataContext as Comment;
+            // If data context hasn't loaded yet, return for now until it does (will come back into this function)
+            if (comment == null)
+                return;
+
             var existingRating = comment.UserRatings.Where(x => x.UniqueUser == commentViewModel.GetDeviceId()).FirstOrDefault();
             if (existingRating != null)
             {
@@ -662,10 +674,13 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
-        private void Downvote_Loaded(object sender, RoutedEventArgs e)
+        private void Downvote_DataLoaded(FrameworkElement sender, DataContextChangedEventArgs args)
         {
             Image downvote = sender as Image;
             var comment = downvote.DataContext as Comment;
+            // If data context hasn't loaded yet, return for now until it does (will come back into this function)
+            if (comment == null)
+                return;
             var existingRating = comment.UserRatings.Where(x => x.UniqueUser == commentViewModel.GetDeviceId()).FirstOrDefault();
             if (existingRating != null)
             {
@@ -676,6 +691,7 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
+       
         private void CounterMessage_Loaded(object sender, RoutedEventArgs e)
         {
             counterMessage = sender as TextBlock;
@@ -719,6 +735,8 @@ namespace League_of_Legends_Counterpicks
                 synergyLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
 
+        
+
         private void CounterCommentsRing_Loaded(object sender, RoutedEventArgs e)
         {
             counterCommentsLoadingRing = sender as ProgressRing;
@@ -744,6 +762,11 @@ namespace League_of_Legends_Counterpicks
             // Check if the ad list already has a reference to this ad before inserting
             if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
                 adList.Add(ad);
+
+            if ((ad.Parent as Grid).Margin.Top != 0){
+                double margin = adList.IndexOf(ad) * 85;
+                ad.Margin = new Thickness(0, margin, 0, 0);
+            }
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
