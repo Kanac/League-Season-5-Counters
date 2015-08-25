@@ -24,6 +24,8 @@ using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.ApplicationInsights;
 using Windows.ApplicationModel.Store;
 using System.Diagnostics;
+using Windows.Networking.Connectivity;
+using Windows.UI.Popups;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -116,7 +118,7 @@ namespace League_of_Legends_Counterpicks
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
-                this.DebugSettings.EnableFrameRateCounter = true;
+                //this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
 
@@ -205,5 +207,20 @@ namespace League_of_Legends_Counterpicks
             deferral.Complete();
         }
 
+        public static async void IsInternetAvailable()
+        {
+            var profiles = NetworkInformation.GetConnectionProfiles();
+            var internetProfile = NetworkInformation.GetInternetConnectionProfile();
+            var isInternetEnabled = profiles.Any(s => s.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess)
+                || (internetProfile != null
+                        && internetProfile.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess);
+            if (!isInternetEnabled)
+            {
+                MessageDialog messageBox = new MessageDialog("Make sure your internet connection is working and try again!");
+                await messageBox.ShowAsync();
+                Application.Current.Exit();
+            }
+
+        }
     }
 }

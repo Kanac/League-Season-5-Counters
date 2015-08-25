@@ -77,9 +77,11 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
-						<Run Text="August 20 2015" />
+						<Run Text="August 20-24 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in Live Stats section! And now using Riot API for underlying backend. Let me know if any champion crashes"></Run>
+                        <LineBreak></LineBreak>
                         <Run Text="-Fixed most crashing issues and significantly improved responsiveness of app"></Run>
                         <LineBreak></LineBreak>
                         <Run Text="-Lowered Toast Notification frequency and now applies for specific user situations"></Run>

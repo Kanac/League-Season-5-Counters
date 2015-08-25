@@ -346,3 +346,10 @@ C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Count
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\QKit.pri.xml
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\SOMAWP81.pri.xml
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\ProjectArchitectures.txt
+C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\ARM\Release\StatsPage.xbf
+C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\ARM\Release\HtmlAgilityPack.dll
+C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\ARM\Release\HtmlAgilityPack.pdb
+C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\StatsPage.g.i.cs
+C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\StatsPage.g.cs
+C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\StatsPage.xaml
+C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\StatsPage.xbf

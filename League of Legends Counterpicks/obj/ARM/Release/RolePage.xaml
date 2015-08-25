@@ -6,6 +6,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
       xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+      xmlns:ValueConverter="using:League_of_Legends_Counterpicks.Converters"
       xmlns:q="using:QKit"
       x:Name="pageRoot"
       x:Class="League_of_Legends_Counterpicks.RolePage"
@@ -14,6 +15,8 @@
       d:DataContext="{Binding Roles[0], Source={d:DesignData Source=/DataModel/Data.json, Type=data:DataSource}}">
 
     <Page.Resources>
+        <ValueConverter:RoleConverter x:Key="RoleConverter"/>
+        <ValueConverter:NameToImage x:Key="NameToImage"/>
         <Style TargetType="HubSection" x:Key="Header">
             <Setter Property="HeaderTemplate">
                 <Setter.Value>
@@ -28,7 +31,7 @@
         </Style>
         <DataTemplate x:Key="HubData">
             <Grid>
-                <GridView x:ConnectionId='1' ItemsSource="{Binding Champions}"
+                <GridView x:ConnectionId='1' ItemsSource="{Binding}"
                           IsItemClickEnabled="True"
                                                         
                           SelectionMode="None"
@@ -36,7 +39,7 @@
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding ImagePath}"
+                                <Image Source="{Binding Value.Key, Converter={StaticResource NameToImage}}"
                                        Width="60"
                                        Height="60" />
                             </Grid>
@@ -48,258 +51,149 @@
         </DataTemplate>
     </Page.Resources>
 
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:ConnectionId='2' Icon="Find"
+                          Label="Search"
+                                               />
+        </CommandBar>
+    </Page.BottomAppBar>
 
-    <Grid x:ConnectionId='2'                       >
+
+    <Grid x:ConnectionId='3'                       >
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" Margin="0,100,0,0" x:Name="AdGrid">
-            <UI:AdControl x:ConnectionId='7' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+        <Grid Grid.Row="1" Margin="0,115,0,0" x:Name="AdGrid">
+            <UI:AdControl x:ConnectionId='8' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236722" />
-            <UI:AdControl x:ConnectionId='8' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239122" />
+            <UI:AdControl x:ConnectionId='9' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236723" />
-            <UI:AdControl x:ConnectionId='9' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239123" />
+            <UI:AdControl x:ConnectionId='10' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236724" />
-            <UI:AdControl x:ConnectionId='10' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239124" />
+            <UI:AdControl x:ConnectionId='11' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236725" />
-            <UI:AdControl x:ConnectionId='11' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239125" />
+            <UI:AdControl x:ConnectionId='12' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236726" />
-            <UI:AdControl x:ConnectionId='12' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239126" />
+            <UI:AdControl x:ConnectionId='13' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236727" />
-            <UI:AdControl x:ConnectionId='13' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239127" />
+            <UI:AdControl x:ConnectionId='14' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236728" />
-            <UI:AdControl x:ConnectionId='14' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239128" />
+            <UI:AdControl x:ConnectionId='15' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236729" />
-            <UI:AdControl x:ConnectionId='15' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239129" />
+            <UI:AdControl x:ConnectionId='16' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236730" />
-            <UI:AdControl x:ConnectionId='16' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239130" />
+            <UI:AdControl x:ConnectionId='17' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236731" />
-            <UI:AdControl x:ConnectionId='17' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239131" />
+            <UI:AdControl x:ConnectionId='18' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236732" />
-            <UI:AdControl x:ConnectionId='18' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239132" />
+            <UI:AdControl x:ConnectionId='19' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236733" />
-            <UI:AdControl x:ConnectionId='19' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239133" />
+            <UI:AdControl x:ConnectionId='20' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236734" />
-            <UI:AdControl x:ConnectionId='20' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239134" />
+            <UI:AdControl x:ConnectionId='21' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236735" />
-            <UI:AdControl x:ConnectionId='21' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239135" />
+            <UI:AdControl x:ConnectionId='22' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236736" />
-            <UI:AdControl x:ConnectionId='22' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239136" />
+            <UI:AdControl x:ConnectionId='23' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236737" />
-            <UI:AdControl x:ConnectionId='23' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239137" />
+            <UI:AdControl x:ConnectionId='24' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="237635" />
-            <UI:AdControl x:ConnectionId='24' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239138" />
+            <UI:AdControl x:ConnectionId='25' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="237636" />
-            <UI:AdControl x:ConnectionId='25' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239139" />
+            <UI:AdControl x:ConnectionId='26' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="237637" />
-            <UI:AdControl x:ConnectionId='26' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                                                  
+                          AdUnitId="239140" />
+            <UI:AdControl x:ConnectionId='27' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
+                          IsAutoRefreshEnabled="False"
                                                   
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237638" />
-            <!--<UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237639" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237640" />-->
-            <!--<UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237641" />-->
-            <!--<UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237642" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237643" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237644" />-->
+                          AdUnitId="239141" />
         </Grid>
         <Grid Grid.Row="1">
-            <UI:AdControl x:ConnectionId='6' ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+            <UI:AdControl x:ConnectionId='7' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                                             
-                                                  
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="237645" />
+                                                  
+                          AdUnitId="239142" />
         </Grid>
         
     <Hub Name="MainHub">
@@ -308,12 +202,12 @@
                         Style="{StaticResource Header}">
                 <DataTemplate>
                     <Grid Margin="0,-30,0,0">
-                    <q:AlphaJumpList x:ConnectionId='4' Name="jumpList"
+                    <q:AlphaJumpList x:ConnectionId='5' Name="jumpList"
                                          Grid.Row="1"
                                          Visibility="Collapsed"
                                                                  >
-                            <GridView x:ConnectionId='5' Name="myGridView"
-                                      ItemsSource="{Binding Roles[0].QkitChampions}"
+                            <GridView x:ConnectionId='6' Name="myGridView"
+                                      ItemsSource="{Binding GroupedChampions}"
                                       IsItemClickEnabled="True"
                                                                     
                                       SelectionMode="None"
@@ -321,7 +215,7 @@
                                 <GridView.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
-                                            <Image Source="{Binding ImagePath}"
+                                            <Image Source="{Binding Value.Key, Converter={StaticResource NameToImage}}"
                                                    Width="50"
                                                    Height="50" />
                                         </Grid>
@@ -365,10 +259,10 @@
                 </DataTemplate>
             </HubSection>
 
-            <HubSection Header="ADC"
-                        x:Name="ADC"
+            <HubSection Header="Assassin"
+                        x:Name="Assassin"
                         Style="{StaticResource Header}"
-                        DataContext="{Binding Roles[1]}">
+                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Assassin}">
                 <DataTemplate>
                     <Grid Margin="0,-30,0,0">
 
@@ -408,10 +302,10 @@
                 </DataTemplate>
             </HubSection>
 
-            <HubSection Header="Assassin"
-                        x:Name="Assassin"
+            <HubSection Header="Fighter"
+                        x:Name="Fighter"
                         Style="{StaticResource Header}"
-                        DataContext="{Binding Roles[2]}">
+                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Fighter}">
                 <DataTemplate>
                     <Grid Margin="0,-30,0,0">
 
@@ -452,10 +346,10 @@
 
             </HubSection>
 
-            <HubSection Header="Fighter"
-                        x:Name="Fighter"
+            <HubSection Header="Mage"
+                        x:Name="Mage"
                         Style="{StaticResource Header}"
-                        DataContext="{Binding Roles[3]}">
+                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Mage}">
                 <DataTemplate>
                     <Grid Margin="0,-30,0,0">
 
@@ -495,10 +389,10 @@
                 </DataTemplate>
             </HubSection>
 
-            <HubSection Header="Mage"
-                        x:Name="Mage"
+            <HubSection Header="Marksman"
+                        x:Name="Marksman"
                         Style="{StaticResource Header}"
-                        DataContext="{Binding Roles[4]}">
+                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Marksman}">
                 <DataTemplate>
                     <Grid Margin="0,-30,0,0">
                         <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_CAFFB6"
@@ -541,7 +435,7 @@
             <HubSection Header="Support"
                         x:Name="Support"
                         Style="{StaticResource Header}"
-                        DataContext="{Binding Roles[5]}">
+                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Support}">
                 <DataTemplate>
                     <Grid Margin="0,-30,0,0">
 
@@ -585,7 +479,7 @@
             <HubSection Header="Tank"
                         x:Name="Tank"
                         Style="{StaticResource Header}"
-                        DataContext="{Binding Roles[6]}">
+                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Tank}">
                 <DataTemplate>
                     <Grid Margin="0,-30,0,0">
 
@@ -636,10 +530,11 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <TextBox x:ConnectionId='3' Height="40"
+                    <TextBox x:ConnectionId='4' Height="40"
                              Margin="0,20,0,0"
                                                         
                              Text="Type to search"
+                                                     
                                                               >
                     </TextBox >
                     <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_98F745"

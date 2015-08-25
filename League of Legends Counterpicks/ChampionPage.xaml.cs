@@ -1,5 +1,5 @@
 ﻿using League_of_Legends_Counterpicks.Common;
-using League_of_Legends_Counterpicks.Data;
+//using League_of_Legends_Counterpicks.Data;
 using League_of_Legends_Counterpicks.DataModel;
 using System;
 using System.Collections.Generic;
@@ -43,7 +43,8 @@ namespace League_of_Legends_Counterpicks
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-        private Role champions = DataSource.GetAllChampions();
+        private Champions champions;
+        private ChampionInfo champInfo;
         private TextBox feedbackBox;
         private String name = String.Empty;
         private bool emptyComments, emptyPlayingComments, emptySynergyChampions;
@@ -98,18 +99,21 @@ namespace League_of_Legends_Counterpicks
         /// session.  The state will be null the first time a page is visited.</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            // Check for internet connection
+            App.IsInternetAvailable();
+
             //Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
 
 
             // Setup the underlying UI 
-            var champName = (string)e.NavigationParameter;
-            Champion champion = DataSource.GetChampion(champName);
-            champions = DataSource.GetAllChampions();
-            this.DefaultViewModel["Champion"] = champion;
-            this.DefaultViewModel["Role"] = DataSource.GetRoleId(champion.UniqueId);
-            this.DefaultViewModel["Filter"] = champions.Champions;
+            string champKey = (string)e.NavigationParameter;
+            champions = await StatsDataSource.GetChampionsAsync();
+            champInfo = champions.ChampionInfos.Where(x => x.Key == champKey).FirstOrDefault().Value;
+
+            this.DefaultViewModel["Champion"] = champInfo;
+            this.DefaultViewModel["Filter"] = champions.ChampionInfos.OrderBy(x => x.Value.Name);
 
             
             //If navigating via a counterpick, on loading that page, remove the previous history so the back page will go to main or role, not champion
@@ -121,7 +125,7 @@ namespace League_of_Legends_Counterpicks
             //Champion feedback code 
             //await commentViewModel.SeedDataAsync(champions);
             //Grab the champion feedback from the server 
-            await commentViewModel.GetChampionFeedbackAsync(champName);
+            await commentViewModel.GetChampionFeedbackAsync(champInfo.Name);
 
             //Check if an there was no champion retrieved as well as an error message (must be internet connection problem)
             if (commentViewModel.ChampionFeedback == null && commentViewModel.ErrorMessage != null){
@@ -225,6 +229,10 @@ namespace League_of_Legends_Counterpicks
 
         #endregion
 
+        private async void StatPage_Navigate(object sender, RoutedEventArgs e)
+        {
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(StatsPage), champInfo.Key));
+        }
 
         // Normal method of handling counter tapped
         private async void Champ_Tapped(object sender, TappedRoutedEventArgs e)
@@ -270,12 +278,15 @@ namespace League_of_Legends_Counterpicks
             // Get the champion's name for the page
             var champName = commentViewModel.ChampionFeedback.Name;
             string imageName;
+
             // The synergy relationship could be either way -- but we know we want the image that's not the champion for the page
             if (synergyChamp.ChampionFeedbackName == champName)
                 imageName = synergyChamp.Name;
             else
                 imageName = synergyChamp.ChampionFeedbackName;
 
+            // Change name to key (the format for images)
+            imageName = champions.ChampionInfos.Where(x => x.Value.Name == imageName).FirstOrDefault().Key;
             var uri = "ms-appx:///Assets/" + imageName + "_Square_0.png";
             synergyImage.Source = new BitmapImage(new Uri(uri, UriKind.Absolute));
         }
@@ -379,7 +390,7 @@ namespace League_of_Legends_Counterpicks
 
         private async void Submit_Counter(object sender, TappedRoutedEventArgs e)
         {
-            var filter = ((DefaultViewModel["Filter"]) as ObservableCollection<Champion>);
+            var filter = ((DefaultViewModel["Filter"]) as List<string>);
 
 
             // Ensure all collections are loaded first
@@ -406,14 +417,14 @@ namespace League_of_Legends_Counterpicks
             }
 
             // Get the selected champion's name
-            var selectedChamp = filter.FirstOrDefault().UniqueId;
+            var selectedChamp = filter.FirstOrDefault();
 
             // Prevent duplicate counter submissions for counters 
             if (championPageType == PageEnum.ClientChampionPage.Counter)
             {
                 if (commentViewModel.ChampionFeedback.Counters.Where(c => c.Page == PageEnum.ChampionPage.Counter && c.Name == selectedChamp).Count() == 1)
                 {
-                    String message = filter.FirstOrDefault().UniqueId + " is already a counter!";
+                    String message = selectedChamp + " is already a counter!";
                     MessageDialog messageBox = new MessageDialog(message);
                     await messageBox.ShowAsync();
                     return;
@@ -425,7 +436,7 @@ namespace League_of_Legends_Counterpicks
             {
                 if (commentViewModel.ChampionFeedback.EasyMatchups.Where(c => c.ChampionFeedbackName == selectedChamp).Count() == 1)
                 {
-                    String message = filter.FirstOrDefault().UniqueId + " is already an easy matchup!";
+                    String message = selectedChamp + " is already an easy matchup!";
                     MessageDialog messageBox = new MessageDialog(message);
                     await messageBox.ShowAsync();
                     return;
@@ -438,14 +449,14 @@ namespace League_of_Legends_Counterpicks
                 // Check both ways (whether the synergy is the child as a counter or the parent as a champion feedback)
                 if (commentViewModel.ChampionFeedback.Counters.Where(c => c.Page == PageEnum.ChampionPage.Synergy && (c.Name == selectedChamp || c.ChampionFeedbackName == selectedChamp)).Count() == 1)
                 {
-                    String message = filter.FirstOrDefault().UniqueId + " is already a synergy pick!";
+                    String message = selectedChamp + " is already a synergy pick!";
                     MessageDialog messageBox = new MessageDialog(message);
                     await messageBox.ShowAsync();
                     return;
                 }
             }
 
-            if (filter.FirstOrDefault().UniqueId == commentViewModel.ChampionFeedback.Name)
+            if (selectedChamp == commentViewModel.ChampionFeedback.Name)
             {
                 MessageDialog messageBox = new MessageDialog("You cannot submit a champion as a counter of itself!");
                 await messageBox.ShowAsync();
@@ -464,7 +475,7 @@ namespace League_of_Legends_Counterpicks
             }
 
             // Finally submit the counter
-            var counter = await commentViewModel.SubmitCounter(filter.FirstOrDefault(), championPageType);
+            var counter = await commentViewModel.SubmitCounter(selectedChamp, championPageType);
             await commentViewModel.SubmitCounterRating(counter, 1);
 
             //Sort the appropriate collection
@@ -501,15 +512,14 @@ namespace League_of_Legends_Counterpicks
         private void Filter_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox filterBox = sender as TextBox;
-            Role filter = DataSource.FilterChampions(filterBox.Text);
-            DefaultViewModel["Filter"] = filter.Champions;
+            DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name.Contains(filterBox.Text)).OrderBy(x => x.Value.Name);
         }
 
         private void Counter_Click(object sender, ItemClickEventArgs e)
         {
-            Champion counter = e.ClickedItem as Champion;
-            DefaultViewModel["Filter"] = DataSource.FilterChampions(filterBox.Text).Champions;
-            filterBox.Text = counter.UniqueId;
+            string counter = e.ClickedItem as string;
+            DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name == counter);
+            filterBox.Text = counter;
         }
 
         private void FilterBox_Loaded(object sender, RoutedEventArgs e)
@@ -736,7 +746,6 @@ namespace League_of_Legends_Counterpicks
         }
 
         
-
         private void CounterCommentsRing_Loaded(object sender, RoutedEventArgs e)
         {
             counterCommentsLoadingRing = sender as ProgressRing;
@@ -764,8 +773,8 @@ namespace League_of_Legends_Counterpicks
                 adList.Add(ad);
 
             if ((ad.Parent as Grid).Margin.Top != 0){
-                double margin = adList.IndexOf(ad) * 85;
-                ad.Margin = new Thickness(0, margin, 0, 0);
+                //double margin = adList.IndexOf(ad) * 85;
+                //ad.Margin = new Thickness(0, margin, 0, 0);
             }
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
@@ -794,12 +803,7 @@ namespace League_of_Legends_Counterpicks
 
         private void Ad_Error(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
         {
-            //if (adRetryCount < 5)
-            //{
-            //    var ad = sender as AdControl;
-            //    ad.Refresh();
-            //    adRetryCount++;
-            //}
+ 
         }
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)

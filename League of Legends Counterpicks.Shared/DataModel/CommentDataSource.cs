@@ -511,12 +511,12 @@ namespace League_of_Legends_Counterpicks.DataModel
 
         }
 
-        public async Task<Counter> SubmitCounter(Champion champion, PageEnum.ClientChampionPage? page) { 
+        public async Task<Counter> SubmitCounter(string champion, PageEnum.ClientChampionPage? page) { 
             IsPending = true;
             ErrorMessage = null;
 
             //Convert the champion to a champion feedback
-            var result = await champTable.Where(c => c.Name == champion.UniqueId).ToListAsync();
+            var result = await champTable.Where(c => c.Name == champion).ToListAsync();
             var submitChamp = result.FirstOrDefault();
 
             // Create the new counter

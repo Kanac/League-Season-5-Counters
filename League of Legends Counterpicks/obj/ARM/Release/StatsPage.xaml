@@ -1,0 +1,331 @@
+﻿<Page
+    x:Class="League_of_Legends_Counterpicks.StatsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:League_of_Legends_Counterpicks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
+    xmlns:ValueConverter="using:League_of_Legends_Counterpicks.Converters"
+    mc:Ignorable="d"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <ValueConverter:NameToImage x:Key="NameToImageConverter" />
+        <ValueConverter:StatsConverter x:Key="StatsConverter" />
+        <ValueConverter:PercentageFormat x:Key="PercentageFormat" />
+        <ValueConverter:GamesFormat x:Key="GamesFormat"/>
+        <ValueConverter:PatchFormat x:Key="PatchFormat"/>
+    </Page.Resources>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="SolidStar" Label="Placeholder" />
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid x:ConnectionId='1' x:Name="LayoutRoot"                       >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="3" Margin="0,115,0,0" x:Name="AdGrid">
+            <UI:AdControl x:ConnectionId='3' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239143" />
+            <UI:AdControl x:ConnectionId='4' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239144" />
+            <UI:AdControl x:ConnectionId='5' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239145" />
+            <UI:AdControl x:ConnectionId='6' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239146" />
+            <UI:AdControl x:ConnectionId='7' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239147" />
+            <UI:AdControl x:ConnectionId='8' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239148" />
+            <UI:AdControl x:ConnectionId='9' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239149" />
+            <UI:AdControl x:ConnectionId='10' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239150" />
+            <UI:AdControl x:ConnectionId='11' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239151" />
+            <UI:AdControl x:ConnectionId='12' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239152" />
+            <UI:AdControl x:ConnectionId='13' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239153" />
+            <UI:AdControl x:ConnectionId='14' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239154" />
+            <UI:AdControl x:ConnectionId='15' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239155" />
+            <UI:AdControl x:ConnectionId='16' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239156" />
+            <UI:AdControl x:ConnectionId='17' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239157"/>
+            <UI:AdControl x:ConnectionId='18' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239158" />
+            <UI:AdControl x:ConnectionId='19' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239159" />
+            <UI:AdControl x:ConnectionId='20' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239160" />
+            <UI:AdControl x:ConnectionId='21' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239161" />
+            <UI:AdControl x:ConnectionId='22' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239162" />
+        </Grid>
+        <Grid Grid.Row="3">
+            <UI:AdControl x:ConnectionId='2' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
+                                            
+                          IsAutoRefreshEnabled="False"
+                                                  
+                          AdUnitId="239163" />
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="{Binding ChampionInfo.Key, Converter={StaticResource NameToImageConverter}}"
+                   Width="60"
+                   Height="60" />
+            <TextBlock Text="{Binding ChampionInfo.Name}"
+                       Style="{ThemeResource HeaderTextBlockStyle}"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"
+                       FontSize="25" />
+            <TextBlock Style="{ThemeResource HeaderTextBlockStyle}"
+                       Margin="0,0,10,0"
+                       FontWeight="Bold"
+                       FontSize="25"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Text="{Binding ChampionInfo.Tags[0]}" />
+        </Grid>
+
+        <TextBlock FontSize="30" 
+                   Style="{ThemeResource SubheaderTextBlockStyle}"
+                   Grid.Row="1" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   Text="{Binding Patch, Converter={StaticResource PatchFormat}}" >
+        </TextBlock>
+
+        <Hub Grid.Row="2">
+            <HubSection>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock FontSize="30"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   TextAlignment="Center"
+                                   Style="{StaticResource TitleTextBlockStyle}"
+                                   Text="Counters">
+                        </TextBlock>
+                        <ListView ItemsSource="{Binding ChampionData.Matchups, Converter={StaticResource StatsConverter},ConverterParameter=Counter}"
+                                  IsItemClickEnabled="True"
+                                  Grid.Row="1">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment"
+                                                Value="Stretch" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0,10,0,5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding Key, Converter={StaticResource NameToImageConverter}}"
+                                                   Width="70"
+                                                   Height="70">
+                                        </Image>
+                                        <ProgressBar Grid.Column="1"
+                                                         Value="{Binding WinRate,Converter={StaticResource PercentageFormat}, ConverterParameter=Counter}"
+                                                         Height="17"
+                                                         Margin="15,0,25,0">
+                                        </ProgressBar>
+                                        <TextBlock Grid.Column="1"
+                                                       FontSize="12"
+                                                       FontWeight="Medium"
+                                                       VerticalAlignment="Center"
+                                                       Margin="60,0,0,0"
+                                                       Text="{Binding WinRate, Converter={StaticResource PercentageFormat}, ConverterParameter=Counter}">
+                                        </TextBlock>
+                                        <TextBlock Grid.Column="1"
+                                                       FontSize="12"
+                                                       FontWeight="Medium"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Right"
+                                                       Margin="0,0,40,0"
+                                                       Text="{Binding Games, Converter={StaticResource GamesFormat}}">
+                                        </TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock FontSize="30"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   TextAlignment="Center"
+                                   Style="{StaticResource TitleTextBlockStyle}"
+                                   Text="Easy Matchups">
+                        </TextBlock>
+                        <ListView ItemsSource="{Binding ChampionData.Matchups, Converter={StaticResource StatsConverter}, ConverterParameter=EasyMatchup}"
+                                  IsItemClickEnabled="True"
+                                  Grid.Row="1">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment"
+                                                Value="Stretch" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0,10,0,5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding Key, Converter={StaticResource NameToImageConverter}}"
+                                                   Width="70"
+                                                   Height="70">
+                                        </Image>
+                                        <ProgressBar Grid.Column="1"
+                                                     Value="{Binding WinRate, Converter={StaticResource PercentageFormat}, ConverterParameter=EasyMatchup}"
+                                                     Height="17"
+                                                     Margin="15,0,25,0">
+                                        </ProgressBar>
+                                        <TextBlock Grid.Column="1"
+                                                       FontSize="12"
+                                                       FontWeight="Medium"
+                                                       VerticalAlignment="Center"
+                                                       Margin="60,0,0,0"
+                                                       Text="{Binding WinRate, Converter={StaticResource PercentageFormat}, ConverterParameter=EasyMatchup}">
+                                        </TextBlock>
+                                        <TextBlock Grid.Column="1"
+                                                       FontSize="12"
+                                                       FontWeight="Medium"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Right"
+                                                       Margin="0,0,40,0"
+                                                       Text="{Binding Games, Converter={StaticResource GamesFormat}}">
+                                        </TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+
+    </Grid>
+</Page>
+

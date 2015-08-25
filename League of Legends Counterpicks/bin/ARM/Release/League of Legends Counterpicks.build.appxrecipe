@@ -33,6 +33,9 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.AdMediator81\1.0\References\CommonConfiguration\ARM\Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll">
       <PackagePath>Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\packages\HtmlAgilityPack.1.4.9\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.dll">
+      <PackagePath>HtmlAgilityPack.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\packages\Microsoft.AdMediator.WindowsPhone81.AdDuplex.1.0.12\lib\wpa\Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll">
       <PackagePath>Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll</PackagePath>
     </AppxPackagedFile>
@@ -344,8 +347,8 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Draven_Square_0.png">
       <PackagePath>Assets\Draven_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Dr. Mundo_Square_0.png">
-      <PackagePath>Assets\Dr. Mundo_Square_0.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\DrMundo_Square_0.png">
+      <PackagePath>Assets\DrMundo_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Ekko_Square_0.png">
       <PackagePath>Assets\Ekko_Square_0.png</PackagePath>
@@ -404,8 +407,8 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Janna_Square_0.png">
       <PackagePath>Assets\Janna_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Jarvan IV_Square_0.png">
-      <PackagePath>Assets\Jarvan IV_Square_0.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\JarvanIV_Square_0.png">
+      <PackagePath>Assets\JarvanIV_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Jax_Square_0.png">
       <PackagePath>Assets\Jax_Square_0.png</PackagePath>
@@ -437,11 +440,11 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Kennen_Square_0.png">
       <PackagePath>Assets\Kennen_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Kha%27Zix_Square_0.png">
-      <PackagePath>Assets\Kha%27Zix_Square_0.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Khazix_Square_0.png">
+      <PackagePath>Assets\Khazix_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Kog%27Maw_Square_0.png">
-      <PackagePath>Assets\Kog%27Maw_Square_0.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\KogMaw_Square_0.png">
+      <PackagePath>Assets\KogMaw_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\League of Legends Season 5 Main.png">
       <PackagePath>Assets\League of Legends Season 5 Main.png</PackagePath>
@@ -458,8 +461,8 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\LeBlanc_Square_0.png">
       <PackagePath>Assets\LeBlanc_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Lee Sin_Square_0.png">
-      <PackagePath>Assets\Lee Sin_Square_0.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\LeeSin_Square_0.png">
+      <PackagePath>Assets\LeeSin_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Leona_Square_0.png">
       <PackagePath>Assets\Leona_Square_0.png</PackagePath>
@@ -485,17 +488,26 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Maokai_Square_0.png">
       <PackagePath>Assets\Maokai_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Master Yi_Square_0.png">
-      <PackagePath>Assets\Master Yi_Square_0.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\MasterYi_Square_0.png">
+      <PackagePath>Assets\MasterYi_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Miss Fortune_Square_0.png">
-      <PackagePath>Assets\Miss Fortune_Square_0.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\MissFortune_Square_0.png">
+      <PackagePath>Assets\MissFortune_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Tahm Kench_Square_0.png">
-      <PackagePath>Assets\Tahm Kench_Square_0.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\MonkeyKing_Square_0.png">
+      <PackagePath>Assets\MonkeyKing_Square_0.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\RekSai_Square_0.png">
+      <PackagePath>Assets\RekSai_Square_0.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\TahmKench_Square_0.png">
+      <PackagePath>Assets\TahmKench_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Tweet.png">
       <PackagePath>Assets\Tweet.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\TwistedFate_Square_0.png">
+      <PackagePath>Assets\TwistedFate_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\upvote.png">
       <PackagePath>Assets\upvote.png</PackagePath>
@@ -503,8 +515,8 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\upvoteblank.png">
       <PackagePath>Assets\upvoteblank.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Wukong_Square_0.png">
-      <PackagePath>Assets\Wukong_Square_0.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\VelKoz_Square_0.png">
+      <PackagePath>Assets\VelKoz_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Mordekaiser_Square_0.png">
       <PackagePath>Assets\Mordekaiser_Square_0.png</PackagePath>
@@ -547,9 +559,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Rammus_Square_0.png">
       <PackagePath>Assets\Rammus_Square_0.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Rek%27Sai_Square_0.png">
-      <PackagePath>Assets\Rek%27Sai_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Renekton_Square_0.png">
       <PackagePath>Assets\Renekton_Square_0.png</PackagePath>
@@ -623,9 +632,6 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Tryndamere_Square_0.png">
       <PackagePath>Assets\Tryndamere_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Twisted Fate_Square_0.png">
-      <PackagePath>Assets\Twisted Fate_Square_0.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Twitch_Square_0.png">
       <PackagePath>Assets\Twitch_Square_0.png</PackagePath>
     </AppxPackagedFile>
@@ -643,9 +649,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Veigar_Square_0.png">
       <PackagePath>Assets\Veigar_Square_0.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Vel%27Koz_Square_0.png">
-      <PackagePath>Assets\Vel%27Koz_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Viktor_Square_0.png">
       <PackagePath>Assets\Viktor_Square_0.png</PackagePath>
@@ -671,8 +674,8 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Xerath_Square_0.png">
       <PackagePath>Assets\Xerath_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Xin Zhao_Square_0.png">
-      <PackagePath>Assets\Xin Zhao_Square_0.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\XinZhao_Square_0.png">
+      <PackagePath>Assets\XinZhao_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Yasuo_Square_0.png">
       <PackagePath>Assets\Yasuo_Square_0.png</PackagePath>
@@ -730,6 +733,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\ARM\Release\RolePage.xbf">
       <PackagePath>RolePage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\ARM\Release\StatsPage.xbf">
+      <PackagePath>StatsPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\ARM\Release\Twitter.xbf">
       <PackagePath>Twitter.xbf</PackagePath>

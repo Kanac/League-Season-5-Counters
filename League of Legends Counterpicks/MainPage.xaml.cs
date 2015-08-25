@@ -1,5 +1,6 @@
 ﻿using League_of_Legends_Counterpicks.Common;
 using League_of_Legends_Counterpicks.Data;
+using League_of_Legends_Counterpicks.DataModel;
 using Microsoft.Advertising.Mobile.UI;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Store;
 using League_of_Legends_Counterpicks.Advertisement;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -91,13 +93,19 @@ namespace League_of_Legends_Counterpicks
         /// session.  The state will be null the first time a page is visited.</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            //Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
+            // Check for internet connection
+            App.IsInternetAvailable();
+   
+            // Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
 
+            //var roles = await DataSource.GetRolesAsync();
+            //this.DefaultViewModel["Roles"] = roles;
+
             // Load all the roles (which contains all the champions) from the json file 
-            var roles = await DataSource.GetRolesAsync();
-            this.DefaultViewModel["Roles"] = roles;
+            this.DefaultViewModel["Roles"] = StatsDataSource.GetRoles();
+            await StatsDataSource.GetChampionsAsync();
 
             // Toast background task setup 
             if (e.PageState == null || (bool)e.PageState["firstLoad"] == true)
@@ -110,7 +118,7 @@ namespace League_of_Legends_Counterpicks
         private async Task setupToast()
         {
             CheckAppVersion();
-            var toastTaskName = "ToastBackgroundTask";
+            var toastTaskName = "ToastBackTask";
             var taskRegistered = false;
 
             foreach (var task in Windows.ApplicationModel.Background.BackgroundTaskRegistration.AllTasks)
@@ -153,7 +161,7 @@ namespace League_of_Legends_Counterpicks
         /// </summary>
         private async void GroupSection_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var roleId = ((Role)e.ClickedItem).UniqueId;
+            var roleId = ((string)e.ClickedItem);
 
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(RolePage), roleId));
 
@@ -256,14 +264,20 @@ namespace League_of_Legends_Counterpicks
         {
 
             var ad = sender as AdControl;
-            //Check if the ad list already has a reference to this ad before inserting
+
+            // Check if the ad list already has a reference to this ad before inserting
             if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
                 adList.Add(ad);
 
-            if ((ad.Parent as Grid).Margin.Top != 0){
-                double margin = adList.IndexOf(ad) * 85;
-                ad.Margin = new Thickness(0, margin, 0, 0);
-            }
+            //if ((ad.Parent as Grid).Margin.Top != 0)
+            //{
+            //    var offset = adList.IndexOf(ad) * 15;
+            //    if (offset <= 150)
+            //        ad.Margin = new Thickness(offset, 0, 0, 0);
+            //    else
+            //        ad.Margin = new Thickness(0, 0, offset - 150, 0);
+            //}
+
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
@@ -279,6 +293,7 @@ namespace League_of_Legends_Counterpicks
 
         private void setupAdTimer()
         {
+            // Refresh all the ads every 30 seconds
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += dispatcherTimer_Tick;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 33);
@@ -291,10 +306,11 @@ namespace League_of_Legends_Counterpicks
                 ad.Refresh();
         }
 
+
+
         private void Ad_Error(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
         {
         }
-
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
         {

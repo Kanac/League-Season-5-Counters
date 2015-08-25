@@ -11,17 +11,13 @@
       x:Class="League_of_Legends_Counterpicks.ChampionPage"
       mc:Ignorable="d"
       DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
-      d:DataContext="{Binding Roles[1].Champions[1], Source={d:DesignData Source=/DataModel/Data.json, Type=data:DataSource}}"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
         <ValueConverter:NameToImage x:Key="NameToImageConverter" />
-        <ValueConverter:CounterFormat x:Key="CounterConverter" />
-        <ValueConverter:PlayingFormat x:Key="PlayingConverter" />
-        <ValueConverter:CounterVisiblity x:Key="CounterVisibilityConverter" />
-        <ValueConverter:PlayingVisibility x:Key="PlayingVisibilityConverter" />
-        <ValueConverter:CounterChampionVisiblity x:Key="CounterChampioniVisibility" />
-        <ValueConverter:SynergyChampionVisiblity x:Key="SynergyChampioniVisibility" />
+        <ValueConverter:CommentVisiblity x:Key="CommentVisibility" />
+        <ValueConverter:CommentFormat x:Key="CommentFormat" />
+        <ValueConverter:ChampionVisibility x:Key="ChampionVisibility" />
         <DataTemplate x:Key="CommentSection">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -93,6 +89,12 @@
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
+    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="SolidStar" Label="Live Stats" Click="StatPage_Navigate"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 
 
 
@@ -110,10 +112,10 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
         
-            <Image Source="{Binding Champion.ImagePath}"
+            <Image Source="{Binding Champion.Key, Converter={StaticResource NameToImageConverter}}"
                    Width="60"
                    Height="60" />
-            <TextBlock Text="{Binding Champion.UniqueId}"
+            <TextBlock Text="{Binding Champion.Name}"
                        Style="{ThemeResource HeaderTextBlockStyle}"
                        Grid.Column="1"
                        VerticalAlignment="Center"
@@ -127,250 +129,142 @@
                        Grid.Column="2"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Right"
-                       Text="{Binding Role}" />
+                       Text="{Binding Champion.Tags[0]}" />
         </Grid>
 
-        <Grid Grid.Row="2" Margin="0,100,0,0" x:Name="AdGrid">
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+        <Grid Grid.Row="2" Margin="0,115,0,0" x:Name="AdGrid">
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236738" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239101" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236739" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239102" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236740" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239103" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236741" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239104" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236742" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239105" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236743" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239106" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236744" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239107" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236745" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239108" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236746" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239109" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236747" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239110" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236748" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239111" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236749" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239112" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236750" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239113" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236751" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239114" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="236752" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239115" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="237645" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239116" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="237646" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239117" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="237647" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239118" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="237648" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239119" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="237649" />
-            <!--<UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
                           ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237650" />-->
-            <!--<UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237651" />-->
-            <!--<UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237652" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237653" />
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
-                          IsAutoRefreshEnabled="False"
-                          AdUnitId="237654" />-->
-
+                          AdUnitId="239120" />
         </Grid>
         <Grid Grid.Row="2">
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          Width="480"
-                          Height="80"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
-                          ErrorOccurred="Ad_Error"
                           IsAutoRefreshEnabled="False"
-                          AdUnitId="237655" />
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="239121" />
         </Grid>
         
         <Hub x:Name="MainHub"
+             Margin="0,-10,0,0"
              Grid.Row="1">
             <HubSection x:Name="CounterSection">
                 <DataTemplate>
@@ -379,41 +273,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_F91A90"
-                                                          Height="80"
-                                                          HorizontalAlignment="Center"
-                                                          VerticalAlignment="Top"
-                                                          Id="AdMediator-Id-1A00C840-7A8F-4214-9C83-6F0DD0CB4EE9"
-                                                          Width="480" />
-
-                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_2EF4E8"
-                                                          Height="80"
-                                                          VerticalAlignment="Bottom"
-                                                          HorizontalAlignment="Center"
-                                                          Id="AdMediator-Id-CB0A72EE-F012-4E13-985C-3FE34D66A5C0"
-                                                          Grid.Row="3"
-                                                          Width="480" />-->
-
-                        <!--<UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234895" />
-                        <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      Grid.Row="3"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234896" />-->
-
-                            <TextBlock FontSize="30"
+                        <TextBlock FontSize="30"
                                        HorizontalAlignment="Center"
                                        Style="{StaticResource TitleTextBlockStyle}"
                                        Text="Counters">
@@ -429,7 +289,7 @@
 
                             </ProgressRing>
 
-                            <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource CounterChampioniVisibility}}"
+                            <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource ChampionVisibility}, ConverterParameter=Counter}"
                                       IsItemClickEnabled="True">
                                 <ListView.ItemContainerStyle>
                                     <Style TargetType="ListViewItem">
@@ -442,15 +302,17 @@
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="1.1*"></ColumnDefinition>
-                                                <ColumnDefinition Width="4*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
 
                                             <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
 
                                             <Image Grid.Column="1"
+                                                   Width="70"
+                                                   Height="70"
                                                    Tapped="Champ_Tapped"
-                                                   Source="{Binding Name, Converter={StaticResource NameToImageConverter}}">
+                                                   Source="{Binding Name, Converter={StaticResource NameToImageConverter}, ConverterParameter=Name}">
                                             </Image>
 
                                             <ProgressBar Grid.Column="2"
@@ -476,39 +338,6 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-
-                        <!--<UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234897" />
-                        <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      Grid.Row="3"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234898" />-->
-
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_97E2F3"
-                                                          Id="AdMediator-Id-50D9C546-458F-4B3D-8E8E-ECDA653799A8"
-                                                          VerticalAlignment="Top"
-                                                          HorizontalAlignment="Center"
-                                                          Width="480"
-                                                          Height="80" />
-
-                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_DF1BCC"
-                                                          Id="AdMediator-Id-53BF3BF6-5A53-4AEC-951D-B59FC7C30527"
-                                                          VerticalAlignment="Top"
-                                                          HorizontalAlignment="Center"
-                                                          Width="480"
-                                                          Height="80"
-                                                          Grid.Row="3"/>-->
 
                         <TextBlock FontSize="30"
                                        HorizontalAlignment="Center"
@@ -539,15 +368,17 @@
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="1.1*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
                                                 <ColumnDefinition Width="4*"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
 
                                             <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
 
                                             <Image Grid.Column="1"
+                                                   Width="70"
+                                                   Height="70"
                                                    Tapped="EasyMatchup_Tapped"
-                                                   Source="{Binding ChampionFeedbackName, Converter={StaticResource NameToImageConverter}}">
+                                                   Source="{Binding ChampionFeedbackName, Converter={StaticResource NameToImageConverter}, ConverterParameter=Name}">
                                             </Image>
 
                                             <ProgressBar Grid.Column="2"
@@ -574,41 +405,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-
-                        <!--<UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234899" />
-                        <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      Grid.Row="3"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234900" />-->
-
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_FB9CDA"
-                                                          Id="AdMediator-Id-BFEB0A42-2C7A-4567-B426-A0A17DF1ED98"
-                                                          VerticalAlignment="Top"
-                                                          HorizontalAlignment="Center"
-                                                          Width="480"
-                                                          Height="80" />
-                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_738AA9"
-                                                          Id="AdMediator-Id-9BA435E3-9C1D-45D5-9291-EA14C83F1F26"
-                                                          VerticalAlignment="Top"
-                                                          HorizontalAlignment="Center"
-                                                          Width="480"
-                                                          Height="80"
-                                                          Grid.Row="3" />-->
-
-
-                            <TextBlock FontSize="30"
+                        <TextBlock FontSize="30"
                                        HorizontalAlignment="Center"
                                        Style="{StaticResource TitleTextBlockStyle}"
                                        Text="Synergy">
@@ -634,8 +431,7 @@
                             </TextBlock>
 
 
-
-                            <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource SynergyChampioniVisibility}}"
+                            <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource ChampionVisibility}, ConverterParameter=Synergy}"
                                       IsItemClickEnabled="True">
                                 <ListView.ItemContainerStyle>
                                     <Style TargetType="ListViewItem">
@@ -648,13 +444,15 @@
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="1.1*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
                                                 <ColumnDefinition Width="4*"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
 
                                             <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
 
                                             <Image Grid.Column="1"
+                                                   Width="70"
+                                                   Height="70"
                                                    Tapped="SynergyChamp_Tapped"
                                                    DataContextChanged="Synergy_Loaded">
                                             </Image>
@@ -684,41 +482,11 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <!--<UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234903" />
-                        <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      Grid.Row="3"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234904" />-->
-
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_ED28A9"
-                                                          Id="AdMediator-Id-0C14BF92-9585-4662-94B9-47DCCFBCD455"
-                                                          VerticalAlignment="Top"
-                                                          HorizontalAlignment="Center"
-                                                          Width="480"
-                                                          Height="80" />
-                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_FB2C8F"
-                                                          Id="AdMediator-Id-7A130C9A-6A08-4D50-8177-EDF1E8714ABB"
-                                                          VerticalAlignment="Bottom"
-                                                          HorizontalAlignment="Center"
-                                                          Grid.Row="3"
-                                                          Width="480"
-                                                          Height="80" />-->
+                    
 
                         <TextBlock FontSize="30"
                                    Style="{StaticResource TitleTextBlockStyle}"
-                                   Text="{Binding Champion.UniqueId, Converter={StaticResource CounterConverter}}"
+                                   Text="{Binding Champion.Name, Converter={StaticResource CommentFormat}, ConverterParameter=Counter}"
                                    VerticalAlignment="Center"
                                    TextAlignment="Center">
                         </TextBlock>
@@ -742,7 +510,7 @@
                                        Loaded="CounterMessage_Loaded"
                                        TextWrapping="Wrap"> Be the first to submit a comment!</TextBlock>
 
-                            <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource CounterVisibilityConverter}}"
+                            <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource CommentVisibility}, ConverterParameter=Counter}"
                                       IsItemClickEnabled="True"
                                       Grid.Row="2">
                                 <ListView.ItemTemplate>
@@ -764,41 +532,11 @@
                             <RowDefinition Height="*"></RowDefinition>
                         </Grid.RowDefinitions>
 
-                        <!--<UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234905" />
-                        <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      Grid.Row="3"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234906" />-->
-
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_A7C4CE"
-                                                          Id="AdMediator-Id-94026382-4AE7-435F-B687-556E1E533C14"
-                                                          VerticalAlignment="Top"
-                                                          HorizontalAlignment="Center"
-                                                          Width="480"
-                                                          Height="80" />
-                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_D8A4CA"
-                                                          Id="AdMediator-Id-C91B8214-A5F1-4372-9D75-9FBF305E7424"
-                                                          Grid.Row="3"
-                                                          VerticalAlignment="Bottom"
-                                                          HorizontalAlignment="Center"
-                                                          Width="480"
-                                                          Height="80" />-->
+                     
 
                         <TextBlock FontSize="30"
                                    Style="{StaticResource TitleTextBlockStyle}"
-                                   Text="{Binding Champion.UniqueId, Converter={StaticResource PlayingConverter}}"
+                                   Text="{Binding Champion.Name, Converter={StaticResource CommentFormat}, ConverterParameter=Playing}"
                                    VerticalAlignment="Center"
                                    TextAlignment="Center">
                         </TextBlock>
@@ -823,7 +561,7 @@
                                        TextWrapping="Wrap"> Be the first to submit a comment!
                             </TextBlock>
 
-                            <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource PlayingVisibilityConverter}}"
+                            <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource CommentVisibility}, ConverterParameter=Playing}"
                                       IsItemClickEnabled="True"
                                       Grid.Row="2">
                                 <ListView.ItemTemplate>
@@ -848,37 +586,7 @@
                             <RowDefinition Height="3.5*" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_23F5B5"
-                                                          Width="480"
-                                                          Height="80"
-                                                          HorizontalAlignment="Center"
-                                                          VerticalAlignment="Top"
-                                                          Id="AdMediator-Id-15146F06-49A2-48DA-8E88-1B55AD05A245" />
-                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_E4450A"
-                                                          Grid.Row="6"
-                                                          Width="480"
-                                                          Height="80"
-                                                          HorizontalAlignment="Center"
-                                                          Id="AdMediator-Id-6801C733-9423-4584-922F-2CDB9B1E5C77"
-                                                          VerticalAlignment="Bottom" />-->
-
-                        <!--<UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234901" />
-                        <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      Grid.Row="6"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234902" />-->
+               
 
                         <TextBlock x:Name="Feedback"
                                    FontSize="30"
@@ -938,37 +646,7 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
 
-                        <!--<UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234907" />
-                        <UI:AdControl HorizontalAlignment="Center"
-                                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                                      VerticalAlignment="Top"
-                                      Width="480"
-                                      Height="80"
-                                      Loaded="Ad_Loaded"
-                                      Grid.Row="6"
-                                      AutoRefreshIntervalInSeconds="60"
-                                      AdUnitId="234908" />-->
-
-                        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_D3A06B"
-                                                          Id="AdMediator-Id-D0120D03-2816-4130-B631-A8A73FE16D53"
-                                                          VerticalAlignment="Top"
-                                                          Width="480"
-                                                          Height="80"
-                                                          HorizontalAlignment="Center" />
-                        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_8D286A"
-                                                          Id="AdMediator-Id-A424CD92-0C34-47BF-A3EB-3563CC54FD5E"
-                                                          Grid.Row="6"
-                                                          VerticalAlignment="Bottom"
-                                                          Width="480"
-                                                          Height="80"
-                                                          HorizontalAlignment="Center" />-->
+               
 
                         <TextBlock x:Name="Feedback"
                                    FontSize="30"
@@ -1001,7 +679,7 @@
 
                         <TextBox Height="40"
                                  Name="FilterBox"
-                                 Margin="0,-10,0,0"
+                                 Margin="30,-10,30,0"
                                  Loaded="FilterBox_Loaded"
                                  Grid.Row="2"
                                  GotFocus="Filter_GotFocus"
@@ -1017,7 +695,7 @@
                                   ItemClick="Counter_Click">
                             <GridView.ItemTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding ImagePath}"
+                                    <Image Source="{Binding Key, Converter={StaticResource NameToImageConverter}}"
                                            Width="50"
                                            Height="50" />
                                 </DataTemplate>

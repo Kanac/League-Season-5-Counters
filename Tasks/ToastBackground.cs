@@ -12,11 +12,12 @@ namespace Tasks
     {
         public void Run(IBackgroundTaskInstance taskInstance)
         {
-            // Check if a background toast is already scheduled
-            if (ToastNotificationManager.CreateToastNotifier().GetScheduledToastNotifications().Select(x => x.Id = "Background").Count() > 0)  {
+            //Check if a background toast is already scheduled
+            if (ToastNotificationManager.CreateToastNotifier().GetScheduledToastNotifications().Select(x => x.Id = "Background").Count() > 0)
+            {
                 return;
             }
-           
+
             ToastTemplateType toastTemplate = ToastTemplateType.ToastImageAndText02;
             XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
 
@@ -34,7 +35,6 @@ namespace Tasks
             ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, dueTime);
             scheduledToast.Id = "Background";
             ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledToast);
-
         }
     }
 }

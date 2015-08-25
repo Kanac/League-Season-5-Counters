@@ -6,23 +6,28 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="DefaultViewModel" />
     <RootPropertyPathName Name="Roles" />
-    <RootPropertyPathName Name="UniqueId" />
     <RootPropertyPathName Name="Score" />
     <RootPropertyPathName Name="Text" />
     <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="Filter" />
-    <RootPropertyPathName Name="ImagePath" />
+    <RootPropertyPathName Name="Key" />
     <RootPropertyPathName Name="ChampionFeedback" />
     <RootPropertyPathName Name="Comments" />
     <RootPropertyPathName Name="Champion" />
+    <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Counters" />
     <RootPropertyPathName Name="Value" />
     <RootPropertyPathName Name="EasyMatchups" />
     <RootPropertyPathName Name="ChampionFeedbackName" />
-    <RootPropertyPathName Name="Name" />
-    <RootPropertyPathName Name="Role" />
+    <RootPropertyPathName Name="Tags" />
     <RootPropertyPathName Name="Champions" />
-    <RootPropertyPathName Name="QkitChampions" />
+    <RootPropertyPathName Name="GroupedChampions" />
+    <RootPropertyPathName Name="ChampionData" />
+    <RootPropertyPathName Name="Matchups" />
+    <RootPropertyPathName Name="Games" />
+    <RootPropertyPathName Name="WinRate" />
+    <RootPropertyPathName Name="Patch" />
+    <RootPropertyPathName Name="ChampionInfo" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -42,13 +47,16 @@
       <RootProperty Name="Height" />
       <RootProperty Name="AutoRefreshIntervalInSeconds" />
       <RootProperty Name="AdUnitId" />
+      <RootProperty Name="Style" />
       <RootProperty Name="IsAutoRefreshEnabled" />
       <RootEvent Name="Loaded" />
       <RootEvent Name="ErrorOccurred" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
-      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
@@ -119,6 +127,7 @@
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="RelativeSource" />
       <RootProperty Name="Converter" />
+      <RootProperty Name="ConverterParameter" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.RelativeSource">
       <RootProperty Name="Mode" />
@@ -161,12 +170,9 @@
     </RootType>
     <RootType FullName="League_of_Legends_Counterpicks.MainPage" />
     <RootType FullName="League_of_Legends_Counterpicks.Converters.NameToImage" />
-    <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterFormat" />
-    <RootType FullName="League_of_Legends_Counterpicks.Converters.PlayingFormat" />
-    <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterVisiblity" />
-    <RootType FullName="League_of_Legends_Counterpicks.Converters.PlayingVisibility" />
-    <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterChampionVisiblity" />
-    <RootType FullName="League_of_Legends_Counterpicks.Converters.SynergyChampionVisiblity" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.CommentVisiblity" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.CommentFormat" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.ChampionVisibility" />
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Name" />
       <RootProperty Name="Source" />
@@ -176,6 +182,7 @@
       <RootEvent Name="DataContextChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Hub">
+      <RootProperty Name="Margin" />
       <RootProperty Name="Sections" />
       <RootProperty Name="Name" />
     </RootType>
@@ -228,6 +235,7 @@
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="League_of_Legends_Counterpicks.ChampionPage" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.RoleConverter" />
     <RootType FullName="QKit.AlphaJumpList">
       <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />
@@ -235,6 +243,11 @@
       <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="League_of_Legends_Counterpicks.RolePage" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.StatsConverter" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.PercentageFormat" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.GamesFormat" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.PatchFormat" />
+    <RootType FullName="League_of_Legends_Counterpicks.StatsPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.WebView">
       <RootProperty Name="Source" />
     </RootType>

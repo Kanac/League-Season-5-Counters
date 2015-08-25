@@ -1,26 +1,6 @@
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\bin\Release\Tasks.winmd
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\bin\Release\Tasks.pdb
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\bin\Release\Tasks.pri
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.winmd
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.pdb
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.winmdobj
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.compile.pdb
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\priconfig.xml
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\priconfig.xml.intermediate
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\layout.resfiles
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\layout.resfiles.intermediate
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\resources.resfiles
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\resources.resfiles.intermediate
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\pri.resfiles
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\pri.resfiles.intermediate
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\qualifiers.txt
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\qualifiers.txt.intermediate
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\MultipleQualifiersPerDimensionFound.txt
-C:\Users\Anthony\documents\visual studio 2013\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.csprojResolveAssemblyReference.cache
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\bin\Release\Tasks.winmd
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\bin\Release\Tasks.pdb
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\bin\Release\Tasks.pri
-C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.csprojResolveAssemblyReference.cache
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.winmd
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.pdb
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\obj\Release\Tasks.winmdobj

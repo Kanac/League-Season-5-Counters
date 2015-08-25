@@ -1,6 +1,7 @@
 ﻿using League_of_Legends_Counterpicks.Advertisement;
 using League_of_Legends_Counterpicks.Common;
 using League_of_Legends_Counterpicks.Data;
+using League_of_Legends_Counterpicks.DataModel;
 using Microsoft.Advertising.Mobile.UI;
 using QKit;
 using QKit.JumpList;
@@ -37,11 +38,11 @@ namespace League_of_Legends_Counterpicks
     {
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
-        private ObservableCollection<Role> roles;
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private readonly String APP_ID = "3366702e-67c7-48e7-bc82-d3a4534f3086";
-        private bool firstLoad = true;
         private List<AdControl> adList = new List<AdControl>();
+        private TextBox textBox;
+        private Champions champions;
         private DispatcherTimer dispatcherTimer;
         private string navigationRole, savedRoleId;
         private int sectionIndex;
@@ -85,11 +86,15 @@ namespace League_of_Legends_Counterpicks
         /// session.  The state will be null the first time a page is visited.</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)  //e is the unique ID
         {
+            // Check for internet connection
+            App.IsInternetAvailable();
+
             // Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
 
             reviewApp();
+
             string roleId;
             navigationRole = e.NavigationParameter as string;
             // If navigating from main page, use that role selected, otherwise use the saved role prior to navigating to champion page
@@ -99,22 +104,20 @@ namespace League_of_Legends_Counterpicks
                 roleId = (string)e.PageState["savedRoleId"];
 
             // Gets a reference to all the roles -- no data is seralized again (already done on main page load)
-            roles = await DataSource.GetRolesAsync();  
+            champions = await StatsDataSource.GetChampionsAsync();
+            DefaultViewModel["Champions"] = champions;
+
             // Get the 'All' role and configure the view to display the champions nicely
-            var allRole = roles[0];
-            var GroupedChampions = JumpListHelper.ToAlphaGroups(allRole.Champions, x => x.UniqueId);
-            allRole.QkitChampions = GroupedChampions;
-            DefaultViewModel["Roles"] = roles;
+            var GroupedChampions = JumpListHelper.ToAlphaGroups(champions.ChampionInfos, x => x.Value.Name);
+            DefaultViewModel["GroupedChampions"] = GroupedChampions;
 
             // Smoothes out the loading process to get to desired page immedaitely 
             if (roleId == "Filter")
                 sectionIndex = MainHub.Sections.Count() - 1;
             else
-                sectionIndex = roles.IndexOf(DataSource.GetRole(roleId));
-            if (firstLoad)
-                MainHub.DefaultSectionIndex = sectionIndex;
-            else
-                MainHub.ScrollToSection(MainHub.Sections.ElementAt(sectionIndex));
+                sectionIndex = StatsDataSource.GetRoles().IndexOf(navigationRole);
+
+            MainHub.DefaultSectionIndex = sectionIndex;
 
             // Set up timer refresh rate of 30 seconds for ads (or use existing one)
             setupAdTimer();
@@ -148,8 +151,8 @@ namespace League_of_Legends_Counterpicks
             //Store the hub section before proceeding to champion page, so that the back button goes back to it
             savedRoleId = MainHub.SectionsInView[0].Name;
 
-            var championId = ((Champion)e.ClickedItem).UniqueId;
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(ChampionPage), championId));
+            var championKey = ((KeyValuePair<string, ChampionInfo>)e.ClickedItem).Key;
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(ChampionPage), championKey));
         }
 
         #region NavigationHelper registration
@@ -187,8 +190,6 @@ namespace League_of_Legends_Counterpicks
         //Purpose of this is to load the role page twice since there is a bug with the Qkit jumpList that doesnt render properly on first load
         private void JumpList_Loaded(object sender, RoutedEventArgs e)
         {
-            if (firstLoad){
-                firstLoad = false;
                 var jumpList = sender as AlphaJumpList;
                 jumpList.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 All.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -197,18 +198,17 @@ namespace League_of_Legends_Counterpicks
                 MainHub.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 jumpList.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 jumpList.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            }
             
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             String text = (sender as TextBox).Text;
-            Role filter = DataSource.FilterChampions(text);
+
             if (String.IsNullOrEmpty(text))    //Don't show every champion with no query
                 DefaultViewModel["Filter"] = null;
             else
-                DefaultViewModel["Filter"] = filter;
+                DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name.Contains(text)).OrderBy(x => x.Value.Name);
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -216,6 +216,17 @@ namespace League_of_Legends_Counterpicks
             (sender as TextBox).Text = String.Empty;
         }
 
+        private void TextBox__Loaded(object sender, RoutedEventArgs e)
+        {
+            textBox = sender as TextBox;
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+            MainHub.ScrollToSection(Filter);
+            if (textBox != null)
+                textBox.Focus(FocusState.Programmatic);
+        }
 
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
@@ -223,12 +234,7 @@ namespace League_of_Legends_Counterpicks
             // Check if the ad list already has a reference to this ad before inserting
             if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
                 adList.Add(ad);
-
-            if ((ad.Parent as Grid).Margin.Top != 0){
-                double margin = adList.IndexOf(ad) * 85;
-                ad.Margin = new Thickness(0, margin, 0, 0);
-            }
-
+         
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
                 // Hide the app for the purchaser
@@ -257,12 +263,6 @@ namespace League_of_Legends_Counterpicks
 
         private void Ad_Error(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
         {
-            //if (adRetryCount < 5)
-            //{
-            //    var ad = sender as AdControl;
-            //    ad.Refresh();
-            //    adRetryCount++;
-            //}
         }
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
@@ -312,6 +312,8 @@ namespace League_of_Legends_Counterpicks
                 }
             }
         }
+
+        
 
         private async void reviewApp()
         {
