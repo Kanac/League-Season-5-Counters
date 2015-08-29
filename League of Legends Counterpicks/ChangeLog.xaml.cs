@@ -1,6 +1,5 @@
 ﻿using League_of_Legends_Counterpicks.Common;
-using Microsoft.AdMediator.WindowsPhone81;
-using Microsoft.Advertising.Mobile.UI;
+using Microsoft.Advertising.WinRT.UI;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

@@ -48,53 +48,29 @@
   <Extensions>
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
-        <Path>CLRHost.dll</Path>
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Mobile.Common.PublisherErrorEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Mobile.Common.SdkInfoProvider" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Mobile.Common.PublisherMessageEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Mobile.Display.Key35MSSharedLib1024" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Mobile.UI.AdControl" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Mobile.UI.UI_XamlTypeInfo.XamlMetaDataProvider" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.Controls.WinPhone.XAML.AdControl" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.Controls.WinPhone.XAML.AdDuplex_Universal_Controls_WinPhone_XAML_XamlTypeInfo.XamlMetaDataProvider" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.Controls.WinPhone.XAML.Tracking.AdDuplexTrackingSDK" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Models.ControlSettings" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Models.NoAdEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Models.AdLoadedEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Models.ImageLoadedEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Models.ScreenInformation" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Models.InstallationInfo" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Models.AdClickEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Models.AdLoadingErrorEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Models.TextAdInfo" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Core.ActionManager" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Core.SettingsManager" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Core.AdSizeToSizeConverter" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Core.NetworkManager" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Core.ScreenHelper" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="AdDuplex.Universal.WinPhone.WinRT.Core.AdCoveredEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Tasks.ToastBackground" ThreadingModel="both" />
+        <Path>UniversalXamlAdControl.WindowsPhone.dll</Path>
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.WinRT.UI.InterstitialAd" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.WinRT.UI.ExpandProperties" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.WinRT.UI.AdControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.WinRT.UI.ManipulationStateChangedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdScheduler" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.UserUtils" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.SdkInfoProvider" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.HttpClient" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdTagCollection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.Advertisement" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.EventLogging" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdPlacement" ThreadingModel="STA" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdErrorEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdExtension" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdErrorReport" ThreadingModel="STA" />
+        <ActivatableClass ActivatableClassId="Microsoft.Advertising.UniversalXamlAdControl_WindowsPhone_XamlTypeInfo.XamlMetaDataProvider" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
-        <Path>UniversalXamlAdControl.WindowsPhone.dll</Path>
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdScheduler" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.HttpClient" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.EventLogging" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdErrorEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdExtension" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.SdkInfoProvider" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.UserUtils" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdErrorReport" ThreadingModel="STA" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdTagCollection" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.Advertisement" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.Shared.WinRT.AdPlacement" ThreadingModel="STA" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.WinRT.UI.ExpandProperties" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.WinRT.UI.AdControl" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.WinRT.UI.ManipulationStateChangedEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.WinRT.UI.InterstitialAd" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Advertising.UniversalXamlAdControl_WindowsPhone_XamlTypeInfo.XamlMetaDataProvider" ThreadingModel="both" />
+        <Path>CLRHost.dll</Path>
+        <ActivatableClass ActivatableClassId="Tasks.ToastBackground" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>
@@ -109,7 +85,6 @@
     <build:Item Name="ProjectGUID" Value="{7EE27609-21AC-4764-AEEE-95EC0A7A07DD}" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.81.Build.Tasks.dll" Version="14.0.22705.1" />
     <build:Item Name="Microsoft.AdMediator81" Version="1.0" />
-    <build:Item Name="Microsoft.Advertising.Mobile.Display" Version="8.1" />
     <build:Item Name="MakePri.exe" Version="6.3.9600.17336 (winblue.150226-1500)" />
   </build:Metadata>
 </Package>

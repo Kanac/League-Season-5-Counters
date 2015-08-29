@@ -160,6 +160,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\EmptyMessageVisibility.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\PatchFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ChampionVisibility.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\RoleConverter.cs" />
@@ -167,7 +168,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\CommentVisibility.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\GamesFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NameToImage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Converters\CommentFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\PercentageFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\CommentDataSource.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\DataSource.cs" />

@@ -4,13 +4,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:data="using:League_of_Legends_Counterpicks.Data"
-      xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
+      xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
       xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
       xmlns:ValueConverter="using:League_of_Legends_Counterpicks.Converters"
       x:Class="League_of_Legends_Counterpicks.MainPage"
       DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
       mc:Ignorable="d">
-    
+
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton Icon="FullScreen"
@@ -31,41 +31,17 @@
     <Grid Background="{ThemeResource HubBackgroundImageBrush}"
           Loaded="GridAd_Loaded">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="7.5*" />
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
-        <!--<UI:AdControl HorizontalAlignment="Center"
-                      ApplicationId="7b07e28d-b92c-46de-9087-42937a079714"
-                      VerticalAlignment="Top"
-                      Width="480"
-                      Height="80"
-                      Loaded="Ad_Loaded"
-                      AutoRefreshIntervalInSeconds="60"
-                      AdUnitId="231252" />-->
-
-        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_B3E200"
-                                                  HorizontalAlignment="Center"
-                                                  Height="80"
-                                                  Loaded="Ad_Loaded"
-                                                  Id="AdMediator-Id-A9B26502-92B4-4543-8114-35155ED1598C"
-                                                  VerticalAlignment="Top"
-                                                  Width="480" />-->
-        
         <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
+            <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-               
-            <TextBox Margin="15,0,15,0"
-                     IsReadOnly="True"
-                     GotFocus="TextBox_GotFocus"
-                     TextAlignment="Center"
-                     Text="Tap to Search">
-            </TextBox>
-            
+
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -87,166 +63,144 @@
                     </ListView.ItemTemplate>
                 </ListView>
 
-                <Grid Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="1">
-                        <TextBlock HorizontalAlignment="Center"
-                                   TextWrapping="Wrap"
-                                   TextAlignment="Center"
-                                   FontSize="19"
-                                   VerticalAlignment="Center"
-                                   Foreground="#FFF3FD29"> Check out the new live stats feature! And download this for Windows 10!</TextBlock>
-                    </Grid>
-                </Grid>
             </Grid>
         </Grid>
         
-        <StackPanel Grid.Row="2"
-                    VerticalAlignment="Top"
+        <StackPanel Grid.Row="1"
+                    VerticalAlignment="Bottom"
                     HorizontalAlignment="Right">
 
             <TextBlock Text="By a Master Player"
-                       FontSize="15"
-                       Foreground="#FFCCDDF7" />
+                       FontSize="15"/>
             <TextBlock Text="Raklor"
                        FontSize="15"
-                       TextAlignment="Center"
-                       Foreground="#FFCCDDF7" />
+                       TextAlignment="Center" />
         </StackPanel>
 
-        <Grid Grid.Row="2" Margin="0,115,0,0" x:Name="AdGrid">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+        <Grid Grid.Row="2" Margin="0,65,0,0" x:Name="AdGrid">
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239081" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240170" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239082" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240171" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239083" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240172" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239084" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240173" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239085" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240174" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239086" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240175" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239087" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240176" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239088" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240177" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239089" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240178" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239090" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240179" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239091" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240180" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239092" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240181" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239093" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240182" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239094" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240183" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239095" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240184" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239096" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240185" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239097" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240186" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239098" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240187" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239099" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="239100" />
+                          AdUnitId="240188" />
         </Grid>
         
-        <Grid Grid.Row="2">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+        <Grid Grid.Row="2" Margin="0,20,0,0">
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
-                          AdUnitId="239100" />
+                          AdUnitId="240189" />
         </Grid>
     </Grid>
 </Page>

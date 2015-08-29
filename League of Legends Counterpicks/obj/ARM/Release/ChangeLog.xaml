@@ -4,7 +4,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
-      xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
+      xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
       x:Class="League_of_Legends_Counterpicks.ChangeLog"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -45,20 +45,6 @@
                           AdUnitId="234878" />
         </Grid>
 
-        <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator_CAC3BD"
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Top"
-                                          Width="480"
-                                          Height="80"
-                                          Id="AdMediator-Id-3396B67C-6AC8-4255-85BD-4167E99FD95F" />
-        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_AC3F32"
-                                          Id="AdMediator-Id-08232986-F40C-4B04-942D-7C93B7C16F0C"
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Bottom"
-                                          Width="480"
-                                          Grid.Row="4"
-                                          Height="80" />-->
-
         <!-- Title Panel -->
             <TextBlock Text="League Season 5 Counters Changes"
                        Foreground="#FFF3FD29"
@@ -76,6 +62,20 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="August 28 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Completely overhauled UI! "></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Role section is now one page with ability to filter by query or role, or even use the alphabetical jump list!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Champion and Stats page is now built using a pivot system to optimize for lower memory devices!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Made Main page sexier :)"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-LOTS of bug fixes"></Run>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="August 20-24 2015" />
                     </TextBlock>

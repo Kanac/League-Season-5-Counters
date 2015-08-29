@@ -107,7 +107,7 @@ namespace League_of_Legends_Counterpicks.DataModel
         }
 
         public async static Task<Champions> GetChampionsAsync() {
-            if (Champions != null)
+            if (Champions != null && Champions.ChampionInfos != null)
                 return Champions;
 
             Champions = new Champions();

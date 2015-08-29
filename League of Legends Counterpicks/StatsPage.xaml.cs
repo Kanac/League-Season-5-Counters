@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using League_of_Legends_Counterpicks.DataModel;
-using Microsoft.Advertising.Mobile.UI;
+using Microsoft.Advertising.WinRT.UI;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -84,9 +84,9 @@ namespace League_of_Legends_Counterpicks
             DefaultViewModel["ChampionData"] = championData;
             DefaultViewModel["ChampionInfo"] = champions.ChampionInfos.Where(x => x.Key == champKey).FirstOrDefault().Value;
             DefaultViewModel["Patch"] = patch;
+            DefaultViewModel["LoadingVisibility"] = Visibility.Collapsed;
 
             setupAdTimer();
-
         }
 
         /// <summary>
@@ -128,7 +128,8 @@ namespace League_of_Legends_Counterpicks
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            dispatcherTimer.Stop();
+            if (dispatcherTimer != null)
+                dispatcherTimer.Stop();
             AdGrid.Children.Clear();
             base.OnNavigatingFrom(e);
         }
@@ -169,9 +170,7 @@ namespace League_of_Legends_Counterpicks
         }
 
 
-        private void Ad_Error(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
-        {
-        }
+
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
         {
@@ -187,6 +186,11 @@ namespace League_of_Legends_Counterpicks
                     }
                 }
             }
+        }
+
+        private void Ad_Error(object sender, AdErrorEventArgs e)
+        {
+
         }
     }
 }

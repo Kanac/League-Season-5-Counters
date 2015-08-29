@@ -27,8 +27,8 @@ using System.Threading;
 using Windows.Storage;
 using Windows.ApplicationModel.Store;
 using Windows.ApplicationModel;
-using Microsoft.Advertising.Mobile.UI;
 using Windows.UI.Core;
+using Microsoft.Advertising.WinRT.UI;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkID=391641
@@ -45,19 +45,9 @@ namespace League_of_Legends_Counterpicks
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private Champions champions;
         private ChampionInfo champInfo;
-        private TextBox feedbackBox;
-        private String name = String.Empty;
-        private bool emptyComments, emptyPlayingComments, emptySynergyChampions;
-        private bool championFeedbackLoaded;
-        private PageEnum.CommentPage? pageType;
-        private PageEnum.ClientChampionPage? championPageType;
-        private TextBlock counterMessage, playingMessage, synergyMessage;
-        private TextBox filterBox;
-        private ProgressRing counterLoadingRing, easyMatchupLoadingRing, synergyLoadingRing, counterCommentsLoadingRing, playingCommentsLoadingRing;
         private List<AdControl> adList = new List<AdControl>();
         private DispatcherTimer dispatcherTimer;
         private CommentDataSource commentViewModel = new CommentDataSource(App.MobileService);
-
 
         public ChampionPage()
         {
@@ -102,80 +92,43 @@ namespace League_of_Legends_Counterpicks
             // Check for internet connection
             App.IsInternetAvailable();
 
-            //Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
+            // Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
-
 
             // Setup the underlying UI 
             string champKey = (string)e.NavigationParameter;
             champions = await StatsDataSource.GetChampionsAsync();
+
+            // Could be passed either the key or name, check for either case
             champInfo = champions.ChampionInfos.Where(x => x.Key == champKey).FirstOrDefault().Value;
+            if (champInfo == null)
+                champInfo = champions.ChampionInfos.Values.Where(x => x.Name == champKey).FirstOrDefault();
 
             this.DefaultViewModel["Champion"] = champInfo;
             this.DefaultViewModel["Filter"] = champions.ChampionInfos.OrderBy(x => x.Value.Name);
 
             
-            //If navigating via a counterpick, on loading that page, remove the previous history so the back page will go to main or role, not champion
+            // If navigating via a counterpick, on loading that page, remove the previous history so the back page will go to main or role, not champion
             var prevPage = Frame.BackStack.ElementAt(Frame.BackStackDepth - 1);
             if (prevPage.SourcePageType.Equals(typeof(ChampionPage))){
                 Frame.BackStack.RemoveAt(Frame.BackStackDepth - 1);
             }
 
-            //Champion feedback code 
-            //await commentViewModel.SeedDataAsync(champions);
-            //Grab the champion feedback from the server 
+            // Grab the champion feedback from the server 
             await commentViewModel.GetChampionFeedbackAsync(champInfo.Name);
 
-            //Check if an there was no champion retrieved as well as an error message (must be internet connection problem)
-            if (commentViewModel.ChampionFeedback == null && commentViewModel.ErrorMessage != null){
+            // Check if an there was no champion retrieved as well as an error message (must be internet connection problem)
+            if (commentViewModel.ChampionFeedback == null){
                 MessageDialog messageBox = new MessageDialog("Make sure your internet connection is working and try again!");
                 await messageBox.ShowAsync();
                 Application.Current.Exit();
             }
-
            
-            //Collapse the progress ring once counters have been loaded. If the ring hasn't loaded yet, set a boolean to collapse it once it loads.
-            championFeedbackLoaded = true;
-
-            if (counterLoadingRing != null)
-                counterLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            if (easyMatchupLoadingRing != null)
-                easyMatchupLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            if (synergyLoadingRing != null)
-                synergyLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            if (counterCommentsLoadingRing != null)
-                counterCommentsLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            if (playingCommentsLoadingRing != null)
-                playingCommentsLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-
-            //Check if comments exist for counter comments. If not, show a message indicating so. 
-            if (commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.CommentPage.Counter).Count() == 0) {
-                if (counterMessage == null) 
-                    emptyComments = true;
-                else 
-                    counterMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            }
-
-            //Check if comments exist for playing comments. If not, show a message indicating so. 
-            if (commentViewModel.ChampionFeedback.Comments.Where(x => x.Page == PageEnum.CommentPage.Playing).Count() == 0)
-            {
-                if (playingMessage == null)
-                    emptyPlayingComments = true;
-                else 
-                    playingMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            }
-
-            //Check if synergy champions existing. If not, show a message indicating so. 
-            if (commentViewModel.ChampionFeedback.Counters.Where(x => x.Page == PageEnum.ChampionPage.Synergy).Count() == 0)
-            {
-                if (synergyMessage == null)
-                    emptySynergyChampions = true;
-                else
-                    synergyMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            }
-
-            //Make updates to champion comments observable
+            // Collapse the progress ring once counters have been loaded. If the ring hasn't loaded yet, set a boolean to collapse it once it loads.
+            DefaultViewModel["LoadingVisibility"] = Visibility.Collapsed;
+           
+            // Make updates to champion comments observable
             this.DefaultViewModel["ChampionFeedback"] = commentViewModel.ChampionFeedback;
 
             // Set up timer refresh rate of 30 seconds for ads (or use existing one)
@@ -222,37 +175,51 @@ namespace League_of_Legends_Counterpicks
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            dispatcherTimer.Stop();
+            if (dispatcherTimer != null)
+                dispatcherTimer.Stop();
+
             AdGrid.Children.Clear();
+            if (e.NavigationMode == NavigationMode.Back)
+            {
+                ResetPageCache();
+            }
             base.OnNavigatingFrom(e);
+        }
+
+        private void ResetPageCache()
+        {
+            var cacheSize = ((Frame)Parent).CacheSize;
+            ((Frame)Parent).CacheSize = 0;
+            ((Frame)Parent).CacheSize = cacheSize;
         }
 
         #endregion
 
-        private async void StatPage_Navigate(object sender, RoutedEventArgs e)
+        private void StatPage_Navigate(object sender, RoutedEventArgs e)
         {
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(StatsPage), champInfo.Key));
+            Frame.Navigate(typeof(StatsPage), champInfo.Key);
+
         }
 
         // Normal method of handling counter tapped
-        private async void Champ_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Champ_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image counterImage = (sender as Image);
             var counter = counterImage.DataContext as Counter;
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(ChampionPage), counter.Name));
+            Frame.Navigate(typeof(ChampionPage), counter.Name);
         }
 
         // Reverse relationship for easy matchups 
-        private async void EasyMatchup_Tapped(object sender, TappedRoutedEventArgs e)
+        private void EasyMatchup_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image easyMatchupImage = (sender as Image);
             var easyMatchup = easyMatchupImage.DataContext as Counter;
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(ChampionPage), easyMatchup.ChampionFeedbackName));
+            Frame.Navigate(typeof(ChampionPage), easyMatchup.ChampionFeedbackName);
         }
         
 
         // Bidirectional relationship for synergy picks
-        private async void SynergyChamp_Tapped(object sender, TappedRoutedEventArgs e)
+        private void SynergyChamp_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image synergyImage = (sender as Image);
             var synergy = synergyImage.DataContext as Counter;
@@ -264,7 +231,7 @@ namespace League_of_Legends_Counterpicks
             else
                 championName = synergy.ChampionFeedbackName;
 
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(ChampionPage), championName));
+            Frame.Navigate(typeof(ChampionPage), championName);
         }
 
         private void Synergy_Loaded(FrameworkElement sender, DataContextChangedEventArgs args)
@@ -390,18 +357,19 @@ namespace League_of_Legends_Counterpicks
 
         private async void Submit_Counter(object sender, TappedRoutedEventArgs e)
         {
-            var filter = ((DefaultViewModel["Filter"]) as List<string>);
-
+            // Get the query
+            var filter = ((IOrderedEnumerable<KeyValuePair<string, ChampionInfo>>)DefaultViewModel["Filter"]);
 
             // Ensure all collections are loaded first
-            if (!championFeedbackLoaded)
+            if (commentViewModel.ChampionFeedback == null)
             {
                 MessageDialog emptyBox = new MessageDialog("Wait for data to finish loading!");
                 await emptyBox.ShowAsync();
                 return;
             }
 
-            if (championPageType == null)
+            // Ensure an option is checked 
+            if (ChampionCounterRadio.IsChecked == false && ChampionEasyRadio.IsChecked == false && ChampionSynergyRadio.IsChecked == false)
             {
                 MessageDialog messageBox = new MessageDialog("Choose whether this champion is a counter, easy matchup, or synergy pick!");
                 await messageBox.ShowAsync();
@@ -417,11 +385,24 @@ namespace League_of_Legends_Counterpicks
             }
 
             // Get the selected champion's name
-            var selectedChamp = filter.FirstOrDefault();
+            var selectedChamp = filter.FirstOrDefault().Value.Name;
+
+            if (selectedChamp == commentViewModel.ChampionFeedback.Name)
+            {
+                MessageDialog messageBox = new MessageDialog("You cannot submit a champion as a counter of itself!");
+                await messageBox.ShowAsync();
+                return;
+            }
+            
+            // Get ready to process selection
+            PageEnum.ClientChampionPage championPageType = 0;
 
             // Prevent duplicate counter submissions for counters 
-            if (championPageType == PageEnum.ClientChampionPage.Counter)
+            if (ChampionCounterRadio.IsChecked == true)
             {
+                championPageType = PageEnum.ClientChampionPage.Counter;
+                MainPivot.SelectedIndex = MainPivot.Items.IndexOf(CounterSection);
+
                 if (commentViewModel.ChampionFeedback.Counters.Where(c => c.Page == PageEnum.ChampionPage.Counter && c.Name == selectedChamp).Count() == 1)
                 {
                     String message = selectedChamp + " is already a counter!";
@@ -429,11 +410,15 @@ namespace League_of_Legends_Counterpicks
                     await messageBox.ShowAsync();
                     return;
                 }
+                
             }
 
             // Prevent duplicate counter submissions for easy matchups (it is reversed) 
-            if (championPageType == PageEnum.ClientChampionPage.EasyMatchup)
+            if (ChampionEasyRadio.IsChecked == true)
             {
+                championPageType = PageEnum.ClientChampionPage.EasyMatchup;
+                MainPivot.SelectedIndex = MainPivot.Items.IndexOf(EasyMatchupSection);
+
                 if (commentViewModel.ChampionFeedback.EasyMatchups.Where(c => c.ChampionFeedbackName == selectedChamp).Count() == 1)
                 {
                     String message = selectedChamp + " is already an easy matchup!";
@@ -441,11 +426,15 @@ namespace League_of_Legends_Counterpicks
                     await messageBox.ShowAsync();
                     return;
                 }
+
             }
 
             // Prevent duplicate synergy submissions
-            if (championPageType == PageEnum.ClientChampionPage.Synergy)
+            if (ChampionSynergyRadio.IsChecked == true)
             {
+                championPageType = PageEnum.ClientChampionPage.Synergy;
+                MainPivot.SelectedIndex = MainPivot.Items.IndexOf(SynergySection);
+
                 // Check both ways (whether the synergy is the child as a counter or the parent as a champion feedback)
                 if (commentViewModel.ChampionFeedback.Counters.Where(c => c.Page == PageEnum.ChampionPage.Synergy && (c.Name == selectedChamp || c.ChampionFeedbackName == selectedChamp)).Count() == 1)
                 {
@@ -454,58 +443,30 @@ namespace League_of_Legends_Counterpicks
                     await messageBox.ShowAsync();
                     return;
                 }
+
+                NoSynergyChampions.Visibility = Visibility.Collapsed;
             }
 
-            if (selectedChamp == commentViewModel.ChampionFeedback.Name)
-            {
-                MessageDialog messageBox = new MessageDialog("You cannot submit a champion as a counter of itself!");
-                await messageBox.ShowAsync();
-                return;
-            }
-
-            // Scroll to the relevant section first before submitting to prevent lag
-            if (championPageType == PageEnum.ClientChampionPage.Counter)
-                MainHub.ScrollToSection(CounterSection);
-            else if (championPageType == PageEnum.ClientChampionPage.EasyMatchup)
-                MainHub.ScrollToSection(EasyMatchupSection);
-            else
-            {
-                MainHub.ScrollToSection(SynergySection);
-                synergyMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            }
+            // Ensure the flyout is hidden
+            ChampionFlyout.Hide();
 
             // Finally submit the counter
             var counter = await commentViewModel.SubmitCounter(selectedChamp, championPageType);
             await commentViewModel.SubmitCounterRating(counter, 1);
 
-            //Sort the appropriate collection
+            // Sort the appropriate collection
             if (championPageType == PageEnum.ClientChampionPage.Counter)
                 commentViewModel.ChampionFeedback.SortCounters();
             else if (championPageType == PageEnum.ClientChampionPage.EasyMatchup)
                 commentViewModel.ChampionFeedback.SortEasyMatchups();
             else
                 commentViewModel.ChampionFeedback.SortSynergy();
-        }
 
-        private void CounterChampion_Checked(object sender, RoutedEventArgs e)
-        {
-            championPageType = PageEnum.ClientChampionPage.Counter;
-
-        }
-
-        private void EasyMatchupChampion_Checked(object sender, RoutedEventArgs e)
-        {
-            championPageType = PageEnum.ClientChampionPage.EasyMatchup;
-        }
-
-        private void SynergyChampion_Checked(object sender, RoutedEventArgs e)
-        {
-            championPageType = PageEnum.ClientChampionPage.Synergy;
         }
 
         private void Filter_GotFocus(object sender, RoutedEventArgs e)
         {
-            var filterBox = sender as TextBox;
+            TextBox filterBox = sender as TextBox;
             filterBox.Text = String.Empty;
         }
 
@@ -515,22 +476,25 @@ namespace League_of_Legends_Counterpicks
             DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name.Contains(filterBox.Text)).OrderBy(x => x.Value.Name);
         }
 
-        private void Counter_Click(object sender, ItemClickEventArgs e)
+        private void Filter_Click(object sender, ItemClickEventArgs e)
         {
-            string counter = e.ClickedItem as string;
+            string counter = ((KeyValuePair<string, ChampionInfo>)e.ClickedItem).Value.Name;
             DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name == counter);
-            filterBox.Text = counter;
+            FilterBox.Text = counter;
         }
 
-        private void FilterBox_Loaded(object sender, RoutedEventArgs e)
+        private void Name_Focus(object sender, RoutedEventArgs e)
         {
-            filterBox = sender as TextBox;
+            var nameBox = sender as TextBox;
+            if (nameBox.Text == "Your Name")
+                nameBox.Text = String.Empty;
         }
 
         private async void Send_Feedback(object sender, TappedRoutedEventArgs e)
         {
+            
             // Ensure all collections are loaded first
-            if (!championFeedbackLoaded)
+            if (commentViewModel.ChampionFeedback.Comments == null)
             {
                 MessageDialog emptyBox = new MessageDialog("Wait for data to finish loading!");
                 await emptyBox.ShowAsync();
@@ -538,7 +502,7 @@ namespace League_of_Legends_Counterpicks
             }
 
             // Ensure user selects comment type
-            if (this.pageType == null)
+            if (CounterRadio.IsChecked == false && PlayingRadio.IsChecked == false)
             {
                 MessageDialog emptyBox = new MessageDialog("Choose your comment as countering or playing as!");
                 await emptyBox.ShowAsync();
@@ -546,7 +510,7 @@ namespace League_of_Legends_Counterpicks
             }
 
             // Ensure user inputs names
-            if (String.IsNullOrEmpty(name) || name == "Your name")
+            if (String.IsNullOrEmpty(NameBox.Text) || NameBox.Text == "Your name")
             {
                 MessageDialog emptyBox = new MessageDialog("Enter your name first!");
                 await emptyBox.ShowAsync();
@@ -554,56 +518,41 @@ namespace League_of_Legends_Counterpicks
             }
 
             // Ensure user inputs feedback
-            if (String.IsNullOrEmpty(feedbackBox.Text))
+            if (String.IsNullOrEmpty(FeedbackBox.Text))
             {
                 MessageDialog emptyBox = new MessageDialog("Write a message first!");
                 await emptyBox.ShowAsync();
                 return;
             }
 
+            
+            PageEnum.CommentPage page = 0;
             // After ensuring the data is allowed, scroll to the proper hub section according to the type of comment (doing this before actual submission prevents lag)
-            if (pageType == PageEnum.CommentPage.Counter)
+            if (CounterRadio.IsChecked  == true)
             {
-                MainHub.ScrollToSection(CounterCommentSection);
-                counterMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                MainPivot.SelectedIndex = MainPivot.Items.IndexOf(CounterCommentSection);
+                page = PageEnum.CommentPage.Counter;
+                NoCounterComments.Visibility = Visibility.Collapsed;
 
             }
-            else if (pageType == PageEnum.CommentPage.Playing)
+            else if (PlayingRadio.IsChecked == true)
             {
-                MainHub.ScrollToSection(PlayingCommentSection);
-                playingMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                MainPivot.SelectedIndex = MainPivot.Items.IndexOf(PlayingCommentSection);
+                page = PageEnum.CommentPage.Playing;
+                NoPlayingComments.Visibility = Visibility.Collapsed;
             }
+
+            // Close the fullscreen flyout
+            CommentFlyout.Hide();
 
             // Submit the comment and a self-user rating of 1
-            var comment = await commentViewModel.SubmitCommentAsync(feedbackBox.Text, name, (PageEnum.CommentPage)pageType);
+            var comment = await commentViewModel.SubmitCommentAsync(FeedbackBox.Text, NameBox.Text, page);
             await commentViewModel.SubmitUserRating(comment, 1);   // This will then generate Upvote_Loaded to highlight the upvote image
 
             // Update the view
             commentViewModel.ChampionFeedback.SortComments();
-            feedbackBox.Text = String.Empty;
+            FeedbackBox.Text = String.Empty;
 
-        }
-
-        private void Counter_Checked(object sender, RoutedEventArgs e)
-        {
-            pageType = PageEnum.CommentPage.Counter;
-        }
-
-        private void Playing_Checked(object sender, RoutedEventArgs e)
-        {
-            pageType = PageEnum.CommentPage.Playing;
-        }
-
-        private void Name_Written(object sender, RoutedEventArgs e)
-        {
-            var textBox = sender as TextBox;
-            name = textBox.Text;
-        }
-
-        private void Name_Focus(object sender, RoutedEventArgs e)
-        {
-            var textBox = sender as TextBox;
-            textBox.Text = String.Empty;
         }
 
         private async void Upvote_Tapped(object sender, TappedRoutedEventArgs e)
@@ -612,16 +561,16 @@ namespace League_of_Legends_Counterpicks
             var comment = upvote.DataContext as Comment;
 
             var existingRating = comment.UserRatings.Where(x => x.UniqueUser == commentViewModel.GetDeviceId()).FirstOrDefault();
-            //If there was a previous rating, change vote images respectively
+            // If there was a previous rating, change vote images respectively
             if (existingRating != null && existingRating.Score != 0)
             {
-                //Pressing upvote again? Unhighlight the button.
+                // Pressing upvote again? Unhighlight the button.
                 if (existingRating.Score == 1)
                 {
                     upvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/upvoteblank.png", UriKind.Absolute));
                 }
 
-                //Going from downvote to upvote? Change to highlighted upvote 
+                // Going from downvote to upvote? Change to highlighted upvote 
                 else if (existingRating.Score == -1)
                 {
                     var downvote = ((Image)sender).FindName("DownvoteImage") as Image;
@@ -629,7 +578,7 @@ namespace League_of_Legends_Counterpicks
                     upvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/upvote.png", UriKind.Absolute));
                 }
             }
-            //Otherwise, highlight the upvote button
+            // Otherwise, highlight the upvote button
             else {
                 upvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/upvote.png", UriKind.Absolute));
             }
@@ -701,81 +650,13 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
-       
-        private void CounterMessage_Loaded(object sender, RoutedEventArgs e)
-        {
-            counterMessage = sender as TextBlock;
-            if (emptyComments)
-                counterMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-        }
-
-        private void PlayingComments_Loaded(object sender, RoutedEventArgs e)
-        {
-            playingMessage = sender as TextBlock;
-            if (emptyPlayingComments)
-                playingMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-        }
-
-        private void SynergyChampions_Loaded(object sender, RoutedEventArgs e)
-        {
-            synergyMessage = sender as TextBlock;
-            if (emptySynergyChampions)
-                synergyMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-        }
-
-       
-        private void CounterRing_Loaded(object sender, RoutedEventArgs e)
-        {
-            counterLoadingRing = sender as ProgressRing;
-            if (championFeedbackLoaded)
-                counterLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
-
-        private void EasyMatchupRing_Loaded(object sender, RoutedEventArgs e)
-        {
-            easyMatchupLoadingRing = sender as ProgressRing;
-            if (championFeedbackLoaded)
-                easyMatchupLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
-
-        private void SynergyRing_Loaded(object sender, RoutedEventArgs e)
-        {
-            synergyLoadingRing = sender as ProgressRing;
-            if (championFeedbackLoaded)
-                synergyLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
-
-        
-        private void CounterCommentsRing_Loaded(object sender, RoutedEventArgs e)
-        {
-            counterCommentsLoadingRing = sender as ProgressRing;
-            if (championFeedbackLoaded)
-                counterCommentsLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
-
-        private void PlayingCommentsRing_Loaded(object sender, RoutedEventArgs e)
-        {
-            playingCommentsLoadingRing = sender as ProgressRing;
-            if (championFeedbackLoaded)
-                playingCommentsLoadingRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
-
-        private void FeedbackBox_Loaded(object sender, RoutedEventArgs e)
-        {
-            feedbackBox = sender as TextBox;
-        }
-
+         
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
             var ad = sender as AdControl;
             // Check if the ad list already has a reference to this ad before inserting
             if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
                 adList.Add(ad);
-
-            if ((ad.Parent as Grid).Margin.Top != 0){
-                //double margin = adList.IndexOf(ad) * 85;
-                //ad.Margin = new Thickness(0, margin, 0, 0);
-            }
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
@@ -801,9 +682,9 @@ namespace League_of_Legends_Counterpicks
                 ad.Refresh();
         }
 
-        private void Ad_Error(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
+        private void Ad_Error(object sender, AdErrorEventArgs e)
         {
- 
+
         }
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
@@ -821,11 +702,7 @@ namespace League_of_Legends_Counterpicks
                 }
             }
         }
-
         
-
-       
-
     }
 
 

@@ -277,9 +277,7 @@ namespace League_of_Legends_Counterpicks.DataModel
 
 
         // Service operations
-
        
-
         //public async Task SeedDataAsync(Role allChampions)
         //{
         //    IsPending = true;

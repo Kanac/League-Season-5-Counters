@@ -4,7 +4,7 @@
       xmlns:data="using:League_of_Legends_Counterpicks.Data"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
+      xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
       xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
       xmlns:ValueConverter="using:League_of_Legends_Counterpicks.Converters"
       x:Name="pageRoot"
@@ -16,8 +16,8 @@
     <Page.Resources>
         <ValueConverter:NameToImage x:Key="NameToImageConverter" />
         <ValueConverter:CommentVisiblity x:Key="CommentVisibility" />
-        <ValueConverter:CommentFormat x:Key="CommentFormat" />
         <ValueConverter:ChampionVisibility x:Key="ChampionVisibility" />
+        <ValueConverter:EmptyMessageVisibility x:Key="EmptyMessageVisibility" />
         <DataTemplate x:Key="CommentSection">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -88,33 +88,174 @@
                 </Image>
             </StackPanel>
         </DataTemplate>
+        
+        
     </Page.Resources>
-    
+
     <Page.BottomAppBar>
         <CommandBar>
+            <AppBarButton Icon="Comment" Label="Comment">
+                <Button.Flyout>
+                    <Flyout Placement="Full" x:Name="CommentFlyout">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock x:Name="Feedback"
+                                   FontSize="30"
+                                   Style="{StaticResource TitleTextBlockStyle}"
+                                   Text="Submit Comments?"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center">
+                            </TextBlock>
+
+                            <Grid Grid.Row="1">
+                                <RadioButton GroupName="Comment"
+                                         Name="CounterRadio"
+                                         HorizontalAlignment="Left"
+                                         Margin="40,-5,0,0"
+                                         Content="Counter"></RadioButton>
+                                <RadioButton GroupName="Comment"
+                                         Name="PlayingRadio"
+                                         Margin="0,-5,0,0"
+                                         HorizontalAlignment="Right"
+                                         Content="Playing as"></RadioButton>
+                            </Grid>
+
+                            <TextBox x:ConnectionId='9' Margin="30,-10,30,0"
+                                 Name="NameBox"
+                                 Grid.Row="2"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
+                                 Text="Your Name"
+                                                      
+                                 TextAlignment="Center">
+                            </TextBox>
+
+                            <TextBox Name="FeedbackBox"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
+                                 Margin="10,20,10,30"
+                                 Grid.Row="3"
+                                 TextWrapping="Wrap"></TextBox>
+
+                            <Button x:ConnectionId='10' Grid.Row="4"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Center"
+                                                      >Send</Button>
+                        </Grid>
+                    </Flyout>
+                </Button.Flyout>
+            </AppBarButton>
+            <AppBarButton Icon="Add" Label="Add Data">
+                <Button.Flyout>
+                    <Flyout Placement="Full" x:Name="ChampionFlyout">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock 
+                                   FontSize="30"
+                                   Style="{StaticResource TitleTextBlockStyle}"
+                                   Text="Submit Champion?"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center">
+                            </TextBlock>
+
+                            <Grid Grid.Row="1">
+                                <RadioButton GroupName="Champion"
+                                         Name="ChampionCounterRadio"
+                                         MinWidth="50"
+                                         HorizontalAlignment="Left"
+                                         Content="Counter"></RadioButton>
+                                <RadioButton GroupName="Champion"
+                                         Name="ChampionEasyRadio"
+                                         MinWidth="50"
+                                         HorizontalAlignment="Center"
+                                         Content="Easy"></RadioButton>
+                                <RadioButton GroupName="Champion"
+                                         Name="ChampionSynergyRadio"
+                                         MinWidth="50"
+                                         HorizontalAlignment="Right"
+                                         Content="Synergy"></RadioButton>
+                            </Grid>
+
+                            <TextBox x:ConnectionId='6' Height="40"
+                                 Name="FilterBox"
+                                 Margin="30,0,30,0"
+                                 Grid.Row="2"
+                                                           
+                                 Text="Type to search"
+                                                                 >
+                            </TextBox >
+
+                            <GridView x:ConnectionId='7' ItemsSource="{Binding Filter}"
+                                  HorizontalAlignment="Center"
+                                  IsItemClickEnabled="True"
+                                  Grid.Row="3"
+                                  MaxHeight="300"
+                                  Margin="0,15,0,10"
+                                                          >
+                                <GridView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Key, Converter={StaticResource NameToImageConverter}}"
+                                           Width="50"
+                                           Height="50" />
+                                    </DataTemplate>
+                                </GridView.ItemTemplate>
+                            </GridView>
+
+                            <Button x:ConnectionId='8' Grid.Row="4"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                                       
+                                Content="Submit">
+                            </Button>
+                        </Grid>
+                    </Flyout>
+                </Button.Flyout>
+            </AppBarButton>
             <AppBarButton x:ConnectionId='5' Icon="SolidStar" Label="Live Stats"                          />
         </CommandBar>
     </Page.BottomAppBar>
 
 
 
-    <Grid x:ConnectionId='6' x:Name="LayoutRoot"
+    <Grid x:ConnectionId='11' x:Name="LayoutRoot"
                                 >
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid>
+        
+        <StackPanel Visibility="{Binding LoadingVisibility}">
+            <ProgressBar IsIndeterminate="True"></ProgressBar>
+            <TextBlock FontSize="15">Fetching Data...</TextBlock>
+        </StackPanel>
+        
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-        
+
             <Image Source="{Binding Champion.Key, Converter={StaticResource NameToImageConverter}}"
                    Width="60"
                    Height="60" />
+            
             <TextBlock Text="{Binding Champion.Name}"
                        Style="{ThemeResource HeaderTextBlockStyle}"
                        Grid.Column="1"
@@ -132,453 +273,290 @@
                        Text="{Binding Champion.Tags[0]}" />
         </Grid>
 
-        <Grid Grid.Row="2" Margin="0,115,0,0" x:Name="AdGrid">
-            <UI:AdControl x:ConnectionId='37' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+        <Grid Grid.Row="3" Margin="0,65,0,0" x:Name="AdGrid">
+            <UI:AdControl x:ConnectionId='21' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239101" />
-            <UI:AdControl x:ConnectionId='38' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240206" />
+            <UI:AdControl x:ConnectionId='22' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239102" />
-            <UI:AdControl x:ConnectionId='39' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240207" />
+            <UI:AdControl x:ConnectionId='23' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239103" />
-            <UI:AdControl x:ConnectionId='40' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240208" />
+            <UI:AdControl x:ConnectionId='24' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239104" />
-            <UI:AdControl x:ConnectionId='41' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240209" />
+            <UI:AdControl x:ConnectionId='25' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239105" />
-            <UI:AdControl x:ConnectionId='42' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240210" />
+            <UI:AdControl x:ConnectionId='26' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239106" />
-            <UI:AdControl x:ConnectionId='43' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240211" />
+            <UI:AdControl x:ConnectionId='27' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239107" />
-            <UI:AdControl x:ConnectionId='44' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240212" />
+            <UI:AdControl x:ConnectionId='28' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239108" />
-            <UI:AdControl x:ConnectionId='45' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240213" />
+            <UI:AdControl x:ConnectionId='29' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239109" />
-            <UI:AdControl x:ConnectionId='46' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240214" />
+            <UI:AdControl x:ConnectionId='30' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239110" />
-            <UI:AdControl x:ConnectionId='47' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240215" />
+            <UI:AdControl x:ConnectionId='31' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239111" />
-            <UI:AdControl x:ConnectionId='48' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240216" />
+            <UI:AdControl x:ConnectionId='32' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239112" />
-            <UI:AdControl x:ConnectionId='49' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240217" />
+            <UI:AdControl x:ConnectionId='33' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239113" />
-            <UI:AdControl x:ConnectionId='50' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+                          AdUnitId="240218" />
+            <UI:AdControl x:ConnectionId='34' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239114" />
-            <UI:AdControl x:ConnectionId='51' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="False"
-                                                  
-                          AdUnitId="239115" />
-            <UI:AdControl x:ConnectionId='52' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="False"
-                                                  
-                          AdUnitId="239116" />
-            <UI:AdControl x:ConnectionId='53' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="False"
-                                                  
-                          AdUnitId="239117" />
-            <UI:AdControl x:ConnectionId='54' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="False"
-                                                  
-                          AdUnitId="239118" />
-            <UI:AdControl x:ConnectionId='55' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="False"
-                                                  
-                          AdUnitId="239119" />
-            <UI:AdControl x:ConnectionId='56' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="False"
-                                                  
-                          AdUnitId="239120" />
+                          AdUnitId="240219" />
         </Grid>
-        <Grid Grid.Row="2">
-            <UI:AdControl x:ConnectionId='36' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d "
+        <Grid Grid.Row="3" Margin="0,20,0,0">
+            <UI:AdControl x:ConnectionId='20' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             
                           IsAutoRefreshEnabled="False"
                                                   
-                          AdUnitId="239121" />
+                          AdUnitId="240220" />
         </Grid>
-        
-        <Hub x:Name="MainHub"
+
+        <Pivot x:Name="MainPivot"
              Margin="0,-10,0,0"
-             Grid.Row="1">
-            <HubSection x:Name="CounterSection">
+             Grid.Row="2">
+            <Pivot.HeaderTemplate>
                 <DataTemplate>
-                    <Grid x:ConnectionId='33'                       >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <TextBlock FontSize="30"
-                                       HorizontalAlignment="Center"
-                                       Style="{StaticResource TitleTextBlockStyle}"
-                                       Text="Counters">
-                            </TextBlock>
-
-                        <Grid Grid.Row="1">
-                            <ProgressRing x:ConnectionId='34' VerticalAlignment="Center"
-                                          HorizontalAlignment="Center"
-                                          Height="150"
-                                          Width="150"
-                                                                     
-                                          IsActive="True">
-
-                            </ProgressRing>
-
-                            <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource ChampionVisibility}, ConverterParameter=Counter}"
-                                      IsItemClickEnabled="True">
-                                <ListView.ItemContainerStyle>
-                                    <Style TargetType="ListViewItem">
-                                        <Setter Property="HorizontalContentAlignment"
-                                                Value="Stretch" />
-                                    </Style>
-                                </ListView.ItemContainerStyle>
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                            </Grid.ColumnDefinitions>
-
-                                            <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
-
-                                            <Image x:ConnectionId='35' Grid.Column="1"
-                                                   Width="70"
-                                                   Height="70"
-                                                                        
-                                                   Source="{Binding Name, Converter={StaticResource NameToImageConverter}, ConverterParameter=Name}">
-                                            </Image>
-
-                                            <ProgressBar Grid.Column="2"
-                                                         Height="12"
-                                                         Foreground="Crimson"
-                                                         Margin="15,0,25,0"
-                                                         Value="{Binding Value}">
-                                            </ProgressBar>
-
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </Grid>
-                    </Grid>
+                    <TextBlock Text="{Binding}" FontSize="45"/>
                 </DataTemplate>
-            </HubSection>
-
-            <HubSection x:Name="EasyMatchupSection">
-                <DataTemplate>
-                    <Grid x:ConnectionId='30'                       >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <TextBlock FontSize="30"
-                                       HorizontalAlignment="Center"
-                                       Style="{StaticResource TitleTextBlockStyle}"
-                                       Text="Easy Matchups">
-                        </TextBlock>
-
-                        <Grid Grid.Row="1">
-                            <ProgressRing x:ConnectionId='31' VerticalAlignment="Center"
-                                          HorizontalAlignment="Center"
-                                          Height="150"
-                                          Width="150"
-                                                                         
-                                          IsActive="True">
-
-                            </ProgressRing>
-
-                            <ListView ItemsSource="{Binding ChampionFeedback.EasyMatchups}"
-                                      IsItemClickEnabled="True">
-                                <ListView.ItemContainerStyle>
-                                    <Style TargetType="ListViewItem">
-                                        <Setter Property="HorizontalContentAlignment"
-                                                Value="Stretch" />
-                                    </Style>
-                                </ListView.ItemContainerStyle>
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="4*"></ColumnDefinition>
-                                            </Grid.ColumnDefinitions>
-
-                                            <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
-
-                                            <Image x:ConnectionId='32' Grid.Column="1"
-                                                   Width="70"
-                                                   Height="70"
-                                                                              
-                                                   Source="{Binding ChampionFeedbackName, Converter={StaticResource NameToImageConverter}, ConverterParameter=Name}">
-                                            </Image>
-
-                                            <ProgressBar Grid.Column="2"
-                                                         Height="12"
-                                                         Foreground="Green"
-                                                         Margin="15,0,25,0"
-                                                         Value="{Binding Value}">
-                                            </ProgressBar>
-
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </Grid>
-                    </Grid>
-                </DataTemplate>
-            </HubSection>
-
-            <HubSection x:Name="SynergySection">
-                <DataTemplate>
-
-                    <Grid x:ConnectionId='26'                       >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <TextBlock FontSize="30"
-                                       HorizontalAlignment="Center"
-                                       Style="{StaticResource TitleTextBlockStyle}"
-                                       Text="Synergy">
-                            </TextBlock>
-
-                        <Grid Grid.Row="1">
-                            <ProgressRing x:ConnectionId='27' VerticalAlignment="Center"
-                                          HorizontalAlignment="Center"
-                                          Height="150"
-                                          Width="150"
-                                                                     
-                                          IsActive="True">
-
-                            </ProgressRing>
-
-                            <TextBlock x:ConnectionId='28' Visibility="Collapsed"
-                                       FontSize="30"
-                                       TextAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"
-                                                                       
-                                       TextWrapping="Wrap"> Be the first to submit a synergy champion!
-                            </TextBlock>
-
-
-                            <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource ChampionVisibility}, ConverterParameter=Synergy}"
-                                      IsItemClickEnabled="True">
-                                <ListView.ItemContainerStyle>
-                                    <Style TargetType="ListViewItem">
-                                        <Setter Property="HorizontalContentAlignment"
-                                                Value="Stretch" />
-                                    </Style>
-                                </ListView.ItemContainerStyle>
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="4*"></ColumnDefinition>
-                                            </Grid.ColumnDefinitions>
-
-                                            <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
-
-                                            <Image x:ConnectionId='29' Grid.Column="1"
-                                                   Width="70"
-                                                   Height="70"
-                                                                               
-                                                                                      >
-                                            </Image>
-
-                                            <ProgressBar Grid.Column="2"
-                                                         Height="12"
-                                                         Foreground="#FF771287"
-                                                         Margin="15,0,25,0"
-                                                         Value="{Binding Value}">
-                                            </ProgressBar>
-
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </Grid>
-                    </Grid>
-                </DataTemplate>
-            </HubSection>
-
+            </Pivot.HeaderTemplate>
             
+            <PivotItem x:Name="CounterSection" Header="Counters">
+                <Grid x:ConnectionId='18'                        Margin="0,-15,0,0">
+                    <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource ChampionVisibility}, ConverterParameter=Counter}"
+                                      IsItemClickEnabled="True">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment"
+                                                Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
 
-            <HubSection x:Name="CounterCommentSection">
-                <DataTemplate>
-                    <Grid x:ConnectionId='23'                       >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                        </Grid.RowDefinitions>
-                    
+                                    <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
 
-                        <TextBlock FontSize="30"
-                                   Style="{StaticResource TitleTextBlockStyle}"
-                                   Text="{Binding Champion.Name, Converter={StaticResource CommentFormat}, ConverterParameter=Counter}"
-                                   VerticalAlignment="Center"
-                                   TextAlignment="Center">
-                        </TextBlock>
+                                    <Image x:ConnectionId='19' Grid.Column="1"
+                                           Width="70"
+                                           Height="70"
+                                                                
+                                           Source="{Binding Name, Converter={StaticResource NameToImageConverter}, ConverterParameter=Name}">
+                                    </Image>
 
+                                    <ProgressBar Grid.Column="2"
+                                                 Height="12"
+                                                 Foreground="Crimson"
+                                                 Margin="15,0,25,0"
+                                                 Value="{Binding Value}">
+                                    </ProgressBar>
 
-                        <Grid Grid.Row="1">
-                            <ProgressRing x:ConnectionId='24' VerticalAlignment="Center"
-                                          HorizontalAlignment="Center"
-                                          Height="150"
-                                          Width="150"
-                                                                             
-                                          IsActive="True">
-                            </ProgressRing>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
 
-                            <TextBlock x:ConnectionId='25' Visibility="Collapsed"
-                                       Name="NoCommentMessage"
-                                       FontSize="30"
-                                       TextAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"
-                                                                     
-                                       TextWrapping="Wrap"> Be the first to submit a comment!</TextBlock>
+            <PivotItem x:Name="EasyMatchupSection" Header="Easy">
+                <Grid x:ConnectionId='16'                        Margin="0,-15,0,0">
+                    <ListView ItemsSource="{Binding ChampionFeedback.EasyMatchups}"
+                              IsItemClickEnabled="True">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment"
+                                        Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
 
-                            <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource CommentVisibility}, ConverterParameter=Counter}"
-                                      IsItemClickEnabled="True"
-                                      Grid.Row="2">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ContentControl ContentTemplate="{StaticResource CommentSection}" />
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </Grid>
-                    </Grid>
-                </DataTemplate>
-            </HubSection>
+                                    <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
 
-            <HubSection x:Name="PlayingCommentSection">
-                <DataTemplate>
-                    <Grid x:ConnectionId='20'                       >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                        </Grid.RowDefinitions>
-
-                     
-
-                        <TextBlock FontSize="30"
-                                   Style="{StaticResource TitleTextBlockStyle}"
-                                   Text="{Binding Champion.Name, Converter={StaticResource CommentFormat}, ConverterParameter=Playing}"
-                                   VerticalAlignment="Center"
-                                   TextAlignment="Center">
-                        </TextBlock>
-
-
-                        <Grid Grid.Row="1">
-                            <ProgressRing x:ConnectionId='21' VerticalAlignment="Center"
-                                          HorizontalAlignment="Center"
-                                          Height="150"
-                                          Width="150"
-                                                                             
-                                          IsActive="True">
-                            </ProgressRing>
-
-                            <TextBlock x:ConnectionId='22' Visibility="Collapsed"
-                                       Name="NoCommentMessage2"
-                                       FontSize="30"
-                                       TextAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"
+                                    <Image x:ConnectionId='17' Grid.Column="1"
+                                           Width="70"
+                                           Height="70"
                                                                       
-                                       TextWrapping="Wrap"> Be the first to submit a comment!
-                            </TextBlock>
+                                           Source="{Binding ChampionFeedbackName, Converter={StaticResource NameToImageConverter}, ConverterParameter=Name}">
+                                    </Image>
 
-                            <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource CommentVisibility}, ConverterParameter=Playing}"
-                                      IsItemClickEnabled="True"
-                                      Grid.Row="2">
-                                <ListView.ItemTemplate>
+                                    <ProgressBar Grid.Column="2"
+                                                 Height="12"
+                                                 Foreground="Green"
+                                                 Margin="15,0,25,0"
+                                                 Value="{Binding Value}">
+                                    </ProgressBar>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem x:Name="SynergySection" Header="Synergy">
+                <Grid x:ConnectionId='14'                        Margin="0,-15,0,0">
+
+                    <TextBlock Visibility= "{Binding Converter={StaticResource EmptyMessageVisibility}, ConverterParameter=Synergy}"
+                               Name="NoSynergyChampions"
+                               FontSize="30"
+                               TextAlignment="Center"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextWrapping="Wrap"> Be the first to submit a synergy champion!
+                    </TextBlock>
+
+                    <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource ChampionVisibility}, ConverterParameter=Synergy}"
+                                      IsItemClickEnabled="True">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment"
+                                        Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
+                                    <Image x:ConnectionId='15' Grid.Column="1"
+                                           Width="70"
+                                           Height="70"
+                                                                       
+                                                                              >
+                                    </Image>
+                                    <ProgressBar Grid.Column="2"
+                                                 Height="12"
+                                                 Foreground="#FF771287"
+                                                 Margin="15,0,25,0"
+                                                 Value="{Binding Value}">
+                                    </ProgressBar>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem x:Name="CounterCommentSection" Header="Countering">
+                <Grid x:ConnectionId='13'                        Margin="0,-15,0,0">
+                    <TextBlock Visibility="{Binding Converter={StaticResource EmptyMessageVisibility}, ConverterParameter=CounterComments}"
+                               Name="NoCounterComments"
+                               FontSize="30"
+                               TextAlignment="Center"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextWrapping="Wrap"> Be the first to submit a comment!
+                    </TextBlock>
+
+                    <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource CommentVisibility}, ConverterParameter=Counter}"
+                              IsItemClickEnabled="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ContentControl ContentTemplate="{StaticResource CommentSection}" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem x:Name="PlayingCommentSection" Header="Playing">
+                    <Grid x:ConnectionId='12'                       >
+                    <TextBlock Visibility="{Binding Converter={StaticResource EmptyMessageVisibility}, ConverterParameter=PlayingAsComments}"
+                               Name="NoPlayingComments"
+                               FontSize="30"
+                               TextAlignment="Center"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextWrapping="Wrap"> Be the first to submit a comment!
+                     </TextBlock>
+
+                    <ListView ItemsSource="{Binding ChampionFeedback.Comments, Converter={StaticResource CommentVisibility}, ConverterParameter=Playing}"
+                              IsItemClickEnabled="True">
+                        <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ContentControl ContentTemplate="{StaticResource CommentSection}" />
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                        </Grid>
                     </Grid>
-                </DataTemplate>
-            </HubSection>
+            </PivotItem>
 
 
-            <HubSection x:Name="SubmitFeedbackSection">
+            <!--<HubSection x:Name="SubmitFeedbackSection" Visibility="Collapsed">
                 <DataTemplate>
-                    <Grid x:ConnectionId='14'                       >
+                    <Grid Loaded="GridAd_Loaded">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -598,46 +576,46 @@
 
 
                         <Grid Grid.Row="1">
-                            <RadioButton x:ConnectionId='18' GroupName="Comment"
+                            <RadioButton GroupName="Comment"
                                          HorizontalAlignment="Left"
                                          Margin="40,-5,0,0"
-                                                                  
+                                         Checked="Counter_Checked"
                                          Content="Counter"></RadioButton>
-                            <RadioButton x:ConnectionId='19' GroupName="Comment"
+                            <RadioButton GroupName="Comment"
                                          Margin="0,-5,0,0"
                                          HorizontalAlignment="Right"
-                                                                  
+                                         Checked="Playing_Checked"
                                          Content="Playing as"></RadioButton>
                         </Grid>
 
-                        <TextBox x:ConnectionId='15' Margin="30,-10,30,0"
+                        <TextBox Margin="30,-10,30,0"
                                  Grid.Row="2"
                                  HorizontalAlignment="Stretch"
                                  VerticalAlignment="Stretch"
                                  Text="Your name"
                                  TextAlignment="Center"
-                                                      
-                                                         ></TextBox>
+                                 GotFocus="Name_Focus"
+                                 LostFocus="Name_Written"></TextBox>
 
-                        <TextBox x:ConnectionId='16' HorizontalAlignment="Stretch"
+                        <TextBox HorizontalAlignment="Stretch"
                                  VerticalAlignment="Stretch"
                                  Margin="0,10,0,0"
                                  Grid.Row="3"
-                                                            
+                                 Loaded="FeedbackBox_Loaded"
                                  TextWrapping="Wrap"></TextBox>
                         
-                        <Button x:ConnectionId='17' Grid.Row="4"
+                        <Button Grid.Row="4"
                                 VerticalAlignment="Bottom"
                                 HorizontalAlignment="Center"
-                                                      >Send</Button>
+                                Tapped="Send_Feedback">Send</Button>
                     </Grid>
                 </DataTemplate>
             </HubSection>
 
 
-            <HubSection x:Name="SubmitCounterSection">
+            <HubSection x:Name="SubmitCounterSection" Visibility="Collapsed">
                 <DataTemplate>
-                    <Grid x:ConnectionId='7'                       >
+                    <Grid Loaded="GridAd_Loaded">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -657,42 +635,42 @@
                         </TextBlock>
 
                         <Grid Grid.Row="1">
-                            <RadioButton x:ConnectionId='11' GroupName="Champion"
+                            <RadioButton GroupName="Champion"
                                          Margin="0,-5,0,0"
                                          MinWidth="50"
                                          HorizontalAlignment="Left"
-                                                                          
+                                         Checked="CounterChampion_Checked"
                                          Content="Counter"></RadioButton>
-                            <RadioButton x:ConnectionId='12' GroupName="Champion"
+                            <RadioButton GroupName="Champion"
                                          Margin="0,-5,0,0"
                                          MinWidth="50"
                                          HorizontalAlignment="Center"
-                                                                              
+                                         Checked="EasyMatchupChampion_Checked"
                                          Content="Easy"></RadioButton>
-                            <RadioButton x:ConnectionId='13' GroupName="Champion"
+                            <RadioButton GroupName="Champion"
                                          Margin="0,-5,0,0"
                                          MinWidth="50"
                                          HorizontalAlignment="Right"
-                                                                          
+                                         Checked="SynergyChampion_Checked"
                                          Content="Synergy"></RadioButton>
                         </Grid>
 
-                        <TextBox x:ConnectionId='8' Height="40"
+                        <TextBox Height="40"
                                  Name="FilterBox"
                                  Margin="30,-10,30,0"
-                                                          
+                                 Loaded="FilterBox_Loaded"
                                  Grid.Row="2"
-                                                           
+                                 GotFocus="Filter_GotFocus"
                                  Text="Type to search"
-                                                                 >
+                                 TextChanged="Filter_TextChanged">
                         </TextBox >
 
-                        <GridView x:ConnectionId='9' ItemsSource="{Binding Filter}"
+                        <GridView ItemsSource="{Binding Filter}"
                                   HorizontalAlignment="Center"
                                   IsItemClickEnabled="True"
                                   Grid.Row="3"
                                   Margin="0,15,0,10"
-                                                           >
+                                  ItemClick="Filter_Click">
                             <GridView.ItemTemplate>
                                 <DataTemplate>
                                     <Image Source="{Binding Key, Converter={StaticResource NameToImageConverter}}"
@@ -702,17 +680,17 @@
                             </GridView.ItemTemplate>
                         </GridView>
 
-                        <Button x:ConnectionId='10' Grid.Row="4"
+                        <Button Grid.Row="4"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
-                                                       
+                                Tapped="Submit_Counter"
                                 Content="Submit">
                         </Button>
 
                     </Grid>
                 </DataTemplate>
-            </HubSection>
-        </Hub>
+            </HubSection>-->
+        </Pivot>
     </Grid>
 </Page>
 

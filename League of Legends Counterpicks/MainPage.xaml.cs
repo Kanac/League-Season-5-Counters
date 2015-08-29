@@ -1,7 +1,7 @@
 ﻿using League_of_Legends_Counterpicks.Common;
 using League_of_Legends_Counterpicks.Data;
 using League_of_Legends_Counterpicks.DataModel;
-using Microsoft.Advertising.Mobile.UI;
+using Microsoft.Advertising.WinRT.UI;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -33,6 +33,7 @@ using Windows.ApplicationModel.Store;
 using League_of_Legends_Counterpicks.Advertisement;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
+using Windows.System;
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -55,8 +56,6 @@ namespace League_of_Legends_Counterpicks
 
             // Hub is only supported in Portrait orientation
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
-
-            //this.NavigationCacheMode = NavigationCacheMode.Required;
 
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
@@ -100,19 +99,35 @@ namespace League_of_Legends_Counterpicks
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
 
-            //var roles = await DataSource.GetRolesAsync();
-            //this.DefaultViewModel["Roles"] = roles;
-
             // Load all the roles (which contains all the champions) from the json file 
-            this.DefaultViewModel["Roles"] = StatsDataSource.GetRoles();
+            var roles = StatsDataSource.GetRoles();
+            //roles.Insert(0, "Search");
+            this.DefaultViewModel["Roles"] = roles;
             await StatsDataSource.GetChampionsAsync();
 
             // Toast background task setup 
             if (e.PageState == null || (bool)e.PageState["firstLoad"] == true)
-                await setupToast();
+            {
+                setupFeatureToast(); // Flashes a new feature message 
+                await setupToast();  // Background toast in 72 hours talking about new champion data
+            }
 
             // Set up timer refresh rate of 30 seconds for ads (or use existing one)
             setupAdTimer();
+        }
+
+        private void setupFeatureToast()
+        {
+            ToastTemplateType toastTemplate = ToastTemplateType.ToastImageAndText02;
+            XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
+
+            XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
+            toastTextElements[1].AppendChild(toastXml.CreateTextNode("New Live Stats feature and Windows 10 Version!"));
+
+            ToastNotification toast = new ToastNotification(toastXml);
+            toast.Tag = "FeatureToast";
+            ToastNotificationManager.History.Remove("FeatureToast"); // Remove previous toasts in action centre history, if any, before sending 
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
 
         private async Task setupToast()
@@ -143,6 +158,28 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
+        private async void CheckAppVersion()
+        {
+            String appVersion = String.Format("{0}.{1}.{2}.{3}",
+                    Package.Current.Id.Version.Build,
+                    Package.Current.Id.Version.Major,
+                    Package.Current.Id.Version.Minor,
+                    Package.Current.Id.Version.Revision);
+
+            String lastVersion = Windows.Storage.ApplicationData.Current.LocalSettings.Values["AppVersion"] as String;
+
+            if (lastVersion == null || lastVersion != appVersion)
+            {
+                // Our app has been updated
+                Windows.Storage.ApplicationData.Current.LocalSettings.Values["AppVersion"] = appVersion;
+
+                // Call RemoveAccess
+                BackgroundExecutionManager.RemoveAccess();
+            }
+
+            BackgroundAccessStatus status = await BackgroundExecutionManager.RequestAccessAsync();
+        }
+
         /// <summary>
         /// Preserves state associated with this page in case the application is suspended or the
         /// page is discarded from the navigation cache.  Values must conform to the serialization
@@ -159,12 +196,13 @@ namespace League_of_Legends_Counterpicks
         /// <summary>
         /// Shows the details of a clicked group in the <see cref="RolePage"/>.
         /// </summary>
-        private async void GroupSection_ItemClick(object sender, ItemClickEventArgs e)
+        private void GroupSection_ItemClick(object sender, ItemClickEventArgs e)
         {
             var roleId = ((string)e.ClickedItem);
+            //if (roleId == "Search")
+            //    roleId = "Filter";
 
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(RolePage), roleId));
-
+            Frame.Navigate(typeof(RolePage), roleId);
         }
 
 
@@ -196,7 +234,8 @@ namespace League_of_Legends_Counterpicks
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            dispatcherTimer.Stop();
+            if (dispatcherTimer != null)
+                dispatcherTimer.Stop();
             AdGrid.Children.Clear();
             base.OnNavigatingFrom(e);
         }
@@ -215,40 +254,12 @@ namespace League_of_Legends_Counterpicks
         {
             Frame.Navigate(typeof(ChangeLog));
         }
-
-
-        private async void CheckAppVersion()
-        {
-            String appVersion = String.Format("{0}.{1}.{2}.{3}",
-                    Package.Current.Id.Version.Build,
-                    Package.Current.Id.Version.Major,
-                    Package.Current.Id.Version.Minor,
-                    Package.Current.Id.Version.Revision);
-
-            String lastVersion = Windows.Storage.ApplicationData.Current.LocalSettings.Values["AppVersion"] as String;
-
-            if (lastVersion == null || lastVersion != appVersion)
-            {
-                // Our app has been updated
-                Windows.Storage.ApplicationData.Current.LocalSettings.Values["AppVersion"] = appVersion;
-
-                // Call RemoveAccess
-                BackgroundExecutionManager.RemoveAccess();
-            }
-
-            BackgroundAccessStatus status = await BackgroundExecutionManager.RequestAccessAsync();
-        }
-
+    
+        
         private void Tweet(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Twitter));
         }
-
-        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(RolePage), "Filter");
-        }
-
 
         private async void Comment_Click(object sender, RoutedEventArgs e)
         {
@@ -268,16 +279,6 @@ namespace League_of_Legends_Counterpicks
             // Check if the ad list already has a reference to this ad before inserting
             if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
                 adList.Add(ad);
-
-            //if ((ad.Parent as Grid).Margin.Top != 0)
-            //{
-            //    var offset = adList.IndexOf(ad) * 15;
-            //    if (offset <= 150)
-            //        ad.Margin = new Thickness(offset, 0, 0, 0);
-            //    else
-            //        ad.Margin = new Thickness(0, 0, offset - 150, 0);
-            //}
-
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
@@ -308,9 +309,7 @@ namespace League_of_Legends_Counterpicks
 
 
 
-        private void Ad_Error(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
-        {
-        }
+
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
         {
@@ -333,6 +332,9 @@ namespace League_of_Legends_Counterpicks
             AdRemover.Purchase();
         }
 
+        private void Ad_Error(object sender, AdErrorEventArgs e)
+        {
 
+        }
     }
 }

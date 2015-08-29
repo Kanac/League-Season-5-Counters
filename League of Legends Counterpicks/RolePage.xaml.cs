@@ -2,7 +2,7 @@
 using League_of_Legends_Counterpicks.Common;
 using League_of_Legends_Counterpicks.Data;
 using League_of_Legends_Counterpicks.DataModel;
-using Microsoft.Advertising.Mobile.UI;
+using Microsoft.Advertising.WinRT.UI;
 using QKit;
 using QKit.JumpList;
 using System;
@@ -41,16 +41,13 @@ namespace League_of_Legends_Counterpicks
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private readonly String APP_ID = "3366702e-67c7-48e7-bc82-d3a4534f3086";
         private List<AdControl> adList = new List<AdControl>();
-        private TextBox textBox;
         private Champions champions;
         private DispatcherTimer dispatcherTimer;
-        private string navigationRole, savedRoleId;
-        private int sectionIndex;
+        private bool isInitialAllView = true;
 
         public RolePage()
         {
             this.InitializeComponent();
-            //this.NavigationCacheMode = NavigationCacheMode.Required;
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
@@ -95,31 +92,31 @@ namespace League_of_Legends_Counterpicks
 
             reviewApp();
 
-            string roleId;
-            navigationRole = e.NavigationParameter as string;
-            // If navigating from main page, use that role selected, otherwise use the saved role prior to navigating to champion page
-            if (e.PageState == null || navigationRole != (string)e.PageState["NavigationRole"])
-                roleId = navigationRole;
-            else
-                roleId = (string)e.PageState["savedRoleId"];
-
-            // Gets a reference to all the roles -- no data is seralized again (already done on main page load)
+            // Set up champion data 
             champions = await StatsDataSource.GetChampionsAsync();
-            DefaultViewModel["Champions"] = champions;
-
-            // Get the 'All' role and configure the view to display the champions nicely
-            var GroupedChampions = JumpListHelper.ToAlphaGroups(champions.ChampionInfos, x => x.Value.Name);
+            var GroupedChampions = champions.ChampionInfos.ToAlphaGroups(x => x.Value.Name);
             DefaultViewModel["GroupedChampions"] = GroupedChampions;
 
-            // Smoothes out the loading process to get to desired page immedaitely 
-            if (roleId == "Filter")
-                sectionIndex = MainHub.Sections.Count() - 1;
-            else
-                sectionIndex = StatsDataSource.GetRoles().IndexOf(navigationRole);
+            // Set up roles
+            string selectedRole = (string)e.NavigationParameter;
+            DefaultViewModel["Roles"] = StatsDataSource.GetRoles();
+            DefaultViewModel["SelectedRole"] = selectedRole;
 
-            MainHub.DefaultSectionIndex = sectionIndex;
 
-            // Set up timer refresh rate of 30 seconds for ads (or use existing one)
+            // Configure view to either 'All' or filtered role
+            if (selectedRole != "All")
+            {
+                // Do a null check incase of race condition with UI, and raise a flag incase UI hasn't loaded yet for its load to set visibility
+                isInitialAllView = false;
+                if (JumpList != null)
+                    JumpList.Visibility = Visibility.Collapsed;
+
+                DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Tags[0] == selectedRole).OrderBy(x => x.Value.Name);
+
+                if (FilterGridView != null)
+                    FilterGridView.Visibility = Visibility.Visible;
+            }
+
             setupAdTimer();
         }
         
@@ -133,8 +130,7 @@ namespace League_of_Legends_Counterpicks
         /// serializable state.</param>
         private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
-            e.PageState["savedRoleId"] = savedRoleId;
-            e.PageState["NavigationRole"] = navigationRole;
+
         }
 
         /// <summary>
@@ -143,18 +139,15 @@ namespace League_of_Legends_Counterpicks
         /// <param name="sender">The GridView displaying the item clicked.</param>
         /// <param name="e">Event data that describes the item clicked.</param>
         /// 
-
-        private async void ItemView_ItemClick(object sender, ItemClickEventArgs e)
+        private void ItemView_ItemClick(object sender, ItemClickEventArgs e)
         {
             //Ask user to purchase ad removal before proceeding
             checkAdRemoval();
-            //Store the hub section before proceeding to champion page, so that the back button goes back to it
-            savedRoleId = MainHub.SectionsInView[0].Name;
-
             var championKey = ((KeyValuePair<string, ChampionInfo>)e.ClickedItem).Key;
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.Frame.Navigate(typeof(ChampionPage), championKey));
+            Frame.Navigate(typeof(ChampionPage), championKey);
         }
 
+       
         #region NavigationHelper registration
 
         /// <summary>
@@ -181,51 +174,95 @@ namespace League_of_Legends_Counterpicks
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            dispatcherTimer.Stop();
+            if (dispatcherTimer != null)
+                dispatcherTimer.Stop();
             AdGrid.Children.Clear();
             base.OnNavigatingFrom(e);
         }
         #endregion
 
-        //Purpose of this is to load the role page twice since there is a bug with the Qkit jumpList that doesnt render properly on first load
+
         private void JumpList_Loaded(object sender, RoutedEventArgs e)
         {
-                var jumpList = sender as AlphaJumpList;
-                jumpList.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                All.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                All.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                MainHub.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                MainHub.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                jumpList.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                jumpList.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            
+            var jumpList = sender as AlphaJumpList;
+            var gridParent = jumpList.Parent as Grid;
+
+            // JumpList may not render properly the first time, so blast it a bit
+            gridParent.Visibility = Visibility.Collapsed; gridParent.Visibility = Visibility.Visible;
+            gridParent.Visibility = Visibility.Collapsed; gridParent.Visibility = Visibility.Visible;
+            jumpList.Visibility = Visibility.Collapsed; jumpList.Visibility = Visibility.Visible;
+
+            if (!isInitialAllView)
+                (sender as AlphaJumpList).Visibility = Visibility.Collapsed;
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void FilterGridView_Loaded(object sender, RoutedEventArgs e)
         {
-            String text = (sender as TextBox).Text;
+            if (!isInitialAllView)
+                (sender as Grid).Visibility = Visibility.Visible;
+        }
 
-            if (String.IsNullOrEmpty(text))    //Don't show every champion with no query
-                DefaultViewModel["Filter"] = null;
+        // Helper method to show the role into view, enabling the role name textblock and emptying the filter box
+        private void Show_RoleView() {
+            RoleName.Visibility = Visibility.Visible;
+            FilterBox.Text = String.Empty;
+            var selectedRole = (string)RoleFlyout.SelectedItem;
+
+            if (selectedRole == "All")
+            {
+                JumpList.Visibility = Visibility.Visible;
+                FilterGridView.Visibility = Visibility.Collapsed;
+            }
             else
-                DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name.Contains(text)).OrderBy(x => x.Value.Name);
+            {
+                JumpList.Visibility = Visibility.Collapsed;
+                DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Tags[0] == selectedRole).OrderBy(x => x.Value.Name);
+                FilterGridView.Visibility = Visibility.Visible;
+            }
+        }
+        private void Role_Picked(ListPickerFlyout sender, ItemsPickedEventArgs args)
+        {
+            // Set role into view 
+            Show_RoleView();
         }
 
-        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        private void FilterBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            // Set view to filter grid view of the query (Show nothing if nothing searched)
+            if (RoleName.Visibility == Visibility.Collapsed) // Don't call this if text was programmatically changed
+            {
+                String text = (sender as TextBox).Text;
+                if (FilterBox.Text != String.Empty)
+                    DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name.Contains(text)).OrderBy(x => x.Value.Name);
+                else
+                    DefaultViewModel["Filter"] = null;
+            }
+        }
+
+        private void FilterBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            // Clear role name when filter box is clicked, and show nothing until searched 
             (sender as TextBox).Text = String.Empty;
+            RoleName.Visibility = Visibility.Collapsed;
+            JumpList.Visibility = Visibility.Collapsed;
+            FilterGridView.Visibility = Visibility.Visible;
+            DefaultViewModel["Filter"] = null;
         }
 
-        private void TextBox__Loaded(object sender, RoutedEventArgs e)
+        private void FilterBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            textBox = sender as TextBox;
+            // If query is still empty after losing focus, set the role back into view 
+            if (((TextBox)sender).Text == String.Empty)
+            {
+                Show_RoleView();
+            }
         }
+
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            MainHub.ScrollToSection(Filter);
-            if (textBox != null)
-                textBox.Focus(FocusState.Programmatic);
+            if (FilterBox != null)
+                FilterBox.Focus(FocusState.Programmatic);
         }
 
         private void Ad_Loaded(object sender, RoutedEventArgs e)
@@ -261,9 +298,6 @@ namespace League_of_Legends_Counterpicks
                 ad.Refresh();
         }
 
-        private void Ad_Error(object sender, Microsoft.Advertising.Mobile.Common.AdErrorEventArgs e)
-        {
-        }
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
         {
@@ -313,8 +347,12 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
-        
+        private void Ad_Error(object sender, AdErrorEventArgs e)
+        {
 
+        }
+
+        
         private async void reviewApp()
         {
             if (!localSettings.Values.ContainsKey("Views"))
@@ -345,7 +383,6 @@ namespace League_of_Legends_Counterpicks
                 catch (Exception) { }
             }
         }
-
 
         
     }

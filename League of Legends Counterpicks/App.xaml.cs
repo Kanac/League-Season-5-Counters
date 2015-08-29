@@ -72,11 +72,6 @@ namespace League_of_Legends_Counterpicks
 #endif
             this.UnhandledException += this.Application_UnhandledException;
 
-            // Setup toast for 1 hour after app initializing 
-            // setupToastOnLaunch();
-
-
-
         }
 
         private void Application_UnhandledException(object sender, UnhandledExceptionEventArgs e)
@@ -85,28 +80,7 @@ namespace League_of_Legends_Counterpicks
             e.Handled = true;
 
         }
-
-        private void setupToastOnLaunch()
-        {
-            ToastTemplateType toastTemplate = ToastTemplateType.ToastImageAndText02;
-            XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
-
-            XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
-            toastTextElements[0].AppendChild(toastXml.CreateTextNode("League of Legends"));
-            toastTextElements[1].AppendChild(toastXml.CreateTextNode("Use this app to win!"));
-
-            IXmlNode toastNode = toastXml.SelectSingleNode("/toast");
-            XmlElement audio = toastXml.CreateElement("audio");
-            audio.SetAttribute("src", "ms-appx:///Assets/yourturn.mp3");
-            toastNode.AppendChild(audio);
-
-            ToastNotification toast = new ToastNotification(toastXml);
-
-            DateTime dueTime = DateTime.Now.AddHours(1);
-            ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, dueTime);
-            ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledToast);
-        }
-
+        
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used when the application is launched to open a specific file, to display

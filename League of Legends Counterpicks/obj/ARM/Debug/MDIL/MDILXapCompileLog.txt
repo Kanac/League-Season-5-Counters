@@ -1,9 +1,5 @@
 Compile filter specified.  Only the following files will be processed:
 c:\users\anthony c\documents\visual studio 2015\projects\league of legends counterpicks\league of legends counterpicks\obj\arm\debug\msil\league of legends counterpicks.exe
-Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\AdDuplex.Universal.Controls.WinPhone.XAML.winmd
-File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\AdDuplex.Universal.Controls.WinPhone.XAML.winmd is not in the compile filter. Skipping.
-Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\AdDuplex.Universal.WinPhone.WinRT.winmd
-File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\AdDuplex.Universal.WinPhone.WinRT.winmd is not in the compile filter. Skipping.
 Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\AppxManifest.xml
 File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\AppxManifest.xml is not in the compile filter. Skipping.
 Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\HtmlAgilityPack.dll
@@ -18,20 +14,10 @@ MDIL image C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Le
 File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\League of Legends Counterpicks.exe output C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MDIL\League of Legends Counterpicks.exe
 Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.AdMediator.Core.dll
 File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.AdMediator.Core.dll is not in the compile filter. Skipping.
-Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll
-File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.AdMediator.WindowsPhone81.dll
 File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.AdMediator.WindowsPhone81.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll
 File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll is not in the compile filter. Skipping.
-Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.AdMediator.WindowsPhone81.Smaato.dll
-File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.AdMediator.WindowsPhone81.Smaato.dll is not in the compile filter. Skipping.
-Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.Advertising.Mobile.Common.winmd
-File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.Advertising.Mobile.Common.winmd is not in the compile filter. Skipping.
-Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.Advertising.Mobile.Display.winmd
-File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.Advertising.Mobile.Display.winmd is not in the compile filter. Skipping.
-Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.Advertising.Mobile.UI.winmd
-File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.Advertising.Mobile.UI.winmd is not in the compile filter. Skipping.
 Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.Advertising.winmd
 File C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.Advertising.winmd is not in the compile filter. Skipping.
 Processing file: C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MSIL\Microsoft.ApplicationInsights.dll
