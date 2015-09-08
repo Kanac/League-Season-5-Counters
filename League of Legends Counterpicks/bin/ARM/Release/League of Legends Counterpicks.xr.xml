@@ -43,14 +43,10 @@
     </RootType>
     <RootType FullName="Microsoft.Advertising.WinRT.UI.AdControl">
       <RootProperty Name="ApplicationId" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="AutoRefreshIntervalInSeconds" />
-      <RootProperty Name="AdUnitId" />
       <RootProperty Name="Style" />
       <RootProperty Name="IsAutoRefreshEnabled" />
+      <RootProperty Name="AutoRefreshIntervalInSeconds" />
+      <RootProperty Name="AdUnitId" />
       <RootEvent Name="Loaded" />
       <RootEvent Name="ErrorOccurred" />
     </RootType>

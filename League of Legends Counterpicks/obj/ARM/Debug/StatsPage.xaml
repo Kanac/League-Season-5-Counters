@@ -34,7 +34,7 @@
             <RowDefinition Height="80"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="4" Margin="0,65,0,0" x:Name="AdGrid">
+        <Grid Grid.Row="4" Margin="0,70,0,0" x:Name="AdGrid">
             <UI:AdControl x:ConnectionId='3' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                                             

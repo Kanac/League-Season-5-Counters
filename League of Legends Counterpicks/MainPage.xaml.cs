@@ -101,7 +101,6 @@ namespace League_of_Legends_Counterpicks
 
             // Load all the roles (which contains all the champions) from the json file 
             var roles = StatsDataSource.GetRoles();
-            //roles.Insert(0, "Search");
             this.DefaultViewModel["Roles"] = roles;
             await StatsDataSource.GetChampionsAsync();
 

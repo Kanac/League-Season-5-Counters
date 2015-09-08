@@ -27,22 +27,36 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="3">
-            <UI:AdControl ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Top"
-                          Width="480"
-                          Height="80"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
+                          IsAutoRefreshEnabled="True"
                           AutoRefreshIntervalInSeconds="60"
-                          AdUnitId="234877" />
-            <UI:AdControl HorizontalAlignment="Center"
-                          ApplicationId="bb8be079-3202-4948-8b29-cfd54367d723"
-                          VerticalAlignment="Top"
-                          Width="480"
-                          Height="80"
+                          AdUnitId="242110" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                          Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
+                          IsAutoRefreshEnabled="True"
                           AutoRefreshIntervalInSeconds="60"
-                          AdUnitId="234878" />
+                          AdUnitId="242111" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                          Style="{StaticResource HorizontalAd}"
+                          Loaded="Ad_Loaded"
+                          IsAutoRefreshEnabled="True"
+                          AutoRefreshIntervalInSeconds="60"
+                          AdUnitId="242112" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                          Style="{StaticResource HorizontalAd}"
+                          Loaded="Ad_Loaded"
+                          IsAutoRefreshEnabled="True"
+                          AutoRefreshIntervalInSeconds="60"
+                          AdUnitId="242113" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                          Style="{StaticResource HorizontalAd}"
+                          Loaded="Ad_Loaded"
+                          IsAutoRefreshEnabled="True"
+                          AutoRefreshIntervalInSeconds="60"
+                          AdUnitId="242114" />
         </Grid>
 
         <!-- Title Panel -->
@@ -62,6 +76,12 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="Sept 5 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Just came back from vacavation. Weird bug with last update rolling back. Republished the update again and fixed a couple other small things. "></Run>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="August 28 2015" />
                     </TextBlock>

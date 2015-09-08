@@ -82,7 +82,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" Margin="0,65,0,0" x:Name="AdGrid">
+        <Grid Grid.Row="1" Margin="0,70,0,0" x:Name="AdGrid">
             <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
                           Loaded="Ad_Loaded"
@@ -167,6 +167,36 @@
                           IsAutoRefreshEnabled="False"
                           ErrorOccurred="Ad_Error"
                           AdUnitId="240204" />
+            <!--<UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                          Style="{StaticResource HorizontalAd}"
+                          Loaded="Ad_Loaded"
+                          IsAutoRefreshEnabled="False"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="242100" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                          Style="{StaticResource HorizontalAd}"
+                          Loaded="Ad_Loaded"
+                          IsAutoRefreshEnabled="False"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="242101" />-->
+            <!--<UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                          Style="{StaticResource HorizontalAd}"
+                          Loaded="Ad_Loaded"
+                          IsAutoRefreshEnabled="False"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="242102" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                          Style="{StaticResource HorizontalAd}"
+                          Loaded="Ad_Loaded"
+                          IsAutoRefreshEnabled="False"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="242108" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+                          Style="{StaticResource HorizontalAd}"
+                          Loaded="Ad_Loaded"
+                          IsAutoRefreshEnabled="False"
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="242109" />-->
         </Grid>
         <Grid Grid.Row="1" Margin="0,20,0,0">
             <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"

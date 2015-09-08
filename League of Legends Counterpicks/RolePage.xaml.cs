@@ -233,7 +233,7 @@ namespace League_of_Legends_Counterpicks
             {
                 String text = (sender as TextBox).Text;
                 if (FilterBox.Text != String.Empty)
-                    DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name.Contains(text)).OrderBy(x => x.Value.Name);
+                    DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name.ToLower().StartsWith(text.ToLower())).OrderBy(x => x.Value.Name);
                 else
                     DefaultViewModel["Filter"] = null;
             }

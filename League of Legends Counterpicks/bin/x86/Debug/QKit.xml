@@ -1,0 +1,432 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QKit</name>
+    </assembly>
+    <members>
+        <member name="T:QKit.AlphaJumpList">
+            <summary>
+            Represents a control will augment a ListViewBase control to look and behave like a native AlphaJumpList control.
+            </summary>
+        </member>
+        <member name="T:QKit.JumpListBase">
+            <summary>
+            Provides the infrastructure for the GenericJumpList and AlphaJumpList classes.
+            </summary>
+        </member>
+        <member name="F:QKit.JumpListBase.CollectionGroupsProperty">
+            <summary>
+            Indentifies the CollectionGroups dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.JumpListBase.JumpListGroupStyleProperty">
+            <summary>
+            Indentifies the JumpListGropuStyle dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.JumpListBase.BaseListProperty">
+            <summary>
+            Indentifies the BaseListProperty dependency property.
+            </summary>
+        </member>
+        <member name="M:QKit.JumpListBase.#ctor">
+            <summary>
+            Provides base-class initialization behavior for classes that are derived from the JumpListBase class.
+            </summary>
+        </member>
+        <member name="M:QKit.JumpListBase.OnApplyTemplate">
+            <summary>
+            Finds the part_SemanticZoom component of the control template and handles the hiding and 
+            showing of the current page's AppBar for performance improvements.
+            </summary>
+        </member>
+        <member name="M:QKit.JumpListBase.ApplyBaseList(Windows.UI.Xaml.Controls.ListViewBase)">
+            <summary>
+            Integrates a ListViewBase control for the main list display by applying properties and GroupStyles.
+            </summary>
+            <param name="newBaseList">ListViewBase control to integrate</param>
+        </member>
+        <member name="M:QKit.JumpListBase.ApplyItemsSource">
+            <summary>
+            Modifies the BaseList's ItemsSource to work with JumpList control.
+            Call this method right after you assign or reassign BaseList's ItemsSource programatically.
+            Do not call this method if you are binding the BaseList's ItemSource.
+            </summary>
+        </member>
+        <member name="M:QKit.JumpListBase.ApplyItemsSource(Windows.UI.Xaml.Controls.ListViewBase,System.Boolean)">
+            <summary>
+            Sets a ListViewBase's ItemsSource to this ItemsSource.
+            Then, change the ListViewBase's ItemsSource to the a ICollectionView
+            of the original ItemsSource to display grouped items.
+            </summary>
+            <param name="baseList">ListViewBase control that contains the original ItemsSource</param>
+            <param name="ignorePreviousHandling">Flag to ignore whether a ListViewBase has already been modified</param>
+        </member>
+        <member name="M:QKit.JumpListBase.ReleaseItemsSource">
+            <summary>
+            Undo BaseList ItemsSource modification done for JumpLists.
+            </summary>
+        </member>
+        <member name="M:QKit.JumpListBase.ReleaseItemsSource(Windows.UI.Xaml.Controls.ListViewBase,System.Boolean)">
+            <summary>
+            Restores the ItemsSource of this JumpList control and the BaseList controls.
+            </summary>
+            <param name="baseList">ListViewBase previously modified</param>
+            <param name="ignorePreviousHandling">Flag to ignore whether a ListViewBase has already been modified</param>
+        </member>
+        <member name="P:QKit.JumpListBase.CollectionView">
+            <summary>
+            Gets the View of grouped items.
+            </summary>
+        </member>
+        <member name="P:QKit.JumpListBase.CollectionGroups">
+            <summary>
+            Gets the group objects for each group of items.
+            </summary>
+        </member>
+        <member name="P:QKit.JumpListBase.JumpListGroupStyle">
+            <summary>
+            Gets or sets the GroupStyle that will be used to display the grouped list.
+            </summary>
+        </member>
+        <member name="P:QKit.JumpListBase.BaseList">
+            <summary>
+            Gets or sets the ListViewBase control that will display the list of items.
+            </summary>
+        </member>
+        <member name="M:QKit.AlphaJumpList.#ctor">
+            <summary>
+            Initializes a new instance of the AlphaJumpList class.
+            </summary>
+        </member>
+        <member name="M:QKit.AlphaJumpList.OnApplyTemplate">
+            <summary>
+            Finds the part_AlphaPicker GridView in the control template and adjusts its size for device orientation.
+            </summary>
+        </member>
+        <member name="T:QKit.SelectionModeChangedEventHandler">
+            <summary>
+            Represents the method that will handle a SelectionModeChanged event.
+            </summary>
+            <param name="sender">The object where the handler is attached.</param>
+            <param name="e">Event data for the event.</param>
+        </member>
+        <member name="T:QKit.MultiSelectListView">
+            <summary>
+            Represents a ListView control that enables edge selection and enhanced multiselection.
+            </summary>
+        </member>
+        <member name="F:QKit.MultiSelectListView.SelectionModeProperty">
+            <summary>
+            Identifies the SelectionMode dependency property.
+            </summary>
+        </member>
+        <member name="M:QKit.MultiSelectListView.#ctor">
+            <summary>
+            Initializes a new instance of the MultiSelectListView class.
+            </summary>
+        </member>
+        <member name="E:QKit.MultiSelectListView.SelectionModeChanged">
+            <summary>
+            Occurs when a MultiSelectListView's selection mode changes.
+            </summary>
+        </member>
+        <member name="P:QKit.MultiSelectListView.SelectionMode">
+            <summary>
+            Gets or sets the selection behavior for a MultiSelectListView instance.
+            </summary>
+        </member>
+        <member name="T:QKit.Common.EdgeSelectButton">
+            <summary>
+            Represents a left-edge button to enable a ListView's multiple selection mode.
+            </summary>
+        </member>
+        <member name="M:QKit.Common.EdgeSelectButton.#ctor">
+            <summary>
+            Initializes a new instance of the EdgeSelectButton class.
+            </summary>
+        </member>
+        <member name="T:QKit.GenericJumpList">
+            <summary>
+            Represents a control will augment a ListViewBase control to look and behave like a native JumpList control.
+            </summary>
+        </member>
+        <member name="M:QKit.GenericJumpList.#ctor">
+            <summary>
+            Initializes a new instance of the GenericJumpList class.
+            </summary>
+        </member>
+        <member name="T:QKit.JumpList.JumpListGroup`1">
+            <summary>
+            A keyed list of objects that provides additional info for presention in a JumpListBase
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:QKit.JumpList.JumpListGroup`1.GetEnumerator">
+            <summary>
+            Gets the default enumerator for this group of objects.
+            </summary>
+            <returns>Enumerator of the group's list of objects</returns>
+        </member>
+        <member name="P:QKit.JumpList.JumpListGroup`1.Key">
+            <summary>
+            Key that represents the identifier of group of objects.
+            </summary>
+        </member>
+        <member name="P:QKit.JumpList.JumpListGroup`1.KeyDisplay">
+            <summary>
+            Display value that represents the group and used as the group header.
+            </summary>
+        </member>
+        <member name="T:QKit.JumpList.JumpListHelper">
+            <summary>
+            Provides a utility to help group and sort data into JumpList compatible data.
+            </summary>
+        </member>
+        <member name="M:QKit.JumpList.JumpListHelper.ToGroups``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Func{``2,System.String})">
+            <summary>
+            Groups and sorts into a list of group lists based on a selector.
+            </summary>
+            <typeparam name="TSource">Type of the items in the list.</typeparam>
+            <typeparam name="TSort">Type of value returned by sortSelector.</typeparam>
+            <typeparam name="TGroup">Type of value returned by groupSelector.</typeparam>
+            <param name="source">List to be grouped and sorted</param>
+            <param name="sortSelector">A selector that provides the value that items will be sorted by.</param>
+            <param name="groupSelector">A selector that provides the value that items will be grouped by.</param>
+            <param name="groupDisplaySelector">A selector that will provide the value represent a group for display.</param>
+            <returns>A list of JumpListGroups.</returns>
+        </member>
+        <member name="M:QKit.JumpList.JumpListHelper.ToAlphaGroups``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
+            <summary>
+            Groups and sorts into a list of alpha groups based on a string selector.
+            </summary>
+            <typeparam name="TSource">Type of the items in the list.</typeparam>
+            <param name="source">List to be grouped and sorted.</param>
+            <param name="selector">A selector that will provide a value that items to be sorted and grouped by.</param>
+            <returns>A list of JumpListGroups.</returns>
+        </member>
+        <member name="T:QKit.ListPlaceholderMode">
+            <summary>
+            Defines constants that specify which placeholder to show in a ListPlaceholder.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholderMode.Auto">
+            <summary>
+            Automatically show LoadingPlaceholderContent if ListTarget's ItemsSource is null
+            or EmptyPlaceholderContent when ItemsSource isn't null but has no items.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholderMode.Loading">
+            <summary>
+            Show LoadingPlaceholderContent whenever ListTarget has no items.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholderMode.Empty">
+            <summary>
+            Show EmptyPlaceholderContent whenever ListTarget has no items.
+            </summary>
+        </member>
+        <member name="T:QKit.ListPlaceholder">
+            <summary>
+            Represents a control that will show a placeholder message when a target ListViewBase control is empty.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholder.PlaceholderContentProperty">
+            <summary>
+            Identifies the PlaceholderContent dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholder.PlaceholderModeProperty">
+            <summary>
+            Identifies the PlaceholderMode dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholder.PlaceholderTemplateProperty">
+            <summary>
+            Identifies the PlaceholderTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholder.PlaceholderVisibilityProperty">
+            <summary>
+            Identifies the PlaceholderVisibility dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholder.LoadingPlaceholderContentProperty">
+            <summary>
+            Identifies the LoadingPlaceholderContent dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholder.EmptyPlaceholderContentProperty">
+            <summary>
+            Identifies the EmptyPlaceholderContent dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholder.LoadingPlaceholderTemplateProperty">
+            <summary>
+            Identifies the LoadingPlaceholderTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholder.EmptyPlaceholderTemplateProperty">
+            <summary>
+            Identifies the EmptyPlaceholderTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.ListPlaceholder.ListTargetProperty">
+            <summary>
+            Identifies the ListTargetProperty dependency property.
+            </summary>
+        </member>
+        <member name="M:QKit.ListPlaceholder.#ctor">
+            <summary>
+            Initializes a new instance of the ListPlaceholder class.
+            </summary>
+        </member>
+        <member name="P:QKit.ListPlaceholder.PlaceholderContent">
+            <summary>
+            Gets the current placeholder content that will be shown.
+            This value will change depending on PlaceholderMode's value.
+            </summary>
+        </member>
+        <member name="P:QKit.ListPlaceholder.PlaceholderMode">
+            <summary>
+            Gets or sets the desired placeholder content to show.
+            </summary>
+        </member>
+        <member name="P:QKit.ListPlaceholder.PlaceholderTemplate">
+            <summary>
+            Gets the current placeholder DataTemplate to present the current placeholder content.
+            </summary>
+        </member>
+        <member name="P:QKit.ListPlaceholder.PlaceholderVisibility">
+            <summary>
+            Gets the visibility of the placeholder content component.
+            </summary>
+        </member>
+        <member name="P:QKit.ListPlaceholder.LoadingPlaceholderContent">
+            <summary>
+            Gets or sets the content for when the list is empty and loading.
+            </summary>
+        </member>
+        <member name="P:QKit.ListPlaceholder.EmptyPlaceholderContent">
+            <summary>
+            Gets or sets the content for when the list is empty and not loading.
+            </summary>
+        </member>
+        <member name="P:QKit.ListPlaceholder.LoadingPlaceholderTemplate">
+            <summary>
+            Gets or sets the DataTemplate to present the placeholder when list is empty and loading.
+            </summary>
+        </member>
+        <member name="P:QKit.ListPlaceholder.EmptyPlaceholderTemplate">
+            <summary>
+            Gets or sets the DataTemplate to present the placeholder when list is empty and not loading.
+            </summary>
+        </member>
+        <member name="P:QKit.ListPlaceholder.ListTarget">
+            <summary>
+            Gets or sets the ListViewBase control that will cause this control to show when empty.
+            </summary>
+        </member>
+        <member name="T:QKit.LayoutChangeStartedEventHandler">
+            <summary>
+            Represents the method that will handle a LayoutChangeStarted event.
+            </summary>
+            <param name="sender">The object where the handler is attached.</param>
+            <param name="e">Event data for the event.</param>
+        </member>
+        <member name="T:QKit.LayoutChangeCompletedEventHandler">
+            <summary>
+            Represents the method that will handle a LayoutChangeCompletedEvent event.
+            </summary>
+            <param name="sender">The object where the handler is attached.</param>
+            <param name="e">Event data for the event.</param>
+        </member>
+        <member name="T:QKit.InputAwarePanelAnimationMode">
+            <summary>
+            Defines constants that specify how InputAwarePanel will animate when adjusting for InputPane.
+            </summary>
+        </member>
+        <member name="F:QKit.InputAwarePanelAnimationMode.None">
+            <summary>
+            No animation will occur and panel will snap into position immediately.
+            </summary>
+        </member>
+        <member name="F:QKit.InputAwarePanelAnimationMode.Independent">
+            <summary>
+            Animation will occur on compositor thread and may be smoother than other animation modes.
+            </summary>
+        </member>
+        <member name="F:QKit.InputAwarePanelAnimationMode.Dependent">
+            <summary>
+            Animation will occur on UI thread and behave more like native OS but may not be as smooth.
+            </summary>
+        </member>
+        <member name="T:QKit.InputAwarePanel">
+            <summary>
+            Represents a panel that will resize to available visible area when input panel is deployed.
+            </summary>
+        </member>
+        <member name="F:QKit.InputAwarePanel.ChildProperty">
+            <summary>
+            Identifies the ChildProperty dependency property.
+            </summary>
+        </member>
+        <member name="F:QKit.InputAwarePanel.AnimationModeProperty">
+            <summary>
+            Identifies the AnimationMode dependency property.
+            </summary>
+        </member>
+        <member name="M:QKit.InputAwarePanel.#ctor">
+            <summary>
+            Initializes a new instance of the InputAwarePanel class.
+            </summary>
+        </member>
+        <member name="M:QKit.InputAwarePanel.OnApplyTemplate">
+            <summary>
+            Finds the part_InputPaneSpacer FrameworkElement in the control template and adjusts its size to make room for the input pane.
+            </summary>
+        </member>
+        <member name="E:QKit.InputAwarePanel.LayoutChangeStarted">
+            <summary>
+            Occurs when a InputAwarePanel begins to adjust its layout for the InputPane.
+            </summary>
+        </member>
+        <member name="E:QKit.InputAwarePanel.LayoutChangeCompleted">
+            <summary>
+            Occurs when a InputAwarePanel completes its adjustments for the InputPane.
+            </summary>
+        </member>
+        <member name="P:QKit.InputAwarePanel.Child">
+            <summary>
+            Gets or sets the child of the InputAwarePanel.
+            </summary>
+        </member>
+        <member name="P:QKit.InputAwarePanel.AnimationMode">
+            <summary>
+            Gets or sets the animation mode of the InputAwarePanel.
+            </summary>
+        </member>
+        <member name="P:QKit.InputAwarePanel.IsLayoutChangingDeferred">
+            <summary>
+            Gets or sets whether the InputAwarePanel should update its layout when the InputPane is shown or hidden.
+            </summary>
+        </member>
+        <member name="T:QKit.LayoutChangeEventArgs">
+            <summary>
+            Provides data for the InpuAwarePanel LayoutChangeStarted and LayoutChangeCompletd events.
+            </summary>
+        </member>
+        <member name="M:QKit.LayoutChangeEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the LayoutChangeEventArgs class.
+            </summary>
+            <param name="isDefaultLayout"></param>
+        </member>
+        <member name="P:QKit.LayoutChangeEventArgs.IsDefaultLayout">
+            <summary>
+            Identifies whether the layout is changing to the default state or to a state that's compensated for the InputPane.
+            Value is true if the end result of the layout change results in no compensation for the InputPane.
+            </summary>
+        </member>
+    </members>
+</doc>
