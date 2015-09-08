@@ -179,6 +179,8 @@ namespace League_of_Legends_Counterpicks
                 dispatcherTimer.Stop();
 
             AdGrid.Children.Clear();
+            AdGrid2.Children.Clear();
+            adList.Clear();
             if (e.NavigationMode == NavigationMode.Back)
             {
                 ResetPageCache();

@@ -53,7 +53,7 @@ namespace League_of_Legends_Counterpicks
         public MainPage()
         {
             this.InitializeComponent();
-
+        
             // Hub is only supported in Portrait orientation
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
 
@@ -235,7 +235,11 @@ namespace League_of_Legends_Counterpicks
         {
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
+
             AdGrid.Children.Clear();
+            AdGrid2.Children.Clear();
+            adList.Clear();
+
             base.OnNavigatingFrom(e);
         }
 

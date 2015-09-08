@@ -89,8 +89,8 @@
       <RootProperty Name="Children" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
-      <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Name" />
+      <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="DataContext" />
       <RootProperty Name="Visibility" />
       <RootEvent Name="Loaded" />

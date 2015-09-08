@@ -85,7 +85,7 @@ namespace League_of_Legends_Counterpicks
         {
             // Check for internet connection
             App.IsInternetAvailable();
-
+            
             // Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
@@ -130,7 +130,6 @@ namespace League_of_Legends_Counterpicks
         /// serializable state.</param>
         private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
-
         }
 
         /// <summary>
@@ -176,7 +175,11 @@ namespace League_of_Legends_Counterpicks
         {
             if (dispatcherTimer != null)
                 dispatcherTimer.Stop();
+
             AdGrid.Children.Clear();
+            AdGrid2.Children.Clear();
+            adList.Clear();
+
             base.OnNavigatingFrom(e);
         }
         #endregion
