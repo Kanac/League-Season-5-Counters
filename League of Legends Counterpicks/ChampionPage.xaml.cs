@@ -1,34 +1,15 @@
 ﻿using League_of_Legends_Counterpicks.Common;
-//using League_of_Legends_Counterpicks.Data;
 using League_of_Legends_Counterpicks.DataModel;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Windows.Input;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Graphics.Display;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
-using Windows.System;
-using Windows.ApplicationModel.Email;
-using System.Threading;
-using Windows.Storage;
-using Windows.ApplicationModel.Store;
-using Windows.ApplicationModel;
-using Windows.UI.Core;
-using Microsoft.Advertising.WinRT.UI;
+using Microsoft.AdMediator.WindowsPhone81;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkID=391641
@@ -45,8 +26,6 @@ namespace League_of_Legends_Counterpicks
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private Champions champions;
         private ChampionInfo champInfo;
-        private List<AdControl> adList = new List<AdControl>();
-        private DispatcherTimer dispatcherTimer;
         private CommentDataSource commentViewModel = new CommentDataSource(App.MobileService);
 
         public ChampionPage()
@@ -89,17 +68,12 @@ namespace League_of_Legends_Counterpicks
         /// session.  The state will be null the first time a page is visited.</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            // Check for internet connection
             App.IsInternetAvailable();
-
-            // Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
-            if (dispatcherTimer != null)
-                dispatcherTimer.Stop();
 
             // Setup the underlying UI 
             string champKey = (string)e.NavigationParameter;
             champions = await StatsDataSource.GetChampionsAsync();
-
+       
             // Could be passed either the key or name, check for either case
             champInfo = champions.ChampionInfos.Where(x => x.Key == champKey).FirstOrDefault().Value;
             if (champInfo == null)
@@ -130,9 +104,6 @@ namespace League_of_Legends_Counterpicks
            
             // Make updates to champion comments observable
             this.DefaultViewModel["ChampionFeedback"] = commentViewModel.ChampionFeedback;
-
-            // Set up timer refresh rate of 30 seconds for ads (or use existing one)
-            setupAdTimer();
         }
 
         /// <summary>
@@ -175,12 +146,8 @@ namespace League_of_Legends_Counterpicks
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            if (dispatcherTimer != null)
-                dispatcherTimer.Stop();
-
             AdGrid.Children.Clear();
             AdGrid2.Children.Clear();
-            adList.Clear();
             if (e.NavigationMode == NavigationMode.Back)
             {
                 ResetPageCache();
@@ -207,6 +174,7 @@ namespace League_of_Legends_Counterpicks
         private void Champ_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image counterImage = (sender as Image);
+            counterImage.Opacity = 0.5;
             var counter = counterImage.DataContext as Counter;
             Frame.Navigate(typeof(ChampionPage), counter.Name);
         }
@@ -215,6 +183,7 @@ namespace League_of_Legends_Counterpicks
         private void EasyMatchup_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image easyMatchupImage = (sender as Image);
+            easyMatchupImage.Opacity = 0.5;
             var easyMatchup = easyMatchupImage.DataContext as Counter;
             Frame.Navigate(typeof(ChampionPage), easyMatchup.ChampionFeedbackName);
         }
@@ -224,6 +193,7 @@ namespace League_of_Legends_Counterpicks
         private void SynergyChamp_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image synergyImage = (sender as Image);
+            synergyImage.Opacity = 0.5;
             var synergy = synergyImage.DataContext as Counter;
             string championName;
 
@@ -360,10 +330,10 @@ namespace League_of_Legends_Counterpicks
         private async void Submit_Counter(object sender, TappedRoutedEventArgs e)
         {
             // Get the query
-            var filter = ((IOrderedEnumerable<KeyValuePair<string, ChampionInfo>>)DefaultViewModel["Filter"]);
+            var filter = DefaultViewModel["Filter"] as IOrderedEnumerable<KeyValuePair<string, ChampionInfo>>;
 
             // Ensure all collections are loaded first
-            if (commentViewModel.ChampionFeedback == null)
+            if (commentViewModel.ChampionFeedback == null || filter == null)
             {
                 MessageDialog emptyBox = new MessageDialog("Wait for data to finish loading!");
                 await emptyBox.ShowAsync();
@@ -639,9 +609,11 @@ namespace League_of_Legends_Counterpicks
         {
             Image downvote = sender as Image;
             var comment = downvote.DataContext as Comment;
+
             // If data context hasn't loaded yet, return for now until it does (will come back into this function)
             if (comment == null)
                 return;
+
             var existingRating = comment.UserRatings.Where(x => x.UniqueUser == commentViewModel.GetDeviceId()).FirstOrDefault();
             if (existingRating != null)
             {
@@ -655,10 +627,7 @@ namespace League_of_Legends_Counterpicks
          
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
-            var ad = sender as AdControl;
-            // Check if the ad list already has a reference to this ad before inserting
-            if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
-                adList.Add(ad);
+            var ad = sender as AdMediatorControl;
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
@@ -670,21 +639,7 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
-        private void setupAdTimer()
-        {
-            dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tick += dispatcherTimer_Tick;
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 33);
-            dispatcherTimer.Start();
-        }
-
-        private void dispatcherTimer_Tick(object sender, object e)
-        {
-            foreach (var ad in adList)
-                ad.Refresh();
-        }
-
-        private void Ad_Error(object sender, AdErrorEventArgs e)
+        private void AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
         {
 
         }
@@ -704,7 +659,6 @@ namespace League_of_Legends_Counterpicks
                 }
             }
         }
-        
     }
 
 

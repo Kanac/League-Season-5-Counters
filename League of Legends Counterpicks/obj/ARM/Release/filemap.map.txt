@@ -164,6 +164,7 @@
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Assets\HubBackground.theme-light.png"			"Assets\HubBackground.theme-light.png"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Assets\HubBackground.theme-dark.png"			"Assets\HubBackground.theme-dark.png"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Assets\Heimerdinger_Square_0.png"			"Assets\Heimerdinger_Square_0.png"
+"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Assets\hecsplash.png"			"Assets\hecsplash.png"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Assets\Hecarim_Square_0.png"			"Assets\Hecarim_Square_0.png"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Assets\Graves_Square_0.png"			"Assets\Graves_Square_0.png"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Assets\Gragas_Square_0.png"			"Assets\Gragas_Square_0.png"

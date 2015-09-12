@@ -1,4 +1,5 @@
 ﻿using League_of_Legends_Counterpicks.Common;
+using Microsoft.AdMediator.WindowsPhone81;
 using Microsoft.Advertising.WinRT.UI;
 using System;
 using System.Collections.Generic;
@@ -110,6 +111,13 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.OnNavigatedFrom(e);
         }
 
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        {
+            AdGrid.Children.Clear();
+            AdGrid2.Children.Clear();
+
+            base.OnNavigatingFrom(e);
+        }
         #endregion
 
         private async void Button_Tapped(object sender, TappedRoutedEventArgs e)
@@ -119,7 +127,7 @@ namespace League_of_Legends_Counterpicks
 
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
-            var ad = sender as AdControl;
+            var ad = sender as AdMediatorControl;
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
                 // Hide the app for the purchaser
@@ -146,6 +154,11 @@ namespace League_of_Legends_Counterpicks
                     }
                 }
             }
+        }
+
+        private void AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
+        {
+
         }
     }
 }

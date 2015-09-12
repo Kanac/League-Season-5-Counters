@@ -34,14 +34,15 @@
                 <GridView x:ConnectionId='1' ItemsSource="{Binding}"
                           IsItemClickEnabled="True"
                                                         
-                          SelectionMode="None"
+                          SelectionMode="Single"
                           IsSwipeEnabled="false">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding Value.Key, Converter={StaticResource NameToImage}}"
+                                <Image x:ConnectionId='2' Source="{Binding Value.Key, Converter={StaticResource NameToImage}}"
                                        Width="60"
-                                       Height="60" />
+                                       Height="60" 
+                                                                 />
                             </Grid>
                         </DataTemplate>
                     </GridView.ItemTemplate>
@@ -53,10 +54,6 @@
 
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton x:ConnectionId='2' Icon="Find"
-                          Label="Search"
-                                              >
-            </AppBarButton>
             <AppBarButton Icon="Filter"
                           Label="Role">
                 <Button.Flyout>
@@ -82,99 +79,114 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" Margin="0,70,0,0" x:Name="AdGrid">
-            <UI:AdControl x:ConnectionId='10' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+        <Grid Grid.Row="1" Margin="0,75,0,0" x:Name="AdGrid">
+            <!--<UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242811" />
-            <UI:AdControl x:ConnectionId='11' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242812" />
-            <UI:AdControl x:ConnectionId='12' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242813" />
-            <UI:AdControl x:ConnectionId='13' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242814" />
-            <UI:AdControl x:ConnectionId='14' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242815" />
-            <UI:AdControl x:ConnectionId='15' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242816" />
-            <UI:AdControl x:ConnectionId='16' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242817" />
-            <UI:AdControl x:ConnectionId='17' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242818" />
-            <UI:AdControl x:ConnectionId='18' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242819" />
-            <UI:AdControl x:ConnectionId='19' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242820" />
-            <UI:AdControl x:ConnectionId='20' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242821" />
-            <UI:AdControl x:ConnectionId='21' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242822" />
-            <UI:AdControl x:ConnectionId='22' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
+                          ErrorOccurred="Ad_Error"
                           AdUnitId="242823" />
-            <UI:AdControl x:ConnectionId='23' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
-                          AdUnitId="242824" />
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="242824" />-->
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='11' x:Name="AdMediatorR2" Id="AdMediatorIdR2" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='12' x:Name="AdMediatorR3" Id="AdMediatorIdR3" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='13' x:Name="AdMediatorR4" Id="AdMediatorIdR4" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='14' x:Name="AdMediatorR5" Id="AdMediatorIdR5" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='15' x:Name="AdMediatorR6" Id="AdMediatorIdR6" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='16' x:Name="AdMediatorR7" Id="AdMediatorIdR7" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='17' x:Name="AdMediatorR8" Id="AdMediatorIdR8" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='18' x:Name="AdMediatorR9" Id="AdMediatorIdR9" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='19' x:Name="AdMediatorR10" Id="AdMediatorIdR10" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='20' x:Name="AdMediatorR11" Id="AdMediatorIdR11" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='21' x:Name="AdMediatorR12" Id="AdMediatorIdR12" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='22' x:Name="AdMediatorR13" Id="AdMediatorIdR13" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='23' x:Name="AdMediatorR14" Id="AdMediatorIdR14" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='24' x:Name="AdMediatorR15" Id="AdMediatorIdR15" Style="{StaticResource HorizontalAdMediator}"                                                     />
         </Grid>
         <Grid Grid.Row="1" Margin="0,20,0,0" Name="AdGrid2">
-            <UI:AdControl x:ConnectionId='9' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
+            <!--<UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
                           Style="{StaticResource HorizontalAd}"
-                                            
+                          Loaded="Ad_Loaded"
                           IsAutoRefreshEnabled="False"
-                                                  
-                          AdUnitId="242825" />
+                          ErrorOccurred="Ad_Error"
+                          AdUnitId="242825" />-->
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='10' x:Name="AdMediatorR1" Id="AdMediatorIdR1" Style="{StaticResource HorizontalAdMediator}"                                                     />
         </Grid>
 
         <Grid>
@@ -214,124 +226,26 @@
                              Margin="15,15,0,0"
                              Grid.Row="2"
                                                      >
-                <GridView x:ConnectionId='8' Name="JumpListGridView"
+                    <GridView x:ConnectionId='8' Name="JumpListGridView"
                           ItemsSource="{Binding GroupedChampions}"
                           IsItemClickEnabled="True"
                                                         
-                          SelectionMode="None"
+                          SelectionMode="Single"
                           IsSwipeEnabled="false">
-                    <GridView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Image Source="{Binding Value.Key, Converter={StaticResource NameToImage}}"
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Image x:ConnectionId='9' Source="{Binding Value.Key, Converter={StaticResource NameToImage}}"
                                                    Width="50"
-                                                   Height="50" />
-                            </Grid>
-                        </DataTemplate>
-                    </GridView.ItemTemplate>
-                </GridView>
-            </q:AlphaJumpList>
+                                                   Height="50"
+                                                                             />
+                                </Grid>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                </q:AlphaJumpList>
             </Grid>
         </Grid>
-
-        <!--<HubSection Header="Assassin"
-                        x:Name="Assassin"
-                        Style="{StaticResource Header}"
-                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Assassin}">
-                <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
-
-
-                        <ContentControl ContentTemplate="{StaticResource HubData}"
-                                        Grid.Row="1" />
-                    </Grid>
-                </DataTemplate>
-            </HubSection>
-
-            <HubSection Header="Fighter"
-                        x:Name="Fighter"
-                        Style="{StaticResource Header}"
-                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Fighter}">
-                <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
-
-
-                        <ContentControl ContentTemplate="{StaticResource HubData}"
-                                        Grid.Row="1" />
-                    </Grid>
-                </DataTemplate>
-
-            </HubSection>
-
-            <HubSection Header="Mage"
-                        x:Name="Mage"
-                        Style="{StaticResource Header}"
-                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Mage}">
-                <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
-                        <ContentControl ContentTemplate="{StaticResource HubData}"
-                                        Grid.Row="1" />
-                    </Grid>
-                </DataTemplate>
-            </HubSection>
-
-            <HubSection Header="Marksman"
-                        x:Name="Marksman"
-                        Style="{StaticResource Header}"
-                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Marksman}">
-                <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
-                        <ContentControl ContentTemplate="{StaticResource HubData}" />
-                    </Grid>
-                </DataTemplate>
-
-            </HubSection>
-
-            <HubSection Header="Support"
-                        x:Name="Support"
-                        Style="{StaticResource Header}"
-                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Support}">
-                <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
-                        <ContentControl ContentTemplate="{StaticResource HubData}"/>
-                    </Grid>
-                </DataTemplate>
-            </HubSection>
-
-            <HubSection Header="Tank"
-                        x:Name="Tank"
-                        Style="{StaticResource Header}"
-                        DataContext="{Binding Champions, Converter={StaticResource RoleConverter}, ConverterParameter=Tank}">
-                <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
-                        <ContentControl ContentTemplate="{StaticResource HubData}" />
-                    </Grid>
-                </DataTemplate>
-            </HubSection>
-
-            <HubSection Header="Filter"
-                    x:Name="Filter"
-                    Style="{StaticResource Header}"
-                    DataContext="{Binding Filter}">
-                <DataTemplate>
-                    <Grid Margin="0,-30,0,0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <TextBox Height="40"
-                             Margin="0,20,0,0"
-                             GotFocus="TextBox_GotFocus"
-                             Text="Type to search"
-                             Loaded="TextBox__Loaded"
-                             TextChanged="TextBox_TextChanged">
-                        </TextBox >
-
-                        <ContentControl ContentTemplate="{StaticResource HubData}"
-                                    Grid.Row="1" />
-                    </Grid>
-                </DataTemplate>
-            </HubSection>-->
     </Grid>
 </Page>
 

@@ -26,37 +26,15 @@
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="3">
-            <UI:AdControl x:ConnectionId='3' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="True"
-                          AutoRefreshIntervalInSeconds="60"
-                          AdUnitId="242110" />
-            <UI:AdControl x:ConnectionId='4' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="True"
-                          AutoRefreshIntervalInSeconds="60"
-                          AdUnitId="242111" />
-            <UI:AdControl x:ConnectionId='5' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="True"
-                          AutoRefreshIntervalInSeconds="60"
-                          AdUnitId="242112" />
-            <UI:AdControl x:ConnectionId='6' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="True"
-                          AutoRefreshIntervalInSeconds="60"
-                          AdUnitId="242113" />
-            <UI:AdControl x:ConnectionId='7' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                                            
-                          IsAutoRefreshEnabled="True"
-                          AutoRefreshIntervalInSeconds="60"
-                          AdUnitId="242114" />
+        <Grid Grid.Row="3" Margin="0,75,0,0" Name="AdGrid">
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='4' x:Name="AdMediatorCh2" Id="AdMediatorIdCh2" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='5' x:Name="AdMediatorCh3" Id="AdMediatorIdCh3" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='6' x:Name="AdMediatorCh4" Id="AdMediatorIdCh4" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='7' x:Name="AdMediatorCh5" Id="AdMediatorIdCh5" Style="{StaticResource HorizontalAdMediator}"                                                     />
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="0,20,0,0" Name="AdGrid2">
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='3' x:Name="AdMediatorCh1" Id="AdMediatorIdCh1" Style="{StaticResource HorizontalAdMediator}"                                                     />
         </Grid>
 
         <!-- Title Panel -->
@@ -76,6 +54,22 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="Sept 11 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Significantly increased responsiveness again - should be great now!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Fixed the search bar issue that was associated due to a lack of memory as a result of this"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Added in features to easily detect button presses by providing feedback"></Run>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="Sept 8 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="Further optimized speed and responsiveness of app :)"></Run>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Sept 5 2015" />
                     </TextBlock>

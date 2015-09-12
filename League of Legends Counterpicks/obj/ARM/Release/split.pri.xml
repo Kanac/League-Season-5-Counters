@@ -248,6 +248,11 @@
 						<Value>Assets\Hecarim_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="hecsplash.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/hecsplash.png">
+					<Candidate type="Path">
+						<Value>Assets\hecsplash.png</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="Heimerdinger_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Heimerdinger_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Heimerdinger_Square_0.png</Value>

@@ -41,20 +41,18 @@
       <RootProperty Name="ImageSource" />
       <RootProperty Name="Opacity" />
     </RootType>
-    <RootType FullName="Microsoft.Advertising.WinRT.UI.AdControl">
-      <RootProperty Name="ApplicationId" />
-      <RootProperty Name="Style" />
-      <RootProperty Name="IsAutoRefreshEnabled" />
-      <RootProperty Name="AutoRefreshIntervalInSeconds" />
-      <RootProperty Name="AdUnitId" />
-      <RootEvent Name="Loaded" />
-      <RootEvent Name="ErrorOccurred" />
-    </RootType>
+    <RootType FullName="Microsoft.Advertising.WinRT.UI.AdControl" />
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Microsoft.AdMediator.WindowsPhone81.AdMediatorControl">
+      <RootProperty Name="Id" />
+      <RootProperty Name="Style" />
+      <RootEvent Name="Loaded" />
+      <RootEvent Name="AdMediatorError" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
@@ -83,13 +81,14 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="FontWeight" />
+      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
-      <RootProperty Name="Name" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="DataContext" />
       <RootProperty Name="Visibility" />

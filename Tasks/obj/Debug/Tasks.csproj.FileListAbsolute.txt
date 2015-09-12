@@ -16,4 +16,3 @@ C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Count
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\obj\Debug\qualifiers.txt
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\obj\Debug\qualifiers.txt.intermediate
 C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\obj\Debug\MultipleQualifiersPerDimensionFound.txt
-C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\Tasks\obj\Debug\Tasks.csprojResolveAssemblyReference.cache

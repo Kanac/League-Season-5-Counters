@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using League_of_Legends_Counterpicks.DataModel;
 using Microsoft.Advertising.WinRT.UI;
+using Microsoft.AdMediator.WindowsPhone81;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -30,9 +31,6 @@ namespace League_of_Legends_Counterpicks
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
-        private DispatcherTimer dispatcherTimer;
-        private List<AdControl> adList = new List<AdControl>();
-
         public StatsPage()
         {
             this.InitializeComponent();
@@ -85,8 +83,6 @@ namespace League_of_Legends_Counterpicks
             DefaultViewModel["ChampionInfo"] = champions.ChampionInfos.Where(x => x.Key == champKey).FirstOrDefault().Value;
             DefaultViewModel["Patch"] = patch;
             DefaultViewModel["LoadingVisibility"] = Visibility.Collapsed;
-
-            setupAdTimer();
         }
 
         /// <summary>
@@ -128,35 +124,15 @@ namespace League_of_Legends_Counterpicks
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            if (dispatcherTimer != null)
-                dispatcherTimer.Stop();
             AdGrid.Children.Clear();
+            AdGrid2.Children.Clear();
             base.OnNavigatingFrom(e);
         }
         #endregion
 
-
-        private void setupAdTimer()
-        {
-            dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tick += dispatcherTimer_Tick;
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 33);
-            dispatcherTimer.Start();
-        }
-
-        private void dispatcherTimer_Tick(object sender, object e)
-        {
-            foreach (var ad in adList)
-                ad.Refresh();
-        }
-
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
-            var ad = sender as AdControl;
-            // Check if the ad list already has a reference to this ad before inserting
-            if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
-                adList.Add(ad);
-
+            var ad = sender as AdMediatorControl;
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
                 // Hide the app for the purchaser
@@ -168,9 +144,6 @@ namespace League_of_Legends_Counterpicks
                 ad.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
         }
-
-
-
 
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
         {
@@ -188,7 +161,7 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
-        private void Ad_Error(object sender, AdErrorEventArgs e)
+        private void AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
         {
 
         }

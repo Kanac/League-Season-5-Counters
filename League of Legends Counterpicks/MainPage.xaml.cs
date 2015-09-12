@@ -1,39 +1,22 @@
 ﻿using League_of_Legends_Counterpicks.Common;
-using League_of_Legends_Counterpicks.Data;
 using League_of_Legends_Counterpicks.DataModel;
 using Microsoft.Advertising.WinRT.UI;
+using Microsoft.AdMediator.WindowsPhone81;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 using Windows.ApplicationModel.Resources;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
-using Windows.UI.Core;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.ApplicationModel.Background;
-using System.IO.Compression;
 using Windows.ApplicationModel.Email;
 using Windows.ApplicationModel;
-using Windows.ApplicationModel.Store;
 using League_of_Legends_Counterpicks.Advertisement;
 using System.Threading.Tasks;
-using Windows.UI.Popups;
-using Windows.System;
+using Windows.UI.Xaml.Media;
+using Windows.UI;
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -46,9 +29,6 @@ namespace League_of_Legends_Counterpicks
     {
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
-        private readonly ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView("Resources");
-        private List<AdControl> adList = new List<AdControl>();
-        private DispatcherTimer dispatcherTimer;
 
         public MainPage()
         {
@@ -94,11 +74,7 @@ namespace League_of_Legends_Counterpicks
         {
             // Check for internet connection
             App.IsInternetAvailable();
-   
-            // Re-sync the timer if page is refreshed (ad will load again - set timer back to 0)
-            if (dispatcherTimer != null)
-                dispatcherTimer.Stop();
-
+  
             // Load all the roles (which contains all the champions) from the json file 
             var roles = StatsDataSource.GetRoles();
             this.DefaultViewModel["Roles"] = roles;
@@ -110,9 +86,6 @@ namespace League_of_Legends_Counterpicks
                 setupFeatureToast(); // Flashes a new feature message 
                 await setupToast();  // Background toast in 72 hours talking about new champion data
             }
-
-            // Set up timer refresh rate of 30 seconds for ads (or use existing one)
-            setupAdTimer();
         }
 
         private void setupFeatureToast()
@@ -198,12 +171,12 @@ namespace League_of_Legends_Counterpicks
         private void GroupSection_ItemClick(object sender, ItemClickEventArgs e)
         {
             var roleId = ((string)e.ClickedItem);
-            //if (roleId == "Search")
-            //    roleId = "Filter";
-
-            Frame.Navigate(typeof(RolePage), roleId);
+             Frame.Navigate(typeof(RolePage), roleId);
         }
-
+        private void Role_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            (sender as TextBlock).Foreground = new SolidColorBrush((Color)Application.Current.Resources["SystemColorControlAccentColor"]);
+        }
 
         #region NavigationHelper registration
 
@@ -233,14 +206,12 @@ namespace League_of_Legends_Counterpicks
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            if (dispatcherTimer != null)
-                dispatcherTimer.Stop();
-
-            AdGrid.Children.Clear();
+            // Terminate the ads to clear from memory immediately rather than relying on garbage collector 
+            AdGrid.Children.Clear();  
             AdGrid2.Children.Clear();
-            adList.Clear();
 
             base.OnNavigatingFrom(e);
+
         }
 
         private async void Share_Clicked(object sender, RoutedEventArgs e)
@@ -276,13 +247,8 @@ namespace League_of_Legends_Counterpicks
 
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
-
-            var ad = sender as AdControl;
-
-            // Check if the ad list already has a reference to this ad before inserting
-            if (adList.Where(x => x.AdUnitId == ad.AdUnitId).Count() == 0)
-                adList.Add(ad);
-
+            var ad = sender as AdMediatorControl;
+ 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
                 // Hide the app for the purchaser
@@ -295,32 +261,12 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
-        private void setupAdTimer()
-        {
-            // Refresh all the ads every 30 seconds
-            dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tick += dispatcherTimer_Tick;
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 33);
-            dispatcherTimer.Start();
-        }
-
-        private void dispatcherTimer_Tick(object sender, object e)
-        {
-            foreach (var ad in adList)
-                ad.Refresh();
-        }
-
-
-
-
-
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
         {
             var grid = sender as Grid;
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
-                var rowDefinitions = grid.RowDefinitions;
-                foreach (var r in rowDefinitions)
+                foreach (var r in grid.RowDefinitions)
                 {
                     if (r.Height.Value == 80)
                     {
@@ -334,8 +280,7 @@ namespace League_of_Legends_Counterpicks
         {
             AdRemover.Purchase();
         }
-
-        private void Ad_Error(object sender, AdErrorEventArgs e)
+        private void AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
         {
 
         }
