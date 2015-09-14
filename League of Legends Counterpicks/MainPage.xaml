@@ -78,7 +78,7 @@
                        TextAlignment="Center" />
         </StackPanel>
 
-        <Grid Grid.Row="2" Margin="0,75,0,0" x:Name="AdGrid">
+        <Grid Grid.Row="2" Margin="0,79,0,0" x:Name="AdGrid">
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorM2" Id="AdMediatorIdM2" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorM3" Id="AdMediatorIdM3" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorM4" Id="AdMediatorIdM4" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>

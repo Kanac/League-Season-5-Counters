@@ -1,0 +1,101 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:League_of_Legends_Counterpicks"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:data="using:League_of_Legends_Counterpicks.Data"
+      xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+      xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+      xmlns:ValueConverter="using:League_of_Legends_Counterpicks.Converters"
+      x:Class="League_of_Legends_Counterpicks.MainPage"
+      DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+      mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:ConnectionId='1' Icon="FullScreen"
+                          Label="Ad Block"
+                                                />
+            <AppBarButton x:ConnectionId='2' Icon="Comment"
+                          Label="Send Feedback"
+                                                />
+            <AppBarButton x:ConnectionId='3' Icon="Like"
+                          Label="Tweet"
+                                       />
+            <AppBarButton x:ConnectionId='4' Icon="Document"
+                          Label="Change Log"
+                                                    />
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid x:ConnectionId='5' Background="{ThemeResource HubBackgroundImageBrush}"
+                                >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7.5*" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ListView x:ConnectionId='16' ItemsSource="{Binding Roles}"
+                          Grid.Row="1"
+                          IsItemClickEnabled="True"
+                                                            >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="15,0,0,20">
+                                <TextBlock x:ConnectionId='17' Text="{Binding }"
+                                           Style="{ThemeResource ListViewItemTextBlockStyle}"
+                                           FontSize="28"
+                                           FontFamily="Segoe WP Black" 
+                                                               />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Grid>
+        </Grid>
+        
+        <StackPanel Grid.Row="1"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right">
+
+            <TextBlock Text="By a Master Player"
+                       FontSize="15"/>
+            <TextBlock Text="Raklor"
+                       FontSize="15"
+                       TextAlignment="Center" />
+        </StackPanel>
+
+        <Grid Grid.Row="2" Margin="0,79,0,0" x:Name="AdGrid">
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='7' x:Name="AdMediatorM2" Id="AdMediatorIdM2" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='8' x:Name="AdMediatorM3" Id="AdMediatorIdM3" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='9' x:Name="AdMediatorM4" Id="AdMediatorIdM4" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='10' x:Name="AdMediatorM5" Id="AdMediatorIdM5" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='11' x:Name="AdMediatorM6" Id="AdMediatorIdM6" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='12' x:Name="AdMediatorM7" Id="AdMediatorIdM7" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='13' x:Name="AdMediatorM8" Id="AdMediatorIdM8" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='14' x:Name="AdMediatorM9" Id="AdMediatorIdM9" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='15' x:Name="AdMediatorM10" Id="AdMediatorIdM10" Style="{StaticResource HorizontalAdMediator}"                                                     />
+
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0,20,0,0" Name="AdGrid2">
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='6' x:Name="AdMediatorM1" Id="AdMediatorIdM1" Style="{StaticResource HorizontalAdMediator}"                                                     />
+        </Grid>
+    </Grid>
+</Page>
+    
+   
+

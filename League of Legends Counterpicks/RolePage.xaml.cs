@@ -160,11 +160,16 @@ namespace League_of_Legends_Counterpicks
         {
             AdGrid.Children.Clear();
             AdGrid2.Children.Clear();
-
+            ResetPageCache();
             base.OnNavigatingFrom(e);
         }
         #endregion
-
+        private void ResetPageCache()
+        {
+            var cacheSize = ((Frame)Parent).CacheSize;
+            ((Frame)Parent).CacheSize = 0;
+            ((Frame)Parent).CacheSize = cacheSize;
+        }
 
         private void JumpList_Loaded(object sender, RoutedEventArgs e)
         {
@@ -217,7 +222,7 @@ namespace League_of_Legends_Counterpicks
         {
             // Set view to filter grid view of the query (Show nothing if nothing searched)
             String text = (sender as TextBox).Text;
-            if (FilterBox.Text != String.Empty)
+            if (FilterBox.Text != String.Empty && champions != null && champions.ChampionInfos != null)
                 DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name.ToLower().StartsWith(text.ToLower())).OrderBy(x => x.Value.Name);
             else
                 DefaultViewModel["Filter"] = null;

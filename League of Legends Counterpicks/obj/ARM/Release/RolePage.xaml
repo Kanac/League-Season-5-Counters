@@ -79,7 +79,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" Margin="0,75,0,0" x:Name="AdGrid">
+        <Grid Grid.Row="1" Margin="0,79,0,0" x:Name="AdGrid">
             <WindowsPhone81:AdMediatorControl x:ConnectionId='11' x:Name="AdMediatorR2" Id="AdMediatorIdR2" Style="{StaticResource HorizontalAdMediator}"                                                     />
             <WindowsPhone81:AdMediatorControl x:ConnectionId='12' x:Name="AdMediatorR3" Id="AdMediatorIdR3" Style="{StaticResource HorizontalAdMediator}"                                                     />
             <WindowsPhone81:AdMediatorControl x:ConnectionId='13' x:Name="AdMediatorR4" Id="AdMediatorIdR4" Style="{StaticResource HorizontalAdMediator}"                                                     />
@@ -94,6 +94,7 @@
             <WindowsPhone81:AdMediatorControl x:ConnectionId='22' x:Name="AdMediatorR13" Id="AdMediatorIdR13" Style="{StaticResource HorizontalAdMediator}"                                                     />
             <WindowsPhone81:AdMediatorControl x:ConnectionId='23' x:Name="AdMediatorR14" Id="AdMediatorIdR14" Style="{StaticResource HorizontalAdMediator}"                                                     />
             <WindowsPhone81:AdMediatorControl x:ConnectionId='24' x:Name="AdMediatorR15" Id="AdMediatorIdR15" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='25' x:Name="AdMediatorR16" Id="AdMediatorIdR16" Style="{StaticResource HorizontalAdMediator}"                                                     />
         </Grid>
         <Grid Grid.Row="1" Margin="0,20,0,0" Name="AdGrid2">
             <WindowsPhone81:AdMediatorControl x:ConnectionId='10' x:Name="AdMediatorR1" Id="AdMediatorIdR1" Style="{StaticResource HorizontalAdMediator}"                                                     />

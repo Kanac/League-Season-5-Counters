@@ -273,7 +273,7 @@
                        Text="{Binding Champion.Tags[0]}" />
         </Grid>
 
-        <Grid Grid.Row="3" Margin="0,75,0,0" x:Name="AdGrid">
+        <Grid Grid.Row="3" Margin="0,79,0,0" x:Name="AdGrid">
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorC2" Id="AdMediatorIdC2" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorC3" Id="AdMediatorIdC3" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorC4" Id="AdMediatorIdC4" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
@@ -288,6 +288,7 @@
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorC13" Id="AdMediatorIdC13" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorC14" Id="AdMediatorIdC14" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorC15" Id="AdMediatorIdC15" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorC16" Id="AdMediatorIdC16" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
         </Grid>
         <Grid Grid.Row="3" Margin="0,20,0,0" Name="AdGrid2">
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorC1" Id="AdMediatorIdC1" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>

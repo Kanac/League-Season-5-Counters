@@ -35,7 +35,7 @@
             <RowDefinition Height="80"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="4" Margin="0,70,0,0" x:Name="AdGrid">
+        <Grid Grid.Row="4" Margin="0,79,0,0" x:Name="AdGrid">
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS2" Id="AdMediatorIdS2" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS3" Id="AdMediatorIdS3" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
             <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS4" Id="AdMediatorIdS4" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>

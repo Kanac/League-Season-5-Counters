@@ -1,0 +1,333 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:League_of_Legends_Counterpicks"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+      xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+      x:Class="League_of_Legends_Counterpicks.ChangeLog"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style TargetType="TextBlock"
+               x:Key="Notes">
+            <Setter Property="FontSize"
+                    Value="17" />
+            <Setter Property="TextWrapping"
+                    Value="Wrap" />
+        </Style>
+    </Page.Resources>
+    <Grid x:ConnectionId='1' x:Name="LayoutRoot"                       >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="3" Margin="0,75,0,0" Name="AdGrid">
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='4' x:Name="AdMediatorCh2" Id="AdMediatorIdCh2" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='5' x:Name="AdMediatorCh3" Id="AdMediatorIdCh3" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='6' x:Name="AdMediatorCh4" Id="AdMediatorIdCh4" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='7' x:Name="AdMediatorCh5" Id="AdMediatorIdCh5" Style="{StaticResource HorizontalAdMediator}"                                                     />
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="0,20,0,0" Name="AdGrid2">
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='3' x:Name="AdMediatorCh1" Id="AdMediatorIdCh1" Style="{StaticResource HorizontalAdMediator}"                                                     />
+        </Grid>
+
+        <!-- Title Panel -->
+            <TextBlock Text="League Season 5 Counters Changes"
+                       Foreground="#FFF3FD29"
+                       TextAlignment="Justify"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Style="{ThemeResource TitleTextBlockStyle}"
+                       Margin="0,12,0,0" />
+
+            
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1"
+              x:Name="ContentRoot"
+              Margin="19,9.5,19,0">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="Sept 11 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Significantly increased responsiveness again - should be great now!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Fixed the search bar issue that was associated due to a lack of memory as a result of this"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Added in features to easily detect button presses by providing feedback"></Run>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="Sept 8 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="Further optimized speed and responsiveness of app :)"></Run>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="Sept 5 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Just came back from vacavation. Weird bug with last update rolling back. Republished the update again and fixed a couple other small things. "></Run>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="August 28 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Completely overhauled UI! "></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Role section is now one page with ability to filter by query or role, or even use the alphabetical jump list!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Champion and Stats page is now built using a pivot system to optimize for lower memory devices!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Made Main page sexier :)"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-LOTS of bug fixes"></Run>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="August 20-24 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in Live Stats section! And now using Riot API for underlying backend. Let me know if any champion crashes"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Fixed most crashing issues and significantly improved responsiveness of app"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Lowered Toast Notification frequency and now applies for specific user situations"></Run>
+                        <LineBreak></LineBreak>
+                         <Run Text="-Lowered IAP purchase notification frequency significantly"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="August 17 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added some of the layout changes that I made to the Windows 10 version. Download the Windows 10 version on your desktop for the full changes and experience!"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="August 15 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Windows 10 update is here! Get it now on your desktop and mobile device! More features and significantly sexier!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Reorganized Champion Page UI and fixed bugs"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="August 10 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Changed review/ad popup system slightly"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Small bug fixes"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="August 4 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Fixed synergy champion select bug"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Fixed crashing on app review"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="August 2 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added Easy Matchups and Synergy picks for each champion!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Made the champion page UI sexier to accompany this!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Since this was a highly requested feature, you can now purchase ad-block"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated the UI across all pages to support a sleaker and sexier design with ads removed"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Seeded lots of my own picks for easy matchups and synergy picks across many champions"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Improved responsiveness in sending comments, rating champions, etc"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock FontSize="25">
+						<Run Text="July 28 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in loading progress rings"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Networking bug fixes"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-No more adding self-counters (lol at that guy who submitted shen)"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Now shows a message dialog if you lack an internet connection. App will then close."></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 27 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Add your own counters to each champion now!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Made everything sexier"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Pretty much the entire app is online-based now backed by user contributions and my own"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 26 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Optimized net code for faster online interation"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Ensures each comment page is on 2 rows now"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated all counters to patch 5.14"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 25 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-When navigating towards champion page, role page is saved when back button is pressed"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Redesigned counter hub section in Champion Page"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Fixed text wrapping and alignment of comment section"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 22 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added a shit ton of changes"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Implemented an azure backend for lots of goodies"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Each Champion Page has two existing comments sections"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Dyanmic voting and commenting system to go with it"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Too many changes to talk about"></Run>
+                        <LineBreak></LineBreak>
+                            
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 14 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added Tahm Kench and updated all counters respectively!"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Optimized filter bar again "></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 9 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Changed filter bar functionality"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated Ads "></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 8 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Changed Role Page organization"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated counters again"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Optimized alignment across all pages"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 5 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in toast notifications on app launch and on a background timer basis"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Auto suggest box now doesn't show all champions when empty"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Updated several champion counters according to user feedback"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Added tweet button to command bar"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="July 2 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in a command bar for sharing and changelog"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Adjusted auto suggest box to not show all with no text"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Filter page and auto suggest matches are now symmetrical"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="June 30 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Fixed alpha jump list problem with semantic zoom"></Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Optimized ad size for all devices"></Run>
+                         <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="June 29 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in an auto suggest box for awesome navigation"></Run>
+                         <LineBreak></LineBreak>
+                        <Run Text="-Changed ad placement and optimized scaling appropriately" />
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="June 26 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+						<Run Text="-Fixed jump list image render bug on first load" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Created hub section of all roles in the role page" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Added margins and other scaling balances" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Added a check updates button on this page" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Updated several champions counters according to feedback thus far" />
+                         <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="June 24 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+						<Run Text="-Added Ekko and updated all counters respectively" />
+                        <LineBreak></LineBreak>
+						<Run Text="-Change Log button in main page" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Role Page now has an alphabetical jump list for easy navigation" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Each champion now has an associated page for users to submit feedback on counters" />
+						 <LineBreak></LineBreak>
+                        <Run Text="-Updated champion names to be more accurate" />
+                         <LineBreak></LineBreak>
+						<Run Text="-Optimized scaling across all pages" />
+                    </TextBlock>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        
+        
+        <Button x:ConnectionId='2' Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"                       >
+            Check for Updates
+        </Button>
+      
+    </Grid>
+</Page>
+

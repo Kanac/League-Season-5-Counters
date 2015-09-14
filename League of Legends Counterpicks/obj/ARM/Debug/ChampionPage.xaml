@@ -273,91 +273,7 @@
                        Text="{Binding Champion.Tags[0]}" />
         </Grid>
 
-        <Grid Grid.Row="3" Margin="0,75,0,0" x:Name="AdGrid">
-            <!--<UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242826" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242827" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242828" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242829" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242830" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242831" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242832" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242833" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242834" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242835" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242836" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242837" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242838" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242839" />-->
+        <Grid Grid.Row="3" Margin="0,79,0,0" x:Name="AdGrid">
             <WindowsPhone81:AdMediatorControl x:ConnectionId='21' x:Name="AdMediatorC2" Id="AdMediatorIdC2" Style="{StaticResource HorizontalAdMediator}"                                                     />
             <WindowsPhone81:AdMediatorControl x:ConnectionId='22' x:Name="AdMediatorC3" Id="AdMediatorIdC3" Style="{StaticResource HorizontalAdMediator}"                                                     />
             <WindowsPhone81:AdMediatorControl x:ConnectionId='23' x:Name="AdMediatorC4" Id="AdMediatorIdC4" Style="{StaticResource HorizontalAdMediator}"                                                     />
@@ -372,14 +288,13 @@
             <WindowsPhone81:AdMediatorControl x:ConnectionId='32' x:Name="AdMediatorC13" Id="AdMediatorIdC13" Style="{StaticResource HorizontalAdMediator}"                                                     />
             <WindowsPhone81:AdMediatorControl x:ConnectionId='33' x:Name="AdMediatorC14" Id="AdMediatorIdC14" Style="{StaticResource HorizontalAdMediator}"                                                     />
             <WindowsPhone81:AdMediatorControl x:ConnectionId='34' x:Name="AdMediatorC15" Id="AdMediatorIdC15" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='35' x:Name="AdMediatorC16" Id="AdMediatorIdC16" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='36' x:Name="AdMediatorC17" Id="AdMediatorIdC17" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='37' x:Name="AdMediatorC18" Id="AdMediatorIdC18" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='38' x:Name="AdMediatorC19" Id="AdMediatorIdC19" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='39' x:Name="AdMediatorC20" Id="AdMediatorIdC20" Style="{StaticResource HorizontalAdMediator}"                                                     />
         </Grid>
         <Grid Grid.Row="3" Margin="0,20,0,0" Name="AdGrid2">
-            <!--<UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d"
-                          Style="{StaticResource HorizontalAd}"
-                          Loaded="Ad_Loaded"
-                          IsAutoRefreshEnabled="False"
-                          ErrorOccurred="Ad_Error"
-                          AdUnitId="242840" />-->
             <WindowsPhone81:AdMediatorControl x:ConnectionId='20' x:Name="AdMediatorC1" Id="AdMediatorIdC1" Style="{StaticResource HorizontalAdMediator}"                                                     />
         </Grid>
 
