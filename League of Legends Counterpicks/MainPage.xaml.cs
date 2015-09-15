@@ -87,7 +87,7 @@ namespace League_of_Legends_Counterpicks
                 if (localSettings.Values["toastViews"] == null)
                     localSettings.Values["toastViews"] = 0;
 
-                if ((int)localSettings.Values["toastViews"] < 4)
+                if ((int)localSettings.Values["toastViews"] < 3)
                 {
                     setupFeatureToast(); // Flashes a new feature message 
                     setupReuseToast(); // Creates a message indicating user to reuse app after 30 minutes of opening
@@ -132,7 +132,7 @@ namespace League_of_Legends_Counterpicks
             toastNode.AppendChild(audio);
 
             ToastNotification toast = new ToastNotification(toastXml);
-            DateTime dueTime = DateTime.Now.AddMinutes(30);
+            DateTime dueTime = DateTime.Now.AddMinutes(50);
             ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, dueTime);
             scheduledToast.Id = "Reuse";
             ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledToast);
