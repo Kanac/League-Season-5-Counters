@@ -21,25 +21,21 @@ Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compil
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method MainPage.Connect
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method ChampionPage..ctor
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method ChampionPage.Ad_Loaded
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method ChampionPage.AdMediatorError
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method ChampionPage.InitializeComponent
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method ChampionPage.Connect
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method RolePage.Ad_Loaded
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method RolePage.AdMediatorError
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method RolePage.InitializeComponent
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method RolePage.Connect
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method StatsPage.Ad_Loaded
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method StatsPage.AdMediatorError
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method StatsPage.InitializeComponent
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method StatsPage.Connect
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.InitTypeTables
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.Activate_6_AdMediatorControl
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.Activate_7_AdSdkParameters
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.Activate_0_AdMediatorControl
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.Activate_3_AdSdkParameters
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.get_OtherProviders
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.get_13_AdMediatorControl_Id
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.set_13_AdMediatorControl_Id
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.get_14_AdMediatorControl_AdSdkOptionalParameters
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.get_15_AdMediatorControl_AdSdkTimeouts
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.get_0_AdMediatorControl_Id
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.set_0_AdMediatorControl_Id
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.get_1_AdMediatorControl_AdSdkOptionalParameters
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method XamlTypeInfoProvider.get_2_AdMediatorControl_AdSdkTimeouts
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource..ctor
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.get_champTable
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.set_champTable
@@ -57,9 +53,9 @@ Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compil
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitUserRating>d__44.MoveNext
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounter>d__45.MoveNext
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounterRating>d__46.MoveNext
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x60002f2
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x60002f3
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x60002f4
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x60002f5
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <GetChampionsAsync>d__15.MoveNext
 MDIL image C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MDIL\League of Legends Counterpicks.exe generated successfully.
 

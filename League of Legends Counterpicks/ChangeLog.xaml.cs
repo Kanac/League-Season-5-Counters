@@ -148,7 +148,7 @@ namespace League_of_Legends_Counterpicks
                 var rowDefinitions = grid.RowDefinitions;
                 foreach (var r in rowDefinitions)
                 {
-                    if (r.Height.Value == 80)
+                    if (r.Height.Value == 50)
                     {
                         r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
                     }

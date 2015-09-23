@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Windows.System;
+using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -24,12 +25,12 @@ namespace League_of_Legends_Counterpicks
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private readonly String APP_ID = "3366702e-67c7-48e7-bc82-d3a4534f3086";
-        private List<AdControl> adList = new List<AdControl>();
         private Champions champions;
         private bool isInitialAllView = true;
 
         public RolePage()
         {
+            this.NavigationCacheMode = NavigationCacheMode.Disabled;
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
@@ -119,12 +120,12 @@ namespace League_of_Legends_Counterpicks
         /// <param name="sender">The GridView displaying the item clicked.</param>
         /// <param name="e">Event data that describes the item clicked.</param>
         /// 
-        private void ItemView_ItemClick(object sender, ItemClickEventArgs e)
+        private async void ItemView_ItemClick(object sender, ItemClickEventArgs e)
         {
             //Ask user to purchase ad removal before proceeding
             checkAdRemoval();
             var championKey = ((KeyValuePair<string, ChampionInfo>)e.ClickedItem).Key;
-            Frame.Navigate(typeof(ChampionPage), championKey);
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => Frame.Navigate(typeof(ChampionPage), championKey));
         }
 
         private void ChampImage_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
@@ -148,6 +149,13 @@ namespace League_of_Legends_Counterpicks
         /// <param name="e">Event data that describes how this page was reached.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+     
             this.navigationHelper.OnNavigatedTo(e);
         }
 
@@ -160,16 +168,15 @@ namespace League_of_Legends_Counterpicks
         {
             AdGrid.Children.Clear();
             AdGrid2.Children.Clear();
-            ResetPageCache();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             base.OnNavigatingFrom(e);
         }
         #endregion
-        private void ResetPageCache()
-        {
-            var cacheSize = ((Frame)Parent).CacheSize;
-            ((Frame)Parent).CacheSize = 0;
-            ((Frame)Parent).CacheSize = cacheSize;
-        }
 
         private void JumpList_Loaded(object sender, RoutedEventArgs e)
         {
@@ -251,7 +258,7 @@ namespace League_of_Legends_Counterpicks
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
             var ad = sender as AdMediatorControl;
-         
+
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
                 // Hide the app for the purchaser
@@ -271,17 +278,12 @@ namespace League_of_Legends_Counterpicks
             {
                 foreach (var r in grid.RowDefinitions)
                 {
-                    if (r.Height.Value == 80)
+                    if (r.Height.Value == 50)
                     {
                         r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
                     }
                 }
             }
-        }
-
-        private void AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
-        {
-
         }
 
         private async void reviewApp()
@@ -345,7 +347,5 @@ namespace League_of_Legends_Counterpicks
                 }
             }
         }
-
-      
     }
 }

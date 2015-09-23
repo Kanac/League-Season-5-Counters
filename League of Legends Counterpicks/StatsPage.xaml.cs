@@ -114,11 +114,23 @@ namespace League_of_Legends_Counterpicks
         /// handlers that cannot cancel the navigation request.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             this.navigationHelper.OnNavigatedTo(e);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             this.navigationHelper.OnNavigatedFrom(e);
         }
 
@@ -153,7 +165,7 @@ namespace League_of_Legends_Counterpicks
                 var rowDefinitions = grid.RowDefinitions;
                 foreach (var r in rowDefinitions)
                 {
-                    if (r.Height.Value == 80)
+                    if (r.Height.Value == 50)
                     {
                         r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
                     }

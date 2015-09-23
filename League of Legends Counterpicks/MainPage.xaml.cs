@@ -32,6 +32,7 @@ namespace League_of_Legends_Counterpicks
 
         public MainPage()
         {
+            this.NavigationCacheMode = NavigationCacheMode.Disabled;
             this.InitializeComponent();
         
             // Hub is only supported in Portrait orientation
@@ -87,7 +88,7 @@ namespace League_of_Legends_Counterpicks
                 if (localSettings.Values["toastViews"] == null)
                     localSettings.Values["toastViews"] = 0;
 
-                if ((int)localSettings.Values["toastViews"] < 3)
+                if ((int)localSettings.Values["toastViews"] < 2)
                 {
                     setupFeatureToast(); // Flashes a new feature message 
                     setupReuseToast(); // Creates a message indicating user to reuse app after 30 minutes of opening
@@ -235,6 +236,12 @@ namespace League_of_Legends_Counterpicks
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             this.navigationHelper.OnNavigatedFrom(e);
         }
 
@@ -304,7 +311,7 @@ namespace League_of_Legends_Counterpicks
             {
                 foreach (var r in grid.RowDefinitions)
                 {
-                    if (r.Height.Value == 80)
+                    if (r.Height.Value == 50)
                     {
                         r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
                     }

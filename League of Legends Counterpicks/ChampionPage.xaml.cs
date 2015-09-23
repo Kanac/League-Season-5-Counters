@@ -10,6 +10,8 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
 using Microsoft.AdMediator.WindowsPhone81;
+using Windows.UI.Core;
+using Windows.System;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkID=391641
@@ -24,12 +26,13 @@ namespace League_of_Legends_Counterpicks
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+        private CommentDataSource commentViewModel = new CommentDataSource(App.MobileService);
         private Champions champions;
         private ChampionInfo champInfo;
-        private CommentDataSource commentViewModel = new CommentDataSource(App.MobileService);
 
         public ChampionPage()
         {
+            this.NavigationCacheMode = NavigationCacheMode.Disabled;
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
@@ -82,10 +85,11 @@ namespace League_of_Legends_Counterpicks
             this.DefaultViewModel["Champion"] = champInfo;
             this.DefaultViewModel["Filter"] = champions.ChampionInfos.OrderBy(x => x.Value.Name);
 
-            
+
             // If navigating via a counterpick, on loading that page, remove the previous history so the back page will go to main or role, not champion
             var prevPage = Frame.BackStack.ElementAt(Frame.BackStackDepth - 1);
-            if (prevPage.SourcePageType.Equals(typeof(ChampionPage))){
+            if (prevPage.SourcePageType.Equals(typeof(ChampionPage)))
+            {
                 Frame.BackStack.RemoveAt(Frame.BackStackDepth - 1);
             }
 
@@ -136,6 +140,13 @@ namespace League_of_Legends_Counterpicks
         /// handlers that cannot cancel the navigation request.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            
             this.navigationHelper.OnNavigatedTo(e);
         }
 
@@ -148,46 +159,44 @@ namespace League_of_Legends_Counterpicks
         {
             AdGrid.Children.Clear();
             AdGrid2.Children.Clear();
-            ResetPageCache();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             base.OnNavigatingFrom(e);
-        }
-
-        private void ResetPageCache()
-        {
-            var cacheSize = ((Frame)Parent).CacheSize;
-            ((Frame)Parent).CacheSize = 0;
-            ((Frame)Parent).CacheSize = cacheSize;
         }
 
         #endregion
 
-        private void StatPage_Navigate(object sender, RoutedEventArgs e)
+        private async void StatPage_Navigate(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(StatsPage), champInfo.Key);
-
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => Frame.Navigate(typeof(StatsPage), champInfo.Key));
         }
 
         // Normal method of handling counter tapped
-        private void Champ_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void Champ_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image counterImage = (sender as Image);
             counterImage.Opacity = 0.5;
             var counter = counterImage.DataContext as Counter;
-            Frame.Navigate(typeof(ChampionPage), counter.Name);
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => Frame.Navigate(typeof(ChampionPage), counter.Name));
+
         }
 
         // Reverse relationship for easy matchups 
-        private void EasyMatchup_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void EasyMatchup_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image easyMatchupImage = (sender as Image);
             easyMatchupImage.Opacity = 0.5;
             var easyMatchup = easyMatchupImage.DataContext as Counter;
-            Frame.Navigate(typeof(ChampionPage), easyMatchup.ChampionFeedbackName);
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => Frame.Navigate(typeof(ChampionPage), easyMatchup.ChampionFeedbackName));
         }
-        
+
 
         // Bidirectional relationship for synergy picks
-        private void SynergyChamp_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void SynergyChamp_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Image synergyImage = (sender as Image);
             synergyImage.Opacity = 0.5;
@@ -200,7 +209,7 @@ namespace League_of_Legends_Counterpicks
             else
                 championName = synergy.ChampionFeedbackName;
 
-            Frame.Navigate(typeof(ChampionPage), championName);
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => Frame.Navigate(typeof(ChampionPage), championName));
         }
 
         private void Synergy_Loaded(FrameworkElement sender, DataContextChangedEventArgs args)
@@ -625,6 +634,7 @@ namespace League_of_Legends_Counterpicks
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
             var ad = sender as AdMediatorControl;
+            ad.Resume();
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
@@ -636,11 +646,6 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
-        private void AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
-        {
-
-        }
-
         private void GridAd_Loaded(object sender, RoutedEventArgs e)
         {
             var grid = sender as Grid;
@@ -649,9 +654,9 @@ namespace League_of_Legends_Counterpicks
                 var rowDefinitions = grid.RowDefinitions;
                 foreach (var r in rowDefinitions)
                 {
-                    if (r.Height.Value == 80)
+                    if (r.Height.Value == 50)
                     {
-                        r.SetValue(RowDefinition.HeightProperty, new GridLength(15));
+                        r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
                     }
                 }
             }
