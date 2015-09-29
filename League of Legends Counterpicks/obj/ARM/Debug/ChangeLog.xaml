@@ -27,14 +27,14 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="3" Margin="0,49,0,0" Name="AdGrid">
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='4' x:Name="AdMediatorCh2" Id="AdMediator-Id-1Ch2" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='5' x:Name="AdMediatorCh3" Id="AdMediator-Id-1Ch3" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='6' x:Name="AdMediatorCh4" Id="AdMediator-Id-1Ch4" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='7' x:Name="AdMediatorCh5" Id="AdMediator-Id-1Ch5" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='4' x:Name="AdMediatorCh2" Id="AdMediator-Id-2Ch2" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='5' x:Name="AdMediatorCh3" Id="AdMediator-Id-2Ch3" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='6' x:Name="AdMediatorCh4" Id="AdMediator-Id-2Ch4" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='7' x:Name="AdMediatorCh5" Id="AdMediator-Id-2Ch5" Style="{StaticResource HorizontalAdMediator}"                                                     />
         </Grid>
 
         <Grid Grid.Row="3" Name="AdGrid2">
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='3' x:Name="AdMediatorCh1" Id="AdMediator-Id-1Ch1" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <WindowsPhone81:AdMediatorControl x:ConnectionId='3' x:Name="AdMediatorCh1" Id="AdMediator-Id-2Ch1" Style="{StaticResource HorizontalAdMediator}"                                                     />
         </Grid>
 
         <!-- Title Panel -->
@@ -54,6 +54,12 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="Sept 23 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Fixes"></Run>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Sept 14 2015" />
                     </TextBlock>
