@@ -336,6 +336,11 @@
 						<Value>Assets\Khazix_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="Kindred_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Kindred_Square_0.png">
+					<Candidate type="Path">
+						<Value>Assets\Kindred_Square_0.png</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="KogMaw_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/KogMaw_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\KogMaw_Square_0.png</Value>

@@ -451,7 +451,7 @@ namespace League_of_Legends_Counterpicks
         private void Filter_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox filterBox = sender as TextBox;
-            DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name.Contains(filterBox.Text)).OrderBy(x => x.Value.Name);
+            DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Name.ToLower().Contains(filterBox.Text.ToLower())).OrderBy(x => x.Value.Name);
         }
 
         private void Filter_Click(object sender, ItemClickEventArgs e)

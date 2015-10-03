@@ -94,9 +94,7 @@
 
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton x:ConnectionId='5' Icon="Forward"               />
-
-                <AppBarButton Icon="Comment" Label="Comment">
+            <AppBarButton Icon="Comment" Label="Comment">
                 <Button.Flyout>
                     <Flyout Placement="Full" x:Name="CommentFlyout">
                         <Grid>
@@ -129,7 +127,7 @@
                                          Content="Playing as"></RadioButton>
                             </Grid>
 
-                            <TextBox x:ConnectionId='10' Margin="30,-10,30,0"
+                            <TextBox x:ConnectionId='9' Margin="30,-10,30,0"
                                  Name="NameBox"
                                  Grid.Row="2"
                                  HorizontalAlignment="Stretch"
@@ -146,7 +144,7 @@
                                  Grid.Row="3"
                                  TextWrapping="Wrap"></TextBox>
 
-                            <Button x:ConnectionId='11' Grid.Row="4"
+                            <Button x:ConnectionId='10' Grid.Row="4"
                                 VerticalAlignment="Bottom"
                                 HorizontalAlignment="Center"
                                                       >Send</Button>
@@ -192,7 +190,7 @@
                                          Content="Synergy"></RadioButton>
                             </Grid>
 
-                            <TextBox x:ConnectionId='7' Height="40"
+                            <TextBox x:ConnectionId='6' Height="40"
                                  Name="FilterBox"
                                  Margin="30,0,30,0"
                                  Grid.Row="2"
@@ -201,7 +199,7 @@
                                                                  >
                             </TextBox >
 
-                            <GridView x:ConnectionId='8' ItemsSource="{Binding Filter}"
+                            <GridView x:ConnectionId='7' ItemsSource="{Binding Filter}"
                                   HorizontalAlignment="Center"
                                   IsItemClickEnabled="True"
                                   Grid.Row="3"
@@ -217,7 +215,7 @@
                                 </GridView.ItemTemplate>
                             </GridView>
 
-                            <Button x:ConnectionId='9' Grid.Row="4"
+                            <Button x:ConnectionId='8' Grid.Row="4"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
                                                        
@@ -227,13 +225,13 @@
                     </Flyout>
                 </Button.Flyout>
             </AppBarButton>
-            <AppBarButton x:ConnectionId='6' Icon="SolidStar" Label="Live Stats"                          />
+            <AppBarButton x:ConnectionId='5' Icon="SolidStar" Label="Live Stats"                          />
         </CommandBar>
     </Page.BottomAppBar>
 
 
 
-    <Grid x:ConnectionId='12' x:Name="LayoutRoot"
+    <Grid x:ConnectionId='11' x:Name="LayoutRoot"
                                 >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -276,33 +274,28 @@
         </Grid>
 
         <Grid Grid.Row="3" Margin="0,49,0,0" x:Name="AdGrid">
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C2" Id="AdMediator-Id-1C2" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C3" Id="AdMediator-Id-1C3" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C4" Id="AdMediator-Id-1C4" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C5" Id="AdMediator-Id-1C5" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C6" Id="AdMediator-Id-1C6" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C7" Id="AdMediator-Id-1C7" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C8" Id="AdMediator-Id-1C8" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C9" Id="AdMediator-Id-1C9" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C10" Id="AdMediator-Id-1C10" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C11" Id="AdMediator-Id-1C11" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C12" Id="AdMediator-Id-1C12" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C13" Id="AdMediator-Id-1C13" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C14" Id="AdMediator-Id-1C14" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C15" Id="AdMediator-Id-1C15" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C16" Id="AdMediator-Id-1C16" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C17" Id="AdMediator-Id-1C17" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C18" Id="AdMediator-Id-1C18" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C19" Id="AdMediator-Id-1C19" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C20" Id="AdMediator-Id-1C20" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C21" Id="AdMediator-Id-1C21" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C22" Id="AdMediator-Id-1C22" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C23" Id="AdMediator-Id-1C23" Style="{StaticResource HorizontalAdMediator}" />
-            <!--<WindowsPhone81:AdMediatorControl x:Name="AdMediator1C24" Id="AdMediator-Id-1C24" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C25" Id="AdMediator-Id-1C25" Style="{StaticResource HorizontalAdMediator}" />-->
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C2" Id="AdMediator-Id-4C2" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C3" Id="AdMediator-Id-4C3" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C4" Id="AdMediator-Id-4C4" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C5" Id="AdMediator-Id-4C5" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C6" Id="AdMediator-Id-4C6" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C7" Id="AdMediator-Id-4C7" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C8" Id="AdMediator-Id-4C8" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C9" Id="AdMediator-Id-4C9" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C10" Id="AdMediator-Id-4C10" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C11" Id="AdMediator-Id-4C11" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C12" Id="AdMediator-Id-4C12" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C13" Id="AdMediator-Id-4C13" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C14" Id="AdMediator-Id-4C14" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C15" Id="AdMediator-Id-4C15" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C16" Id="AdMediator-Id-4C16" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C17" Id="AdMediator-Id-4C17" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C18" Id="AdMediator-Id-4C18" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C19" Id="AdMediator-Id-4C19" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C20" Id="AdMediator-Id-4C20" Style="{StaticResource HorizontalAdMediator}" />
         </Grid>
         <Grid Grid.Row="3" Name="AdGrid2">
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C1" Id="AdMediator-Id-1C1" Style="{StaticResource HorizontalAdMediator}" />
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C1" Id="AdMediator-Id-4C1" Style="{StaticResource HorizontalAdMediator}" />
         </Grid>
 
         <Pivot x:Name="MainPivot"
@@ -315,7 +308,7 @@
             </Pivot.HeaderTemplate>
             
             <PivotItem x:Name="CounterSection" Header="Counters">
-                <Grid x:ConnectionId='19'                        Margin="0,-15,0,0">
+                <Grid x:ConnectionId='18'                        Margin="0,-15,0,0">
                     <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource ChampionVisibility}, ConverterParameter=Counter}"
                                       IsItemClickEnabled="True">
                         <ListView.ItemContainerStyle>
@@ -335,7 +328,7 @@
 
                                     <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
 
-                                    <Image x:ConnectionId='20' Grid.Column="1"
+                                    <Image x:ConnectionId='19' Grid.Column="1"
                                            Width="70"
                                            Height="70"
                                                                 
@@ -357,7 +350,7 @@
             </PivotItem>
 
             <PivotItem x:Name="EasyMatchupSection" Header="Easy">
-                <Grid x:ConnectionId='17'                        Margin="0,-15,0,0">
+                <Grid x:ConnectionId='16'                        Margin="0,-15,0,0">
                     <ListView ItemsSource="{Binding ChampionFeedback.EasyMatchups}"
                               IsItemClickEnabled="True">
                         <ListView.ItemContainerStyle>
@@ -377,7 +370,7 @@
 
                                     <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
 
-                                    <Image x:ConnectionId='18' Grid.Column="1"
+                                    <Image x:ConnectionId='17' Grid.Column="1"
                                            Width="70"
                                            Height="70"
                                                                       
@@ -398,7 +391,7 @@
             </PivotItem>
 
             <PivotItem x:Name="SynergySection" Header="Synergy">
-                <Grid x:ConnectionId='15'                        Margin="0,-15,0,0">
+                <Grid x:ConnectionId='14'                        Margin="0,-15,0,0">
 
                     <TextBlock Visibility= "{Binding Converter={StaticResource EmptyMessageVisibility}, ConverterParameter=Synergy}"
                                Name="NoSynergyChampions"
@@ -426,7 +419,7 @@
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
-                                    <Image x:ConnectionId='16' Grid.Column="1"
+                                    <Image x:ConnectionId='15' Grid.Column="1"
                                            Width="70"
                                            Height="70"
                                                                        
@@ -446,7 +439,7 @@
             </PivotItem>
 
             <PivotItem x:Name="CounterCommentSection" Header="Countering">
-                <Grid x:ConnectionId='14'                        Margin="0,-15,0,0">
+                <Grid x:ConnectionId='13'                        Margin="0,-15,0,0">
                     <TextBlock Visibility="{Binding Converter={StaticResource EmptyMessageVisibility}, ConverterParameter=CounterComments}"
                                Name="NoCounterComments"
                                FontSize="30"
@@ -468,7 +461,7 @@
             </PivotItem>
 
             <PivotItem x:Name="PlayingCommentSection" Header="Playing">
-                <Grid x:ConnectionId='13'                       >
+                <Grid x:ConnectionId='12'                       >
                     <TextBlock Visibility="{Binding Converter={StaticResource EmptyMessageVisibility}, ConverterParameter=PlayingAsComments}"
                                Name="NoPlayingComments"
                                FontSize="30"

@@ -413,6 +413,9 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Khazix_Square_0.png">
       <PackagePath>Assets\Khazix_Square_0.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Kindred_Square_0.png">
+      <PackagePath>Assets\Kindred_Square_0.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\KogMaw_Square_0.png">
       <PackagePath>Assets\KogMaw_Square_0.png</PackagePath>
     </AppxPackagedFile>

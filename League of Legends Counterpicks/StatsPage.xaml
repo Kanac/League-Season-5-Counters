@@ -36,18 +36,18 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="4" Margin="0,49,0,0" x:Name="AdGrid">
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS2" Id="AdMediator-Id-2S2" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS3" Id="AdMediator-Id-2S3" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS4" Id="AdMediator-Id-2S4" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS5" Id="AdMediator-Id-2S5" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS6" Id="AdMediator-Id-2S6" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS7" Id="AdMediator-Id-2S7" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS8" Id="AdMediator-Id-2S8" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS9" Id="AdMediator-Id-2S9" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS10" Id="AdMediator-Id-2S10" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS2" Id="AdMediator-Id-4S2" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS3" Id="AdMediator-Id-4S3" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS4" Id="AdMediator-Id-4S4" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS5" Id="AdMediator-Id-4S5" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS6" Id="AdMediator-Id-4S6" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS7" Id="AdMediator-Id-4S7" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS8" Id="AdMediator-Id-4S8" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS9" Id="AdMediator-Id-4S9" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS10" Id="AdMediator-Id-4S10" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
         </Grid>
         <Grid Grid.Row="4" x:Name="AdGrid2">
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS1" Id="AdMediator-Id-2S1" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorS1" Id="AdMediator-Id-4S1" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
         </Grid>
 
         <StackPanel Visibility="{Binding LoadingVisibility}">

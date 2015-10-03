@@ -63,6 +63,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Kayle_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Kennen_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Khazix_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Kindred_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\KogMaw_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\League of Legends Season 5 Main.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\League of Legends Teambuilder.png" />

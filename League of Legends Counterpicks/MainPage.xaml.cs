@@ -104,7 +104,7 @@ namespace League_of_Legends_Counterpicks
             XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
 
             XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
-            toastTextElements[1].AppendChild(toastXml.CreateTextNode("New Live Stats feature and Windows 10 Version!"));
+            toastTextElements[1].AppendChild(toastXml.CreateTextNode("Kindred data has arrived!"));
 
             ToastNotification toast = new ToastNotification(toastXml);
             toast.Tag = "FeatureToast";
