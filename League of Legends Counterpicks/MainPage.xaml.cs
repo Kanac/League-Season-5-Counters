@@ -84,15 +84,18 @@ namespace League_of_Legends_Counterpicks
             // Toast background task setup 
             if (e.PageState == null || (bool)e.PageState["firstLoad"] == true)
             {
-                // Only show imminent toasts up to 4 times that the app is launched 
-                if (localSettings.Values["toastViews"] == null)
-                    localSettings.Values["toastViews"] = 0;
+                CheckAppVersion();
+                string version = localSettings.Values["AppVersion"] as string;
 
-                if ((int)localSettings.Values["toastViews"] < 2)
+                // Only show imminent toasts up to 2 times that the app is launched 
+                if (localSettings.Values[version] == null)
+                    localSettings.Values[version] = 0;
+
+                if ((int)localSettings.Values[version] < 2)
                 {
                     setupFeatureToast(); // Flashes a new feature message 
                     setupReuseToast(); // Creates a message indicating user to reuse app after 30 minutes of opening
-                    localSettings.Values["toastViews"] = 1 + (int)localSettings.Values["toastViews"];
+                    localSettings.Values[version] = 1 + (int)localSettings.Values[version];
                 }
                 await setupToast();  // Background toast in 72 hours talking about new champion data
             }
