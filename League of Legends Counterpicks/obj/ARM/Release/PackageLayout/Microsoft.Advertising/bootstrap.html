@@ -5,6 +5,7 @@
 -->
 <html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <base href="http://ads.msn.com/" />
     <title></title>
     <style type="text/css">
         body {
@@ -47,6 +48,11 @@
     <script src="ms-appx-web:///MSAdvertisingJS/ads/ormma.js" type="text/javascript"></script>
     <script type='text/javascript'>
         var SDK_PLATFORM = "$(PLATFORM)";
+
+        // workaround for ads that try to reference navigator.mimeTypes which is not defined in WebView
+        if (navigator && !navigator.mimeTypes) {
+            navigator.mimeTypes = [];
+        }
     </script>
     $(PAYLOAD)
 </body>

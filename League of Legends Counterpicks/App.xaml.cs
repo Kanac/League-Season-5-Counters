@@ -61,6 +61,8 @@ namespace League_of_Legends_Counterpicks
             // Enable Azure Application Insights
             WindowsAppInitializer.InitializeAsync();
 
+
+
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
 

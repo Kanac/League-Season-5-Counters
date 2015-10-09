@@ -16,6 +16,7 @@ using League_of_Legends_Counterpicks.Advertisement;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Media;
 using Windows.UI;
+using Microsoft.Advertising.WinRT.UI;
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
