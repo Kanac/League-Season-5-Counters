@@ -59,7 +59,6 @@
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-Changed imminent toast algorithm"> </Run>
-                        <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Oct 3 2015" />

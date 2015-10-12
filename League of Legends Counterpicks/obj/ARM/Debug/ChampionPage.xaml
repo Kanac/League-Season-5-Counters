@@ -274,28 +274,28 @@
         </Grid>
 
         <Grid Grid.Row="3" Margin="0,49,0,0" x:Name="AdGrid">
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C2" Id="AdMediator-Id-4C2" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C3" Id="AdMediator-Id-4C3" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C4" Id="AdMediator-Id-4C4" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C5" Id="AdMediator-Id-4C5" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C6" Id="AdMediator-Id-4C6" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C7" Id="AdMediator-Id-4C7" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C8" Id="AdMediator-Id-4C8" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C9" Id="AdMediator-Id-4C9" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C10" Id="AdMediator-Id-4C10" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C11" Id="AdMediator-Id-4C11" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C12" Id="AdMediator-Id-4C12" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C13" Id="AdMediator-Id-4C13" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C14" Id="AdMediator-Id-4C14" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C15" Id="AdMediator-Id-4C15" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C16" Id="AdMediator-Id-4C16" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C17" Id="AdMediator-Id-4C17" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C18" Id="AdMediator-Id-4C18" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C19" Id="AdMediator-Id-4C19" Style="{StaticResource HorizontalAdMediator}" />
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C20" Id="AdMediator-Id-4C20" Style="{StaticResource HorizontalAdMediator}" />
+            <UI:AdControl x:ConnectionId='21' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249500" />
+            <UI:AdControl x:ConnectionId='22' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249502" />
+            <UI:AdControl x:ConnectionId='23' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249506" />
+            <UI:AdControl x:ConnectionId='24' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249508" />
+            <UI:AdControl x:ConnectionId='25' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249510" />
+            <UI:AdControl x:ConnectionId='26' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249512" />
+            <UI:AdControl x:ConnectionId='27' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249514" />
+            <UI:AdControl x:ConnectionId='28' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249516" />
+            <UI:AdControl x:ConnectionId='29' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249518" />
+            <UI:AdControl x:ConnectionId='30' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249520" />
+            <UI:AdControl x:ConnectionId='31' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249522" />
+            <UI:AdControl x:ConnectionId='32' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249524" />
+            <UI:AdControl x:ConnectionId='33' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249526" />
+            <UI:AdControl x:ConnectionId='34' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249528" />
+            <UI:AdControl x:ConnectionId='35' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249530" />
+            <UI:AdControl x:ConnectionId='36' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249532" />
+            <UI:AdControl x:ConnectionId='37' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249534" />
+            <UI:AdControl x:ConnectionId='38' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249536" />
+            <UI:AdControl x:ConnectionId='39' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249538" />
         </Grid>
         <Grid Grid.Row="3" Name="AdGrid2">
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediator1C1" Id="AdMediator-Id-4C1" Style="{StaticResource HorizontalAdMediator}" />
+            <UI:AdControl x:ConnectionId='20' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="249540" />
         </Grid>
 
         <Pivot x:Name="MainPivot"

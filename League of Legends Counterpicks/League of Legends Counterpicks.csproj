@@ -121,7 +121,6 @@
     <Content Include="Assets\lolseason5counters.png" />
     <Content Include="Assets\Wide310x150Logo.scale-240.png" />
     <Content Include="Assets\WindowsStoreProxy.xml" />
-    <Content Include="AdMediator.config" />
     <None Include="app.config" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="ApplicationInsights.config">

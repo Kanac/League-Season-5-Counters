@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Media;
 using Windows.UI;
 using Microsoft.Advertising.WinRT.UI;
+using System.Collections.Generic;
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -30,7 +31,7 @@ namespace League_of_Legends_Counterpicks
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-
+        private List<DispatcherTimer> timers = new List<DispatcherTimer>();
         public MainPage()
         {
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
@@ -246,6 +247,9 @@ namespace League_of_Legends_Counterpicks
             GC.WaitForPendingFinalizers();
             GC.Collect();
             GC.WaitForPendingFinalizers();
+            foreach (DispatcherTimer timer in timers)
+                timer.Stop();
+
             this.navigationHelper.OnNavigatedFrom(e);
         }
 
@@ -294,8 +298,12 @@ namespace League_of_Legends_Counterpicks
 
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
-            var ad = sender as AdMediatorControl;
- 
+            var ad = sender as AdControl;
+            var timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(30) };
+            timers.Add(timer);
+            timer.Tick += (s, d) => ad.Refresh();
+            timer.Start();
+
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
                 // Hide the app for the purchaser
@@ -327,7 +335,8 @@ namespace League_of_Legends_Counterpicks
         {
             AdRemover.Purchase();
         }
-        private void AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
+
+        private void Ad_Error(object sender, AdErrorEventArgs e)
         {
 
         }

@@ -33,7 +33,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="7.5*" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="1">
@@ -47,14 +47,14 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <ListView x:ConnectionId='16' ItemsSource="{Binding Roles}"
+                <ListView x:ConnectionId='7' ItemsSource="{Binding Roles}"
                           Grid.Row="1"
                           IsItemClickEnabled="True"
                                                             >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="15,0,0,20">
-                                <TextBlock x:ConnectionId='17' Text="{Binding }"
+                                <TextBlock x:ConnectionId='8' Text="{Binding }"
                                            Style="{ThemeResource ListViewItemTextBlockStyle}"
                                            FontSize="28"
                                            FontFamily="Segoe WP Black" 
@@ -79,20 +79,19 @@
         </StackPanel>
 
         <Grid Grid.Row="2" Margin="0,49,0,0" x:Name="AdGrid">
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='7' x:Name="AdMediatorM2" Id="AdMediator-Id-4M2" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='8' x:Name="AdMediatorM3" Id="AdMediator-Id-4M3" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='9' x:Name="AdMediatorM4" Id="AdMediator-Id-4M4" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='10' x:Name="AdMediatorM5" Id="AdMediator-Id-4M5" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='11' x:Name="AdMediatorM6" Id="AdMediator-Id-4M6" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='12' x:Name="AdMediatorM7" Id="AdMediator-Id-4M7" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='13' x:Name="AdMediatorM8" Id="AdMediator-Id-4M8" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='14' x:Name="AdMediatorM9" Id="AdMediator-Id-4M9" Style="{StaticResource HorizontalAdMediator}"                                                     />
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='15' x:Name="AdMediatorM10" Id="AdMediator-Id-4M10" Style="{StaticResource HorizontalAdMediator}"                                                     />
-
+            <!--<UI:AdControl Name="AdM2" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="False" AdUnitId="240187" />
+            <UI:AdControl Name="AdM3" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="False" AdUnitId="240188" />
+            <UI:AdControl Name="AdM4" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="False" AdUnitId="240189" />
+            <UI:AdControl Name="AdM5" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="False" AdUnitId="240190" />
+            <UI:AdControl Name="AdM6" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="False" AdUnitId="240191" />
+            <UI:AdControl Name="AdM7" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="False" AdUnitId="240192" />
+            <UI:AdControl Name="AdM8" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="False" AdUnitId="240193" />
+            <UI:AdControl Name="AdM9" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="False" AdUnitId="240194" />
+            <UI:AdControl Name="AdM10" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="False" AdUnitId="240195" />-->
         </Grid>
 
         <Grid Grid.Row="2" Name="AdGrid2">
-            <WindowsPhone81:AdMediatorControl x:ConnectionId='6' x:Name="AdMediatorM1" Id="AdMediator-Id-4M1" Style="{StaticResource HorizontalAdMediator}"                                                     />
+            <UI:AdControl x:ConnectionId='6' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="242808"/>
         </Grid>
     </Grid>
 </Page>

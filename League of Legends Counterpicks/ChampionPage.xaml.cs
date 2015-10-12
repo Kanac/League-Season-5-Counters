@@ -12,6 +12,7 @@ using Windows.UI.Popups;
 using Microsoft.AdMediator.WindowsPhone81;
 using Windows.UI.Core;
 using Windows.System;
+using Microsoft.Advertising.WinRT.UI;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkID=391641
@@ -27,6 +28,7 @@ namespace League_of_Legends_Counterpicks
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private CommentDataSource commentViewModel = new CommentDataSource(App.MobileService);
+        private List<DispatcherTimer> timers = new List<DispatcherTimer>();
         private Champions champions;
         private ChampionInfo champInfo;
 
@@ -165,6 +167,9 @@ namespace League_of_Legends_Counterpicks
             GC.WaitForPendingFinalizers();
             GC.Collect();
             GC.WaitForPendingFinalizers();
+            foreach (DispatcherTimer timer in timers)
+                timer.Stop();
+
             base.OnNavigatingFrom(e);
         }
 
@@ -633,8 +638,11 @@ namespace League_of_Legends_Counterpicks
          
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
-            var ad = sender as AdMediatorControl;
-            ad.Resume();
+            var ad = sender as AdControl;
+            var timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(30) };
+            timers.Add(timer);
+            timer.Tick += (s, d) => ad.Refresh();
+            timer.Start();
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
@@ -660,6 +668,11 @@ namespace League_of_Legends_Counterpicks
                     }
                 }
             }
+        }
+
+        private void Ad_Error(object sender, AdErrorEventArgs e)
+        {
+
         }
     }
 
