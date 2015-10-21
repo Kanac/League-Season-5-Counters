@@ -30,8 +30,8 @@ namespace LeagueSeason5CountersService.Controllers
         }
 
         // GET tables/ChampionFeedback
-        [EnableQuery(PageSize = 1000)]
-        [ExpandProperty("Comments/UserRatings, Counters/CounterRatings")]
+        [EnableQuery(PageSize = 1000, MaxExpansionDepth = 3)]
+        [ExpandProperty("Comments/UserRatings, Counters/CounterRatings, Counters/CounterComments/CounterCommentRatings")]
         public IQueryable<ChampionFeedbackDto> GetAllChampionFeedback()
         {
             return base.Query();

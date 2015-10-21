@@ -674,6 +674,9 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\WindowsStoreProxy.xml">
       <PackagePath>Assets\WindowsStoreProxy.xml</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\AdMediator.config">
+      <PackagePath>AdMediator.config</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>

@@ -7,6 +7,11 @@
 			<Theme>LIGHT, DARK</Theme>
 		</Qualifiers>
 		<ResourceMapSubtree name="Files">
+			<NamedResource name="AdMediator.config" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/AdMediator.config">
+				<Candidate type="Path">
+					<Value>AdMediator.config</Value>
+				</Candidate>
+			</NamedResource>
 			<NamedResource name="App.xbf" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/App.xbf">
 				<Candidate type="Path">
 					<Value>App.xbf</Value>

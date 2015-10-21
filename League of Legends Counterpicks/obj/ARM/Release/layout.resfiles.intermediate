@@ -143,6 +143,7 @@ Assets\Zilean_Square_0.png
 Assets\Zyra_Square_0.png
 Common\ReadMe.txt
 DataModel\Data.json
+AdMediator.config
 ApplicationInsights.config
 Assets\BadgeLogo.scale-240.png
 Assets\hecsplash.png

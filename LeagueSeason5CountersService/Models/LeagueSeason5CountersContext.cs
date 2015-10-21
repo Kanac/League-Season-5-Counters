@@ -48,6 +48,10 @@ namespace LeagueSeason5CountersService.Models
         public System.Data.Entity.DbSet<LeagueSeason5CountersService.DataObjects.Counter> Counters { get; set; }
 
         public System.Data.Entity.DbSet<LeagueSeason5CountersService.DataObjects.CounterRating> CounterRatings { get; set; }
+
+        public System.Data.Entity.DbSet<LeagueSeason5CountersService.DataObjects.CounterComment> CounterComments { get; set; }
+
+        public System.Data.Entity.DbSet<LeagueSeason5CountersService.DataObjects.CounterCommentRating> CounterCommentRatings { get; set; }
     }
 
 }

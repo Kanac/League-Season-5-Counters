@@ -16,5 +16,7 @@ namespace LeagueSeason5CountersService.DataObjects
         public string ChampionFeedbackId { get; set; }
         public PageEnum.ChampionPage Page { get; set; }
         public virtual ICollection<CounterRatingDto> CounterRatings { get; set; }
+        public virtual ICollection<CounterCommentDto> CounterComments { get; set; }
+
     }
 }

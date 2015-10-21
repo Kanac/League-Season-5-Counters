@@ -30,6 +30,8 @@ namespace LeagueSeason5CountersService
                 cfg.CreateMap<UserRating, UserRatingDto>();
                 cfg.CreateMap<Counter, CounterDto>();
                 cfg.CreateMap<CounterRating, CounterRatingDto>();
+                cfg.CreateMap<CounterComment, CounterCommentDto>();
+                cfg.CreateMap<CounterCommentRating, CounterCommentRatingDto>();
 
                 // Define a map from the client type to the database
                 // type. Used when inserting and updating data.
@@ -38,7 +40,8 @@ namespace LeagueSeason5CountersService
                 cfg.CreateMap<UserRatingDto, UserRating>();
                 cfg.CreateMap<CounterDto, Counter>();
                 cfg.CreateMap<CounterRatingDto, CounterRating>();
-
+                cfg.CreateMap<CounterCommentDto, CounterComment>();
+                cfg.CreateMap<CounterCommentRatingDto, CounterCommentRating>();
             });
 
             

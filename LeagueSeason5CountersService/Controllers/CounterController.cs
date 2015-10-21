@@ -26,7 +26,7 @@ namespace LeagueSeason5CountersService.Controllers
 
         // GET tables/Counter
         [EnableQuery(PageSize = 1000)]
-        [ExpandProperty("CounterRatings")]
+        [ExpandProperty("CounterRatings, CounterComments/CounterCommentRatings")]
         public IQueryable<CounterDto> GetAllCounter()
         {
             return Query(); 

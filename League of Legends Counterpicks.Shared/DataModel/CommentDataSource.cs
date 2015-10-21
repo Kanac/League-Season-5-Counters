@@ -87,6 +87,10 @@ namespace League_of_Legends_Counterpicks.DataModel
             NotifyPropertyChanged("EasyMatchups");
         }
 
+        public void UpdateMatchups() {
+            NotifyPropertyChanged("EasyMatchups");
+            NotifyPropertyChanged("Counters");
+        }
         public void SortSynergy()
         {
             var sorted = Counters.Where(c => c.Page == PageEnum.ChampionPage.Synergy).OrderByDescending(x => x.Score).ToList();
@@ -97,6 +101,7 @@ namespace League_of_Legends_Counterpicks.DataModel
             }
             NotifyPropertyChanged("Counters");
         }
+
 
         private void NotifyPropertyChanged(String info)
         {
@@ -151,6 +156,7 @@ namespace League_of_Legends_Counterpicks.DataModel
         public Counter()
         {
             CounterRatings = new ObservableCollection<CounterRating>();
+            CounterComments = new ObservableCollection<CounterComment>();
         }
         public int Value { get; set; }  //Local value to be used to set progress bar percentage
         public string Name { get; set; }
@@ -173,10 +179,18 @@ namespace League_of_Legends_Counterpicks.DataModel
 
             }
         }
-
+        public ObservableCollection<CounterComment> CounterComments{ get; set; }
         public ICollection<CounterRating> CounterRatings { get; set; }
         public string Id { get; set; }
         public string ChampionFeedbackId { get; set; }
+        public void SortCounterComments(){
+            var sorted = CounterComments.OrderByDescending(x => x.Score).ToList();
+            for (int i = 0; i < sorted.Count(); i++)
+            {
+                CounterComments.Move(CounterComments.IndexOf(sorted[i]), i);
+            }
+            NotifyPropertyChanged("CounterComments");
+        }
         private void NotifyPropertyChanged(String info)
         {
             if (PropertyChanged != null)
@@ -184,6 +198,57 @@ namespace League_of_Legends_Counterpicks.DataModel
                 PropertyChanged(this, new PropertyChangedEventArgs(info));
             }
         }
+    }
+
+    public class CounterComment : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public CounterComment()
+        {
+            CounterCommentRatings = new ObservableCollection<CounterCommentRating>();
+        }
+        public string Text { get; set; }
+        public string User { get; set; }
+        private int score { get; set; }
+
+        public int Score
+        {
+            get
+            {
+                return score;
+            }
+            set
+            {
+                if (value != score)
+                {
+                    score = value;
+                    NotifyPropertyChanged("Score");
+                }
+
+            }
+        }
+
+        public string Id { get; set; }
+        public string CounterId { get; set; }
+        public string CounterName { get; set; }
+        public string ChampionFeedbackName { get; set; }
+        public ICollection<CounterCommentRating> CounterCommentRatings { get; set; }
+
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+    }
+
+    public class CounterCommentRating
+    {
+        public string UniqueUser { get; set; }
+        public int Score { get; set; }
+        public string Id { get; set; }
+        public string CounterCommentId { get; set; }
     }
 
     public class UserRating 
@@ -215,6 +280,8 @@ namespace League_of_Legends_Counterpicks.DataModel
             commentTable = _client.GetTable<Comment>();
             userTable = _client.GetTable<UserRating>();
             counterTable = _client.GetTable<Counter>();
+            counterCommentTable = _client.GetTable<CounterComment>();
+            counterCommentRatingTable = _client.GetTable<CounterCommentRating>();
             counterRatingTable = _client.GetTable<CounterRating>();
         }
 
@@ -272,6 +339,8 @@ namespace League_of_Legends_Counterpicks.DataModel
         public IMobileServiceTable<Comment> commentTable { get; set; }
         public IMobileServiceTable<UserRating> userTable { get; set; }
         public IMobileServiceTable<Counter> counterTable { get; set; }
+        public IMobileServiceTable<CounterComment> counterCommentTable { get; set; }
+        public IMobileServiceTable<CounterCommentRating> counterCommentRatingTable { get; set; }
         public IMobileServiceTable<CounterRating> counterRatingTable { get; set; }
 
 
@@ -387,6 +456,8 @@ namespace League_of_Legends_Counterpicks.DataModel
                         ChampionFeedback.Counters.Add(synergyChampion);
 
                     ChampionFeedback.SortSynergy();
+
+
                 }
             }
             catch (MobileServiceInvalidOperationException ex)
@@ -569,6 +640,115 @@ namespace League_of_Legends_Counterpicks.DataModel
             }
         }
 
+        public async Task<CounterComment> SubmitCounterCommentAsync(String text, String name, Counter counter)
+        {
+            IsPending = true;
+            ErrorMessage = null;
+
+            // Create the new comment
+            var comment = new CounterComment()
+            {
+                Score = 0,
+                Text = text,
+                User = name,
+                ChampionFeedbackName = ChampionFeedback.Name,
+                CounterId = counter.Id,
+                Id = Guid.NewGuid().ToString(),
+                CounterName = counter.Name
+            };
+
+            try
+            {
+                counter.CounterComments.Add(comment);
+                await counterCommentTable.InsertAsync(comment);
+                return comment;
+
+            }
+            catch (MobileServiceInvalidOperationException ex)
+            {
+                ErrorMessage = ex.Message;
+                return null;
+            }
+            catch (HttpRequestException ex2)
+            {
+                ErrorMessage = ex2.Message;
+                return null;
+            }
+            finally
+            {
+                IsPending = false;
+            }
+        }
+
+        public async Task SubmitCounterCommentRating(CounterComment comment, int score)
+        {
+
+            IsPending = true;
+            ErrorMessage = null;
+
+            //  Check if the user already rated the counter comment
+            var existingRating = comment.CounterCommentRatings.Where(x => x.UniqueUser == GetDeviceId()).FirstOrDefault();
+            // If already rated, update to the new score 
+            if (existingRating != null)
+            {
+                // Case for pressing the opposite vote button -- change rating to it
+                if (existingRating.Score != score)
+                {
+                    existingRating.Score = score;
+                }
+                // Case for pressing the same vote button -- simply a score of 0
+                else
+                {
+                    existingRating.Score = 0;
+                }
+                // Update the rating in database
+                try { await counterCommentRatingTable.UpdateAsync(existingRating); }
+                catch (Exception e) { ErrorMessage = e.Message; }
+            }
+            // Create a new rating otherwise
+            else
+            {
+                var newRating = new CounterCommentRating()
+                {
+                    Score = score,
+                    UniqueUser = GetDeviceId(),
+                    Id = Guid.NewGuid().ToString(),
+                    CounterCommentId = comment.Id,
+                };
+
+                // Update the counter comment
+                comment.CounterCommentRatings.Add(newRating);
+                // Insert rating into database
+                try { await counterCommentRatingTable.InsertAsync(newRating); }
+                catch (Exception e) { ErrorMessage = e.Message; }
+            }
+            try
+            {
+                var updatedCounterComment = await counterCommentTable.LookupAsync(comment.Id);
+                comment.Score = updatedCounterComment.Score;
+                comment.CounterCommentRatings = updatedCounterComment.CounterCommentRatings;
+            }
+            catch (MobileServicePreconditionFailedException ex)
+            {
+                ErrorMessage = ex.Message;
+            }
+            // Server conflict 
+            catch (MobileServiceInvalidOperationException ex1)
+            {
+                ErrorMessage = ex1.Message;
+            }
+            catch (HttpRequestException ex2)
+            {
+                ErrorMessage = ex2.Message;
+            }
+
+            finally
+            {
+
+                IsPending = false;
+            }
+
+        }
 
         public async Task SubmitCounterRating(Counter counter, int score)
         {

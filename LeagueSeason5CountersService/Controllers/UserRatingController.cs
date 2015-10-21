@@ -22,6 +22,7 @@ namespace LeagueSeason5CountersService.Controllers
         }
 
         // GET tables/UserRating
+        [EnableQuery(PageSize = 1000)]
         public IQueryable<UserRatingDto> GetAllUserRating()
         {
             return Query(); 

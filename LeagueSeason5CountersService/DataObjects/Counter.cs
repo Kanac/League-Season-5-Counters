@@ -12,6 +12,7 @@ namespace LeagueSeason5CountersService.DataObjects
     {
         public Counter() {
             CounterRatings = new List<CounterRating>();
+            CounterComments = new List<CounterComment>();
         }
         public string Name { get; set; }
         public int Score { get; set; }
@@ -21,5 +22,6 @@ namespace LeagueSeason5CountersService.DataObjects
         [ForeignKey("ChampionFeedbackId")]
         public virtual ChampionFeedback ChampionFeedback { get; set; }
         public virtual ICollection<CounterRating> CounterRatings { get; set; }
+        public virtual ICollection<CounterComment> CounterComments { get; set; }
     }
 }

@@ -12,5 +12,8 @@ namespace LeagueSeason5CountersService.DataObjects
         public string CounterId { get; set; }
         [ForeignKey("CounterId")]
         public virtual Counter Counter { get; set; }
+
+
     }
+
 }

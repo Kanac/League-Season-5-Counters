@@ -22,6 +22,7 @@ namespace LeagueSeason5CountersService.Controllers
         }
 
         // GET tables/CounterRating
+        [EnableQuery(PageSize = 1000)]
         public IQueryable<CounterRatingDto> GetAllCounterRating()
         {
             return Query(); 

@@ -7,6 +7,7 @@
     <RootPropertyPathName Name="DefaultViewModel" />
     <RootPropertyPathName Name="Roles" />
     <RootPropertyPathName Name="Score" />
+    <RootPropertyPathName Name="CounterComments" />
     <RootPropertyPathName Name="Text" />
     <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="Filter" />
@@ -41,12 +42,7 @@
       <RootProperty Name="ImageSource" />
       <RootProperty Name="Opacity" />
     </RootType>
-    <RootType FullName="Microsoft.AdMediator.WindowsPhone81.AdMediatorControl">
-      <RootProperty Name="Id" />
-      <RootProperty Name="Style" />
-      <RootEvent Name="Loaded" />
-      <RootEvent Name="AdMediatorError" />
-    </RootType>
+    <RootType FullName="Microsoft.AdMediator.WindowsPhone81.AdMediatorControl" />
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
@@ -58,6 +54,7 @@
       <RootProperty Name="Style" />
       <RootProperty Name="IsAutoRefreshEnabled" />
       <RootProperty Name="AdUnitId" />
+      <RootProperty Name="Name" />
       <RootEvent Name="Loaded" />
       <RootEvent Name="ErrorOccurred" />
     </RootType>
@@ -87,6 +84,7 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="IsHitTestVisible" />
       <RootProperty Name="FontWeight" />
       <RootEvent Name="Tapped" />
     </RootType>
@@ -156,6 +154,9 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="IsTabStop" />
+      <RootProperty Name="MaxHeight" />
       <RootProperty Name="ItemContainerStyle" />
       <RootEvent Name="ItemClick" />
     </RootType>
@@ -167,6 +168,10 @@
     <RootType FullName="League_of_Legends_Counterpicks.Converters.CommentVisiblity" />
     <RootType FullName="League_of_Legends_Counterpicks.Converters.ChampionVisibility" />
     <RootType FullName="League_of_Legends_Counterpicks.Converters.EmptyMessageVisibility" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterCommentColorConverter" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterCommentCountConverter" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterCommentMatchupConverter" />
+    <RootType FullName="League_of_Legends_Counterpicks.Converters.CounterCommentEmptyConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Name" />
       <RootProperty Name="Source" />
@@ -175,22 +180,30 @@
       <RootEvent Name="Tapped" />
       <RootEvent Name="DataContextChanged" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Primitives.FlyoutBase">
+      <RootMethod Name="GetAttachedFlyout" />
+      <RootMethod Name="SetAttachedFlyout" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Flyout">
       <RootProperty Name="Placement" />
       <RootProperty Name="Content" />
+      <RootEvent Name="Closed" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Name" />
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Text" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Text" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="TextWrapping" />
       <RootEvent Name="GotFocus" />
       <RootEvent Name="TextChanged" />
       <RootEvent Name="LostFocus" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ContentControl">
+      <RootProperty Name="ContentTemplate" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />
@@ -220,9 +233,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.PivotItem">
       <RootProperty Name="Header" />
       <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ContentControl">
-      <RootProperty Name="ContentTemplate" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
     <RootType FullName="Windows.UI.Xaml.Controls.Control">

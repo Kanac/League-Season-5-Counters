@@ -22,6 +22,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -265,6 +266,8 @@
     <Compile Include="Controllers\CommentController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\CounterCommentController.cs" />
+    <Compile Include="Controllers\CounterCommentRatingController.cs" />
     <Compile Include="Controllers\CounterController.cs" />
     <Compile Include="Controllers\CounterRatingController.cs" />
     <Compile Include="Controllers\UserRatingController.cs">
@@ -276,9 +279,13 @@
     <Compile Include="DataObjects\Comment.cs" />
     <Compile Include="DataObjects\CommentDto.cs" />
     <Compile Include="DataObjects\Counter.cs" />
+    <Compile Include="DataObjects\CounterCommentDto.cs" />
+    <Compile Include="DataObjects\CounterCommentRatingDto.cs" />
+    <Compile Include="DataObjects\CounterCommentRating.cs" />
     <Compile Include="DataObjects\CounterDto.cs" />
     <Compile Include="DataObjects\CounterRating.cs" />
     <Compile Include="DataObjects\CounterRatingDto.cs" />
+    <Compile Include="DataObjects\CounterComment.cs" />
     <Compile Include="DataObjects\PageEnum.cs" />
     <Compile Include="DataObjects\UserRating.cs" />
     <Compile Include="DataObjects\UserRatingDto.cs" />

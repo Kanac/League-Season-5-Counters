@@ -161,6 +161,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\VisualTreeHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CounterCommentColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CounterCommentCountConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CounterCommentEmptyConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CounterCommentMatchupConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\EmptyMessageVisibility.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\PatchFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ChampionVisibility.cs" />

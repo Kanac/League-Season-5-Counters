@@ -27,14 +27,11 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="3" Margin="0,49,0,0" Name="AdGrid">
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorCh2" Id="AdMediator-Id-4Ch2" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorCh3" Id="AdMediator-Id-4Ch3" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorCh4" Id="AdMediator-Id-4Ch4" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorCh5" Id="AdMediator-Id-4Ch5" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" IsAutoRefreshEnabled="True" AdUnitId="251115" />
         </Grid>
 
         <Grid Grid.Row="3" Name="AdGrid2">
-            <WindowsPhone81:AdMediatorControl x:Name="AdMediatorCh1" Id="AdMediator-Id-4Ch1" Style="{StaticResource HorizontalAdMediator}" Loaded="Ad_Loaded" AdMediatorError="AdMediatorError"/>
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" IsAutoRefreshEnabled="True" AdUnitId="251114" />
         </Grid>
 
         <!-- Title Panel -->
@@ -54,6 +51,12 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="Oct 20 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Comment on each individual matchup now! The #1 requested feature of this app, now released."> </Run>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Oct 8 2015" />
                     </TextBlock>

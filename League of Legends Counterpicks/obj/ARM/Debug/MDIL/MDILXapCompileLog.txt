@@ -21,17 +21,23 @@ Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compil
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.set_userTable
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.get_counterTable
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.set_counterTable
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.get_counterCommentTable
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.set_counterCommentTable
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.get_counterCommentRatingTable
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.set_counterCommentRatingTable
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.get_counterRatingTable
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method CommentDataSource.set_counterRatingTable
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method StatsDataSource.GetCounterStatsAsync
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <GetChampionFeedbackAsync>d__42.MoveNext
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCommentAsync>d__43.MoveNext
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitUserRating>d__44.MoveNext
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounter>d__45.MoveNext
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounterRating>d__46.MoveNext
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x6000316
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x6000317
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x6000318
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <GetChampionFeedbackAsync>d__50.MoveNext
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCommentAsync>d__51.MoveNext
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitUserRating>d__52.MoveNext
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounter>d__53.MoveNext
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounterCommentAsync>d__54.MoveNext
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounterCommentRating>d__55.MoveNext
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounterRating>d__56.MoveNext
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x6000372
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x6000373
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x6000374
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <GetChampionsAsync>d__15.MoveNext
 MDIL image C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MDIL\League of Legends Counterpicks.exe generated successfully.
 

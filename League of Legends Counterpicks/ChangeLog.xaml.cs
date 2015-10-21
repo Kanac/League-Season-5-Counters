@@ -127,7 +127,7 @@ namespace League_of_Legends_Counterpicks
 
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
-            var ad = sender as AdMediatorControl;
+            var ad = sender as AdControl;
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
                 // Hide the app for the purchaser
@@ -156,9 +156,5 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
-        private void AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
-        {
-
-        }
     }
 }
