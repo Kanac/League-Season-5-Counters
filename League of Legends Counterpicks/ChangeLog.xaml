@@ -52,6 +52,12 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
+						<Run Text="Oct 24 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Fixed synergy comment formating, counter comment sorting, and added a comment filter"> </Run>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
 						<Run Text="Oct 20 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
