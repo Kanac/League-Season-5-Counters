@@ -220,8 +220,16 @@ namespace League_of_Legends_Counterpicks
                 return;
             }
 
-            // Ensure user inputs feedback
-            if (String.IsNullOrEmpty(commentBox.Text))
+            // Ensure user inputs a non-garbage feedback for ascii and chinese
+            if ((FeedbackBox.Text[0] <= 255 && FeedbackBox.Text[0] >= 0 && (FeedbackBox.Text.Count() < 30 || FeedbackBox.Text.Distinct().Count() < 5 || !FeedbackBox.Text.Contains(' '))) || ((FeedbackBox.Text[0] >= 0x4E00 && FeedbackBox.Text[0] <= 0x9FA5) && FeedbackBox.Text.Count() < 8))
+            {
+                MessageDialog emptyBox = new MessageDialog("Write a proper and long enough message first!");
+                await emptyBox.ShowAsync();
+                return;
+            }
+
+            // Ensure at least 8 chars for non-ascii or non-chinese cases
+            if ((FeedbackBox.Text.Count() < 8 || FeedbackBox.Text.Distinct().Count() < 5))
             {
                 MessageDialog emptyBox = new MessageDialog("Write a message first!");
                 await emptyBox.ShowAsync();
@@ -666,7 +674,14 @@ namespace League_of_Legends_Counterpicks
                 return;
             }
 
-            
+            // Ensure at least 8 chars for non-ascii or non-chinese cases
+            if ((FeedbackBox.Text.Count() < 8 || FeedbackBox.Text.Distinct().Count() < 5))
+            {
+                MessageDialog emptyBox = new MessageDialog("Write a message first!");
+                await emptyBox.ShowAsync();
+                return;
+            }
+
             PageEnum.CommentPage page = 0;
             // After ensuring the data is allowed, scroll to the proper hub section according to the type of comment (doing this before actual submission prevents lag)
             if (CounterRadio.IsChecked  == true)
