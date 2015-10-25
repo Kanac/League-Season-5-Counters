@@ -231,7 +231,7 @@ namespace League_of_Legends_Counterpicks
             // Ensure at least 8 chars for non-ascii or non-chinese cases
             if ((FeedbackBox.Text.Count() < 8 || FeedbackBox.Text.Distinct().Count() < 5))
             {
-                MessageDialog emptyBox = new MessageDialog("Write a message first!");
+                MessageDialog emptyBox = new MessageDialog("Write an actual message first!");
                 await emptyBox.ShowAsync();
                 return;
             }
@@ -677,7 +677,7 @@ namespace League_of_Legends_Counterpicks
             // Ensure at least 8 chars for non-ascii or non-chinese cases
             if ((FeedbackBox.Text.Count() < 8 || FeedbackBox.Text.Distinct().Count() < 5))
             {
-                MessageDialog emptyBox = new MessageDialog("Write a message first!");
+                MessageDialog emptyBox = new MessageDialog("Write an actual message first!");
                 await emptyBox.ShowAsync();
                 return;
             }
