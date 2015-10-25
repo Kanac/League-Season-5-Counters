@@ -658,10 +658,10 @@ namespace League_of_Legends_Counterpicks
                 return;
             }
 
-            // Ensure user inputs feedback
-            if (String.IsNullOrEmpty(FeedbackBox.Text))
+            // Ensure user inputs proper feedback (if english string, check for non-spam with enough words, if chinese, check for at least 8 characters)
+            if ((FeedbackBox.Text[0] <= 255 && FeedbackBox.Text[0] >= 0 && (FeedbackBox.Text.Count() < 30 || FeedbackBox.Text.Distinct().Count() < 5 || !FeedbackBox.Text.Contains(' '))) || ((FeedbackBox.Text[0] >= 0x4E00 && FeedbackBox.Text[0] <= 0x9FA5) && FeedbackBox.Text.Count() < 8))
             {
-                MessageDialog emptyBox = new MessageDialog("Write a message first!");
+                MessageDialog emptyBox = new MessageDialog("Write a proper and long enough message first!");
                 await emptyBox.ShowAsync();
                 return;
             }
@@ -683,16 +683,19 @@ namespace League_of_Legends_Counterpicks
                 NoPlayingComments.Visibility = Visibility.Collapsed;
             }
 
+            // Clear textbox to prevent double post
+            string feedbackText = FeedbackBox.Text;
+            FeedbackBox.Text = String.Empty;
+
             // Close the fullscreen flyout
             CommentFlyout.Hide();
 
             // Submit the comment and a self-user rating of 1
-            var comment = await commentViewModel.SubmitCommentAsync(FeedbackBox.Text, NameBox.Text, page);
+            var comment = await commentViewModel.SubmitCommentAsync(feedbackText, NameBox.Text, page);
             await commentViewModel.SubmitUserRating(comment, 1);   // This will then generate Upvote_Loaded to highlight the upvote image
 
             // Update the view
             commentViewModel.ChampionFeedback.SortComments();
-            FeedbackBox.Text = String.Empty;
 
         }
 
