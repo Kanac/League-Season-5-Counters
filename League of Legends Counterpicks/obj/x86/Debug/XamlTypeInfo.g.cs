@@ -1564,5 +1564,3 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
 }
 
 
-
-
