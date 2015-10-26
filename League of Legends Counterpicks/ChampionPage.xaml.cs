@@ -220,6 +220,14 @@ namespace League_of_Legends_Counterpicks
                 return;
             }
 
+            // Check for empty message
+            if (String.IsNullOrEmpty(commentBox.Text))
+            {
+                MessageDialog emptyBox = new MessageDialog("Write a message first!");
+                await emptyBox.ShowAsync();
+                return;
+            }
+
             // Ensure user inputs a non-garbage feedback for ascii and chinese
             if ((commentBox.Text[0] <= 255 && commentBox.Text[0] >= 0 && (commentBox.Text.Count() < 30 || commentBox.Text.Distinct().Count() < 5 || !commentBox.Text.Contains(' '))) || ((commentBox.Text[0] >= 0x4E00 && commentBox.Text[0] <= 0x9FA5) && commentBox.Text.Count() < 8))
             {

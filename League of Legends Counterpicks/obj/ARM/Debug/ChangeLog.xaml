@@ -52,16 +52,25 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
+						<Run Text="Oct 24 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Fixed synergy comment formating, counter comment sorting, and added a comment filter"> </Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
 						<Run Text="Oct 20 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-Comment on each individual matchup now! The #1 requested feature of this app, now released."> </Run>
+                        <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Oct 8 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-Changed imminent toast algorithm"> </Run>
+                        <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Oct 3 2015" />
@@ -72,18 +81,21 @@
                         <Run Text="-Seeded in significant amounts of new data for the latest champions!"> </Run>
                         <LineBreak></LineBreak>
                         <Run Text="-Fixed some champion filtering issues"> </Run>
+                        <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Sept 23 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-Small Fixes"></Run>
+                        <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Sept 14 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-More bug and crash fixes"></Run>
+                        <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Sept 11 2015" />
@@ -94,18 +106,21 @@
                         <Run Text="-Fixed the search bar issue that was associated due to a lack of memory as a result of this"></Run>
                         <LineBreak></LineBreak>
                         <Run Text="-Added in features to easily detect button presses by providing feedback"></Run>
+                        <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Sept 8 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="Further optimized speed and responsiveness of app :)"></Run>
+                        <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Sept 5 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-Just came back from vacavation. Weird bug with last update rolling back. Republished the update again and fixed a couple other small things. "></Run>
+                        <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="August 28 2015" />
@@ -120,6 +135,7 @@
                         <Run Text="-Made Main page sexier :)"></Run>
                         <LineBreak></LineBreak>
                         <Run Text="-LOTS of bug fixes"></Run>
+                        <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="August 20-24 2015" />
