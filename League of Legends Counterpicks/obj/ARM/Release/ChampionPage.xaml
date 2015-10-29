@@ -381,23 +381,23 @@
         </Grid>
 
         <Grid Grid.Row="3" Margin="0,49,0,0" x:Name="AdGrid">
-            <UI:AdControl x:ConnectionId='26' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239120" />
-            <UI:AdControl x:ConnectionId='27' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239121" />
-            <UI:AdControl x:ConnectionId='28' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239108" />
-            <UI:AdControl x:ConnectionId='29' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239109" />
-            <UI:AdControl x:ConnectionId='30' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239110" />
-            <UI:AdControl x:ConnectionId='31' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239111" />
-            <UI:AdControl x:ConnectionId='32' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239112" />
-            <UI:AdControl x:ConnectionId='33' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239113" />
-            <UI:AdControl x:ConnectionId='34' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239114" />
-            <UI:AdControl x:ConnectionId='35' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239115" />
-            <UI:AdControl x:ConnectionId='36' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239116" />
-            <UI:AdControl x:ConnectionId='37' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239117" />
-            <UI:AdControl x:ConnectionId='38' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239118" />
-            <UI:AdControl x:ConnectionId='39' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239119" />
+            <UI:AdControl x:ConnectionId='26' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="240207" />
+            <UI:AdControl x:ConnectionId='27' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="240208" />
+            <UI:AdControl x:ConnectionId='28' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="240209" />
+            <UI:AdControl x:ConnectionId='29' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="240210" />
+            <UI:AdControl x:ConnectionId='30' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="240211" />
+            <UI:AdControl x:ConnectionId='31' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="240212" />
+            <UI:AdControl x:ConnectionId='32' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="240213" />
+            <UI:AdControl x:ConnectionId='33' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="240214" />
+            <UI:AdControl x:ConnectionId='34' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="240215" />
+            <UI:AdControl x:ConnectionId='35' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="242103" />
+            <UI:AdControl x:ConnectionId='36' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="242104" />
+            <UI:AdControl x:ConnectionId='37' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="242105" />
+            <UI:AdControl x:ConnectionId='38' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="242106" />
+            <UI:AdControl x:ConnectionId='39' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="242107" />
         </Grid>
         <Grid Grid.Row="3" Name="AdGrid2">
-            <UI:AdControl x:ConnectionId='25' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="239101" />
+            <UI:AdControl x:ConnectionId='25' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="False" AdUnitId="240206" />
         </Grid>
 
         <Pivot x:Name="MainPivot"

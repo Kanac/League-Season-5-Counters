@@ -52,6 +52,13 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
+						<Run Text="Oct 29 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Synergy, counter and playing as comment sections no longer show their empty messages persistently when user flicks through them as data loads"> </Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
 						<Run Text="Oct 24 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
