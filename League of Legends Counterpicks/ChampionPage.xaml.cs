@@ -109,9 +109,14 @@ namespace League_of_Legends_Counterpicks
                 Application.Current.Exit();
             }
            
-            // Collapse the progress ring once counters have been loaded. If the ring hasn't loaded yet, set a boolean to collapse it once it loads.
+            // Collapse the progress ring once counters have been loaded assuming the textboxes load first
             DefaultViewModel["LoadingVisibility"] = Visibility.Collapsed;
-           
+
+            // Handle the case where data loads after textboxes appear 
+            if (NoSynergyChampions != null) NoSynergyChampions.Visibility = Visibility.Collapsed;
+            if (NoCounterComments != null) NoCounterComments.Visibility = Visibility.Collapsed;
+            if (NoPlayingComments != null) NoPlayingComments.Visibility = Visibility.Collapsed;
+
             // Make updates to champion comments observable
             this.DefaultViewModel["ChampionFeedback"] = commentViewModel.ChampionFeedback;
         }
