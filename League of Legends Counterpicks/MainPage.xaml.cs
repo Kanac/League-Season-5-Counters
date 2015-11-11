@@ -31,7 +31,8 @@ namespace League_of_Legends_Counterpicks
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-        private List<DispatcherTimer> timers = new List<DispatcherTimer>();
+        private InterstitialAd MyVideoAd = new InterstitialAd();
+
         public MainPage()
         {
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
@@ -43,6 +44,28 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+
+            if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            {
+                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+                MyVideoAd.AdReady += MyVideoAd_AdReady;
+            }
+        }
+
+        private void MyVideoAd_AdReady(object sender, object e)
+        {
+            if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            {
+                if (localSettings.Values["MainViews"] == null || ((int)(localSettings.Values["MainViews"])) % 2 == 0 || App.firstLoad)
+                {
+                    MyVideoAd.Show();
+                    localSettings.Values["MainViews"] = 0;
+                    App.firstLoad = false;
+                }
+
+                localSettings.Values["MainViews"] = ((int)(localSettings.Values["MainViews"])) + 1;
+            }
+
         }
 
         /// <summary>
@@ -247,8 +270,6 @@ namespace League_of_Legends_Counterpicks
             GC.WaitForPendingFinalizers();
             GC.Collect();
             GC.WaitForPendingFinalizers();
-            foreach (DispatcherTimer timer in timers)
-                timer.Stop();
 
             this.navigationHelper.OnNavigatedFrom(e);
         }
@@ -299,10 +320,6 @@ namespace League_of_Legends_Counterpicks
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
             var ad = sender as AdControl;
-            var timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(30) };
-            timers.Add(timer);
-            timer.Tick += (s, d) => ad.Refresh();
-            timer.Start();
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {

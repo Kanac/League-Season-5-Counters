@@ -25,7 +25,6 @@ namespace League_of_Legends_Counterpicks
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private readonly String APP_ID = "3366702e-67c7-48e7-bc82-d3a4534f3086";
-        private List<DispatcherTimer> timers = new List<DispatcherTimer>();
         private Champions champions;
         private bool isInitialAllView = true;
 
@@ -175,8 +174,6 @@ namespace League_of_Legends_Counterpicks
             GC.WaitForPendingFinalizers();
             GC.Collect();
             GC.WaitForPendingFinalizers();
-            foreach (DispatcherTimer timer in timers)
-                timer.Stop();
 
             base.OnNavigatingFrom(e);
         }
@@ -262,10 +259,6 @@ namespace League_of_Legends_Counterpicks
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
             var ad = sender as AdControl;
-            var timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(30) };
-            timers.Add(timer);
-            timer.Tick += (s, d) => ad.Refresh();
-            timer.Start();
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {

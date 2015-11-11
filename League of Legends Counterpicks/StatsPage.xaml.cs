@@ -31,7 +31,6 @@ namespace League_of_Legends_Counterpicks
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
-        private List<DispatcherTimer> timers = new List<DispatcherTimer>();
 
         public StatsPage()
         {
@@ -140,8 +139,6 @@ namespace League_of_Legends_Counterpicks
         {
             AdGrid.Children.Clear();
             AdGrid2.Children.Clear();
-            foreach (DispatcherTimer timer in timers)
-                timer.Stop();
 
             base.OnNavigatingFrom(e);
         }
@@ -150,10 +147,6 @@ namespace League_of_Legends_Counterpicks
         private void Ad_Loaded(object sender, RoutedEventArgs e)
         {
             var ad = sender as AdControl;
-            var timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(30) };
-            timers.Add(timer);
-            timer.Tick += (s, d) => ad.Refresh();
-            timer.Start();
 
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {

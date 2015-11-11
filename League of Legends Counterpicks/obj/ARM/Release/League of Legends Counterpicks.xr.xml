@@ -54,6 +54,7 @@
       <RootProperty Name="Style" />
       <RootProperty Name="IsAutoRefreshEnabled" />
       <RootProperty Name="AdUnitId" />
+      <RootProperty Name="AutoRefreshIntervalInSeconds" />
       <RootProperty Name="Name" />
       <RootEvent Name="Loaded" />
       <RootEvent Name="ErrorOccurred" />

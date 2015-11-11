@@ -52,6 +52,13 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
+						<Run Text="November 10 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added in interstitial ads to play around with"> </Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
 						<Run Text="Oct 29 2015" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">

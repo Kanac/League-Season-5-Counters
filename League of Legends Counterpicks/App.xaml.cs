@@ -50,6 +50,8 @@ namespace League_of_Legends_Counterpicks
         // For in app purchases
         public static LicenseInformation licenseInformation;
 
+        public static bool firstLoad = true;
+
         private TransitionCollection transitions;
 
         /// <summary>
