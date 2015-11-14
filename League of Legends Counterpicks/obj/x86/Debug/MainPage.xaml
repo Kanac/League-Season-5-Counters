@@ -33,7 +33,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="7.5*" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="1">
@@ -47,14 +47,14 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <ListView x:ConnectionId='16' ItemsSource="{Binding Roles}"
+                <ListView x:ConnectionId='21' ItemsSource="{Binding Roles}"
                           Grid.Row="1"
                           IsItemClickEnabled="True"
                                                             >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="15,0,0,20">
-                                <TextBlock x:ConnectionId='17' Text="{Binding }"
+                                <TextBlock x:ConnectionId='22' Text="{Binding }"
                                            Style="{ThemeResource ListViewItemTextBlockStyle}"
                                            FontSize="28"
                                            FontFamily="Segoe WP Black" 
@@ -78,20 +78,25 @@
                        TextAlignment="Center" />
         </StackPanel>
 
-        <Grid Grid.Row="2" Margin="0,49,0,0" x:Name="AdGrid">
-            <UI:AdControl x:ConnectionId='7' Name="AdM2" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="248094" />
-            <UI:AdControl x:ConnectionId='8' Name="AdM3" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="246280" />
-            <UI:AdControl x:ConnectionId='9' Name="AdM4" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="243758" />
-            <UI:AdControl x:ConnectionId='10' Name="AdM5" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="243764" />
-            <UI:AdControl x:ConnectionId='11' Name="AdM6" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="229684" />
-            <UI:AdControl x:ConnectionId='12' Name="AdM7" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="248158" />
-            <UI:AdControl x:ConnectionId='13' Name="AdM8" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="248154" />
-            <UI:AdControl x:ConnectionId='14' Name="AdM9" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="248150" />
-            <UI:AdControl x:ConnectionId='15' Name="AdM10" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="248156" />
+        <Grid Grid.Row="2" Margin="0,79,0,0" x:Name="AdGrid">
+            <UI:AdControl x:ConnectionId='7' Name="AdM2" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='8' Name="AdM3" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='9' Name="AdM4" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='10' Name="AdM5" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='11' Name="AdM6" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='12' Name="AdM7" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='13' Name="AdM8" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='14' Name="AdM9" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='15' Name="AdM10" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='16' Name="AdM11" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='17' Name="AdM12" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='18' Name="AdM13" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='19' Name="AdM14" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
+            <UI:AdControl x:ConnectionId='20' Name="AdM15" ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111" />
         </Grid>
 
         <Grid Grid.Row="2" Name="AdGrid2">
-            <UI:AdControl x:ConnectionId='6' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="248138"/>
+            <UI:AdControl x:ConnectionId='6' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251111"/>
         </Grid>
     </Grid>
 </Page>
