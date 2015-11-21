@@ -87,7 +87,7 @@ namespace League_of_Legends_Counterpicks
         {
             if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
-                if (localSettings.Values["MainViews"] == null || ((int)(localSettings.Values["MainViews"])) % 12 != 0 || App.firstLoad)
+                if (localSettings.Values["MainViews"] == null || ((int)(localSettings.Values["MainViews"])) % 24 != 0 || App.firstLoad)
                 {
                     MyVideoAd.Show();
                     localSettings.Values["MainViews"] = 0; // guarantee its initialized to 0 if null to begin with 
