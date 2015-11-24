@@ -32,18 +32,7 @@ namespace League_of_Legends_Counterpicks
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         private InterstitialAd MyVideoAd = new InterstitialAd();
-        private InterstitialAd MyVideoAd2 = new InterstitialAd();
-        private InterstitialAd MyVideoAd3 = new InterstitialAd();
-        private InterstitialAd MyVideoAd4 = new InterstitialAd();
-        private InterstitialAd MyVideoAd5 = new InterstitialAd();
-        private InterstitialAd MyVideoAd6 = new InterstitialAd();
-        private InterstitialAd MyVideoAd7 = new InterstitialAd();
-        private InterstitialAd MyVideoAd8 = new InterstitialAd();
-        private InterstitialAd MyVideoAd9 = new InterstitialAd();
-        private InterstitialAd MyVideoAd10 = new InterstitialAd();
-        private InterstitialAd MyVideoAd11 = new InterstitialAd();
-        private InterstitialAd MyVideoAd12 = new InterstitialAd();
-    
+  
         public MainPage()
         {
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
@@ -60,38 +49,53 @@ namespace League_of_Legends_Counterpicks
             {
                 MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
                 MyVideoAd.AdReady += MyVideoAd_AdReady;
-                MyVideoAd2.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd2.AdReady += MyVideoAd_AdReady;
-                MyVideoAd3.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd3.AdReady += MyVideoAd_AdReady;
-                MyVideoAd4.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd4.AdReady += MyVideoAd_AdReady;
-                MyVideoAd5.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd5.AdReady += MyVideoAd_AdReady;
-                MyVideoAd7.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd7.AdReady += MyVideoAd_AdReady;
-                MyVideoAd8.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd8.AdReady += MyVideoAd_AdReady;
-                MyVideoAd9.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd9.AdReady += MyVideoAd_AdReady;
-                MyVideoAd10.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd10.AdReady += MyVideoAd_AdReady;
-                MyVideoAd11.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd11.AdReady += MyVideoAd_AdReady;
-                MyVideoAd12.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd12.AdReady += MyVideoAd_AdReady;
-            } 
+                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+                MyVideoAd.AdReady += MyVideoAd_AdReady;
+                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+                MyVideoAd.AdReady += MyVideoAd_AdReady;
+                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+                MyVideoAd.AdReady += MyVideoAd_AdReady;
+                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+                MyVideoAd.AdReady += MyVideoAd_AdReady;
+                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+                MyVideoAd.AdReady += MyVideoAd_AdReady;
+                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+                MyVideoAd.AdReady += MyVideoAd_AdReady;
+                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+                MyVideoAd.AdReady += MyVideoAd_AdReady;
+                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+                MyVideoAd.AdReady += MyVideoAd_AdReady;
+                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+                MyVideoAd.AdReady += MyVideoAd_AdReady;
+                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+            }
+        }
+        private void MyVideoAd_ErrorOccured(object sender, AdErrorEventArgs e)
+        {
         }
 
         private void MyVideoAd_AdReady(object sender, object e)
         {
+            InterstitialAd video = sender as InterstitialAd;
             if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             {
-                if (localSettings.Values["MainViews"] == null || ((int)(localSettings.Values["MainViews"])) % 12 != 0 || App.firstLoad)
+                if (localSettings.Values["MainViews"] == null)
                 {
-                    MyVideoAd.Show();
                     localSettings.Values["MainViews"] = 0; // guarantee its initialized to 0 if null to begin with 
-                    App.firstLoad = false;
+                    if (((int)(localSettings.Values["MainViews"])) % 20 != 0 || App.firstLoad)
+                    {
+                        video.Show();
+                        App.firstLoad = false;
+                    }
                 }
 
                 localSettings.Values["MainViews"] = ((int)(localSettings.Values["MainViews"])) + 1;
