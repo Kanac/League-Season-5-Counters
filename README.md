@@ -6,5 +6,5 @@ Check out the link below for the entire description of the app
 
 https://www.windowsphone.com/en-us/store/app/league-season-5-counters/3366702e-67c7-48e7-bc82-d3a4534f3086
 
-Recently accepted by Riot Games for access to a deployment key (no rate-limiting HTTP requests) for new upcomming features!
+Recently accepted by Riot Games for access to a deployment API key (no rate-limiting HTTP requests) for new upcoming features!
 
