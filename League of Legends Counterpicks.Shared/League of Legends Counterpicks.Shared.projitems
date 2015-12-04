@@ -153,6 +153,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Zilean_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Zyra_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Common\ReadMe.txt" />
+    <Content Include="$(MSBuildThisFileDirectory)DataModel\Champions.json" />
     <Content Include="$(MSBuildThisFileDirectory)DataModel\Data.json" />
   </ItemGroup>
   <ItemGroup>

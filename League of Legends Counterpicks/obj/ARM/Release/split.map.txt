@@ -27,6 +27,7 @@
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\MainPage.xbf"			"MainPage.xbf"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\League of Legends Counterpicks.xr.xml"			"League of Legends Counterpicks.xr.xml"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\DataModel\Data.json"			"DataModel\Data.json"
+"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\DataModel\Champions.json"			"DataModel\Champions.json"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Common\ReadMe.txt"			"Common\ReadMe.txt"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\ChangeLog.xbf"			"ChangeLog.xbf"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\ChampionPage.xbf"			"ChampionPage.xbf"

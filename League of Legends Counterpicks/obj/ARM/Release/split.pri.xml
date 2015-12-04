@@ -830,6 +830,11 @@
 				</NamedResource>
 			</ResourceMapSubtree>
 			<ResourceMapSubtree name="DataModel">
+				<NamedResource name="Champions.json" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/DataModel/Champions.json">
+					<Candidate type="Path">
+						<Value>DataModel\Champions.json</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="Data.json" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/DataModel/Data.json">
 					<Candidate type="Path">
 						<Value>DataModel\Data.json</Value>

@@ -50,6 +50,7 @@
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Microsoft.Advertising\Themes\Generic.xbf"			"Microsoft.Advertising\Themes\Generic.xbf"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Microsoft.AdMediator.WindowsPhone81\Themes\Generic.xbf"			"Microsoft.AdMediator.WindowsPhone81\Themes\Generic.xbf"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\DataModel\Data.json"			"DataModel\Data.json"
+"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\DataModel\Champions.json"			"DataModel\Champions.json"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Common\ReadMe.txt"			"Common\ReadMe.txt"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Assets\Zyra_Square_0.png"			"Assets\Zyra_Square_0.png"
 "C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\Assets\Zilean_Square_0.png"			"Assets\Zilean_Square_0.png"

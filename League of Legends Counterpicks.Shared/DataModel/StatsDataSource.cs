@@ -7,6 +7,7 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using League_of_Legends_Counterpicks.Data;
+using Windows.Storage;
 
 namespace League_of_Legends_Counterpicks.DataModel
 {
@@ -113,8 +114,10 @@ namespace League_of_Legends_Counterpicks.DataModel
             Champions = new Champions();
             try
             {
-                string response = await httpClient.GetStringAsync("https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=tags&api_key=097a42b8-6117-405a-a95f-77e84f82827d");
-                JObject champsJson = JObject.Parse(response);
+                Uri dataUri = new Uri("ms-appx:///DataModel/Champions.json");      
+                StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);       
+                string jsonText = await FileIO.ReadTextAsync(file);     
+                JObject champsJson = JObject.Parse(jsonText);
                 Champions = JsonConvert.DeserializeObject<Champions>(champsJson.ToString());
                 return Champions;
             }

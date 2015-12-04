@@ -142,6 +142,7 @@ Assets\Ziggs_Square_0.png
 Assets\Zilean_Square_0.png
 Assets\Zyra_Square_0.png
 Common\ReadMe.txt
+DataModel\Champions.json
 DataModel\Data.json
 AdMediator.config
 ApplicationInsights.config
