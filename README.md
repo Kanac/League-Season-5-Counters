@@ -5,3 +5,6 @@ Completely revitalized version of the app from last year, implementing an Azure 
 Check out the link below for the entire description of the app
 
 https://www.windowsphone.com/en-us/store/app/league-season-5-counters/3366702e-67c7-48e7-bc82-d3a4534f3086
+
+League Season 5 Counters isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+
