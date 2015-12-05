@@ -371,6 +371,9 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\HubBackground.theme-light.png">
       <PackagePath>Assets\HubBackground.theme-light.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Illaoi_Square_0.png">
+      <PackagePath>Assets\Illaoi_Square_0.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Irelia_Square_0.png">
       <PackagePath>Assets\Irelia_Square_0.png</PackagePath>
     </AppxPackagedFile>

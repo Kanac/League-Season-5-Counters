@@ -49,6 +49,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Heimerdinger_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\HubBackground.theme-dark.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\HubBackground.theme-light.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Illaoi_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Irelia_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Janna_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JarvanIV_Square_0.png" />

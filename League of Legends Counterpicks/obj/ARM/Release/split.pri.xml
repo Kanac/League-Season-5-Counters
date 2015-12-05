@@ -266,6 +266,11 @@
 						<Value>Assets\HubBackground.theme-dark.png</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="Illaoi_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Illaoi_Square_0.png">
+					<Candidate type="Path">
+						<Value>Assets\Illaoi_Square_0.png</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="Irelia_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Irelia_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Irelia_Square_0.png</Value>
