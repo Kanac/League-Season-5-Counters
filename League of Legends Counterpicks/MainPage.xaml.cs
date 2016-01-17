@@ -59,18 +59,18 @@ namespace League_of_Legends_Counterpicks
 
         private void MyVideoAd_AdReady(object sender, object e)
         {
-            InterstitialAd video = sender as InterstitialAd;
-            if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-            {
-                if (localSettings.Values["MainViews"] == null || ((int)(localSettings.Values["MainViews"])) % 2 != 0 || App.firstLoad)
-                {
-                    video.Show();
-                    localSettings.Values["MainViews"] = 0;
-                    App.firstLoad = false;
-                }
+            //InterstitialAd video = sender as InterstitialAd;
+            //if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            //{
+            //    if (localSettings.Values["MainViews"] == null || ((int)(localSettings.Values["MainViews"])) % 2 != 0 || App.firstLoad)
+            //    {
+            //        video.Show();
+            //        localSettings.Values["MainViews"] = 0;
+            //        App.firstLoad = false;
+            //    }
 
-                localSettings.Values["MainViews"] = ((int)(localSettings.Values["MainViews"])) + 1;
-            }
+            //    localSettings.Values["MainViews"] = ((int)(localSettings.Values["MainViews"])) + 1;
+            //}
         }
 
         /// <summary>

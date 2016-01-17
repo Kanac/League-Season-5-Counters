@@ -23,7 +23,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="80" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="3" Margin="0,49,0,0" Name="AdGrid">
@@ -51,6 +51,15 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="December 5 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Illaoi update has arrived!"> </Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Fixed formatting of individual comment section"> </Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="November 10 2015" />
                     </TextBlock>

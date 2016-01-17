@@ -38,6 +38,7 @@ Assets\Hecarim_Square_0.png
 Assets\Heimerdinger_Square_0.png
 Assets\HubBackground.theme-dark.png
 Assets\HubBackground.theme-light.png
+Assets\Illaoi_Square_0.png
 Assets\Irelia_Square_0.png
 Assets\Janna_Square_0.png
 Assets\JarvanIV_Square_0.png
@@ -142,6 +143,7 @@ Assets\Ziggs_Square_0.png
 Assets\Zilean_Square_0.png
 Assets\Zyra_Square_0.png
 Common\ReadMe.txt
+DataModel\Champions.json
 DataModel\Data.json
 AdMediator.config
 ApplicationInsights.config
