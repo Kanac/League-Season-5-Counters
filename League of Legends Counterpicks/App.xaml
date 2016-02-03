@@ -10,12 +10,12 @@
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Default">
                     <ImageBrush x:Key="HubBackgroundImageBrush"
-                                ImageSource="Assets/lolseason5counters.png" 
+                                ImageSource="Assets/LoL.jpg" 
                                 Opacity="0.8"/>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="HighContrast">
                     <ImageBrush x:Key="HubBackgroundImageBrush"
-                                ImageSource="Assets/lolseason5counters.png" 
+                                ImageSource="Assets/LoL.jpg" 
                                 Opacity="0.8"/>
                 </ResourceDictionary>
                 
@@ -34,6 +34,8 @@
                 <Setter Property="Width" Value="320"></Setter>
                 <Setter Property="Height" Value="50"></Setter>
             </Style>
+
+            <FontFamily x:Key="Beaufort">/Assets/beaufortforlol-bold.otf</FontFamily>
 
         </ResourceDictionary>
     </Application.Resources>

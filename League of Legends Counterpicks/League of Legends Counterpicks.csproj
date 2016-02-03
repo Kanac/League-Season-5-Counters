@@ -116,13 +116,23 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Assassin.jpg" />
     <Content Include="Assets\BadgeLogo.scale-240.png" />
+    <Content Include="Assets\Fighter.jpg" />
     <Content Include="Assets\hecsplash.png" />
+    <Content Include="Assets\LoL.jpg" />
+    <Content Include="Assets\lolicon.png" />
     <Content Include="Assets\lolseason5counters.png" />
+    <Content Include="Assets\Mage.jpg" />
+    <Content Include="Assets\Marksman.jpg" />
+    <Content Include="Assets\Season6.jpg" />
+    <Content Include="Assets\Support.jpg" />
+    <Content Include="Assets\Tank.jpg" />
     <Content Include="Assets\Wide310x150Logo.scale-240.png" />
     <Content Include="Assets\WindowsStoreProxy.xml" />
     <Content Include="AdMediator.config" />
     <None Include="app.config" />
+    <Content Include="Assets\beaufortforlol-bold.otf" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

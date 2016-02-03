@@ -55,6 +55,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\JarvanIV_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Jax_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Jayce_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Jhin_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Jinx_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Kalista_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Karma_Square_0.png" />

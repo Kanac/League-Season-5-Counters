@@ -235,17 +235,18 @@ namespace League_of_Legends_Counterpicks
             e.PageState["firstLoad"] = false;
         }
 
-        /// <summary>
-        /// Shows the details of a clicked group in the <see cref="RolePage"/>.
-        /// </summary>
-        private void GroupSection_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var roleId = ((string)e.ClickedItem);
-             Frame.Navigate(typeof(RolePage), roleId);
-        }
         private void Role_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-            (sender as TextBlock).Foreground = new SolidColorBrush((Color)Application.Current.Resources["SystemColorControlAccentColor"]);
+            StackPanel panel = sender as StackPanel;
+            string param = "";
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(panel); i++)
+            {
+                var child = VisualTreeHelper.GetChild(panel, i);
+                var childTextBlock = child as TextBlock;
+                if (childTextBlock != null)
+                    param = childTextBlock.Text;
+            }
+            Frame.Navigate(typeof(RolePage), param);
         }
 
         #region NavigationHelper registration

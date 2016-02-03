@@ -98,6 +98,11 @@
 						<Value>Assets\Ashe_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="Assassin.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Assassin.jpg">
+					<Candidate type="Path">
+						<Value>Assets\Assassin.jpg</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="Azir_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Azir_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Azir_Square_0.png</Value>
@@ -111,6 +116,11 @@
 				<NamedResource name="Bard_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Bard_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Bard_Square_0.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="beaufortforlol-bold.otf" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/beaufortforlol-bold.otf">
+					<Candidate type="Path">
+						<Value>Assets\beaufortforlol-bold.otf</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="Blitzcrank_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Blitzcrank_Square_0.png">
@@ -201,6 +211,11 @@
 				<NamedResource name="Fiddlesticks_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Fiddlesticks_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Fiddlesticks_Square_0.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Fighter.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Fighter.jpg">
+					<Candidate type="Path">
+						<Value>Assets\Fighter.jpg</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="Fiora_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Fiora_Square_0.png">
@@ -294,6 +309,11 @@
 				<NamedResource name="Jayce_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Jayce_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Jayce_Square_0.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Jhin_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Jhin_Square_0.png">
+					<Candidate type="Path">
+						<Value>Assets\Jhin_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="Jinx_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Jinx_Square_0.png">
@@ -396,6 +416,16 @@
 						<Value>Assets\Lissandra_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="LoL.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/LoL.jpg">
+					<Candidate type="Path">
+						<Value>Assets\LoL.jpg</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="lolicon.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/lolicon.png">
+					<Candidate type="Path">
+						<Value>Assets\lolicon.png</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="lolseason5counters.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/lolseason5counters.png">
 					<Candidate type="Path">
 						<Value>Assets\lolseason5counters.png</Value>
@@ -416,6 +446,11 @@
 						<Value>Assets\Lux_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="Mage.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Mage.jpg">
+					<Candidate type="Path">
+						<Value>Assets\Mage.jpg</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="Malphite_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Malphite_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Malphite_Square_0.png</Value>
@@ -429,6 +464,11 @@
 				<NamedResource name="Maokai_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Maokai_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Maokai_Square_0.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Marksman.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Marksman.jpg">
+					<Candidate type="Path">
+						<Value>Assets\Marksman.jpg</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="MasterYi_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/MasterYi_Square_0.png">
@@ -546,6 +586,11 @@
 						<Value>Assets\Ryze_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="Season6.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Season6.jpg">
+					<Candidate type="Path">
+						<Value>Assets\Season6.jpg</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="Sejuani_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Sejuani_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Sejuani_Square_0.png</Value>
@@ -626,6 +671,11 @@
 						<Value>Assets\StoreLogo.scale-240.png</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="Support.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Support.jpg">
+					<Candidate type="Path">
+						<Value>Assets\Support.jpg</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="Swain_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Swain_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Swain_Square_0.png</Value>
@@ -644,6 +694,11 @@
 				<NamedResource name="Talon_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Talon_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Talon_Square_0.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Tank.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Tank.jpg">
+					<Candidate type="Path">
+						<Value>Assets\Tank.jpg</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="Taric_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Taric_Square_0.png">
