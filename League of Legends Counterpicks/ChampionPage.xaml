@@ -61,7 +61,7 @@
                     </Grid.RowDefinitions>
                     <TextBlock FontSize="25"
                                Text="{Binding User}"
-                               MaxWidth="300"
+                               MaxWidth="230"
                                TextWrapping="Wrap"
                                HorizontalAlignment="Left">
                     </TextBlock>
@@ -115,11 +115,13 @@
                     </Grid.RowDefinitions>
                     <TextBlock FontSize="25"
                                Text="{Binding User}"
-                               TextWrapping="Wrap">>
+                               TextWrapping="Wrap"
+                               MaxWidth="230"
+                               HorizontalAlignment="Left">
                     </TextBlock>
                     <TextBlock FontSize="16"
                                Text="{Binding CreatedAt, Converter={StaticResource DataTimeOffsetConverter}}"
-                               HorizontalAlignment="Right" TextAlignment="Right">
+                               HorizontalAlignment="Right">
                     </TextBlock>
                     <TextBlock FontSize="18"
                                Grid.Row="1"
@@ -538,8 +540,8 @@
             <PivotItem x:Name="SynergySection" Header="Synergy">
                 <Grid Loaded="GridAd_Loaded" Margin="0,-15,0,0">
 
-                    <TextBlock Visibility= "{Binding Converter={StaticResource EmptyMessageVisibility}, ConverterParameter=Synergy}"
-                               Name="NoSynergyChampions"
+                    <TextBlock Visibility="{Binding Converter={StaticResource EmptyMessageVisibility}, ConverterParameter=Synergy}"
+                               x:Name="NoSynergyChampions"
                                FontSize="30"
                                TextAlignment="Center"
                                HorizontalAlignment="Center"
@@ -548,7 +550,7 @@
                     </TextBlock>
 
                     <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource ChampionVisibility}, ConverterParameter=Synergy}"
-                                      IsItemClickEnabled="True">
+                              IsItemClickEnabled="True">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
                                 <Setter Property="HorizontalContentAlignment"
