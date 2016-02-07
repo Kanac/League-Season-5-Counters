@@ -165,6 +165,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\VisualTreeHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\DateTimeOffsetConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\CounterCommentColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\CounterCommentCountConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\CounterCommentEmptyConverter.cs" />

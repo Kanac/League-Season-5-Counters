@@ -28,113 +28,168 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid x:ConnectionId='5' Background="{ThemeResource HubBackgroundImageBrush}"
-                                >
+    <Grid x:ConnectionId='5'                       >
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/LoL.jpg" Opacity="0.7"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
-            <StackPanel.Resources>
-                <Style TargetType="TextBlock">
-                    <Setter Property="FontSize" Value="35"></Setter>
-                    <Setter Property="Margin" Value="10,10,20,10"></Setter>
-                    <Setter Property="FontFamily" Value="{StaticResource Beaufort}"></Setter>
-                </Style>
-                <Style TargetType="Ellipse">
-                    <Setter Property="Width" Value="50"></Setter>
-                    <Setter Property="Height" Value="50"></Setter>
-                </Style>
-            </StackPanel.Resources>
-            <StackPanel x:ConnectionId='17' Orientation="Horizontal"                     >
-                <TextBlock Text="All"></TextBlock>
-                <Ellipse>
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="Assets/lolicon.png"></ImageBrush>
-                    </Ellipse.Fill>
-                </Ellipse>
-            </StackPanel>
-            <StackPanel x:ConnectionId='18' Orientation="Horizontal"                     >
-                <TextBlock Text="Assassin" FontFamily="Friz Quadrata"></TextBlock>
-                <Ellipse>
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="Assets/Assassin.jpg"></ImageBrush>
-                    </Ellipse.Fill>
-                </Ellipse>
-            </StackPanel>
-            <StackPanel x:ConnectionId='19' Orientation="Horizontal"                     >
-                <TextBlock Text="Fighter"></TextBlock>
-                <Ellipse>
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="Assets/Fighter.jpg"></ImageBrush>
-                    </Ellipse.Fill>
-                </Ellipse>
-            </StackPanel>
-            <StackPanel x:ConnectionId='20' Orientation="Horizontal"                     >
-                <TextBlock Text="Mage"></TextBlock>
-                    <Ellipse>
-                        <Ellipse.Fill>
-                            <ImageBrush ImageSource="Assets/Mage.jpg"></ImageBrush>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                </StackPanel>
-            <StackPanel x:ConnectionId='21' Orientation="Horizontal"                     >
-                <TextBlock Text="Marksman"></TextBlock>
-                    <Ellipse>
-                        <Ellipse.Fill>
-                            <ImageBrush ImageSource="Assets/Marksman.jpg"></ImageBrush>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                </StackPanel>
-            <StackPanel x:ConnectionId='22' Orientation="Horizontal"                     >
-                <TextBlock Text="Support"></TextBlock>
-                    <Ellipse>
-                        <Ellipse.Fill>
-                            <ImageBrush ImageSource="Assets/Support.jpg"></ImageBrush>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                </StackPanel>
-            <StackPanel x:ConnectionId='23' Orientation="Horizontal"                     >
-                <TextBlock Text="Tank"></TextBlock>
-                    <Ellipse>
-                        <Ellipse.Fill>
-                            <ImageBrush ImageSource="Assets/Tank.jpg"></ImageBrush>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                </StackPanel>
-        </StackPanel>
+        <ScrollViewer>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="30"></Setter>
+                        <Setter Property="Margin" Value="17,0,0,0"></Setter>
+                        <Setter Property="FontFamily" Value="{StaticResource Beaufort}"></Setter>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                    </Style>
+                    <Style TargetType="Ellipse">
+                        <Setter Property="Width" Value="50"></Setter>
+                        <Setter Property="Height" Value="50"></Setter>
+                    </Style>
+                    <Style TargetType="Image">
+                        <Setter Property="IsHitTestVisible" Value="False"></Setter>
+                        <Setter Property="Stretch" Value="Fill"></Setter>
+                        <Setter Property="Source" Value="Assets/challengerborder.png"></Setter>
+                    </Style>
+                    <Style TargetType="Grid" x:Key="MainGrid">
+                        <Setter Property="Margin" Value="60,7,60,7"></Setter>
+                        <Setter Property="Height" Value="60"></Setter>
+                    </Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Grid.ColumnSpan" Value="2"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                        <Setter Property="BorderThickness" Value="0"></Setter>
+                        <Setter Property="Opacity" Value="0.6"></Setter>
+                        <Setter Property="Margin" Value="10,0,10,-5"></Setter>
+                        <Setter Property="Background" Value="Black"></Setter>
+                    </Style>
+                </StackPanel.Resources>
+                <Grid Style="{StaticResource MainGrid}">
+                    <Image/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:ConnectionId='23'                      Tag="All"></Button>
+                        <TextBlock Text="All"></TextBlock>
+                        <Ellipse Grid.Column="1">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="Assets/lolicon.png"></ImageBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                </Grid>
 
-        <!--<Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+                <Grid Style="{StaticResource MainGrid}">
+                    <Image/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:ConnectionId='22'                      Tag="Assassin"></Button>
+                        <TextBlock Text="Assassin"></TextBlock>
+                        <Ellipse Grid.Column="1">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="Assets/Assassin.jpg"></ImageBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                </Grid>
 
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <ListView ItemsSource="{Binding Roles}"
-                          Grid.Row="1"
-                          IsItemClickEnabled="True"
-                          ItemClick="GroupSection_ItemClick">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="15,0,0,20">
-                                <TextBlock Text="{Binding }"
-                                           Style="{ThemeResource ListViewItemTextBlockStyle}"
-                                           FontSize="28"
-                                           FontFamily="Segoe WP Black" 
-                                           Tapped="Role_Tapped"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-        </Grid>-->
-        
+                <Grid Style="{StaticResource MainGrid}">
+                    <Image/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:ConnectionId='21'                      Tag="Fighter"></Button>
+                        <TextBlock Text="Fighter"></TextBlock>
+                        <Ellipse Grid.Column="1">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="Assets/Fighter.jpg"></ImageBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                </Grid>
+
+                <Grid Style="{StaticResource MainGrid}">
+                    <Image/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:ConnectionId='20'                      Tag="Mage"></Button>
+                        <TextBlock Text="Mage"></TextBlock>
+                        <Ellipse Grid.Column="1">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="Assets/Mage.jpg"></ImageBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                </Grid>
+
+                <Grid Style="{StaticResource MainGrid}">
+                    <Image/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:ConnectionId='19'                      Tag="Marksman"></Button>
+                        <TextBlock Text="Marksman"></TextBlock>
+                        <Ellipse Grid.Column="1">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="Assets/Marksman.jpg"></ImageBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                </Grid>
+
+                <Grid Style="{StaticResource MainGrid}">
+                    <Image/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:ConnectionId='18'                      Tag="Support"></Button>
+                        <TextBlock Text="Support"></TextBlock>
+                        <Ellipse Grid.Column="1">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="Assets/Support.jpg"></ImageBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                </Grid>
+
+                <Grid Style="{StaticResource MainGrid}">
+                    <Image/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:ConnectionId='17'                      Tag="Tank"></Button>
+                        <TextBlock Text="Tank"></TextBlock>
+                        <Ellipse Grid.Column="1">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="Assets/Tank.jpg"></ImageBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+
         <StackPanel Grid.Row="1"
                     VerticalAlignment="Bottom"
                     HorizontalAlignment="Right"
@@ -148,20 +203,20 @@
         </StackPanel>
 
         <Grid Grid.Row="2" Margin="0,49,0,0" x:Name="AdGrid">
-            <UI:AdControl x:ConnectionId='7' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="244427" />
-            <UI:AdControl x:ConnectionId='8' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="244427" />
-            <UI:AdControl x:ConnectionId='9' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="244427" />
-            <UI:AdControl x:ConnectionId='10' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="244427" />
-            <UI:AdControl x:ConnectionId='11' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="244427" />
-            <UI:AdControl x:ConnectionId='12' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="244427" />
-            <UI:AdControl x:ConnectionId='13' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="244427" />
-            <UI:AdControl x:ConnectionId='14' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="244427" />
-            <UI:AdControl x:ConnectionId='15' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="244427" />
-            <UI:AdControl x:ConnectionId='16' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="244427" />
+            <UI:AdControl x:ConnectionId='7' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="243754" />
+            <UI:AdControl x:ConnectionId='8' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="243754" />
+            <UI:AdControl x:ConnectionId='9' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="243754" />
+            <UI:AdControl x:ConnectionId='10' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="243754" />
+            <UI:AdControl x:ConnectionId='11' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="243754" />
+            <UI:AdControl x:ConnectionId='12' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="243754" />
+            <UI:AdControl x:ConnectionId='13' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="243754" />
+            <UI:AdControl x:ConnectionId='14' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="243754" />
+            <UI:AdControl x:ConnectionId='15' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="243754" />
+            <UI:AdControl x:ConnectionId='16' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="243754" />
         </Grid>
 
         <Grid Grid.Row="2" Name="AdGrid2">
-            <UI:AdControl x:ConnectionId='6' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="244427"/>
+            <UI:AdControl x:ConnectionId='6' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="243754"/>
         </Grid>
     </Grid>
 </Page>

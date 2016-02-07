@@ -353,5 +353,21 @@ namespace League_of_Legends_Counterpicks
         {
 
         }
+
+        private async void test(object sender, RoutedEventArgs e)
+        {
+            // Gets the app's current memory usage   
+            ulong AppMemoryUsageUlong = MemoryManager.AppMemoryUsage;
+
+            // Gets the app's memory usage limit   
+            ulong AppMemoryUsageLimitUlong = MemoryManager.AppMemoryUsageLimit;
+
+            AppMemoryUsageUlong /= 1024 * 1024;
+            AppMemoryUsageLimitUlong /= 1024 * 1024;
+            string test = "App memory uage - " + AppMemoryUsageUlong.ToString();
+            test += "\nApp memory usage limit - " + AppMemoryUsageLimitUlong.ToString();
+            var message = new MessageDialog(test);
+            await message.ShowAsync();
+        }
     }
 }

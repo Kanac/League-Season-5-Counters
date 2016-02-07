@@ -237,16 +237,8 @@ namespace League_of_Legends_Counterpicks
 
         private void Role_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-            StackPanel panel = sender as StackPanel;
-            string param = "";
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(panel); i++)
-            {
-                var child = VisualTreeHelper.GetChild(panel, i);
-                var childTextBlock = child as TextBlock;
-                if (childTextBlock != null)
-                    param = childTextBlock.Text;
-            }
-            Frame.Navigate(typeof(RolePage), param);
+            var test = (sender as Button);
+            Frame.Navigate(typeof(RolePage), (sender as Button).Tag);
         }
 
         #region NavigationHelper registration

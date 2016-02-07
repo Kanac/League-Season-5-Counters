@@ -118,6 +118,8 @@
   <ItemGroup>
     <Content Include="Assets\Assassin.jpg" />
     <Content Include="Assets\BadgeLogo.scale-240.png" />
+    <Content Include="Assets\challengericon.png" />
+    <Content Include="Assets\challengerborder.png" />
     <Content Include="Assets\Fighter.jpg" />
     <Content Include="Assets\hecsplash.png" />
     <Content Include="Assets\LoL.jpg" />

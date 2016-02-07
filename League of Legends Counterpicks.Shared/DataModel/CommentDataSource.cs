@@ -140,6 +140,8 @@ namespace League_of_Legends_Counterpicks.DataModel
         public ICollection<UserRating> UserRatings { get; set; }
         public string Id { get; set; }
         public string ChampionFeedbackId { get; set; }
+        [CreatedAt]
+        public DateTimeOffset? CreatedAt { get; set; }
         private void NotifyPropertyChanged(String info)
         {
             if (PropertyChanged != null)
@@ -233,7 +235,8 @@ namespace League_of_Legends_Counterpicks.DataModel
         public string CounterName { get; set; }
         public string ChampionFeedbackName { get; set; }
         public ICollection<CounterCommentRating> CounterCommentRatings { get; set; }
-
+        [CreatedAt]
+        public DateTimeOffset? CreatedAt { get; set; }
         private void NotifyPropertyChanged(String info)
         {
             if (PropertyChanged != null)

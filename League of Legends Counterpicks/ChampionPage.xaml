@@ -22,9 +22,10 @@
         <ValueConverter:CounterCommentCountConverter x:Key="CounterCommentCountConverter" />
         <ValueConverter:CounterCommentMatchupConverter x:Key="CounterCommentMatchupConverter" />
         <ValueConverter:CounterCommentEmptyConverter x:Key="CounterCommentEmptyConverter" />
+        <ValueConverter:DataTimeOffsetConverter x:Key="DataTimeOffsetConverter" />
 
         <DataTemplate x:Key="CommentSection">
-            <Grid>
+            <Grid Background="WhiteSmoke">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -53,13 +54,19 @@
                 </StackPanel>
 
                 <Grid Margin="0,0,0,10"
-                      Grid.Column="1">
+                      Grid.Column="1" HorizontalAlignment="Stretch">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock FontSize="25"
-                               Text="{Binding User}">
+                               Text="{Binding User}"
+                               MaxWidth="300"
+                               TextWrapping="Wrap">
+                    </TextBlock>
+                    <TextBlock FontSize="16"
+                               Text="{Binding CreatedAt, Converter={StaticResource DataTimeOffsetConverter}}"
+                               HorizontalAlignment="Right" TextAlignment="Right">
                     </TextBlock>
                     <TextBlock FontSize="18"
                                Grid.Row="1"
@@ -100,13 +107,19 @@
                 </StackPanel>
 
                 <Grid Margin="0,0,0,10"
-                      Grid.Column="1">
+                      Grid.Column="1" HorizontalAlignment="Stretch">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock FontSize="25"
-                               Text="{Binding User}">
+                               Text="{Binding User}"
+                               MaxWidth="100"
+                               TextWrapping="Wrap">>
+                    </TextBlock>
+                    <TextBlock FontSize="16"
+                               Text="{Binding CreatedAt, Converter={StaticResource DataTimeOffsetConverter}}"
+                               HorizontalAlignment="Right" TextAlignment="Right">
                     </TextBlock>
                     <TextBlock FontSize="18"
                                Grid.Row="1"
@@ -279,7 +292,7 @@
                                    TextAlignment="Center">
                             </TextBlock>
 
-                            <Grid Grid.Row="1">
+                            <Grid Grid.Row="1" Margin="10,0,10,0">
                                 <RadioButton GroupName="Champion"
                                          Name="ChampionCounterRadio"
                                          MinWidth="50"
@@ -310,14 +323,18 @@
                                   HorizontalAlignment="Center"
                                   IsItemClickEnabled="True"
                                   Grid.Row="3"
-                                  MaxHeight="300"
-                                  Margin="0,15,0,10"
+                                  MaxHeight="500"
+                                  Margin="0,15,0,15"
                                   ItemClick="Filter_Click">
                                 <GridView.ItemTemplate>
                                     <DataTemplate>
+                                        <Grid Margin="2,2,2,2">
+                                            <Image Source="Assets/Challengericon.png" Width="60" Height="60" Stretch="Fill"
+                                           Opacity="0.8" Grid.Column="1"/>
                                         <Image Source="{Binding Key, Converter={StaticResource NameToImageConverter}}"
                                            Width="50"
                                            Height="50" />
+                                        </Grid>
                                     </DataTemplate>
                                 </GridView.ItemTemplate>
                             </GridView>
@@ -340,6 +357,9 @@
 
     <Grid x:Name="LayoutRoot"
           Loaded="GridAd_Loaded">
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/LoL.jpg" Opacity="0.7"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -359,6 +379,8 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
+            <Image Source="Assets/Challengericon.png" Width="70" Height="70" Stretch="Fill"
+                   Opacity="0.8"/>
             <Image Source="{Binding Champion.Key, Converter={StaticResource NameToImageConverter}}"
                    Width="60"
                    Height="60" />
@@ -443,7 +465,9 @@
                                     </Grid.ColumnDefinitions>
 
                                     <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
-
+                                    
+                                    <Image Source="Assets/Challengericon.png" Width="82" Height="82" Stretch="Fill"
+                                           Opacity="0.8" Grid.Column="1"/>
                                     <Image Grid.Column="1"
                                            Width="70"
                                            Height="70"
@@ -490,6 +514,8 @@
 
                                     <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
 
+                                    <Image Source="Assets/Challengericon.png" Width="82" Height="82" Stretch="Fill"
+                                           Opacity="0.8" Grid.Column="1"/>
                                     <Image Grid.Column="1"
                                            Width="70"
                                            Height="70"
@@ -545,6 +571,9 @@
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
+
+                                    <Image Source="Assets/Challengericon.png" Width="82" Height="82" Stretch="Fill"
+                                           Opacity="0.8" Grid.Column="1"/>
                                     <Image Grid.Column="1"
                                            Width="70"
                                            Height="70"

@@ -215,9 +215,16 @@ namespace League_of_Legends_Counterpicks
             }
 
             // Ensure user inputs names
-            if (String.IsNullOrEmpty(nameBox.Text))
+            if (String.IsNullOrEmpty(nameBox.Text) || nameBox.Text.Count() > 25)
             {
                 MessageDialog emptyBox = new MessageDialog("Enter your name first!");
+                await emptyBox.ShowAsync();
+                return;
+            }
+
+            if (nameBox.Text.Count() > 25)
+            {
+                MessageDialog emptyBox = new MessageDialog("Write a shorter name!");
                 await emptyBox.ShowAsync();
                 return;
             }
@@ -226,6 +233,13 @@ namespace League_of_Legends_Counterpicks
             if (String.IsNullOrEmpty(commentBox.Text))
             {
                 MessageDialog emptyBox = new MessageDialog("Write a message first!");
+                await emptyBox.ShowAsync();
+                return;
+            }
+
+            if (commentBox.Text.Count() > 2000)
+            {
+                MessageDialog emptyBox = new MessageDialog("Write a shorter message!");
                 await emptyBox.ShowAsync();
                 return;
             }

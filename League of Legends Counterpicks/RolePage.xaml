@@ -38,7 +38,9 @@
                           IsSwipeEnabled="false">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid>
+                            <Grid Margin="3,3,3,3" HorizontalAlignment="Center">
+                                <Image Source="Assets/Challengericon.png" Width="70" Height="70" Stretch="Fill"
+                                       Opacity="0.8"/>
                                 <Image Source="{Binding Value.Key, Converter={StaticResource NameToImage}}"
                                        Width="60"
                                        Height="60" 
@@ -75,6 +77,9 @@
 
 
     <Grid Loaded="GridAd_Loaded">
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/LoL.jpg" Opacity="0.7"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
@@ -159,10 +164,12 @@
                         <GridView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
+                                    <Image Source="Assets/Challengericon.png" Width="60" Height="60" Stretch="Fill"
+                                           Opacity="0.8"/>
                                     <Image Source="{Binding Value.Key, Converter={StaticResource NameToImage}}"
-                                                   Width="50"
-                                                   Height="50"
-                                                   Tapped="ChampImage_Tapped"/>
+                                           Width="50"
+                                           Height="50"
+                                           Tapped="ChampImage_Tapped"/>
                                 </Grid>
                             </DataTemplate>
                         </GridView.ItemTemplate>
