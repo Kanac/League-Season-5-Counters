@@ -69,6 +69,10 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
 
             <Image Source="Assets/Challengericon.png" Width="70" Height="70" Stretch="Fill"
                    Opacity="0.8"/>
@@ -78,7 +82,7 @@
             <TextBlock Text="{Binding ChampionInfo.Name}"
                        Style="{ThemeResource HeaderTextBlockStyle}"
                        Grid.Column="1"
-                       VerticalAlignment="Center"
+                       VerticalAlignment="Top"
                        HorizontalAlignment="Center"
                        FontWeight="Bold"
                        FontSize="25" />
@@ -87,19 +91,20 @@
                        FontWeight="Bold"
                        FontSize="25"
                        Grid.Column="2"
-                       VerticalAlignment="Center"
+                       VerticalAlignment="Top"
                        HorizontalAlignment="Right"
                        Text="{Binding ChampionInfo.Tags[0]}" />
+            <TextBlock FontSize="20" 
+                       Style="{ThemeResource SubheaderTextBlockStyle}"
+                       Grid.Row="1" 
+                       Grid.Column="1"
+                       Grid.ColumnSpan="2"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Center"
+                       Margin="0,-30,0,0"
+                       Text="{Binding Patch, Converter={StaticResource PatchFormat}}" >
+            </TextBlock>
         </Grid>
-
-        <TextBlock FontSize="30" 
-                   Style="{ThemeResource SubheaderTextBlockStyle}"
-                   Grid.Row="2" 
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextAlignment="Center"
-                   Text="{Binding Patch, Converter={StaticResource PatchFormat}}" >
-        </TextBlock>
 
         <Pivot Grid.Row="3"
                Margin="0,-10,0,0">
