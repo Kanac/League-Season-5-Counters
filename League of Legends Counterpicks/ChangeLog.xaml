@@ -31,11 +31,11 @@
         </Grid>
 
         <Grid Grid.Row="3" Name="AdGrid2">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" IsAutoRefreshEnabled="True" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" IsAutoRefreshEnabled="True" AdUnitId="248118" />
         </Grid>
 
         <!-- Title Panel -->
-            <TextBlock Text="League Season 5 Counters Changes"
+            <TextBlock Text="League Season 6 Counters Changes"
                        Foreground="#FFF3FD29"
                        TextAlignment="Justify"
                        VerticalAlignment="Center"
@@ -51,6 +51,13 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="Feb 10 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Added more sexy adjustments to UI"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="Feb 6 2015" />
                     </TextBlock>

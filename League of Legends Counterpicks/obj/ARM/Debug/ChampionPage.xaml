@@ -22,6 +22,7 @@
         <ValueConverter:CounterCommentCountConverter x:Key="CounterCommentCountConverter" />
         <ValueConverter:CounterCommentMatchupConverter x:Key="CounterCommentMatchupConverter" />
         <ValueConverter:CounterCommentEmptyConverter x:Key="CounterCommentEmptyConverter" />
+        <ValueConverter:DataTimeOffsetConverter x:Key="DataTimeOffsetConverter" />
 
         <DataTemplate x:Key="CommentSection">
             <Grid>
@@ -59,7 +60,14 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock FontSize="25"
-                               Text="{Binding User}">
+                               Text="{Binding User}"
+                               MaxWidth="230"
+                               TextWrapping="Wrap"
+                               HorizontalAlignment="Left">
+                    </TextBlock>
+                    <TextBlock FontSize="16"
+                               Text="{Binding CreatedAt, Converter={StaticResource DataTimeOffsetConverter}}"
+                               HorizontalAlignment="Right" TextAlignment="Right">
                     </TextBlock>
                     <TextBlock FontSize="18"
                                Grid.Row="1"
@@ -106,7 +114,14 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock FontSize="25"
-                               Text="{Binding User}">
+                               Text="{Binding User}"
+                               TextWrapping="Wrap"
+                               MaxWidth="230"
+                               HorizontalAlignment="Left">
+                    </TextBlock>
+                    <TextBlock FontSize="16"
+                               Text="{Binding CreatedAt, Converter={StaticResource DataTimeOffsetConverter}}"
+                               HorizontalAlignment="Right">
                     </TextBlock>
                     <TextBlock FontSize="18"
                                Grid.Row="1"
@@ -145,7 +160,7 @@
                                        IsItemClickEnabled="True" IsTabStop="True" MaxHeight="300">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>  
-                                        <ContentControl ContentTemplate="{StaticResource CounterCommentSection}"></ContentControl>
+                                        <ContentControl ContentTemplate="{StaticResource CounterCommentSection}">                                        </ContentControl>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                                </ListView>
@@ -270,7 +285,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
                             </Grid.RowDefinitions>
-                            
+
                             <TextBlock 
                                    FontSize="30"
                                    Style="{StaticResource TitleTextBlockStyle}"
@@ -279,7 +294,7 @@
                                    TextAlignment="Center">
                             </TextBlock>
 
-                            <Grid Grid.Row="1">
+                            <Grid Grid.Row="1" Margin="10,0,10,0">
                                 <RadioButton GroupName="Champion"
                                          Name="ChampionCounterRadio"
                                          MinWidth="50"
@@ -305,19 +320,26 @@
                                  Text="Type to search"
                                                                  >
                             </TextBox >
+                            <TextBlock HorizontalAlignment="Right" Margin="0,-5,30,0" FontFamily="Segoe UI Symbol" Text="" 
+                       Foreground="Black" FontSize="35" IsHitTestVisible="False" FontWeight="ExtraLight" Grid.Row="2">
+                            </TextBlock>
 
                             <GridView x:ConnectionId='12' ItemsSource="{Binding Filter}"
                                   HorizontalAlignment="Center"
                                   IsItemClickEnabled="True"
                                   Grid.Row="3"
-                                  MaxHeight="300"
-                                  Margin="0,15,0,10"
+                                  MaxHeight="500"
+                                  Margin="0,15,0,15"
                                                           >
                                 <GridView.ItemTemplate>
                                     <DataTemplate>
-                                        <Image Source="{Binding Key, Converter={StaticResource NameToImageConverter}}"
+                                        <Grid Margin="2,2,2,2">
+                                            <Image Source="{Binding Key, Converter={StaticResource NameToImageConverter}}"
                                            Width="50"
                                            Height="50" />
+                                            <Image Source="Assets/Challengericon.png" Width="56" Height="56" Stretch="Fill"
+                                           Opacity="0.5" Grid.Column="1" IsHitTestVisible="False"/>
+                                        </Grid>
                                     </DataTemplate>
                                 </GridView.ItemTemplate>
                             </GridView>
@@ -336,15 +358,16 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-
-
     <Grid x:ConnectionId='16' x:Name="LayoutRoot"
                                 >
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/LoL.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
+            <!--<RowDefinition Height="50"></RowDefinition>-->
         </Grid.RowDefinitions>
         
         <StackPanel Visibility="{Binding LoadingVisibility}">
@@ -362,7 +385,9 @@
             <Image Source="{Binding Champion.Key, Converter={StaticResource NameToImageConverter}}"
                    Width="60"
                    Height="60" />
-            
+            <Image Source="Assets/Challengericon.png" Width="66" Height="66" Stretch="Fill"
+                   Opacity="0.65" IsHitTestVisible="False"/>
+
             <TextBlock Text="{Binding Champion.Name}"
                        Style="{ThemeResource HeaderTextBlockStyle}"
                        Grid.Column="1"
@@ -381,37 +406,27 @@
         </Grid>
 
         <Grid Grid.Row="3" Margin="0,49,0,0" x:Name="AdGrid">
-            <UI:AdControl x:ConnectionId='26' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='27' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='28' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='29' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='30' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='31' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='32' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='33' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='34' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='35' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='36' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='37' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='38' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='39' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='40' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='41' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='42' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='43' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='44' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='45' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='46' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='47' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='48' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='49' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='50' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='51' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='52' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
-            <UI:AdControl x:ConnectionId='53' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
+            <!--<UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />-->
         </Grid>
         <Grid Grid.Row="3" Name="AdGrid2">
-            <UI:AdControl x:ConnectionId='25' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                             IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="251114" />
+            <!--<UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" ErrorOccurred="Ad_Error" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="236727" />-->
         </Grid>
 
         <Pivot x:Name="MainPivot"
@@ -437,20 +452,22 @@
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="40"></ColumnDefinition>
                                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
 
                                     <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
-
+                                    
                                     <Image x:ConnectionId='24' Grid.Column="1"
                                            Width="70"
                                            Height="70"
                                                                 
                                            Source="{Binding Name, Converter={StaticResource NameToImageConverter}, ConverterParameter=Name}">
                                     </Image>
-
+                                    <Image Source="Assets/Challengericon.png" Width="77" Height="77" Stretch="Fill"
+                                           Opacity="0.65" Grid.Column="1" IsHitTestVisible="False"/>
+                                    
                                     <StackPanel Grid.Column="2" VerticalAlignment="Center">
                                         <ProgressBar 
                                                  Height="12"
@@ -483,7 +500,7 @@
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="40"></ColumnDefinition>
                                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
@@ -496,7 +513,9 @@
                                                                       
                                            Source="{Binding ChampionFeedbackName, Converter={StaticResource NameToImageConverter}, ConverterParameter=Name}">
                                     </Image>
-
+                                    <Image Source="Assets/Challengericon.png" Width="77" Height="77" Stretch="Fill"
+                                           Opacity="0.65" Grid.Column="1" IsHitTestVisible="False"/>
+                                    
                                     <StackPanel Grid.Column="2" VerticalAlignment="Center">
 
                                         <ProgressBar Grid.Column="2"
@@ -519,8 +538,8 @@
             <PivotItem x:Name="SynergySection" Header="Synergy">
                 <Grid x:ConnectionId='19'                        Margin="0,-15,0,0">
 
-                    <TextBlock Visibility= "{Binding Converter={StaticResource EmptyMessageVisibility}, ConverterParameter=Synergy}"
-                               Name="NoSynergyChampions"
+                    <TextBlock Visibility="{Binding Converter={StaticResource EmptyMessageVisibility}, ConverterParameter=Synergy}"
+                               x:Name="NoSynergyChampions"
                                FontSize="30"
                                TextAlignment="Center"
                                HorizontalAlignment="Center"
@@ -529,7 +548,7 @@
                     </TextBlock>
 
                     <ListView ItemsSource="{Binding ChampionFeedback.Counters, Converter={StaticResource ChampionVisibility}, ConverterParameter=Synergy}"
-                                      IsItemClickEnabled="True">
+                              IsItemClickEnabled="True">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
                                 <Setter Property="HorizontalContentAlignment"
@@ -540,17 +559,21 @@
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="40"></ColumnDefinition>
                                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <ContentControl ContentTemplate="{StaticResource ChampionScore}"></ContentControl>
+
                                     <Image x:ConnectionId='20' Grid.Column="1"
                                            Width="70"
                                            Height="70"
                                                                        
                                                                               >
                                     </Image>
+                                    <Image Source="Assets/Challengericon.png" Width="77" Height="77" Stretch="Fill"
+                                           Opacity="0.65" Grid.Column="1" IsHitTestVisible="False"/>
+                                    
                                     <StackPanel Grid.Column="2" VerticalAlignment="Center">
 
                                         <ProgressBar Grid.Column="2"
@@ -584,7 +607,9 @@
                               IsItemClickEnabled="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <ContentControl ContentTemplate="{StaticResource CommentSection}" />
+                                <Grid HorizontalAlignment="Stretch">
+                                    <ContentControl ContentTemplate="{StaticResource CommentSection}" />
+                                </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>

@@ -44,6 +44,7 @@ Assets\Janna_Square_0.png
 Assets\JarvanIV_Square_0.png
 Assets\Jax_Square_0.png
 Assets\Jayce_Square_0.png
+Assets\Jhin_Square_0.png
 Assets\Jinx_Square_0.png
 Assets\Kalista_Square_0.png
 Assets\Karma_Square_0.png
@@ -55,11 +56,6 @@ Assets\Kennen_Square_0.png
 Assets\Khazix_Square_0.png
 Assets\Kindred_Square_0.png
 Assets\KogMaw_Square_0.png
-Assets\League of Legends Season 5 Main.png
-Assets\League of Legends Teambuilder.png
-Assets\league_of_legends.jpg
-Assets\League-of-Legends-Game-Logo.png
-Assets\LeagueofLegendsTeambuilder.png
 Assets\LeBlanc_Square_0.png
 Assets\LeeSin_Square_0.png
 Assets\Leona_Square_0.png
@@ -147,9 +143,19 @@ DataModel\Champions.json
 DataModel\Data.json
 AdMediator.config
 ApplicationInsights.config
+Assets\Assassin.jpg
 Assets\BadgeLogo.scale-240.png
+Assets\beaufortforlol-bold.otf
+Assets\challengerborder.png
+Assets\challengericon.png
+Assets\Fighter.jpg
 Assets\hecsplash.png
+Assets\LoL.jpg
+Assets\lolicon.png
 Assets\lolseason5counters.png
+Assets\Mage.jpg
+Assets\Marksman.jpg
+Assets\Season6.jpg
 Assets\SplashScreen.scale-240.png
 Assets\Square150x150Logo.scale-100.png
 Assets\Square150x150Logo.scale-140.png
@@ -163,6 +169,8 @@ Assets\Square71x71Logo.scale-240.png
 Assets\StoreLogo.scale-100.png
 Assets\StoreLogo.scale-140.png
 Assets\StoreLogo.scale-240.png
+Assets\Support.jpg
+Assets\Tank.jpg
 Assets\Wide310x150Logo.scale-240.png
 Assets\WindowsStoreProxy.xml
 App.xbf

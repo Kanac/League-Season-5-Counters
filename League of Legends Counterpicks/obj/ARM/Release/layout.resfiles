@@ -56,11 +56,6 @@ Assets\Kennen_Square_0.png
 Assets\Khazix_Square_0.png
 Assets\Kindred_Square_0.png
 Assets\KogMaw_Square_0.png
-Assets\League of Legends Season 5 Main.png
-Assets\League of Legends Teambuilder.png
-Assets\league_of_legends.jpg
-Assets\League-of-Legends-Game-Logo.png
-Assets\LeagueofLegendsTeambuilder.png
 Assets\LeBlanc_Square_0.png
 Assets\LeeSin_Square_0.png
 Assets\Leona_Square_0.png
@@ -151,6 +146,8 @@ ApplicationInsights.config
 Assets\Assassin.jpg
 Assets\BadgeLogo.scale-240.png
 Assets\beaufortforlol-bold.otf
+Assets\challengerborder.png
+Assets\challengericon.png
 Assets\Fighter.jpg
 Assets\hecsplash.png
 Assets\LoL.jpg

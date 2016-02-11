@@ -148,6 +148,16 @@
 						<Value>Assets\Cassiopeia_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="challengerborder.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/challengerborder.png">
+					<Candidate type="Path">
+						<Value>Assets\challengerborder.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="challengericon.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/challengericon.png">
+					<Candidate type="Path">
+						<Value>Assets\challengericon.png</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="Chogath_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Chogath_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Chogath_Square_0.png</Value>
@@ -369,31 +379,6 @@
 				<NamedResource name="KogMaw_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/KogMaw_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\KogMaw_Square_0.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="League of Legends Season 5 Main.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/League%20of%20Legends%20Season%205%20Main.png">
-					<Candidate type="Path">
-						<Value>Assets\League of Legends Season 5 Main.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="League of Legends Teambuilder.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/League%20of%20Legends%20Teambuilder.png">
-					<Candidate type="Path">
-						<Value>Assets\League of Legends Teambuilder.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="League-of-Legends-Game-Logo.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/League-of-Legends-Game-Logo.png">
-					<Candidate type="Path">
-						<Value>Assets\League-of-Legends-Game-Logo.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="LeagueofLegendsTeambuilder.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/LeagueofLegendsTeambuilder.png">
-					<Candidate type="Path">
-						<Value>Assets\LeagueofLegendsTeambuilder.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="league_of_legends.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/league_of_legends.jpg">
-					<Candidate type="Path">
-						<Value>Assets\league_of_legends.jpg</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="LeBlanc_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/LeBlanc_Square_0.png">

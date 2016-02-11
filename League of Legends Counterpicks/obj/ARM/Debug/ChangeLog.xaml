@@ -31,7 +31,7 @@
         </Grid>
 
         <Grid Grid.Row="3" Name="AdGrid2">
-            <UI:AdControl x:ConnectionId='3' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                    IsAutoRefreshEnabled="True" AdUnitId="251114" />
+            <UI:AdControl x:ConnectionId='3' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                    IsAutoRefreshEnabled="True" AdUnitId="236727" />
         </Grid>
 
         <!-- Title Panel -->
@@ -51,6 +51,17 @@
               Margin="19,9.5,19,0">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="25">
+						<Run Text="Feb 6 2015" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Season 6 and Jhin update has arrived"> </Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Massive UI changes! Explore it yourself :)"> </Run>
+                        <LineBreak></LineBreak>
+                        <Run Text="-Send me any feedbacks and feature requests for UI!"> </Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
                     <TextBlock FontSize="25">
 						<Run Text="December 5 2015" />
                     </TextBlock>

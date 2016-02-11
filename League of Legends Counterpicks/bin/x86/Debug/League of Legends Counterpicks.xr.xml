@@ -56,9 +56,7 @@
       <RootProperty Name="Style" />
       <RootProperty Name="IsAutoRefreshEnabled" />
       <RootProperty Name="AdUnitId" />
-      <RootProperty Name="AutoRefreshIntervalInSeconds" />
       <RootEvent Name="Loaded" />
-      <RootEvent Name="ErrorOccurred" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.FontFamily" />
     <RootType FullName="Windows.UI.Xaml.Setter">
@@ -167,6 +165,7 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="Opacity" />
+      <RootProperty Name="IsHitTestVisible" />
       <RootEvent Name="Tapped" />
       <RootEvent Name="DataContextChanged" />
     </RootType>
