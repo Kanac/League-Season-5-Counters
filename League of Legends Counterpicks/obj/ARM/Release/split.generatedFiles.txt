@@ -34,7 +34,3 @@ obj\ARM\Release\split.language-zh-hans.pri
 obj\ARM\Release\split.language-zh-hans.map.txt
 obj\ARM\Release\split.language-zh-hant.pri
 obj\ARM\Release\split.language-zh-hant.map.txt
-obj\ARM\Release\split.scale-100.pri
-obj\ARM\Release\split.scale-100.map.txt
-obj\ARM\Release\split.scale-140.pri
-obj\ARM\Release\split.scale-140.map.txt

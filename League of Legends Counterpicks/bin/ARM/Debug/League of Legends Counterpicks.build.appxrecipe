@@ -210,9 +210,6 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\Tank.jpg">
       <PackagePath>Assets\Tank.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Short_Fuse.jpg">
-      <PackagePath>Assets\Short_Fuse.jpg</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\BadgeLogo.scale-240.png">
       <PackagePath>Assets\BadgeLogo.scale-240.png</PackagePath>
     </AppxPackagedFile>
@@ -229,15 +226,9 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\lolicon.png">
       <PackagePath>Assets\lolicon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\lolseason5counters.png">
-      <PackagePath>Assets\lolseason5counters.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\Wide310x150Logo.scale-240.png">
       <PackagePath>Assets\Wide310x150Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\SplashScreen.scale-240.png">
-      <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
@@ -400,12 +391,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Heimerdinger_Square_0.png">
       <PackagePath>Assets\Heimerdinger_Square_0.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\HubBackground.theme-dark.png">
-      <PackagePath>Assets\HubBackground.theme-dark.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\HubBackground.theme-light.png">
-      <PackagePath>Assets\HubBackground.theme-light.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Illaoi_Square_0.png">
       <PackagePath>Assets\Illaoi_Square_0.png</PackagePath>
@@ -661,12 +646,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Vladimir_Square_0.png">
       <PackagePath>Assets\Vladimir_Square_0.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Voidgate_Square_0.png">
-      <PackagePath>Assets\Voidgate_Square_0.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Voidspawn_Square_0.png">
-      <PackagePath>Assets\Voidspawn_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Volibear_Square_0.png">
       <PackagePath>Assets\Volibear_Square_0.png</PackagePath>

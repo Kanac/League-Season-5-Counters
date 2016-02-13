@@ -56,7 +56,10 @@
       <RootProperty Name="Style" />
       <RootProperty Name="IsAutoRefreshEnabled" />
       <RootProperty Name="AdUnitId" />
+      <RootProperty Name="AutoRefreshIntervalInSeconds" />
       <RootEvent Name="Loaded" />
+      <RootEvent Name="ErrorOccurred" />
+      <RootEvent Name="AdRefreshed" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.FontFamily" />
     <RootType FullName="Windows.UI.Xaml.Setter">
@@ -96,6 +99,7 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
+      <RootProperty Name="Resources" />
       <RootProperty Name="Style" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="HorizontalAlignment" />
@@ -155,6 +159,10 @@
       <RootProperty Name="Flyout" />
       <RootEvent Name="Click" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.UIElement">
+      <RootProperty Name="IsHitTestVisible" />
+      <RootProperty Name="Opacity" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
       <RootProperty Name="Fill" />
     </RootType>
@@ -168,10 +176,6 @@
       <RootProperty Name="IsHitTestVisible" />
       <RootEvent Name="Tapped" />
       <RootEvent Name="DataContextChanged" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.UIElement">
-      <RootProperty Name="IsHitTestVisible" />
-      <RootProperty Name="Opacity" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="BorderThickness" />

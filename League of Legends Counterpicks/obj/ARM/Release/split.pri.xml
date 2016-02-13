@@ -4,7 +4,6 @@
 		<Qualifiers>
 			<Language>EN-GB, EN-US</Language>
 			<Scale>240</Scale>
-			<Theme>LIGHT, DARK</Theme>
 		</Qualifiers>
 		<ResourceMapSubtree name="Files">
 			<NamedResource name="AdMediator.config" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/AdMediator.config">
@@ -106,11 +105,6 @@
 				<NamedResource name="Azir_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Azir_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Azir_Square_0.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="BadgeLogo.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/BadgeLogo.png">
-					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
-						<Value>Assets\BadgeLogo.scale-240.png</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="Bard_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Bard_Square_0.png">
@@ -283,14 +277,6 @@
 						<Value>Assets\Heimerdinger_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
-				<NamedResource name="HubBackground.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/HubBackground.png">
-					<Candidate qualifiers="Theme-LIGHT" isDefault="true" type="Path">
-						<Value>Assets\HubBackground.theme-light.png</Value>
-					</Candidate>
-					<Candidate qualifiers="Theme-DARK" isDefault="true" type="Path">
-						<Value>Assets\HubBackground.theme-dark.png</Value>
-					</Candidate>
-				</NamedResource>
 				<NamedResource name="Illaoi_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Illaoi_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Illaoi_Square_0.png</Value>
@@ -409,11 +395,6 @@
 				<NamedResource name="lolicon.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/lolicon.png">
 					<Candidate type="Path">
 						<Value>Assets\lolicon.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="lolseason5counters.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/lolseason5counters.png">
-					<Candidate type="Path">
-						<Value>Assets\lolseason5counters.png</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="Lucian_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Lucian_Square_0.png">
@@ -591,11 +572,6 @@
 						<Value>Assets\Shen_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
-				<NamedResource name="Short_Fuse.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Short_Fuse.jpg">
-					<Candidate type="Path">
-						<Value>Assets\Short_Fuse.jpg</Value>
-					</Candidate>
-				</NamedResource>
 				<NamedResource name="Shyvana_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Shyvana_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Shyvana_Square_0.png</Value>
@@ -631,29 +607,24 @@
 						<Value>Assets\Soraka_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
-				<NamedResource name="SplashScreen.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/SplashScreen.png">
-					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
-						<Value>Assets\SplashScreen.scale-240.png</Value>
+				<NamedResource name="Square150x150Logo.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Square150x150Logo.jpg">
+					<Candidate type="Path">
+						<Value>Assets\Square150x150Logo.jpg</Value>
 					</Candidate>
 				</NamedResource>
-				<NamedResource name="Square150x150Logo.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Square150x150Logo.png">
-					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
-						<Value>Assets\Square150x150Logo.scale-240.png</Value>
+				<NamedResource name="Square44x44Logo.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Square44x44Logo.jpg">
+					<Candidate type="Path">
+						<Value>Assets\Square44x44Logo.jpg</Value>
 					</Candidate>
 				</NamedResource>
-				<NamedResource name="Square44x44Logo.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Square44x44Logo.png">
-					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
-						<Value>Assets\Square44x44Logo.scale-240.png</Value>
+				<NamedResource name="Square71x71Logo.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Square71x71Logo.jpg">
+					<Candidate type="Path">
+						<Value>Assets\Square71x71Logo.jpg</Value>
 					</Candidate>
 				</NamedResource>
-				<NamedResource name="Square71x71Logo.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Square71x71Logo.png">
+				<NamedResource name="StoreLogo.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/StoreLogo.jpg">
 					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
-						<Value>Assets\Square71x71Logo.scale-240.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="StoreLogo.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/StoreLogo.png">
-					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
-						<Value>Assets\StoreLogo.scale-240.png</Value>
+						<Value>Assets\StoreLogo.scale-240.jpg</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="Support.jpg" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Support.jpg">
@@ -714,11 +685,6 @@
 				<NamedResource name="Tryndamere_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Tryndamere_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Tryndamere_Square_0.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="Tweet.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Tweet.png">
-					<Candidate type="Path">
-						<Value>Assets\Tweet.png</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="TwistedFate_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/TwistedFate_Square_0.png">
@@ -786,16 +752,6 @@
 						<Value>Assets\Vladimir_Square_0.png</Value>
 					</Candidate>
 				</NamedResource>
-				<NamedResource name="Voidgate_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Voidgate_Square_0.png">
-					<Candidate type="Path">
-						<Value>Assets\Voidgate_Square_0.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="Voidspawn_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Voidspawn_Square_0.png">
-					<Candidate type="Path">
-						<Value>Assets\Voidspawn_Square_0.png</Value>
-					</Candidate>
-				</NamedResource>
 				<NamedResource name="Volibear_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Volibear_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Volibear_Square_0.png</Value>
@@ -804,11 +760,6 @@
 				<NamedResource name="Warwick_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Warwick_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Warwick_Square_0.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="Wide310x150Logo.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Wide310x150Logo.png">
-					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
-						<Value>Assets\Wide310x150Logo.scale-240.png</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="WindowsStoreProxy.xml" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/WindowsStoreProxy.xml">

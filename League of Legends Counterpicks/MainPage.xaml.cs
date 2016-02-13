@@ -45,13 +45,13 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
-            if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-            {
-                MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-                MyVideoAd.AdReady += MyVideoAd_AdReady;
-                MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
+            //if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            //{
+            //    MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
+            //    MyVideoAd.AdReady += MyVideoAd_AdReady;
+            //    MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
 
-            }
+            //}
         }
         private void MyVideoAd_ErrorOccured(object sender, AdErrorEventArgs e)
         {
@@ -352,6 +352,11 @@ namespace League_of_Legends_Counterpicks
         }
 
         private void Ad_Error(object sender, AdErrorEventArgs e)
+        {
+
+        }
+
+        private void AdControl_AdRefreshed(object sender, RoutedEventArgs e)
         {
 
         }

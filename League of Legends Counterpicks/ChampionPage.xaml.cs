@@ -865,6 +865,11 @@ namespace League_of_Legends_Counterpicks
         {
 
         }
+
+        private void AdControl_AdRefreshed(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 
