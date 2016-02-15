@@ -374,17 +374,7 @@
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Arm</PackageArchitecture>
-      <PackageMaxArchitectureVersion>2016.8.0.101</PackageMaxArchitectureVersion>
-    </PackageInfo>
-    <PackageInfo>
-      <OsMinVersion>6.3.1.0</OsMinVersion>
-      <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>2016.8.0.101</PackageMaxArchitectureVersion>
-    </PackageInfo>
-    <PackageInfo>
-      <OsMinVersion>6.3.1.0</OsMinVersion>
-      <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>2016.8.0.101</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>2016.8.0.104</PackageMaxArchitectureVersion>
     </PackageInfo>
   </PackageInfoList>
 </StoreAssociation>

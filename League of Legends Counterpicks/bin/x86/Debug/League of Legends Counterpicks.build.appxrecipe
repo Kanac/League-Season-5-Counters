@@ -452,9 +452,6 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\TahmKench_Square_0.png">
       <PackagePath>Assets\TahmKench_Square_0.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Tweet.png">
-      <PackagePath>Assets\Tweet.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\TwistedFate_Square_0.png">
       <PackagePath>Assets\TwistedFate_Square_0.png</PackagePath>
     </AppxPackagedFile>
