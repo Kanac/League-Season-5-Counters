@@ -178,6 +178,16 @@ namespace League_of_Legends_Counterpicks
 
         private async void StatPage_Navigate(object sender, RoutedEventArgs e)
         {
+            //ulong AppMemoryUsageUlong = MemoryManager.AppMemoryUsage;
+
+            //ulong AppMemoryUsageLimitUlong = MemoryManager.AppMemoryUsageLimit;
+
+            //AppMemoryUsageUlong /= 1024 * 1024;
+            //AppMemoryUsageLimitUlong /= 1024 * 1024;
+            //string test = "App memory uage - " + AppMemoryUsageUlong.ToString();
+            //test += "\nApp memory usage limit - " + AppMemoryUsageLimitUlong.ToString();
+            //var message = new MessageDialog(test);
+            //await message.ShowAsync();
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => Frame.Navigate(typeof(StatsPage), champInfo.Key));
         }
 

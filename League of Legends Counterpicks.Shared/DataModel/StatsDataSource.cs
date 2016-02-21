@@ -55,7 +55,9 @@ namespace League_of_Legends_Counterpicks.DataModel
             httpClient = new HttpClient();
         }
         public async static Task<ChampionData> GetCounterStatsAsync(string champName) {
-            ChampionData championData = new ChampionData() { Key = champName, Role = DataSource.GetRoleId(champName) };
+            Champions = await GetChampionsAsync();
+            string role = Champions.ChampionInfos.Where(x => x.Key == champName).FirstOrDefault().Value.Tags[0];
+            ChampionData championData = new ChampionData() { Key = champName, Role = role};
             try
             {
                 // Get the html for the champion page

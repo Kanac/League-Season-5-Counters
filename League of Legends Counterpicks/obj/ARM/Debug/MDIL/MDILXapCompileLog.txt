@@ -35,9 +35,9 @@ Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compil
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounterCommentAsync>d__54.MoveNext
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounterCommentRating>d__55.MoveNext
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <SubmitCounterRating>d__56.MoveNext
-Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x600037a
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x600037b
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x600037c
+Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method token 0x600037d
 Strong name validation failed. (Exception from HRESULT: 0x8013141A) while compiling method <GetChampionsAsync>d__15.MoveNext
 MDIL image C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Debug\MDIL\League of Legends Counterpicks.exe generated successfully.
 
