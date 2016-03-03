@@ -45,6 +45,11 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
+            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+                DefaultViewModel["AdVisibility"] = Visibility.Collapsed;
+            else
+                DefaultViewModel["AdVisibility"] = Visibility.Visible;
+
             //if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             //{
             //    MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");

@@ -43,6 +43,11 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
+            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+                DefaultViewModel["AdVisibility"] = Visibility.Collapsed;
+            else
+                DefaultViewModel["AdVisibility"] = Visibility.Visible;
+
         }
 
         /// <summary>

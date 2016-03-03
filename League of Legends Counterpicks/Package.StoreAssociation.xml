@@ -365,6 +365,7 @@
       <ReservedName>League of Legends ✓</ReservedName>
       <ReservedName>League of Legends ✔</ReservedName>
       <ReservedName>League of Legends Counters ✔</ReservedName>
+      <ReservedName>League of Legends ✔ Pro</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
@@ -375,7 +376,7 @@
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Arm</PackageArchitecture>
-      <PackageMaxArchitectureVersion>2016.8.0.107</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>2016.8.0.109</PackageMaxArchitectureVersion>
     </PackageInfo>
   </PackageInfoList>
 </StoreAssociation>
