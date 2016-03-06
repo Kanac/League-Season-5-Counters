@@ -56,10 +56,11 @@
 
     <Page.BottomAppBar>
         <CommandBar>
+            <AppBarButton x:ConnectionId='3'             />
             <AppBarButton Icon="Filter"
                           Label="Role">
                 <Button.Flyout>
-                    <ListPickerFlyout x:ConnectionId='3' x:Name="RoleFlyout"
+                    <ListPickerFlyout x:ConnectionId='4' x:Name="RoleFlyout"
                                       Placement="Full" 
                                       ItemsSource="{Binding Roles}"
                                       SelectedItem="{Binding SelectedRole, Mode=TwoWay}"
@@ -76,7 +77,7 @@
     </Page.BottomAppBar>
 
 
-    <Grid x:ConnectionId='4'                       >
+    <Grid x:ConnectionId='5'                       >
         <Grid.Background>
             <ImageBrush ImageSource="Assets/LoL.jpg"/>
         </Grid.Background>
@@ -119,6 +120,16 @@
             <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
             <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
             <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
         </Grid>
         <Grid Grid.Row="1" Name="AdGrid2">
             <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246276" />
@@ -131,7 +142,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBox x:ConnectionId='5' Name="FilterBox"
+            <TextBox x:ConnectionId='6' Name="FilterBox"
                      Height="40"
                      Margin="15,20,15,0"
                                                   
@@ -150,7 +161,7 @@
                        FontFamily ="{ThemeResource PhoneFontFamilySemiLight}">
             </TextBlock>
 
-            <Grid x:ConnectionId='6' Name="FilterGridView"
+            <Grid x:ConnectionId='7' Name="FilterGridView"
                   Margin="15,15,0,0"
                   Grid.Row="2" 
                                                 
@@ -159,11 +170,11 @@
             </Grid>
 
             <Grid Grid.Row="2">
-                <q:AlphaJumpList x:ConnectionId='7' Name="JumpList"
+                <q:AlphaJumpList x:ConnectionId='8' Name="JumpList"
                              Margin="15,15,0,0"
                              Grid.Row="2"
                                                      >
-                    <GridView x:ConnectionId='8' Name="JumpListGridView"
+                    <GridView x:ConnectionId='9' Name="JumpListGridView"
                           ItemsSource="{Binding GroupedChampions}"
                           IsItemClickEnabled="True"
                                                         
@@ -172,7 +183,7 @@
                         <GridView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <Image x:ConnectionId='9' Source="{Binding Value.Key, Converter={StaticResource NameToImage}}"
+                                    <Image x:ConnectionId='10' Source="{Binding Value.Key, Converter={StaticResource NameToImage}}"
                                            Width="50"
                                            Height="50"
                                                                      />

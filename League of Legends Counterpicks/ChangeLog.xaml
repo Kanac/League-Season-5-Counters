@@ -31,7 +31,7 @@
         </Grid>
 
         <Grid Grid.Row="3" Name="AdGrid2">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" IsAutoRefreshEnabled="True" AdUnitId="246276" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" IsAutoRefreshEnabled="True" AdUnitId="242812" />
         </Grid>
 
         <!-- Title Panel -->
