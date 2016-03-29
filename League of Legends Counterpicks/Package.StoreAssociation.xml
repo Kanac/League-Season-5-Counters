@@ -376,7 +376,7 @@
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Arm</PackageArchitecture>
-      <PackageMaxArchitectureVersion>2016.8.0.110</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>2016.8.0.115</PackageMaxArchitectureVersion>
     </PackageInfo>
   </PackageInfoList>
 </StoreAssociation>
