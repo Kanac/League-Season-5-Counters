@@ -27,11 +27,11 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="3" Margin="0,49,0,0" Name="AdGrid">
-            <UI:AdControl x:ConnectionId='4' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                    IsAutoRefreshEnabled="True" AdUnitId="251115" />
+            <UI:AdControl x:ConnectionId='4' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                    IsAutoRefreshEnabled="True" AdUnitId="293531" />
         </Grid>
 
         <Grid Grid.Row="3" Name="AdGrid2">
-            <UI:AdControl x:ConnectionId='3' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                    IsAutoRefreshEnabled="True" AdUnitId="292870" />
+            <UI:AdControl x:ConnectionId='3' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdNormal}"                    IsAutoRefreshEnabled="True" AdUnitId="293531" />
         </Grid>
 
         <!-- Title Panel -->
@@ -52,28 +52,35 @@
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="25">
-						<Run Text="Feb 14 2015" />
+						<Run Text="April 10 2016" />
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource Notes}">
+                        <Run Text="-Aurelion Sol Update!"></Run>
+                        <LineBreak></LineBreak>
+                    </TextBlock>
+                    <TextBlock FontSize="25">
+						<Run Text="Feb 14 2016" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-Trimmed binary size to the bare minimum!"></Run>
                         <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
-						<Run Text="Feb 12 2015" />
+						<Run Text="Feb 12 2016" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-Significantly trimmed download size!"></Run>
                         <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
-						<Run Text="Feb 10 2015" />
+						<Run Text="Feb 10 2016" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-Added more sexy adjustments to UI"></Run>
                         <LineBreak></LineBreak>
                     </TextBlock>
                     <TextBlock FontSize="25">
-						<Run Text="Feb 6 2015" />
+						<Run Text="Feb 6 2016" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Notes}">
                         <Run Text="-Season 6 and Jhin update has arrived"> </Run>

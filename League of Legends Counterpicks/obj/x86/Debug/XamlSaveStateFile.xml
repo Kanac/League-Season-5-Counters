@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\anthony c\documents\visual studio 2015\projects\league of legends counterpicks\league of legends counterpicks\obj\x86\debug\intermediatexaml\league of legends counterpicks.exe" HashGuid="f888d230-7965-1c65-5e98-181f2287ea91" />
+    <LocalAssembly PathName="c:\users\anthony c\documents\visual studio 2015\projects\league of legends counterpicks\league of legends counterpicks\obj\x86\debug\intermediatexaml\league of legends counterpicks.exe" HashGuid="0fa2a0fa-609a-e391-2624-b623bb3fec41" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.admediator81\1.0\references\commonconfiguration\neutral\microsoft.admediator.core.dll" HashGuid="5d2543e1-177e-4eed-75c2-ba832135a8aa" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.admediator81\1.0\references\commonconfiguration\neutral\microsoft.admediator.windowsphone81.dll" HashGuid="4b6f1fb2-bc23-4a0a-dc60-f20076c5a146" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.admediator81\1.0\references\commonconfiguration\x86\microsoft.admediator.windowsphone81.microsoftadvertising.dll" HashGuid="696d18ee-c90f-a4fa-8a48-f7dcc85562b4" />
@@ -17,7 +17,6 @@
     <ReferenceAssembly PathName="c:\users\anthony c\documents\visual studio 2015\projects\league of legends counterpicks\packages\windowsazure.storage.4.3.0\lib\wpa\microsoft.windowsazure.storage.dll" HashGuid="69d1254a-41d8-4cd8-9ab3-c7714bab061b" />
     <ReferenceAssembly PathName="c:\users\anthony c\documents\visual studio 2015\projects\league of legends counterpicks\packages\newtonsoft.json.6.0.4\lib\portable-net45+wp80+win8+wpa81\newtonsoft.json.dll" HashGuid="02b12ba6-881e-6b8a-1687-5b2ee1851a11" />
     <ReferenceAssembly PathName="c:\users\anthony c\documents\visual studio 2015\projects\league of legends counterpicks\packages\qkit.0.4.1\lib\wpa81\qkit.dll" HashGuid="9fcd7cc9-c875-b826-82c5-2db30fe9048f" />
-    <ReferenceAssembly PathName="c:\users\anthony c\documents\visual studio 2015\projects\league of legends counterpicks\packages\somaw81_package.1.1.6\lib\wpa81\somawp81.dll" HashGuid="17312196-4886-0372-f887-fbe262b93204" />
     <ReferenceAssembly PathName="c:\users\anthony c\documents\visual studio 2015\projects\league of legends counterpicks\packages\microsoft.net.http.2.2.29\lib\wpa81\system.net.http.extensions.dll" HashGuid="794366f8-cc6d-f0fa-3d07-33b45136e193" />
     <ReferenceAssembly PathName="c:\users\anthony c\documents\visual studio 2015\projects\league of legends counterpicks\packages\microsoft.net.http.2.2.29\lib\wpa81\system.net.http.primitives.dll" HashGuid="7b71418d-e056-7613-c839-85fb8f6472a6" />
     <ReferenceAssembly PathName="c:\users\anthony c\documents\visual studio 2015\projects\league of legends counterpicks\packages\system.spatial.5.6.4\lib\portable-net45+wp8+win8+wpa\system.spatial.dll" HashGuid="af07efc6-7fe8-d611-3cea-feee0fa1b441" />

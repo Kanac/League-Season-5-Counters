@@ -17,6 +17,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Anivia_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Annie_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Ashe_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AurelionSol_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Azir_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Bard_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Blitzcrank_Square_0.png" />

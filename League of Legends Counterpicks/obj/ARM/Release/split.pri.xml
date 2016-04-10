@@ -102,6 +102,11 @@
 						<Value>Assets\Assassin.jpg</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="AurelionSol_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/AurelionSol_Square_0.png">
+					<Candidate type="Path">
+						<Value>Assets\AurelionSol_Square_0.png</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="Azir_Square_0.png" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/Assets/Azir_Square_0.png">
 					<Candidate type="Path">
 						<Value>Assets\Azir_Square_0.png</Value>
@@ -908,28 +913,6 @@
 						</Candidate>
 					</NamedResource>
 				</ResourceMapSubtree>
-			</ResourceMapSubtree>
-			<ResourceMapSubtree name="SOMAWP81">
-				<NamedResource name="AdViewer.xbf" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/SOMAWP81/AdViewer.xbf">
-					<Candidate type="Path">
-						<Value>SOMAWP81\AdViewer.xbf</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="SomaAdViewer-300x250.xbf" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/SOMAWP81/SomaAdViewer-300x250.xbf">
-					<Candidate type="Path">
-						<Value>SOMAWP81\SomaAdViewer-300x250.xbf</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="SomaAdViewer.xbf" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/SOMAWP81/SomaAdViewer.xbf">
-					<Candidate type="Path">
-						<Value>SOMAWP81\SomaAdViewer.xbf</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="SOMAWP81.xr.xml" uri="ms-resource://62206AnthonyC.LeagueCounterpicks/Files/SOMAWP81/SOMAWP81.xr.xml">
-					<Candidate type="Path">
-						<Value>SOMAWP81\SOMAWP81.xr.xml</Value>
-					</Candidate>
-				</NamedResource>
 			</ResourceMapSubtree>
 		</ResourceMapSubtree>
 		<ResourceMapSubtree name="Microsoft.Advertising">
