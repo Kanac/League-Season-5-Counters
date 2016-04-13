@@ -27,11 +27,11 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="3" Margin="0,49,0,0" Name="AdGrid">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" IsAutoRefreshEnabled="True" AdUnitId="293531" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Loaded="Ad_Loaded" IsAutoRefreshEnabled="True" AdUnitId="239130" />
         </Grid>
 
         <Grid Grid.Row="3" Name="AdGrid2">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdNormal}" Loaded="Ad_Loaded" IsAutoRefreshEnabled="True" AdUnitId="293531" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdNormal}" Loaded="Ad_Loaded" IsAutoRefreshEnabled="True" AdUnitId="239130" />
         </Grid>
 
         <!-- Title Panel -->
