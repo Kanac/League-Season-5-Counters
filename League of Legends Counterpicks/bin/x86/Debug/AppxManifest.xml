@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="62206AnthonyC.LeagueCounterpicks" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2016.8.0.122" ProcessorArchitecture="x86" />
+  <Identity Name="62206AnthonyC.LeagueCounterpicks" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2016.8.0.127" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="a29b2218-1da2-4e4b-87e2-a8a45d18cf71" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>League of Legends ✔ Pro</DisplayName>
@@ -81,7 +81,7 @@
     <build:Item Name="VisualStudio" Version="14.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Enterprise 2015" />
     <build:Item Name="OperatingSystem" Version="10.0.10240.16384 (th1.150709-1700)" />
-    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.24720.0" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.25123.0" />
     <build:Item Name="ProjectGUID" Value="{7EE27609-21AC-4764-AEEE-95EC0A7A07DD}" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.81.Build.Tasks.dll" Version="14.0.22705.1" />
     <build:Item Name="Microsoft.AdMediator81" Version="1.0" />

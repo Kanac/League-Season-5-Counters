@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Navigation;
 using League_of_Legends_Counterpicks.DataModel;
 using Microsoft.Advertising.WinRT.UI;
 using Microsoft.AdMediator.WindowsPhone81;
+using Windows.System;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -40,10 +41,7 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-                DefaultViewModel["AdVisibility"] = Visibility.Collapsed;
-            else
-                DefaultViewModel["AdVisibility"] = Visibility.Visible;
+            DefaultViewModel["AdVisibility"] = App.licenseInformation.ProductLicenses["AdRemoval"].IsActive ? Visibility.Collapsed : Visibility.Visible;
         }
 
         /// <summary>
@@ -78,6 +76,8 @@ namespace League_of_Legends_Counterpicks
         {
             // Check for internet connection
             App.IsInternetAvailable();
+
+            CreateAdUnits();
 
             string champKey = e.NavigationParameter as string;
             var championData = await StatsDataSource.GetCounterStatsAsync(champKey);
@@ -147,48 +147,35 @@ namespace League_of_Legends_Counterpicks
 
             base.OnNavigatingFrom(e);
         }
+
         #endregion
 
-        private void Ad_Loaded(object sender, RoutedEventArgs e)
+        private void CreateAdUnits()
         {
-            var ad = sender as AdControl;
-
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+                return;
+
+            int count = 20;
+            var limitMb = MemoryManager.AppMemoryUsageLimit / (1024 * 1024);
+            if (limitMb < 200)
             {
-                // Hide the app for the purchaser
-                ad.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                count = 10;
             }
-            else
+            else if (limitMb > 700)
             {
-                // Otherwise show the ad
-                ad.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                count = 30;
             }
-        }
 
-        private void GridAd_Loaded(object sender, RoutedEventArgs e)
-        {
-            var grid = sender as Grid;
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+            for (int i = 0; i < count; ++i)
             {
-                var rowDefinitions = grid.RowDefinitions;
-                foreach (var r in rowDefinitions)
-                {
-                    if (r.Height.Value == 80)
-                    {
-                        r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
-                    }
-                }
+                AdControl ad = new AdControl();
+                ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
+                ad.AdUnitId = "240176";
+                ad.Style = Application.Current.Resources["HorizontalAd"] as Style;
+                ad.IsAutoRefreshEnabled = true;
+                ad.AutoRefreshIntervalInSeconds = 30;
+                AdGrid.Children.Add(ad);
             }
-        }
-
-        private void AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
-        {
-
-        }
-
-        private void Ad_Error(object sender, AdErrorEventArgs e)
-        {
-
         }
     }
 }

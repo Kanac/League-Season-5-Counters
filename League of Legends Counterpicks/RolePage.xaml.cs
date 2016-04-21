@@ -36,10 +36,7 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-                DefaultViewModel["AdVisibility"] = Visibility.Collapsed;
-            else
-                DefaultViewModel["AdVisibility"] = Visibility.Visible;
+            DefaultViewModel["AdVisibility"] = App.licenseInformation.ProductLicenses["AdRemoval"].IsActive ? Visibility.Collapsed : Visibility.Visible;
         }
 
         /// <summary>
@@ -73,6 +70,9 @@ namespace League_of_Legends_Counterpicks
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)  //e is the unique ID
         {
             App.IsInternetAvailable();
+
+            CreateAdUnits();
+
             reviewApp();
 
             // Set up champion data 
@@ -261,37 +261,6 @@ namespace League_of_Legends_Counterpicks
             }
         }
 
-        private void Ad_Loaded(object sender, RoutedEventArgs e)
-        {
-            var ad = sender as AdControl;
-
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-            {
-                // Hide the app for the purchaser
-                ad.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            }
-            else
-            {
-                // Otherwise show the ad
-                ad.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            }
-        }
-
-        private void GridAd_Loaded(object sender, RoutedEventArgs e)
-        {
-            var grid = sender as Grid;
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-            {
-                foreach (var r in grid.RowDefinitions)
-                {
-                    if (r.Height.Value == 80)
-                    {
-                        r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
-                    }
-                }
-            }
-        }
-
         private async void reviewApp()
         {
             if (!localSettings.Values.ContainsKey("Views"))
@@ -374,10 +343,32 @@ namespace League_of_Legends_Counterpicks
             var message = new MessageDialog(test);
             await message.ShowAsync();
         }
-
-        private void AdControl_AdRefreshed(object sender, RoutedEventArgs e)
+        private void CreateAdUnits()
         {
+            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+                return;
 
+            int count = 40;
+            var limitMb = MemoryManager.AppMemoryUsageLimit / (1024 * 1024);
+            if (limitMb < 200)
+            {
+                count = 16;
+            }
+            else if (limitMb > 700)
+            {
+                count = 55;
+            }
+
+            for (int i = 0; i < count; ++i)
+            {
+                AdControl ad = new AdControl();
+                ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
+                ad.AdUnitId = "240176";
+                ad.Style = Application.Current.Resources["HorizontalAd"] as Style;
+                ad.IsAutoRefreshEnabled = true;
+                ad.AutoRefreshIntervalInSeconds = 30;
+                AdGrid.Children.Add(ad);
+            }
         }
     }
 }

@@ -28,7 +28,7 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid x:ConnectionId='5'                       >
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Assets/LoL.jpg"/>
         </Grid.Background>
@@ -79,7 +79,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='12'                      Tag="All"></Button>
+                        <Button x:ConnectionId='11'                      Tag="All"></Button>
                         <TextBlock Text="All"></TextBlock>
                         <Ellipse Grid.Column="2">
                             <Ellipse.Fill>
@@ -96,7 +96,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='11'                      Tag="Assassin"></Button>
+                        <Button x:ConnectionId='10'                      Tag="Assassin"></Button>
                         <TextBlock Text="Assassin"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -113,7 +113,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='10'                      Tag="Fighter"></Button>
+                        <Button x:ConnectionId='9'                      Tag="Fighter"></Button>
                         <TextBlock Text="Fighter"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -130,7 +130,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='9'                      Tag="Mage"></Button>
+                        <Button x:ConnectionId='8'                      Tag="Mage"></Button>
                         <TextBlock Text="Mage"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -147,7 +147,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='8'                      Tag="Marksman"></Button>
+                        <Button x:ConnectionId='7'                      Tag="Marksman"></Button>
                         <TextBlock Text="Marksman"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -164,7 +164,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='7'                      Tag="Support"></Button>
+                        <Button x:ConnectionId='6'                      Tag="Support"></Button>
                         <TextBlock Text="Support"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -181,7 +181,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='6'                      Tag="Tank"></Button>
+                        <Button x:ConnectionId='5'                      Tag="Tank"></Button>
                         <TextBlock Text="Tank"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -206,59 +206,10 @@
         </StackPanel>
 
         <Grid Grid.Row="2" Margin="0,49,0,0" x:Name="AdGrid">
-            <Grid.Resources>
-                <Style TargetType="UI:AdControl">
-                    <Setter Property="Width" Value="161"></Setter>
-                </Style>
-            </Grid.Resources>
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
         </Grid>
 
         <Grid Grid.Row="2" Name="AdGrid2">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdNormal}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="242108" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdNormal}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="240176"/>
         </Grid>
     </Grid>
 </Page>

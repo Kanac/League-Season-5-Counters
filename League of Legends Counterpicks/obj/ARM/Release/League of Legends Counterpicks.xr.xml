@@ -99,7 +99,6 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
-      <RootProperty Name="Resources" />
       <RootProperty Name="Style" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="HorizontalAlignment" />

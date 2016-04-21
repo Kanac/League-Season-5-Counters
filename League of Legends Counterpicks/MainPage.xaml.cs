@@ -18,6 +18,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI;
 using Microsoft.Advertising.WinRT.UI;
 using System.Collections.Generic;
+using Windows.System;
+using Windows.UI.Xaml.Data;
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -45,10 +47,7 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-                DefaultViewModel["AdVisibility"] = Visibility.Collapsed;
-            else
-                DefaultViewModel["AdVisibility"] = Visibility.Visible;
+            DefaultViewModel["AdVisibility"] = App.licenseInformation.ProductLicenses["AdRemoval"].IsActive ? Visibility.Collapsed : Visibility.Visible;
 
             //if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
             //{
@@ -110,7 +109,9 @@ namespace League_of_Legends_Counterpicks
         {
             // Check for internet connection
             App.IsInternetAvailable();
-  
+
+            CreateAdUnits();
+
             // Load all the roles (which contains all the champions) from the json file 
             var roles = StatsDataSource.GetRoles();
             this.DefaultViewModel["Roles"] = roles;
@@ -320,50 +321,37 @@ namespace League_of_Legends_Counterpicks
             await EmailManager.ShowComposeNewEmailAsync(mail);
         }
 
-        private void Ad_Loaded(object sender, RoutedEventArgs e)
-        {
-            var ad = sender as AdControl;
-
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-            {
-                // Hide the app for the purchaser
-                ad.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            }
-            else
-            {
-                // Otherwise show the ad
-                ad.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            }
-        }
-
-        private void GridAd_Loaded(object sender, RoutedEventArgs e)
-        {
-            var grid = sender as Grid;
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-            {
-                foreach (var r in grid.RowDefinitions)
-                {
-                    if (r.Height.Value == 80)
-                    {
-                        r.SetValue(RowDefinition.HeightProperty, new GridLength(0));
-                    }
-                }
-            }
-        }
-
         private void AdBlock_Click(object sender, RoutedEventArgs e)
         {
             AdRemover.Purchase();
         }
 
-        private void Ad_Error(object sender, AdErrorEventArgs e)
+        private void CreateAdUnits()
         {
+            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
+                return;
 
-        }
+            int count = 45;
+            var limitMb = MemoryManager.AppMemoryUsageLimit / (1024*1024);
+            if (limitMb < 200)
+            {
+                count = 18;
+            }
+            else if (limitMb > 700)
+            {
+                count = 60;
+            }
 
-        private void AdControl_AdRefreshed(object sender, RoutedEventArgs e)
-        {
-
+            for (int i = 0; i < count; ++i)
+            {
+                AdControl ad = new AdControl();
+                ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
+                ad.AdUnitId = "240176";
+                ad.Style = Application.Current.Resources["HorizontalAd"] as Style;
+                ad.IsAutoRefreshEnabled = true;
+                ad.AutoRefreshIntervalInSeconds = 30;
+                AdGrid.Children.Add(ad);
+            }
         }
     }
 }
