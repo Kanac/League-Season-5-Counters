@@ -350,20 +350,16 @@ namespace League_of_Legends_Counterpicks
 
             int count = 42;
             var limitMb = MemoryManager.AppMemoryUsageLimit / (1024 * 1024);
-            if (limitMb < 200)
+            if (limitMb > 700)
             {
-                count = 19;
-            }
-            else if (limitMb > 700)
-            {
-                count = 60;
+                count = 72;
             }
 
             for (int i = 0; i < count; ++i)
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "295675";
+                ad.AdUnitId = "185807";
                 ad.Style = Application.Current.Resources["HorizontalAd"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();
