@@ -166,7 +166,7 @@ namespace League_of_Legends_Counterpicks
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "185807";
+                ad.AdUnitId = "242101";
                 ad.Style = Application.Current.Resources["HorizontalAd"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();

@@ -13,7 +13,7 @@ namespace Tasks
         public void Run(IBackgroundTaskInstance taskInstance)
         {
             //Check if a background toast is already scheduled
-            if (ToastNotificationManager.CreateToastNotifier().GetScheduledToastNotifications().Select(x => x.Id = "Background").Count() > 0)
+            if (ToastNotificationManager.CreateToastNotifier().GetScheduledToastNotifications().Where(x => x.Id == "Background").Count() > 0)
             {
                 return;
             }
@@ -23,15 +23,15 @@ namespace Tasks
 
             XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
             toastTextElements[0].AppendChild(toastXml.CreateTextNode("League of Legends"));
-            toastTextElements[1].AppendChild(toastXml.CreateTextNode("New Champion data has arrived. Keep up with the Meta now!"));
+            toastTextElements[1].AppendChild(toastXml.CreateTextNode("New update has arrived. Keep up with the Meta now!"));
 
             IXmlNode toastNode = toastXml.SelectSingleNode("/toast");
             XmlElement audio = toastXml.CreateElement("audio");
-            audio.SetAttribute("src", "ms-appx:///Assets/yourturn.mp3");
+            //audio.SetAttribute("src", "ms-appx:///Assets/yourturn.mp3");
             toastNode.AppendChild(audio);
 
             ToastNotification toast = new ToastNotification(toastXml);
-            DateTime dueTime = DateTime.Now.AddHours(72);
+            DateTime dueTime = DateTime.Now.AddHours(50);
             ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, dueTime);
             scheduledToast.Id = "Background";
             ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledToast);

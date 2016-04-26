@@ -123,17 +123,18 @@ namespace League_of_Legends_Counterpicks
                 CheckAppVersion();
                 string version = localSettings.Values["AppVersion"] as string;
 
-                // Only show imminent toasts up to 2 times that the app is launched 
+                // Only show imminent toasts up to 5 times that the app is launched 
                 if (localSettings.Values[version] == null)
                     localSettings.Values[version] = 0;
 
-                if ((int)localSettings.Values[version] < 2)
+                if ((int)localSettings.Values[version] < 5)
                 {
                     setupFeatureToast(); // Flashes a new feature message 
-                    setupReuseToast(); // Creates a message indicating user to reuse app after 30 minutes of opening
+                    setupReuseToast(50); // Creates a message indicating user to reuse app after 50 minutes of opening
+                    setupReuseToast(50*8); // Creates a message indicating user to reuse app after 8 hours of opening
                     localSettings.Values[version] = 1 + (int)localSettings.Values[version];
                 }
-                await setupToast();  // Background toast in 72 hours talking about new champion data
+                await setupToast();  // Background toast in 50 hours talking about new champion data
             }
         }
 
@@ -151,10 +152,10 @@ namespace League_of_Legends_Counterpicks
             ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
 
-        private void setupReuseToast()
+        private void setupReuseToast(int min)
         {
             // Check if a reuse toast is already scheduled
-            if (ToastNotificationManager.CreateToastNotifier().GetScheduledToastNotifications().Select(x => x.Id = "Reuse").Count() > 0)
+            if (ToastNotificationManager.CreateToastNotifier().GetScheduledToastNotifications().Where(x => x.Id == "Reuse").Count() > 1)
             {
                 return;
             }
@@ -164,15 +165,28 @@ namespace League_of_Legends_Counterpicks
 
             XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
             toastTextElements[0].AppendChild(toastXml.CreateTextNode("League of Legends"));
-            toastTextElements[1].AppendChild(toastXml.CreateTextNode("In your ranked pick phase, remember to use this app for the advantage you need!"));
+            Random random = new Random();
+            int val = random.Next(3);
+            if (val == 0)
+            {
+                toastTextElements[1].AppendChild(toastXml.CreateTextNode("New Champion data has been uploaded!"));
+            }
+            else if (val == 1)
+            {
+                toastTextElements[1].AppendChild(toastXml.CreateTextNode("In Champ Select, reference this app for your advantage!"));
+            }
+            else
+            {
+                toastTextElements[1].AppendChild(toastXml.CreateTextNode("Users have submitted new data to this app!"));
+            }
 
             IXmlNode toastNode = toastXml.SelectSingleNode("/toast");
             XmlElement audio = toastXml.CreateElement("audio");
-            audio.SetAttribute("src", "ms-appx:///Assets/yourturn.mp3");
+            //audio.SetAttribute("src", "ms-appx:///Assets/yourturn.mp3");
             toastNode.AppendChild(audio);
 
             ToastNotification toast = new ToastNotification(toastXml);
-            DateTime dueTime = DateTime.Now.AddMinutes(50);
+            DateTime dueTime = DateTime.Now.AddMinutes(min);
             ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, dueTime);
             scheduledToast.Id = "Reuse";
             ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledToast);
@@ -342,7 +356,7 @@ namespace League_of_Legends_Counterpicks
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "185807";
+                ad.AdUnitId = "242101";
                 ad.Style = Application.Current.Resources["HorizontalAd"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();
