@@ -23,15 +23,15 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="3" Margin="0,49,0,0" Name="AdGrid">
-            <UI:AdControl x:ConnectionId='4' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                    IsAutoRefreshEnabled="True" AdUnitId="242101" />
+        <Grid Grid.Row="3" Margin="0,79,0,0" Name="AdGrid">
+            <UI:AdControl x:ConnectionId='4' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                    IsAutoRefreshEnabled="True" AdUnitId="240202" />
         </Grid>
 
         <Grid Grid.Row="3" Name="AdGrid2">
-            <UI:AdControl x:ConnectionId='3' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdNormal}"                    IsAutoRefreshEnabled="True" AdUnitId="242101" />
+            <UI:AdControl x:ConnectionId='3' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdNormal}"                    IsAutoRefreshEnabled="True" AdUnitId="240202" />
         </Grid>
 
         <!-- Title Panel -->
