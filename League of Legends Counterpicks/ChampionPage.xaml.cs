@@ -847,7 +847,7 @@ namespace League_of_Legends_Counterpicks
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
                 return;
 
-            int count = 40;
+            int count = 35;
             var limitMb = MemoryManager.AppMemoryUsageLimit / (1024 * 1024);
             if (limitMb > 700)
             {
@@ -858,7 +858,7 @@ namespace League_of_Legends_Counterpicks
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "240198";
+                ad.AdUnitId = "240174";
                 ad.Style = Application.Current.Resources["HorizontalAd"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();

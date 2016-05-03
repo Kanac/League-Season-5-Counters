@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="62206AnthonyC.LeagueCounterpicks" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2016.8.0.134" />
+  <Identity Name="62206AnthonyC.LeagueCounterpicks" Publisher="CN=F30DC63F-6CBF-4542-8D92-E93F173C760F" Version="2016.8.0.135" />
   <mp:PhoneIdentity PhoneProductId="a29b2218-1da2-4e4b-87e2-a8a45d18cf71" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>League of Legends ✔ Pro</DisplayName>

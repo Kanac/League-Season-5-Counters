@@ -407,7 +407,7 @@
         <Grid Grid.Row="3" Margin="0,79,0,0" x:Name="AdGrid">
         </Grid>
         <Grid Grid.Row="3" Name="AdGrid2">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdNormal}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="240202" />
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdNormal}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="240198" />
         </Grid>
 
         <Pivot x:Name="MainPivot"
