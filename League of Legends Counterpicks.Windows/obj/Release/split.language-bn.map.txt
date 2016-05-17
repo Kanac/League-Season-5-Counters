@@ -1,7 +1,0 @@
-﻿[ResourceMetadata]
-"ResourceId"			"split.language-bn"
-"ResourceDimensions"		"language-bn-in"
-"ResourceDimensions"		"language-bn-bd"
-
-[Files]
-"C:\Users\Anthony\Documents\Visual Studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\Release\split.language-bn.pri"			"resources.pri"

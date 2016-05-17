@@ -1,7 +1,0 @@
-﻿[ResourceMetadata]
-"ResourceId"			"split.language-de"
-"ResourceDimensions"		"language-de-de"
-"ResourceDimensions"		"language-de"
-
-[Files]
-"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\split.language-de.pri"			"resources.pri"

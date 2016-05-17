@@ -1,9 +1,0 @@
-﻿[ResourceMetadata]
-"ResourceId"			"filemap.language-zh-hant"
-"ResourceDimensions"		"language-zh-hant"
-
-[Files]
-"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\filemap.language-zh-hant.pri"			"resources.pri"
-"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\zh-Hant\System.Spatial.resources.dll"			"zh-Hant\System.Spatial.resources.dll"
-"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\zh-Hant\Microsoft.Data.OData.resources.dll"			"zh-Hant\Microsoft.Data.OData.resources.dll"
-"C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\obj\ARM\Release\PackageLayout\zh-Hant\Microsoft.Data.Edm.resources.dll"			"zh-Hant\Microsoft.Data.Edm.resources.dll"

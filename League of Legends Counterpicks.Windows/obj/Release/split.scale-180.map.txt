@@ -1,9 +1,0 @@
-﻿[ResourceMetadata]
-"ResourceId"			"split.scale-180"
-"ResourceDimensions"		"scale-180"
-
-[Files]
-"C:\Users\Anthony\Documents\Visual Studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\Release\split.scale-180.pri"			"resources.pri"
-"C:\Users\Anthony\Documents\Visual Studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\Release\PackageLayout\Assets\Square70x70Logo.scale-180.png"			"Assets\Square70x70Logo.scale-180.png"
-"C:\Users\Anthony\Documents\Visual Studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\Release\PackageLayout\Assets\SplashScreen.scale-180.png"			"Assets\SplashScreen.scale-180.png"
-"C:\Users\Anthony\Documents\Visual Studio 2013\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Windows\obj\Release\PackageLayout\Assets\Logo.scale-180.png"			"Assets\Logo.scale-180.png"
