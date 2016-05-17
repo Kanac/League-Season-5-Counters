@@ -5,6 +5,7 @@
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="DefaultViewModel" />
+    <RootPropertyPathName Name="AdVisibility" />
     <RootPropertyPathName Name="Score" />
     <RootPropertyPathName Name="CounterComments" />
     <RootPropertyPathName Name="Text" />
@@ -56,10 +57,10 @@
       <RootProperty Name="Style" />
       <RootProperty Name="IsAutoRefreshEnabled" />
       <RootProperty Name="AdUnitId" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="AutoRefreshIntervalInSeconds" />
+      <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="Loaded" />
-      <RootEvent Name="ErrorOccurred" />
-      <RootEvent Name="AdRefreshed" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.FontFamily" />
     <RootType FullName="Windows.UI.Xaml.Setter">
@@ -99,7 +100,7 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
-      <RootProperty Name="Resources" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Style" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="HorizontalAlignment" />

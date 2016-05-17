@@ -652,8 +652,6 @@ namespace League_of_Legends_Counterpicks.League_of_Legends_Counterpicks_XamlType
                     _otherProviders.Add(provider); 
                     provider = new global::QKit.QKit_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
                     _otherProviders.Add(provider); 
-                    provider = new global::SOMAWP81.SOMAWP81_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
-                    _otherProviders.Add(provider); 
                 }
                 return _otherProviders;
             }

@@ -11,7 +11,6 @@
   <file>\Microsoft.WindowsAzure.Storage.dll</file>
   <file>\Newtonsoft.Json.dll</file>
   <file>\QKit.dll</file>
-  <file>\SOMAWP81.dll</file>
   <file>\System.Net.Http.Extensions.dll</file>
   <file>\System.Net.Http.Primitives.dll</file>
   <file>\System.Spatial.dll</file>

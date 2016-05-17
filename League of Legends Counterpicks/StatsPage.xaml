@@ -35,14 +35,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="80"></RowDefinition>
         </Grid.RowDefinitions>
-
-        <Grid Grid.Row="4" Margin="0,79,0,0" x:Name="AdGrid">
-        </Grid>
-        <Grid Grid.Row="4" x:Name="AdGrid2">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdNormal}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="240177" />
-        </Grid>
 
         <StackPanel Visibility="{Binding LoadingVisibility}">
             <ProgressBar IsIndeterminate="True"></ProgressBar>
@@ -205,5 +198,11 @@
             </PivotItem>
         </Pivot>
 
+        <Grid x:Name="AdGrid" Grid.Row="3" Margin="0,0,0,-49" VerticalAlignment="Bottom">
+        </Grid>
+        <Grid Grid.Row="3" x:Name="AdGrid2">
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdSmall}" VerticalAlignment="Bottom"
+                          Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="240199" />
+        </Grid>
     </Grid>
 </Page>

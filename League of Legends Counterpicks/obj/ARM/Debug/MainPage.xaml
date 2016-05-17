@@ -28,14 +28,10 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid x:ConnectionId='5'                       >
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Assets/LoL.jpg"/>
         </Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="50" />
-        </Grid.RowDefinitions>
 
         <ScrollViewer>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -79,7 +75,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='32'                      Tag="All"></Button>
+                        <Button x:ConnectionId='11'                      Tag="All"></Button>
                         <TextBlock Text="All"></TextBlock>
                         <Ellipse Grid.Column="2">
                             <Ellipse.Fill>
@@ -96,7 +92,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='31'                      Tag="Assassin"></Button>
+                        <Button x:ConnectionId='10'                      Tag="Assassin"></Button>
                         <TextBlock Text="Assassin"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -113,7 +109,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='30'                      Tag="Fighter"></Button>
+                        <Button x:ConnectionId='9'                      Tag="Fighter"></Button>
                         <TextBlock Text="Fighter"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -130,7 +126,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='29'                      Tag="Mage"></Button>
+                        <Button x:ConnectionId='8'                      Tag="Mage"></Button>
                         <TextBlock Text="Mage"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -147,7 +143,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='28'                      Tag="Marksman"></Button>
+                        <Button x:ConnectionId='7'                      Tag="Marksman"></Button>
                         <TextBlock Text="Marksman"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -164,7 +160,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='27'                      Tag="Support"></Button>
+                        <Button x:ConnectionId='6'                      Tag="Support"></Button>
                         <TextBlock Text="Support"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -181,7 +177,7 @@
                             <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:ConnectionId='26'                      Tag="Tank"></Button>
+                        <Button x:ConnectionId='5'                      Tag="Tank"></Button>
                         <TextBlock Text="Tank"></TextBlock>
                         <Ellipse Grid.Column="1">
                             <Ellipse.Fill>
@@ -193,8 +189,7 @@
             </StackPanel>
         </ScrollViewer>
 
-        <StackPanel Grid.Row="1"
-                    VerticalAlignment="Bottom"
+        <StackPanel VerticalAlignment="Bottom"
                     HorizontalAlignment="Right"
                     Margin="0,0,5,0">
 
@@ -205,35 +200,11 @@
                        TextAlignment="Center" />
         </StackPanel>
 
-        <Grid Grid.Row="2" Margin="0,50,0,0" x:Name="AdGrid">
-            <Grid.Resources>
-                <Style TargetType="UI:AdControl">
-                    <Setter Property="Width" Value="1"></Setter>
-                </Style>
-            </Grid.Resources>
-            <UI:AdControl x:ConnectionId='7' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='8' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='9' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='10' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='11' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='12' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='13' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='14' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='15' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='16' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='17' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='18' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='19' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='20' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='21' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='22' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='23' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='24' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
-            <UI:AdControl x:ConnectionId='25' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
+        <Grid  x:Name="AdGrid"  Margin="0,0,0,-49" VerticalAlignment="Bottom">
         </Grid>
 
-        <Grid Grid.Row="2" Name="AdGrid2">
-            <UI:AdControl x:ConnectionId='6' ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAd}"                                                                                 IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="246264" />
+        <Grid  Name="AdGrid2" VerticalAlignment="Bottom">
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdSmall}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="240199"/>
         </Grid>
     </Grid>
 </Page>

@@ -66,9 +66,6 @@
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\packages\QKit.0.4.1\lib\wpa81\QKit.dll">
       <PackagePath>QKit.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\packages\SOMAW81_Package.1.1.6\lib\wpa81\SOMAWP81.dll">
-      <PackagePath>SOMAWP81.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\packages\Microsoft.Net.Http.2.2.29\lib\wpa81\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
     </AppxPackagedFile>
@@ -262,6 +259,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Ashe_Square_0.png">
       <PackagePath>Assets\Ashe_Square_0.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\AurelionSol_Square_0.png">
+      <PackagePath>Assets\AurelionSol_Square_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks.Shared\Assets\Azir_Square_0.png">
       <PackagePath>Assets\Azir_Square_0.png</PackagePath>
@@ -691,18 +691,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\packages\QKit.0.4.1\lib\wpa81\QKit\Themes\Generic.xbf">
       <PackagePath>QKit\Themes\Generic.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\packages\SOMAW81_Package.1.1.6\lib\wpa81\SOMAWP81\AdViewer.xbf">
-      <PackagePath>SOMAWP81\AdViewer.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\packages\SOMAW81_Package.1.1.6\lib\wpa81\SOMAWP81\SomaAdViewer-300x250.xbf">
-      <PackagePath>SOMAWP81\SomaAdViewer-300x250.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\packages\SOMAW81_Package.1.1.6\lib\wpa81\SOMAWP81\SomaAdViewer.xbf">
-      <PackagePath>SOMAWP81\SomaAdViewer.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\packages\SOMAW81_Package.1.1.6\lib\wpa81\SOMAWP81\SOMAWP81.xr.xml">
-      <PackagePath>SOMAWP81\SOMAWP81.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

@@ -33,7 +33,6 @@ namespace League_of_Legends_Counterpicks
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-        private InterstitialAd MyVideoAd = new InterstitialAd();
   
         public MainPage()
         {
@@ -48,33 +47,6 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
             DefaultViewModel["AdVisibility"] = App.licenseInformation.ProductLicenses["AdRemoval"].IsActive ? Visibility.Collapsed : Visibility.Visible;
-
-            //if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-            //{
-            //    MyVideoAd.RequestAd(AdType.Video, "bf747944-c75c-4f2a-a027-7c159b32261d", "256751");
-            //    MyVideoAd.AdReady += MyVideoAd_AdReady;
-            //    MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccured;
-
-            //}
-        }
-        private void MyVideoAd_ErrorOccured(object sender, AdErrorEventArgs e)
-        {
-        }
-
-        private void MyVideoAd_AdReady(object sender, object e)
-        {
-            //InterstitialAd video = sender as InterstitialAd;
-            //if (!App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-            //{
-            //    if (localSettings.Values["MainViews"] == null || ((int)(localSettings.Values["MainViews"])) % 2 != 0 || App.firstLoad)
-            //    {
-            //        video.Show();
-            //        localSettings.Values["MainViews"] = 0;
-            //        App.firstLoad = false;
-            //    }
-
-            //    localSettings.Values["MainViews"] = ((int)(localSettings.Values["MainViews"])) + 1;
-            //}
         }
 
         /// <summary>
@@ -356,8 +328,8 @@ namespace League_of_Legends_Counterpicks
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "240177";
-                ad.Style = Application.Current.Resources["HorizontalAd"] as Style;
+                ad.AdUnitId = "240199";
+                ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();
                 ad.IsAutoRefreshEnabled = true;
