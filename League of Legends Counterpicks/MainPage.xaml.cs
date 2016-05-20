@@ -229,7 +229,6 @@ namespace League_of_Legends_Counterpicks
 
         private void Role_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-            var test = (sender as Button);
             Frame.Navigate(typeof(RolePage), (sender as Button).Tag);
         }
 
@@ -270,8 +269,6 @@ namespace League_of_Legends_Counterpicks
         {
             // Terminate the ads to clear from memory immediately rather than relying on garbage collector 
             AdGrid.Children.Clear();  
-            AdGrid2.Children.Clear();
-
             base.OnNavigatingFrom(e);
 
         }
@@ -328,12 +325,14 @@ namespace League_of_Legends_Counterpicks
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "298851";
+                ad.AdUnitId = "299204";
                 ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();
                 ad.IsAutoRefreshEnabled = true;
                 ad.AutoRefreshIntervalInSeconds = 30;
+                ad.VerticalAlignment = VerticalAlignment.Bottom;
+                ad.Margin = new Thickness(0, 0, 0, -45);
                 AdGrid.Children.Add(ad);
             }
         }

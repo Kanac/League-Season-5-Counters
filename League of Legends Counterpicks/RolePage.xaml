@@ -143,11 +143,9 @@
             </Grid>
         </Grid>
 
-        <Grid Margin="0,0,0,-49" x:Name="AdGrid" VerticalAlignment="Bottom">
-        </Grid>
-        <Grid Name="AdGrid2">
+        <Grid Name="AdGrid">
             <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdSmall}" VerticalAlignment="Bottom"
-                          Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="298851" />
+                          Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="299204" />
         </Grid>
     </Grid>
 </Page>

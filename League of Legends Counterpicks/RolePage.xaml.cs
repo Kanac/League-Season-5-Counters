@@ -172,7 +172,6 @@ namespace League_of_Legends_Counterpicks
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             AdGrid.Children.Clear();
-            AdGrid2.Children.Clear();
             GC.Collect();
             GC.WaitForPendingFinalizers();
             GC.Collect();
@@ -359,12 +358,14 @@ namespace League_of_Legends_Counterpicks
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "298851";
+                ad.AdUnitId = "299204";
                 ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();
                 ad.IsAutoRefreshEnabled = true;
                 ad.AutoRefreshIntervalInSeconds = 30;
+                ad.VerticalAlignment = VerticalAlignment.Bottom;
+                ad.Margin = new Thickness(0, 0, 0, -45);
                 AdGrid.Children.Add(ad);
             }
         }
