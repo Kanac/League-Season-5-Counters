@@ -314,7 +314,7 @@ namespace League_of_Legends_Counterpicks
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
                 return;
 
-            int count = 35;
+            int count = 10;
             var limitMb = MemoryManager.AppMemoryUsageLimit / (1024*1024);
             if (limitMb > 700)
             {
@@ -325,14 +325,13 @@ namespace League_of_Legends_Counterpicks
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "299204";
+                ad.AdUnitId = "299479";
                 ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();
                 ad.IsAutoRefreshEnabled = true;
                 ad.AutoRefreshIntervalInSeconds = 30;
-                ad.VerticalAlignment = VerticalAlignment.Bottom;
-                ad.Margin = new Thickness(0, 0, 0, -45);
+                ad.Margin = new Thickness(0, 49, 0, 0);
                 AdGrid.Children.Add(ad);
             }
         }

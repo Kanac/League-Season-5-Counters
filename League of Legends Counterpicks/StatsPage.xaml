@@ -35,6 +35,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
         <StackPanel Visibility="{Binding LoadingVisibility}">
@@ -198,8 +199,8 @@
             </PivotItem>
         </Pivot>
 
-        <Grid x:Name="AdGrid" Grid.Row="3">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdSmall}" VerticalAlignment="Bottom"
+        <Grid x:Name="AdGrid" Grid.Row="4">
+            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdSmall}" 
                           Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="240199" />
         </Grid>
     </Grid>
