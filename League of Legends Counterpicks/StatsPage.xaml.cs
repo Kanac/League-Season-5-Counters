@@ -143,6 +143,7 @@ namespace League_of_Legends_Counterpicks
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             AdGrid.Children.Clear();
+            AdGrid2.Children.Clear();
             base.OnNavigatingFrom(e);
         }
 
@@ -164,14 +165,13 @@ namespace League_of_Legends_Counterpicks
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "299479";
+                ad.AdUnitId = "300199";
                 ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();
                 ad.IsAutoRefreshEnabled = true;
                 ad.AutoRefreshIntervalInSeconds = 30;
-                ad.Margin = new Thickness(0, 45, 0, 0);
-                AdGrid.Children.Add(ad);
+                AdGrid2.Children.Add(ad);
             }
         }
     }

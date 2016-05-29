@@ -142,9 +142,12 @@
                 </q:AlphaJumpList>
             </Grid>
 
+        <Grid Name="AdGrid2" Grid.Row="3" Margin="0,48,0,0">
+        </Grid>
+        
         <Grid Name="AdGrid" Grid.Row="3">
             <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdSmall}" 
-                          Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="299479"/>
+                          Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30" AdUnitId="300199"/>
         </Grid>
     </Grid>
 </Page>
