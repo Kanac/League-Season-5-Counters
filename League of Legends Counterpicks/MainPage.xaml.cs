@@ -116,7 +116,7 @@ namespace League_of_Legends_Counterpicks
             XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
 
             XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
-            toastTextElements[1].AppendChild(toastXml.CreateTextNode("Season 6 Aurelion Sol data has arrived!"));
+            toastTextElements[1].AppendChild(toastXml.CreateTextNode("Season 6 Taliyah data has arrived!"));
 
             ToastNotification toast = new ToastNotification(toastXml);
             toast.Tag = "FeatureToast";
@@ -315,7 +315,7 @@ namespace League_of_Legends_Counterpicks
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
                 return;
 
-            int count = 40;
+            int count = 50;
             var limitMb = MemoryManager.AppMemoryUsageLimit / (1024*1024);
             if (limitMb > 700)
             {
@@ -326,7 +326,7 @@ namespace League_of_Legends_Counterpicks
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "249556";
+                ad.AdUnitId = "304061";
                 ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();

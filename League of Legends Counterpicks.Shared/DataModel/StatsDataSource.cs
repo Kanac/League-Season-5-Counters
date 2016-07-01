@@ -109,16 +109,17 @@ namespace League_of_Legends_Counterpicks.DataModel
                 return null;
         }
 
-        public async static Task<Champions> GetChampionsAsync() {
+        public async static Task<Champions> GetChampionsAsync()
+        {
             if (Champions != null && Champions.ChampionInfos != null)
                 return Champions;
 
             Champions = new Champions();
             try
             {
-                Uri dataUri = new Uri("ms-appx:///DataModel/Champions.json");      
-                StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);       
-                string jsonText = await FileIO.ReadTextAsync(file);     
+                Uri dataUri = new Uri("ms-appx:///DataModel/Champions.json");
+                StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);
+                string jsonText = await FileIO.ReadTextAsync(file);
                 JObject champsJson = JObject.Parse(jsonText);
                 Champions = JsonConvert.DeserializeObject<Champions>(champsJson.ToString());
                 return Champions;
@@ -139,7 +140,7 @@ namespace League_of_Legends_Counterpicks.DataModel
                 ErrorMessage = e.Message;
                 return null;
             }
-            }
+        }
 
         public static List<string> GetRoles() {
             return new List<string>(){"All", "Assassin", "Fighter", "Mage", "Marksman", "Support", "Tank"};

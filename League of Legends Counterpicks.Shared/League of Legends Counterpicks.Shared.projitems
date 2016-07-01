@@ -81,6 +81,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\MonkeyKing_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\RekSai_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\TahmKench_Square_0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Taliyah_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\TwistedFate_Square_0.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\upvote.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\upvoteblank.png" />
