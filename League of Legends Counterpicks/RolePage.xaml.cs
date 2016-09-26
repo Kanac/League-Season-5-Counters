@@ -83,12 +83,12 @@ namespace League_of_Legends_Counterpicks
                 Application.Current.Exit();
             }
 
-            var GroupedChampions = champions.ChampionInfos.ToAlphaGroups(x => x.Value.Name);
+            var GroupedChampions = champions.ChampionInfos.ToAlphaGroups(x => x.Value.Name); 
             DefaultViewModel["GroupedChampions"] = GroupedChampions;
 
             // Set up roles
             string selectedRole = (string)e.NavigationParameter;
-            DefaultViewModel["Roles"] = StatsDataSource.GetRoles();
+            DefaultViewModel["Roles"] = StatsDataSource.GetRoles(); 
             DefaultViewModel["SelectedRole"] = selectedRole;
 
 
@@ -344,18 +344,18 @@ namespace League_of_Legends_Counterpicks
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
                 return;
 
-            int count = 50;
+            int count = 0;
             var limitMb = MemoryManager.AppMemoryUsageLimit / (1024 * 1024);
             if (limitMb > 700)
             {
-                count = 72;
+                count = 0;
             }
 
             for (int i = 0; i < count; ++i)
             {
                 AdControl ad = new AdControl();
                 ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "242841";
+                ad.AdUnitId = "312169";
                 ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
                 ad.IsAutoRefreshEnabled = false;
                 ad.Refresh();

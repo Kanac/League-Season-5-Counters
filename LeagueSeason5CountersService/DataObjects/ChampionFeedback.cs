@@ -16,7 +16,7 @@ namespace LeagueSeason5CountersService.DataObjects
             Counters = new List<Counter>();
         }
         [Index(IsUnique = true)]
-        [StringLength(200)] 
+        [StringLength(200)]
         public string Name { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Counter> Counters { get; set; }

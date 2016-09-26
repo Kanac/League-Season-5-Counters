@@ -12,7 +12,7 @@ namespace LeagueSeason5CountersService.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(LeagueSeason5CountersService.Models.LeagueSeason5CountersContext context)

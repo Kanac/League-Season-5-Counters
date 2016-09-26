@@ -346,6 +346,10 @@
     <Compile Include="Migrations\201507280827175_UniqueName.Designer.cs">
       <DependentUpon>201507280827175_UniqueName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609260425429_lalatest.cs" />
+    <Compile Include="Migrations\201609260425429_lalatest.Designer.cs">
+      <DependentUpon>201609260425429_lalatest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LeagueSeason5CountersContext.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
@@ -356,7 +360,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -365,7 +371,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Performance\Microsoft.ServiceBus.MessagingPerformanceCounters.man" />
@@ -415,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507280827175_UniqueName.resx">
       <DependentUpon>201507280827175_UniqueName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609260425429_lalatest.resx">
+      <DependentUpon>201609260425429_lalatest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
