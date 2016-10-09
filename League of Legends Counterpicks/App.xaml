@@ -18,13 +18,9 @@
                                 ImageSource="Assets/LoL.jpg" 
                                 Opacity="0.8"/>
                 </ResourceDictionary>
-                
+
             </ResourceDictionary.ThemeDictionaries>
 
-            <Style TargetType="TextBlock">
-                <Setter Property="Foreground" Value="White"></Setter>
-            </Style>
-            
             <Style TargetType="WindowsPhone81:AdMediatorControl" x:Key="HorizontalAdMediator">
                 <Setter Property="HorizontalAlignment" Value="Center"></Setter>
                 <Setter Property="VerticalAlignment" Value="Center"></Setter>

@@ -91,11 +91,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -199,6 +199,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.3.0.2\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
       <Private>True</Private>
@@ -262,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdUnitController.cs" />
     <Compile Include="Controllers\ChampionFeedbackController.cs" />
     <Compile Include="Controllers\CommentController.cs">
       <SubType>Code</SubType>
@@ -274,6 +276,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CustomEntityData\CustomEntityData.cs" />
+    <Compile Include="DataObjects\AdUnit.cs" />
     <Compile Include="DataObjects\ChampionFeedback.cs" />
     <Compile Include="DataObjects\ChampionFeedbackDto.cs" />
     <Compile Include="DataObjects\Comment.cs" />
@@ -346,12 +349,17 @@
     <Compile Include="Migrations\201507280827175_UniqueName.Designer.cs">
       <DependentUpon>201507280827175_UniqueName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201609260425429_lalatest.cs" />
-    <Compile Include="Migrations\201609260425429_lalatest.Designer.cs">
-      <DependentUpon>201609260425429_lalatest.cs</DependentUpon>
+    <Compile Include="Migrations\201610082335244_AdUnitInuse.cs" />
+    <Compile Include="Migrations\201610082335244_AdUnitInuse.Designer.cs">
+      <DependentUpon>201610082335244_AdUnitInuse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610090309170_AdUnitRemoveIdName.cs" />
+    <Compile Include="Migrations\201610090309170_AdUnitRemoveIdName.Designer.cs">
+      <DependentUpon>201610090309170_AdUnitRemoveIdName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LeagueSeason5CountersContext.cs" />
+    <Compile Include="ScheduledJobs\AdJob.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -424,8 +432,11 @@
     <EmbeddedResource Include="Migrations\201507280827175_UniqueName.resx">
       <DependentUpon>201507280827175_UniqueName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609260425429_lalatest.resx">
-      <DependentUpon>201609260425429_lalatest.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610082335244_AdUnitInuse.resx">
+      <DependentUpon>201610082335244_AdUnitInuse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610090309170_AdUnitRemoveIdName.resx">
+      <DependentUpon>201610090309170_AdUnitRemoveIdName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

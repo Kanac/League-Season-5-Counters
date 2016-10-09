@@ -12,42 +12,39 @@ namespace LeagueSeason5CountersService.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(LeagueSeason5CountersService.Models.LeagueSeason5CountersContext context)
         {
+            if (context.AdUnits.Count() != 0)
+            {
+                base.Seed(context);
+                return;
+            }
 
-            //List<UserRating> userRatings = new List<UserRating>{
-            //    new UserRating {Id = Guid.NewGuid().ToString(), Score=1, UniqueUser="123"},
-            //    new UserRating {Id = Guid.NewGuid().ToString(), Score=-1, UniqueUser="456"},
-            //    new UserRating {Id = Guid.NewGuid().ToString(), Score=-1, UniqueUser="789"},
+            string appId = "bf747944-c75c-4f2a-a027-7c159b32261d";
+            DateTime date = DateTime.Now;
 
-            //};
+            List<int> idList = new List<int>
+            {
+                240175, 242815, 300199, 242100, 239130, 242804, 240199,
+                240176, 305132, 249556, 242820, 240202, 242801, 244459,
+                302450, 314536, 240174, 299204, 244417, 244435,
+                244415, 244429, 244443, 244423, 244451, 244431, 244437,
+                244421, 244413, 244427, 236727, 244425, 242101, 240170,
+                304061, 240177, 244457, 244411, 244441,
+                244433, 244419, 239138, 244461, 244449, 242841,
+                240171, 312169, 244439, 244445
+            };
 
-            //List<Comment> comments = new List<Comment>
-            //{
-            //    new Comment {Id = Guid.NewGuid().ToString(), Score = 0, Text = "Test1", User="Ant", UserRatings = new Collection<UserRating>{userRatings[0]}},
-            //    new Comment {Id = Guid.NewGuid().ToString(), Score = 0, Text = "Test2", User="Bob", UserRatings = new Collection<UserRating>{userRatings[1]}},
-            //    new Comment {Id = Guid.NewGuid().ToString(), Score = 0, Text = "Test3", User="Charlie", UserRatings = new Collection<UserRating>{userRatings[2]}}
+            foreach (int id in idList)
+            {
+                AdUnit adUnit = new AdUnit { Id = Guid.NewGuid().ToString(), Ad = id, App = appId, LastUseddate = date, InUse = false };
+                context.AdUnits.AddOrUpdate(adUnit);
+            }
 
-
-            //};
-
-            //List<ChampionFeedback> championFeedbackCollection = new List<ChampionFeedback>
-            //{
-            //    new ChampionFeedback { Id = Guid.NewGuid().ToString(), Name = "Taric", Comments = new Collection<Comment>{comments[0]}},
-            //    new ChampionFeedback { Id = Guid.NewGuid().ToString(), Name = "Alistar", Comments = new Collection<Comment>{comments[1]}},
-            //    new ChampionFeedback { Id = Guid.NewGuid().ToString(), Name = "Warwick", Comments = new Collection<Comment>{comments[2]}},
-
-            //};
-
-            //foreach (ChampionFeedback championFeedback in championFeedbackCollection)
-            //{
-            //    context.ChampionFeedbacks.AddOrUpdate(championFeedback);
-            //}
-
-            //base.Seed(context);
+            base.Seed(context);
         }
     }
 }

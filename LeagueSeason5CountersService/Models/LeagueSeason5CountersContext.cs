@@ -52,6 +52,8 @@ namespace LeagueSeason5CountersService.Models
         public System.Data.Entity.DbSet<LeagueSeason5CountersService.DataObjects.CounterComment> CounterComments { get; set; }
 
         public System.Data.Entity.DbSet<LeagueSeason5CountersService.DataObjects.CounterCommentRating> CounterCommentRatings { get; set; }
+
+        public System.Data.Entity.DbSet<LeagueSeason5CountersService.DataObjects.AdUnit> AdUnits { get; set; }
     }
 
 }

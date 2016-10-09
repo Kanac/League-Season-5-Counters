@@ -13,6 +13,7 @@ using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Email;
 using Windows.ApplicationModel;
 using League_of_Legends_Counterpicks.Advertisement;
+using League_of_Legends_Counterpicks.Helper;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Media;
 using Windows.UI;
@@ -47,6 +48,8 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
             DefaultViewModel["AdVisibility"] = App.licenseInformation.ProductLicenses["AdRemoval"].IsActive ? Visibility.Collapsed : Visibility.Visible;
+
+            this.RequestedTheme = ElementTheme.Dark;
         }
 
         /// <summary>
@@ -82,7 +85,10 @@ namespace League_of_Legends_Counterpicks
             // Check for internet connection
             App.IsInternetAvailable();
 
-            CreateAdUnits();
+            int id = await AdData.GetAdId();
+            int count = MemoryManager.AppMemoryUsageLimit / (1024 * 1024) > 700 ? 55 : 40;
+            HelperMethods.CreateSingleAdUnit(id, HelperMethods.appId, AdGrid);
+            HelperMethods.CreateAdUnits(id, HelperMethods.appId, AdGrid2, count);
 
             // Load all the roles (which contains all the champions) from the json file 
             var roles = StatsDataSource.GetRoles();
@@ -116,7 +122,7 @@ namespace League_of_Legends_Counterpicks
             XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
 
             XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
-            toastTextElements[1].AppendChild(toastXml.CreateTextNode("Season 6 Taliyah data has arrived!"));
+            toastTextElements[1].AppendChild(toastXml.CreateTextNode("Season 6 Kled data has arrived!"));
 
             ToastNotification toast = new ToastNotification(toastXml);
             toast.Tag = "FeatureToast";
@@ -308,32 +314,6 @@ namespace League_of_Legends_Counterpicks
         private void AdBlock_Click(object sender, RoutedEventArgs e)
         {
             AdRemover.Purchase();
-        }
-
-        private void CreateAdUnits()
-        {
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-                return;
-
-            int count = 0;
-            var limitMb = MemoryManager.AppMemoryUsageLimit / (1024*1024);
-            if (limitMb > 700)
-            {
-                count = 0;
-            }
-
-            for (int i = 0; i < count; ++i)
-            {
-                AdControl ad = new AdControl();
-                ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "312169";
-                ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
-                ad.IsAutoRefreshEnabled = false;
-                ad.Refresh();
-                ad.IsAutoRefreshEnabled = true;
-                ad.AutoRefreshIntervalInSeconds = 30;
-                AdGrid2.Children.Add(ad);
-            }
         }
     }
 }

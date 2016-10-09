@@ -20,6 +20,7 @@ using League_of_Legends_Counterpicks.DataModel;
 using Microsoft.Advertising.WinRT.UI;
 using Microsoft.AdMediator.WindowsPhone81;
 using Windows.System;
+using League_of_Legends_Counterpicks.Helper;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -42,6 +43,8 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
             DefaultViewModel["AdVisibility"] = App.licenseInformation.ProductLicenses["AdRemoval"].IsActive ? Visibility.Collapsed : Visibility.Visible;
+
+            this.RequestedTheme = ElementTheme.Dark;
         }
 
         /// <summary>
@@ -77,7 +80,10 @@ namespace League_of_Legends_Counterpicks
             // Check for internet connection
             App.IsInternetAvailable();
 
-            CreateAdUnits();
+            int id = await AdData.GetAdId();
+            int count = MemoryManager.AppMemoryUsageLimit / (1024 * 1024) > 700 ? 30 : 20;
+            HelperMethods.CreateSingleAdUnit(id, HelperMethods.appId, AdGrid);
+            HelperMethods.CreateAdUnits(id, HelperMethods.appId, AdGrid2, count);
 
             string champKey = e.NavigationParameter as string;
             var championData = await StatsDataSource.GetCounterStatsAsync(champKey);
@@ -148,31 +154,6 @@ namespace League_of_Legends_Counterpicks
         }
 
         #endregion
-
-        private void CreateAdUnits()
-        {
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-                return;
-
-            int count = 0;
-            var limitMb = MemoryManager.AppMemoryUsageLimit / (1024 * 1024);
-            if (limitMb > 700)
-            {
-                count = 0;
-            }
-
-            for (int i = 0; i < count; ++i)
-            {
-                AdControl ad = new AdControl();
-                ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "312169";
-                ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
-                ad.IsAutoRefreshEnabled = false;
-                ad.Refresh();
-                ad.IsAutoRefreshEnabled = true;
-                ad.AutoRefreshIntervalInSeconds = 30;
-                AdGrid2.Children.Add(ad);
-            }
-        }
+        
     }
 }

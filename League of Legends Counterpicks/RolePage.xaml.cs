@@ -1,6 +1,7 @@
 ﻿using League_of_Legends_Counterpicks.Advertisement;
 using League_of_Legends_Counterpicks.Common;
 using League_of_Legends_Counterpicks.DataModel;
+using League_of_Legends_Counterpicks.Helper;
 using Microsoft.AdMediator.WindowsPhone81;
 using Microsoft.Advertising.WinRT.UI;
 using QKit;
@@ -37,6 +38,8 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
             DefaultViewModel["AdVisibility"] = App.licenseInformation.ProductLicenses["AdRemoval"].IsActive ? Visibility.Collapsed : Visibility.Visible;
+
+            this.RequestedTheme = ElementTheme.Dark;
         }
 
         /// <summary>
@@ -71,7 +74,10 @@ namespace League_of_Legends_Counterpicks
         {
             App.IsInternetAvailable();
 
-            CreateAdUnits();
+            int id = await AdData.GetAdId();
+            int count = MemoryManager.AppMemoryUsageLimit / (1024 * 1024) > 700 ? 55 : 40;
+            HelperMethods.CreateSingleAdUnit(id, HelperMethods.appId, AdGrid);
+            HelperMethods.CreateAdUnits(id, HelperMethods.appId, AdGrid2, count);
 
             reviewApp();
 
@@ -98,12 +104,16 @@ namespace League_of_Legends_Counterpicks
                 // Do a null check incase of race condition with UI, and raise a flag incase UI hasn't loaded yet for its load to set visibility
                 isInitialAllView = false;
                 if (JumpList != null)
+                {
                     JumpList.Visibility = Visibility.Collapsed;
+                }
 
                 DefaultViewModel["Filter"] = champions.ChampionInfos.Where(x => x.Value.Tags[0] == selectedRole).OrderBy(x => x.Value.Name);
 
                 if (FilterGridView != null)
+                {
                     FilterGridView.Visibility = Visibility.Visible;
+                }
             }
         }
         
@@ -337,32 +347,6 @@ namespace League_of_Legends_Counterpicks
             test += "\nApp memory usage limit - " + AppMemoryUsageLimitUlong.ToString();
             var message = new MessageDialog(test);
             await message.ShowAsync();
-        }
-
-        private void CreateAdUnits()
-        {
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-                return;
-
-            int count = 0;
-            var limitMb = MemoryManager.AppMemoryUsageLimit / (1024 * 1024);
-            if (limitMb > 700)
-            {
-                count = 0;
-            }
-
-            for (int i = 0; i < count; ++i)
-            {
-                AdControl ad = new AdControl();
-                ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "312169";
-                ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
-                ad.IsAutoRefreshEnabled = false;
-                ad.Refresh();
-                ad.IsAutoRefreshEnabled = true;
-                ad.AutoRefreshIntervalInSeconds = 30;
-                AdGrid2.Children.Add(ad);
-            }
         }
     }
 }

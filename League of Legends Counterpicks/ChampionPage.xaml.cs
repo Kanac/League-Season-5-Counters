@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Media;
 using Windows.UI;
 using Microsoft.Advertising.WinRT.UI;
+using League_of_Legends_Counterpicks.Helper;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkID=391641
@@ -43,6 +44,8 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
             DefaultViewModel["AdVisibility"] = App.licenseInformation.ProductLicenses["AdRemoval"].IsActive ? Visibility.Collapsed : Visibility.Visible;
+
+            this.RequestedTheme = ElementTheme.Dark;
         }
 
         /// <summary>
@@ -78,7 +81,10 @@ namespace League_of_Legends_Counterpicks
         {
             App.IsInternetAvailable();
 
-            CreateAdUnits();
+            int id = await AdData.GetAdId();
+            int count = MemoryManager.AppMemoryUsageLimit / (1024 * 1024) > 700 ? 55 : 40;
+            HelperMethods.CreateSingleAdUnit(id, HelperMethods.appId, AdGrid);
+            HelperMethods.CreateAdUnits(id, HelperMethods.appId, AdGrid2, count);
 
             // Setup the underlying UI 
             string champKey = (string)e.NavigationParameter;
@@ -838,32 +844,6 @@ namespace League_of_Legends_Counterpicks
                 {
                     downvote.Source = new BitmapImage(new Uri("ms-appx:///Assets/downvote.png", UriKind.Absolute));
                 }
-            }
-        }
-    
-        private void CreateAdUnits()
-        {
-            if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
-                return;
-
-            int count = 0;
-            var limitMb = MemoryManager.AppMemoryUsageLimit / (1024 * 1024);
-            if (limitMb > 700)
-            {
-                count = 0;
-            }
-
-            for (int i = 0; i < count; ++i)
-            {
-                AdControl ad = new AdControl();
-                ad.ApplicationId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-                ad.AdUnitId = "312169";
-                ad.Style = Application.Current.Resources["HorizontalAdSmall"] as Style;
-                ad.IsAutoRefreshEnabled = false;
-                ad.Refresh();
-                ad.IsAutoRefreshEnabled = true;
-                ad.AutoRefreshIntervalInSeconds = 30;
-                AdGrid2.Children.Add(ad);
             }
         }
     }

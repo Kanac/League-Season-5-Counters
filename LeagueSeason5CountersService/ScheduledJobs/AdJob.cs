@@ -6,13 +6,14 @@ using Microsoft.WindowsAzure.Mobile.Service.ScheduledJobs;
 using System.Threading;
 using System;
 using System.Linq;
+using LeagueSeason5CountersService.DataObjects;
 
 namespace LeagueSeason5CountersService
 {
     // A simple scheduled job which can be invoked manually by submitting an HTTP
-    // POST request to the path "/jobs/sample".
+    // POST request to the path "/jobs/Ad".
 
-    public class SampleJob : ScheduledJob
+    public class AdJob : ScheduledJob
     {
         private LeagueSeason5CountersContext context;
 
@@ -24,16 +25,16 @@ namespace LeagueSeason5CountersService
         }
         public override Task ExecuteAsync()
         {
-            Services.Log.Info("Purging old records");
-            //var monthAgo = DateTimeOffset.UtcNow.AddDays(-3);
+            Services.Log.Info("Change Ad unit");
 
-            //var toDelete1 = context.ChampionFeedbacks.Where(x => x.Deleted == true && x.UpdatedAt <= monthAgo).ToArray();
-            //var toDelete2 = context.Comments.Where(x => x.Deleted == true && x.UpdatedAt <= monthAgo).ToArray();
-            //var toDelete3 = context.UserRatings.Where(x => x.Deleted == true && x.UpdatedAt <= monthAgo).ToArray();
-            //context.ChampionFeedbacks.RemoveRange(toDelete1);
-            //context.Comments.RemoveRange(toDelete2);
-            //context.UserRatings.RemoveRange(toDelete3);
-            //context.SaveChanges();
+            AdUnit currAdUnit = context.AdUnits.Where(x => x.InUse).FirstOrDefault();
+            currAdUnit.LastUseddate = DateTime.Now;
+            currAdUnit.InUse = false;
+            AdUnit nextAdUnit = context.AdUnits.OrderBy(x => x.LastUseddate).FirstOrDefault();
+            nextAdUnit.LastUseddate = DateTime.Now;
+            nextAdUnit.InUse = true;
+
+            context.SaveChanges();
 
             return Task.FromResult(true);
         }

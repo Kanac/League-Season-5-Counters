@@ -171,9 +171,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\PercentageFormat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\RoleConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StatsConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\AdData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\CommentDataSource.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\DataSource.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\StatsDataSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\HelperMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw" />

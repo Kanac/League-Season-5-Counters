@@ -26,6 +26,7 @@ using Windows.ApplicationModel.Store;
 using System.Diagnostics;
 using Windows.Networking.Connectivity;
 using Windows.UI.Popups;
+using League_of_Legends_Counterpicks.DataModel;
 
 
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -75,7 +76,6 @@ namespace League_of_Legends_Counterpicks
             licenseInformation = CurrentApp.LicenseInformation;
 #endif
             this.UnhandledException += this.Application_UnhandledException;
-
         }
 
         private void Application_UnhandledException(object sender, UnhandledExceptionEventArgs e)
@@ -159,6 +159,9 @@ namespace League_of_Legends_Counterpicks
 
             // Ensure the current window is active.
             Window.Current.Activate();
+
+            await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().HideAsync();
+            //await AdData.GetAdId();
         }
 
         /// <summary>

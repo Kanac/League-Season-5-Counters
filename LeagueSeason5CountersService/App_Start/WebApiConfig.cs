@@ -61,18 +61,7 @@ namespace LeagueSeason5CountersService
     {
         protected override void Seed(LeagueSeason5CountersContext context)
         {
-            //List<ChampionFeedback> championFeedbackCollection = new List<ChampionFeedback>
-            //{
-            //    new ChampionFeedback { Id = Guid.NewGuid().ToString(), Name = "Ezreal" },
-            //    new ChampionFeedback { Id = Guid.NewGuid().ToString(), Name = "Ahri" }
 
-            //};
-            //foreach (ChampionFeedback championFeedback in championFeedbackCollection)
-            //{
-            //    context.ChampionFeedbacks.Add(championFeedback);
-            //}
-
-            //base.Seed(context);
         }
     }
 }

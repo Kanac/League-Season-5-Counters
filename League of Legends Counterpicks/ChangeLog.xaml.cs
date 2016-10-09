@@ -40,6 +40,8 @@ namespace League_of_Legends_Counterpicks
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+
+            this.RequestedTheme = ElementTheme.Dark;
         }
 
         /// <summary>

@@ -48,6 +48,7 @@
                         <Setter Property="VerticalAlignment" Value="Center"></Setter>
                         <Setter Property="HorizontalAlignment" Value="Center"></Setter>
                         <Setter Property="IsHitTestVisible" Value="False"></Setter>
+                        <Setter Property="Foreground" Value="White"></Setter>
                     </Style>
                     <Style TargetType="Ellipse">
                         <Setter Property="Width" Value="50"></Setter>
@@ -209,7 +210,6 @@
         </Grid>
         
         <Grid Name="AdGrid" Grid.Row="1">
-            <UI:AdControl ApplicationId="bf747944-c75c-4f2a-a027-7c159b32261d" Style="{StaticResource HorizontalAdSmall}" Visibility="{Binding AdVisibility}" IsAutoRefreshEnabled="True" AutoRefreshIntervalInSeconds="30"  AdUnitId="312169"/>
         </Grid>
     </Grid>
 </Page>
