@@ -1,2 +1,2 @@
-MainPackage=C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\ARM\Release\League of Legends Counterpicks_2016.8.0.170_ARM.appx
-SymbolPackage=C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\AppPackages\League of Legends Counterpicks_2016.8.0.170_Test\League of Legends Counterpicks_2016.8.0.170_ARM.appxsym
+MainPackage=C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\bin\ARM\Release\League of Legends Counterpicks_2016.8.0.172_ARM.appx
+SymbolPackage=C:\Users\Anthony C\Documents\Visual Studio 2015\Projects\League of Legends Counterpicks\League of Legends Counterpicks\AppPackages\League of Legends Counterpicks_2016.8.0.172_Test\League of Legends Counterpicks_2016.8.0.172_ARM.appxsym

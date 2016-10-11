@@ -7,6 +7,7 @@ using System.Threading;
 using System;
 using System.Linq;
 using LeagueSeason5CountersService.DataObjects;
+using System.Web.Configuration;
 
 namespace LeagueSeason5CountersService
 {
@@ -27,16 +28,29 @@ namespace LeagueSeason5CountersService
         {
             Services.Log.Info("Change Ad unit");
 
-            AdUnit currAdUnit = context.AdUnits.Where(x => x.InUse).FirstOrDefault();
-            currAdUnit.LastUseddate = DateTime.Now;
-            currAdUnit.InUse = false;
-            AdUnit nextAdUnit = context.AdUnits.OrderBy(x => x.LastUseddate).FirstOrDefault();
-            nextAdUnit.LastUseddate = DateTime.Now;
-            nextAdUnit.InUse = true;
+            string appIdPhone = WebConfigurationManager.AppSettings["APP_ID_PHONE"];
+            string appIdWin10 = WebConfigurationManager.AppSettings["APP_ID_WIN10"];
+
+            UseNextAdUnit(appIdPhone);
+            UseNextAdUnit(appIdWin10);
 
             context.SaveChanges();
 
             return Task.FromResult(true);
+        }
+
+        private void UseNextAdUnit(string appId)
+        {
+            var adUnits = context.AdUnits.Where(x => x.App == appId);
+
+            AdUnit currAdUnitPhone = adUnits.Where(x => x.InUse).FirstOrDefault();
+            currAdUnitPhone.LastUseddate = DateTime.Now;
+            currAdUnitPhone.InUse = false;
+            AdUnit nextAdUnitPhone = adUnits.OrderBy(x => x.LastUseddate).FirstOrDefault();
+            nextAdUnitPhone.LastUseddate = DateTime.Now;
+            nextAdUnitPhone.InUse = true;
+
+            context.SaveChanges();
         }
     }
 }

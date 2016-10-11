@@ -55,6 +55,8 @@ namespace League_of_Legends_Counterpicks
 
         private TransitionCollection transitions;
 
+        public static string AppId = "bf747944-c75c-4f2a-a027-7c159b32261d";
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -161,7 +163,6 @@ namespace League_of_Legends_Counterpicks
             Window.Current.Activate();
 
             await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().HideAsync();
-            //await AdData.GetAdId();
         }
 
         /// <summary>

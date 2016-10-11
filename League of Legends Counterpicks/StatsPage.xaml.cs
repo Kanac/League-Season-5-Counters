@@ -82,8 +82,8 @@ namespace League_of_Legends_Counterpicks
 
             int id = await AdData.GetAdId();
             int count = MemoryManager.AppMemoryUsageLimit / (1024 * 1024) > 700 ? 30 : 20;
-            HelperMethods.CreateSingleAdUnit(id, HelperMethods.appId, AdGrid);
-            HelperMethods.CreateAdUnits(id, HelperMethods.appId, AdGrid2, count);
+            HelperMethods.CreateSingleAdUnit(id, "HorizontalAdSmall", AdGrid);
+            HelperMethods.CreateAdUnits(id, "HorizontalAdSmall", AdGrid2, count);
 
             string champKey = e.NavigationParameter as string;
             var championData = await StatsDataSource.GetCounterStatsAsync(champKey);

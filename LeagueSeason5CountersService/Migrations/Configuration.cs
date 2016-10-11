@@ -7,7 +7,7 @@ namespace LeagueSeason5CountersService.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-
+    using System.Web.Configuration;
     internal sealed class Configuration : DbMigrationsConfiguration<LeagueSeason5CountersService.Models.LeagueSeason5CountersContext>
     {
         public Configuration()
@@ -23,24 +23,26 @@ namespace LeagueSeason5CountersService.Migrations
                 return;
             }
 
-            string appId = "bf747944-c75c-4f2a-a027-7c159b32261d";
-            DateTime date = DateTime.Now;
+            string appId = WebConfigurationManager.AppSettings["APP_ID_WIN10"];
 
-            List<int> idList = new List<int>
+            ISet<int> ids = new HashSet<int>
             {
-                240175, 242815, 300199, 242100, 239130, 242804, 240199,
-                240176, 305132, 249556, 242820, 240202, 242801, 244459,
-                302450, 314536, 240174, 299204, 244417, 244435,
-                244415, 244429, 244443, 244423, 244451, 244431, 244437,
-                244421, 244413, 244427, 236727, 244425, 242101, 240170,
-                304061, 240177, 244457, 244411, 244441,
-                244433, 244419, 239138, 244461, 244449, 242841,
-                240171, 312169, 244439, 244445
+                240296, 240305, 240306, 240307, 240308,
+                240309, 240310, 240311, 240312, 240313,
+                242902, 242903, 242912, 242913, 242914,
+                242915, 242985, 242986, 242987, 242988,
+                244643, 244652, 244653, 244655, 244656,
+                246589, 246611, 246590, 246592, 246595,
+                293532, 304062, 305133, 306229, 312172,
+                297340, 298016, 298849, 299205, 299480,
+                299713, 300198, 300957, 236223, 314537,
+                242984, 280315, 239049, 239058, 239059,
+                239060, 239061, 239062, 239063, 239064
             };
 
-            foreach (int id in idList)
+            foreach (int id in ids)
             {
-                AdUnit adUnit = new AdUnit { Id = Guid.NewGuid().ToString(), Ad = id, App = appId, LastUseddate = date, InUse = false };
+                AdUnit adUnit = new AdUnit { Id = Guid.NewGuid().ToString(), Ad = id, App = appId, LastUseddate = DateTime.Now, InUse = false };
                 context.AdUnits.AddOrUpdate(adUnit);
             }
 

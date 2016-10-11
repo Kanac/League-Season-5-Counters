@@ -36,7 +36,7 @@ namespace League_of_Legends_Counterpicks.DataModel
             if (AdId != 0)
                 return AdId;
 
-            var result = await AdTable.Where(x => x.InUse).ToListAsync();
+            var result = await AdTable.Where(x => x.InUse && x.App == App.AppId).ToListAsync();
             AdId = result.FirstOrDefault().Ad;
             return AdId;
         }
