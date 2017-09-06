@@ -8,6 +8,6 @@ https://www.microsoft.com/en-us/store/p/league-of-legends-guide/9wzdncrdqrn5
 
 Recently accepted by Riot Games for access to a Production API key (no rate-limiting HTTP requests) for new upcoming features!
 
-This app has recently hit over 100k downloads across all platforms!
+This app has recently hit over 125k downloads across all platforms!
 
 ![125k downloads](http://i.imgur.com/narqVvA.png)
