@@ -10,4 +10,4 @@ Recently accepted by Riot Games for access to a Production API key (no rate-limi
 
 This app has recently hit over 100k downloads across all platforms!
 
-![alt tag](http://i.imgur.com/qk7alwG.png)
+![125k downloads](http://i.imgur.com/narqVvA.png)
