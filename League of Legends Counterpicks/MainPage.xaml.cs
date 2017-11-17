@@ -86,7 +86,7 @@ namespace League_of_Legends_Counterpicks
             App.IsInternetAvailable();
 
             int id = await AdData.GetAdId();
-            int count = MemoryManager.AppMemoryUsageLimit / (1024 * 1024) > 700 ? 55 : 40;
+            int count = MemoryManager.AppMemoryUsageLimit / (1024 * 1024) > 700 ? 5 : 4;
             HelperMethods.CreateSingleAdUnit(id, "HorizontalAdSmall", AdGrid);
             HelperMethods.CreateAdUnits(id, "HorizontalAdSmall", AdGrid2, count);
 

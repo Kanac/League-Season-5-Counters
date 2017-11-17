@@ -16,6 +16,8 @@ namespace League_of_Legends_Counterpicks.Helper
             if (App.licenseInformation.ProductLicenses["AdRemoval"].IsActive)
                 return;
 
+            count = 5;
+
             for (int i = 0; i < count; ++i)
             {
                 CreateSingleAdUnit(id, resource, grid);
